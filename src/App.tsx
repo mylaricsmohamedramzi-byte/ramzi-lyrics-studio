@@ -28,14 +28,14 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route element={<Layout />}>
-                <Route path="/" element={<WelcomePage />} />
+                <Route path="/" element={<LoginPage />} />
+                <Route path="/home" element={<WelcomePage />} />
                 <Route path="/videos" element={<VideosPage />} />
                 <Route path="/songs" element={<SongsPage />} />
                 <Route path="/melodies" element={<MelodiesPage />} />
                 <Route path="/lyrics" element={<LyricsPage />} />
                 <Route path="/songwriting-art" element={<SongwritingArtPage />} />
                 <Route path="/copyright" element={<CopyrightPage />} />
-                <Route path="/login" element={<LoginPage />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>

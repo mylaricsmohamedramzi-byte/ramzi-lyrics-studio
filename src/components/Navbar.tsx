@@ -7,14 +7,14 @@ import logoDark from '@/assets/logo-dark.png';
 import logoLight from '@/assets/logo-light.png';
 
 const navItems = [
-  { path: '/', en: 'Home', ar: 'الرئيسية' },
+  { path: '/home', en: 'Home', ar: 'الرئيسية' },
   { path: '/videos', en: 'Videos', ar: 'فيديوهات' },
   { path: '/songs', en: 'Songs', ar: 'أغاني' },
   { path: '/melodies', en: 'Melodies', ar: 'ألحان' },
   { path: '/lyrics', en: 'Lyrics', ar: 'كلمات' },
   { path: '/songwriting-art', en: 'Songwriting Art', ar: 'فن كتابة الأغاني' },
   { path: '/copyright', en: 'Copyright', ar: 'حقوق الملكية' },
-  { path: '/login', en: 'Login', ar: 'تسجيل الدخول' },
+  { path: '/', en: 'Login', ar: 'تسجيل الدخول' },
 ];
 
 const Navbar = () => {

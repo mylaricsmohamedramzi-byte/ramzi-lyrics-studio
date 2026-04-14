@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Menu, X, Sun, Moon, Globe } from 'lucide-react';
-import logoDark from '@/assets/logo-dark.png';
-import logoLight from '@/assets/logo-light.png';
+import logoDark from '@/assets/navbar-logo-dark.png';
+import logoLight from '@/assets/navbar-logo-light.png';
 
 const navItems = [
   { path: '/home', en: 'Home', ar: 'الرئيسية' },

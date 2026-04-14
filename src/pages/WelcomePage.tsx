@@ -2,11 +2,13 @@ import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import darkPhoto from '@/assets/dark-photo.png';
 import whitePhoto from '@/assets/white-photo.png';
-import logoDark from '@/assets/logo-dark.png';
-import logoLight from '@/assets/logo-light.png';
+import homeLogoDark from '@/assets/home-logo-dark.png';
+import homeLogoLight from '@/assets/home-logo-light.png';
+import nameEnglish from '@/assets/name-english.png';
+import nameArabic from '@/assets/name-arabic.png';
 
 const WelcomePage = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const { isDark } = useTheme();
 
   return (
@@ -22,56 +24,39 @@ const WelcomePage = () => {
       />
 
       <div className="container mx-auto px-4 py-16 relative z-10">
-        {/* Photo */}
+        {/* Photo - circular */}
         <div className="flex justify-center mb-8 animate-fade-in-up">
-          <img
-            src={isDark ? darkPhoto : whitePhoto}
-            alt="Mohamed Ramzi"
-            className="w-64 h-64 sm:w-80 sm:h-80 object-contain rounded-full"
-          />
+          <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden">
+            <img
+              src={isDark ? darkPhoto : whitePhoto}
+              alt="Mohamed Ramzi"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
 
-        {/* Name */}
+        {/* Name as image */}
         <div className="text-center mb-4 animate-fade-in-up animate-fade-in-up-1">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading text-gold-gradient font-bold tracking-wide">
-            {t('Mohamed Ramzi', 'محمد رمزي')}
-          </h1>
+          <div className="flex justify-center mb-2">
+            <img
+              src={lang === 'ar' ? nameArabic : nameEnglish}
+              alt={t('Mohamed Ramzi', 'محمد رمزي')}
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
+            />
+          </div>
           <p className="text-lg sm:text-xl text-muted-foreground tracking-[0.3em] uppercase mt-2 font-subheading">
             {t('Song Writer', 'كاتب أغاني')}
           </p>
         </div>
 
-        {/* Logo Shield */}
+        {/* Home Logo with floating animation */}
         <div className="flex justify-center my-12 animate-fade-in-up animate-fade-in-up-2">
-          <div className="relative animate-float">
-            <div className="w-40 h-48 sm:w-48 sm:h-56 flex items-center justify-center relative">
-              {/* Shield background */}
-              <div
-                className="absolute inset-0 rounded-b-[40%] border-2 border-accent/30"
-                style={{
-                  background: isDark
-                    ? 'linear-gradient(135deg, hsl(340 25% 8%), hsl(340 20% 12%))'
-                    : 'linear-gradient(135deg, hsl(30 30% 95%), hsl(30 20% 90%))',
-                  clipPath: 'polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)',
-                  boxShadow: isDark
-                    ? '0 0 40px rgba(192,39,45,0.3), inset 0 1px 0 rgba(255,255,255,0.1)'
-                    : '0 4px 20px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.5)',
-                }}
-              />
-              {/* Inner border */}
-              <div
-                className="absolute inset-2"
-                style={{
-                  border: `1px solid ${isDark ? 'rgba(201,168,76,0.3)' : 'rgba(154,107,26,0.2)'}`,
-                  clipPath: 'polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)',
-                }}
-              />
-              <img
-                src={isDark ? logoDark : logoLight}
-                alt="MR Logo"
-                className="w-24 h-24 sm:w-28 sm:h-28 object-contain relative z-10"
-              />
-            </div>
+          <div className="animate-float">
+            <img
+              src={isDark ? homeLogoDark : homeLogoLight}
+              alt="MR Logo"
+              className="w-48 h-auto sm:w-56 md:w-64 object-contain drop-shadow-2xl"
+            />
           </div>
         </div>
 
@@ -98,7 +83,6 @@ const WelcomePage = () => {
                 : `repeating-linear-gradient(transparent, transparent 28px, rgba(154,107,26,0.08) 28px, rgba(154,107,26,0.08) 29px)`,
             }}
           >
-            {/* Musical note decoration */}
             <div className="absolute top-3 right-4 text-accent/20 text-3xl">♪</div>
             <div className="absolute bottom-3 left-4 text-accent/20 text-2xl">♫</div>
 

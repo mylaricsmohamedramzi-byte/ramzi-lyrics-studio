@@ -413,7 +413,8 @@ const SongwritingArtPage = () => {
 
         @font-face {
           font-family: 'DG Forsha';
-          src: local('DG Forsha'), local('DG-Forsha');
+          src: local('DG Forsha'), local('DG-Forsha'), url('/fonts/DG-Forsha.ttf') format('truetype');
+          font-display: swap;
         }
 
         .swa-root {

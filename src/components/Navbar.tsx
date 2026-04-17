@@ -23,8 +23,13 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  const navBg = isDark ? 'bg-background/90 border-border/50' : 'bg-black/95 border-white/10';
+  const navText = isDark ? 'text-foreground/70' : 'text-white/80';
+  const navTextActive = isDark ? 'text-primary bg-primary/5' : 'text-[#c9a84c] bg-white/5';
+  const navHover = isDark ? 'hover:bg-primary/10 hover:text-primary' : 'hover:bg-white/10 hover:text-[#c9a84c]';
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/90 border-b border-border/50 transition-colors duration-400">
+    <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl ${navBg} border-b transition-colors duration-400`}>
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
@@ -41,10 +46,10 @@ const Navbar = () => {
             <Link
               key={item.path}
               to={item.path}
-              className={`px-3 py-2 text-sm rounded-md transition-all duration-200 hover:bg-primary/10 hover:text-primary ${
+              className={`px-3 py-2 text-sm rounded-md transition-all duration-200 ${navHover} ${
                 location.pathname === item.path
-                  ? 'text-primary font-semibold bg-primary/5'
-                  : 'text-foreground/70'
+                  ? `font-semibold ${navTextActive}`
+                  : navText
               }`}
             >
               {t(item.en, item.ar)}
@@ -56,7 +61,7 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <button
             onClick={toggleLang}
-            className="p-2 rounded-md hover:bg-muted transition-colors text-foreground/70 hover:text-foreground"
+            className={`p-2 rounded-md hover:bg-white/10 transition-colors ${navText} hover:text-[#c9a84c]`}
             aria-label="Toggle language"
           >
             <Globe className="w-4 h-4" />
@@ -64,14 +69,14 @@ const Navbar = () => {
           </button>
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-md hover:bg-muted transition-colors text-foreground/70 hover:text-foreground"
+            className={`p-2 rounded-md hover:bg-white/10 transition-colors ${navText} hover:text-[#c9a84c]`}
             aria-label="Toggle theme"
           >
             {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md hover:bg-muted transition-colors text-foreground/70"
+            className={`lg:hidden p-2 rounded-md hover:bg-white/10 transition-colors ${navText}`}
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -81,17 +86,17 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl">
+        <div className={`lg:hidden border-t ${isDark ? 'border-border/50 bg-background/95' : 'border-white/10 bg-black/95'} backdrop-blur-xl`}>
           <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
             {navItems.map(item => (
               <Link
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
-                className={`px-4 py-3 rounded-md transition-all duration-200 hover:bg-primary/10 ${
+                className={`px-4 py-3 rounded-md transition-all duration-200 ${navHover} ${
                   location.pathname === item.path
-                    ? 'text-primary font-semibold bg-primary/5'
-                    : 'text-foreground/70'
+                    ? `font-semibold ${navTextActive}`
+                    : navText
                 }`}
               >
                 {t(item.en, item.ar)}

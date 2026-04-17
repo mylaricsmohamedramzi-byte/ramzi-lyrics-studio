@@ -424,22 +424,66 @@ const SongwritingArtPage = () => {
           --gold: #c9a84c;
           --cyan: #4cc9f0;
           --red: #ff4d4d;
+
+          --swa-bg-from: rgb(103, 6, 6);
+          --swa-bg-to: var(--leather-black);
+          --swa-text: white;
+          --swa-silver: var(--silver);
+          --swa-card-bg: rgba(15, 2, 2, 0.85);
+          --swa-card-border: rgba(201, 168, 76, 0.2);
+          --swa-cyan: var(--cyan);
+          --swa-grain-opacity: 0.35;
+          --swa-heading-shadow: 2px 2px 10px rgba(0, 0, 0, 0.54);
+          --swa-gold-text: var(--gold);
+        }
+
+        :root:not(.dark) .swa-root {
+          --swa-bg-from: #ffffff;
+          --swa-bg-to: #f7f2ec;
+          --swa-text: #1a0509;
+          --swa-silver: #2a1418;
+          --swa-card-bg: #ffffff;
+          --swa-card-border: rgba(120, 20, 30, 0.25);
+          --swa-cyan: #0a5c8a;
+          --swa-grain-opacity: 0.08;
+          --swa-heading-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+          --swa-gold-text: #8a6a14;
+        }
+
+        /* Override the global Cairo !important for Arabic so our fonts apply */
+        [data-lang="ar"] .swa-root,
+        [data-lang="ar"] .swa-root * {
+          font-family: inherit !important;
+        }
+        [data-lang="ar"] .swa-heading,
+        [data-lang="ar"] .swa-subheading,
+        [data-lang="ar"] .swa-card-title,
+        [data-lang="ar"] .swa-bg-number,
+        [data-lang="ar"] .method-text,
+        [data-lang="ar"] .method-text * {
+          font-family: 'Almarai', sans-serif !important;
+        }
+        [data-lang="ar"] .swa-song-header {
+          font-family: 'Aref Ruqaa Ink', serif !important;
+        }
+        [data-lang="ar"] .swa-lyric-line {
+          font-family: 'DG Forsha', 'Aref Ruqaa Ink', serif !important;
         }
 
         .swa-grain-overlay {
           position: absolute;
           inset: 0;
           background-image: url('https://www.transparenttextures.com/patterns/leather.png');
-          opacity: 0.35;
+          opacity: var(--swa-grain-opacity);
           pointer-events: none;
           z-index: 1;
         }
 
         .swa-container {
           min-height: 100vh;
-          background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, var(--leather-black) 100%);
+          background: radial-gradient(circle at center, var(--swa-bg-from) 0%, var(--swa-bg-to) 100%);
           font-family: 'Tajawal', sans-serif;
-          color: white;
+          color: var(--swa-text);
           padding: 80px 20px;
           position: relative;
         }
@@ -448,16 +492,16 @@ const SongwritingArtPage = () => {
           font-family: 'Almarai', sans-serif;
           font-size: clamp(35px, 7vw, 70px);
           text-align: center;
-          color: var(--gold);
+          color: var(--swa-gold-text);
           margin-bottom: 16px;
-          text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.54);
+          text-shadow: var(--swa-heading-shadow);
           position: relative;
           z-index: 10;
         }
 
         .swa-subheading {
           text-align: center;
-          color: var(--silver);
+          color: var(--swa-silver);
           font-family: 'Almarai', sans-serif;
           opacity: 0.85;
           margin-bottom: 60px;
@@ -476,8 +520,8 @@ const SongwritingArtPage = () => {
         }
 
         .swa-card {
-          background: rgba(15, 2, 2, 0.85);
-          border: 1px solid rgba(201, 168, 76, 0.2);
+          background: var(--swa-card-bg);
+          border: 1px solid var(--swa-card-border);
           padding: 35px;
           cursor: pointer;
           transition: 0.4s;
@@ -494,12 +538,12 @@ const SongwritingArtPage = () => {
           position: absolute;
           top: 0;
           left: 15px;
-          color: var(--gold);
+          color: var(--swa-gold-text);
         }
 
-        .swa-card-title { font-family: 'Almarai', sans-serif; font-size: 28px; color: var(--gold); margin-bottom: 15px; }
-        .method-text { line-height: 2; font-size: 16px; color: var(--silver); margin-bottom: 25px; }
-        .method-text .cyan { color: var(--cyan); font-weight: 800; }
+        .swa-card-title { font-family: 'Almarai', sans-serif; font-size: 28px; color: var(--swa-gold-text); margin-bottom: 15px; }
+        .method-text { line-height: 2; font-size: 16px; color: var(--swa-silver); margin-bottom: 25px; }
+        .method-text .cyan { color: var(--swa-cyan); font-weight: 800; }
 
         .swa-song-reveal {
           max-height: 0;
@@ -510,14 +554,14 @@ const SongwritingArtPage = () => {
         .swa-card.active .swa-song-reveal {
           max-height: 5000px;
           padding-top: 30px;
-          border-top: 2px solid var(--gold);
+          border-top: 2px solid var(--swa-gold-text);
           margin-top: 20px;
         }
 
         .swa-song-header {
           font-family: 'Aref Ruqaa Ink', serif;
           font-size: 34px;
-          color: var(--gold);
+          color: var(--swa-gold-text);
           margin-bottom: 25px;
           text-align: center;
           direction: rtl;
@@ -528,15 +572,21 @@ const SongwritingArtPage = () => {
           font-size: 24px;
           margin-bottom: 12px;
           padding-right: 15px;
-          border-right: 4px solid var(--gold);
+          border-right: 4px solid var(--swa-gold-text);
           direction: rtl;
           text-align: right;
+          color: var(--swa-text);
         }
 
         .swa-lyric-line.is-red {
           color: var(--red);
           border-right-color: var(--red);
           font-weight: 900;
+        }
+
+        :root:not(.dark) .swa-lyric-line.is-red {
+          color: #b00020;
+          border-right-color: #b00020;
         }
 
         .swa-spacer { height: 20px; border-right: none; }

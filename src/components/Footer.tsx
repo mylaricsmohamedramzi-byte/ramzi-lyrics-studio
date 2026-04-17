@@ -8,7 +8,7 @@ const Footer = () => {
   const { isDark } = useTheme();
 
   return (
-    <footer className="border-t border-border/50 bg-card/50 backdrop-blur-sm py-8 transition-colors duration-400">
+    <footer className={`border-t backdrop-blur-sm py-8 transition-colors duration-400 ${isDark ? 'border-border/50 bg-card/50' : 'border-white/10 bg-black text-white'}`}>
       <div className="container mx-auto px-4 flex flex-col items-center gap-6">
         {/* Footer Logo */}
         <img
@@ -36,7 +36,7 @@ const Footer = () => {
         </a>
 
         {/* Copyright text */}
-        <p className="text-sm text-muted-foreground text-center">
+        <p className={`text-sm text-center ${isDark ? 'text-muted-foreground' : 'text-white/70'}`}>
           {t(
             'All Rights Reserved © Mohamed Ramzi',
             'جميع الحقوق محفوظة © محمد رمزي'

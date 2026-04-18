@@ -1,4 +1,6 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
+import { useLang } from '@/contexts/LangContext';
+import { Search } from 'lucide-react';
 
 /** Converts Google Drive sharing / open links to direct download URLs. Leaves other URLs unchanged. */
 function toDriveDirectDownloadUrl(url: string): string {
@@ -866,15 +868,22 @@ const CATEGORIES: { key: string; ar: string; en: string; match: (t: string) => b
 ];
 
 const SongsPage = () => {
+  const { t, lang } = useLang();
   const [starRatings, setStarRatings] = useState<Record<number, number>>({});
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
   const [playingKey, setPlayingKey] = useState<string | null>(null);
   const [audioTimes, setAudioTimes] = useState<Record<string, { current: number; duration: number }>>({});
   const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
 
   const activeMatcher = CATEGORIES.find((c) => c.key === activeCategory)?.match ?? (() => true);
-  const visibleSongs = allSongs.filter((s) => activeMatcher(String(s.type || '')));
+  const visibleSongs = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    return allSongs
+      .filter((s) => activeMatcher(String(s.type || '')))
+      .filter((s) => (q === '' ? true : String(s.title || '').toLowerCase().includes(q)));
+  }, [activeMatcher, searchQuery]);
 
   const normalizeAudioUrls = (audioUrls: string[] | string | undefined): string[] => {
     if (Array.isArray(audioUrls)) return audioUrls.filter((url) => typeof url === 'string' && url.trim() !== '');

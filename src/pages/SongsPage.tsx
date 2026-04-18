@@ -1059,7 +1059,7 @@ const SongsPage = () => {
       {visibleSongs.map((song) => (
         <div key={song.id} className="main-card">
           <div className="player-side">
-            <div className="song-tag">{song.type}</div>
+            <div className="song-tag">{lang === 'ar' ? song.type : translateType(String(song.type || ''))}</div>
             <div className="cover-box" style={{ backgroundImage: `url(${toDriveDirectDownloadUrl(song.coverImg)})` }} />
             
             <div className="views-badge">{song.views}</div>
@@ -1098,7 +1098,7 @@ const SongsPage = () => {
             })}
 
             <div style={{marginTop: '20px', textAlign: 'center'}}>
-              <span className="label-gold">تقييمك</span>
+              <span className="label-gold">{t('Your rating', 'تقييمك')}</span>
               <div className="star-rating">
                 {[1, 2, 3, 4, 5].map((num) => (
                   <span key={num} className={`star ${num <= (starRatings[song.id] || 0) ? 'active' : ''}`} onClick={() => setStarRatings(prev => ({ ...prev, [song.id]: num }))}>★</span>
@@ -1108,17 +1108,19 @@ const SongsPage = () => {
           </div>
 
           <div className="lyrics-side">
-            <span className="label-gold">كلمات الأغنية</span>
+            <span className="label-gold">{t('Song lyrics', 'كلمات الأغنية')}</span>
             <div className="title-row">
               <h2 className="song-title-red">{song.title}</h2>
-              {'duet' in song && song.duet && <span className="duet-badge">ديو</span>}
+              {'duet' in song && song.duet && <span className="duet-badge">{t('Duet', 'ديو')}</span>}
             </div>
-            <div className="lyrics-scroll">
+            <div className="lyrics-scroll" dir="rtl">
               {song.lyrics.map((l, i) => (
                 <div key={i} className={`line ${l.red ? 'red' : ''}`}>{l.text}</div>
               ))}
             </div>
-            <span className="label-gold">الآراء النقدية (اضغط للتقييم)</span>
+            <span className="label-gold">
+              {t('Critic reviews (click to rate)', 'الآراء النقدية (اضغط للتقييم)')}
+            </span>
             {song.critics.map((critic, idx) => (
               <div key={idx} className="critic-item" onClick={() => handleCriticClick(song.id, idx)}>
                 <span style={{fontSize: '14px'}}>{critic}</span>

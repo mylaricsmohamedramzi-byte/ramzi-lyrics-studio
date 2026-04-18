@@ -919,11 +919,11 @@ const SongsPage = () => {
   };
 
   return (
-    <div dir="rtl" className="page-wrapper">
+    <div dir={lang === 'ar' ? 'rtl' : 'ltr'} className="page-wrapper">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&family=Cinzel:wght@400;600;700&display=swap');
         
-        .page-wrapper { background: linear-gradient(180deg, #1a051a 0%, #000 100%); min-height: 100vh; padding: 40px 20px; color: white; font-family: 'Almarai', sans-serif; }
+        .page-wrapper { background: transparent; min-height: 100vh; padding: 40px 20px; color: white; font-family: 'Almarai', sans-serif; }
         .main-card { max-width: 1100px; margin: 0 auto 60px; background: #040828; border: 2px solid #c9a84c; border-radius: 40px; display: flex; flex-direction: row-reverse; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8); }
         .player-side { flex: 1; padding: 30px; background: rgba(0,0,0,0.3); display: flex; flex-direction: column; align-items: center; }
         
@@ -994,8 +994,49 @@ const SongsPage = () => {
         .filter-chip:hover { background: rgba(201, 168, 76, 0.2); }
         .filter-chip.active { background: #c9a84c; color: #040828; font-weight: 700; border-color: #c9a84c; }
 
+        .search-row { max-width: 1100px; margin: 0 auto 20px; display: flex; justify-content: center; }
+        .search-box { position: relative; width: 100%; max-width: 520px; }
+        .search-input {
+          width: 100%;
+          background: rgba(4, 8, 40, 0.6);
+          color: #f3d98a;
+          border: 1px solid rgba(201, 168, 76, 0.4);
+          border-radius: 999px;
+          padding: 12px 48px 12px 20px;
+          font-family: 'Almarai', sans-serif;
+          font-size: 0.95rem;
+          outline: none;
+          transition: all 0.25s ease;
+        }
+        .search-input::placeholder { color: rgba(243, 217, 138, 0.55); }
+        .search-input:focus { border-color: #c9a84c; box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15); }
+        .search-icon {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          color: #c9a84c;
+          pointer-events: none;
+        }
+        [dir="rtl"] .search-input { padding: 12px 20px 12px 48px; }
+        [dir="rtl"] .search-icon { left: 16px; }
+        [dir="ltr"] .search-icon { right: 16px; }
+
         @media (max-width: 900px) { .main-card { flex-direction: column; } .lyrics-side { border-left: none; border-top: 1px solid rgba(201,168,76,0.2); } }
       `}</style>
+
+      <div className="search-row">
+        <div className="search-box">
+          <Search className="search-icon" size={18} />
+          <input
+            type="text"
+            className="search-input"
+            placeholder={t('Search by song title…', 'ابحث عن أغنية بالاسم…')}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            aria-label={t('Search songs', 'ابحث عن أغنية')}
+          />
+        </div>
+      </div>
 
       <div className="filter-row">
         {CATEGORIES.map((c) => (
@@ -1004,10 +1045,16 @@ const SongsPage = () => {
             className={`filter-chip ${activeCategory === c.key ? 'active' : ''}`}
             onClick={() => setActiveCategory(c.key)}
           >
-            {c.ar}
+            {lang === 'ar' ? c.ar : c.en}
           </button>
         ))}
       </div>
+
+      {visibleSongs.length === 0 && (
+        <div style={{ textAlign: 'center', color: '#c9a84c', opacity: 0.8, padding: '40px 20px', fontFamily: lang === 'ar' ? 'Aref Ruqaa Ink, serif' : 'Cinzel, serif' }}>
+          ♪ {t('No songs match your search.', 'لا توجد أغانٍ مطابقة لبحثك.')}
+        </div>
+      )}
 
       {visibleSongs.map((song) => (
         <div key={song.id} className="main-card">

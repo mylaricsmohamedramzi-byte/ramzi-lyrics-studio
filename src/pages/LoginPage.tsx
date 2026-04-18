@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import { LogIn, UserCircle, Mail, Lock, KeyRound } from 'lucide-react';
+import { LogIn, UserCircle, Mail, Lock } from 'lucide-react';
 import homeLogoDark from '@/assets/home-logo-dark.png';
 import homeLogoLight from '@/assets/home-logo-light.png';
 
@@ -21,7 +21,6 @@ const LoginPage = () => {
   const [step, setStep] = useState<'initial' | 'email' | 'password'>('initial');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [code, setCode] = useState('');
   const [error, setError] = useState('');
   const [hasAttemptedLogin, setHasAttemptedLogin] = useState(false);
 
@@ -221,18 +220,6 @@ const LoginPage = () => {
                     className="w-full pl-11 pr-4 py-4 rounded-xl bg-background/50 border border-border/50 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all text-base"
                   />
                 </div>
-                <div className="relative">
-                  <KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                  <input
-                    type="text"
-                    required
-                    maxLength={6}
-                    value={code}
-                    onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
-                    placeholder={t('6-digit verification code', 'رمز التحقق المكون من 6 أرقام')}
-                    className="w-full pl-11 pr-4 py-4 rounded-xl bg-background/50 border border-border/50 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all text-base tracking-[0.3em] text-center"
-                  />
-                </div>
                 {error && (
                   <p className="text-destructive text-sm font-body text-center bg-destructive/10 rounded-lg p-3">
                     {error}
@@ -250,7 +237,7 @@ const LoginPage = () => {
                 </button>
                 <button
                   type="button"
-                  onClick={() => { setStep('email'); setError(''); setPassword(''); setCode(''); }}
+                  onClick={() => { setStep('email'); setError(''); setPassword(''); }}
                   className="w-full px-6 py-3 rounded-lg text-muted-foreground hover:text-foreground transition-all text-sm"
                 >
                   {t('← Back', '→ رجوع')}

@@ -855,12 +855,26 @@ const allSongs = [
 }
 ];
 
+const CATEGORIES: { key: string; ar: string; en: string; match: (t: string) => boolean }[] = [
+  { key: 'all', ar: 'الكل', en: 'All', match: () => true },
+  { key: 'pop', ar: 'بوب', en: 'Pop', match: (t) => t.includes('بوب') },
+  { key: 'maqsum', ar: 'مقسوم', en: 'Maqsum', match: (t) => t.includes('مقسوم') },
+  { key: 'romantic', ar: 'رومانسي', en: 'Romantic', match: (t) => t.includes('رومانسي') || t.includes('رمانسي') },
+  { key: 'islamic', ar: 'إسلامي', en: 'Islamic', match: (t) => t.includes('إسلامي') || t.includes('اسلامي') },
+  { key: 'patriotic', ar: 'وطني', en: 'Patriotic', match: (t) => t.includes('وطني') },
+  { key: 'classic', ar: 'كلاسيك', en: 'Classic', match: (t) => t.includes('كلاسيك') },
+];
+
 const SongsPage = () => {
   const [starRatings, setStarRatings] = useState<Record<number, number>>({});
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
   const [playingKey, setPlayingKey] = useState<string | null>(null);
   const [audioTimes, setAudioTimes] = useState<Record<string, { current: number; duration: number }>>({});
+  const [activeCategory, setActiveCategory] = useState<string>('all');
   const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
+
+  const activeMatcher = CATEGORIES.find((c) => c.key === activeCategory)?.match ?? (() => true);
+  const visibleSongs = allSongs.filter((s) => activeMatcher(String(s.type || '')));
 
   const normalizeAudioUrls = (audioUrls: string[] | string | undefined): string[] => {
     if (Array.isArray(audioUrls)) return audioUrls.filter((url) => typeof url === 'string' && url.trim() !== '');

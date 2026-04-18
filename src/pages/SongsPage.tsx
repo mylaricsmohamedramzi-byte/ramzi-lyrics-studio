@@ -899,6 +899,25 @@ const SongsPage = () => {
     return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
   };
 
+  // Translate the Arabic genre/type label into English (best-effort token replacement).
+  const TYPE_DICT: Record<string, string> = {
+    'راب': 'Rap',
+    'بوب': 'Pop',
+    'مقسوم': 'Maqsum',
+    'رومانسي': 'Romantic',
+    'رمانسي': 'Romantic',
+    'إسلامي': 'Islamic',
+    'اسلامي': 'Islamic',
+    'وطني': 'Patriotic',
+    'كلاسيك': 'Classic',
+    'Semi-Romantic': 'Semi-Romantic',
+  };
+  const translateType = (arType: string): string => {
+    const tokens = arType.split(/\s+/).filter(Boolean);
+    const mapped = tokens.map((tok) => TYPE_DICT[tok] || tok);
+    return mapped.join(' ');
+  };
+
   const togglePlay = (songId: number, audioIdx: number) => {
     const key = `${songId}-${audioIdx}`;
     if (playingKey === key) {

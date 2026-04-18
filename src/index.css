@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Almarai:wght@400;700;800&family=Aref+Ruqaa+Ink:wght@700&family=Tajawal:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Aref+Ruqaa+Ink:wght@400;700&family=Almarai:wght@400;700;800&family=Tajawal:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap');
 
 @font-face {
   font-family: 'DG Forsha';
@@ -43,9 +43,9 @@
     --sidebar-border: 30 15% 88%;
     --sidebar-ring: 355 72% 45%;
 
-    --font-heading: 'Cinzel Decorative', serif;
-    --font-subheading: 'Playfair Display', serif;
-    --font-body: 'Crimson Pro', Georgia, serif;
+    --font-heading: 'Cinzel', serif;
+    --font-subheading: 'Cinzel', serif;
+    --font-body: 'Cinzel', serif;
   }
 
   .dark {
@@ -80,9 +80,10 @@
     --sidebar-ring: 357 73% 46%;
   }
 
+  /* Global Arabic typography: unify everything to Aref Ruqaa Ink */
   [data-lang="ar"] body,
   [data-lang="ar"] * {
-    font-family: 'Cairo', sans-serif !important;
+    font-family: 'Aref Ruqaa Ink', serif !important;
   }
 
   [data-lang="ar"] {
@@ -170,6 +171,13 @@
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-12px); }
+}
+
+@keyframes floatNote {
+  0%   { transform: translateY(0) rotate(0deg);   opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.8; }
+  100% { transform: translateY(-115vh) rotate(360deg); opacity: 0; }
 }
 
 @keyframes fade-in-up {

@@ -980,10 +980,27 @@ const SongsPage = () => {
 
         .critic-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; margin-bottom: 8px; cursor: pointer; display: flex; justify-content: space-between; border: 1px solid rgba(201,168,76,0.1); }
 
+        .filter-row { max-width: 1100px; margin: 0 auto 30px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .filter-chip { background: rgba(4, 8, 40, 0.6); color: #f3d98a; border: 1px solid rgba(201, 168, 76, 0.4); border-radius: 999px; padding: 8px 18px; cursor: pointer; font-family: 'Almarai', sans-serif; font-size: 0.95rem; transition: all 0.25s ease; }
+        .filter-chip:hover { background: rgba(201, 168, 76, 0.2); }
+        .filter-chip.active { background: #c9a84c; color: #040828; font-weight: 700; border-color: #c9a84c; }
+
         @media (max-width: 900px) { .main-card { flex-direction: column; } .lyrics-side { border-left: none; border-top: 1px solid rgba(201,168,76,0.2); } }
       `}</style>
 
-      {allSongs.map((song) => (
+      <div className="filter-row">
+        {CATEGORIES.map((c) => (
+          <button
+            key={c.key}
+            className={`filter-chip ${activeCategory === c.key ? 'active' : ''}`}
+            onClick={() => setActiveCategory(c.key)}
+          >
+            {c.ar}
+          </button>
+        ))}
+      </div>
+
+      {visibleSongs.map((song) => (
         <div key={song.id} className="main-card">
           <div className="player-side">
             <div className="song-tag">{song.type}</div>

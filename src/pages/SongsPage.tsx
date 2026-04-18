@@ -1,4 +1,6 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
+import { useLang } from '@/contexts/LangContext';
+import { Search } from 'lucide-react';
 
 /** Converts Google Drive sharing / open links to direct download URLs. Leaves other URLs unchanged. */
 function toDriveDirectDownloadUrl(url: string): string {
@@ -866,15 +868,22 @@ const CATEGORIES: { key: string; ar: string; en: string; match: (t: string) => b
 ];
 
 const SongsPage = () => {
+  const { t, lang } = useLang();
   const [starRatings, setStarRatings] = useState<Record<number, number>>({});
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
   const [playingKey, setPlayingKey] = useState<string | null>(null);
   const [audioTimes, setAudioTimes] = useState<Record<string, { current: number; duration: number }>>({});
   const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
 
   const activeMatcher = CATEGORIES.find((c) => c.key === activeCategory)?.match ?? (() => true);
-  const visibleSongs = allSongs.filter((s) => activeMatcher(String(s.type || '')));
+  const visibleSongs = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    return allSongs
+      .filter((s) => activeMatcher(String(s.type || '')))
+      .filter((s) => (q === '' ? true : String(s.title || '').toLowerCase().includes(q)));
+  }, [activeMatcher, searchQuery]);
 
   const normalizeAudioUrls = (audioUrls: string[] | string | undefined): string[] => {
     if (Array.isArray(audioUrls)) return audioUrls.filter((url) => typeof url === 'string' && url.trim() !== '');
@@ -888,6 +897,25 @@ const SongsPage = () => {
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
     return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  };
+
+  // Translate the Arabic genre/type label into English (best-effort token replacement).
+  const TYPE_DICT: Record<string, string> = {
+    'راب': 'Rap',
+    'بوب': 'Pop',
+    'مقسوم': 'Maqsum',
+    'رومانسي': 'Romantic',
+    'رمانسي': 'Romantic',
+    'إسلامي': 'Islamic',
+    'اسلامي': 'Islamic',
+    'وطني': 'Patriotic',
+    'كلاسيك': 'Classic',
+    'Semi-Romantic': 'Semi-Romantic',
+  };
+  const translateType = (arType: string): string => {
+    const tokens = arType.split(/\s+/).filter(Boolean);
+    const mapped = tokens.map((tok) => TYPE_DICT[tok] || tok);
+    return mapped.join(' ');
   };
 
   const togglePlay = (songId: number, audioIdx: number) => {
@@ -910,11 +938,11 @@ const SongsPage = () => {
   };
 
   return (
-    <div dir="rtl" className="page-wrapper">
+    <div dir={lang === 'ar' ? 'rtl' : 'ltr'} className="page-wrapper">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&family=Cinzel:wght@400;600;700&display=swap');
         
-        .page-wrapper { background: linear-gradient(180deg, #1a051a 0%, #000 100%); min-height: 100vh; padding: 40px 20px; color: white; font-family: 'Almarai', sans-serif; }
+        .page-wrapper { background: transparent; min-height: 100vh; padding: 40px 20px; color: white; font-family: 'Almarai', sans-serif; }
         .main-card { max-width: 1100px; margin: 0 auto 60px; background: #040828; border: 2px solid #c9a84c; border-radius: 40px; display: flex; flex-direction: row-reverse; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8); }
         .player-side { flex: 1; padding: 30px; background: rgba(0,0,0,0.3); display: flex; flex-direction: column; align-items: center; }
         
@@ -985,8 +1013,49 @@ const SongsPage = () => {
         .filter-chip:hover { background: rgba(201, 168, 76, 0.2); }
         .filter-chip.active { background: #c9a84c; color: #040828; font-weight: 700; border-color: #c9a84c; }
 
+        .search-row { max-width: 1100px; margin: 0 auto 20px; display: flex; justify-content: center; }
+        .search-box { position: relative; width: 100%; max-width: 520px; }
+        .search-input {
+          width: 100%;
+          background: rgba(4, 8, 40, 0.6);
+          color: #f3d98a;
+          border: 1px solid rgba(201, 168, 76, 0.4);
+          border-radius: 999px;
+          padding: 12px 48px 12px 20px;
+          font-family: 'Almarai', sans-serif;
+          font-size: 0.95rem;
+          outline: none;
+          transition: all 0.25s ease;
+        }
+        .search-input::placeholder { color: rgba(243, 217, 138, 0.55); }
+        .search-input:focus { border-color: #c9a84c; box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15); }
+        .search-icon {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          color: #c9a84c;
+          pointer-events: none;
+        }
+        [dir="rtl"] .search-input { padding: 12px 20px 12px 48px; }
+        [dir="rtl"] .search-icon { left: 16px; }
+        [dir="ltr"] .search-icon { right: 16px; }
+
         @media (max-width: 900px) { .main-card { flex-direction: column; } .lyrics-side { border-left: none; border-top: 1px solid rgba(201,168,76,0.2); } }
       `}</style>
+
+      <div className="search-row">
+        <div className="search-box">
+          <Search className="search-icon" size={18} />
+          <input
+            type="text"
+            className="search-input"
+            placeholder={t('Search by song title…', 'ابحث عن أغنية بالاسم…')}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            aria-label={t('Search songs', 'ابحث عن أغنية')}
+          />
+        </div>
+      </div>
 
       <div className="filter-row">
         {CATEGORIES.map((c) => (
@@ -995,15 +1064,21 @@ const SongsPage = () => {
             className={`filter-chip ${activeCategory === c.key ? 'active' : ''}`}
             onClick={() => setActiveCategory(c.key)}
           >
-            {c.ar}
+            {lang === 'ar' ? c.ar : c.en}
           </button>
         ))}
       </div>
 
+      {visibleSongs.length === 0 && (
+        <div style={{ textAlign: 'center', color: '#c9a84c', opacity: 0.8, padding: '40px 20px', fontFamily: lang === 'ar' ? 'Aref Ruqaa Ink, serif' : 'Cinzel, serif' }}>
+          ♪ {t('No songs match your search.', 'لا توجد أغانٍ مطابقة لبحثك.')}
+        </div>
+      )}
+
       {visibleSongs.map((song) => (
         <div key={song.id} className="main-card">
           <div className="player-side">
-            <div className="song-tag">{song.type}</div>
+            <div className="song-tag">{lang === 'ar' ? song.type : translateType(String(song.type || ''))}</div>
             <div className="cover-box" style={{ backgroundImage: `url(${toDriveDirectDownloadUrl(song.coverImg)})` }} />
             
             <div className="views-badge">{song.views}</div>
@@ -1042,7 +1117,7 @@ const SongsPage = () => {
             })}
 
             <div style={{marginTop: '20px', textAlign: 'center'}}>
-              <span className="label-gold">تقييمك</span>
+              <span className="label-gold">{t('Your rating', 'تقييمك')}</span>
               <div className="star-rating">
                 {[1, 2, 3, 4, 5].map((num) => (
                   <span key={num} className={`star ${num <= (starRatings[song.id] || 0) ? 'active' : ''}`} onClick={() => setStarRatings(prev => ({ ...prev, [song.id]: num }))}>★</span>
@@ -1052,17 +1127,19 @@ const SongsPage = () => {
           </div>
 
           <div className="lyrics-side">
-            <span className="label-gold">كلمات الأغنية</span>
+            <span className="label-gold">{t('Song lyrics', 'كلمات الأغنية')}</span>
             <div className="title-row">
               <h2 className="song-title-red">{song.title}</h2>
-              {'duet' in song && song.duet && <span className="duet-badge">ديو</span>}
+              {'duet' in song && song.duet && <span className="duet-badge">{t('Duet', 'ديو')}</span>}
             </div>
-            <div className="lyrics-scroll">
+            <div className="lyrics-scroll" dir="rtl">
               {song.lyrics.map((l, i) => (
                 <div key={i} className={`line ${l.red ? 'red' : ''}`}>{l.text}</div>
               ))}
             </div>
-            <span className="label-gold">الآراء النقدية (اضغط للتقييم)</span>
+            <span className="label-gold">
+              {t('Critic reviews (click to rate)', 'الآراء النقدية (اضغط للتقييم)')}
+            </span>
             {song.critics.map((critic, idx) => (
               <div key={idx} className="critic-item" onClick={() => handleCriticClick(song.id, idx)}>
                 <span style={{fontSize: '14px'}}>{critic}</span>

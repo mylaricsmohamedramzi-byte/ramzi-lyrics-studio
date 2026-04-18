@@ -250,7 +250,7 @@ const methods: Method[] = [
       { text: 'بس لما شفتك راق وهدي' },
       { text: '' },
       { text: 'أنتي نجمة مش بنلقي منها كتير', red: true },
-      { text: 'نجمة وُحد بس سايبه 100 تأثير', red: true },
+      { text: 'نجمة واحده بس سايبه 100 تأثير', red: true },
       { text: 'الكلام ده كله جد مش تحوير', red: true },
       { text: 'اللي يزعل القمر ده يبقا مش أصيل', red: true },
       { text: '' },
@@ -425,27 +425,25 @@ const SongwritingArtPage = () => {
           --cyan: #4cc9f0;
           --red: #ff4d4d;
 
-          --swa-bg-from: rgb(103, 6, 6);
-          --swa-bg-to: var(--leather-black);
+          /* Card colors are FIXED (midnight blue) regardless of theme */
+          --swa-card-bg: #040828;
+          --swa-card-border: rgba(201, 168, 76, 0.35);
+          --swa-card-text: #ffffff;
+          --swa-card-muted: #d8d4c2;
+          --swa-card-cyan: #4cc9f0;
+          --swa-card-gold: #c9a84c;
+          --swa-grain-opacity: 0.35;
+
+          /* Page-level (background, headings) follow theme */
           --swa-text: white;
           --swa-silver: var(--silver);
-          --swa-card-bg: rgba(15, 2, 2, 0.85);
-          --swa-card-border: rgba(201, 168, 76, 0.2);
-          --swa-cyan: var(--cyan);
-          --swa-grain-opacity: 0.35;
           --swa-heading-shadow: 2px 2px 10px rgba(0, 0, 0, 0.54);
           --swa-gold-text: var(--gold);
         }
 
         :root:not(.dark) .swa-root {
-          --swa-bg-from: #ffffff;
-          --swa-bg-to: #f7f2ec;
           --swa-text: #1a0509;
           --swa-silver: #2a1418;
-          --swa-card-bg: #ffffff;
-          --swa-card-border: rgba(120, 20, 30, 0.25);
-          --swa-cyan: #0a5c8a;
-          --swa-grain-opacity: 0.08;
           --swa-heading-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
           --swa-gold-text: #8a6a14;
         }
@@ -474,14 +472,15 @@ const SongwritingArtPage = () => {
           position: absolute;
           inset: 0;
           background-image: url('https://www.transparenttextures.com/patterns/leather.png');
-          opacity: var(--swa-grain-opacity);
+          opacity: 0.18;
           pointer-events: none;
           z-index: 1;
         }
 
         .swa-container {
           min-height: 100vh;
-          background: radial-gradient(circle at center, var(--swa-bg-from) 0%, var(--swa-bg-to) 100%);
+          /* Match the rest of the site: transparent so the global body bg shows through */
+          background: transparent;
           font-family: 'Tajawal', sans-serif;
           color: var(--swa-text);
           padding: 80px 20px;
@@ -527,23 +526,38 @@ const SongwritingArtPage = () => {
           transition: 0.4s;
           position: relative;
           border-radius: 6px;
+          color: var(--swa-card-text);
+          overflow: hidden;
         }
 
-        .swa-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        /* Card-scoped grain overlay (always visible, fixed dark card) */
+        .swa-card::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-image: url('https://www.transparenttextures.com/patterns/leather.png');
+          opacity: var(--swa-grain-opacity);
+          pointer-events: none;
+          mix-blend-mode: overlay;
+          z-index: 0;
+        }
+        .swa-card > * { position: relative; z-index: 1; }
+
+        .swa-card:hover { border-color: var(--swa-card-gold); transform: translateY(-5px); }
 
         .swa-bg-number {
           font-family: 'Almarai', sans-serif;
           font-size: 80px;
-          opacity: 0.15;
+          opacity: 0.18;
           position: absolute;
           top: 0;
           left: 15px;
-          color: var(--swa-gold-text);
+          color: var(--swa-card-gold);
         }
 
-        .swa-card-title { font-family: 'Almarai', sans-serif; font-size: 28px; color: var(--swa-gold-text); margin-bottom: 15px; }
-        .method-text { line-height: 2; font-size: 16px; color: var(--swa-silver); margin-bottom: 25px; }
-        .method-text .cyan { color: var(--swa-cyan); font-weight: 800; }
+        .swa-card-title { font-family: 'Almarai', sans-serif; font-size: 28px; color: var(--swa-card-gold); margin-bottom: 15px; }
+        .method-text { line-height: 2; font-size: 16px; color: var(--swa-card-muted); margin-bottom: 25px; }
+        .method-text .cyan { color: var(--swa-card-cyan); font-weight: 800; }
 
         .swa-song-reveal {
           max-height: 0;
@@ -554,14 +568,14 @@ const SongwritingArtPage = () => {
         .swa-card.active .swa-song-reveal {
           max-height: 5000px;
           padding-top: 30px;
-          border-top: 2px solid var(--swa-gold-text);
+          border-top: 2px solid var(--swa-card-gold);
           margin-top: 20px;
         }
 
         .swa-song-header {
           font-family: 'Aref Ruqaa Ink', serif;
           font-size: 34px;
-          color: var(--swa-gold-text);
+          color: var(--swa-card-gold);
           margin-bottom: 25px;
           text-align: center;
           direction: rtl;
@@ -572,21 +586,16 @@ const SongwritingArtPage = () => {
           font-size: 24px;
           margin-bottom: 12px;
           padding-right: 15px;
-          border-right: 4px solid var(--swa-gold-text);
+          border-right: 4px solid var(--swa-card-gold);
           direction: rtl;
           text-align: right;
-          color: var(--swa-text);
+          color: var(--swa-card-text);
         }
 
         .swa-lyric-line.is-red {
-          color: var(--red);
-          border-right-color: var(--red);
+          color: #ff4d4d;
+          border-right-color: #ff4d4d;
           font-weight: 900;
-        }
-
-        :root:not(.dark) .swa-lyric-line.is-red {
-          color: #b00020;
-          border-right-color: #b00020;
         }
 
         .swa-spacer { height: 20px; border-right: none; }
@@ -598,7 +607,6 @@ const SongwritingArtPage = () => {
 
       <div className="swa-root">
         <div className="swa-container" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-          <div className="swa-grain-overlay" />
           <h1 className="swa-heading">
             {lang === 'ar' ? 'فن كتابة الأغنية' : 'The Art of Songwriting'}
           </h1>
@@ -615,11 +623,11 @@ const SongwritingArtPage = () => {
                 className={`swa-card ${active === idx ? 'active' : ''}`}
                 onClick={() => setActive(active === idx ? null : idx)}
               >
-                <div className="swa-bg-number">{m.number}</div>
+                <div className="swa-bg-number">{lang === 'ar' ? m.number : toWesternDigits(m.number)}</div>
                 <h2 className="swa-card-title">
                   {lang === 'ar' ? m.title.ar : m.title.en}
                 </h2>
-                <div style={{ color: 'var(--gold)', opacity: 0.6, fontSize: '13px', marginBottom: '15px' }}>
+                <div style={{ color: 'var(--swa-card-gold)', opacity: 0.65, fontSize: '13px', marginBottom: '15px' }}>
                   {lang === 'ar' ? m.subtitle.ar : m.subtitle.en}
                 </div>
                 <div className="method-text">

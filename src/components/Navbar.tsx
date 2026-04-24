@@ -24,9 +24,9 @@ const Navbar = () => {
   const location = useLocation();
 
   const navBg = isDark ? 'bg-background/90 border-border/50' : 'bg-black/95 border-white/10';
-  const navText = isDark ? 'text-foreground/70' : 'text-white/80';
-  const navTextActive = isDark ? 'text-primary bg-primary/5' : 'text-[#c9a84c] bg-white/5';
-  const navHover = isDark ? 'hover:bg-primary/10 hover:text-primary' : 'hover:bg-white/10 hover:text-[#c9a84c]';
+  const navText = 'font-nav';
+  const navTextActive = isDark ? 'font-nav bg-primary/5' : 'font-nav bg-white/5';
+  const navHover = isDark ? 'hover:bg-primary/10' : 'hover:bg-white/10';
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl ${navBg} border-b transition-colors duration-400`}>

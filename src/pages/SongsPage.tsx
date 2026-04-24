@@ -1,4 +1,18 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
+import SearchBar from '@/components/SearchBar';
+import { normalizeArabic } from '@/lib/arabic';
+
+const SONG_CATEGORIES: { key: string; label: string; match: (t: string) => boolean }[] = [
+  { key: 'all',      label: 'الكل',      match: () => true },
+  { key: 'romantic', label: 'رومانسي',  match: (t) => /رومانسي|رمانسي|سلو/.test(t) },
+  { key: 'rap',      label: 'راب',       match: (t) => /راب/.test(t) },
+  { key: 'pop',      label: 'بوب',       match: (t) => /بوب|ديسكو|هاوس/.test(t) },
+  { key: 'maqsum',   label: 'مقسوم',     match: (t) => /مقسوم/.test(t) },
+  { key: 'patriotic',label: 'وطني',      match: (t) => /وطني/.test(t) },
+  { key: 'social',   label: 'اجتماعي',  match: (t) => /اجتماعي|إجتماعي/.test(t) },
+  { key: 'religious',label: 'إسلامي',    match: (t) => /إسلامي|اسلامي|ديني/.test(t) },
+  { key: 'saidi',    label: 'صعيدي',     match: (t) => /صعيدي/.test(t) },
+];
 
 /** Converts Google Drive sharing / open links to direct download URLs. Leaves other URLs unchanged. */
 function toDriveDirectDownloadUrl(url: string): string {

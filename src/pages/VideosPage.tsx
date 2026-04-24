@@ -1,4 +1,16 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
+import SearchBar from '@/components/SearchBar';
+import { normalizeArabic } from '@/lib/arabic';
+
+const VIDEO_CATEGORIES: { key: string; label: string; match: (c: string) => boolean }[] = [
+  { key: 'all',      label: 'الكل',      match: () => true },
+  { key: 'romantic', label: 'رومانسي',  match: (c) => /romantic|رومانسي|رمانسي|maqsum/i.test(c) },
+  { key: 'rap',      label: 'راب',       match: (c) => /rap|راب/i.test(c) },
+  { key: 'rock',     label: 'روك',       match: (c) => /rock/i.test(c) },
+  { key: 'drama',    label: 'دراما',     match: (c) => /drama|دراما/i.test(c) },
+  { key: 'bts',      label: 'كواليس',    match: (c) => /behind|كواليس/i.test(c) },
+  { key: 'social',   label: 'اجتماعي',  match: (c) => /اجتماعي|إجتماعي|social/i.test(c) },
+];
 
 // دالة استخراج ID اليوتيوب
 function getYouTubeVideoId(url: string): string | null {

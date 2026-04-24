@@ -1,4 +1,15 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
+import SearchBar from '@/components/SearchBar';
+import { normalizeArabic } from '@/lib/arabic';
+
+const MEL_CATEGORIES: { key: string; label: string; match: (t: string) => boolean }[] = [
+  { key: 'all',      label: 'الكل',     match: () => true },
+  { key: 'romantic', label: 'رومانسي', match: (t) => /رومانسي|رمانسي|سلو/.test(t) },
+  { key: 'pop',      label: 'بوب',      match: (t) => /بوب/.test(t) },
+  { key: 'maqsum',   label: 'مقسوم',    match: (t) => /مقسوم/.test(t) },
+  { key: 'shaabi',   label: 'شعبي',     match: (t) => /شعبي/.test(t) },
+  { key: 'social',   label: 'اجتماعي', match: (t) => /اجتماعي|إجتماعي/.test(t) },
+];
 
 /** Converts Google Drive sharing / open links to direct download URLs. Leaves other URLs unchanged. */
 function toDriveDirectDownloadUrl(url: string): string {

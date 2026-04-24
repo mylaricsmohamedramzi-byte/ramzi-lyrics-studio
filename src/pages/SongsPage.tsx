@@ -983,6 +983,20 @@ const SongsPage = () => {
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
   const [playingKey, setPlayingKey] = useState<string | null>(null);
   const [audioTimes, setAudioTimes] = useState<Record<string, { current: number; duration: number }>>({});
+  const [search, setSearch] = useState('');
+  const [activeCat, setActiveCat] = useState('all');
+
+  const filteredSongs = useMemo(() => {
+    const q = normalizeArabic(search);
+    const cat = SONG_CATEGORIES.find((c) => c.key === activeCat) || SONG_CATEGORIES[0];
+    return allSongs.filter((s) => {
+      if (!cat.match(s.type || '')) return false;
+      if (!q) return true;
+      const hay = [s.title, s.type, ...(s.lyrics?.map((l) => l.text) || [])].join(' ');
+      return normalizeArabic(hay).includes(q);
+    });
+  }, [search, activeCat]);
+
   const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
 
   const normalizeAudioUrls = (audioUrls: string[] | string | undefined): string[] => {

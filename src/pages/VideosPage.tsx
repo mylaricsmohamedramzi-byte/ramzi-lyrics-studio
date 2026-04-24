@@ -1,4 +1,16 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
+import SearchBar from '@/components/SearchBar';
+import { normalizeArabic } from '@/lib/arabic';
+
+const VIDEO_CATEGORIES: { key: string; label: string; match: (c: string) => boolean }[] = [
+  { key: 'all',      label: 'الكل',      match: () => true },
+  { key: 'romantic', label: 'رومانسي',  match: (c) => /romantic|رومانسي|رمانسي|maqsum/i.test(c) },
+  { key: 'rap',      label: 'راب',       match: (c) => /rap|راب/i.test(c) },
+  { key: 'rock',     label: 'روك',       match: (c) => /rock/i.test(c) },
+  { key: 'drama',    label: 'دراما',     match: (c) => /drama|دراما/i.test(c) },
+  { key: 'bts',      label: 'كواليس',    match: (c) => /behind|كواليس/i.test(c) },
+  { key: 'social',   label: 'اجتماعي',  match: (c) => /اجتماعي|إجتماعي|social/i.test(c) },
+];
 
 // دالة استخراج ID اليوتيوب
 function getYouTubeVideoId(url: string): string | null {
@@ -373,6 +385,20 @@ const allVideos = [
 const VideosPage = () => {
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
   const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
+  const [search, setSearch] = useState('');
+  const [activeCat, setActiveCat] = useState('all');
+
+  const filteredVideos = useMemo(() => {
+    const q = normalizeArabic(search);
+    const cat = VIDEO_CATEGORIES.find((c) => c.key === activeCat) || VIDEO_CATEGORIES[0];
+    return allVideos.filter((v) => {
+      if (!cat.match(v.category || '')) return false;
+      if (!q) return true;
+      const hay = [v.title, v.category, ...(v.lyrics?.map((l) => l.text) || [])].join(' ');
+      return normalizeArabic(hay).includes(q);
+    });
+  }, [search, activeCat]);
+
 
   const handleCriticClick = (videoId: number, idx: number) => {
     const key = `${videoId}-${idx}`;
@@ -492,7 +518,32 @@ const VideosPage = () => {
         @media (max-width: 900px) { .card-content { grid-template-columns: 1fr; } .video-container { padding: 0 15px; } .main-card { border-radius: 20px; } }
       `}</style>
 
-      {allVideos.map((video) => (
+      {/* Search + Filter */}
+      <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
+        <SearchBar
+          value={search}
+          onChange={setSearch}
+          placeholder="ابحث عن فيديو..."
+          className="mb-5"
+        />
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
+          {VIDEO_CATEGORIES.map((c) => (
+            <button
+              key={c.key}
+              type="button"
+              className={`filter-chip ${activeCat === c.key ? 'active' : ''}`}
+              onClick={() => setActiveCat(c.key)}
+            >
+              {c.label}
+            </button>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 12, color: '#c9a84c', fontSize: 13 }}>
+          {filteredVideos.length} / {allVideos.length}
+        </div>
+      </div>
+
+      {filteredVideos.map((video) => (
         <div key={video.id} className="main-card">
           <div className="card-header">
             <span className="song-label">Song lyrics</span>

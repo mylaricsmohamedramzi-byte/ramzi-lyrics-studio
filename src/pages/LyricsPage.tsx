@@ -1,7 +1,8 @@
 import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import { Search, PenLine } from 'lucide-react';
+import { PenLine } from 'lucide-react';
 import { useState } from 'react';
+import SearchBar from '@/components/SearchBar';
 
 const LyricsPage = () => {
   const { t } = useLang();
@@ -33,22 +34,11 @@ const LyricsPage = () => {
 
       {/* Search */}
       <div className="container mx-auto px-4 max-w-5xl -mt-4 mb-12">
-        <div className="max-w-md mx-auto">
-          <div className="relative group">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder={t('Search lyrics...', 'ابحث عن الكلمات...')}
-              className="w-full pl-11 pr-4 py-3 rounded-full border border-border/30 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all font-body"
-              style={{
-                background: isDark ? 'rgba(20,5,8,0.7)' : 'rgba(255,255,255,0.7)',
-                backdropFilter: 'blur(12px)',
-              }}
-            />
-          </div>
-        </div>
+        <SearchBar
+          value={search}
+          onChange={setSearch}
+          placeholder={t('Search lyrics...', 'ابحث عن الكلمات...')}
+        />
       </div>
 
       {/* Empty State */}

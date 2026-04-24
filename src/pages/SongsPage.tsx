@@ -1,4 +1,18 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
+import SearchBar from '@/components/SearchBar';
+import { normalizeArabic } from '@/lib/arabic';
+
+const SONG_CATEGORIES: { key: string; label: string; match: (t: string) => boolean }[] = [
+  { key: 'all',      label: 'الكل',      match: () => true },
+  { key: 'romantic', label: 'رومانسي',  match: (t) => /رومانسي|رمانسي|سلو/.test(t) },
+  { key: 'rap',      label: 'راب',       match: (t) => /راب/.test(t) },
+  { key: 'pop',      label: 'بوب',       match: (t) => /بوب|ديسكو|هاوس/.test(t) },
+  { key: 'maqsum',   label: 'مقسوم',     match: (t) => /مقسوم/.test(t) },
+  { key: 'patriotic',label: 'وطني',      match: (t) => /وطني/.test(t) },
+  { key: 'social',   label: 'اجتماعي',  match: (t) => /اجتماعي|إجتماعي/.test(t) },
+  { key: 'religious',label: 'إسلامي',    match: (t) => /إسلامي|اسلامي|ديني/.test(t) },
+  { key: 'saidi',    label: 'صعيدي',     match: (t) => /صعيدي/.test(t) },
+];
 
 /** Converts Google Drive sharing / open links to direct download URLs. Leaves other URLs unchanged. */
 function toDriveDirectDownloadUrl(url: string): string {
@@ -969,6 +983,20 @@ const SongsPage = () => {
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
   const [playingKey, setPlayingKey] = useState<string | null>(null);
   const [audioTimes, setAudioTimes] = useState<Record<string, { current: number; duration: number }>>({});
+  const [search, setSearch] = useState('');
+  const [activeCat, setActiveCat] = useState('all');
+
+  const filteredSongs = useMemo(() => {
+    const q = normalizeArabic(search);
+    const cat = SONG_CATEGORIES.find((c) => c.key === activeCat) || SONG_CATEGORIES[0];
+    return allSongs.filter((s) => {
+      if (!cat.match(s.type || '')) return false;
+      if (!q) return true;
+      const hay = [s.title, s.type, ...(s.lyrics?.map((l) => l.text) || [])].join(' ');
+      return normalizeArabic(hay).includes(q);
+    });
+  }, [search, activeCat]);
+
   const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
 
   const normalizeAudioUrls = (audioUrls: string[] | string | undefined): string[] => {
@@ -1078,7 +1106,32 @@ const SongsPage = () => {
         @media (max-width: 900px) { .main-card { flex-direction: column; } .lyrics-side { border-left: none; border-top: 1px solid rgba(201,168,76,0.2); } }
       `}</style>
 
-      {allSongs.map((song) => (
+      {/* Search + Filter */}
+      <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
+        <SearchBar
+          value={search}
+          onChange={setSearch}
+          placeholder="ابحث عن أغنية..."
+          className="mb-5"
+        />
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
+          {SONG_CATEGORIES.map((c) => (
+            <button
+              key={c.key}
+              type="button"
+              className={`filter-chip ${activeCat === c.key ? 'active' : ''}`}
+              onClick={() => setActiveCat(c.key)}
+            >
+              {c.label}
+            </button>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 12, color: '#c9a84c', fontSize: 13 }}>
+          {filteredSongs.length} / {allSongs.length}
+        </div>
+      </div>
+
+      {filteredSongs.map((song) => (
         <div key={song.id} className="main-card">
           <div className="player-side">
             <div className="song-tag">{song.type}</div>

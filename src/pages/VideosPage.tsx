@@ -385,6 +385,20 @@ const allVideos = [
 const VideosPage = () => {
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
   const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
+  const [search, setSearch] = useState('');
+  const [activeCat, setActiveCat] = useState('all');
+
+  const filteredVideos = useMemo(() => {
+    const q = normalizeArabic(search);
+    const cat = VIDEO_CATEGORIES.find((c) => c.key === activeCat) || VIDEO_CATEGORIES[0];
+    return allVideos.filter((v) => {
+      if (!cat.match(v.category || '')) return false;
+      if (!q) return true;
+      const hay = [v.title, v.category, ...(v.lyrics?.map((l) => l.text) || [])].join(' ');
+      return normalizeArabic(hay).includes(q);
+    });
+  }, [search, activeCat]);
+
 
   const handleCriticClick = (videoId: number, idx: number) => {
     const key = `${videoId}-${idx}`;

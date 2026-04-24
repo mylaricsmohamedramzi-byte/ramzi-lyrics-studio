@@ -352,6 +352,20 @@ const MelodiesPage  = () => {
   const [playingKey, setPlayingKey] = useState<string | null>(null);
   const [audioTimes, setAudioTimes] = useState<Record<string, { current: number; duration: number }>>({});
   const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
+  const [search, setSearch] = useState('');
+  const [activeCat, setActiveCat] = useState('all');
+
+  const filteredSongs = useMemo(() => {
+    const q = normalizeArabic(search);
+    const cat = MEL_CATEGORIES.find((c) => c.key === activeCat) || MEL_CATEGORIES[0];
+    return allSongs.filter((s) => {
+      if (!cat.match(s.type || '')) return false;
+      if (!q) return true;
+      const hay = [s.title, s.type, ...(s.lyrics?.map((l) => l.text) || [])].join(' ');
+      return normalizeArabic(hay).includes(q);
+    });
+  }, [search, activeCat]);
+
 
   const normalizeAudioUrls = (audioUrls: string[] | string | undefined): string[] => {
     if (Array.isArray(audioUrls)) return audioUrls.filter((url) => typeof url === 'string' && url.trim() !== '');

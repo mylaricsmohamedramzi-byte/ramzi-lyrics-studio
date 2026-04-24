@@ -1,6 +1,4 @@
-import { useState, useRef, useMemo } from 'react';
-import { useLang } from '@/contexts/LangContext';
-import { Search } from 'lucide-react';
+import { useState, useRef } from 'react';
 
 /** Converts Google Drive sharing / open links to direct download URLs. Leaves other URLs unchanged. */
 function toDriveDirectDownloadUrl(url: string): string {
@@ -74,7 +72,7 @@ const allSongs = [
             { text: "نفسي اجيبلك البساط ... نركب عليه ونطير", red: true},
             { text: "أو نستكشف البحار ... أو نبقا من الاساطير", red: true },
           ],
-          critics: ["الكلمات مبهره واللحن متناغم", "الأغنية مناسبة لصوت تامر حسني"]
+          critics: ["الكلمات مبهره واللحن متناغم","الكلمات مًبهره لكن اللحن ضعيف", " الأغنية مناسبة لصوت أمير عيد",]
   },
   {
     id: 2,
@@ -130,7 +128,7 @@ const allSongs = [
         { text: "لكن عيناه بتتهرب", red: true },
         { text: "كل أما بيشوفوني", red: true  }
     ],
-    critics: ["كلمات خفيفة ومبهجة", "توزيع موسيقي مختلف"]
+    critics: ["كلمات خفيفة وبسيطة", "اللحن - 1 -أفضل ","اللحن - 2 -أفضل ","الاغنية مناسبة لصوت  محمد حماقي ","الاغنية مناسبة لصوت رامي جمال"]
   },
   {
     id: 3,
@@ -182,7 +180,7 @@ const allSongs = [
       { text: "وأنت قلبي روحي أنت كل حاجة نور عيوني كوني مصدر السعادة", red: true },
       { text: "يا اللي حبك ساب فيه ميت علامة ميت علامة", red: true },
     ],
-    critics: ["في انتظار التقييم"]
+    critics: ["كلمات مُبهجة", "اللحن - 1 -أفضل ","اللحن - 2 -أفضل ","مناسبة لصوت تامر حسني و شرين عبدالوهاب","مناسبة لصوت رامي صبري و نانسي عجرم"]
   },
   {
     id: 4,
@@ -222,7 +220,7 @@ const allSongs = [
       { text: "نعمل ما بدلنا و زياده .. و ننجح كدا من غير إِعاده", red: true },
       { text: "ونتهّرب من الاحزان", red: true },
     ],
-    critics: ["في انتظار التقييم"]
+    critics: ["كلمات مُعبرة", "اللحن - 1 -أفضل ","اللحن - 2 -أفضل ","مناسبة لصوت محمد حماقي و أنغام ","مناسبة لصوت بهاء سلطان و إليسا"]
   },
   {
     id: 5,
@@ -263,7 +261,7 @@ const allSongs = [
       { text: "اه غيابه عنا مِحنا ... دا البُعاد بقا من عوايدُه", red: true },
       { text: "هوا ليه بس جرِحنا ... شكلُه مش عارف غلاوته", red: true },
     ],
-    critics: ["في انتظار التقييم"]
+    critics: ["الكلمات ضعبفه نسبياً","اللحن مختلف ","مناسبة لصوت عزيز مارقه"]
   },
   {
     id: 6,
@@ -304,7 +302,7 @@ const allSongs = [
       { text: "وأديني بسياره وبهاوده ... وبفتح ف السيره كل شويه", red: true },
       { text: "ومسيره يقول اللي ف قلبه ... و يقول بحبك ليه", red: true },
     ],
-    critics: ["في انتظار التقييم"]
+    critics: ["الكلمات سهلة الحفظ","اللحن ضعيف نسبياً","مناسبة لصوت توليت"]
   },
   {
     id: 7,
@@ -341,9 +339,9 @@ const allSongs = [
       { text: "وَاللهِ إِنَّ جُرْحِي يَطِيبُ حِينَ أَرَى عَيْنَيْكِ", red: false },
       { text: "\u00A0", red: false },
     ],
-    critics: ["في انتظار التقييم"]
+    critics: ["الكلمات عميقه وقويه ","اللحن - 1 -أفضل ","اللحن - 2 -أفضل ","مناسبة لصوت كاظم الساهر","مناسبة لصوت فضل شاكر"]
   },
-  {
+    {
     id: 8,
     title: "لو شافني",
     type: "بوب هاوس",
@@ -379,7 +377,7 @@ const allSongs = [
       { text: "حتي الامان و الرحه بيكونو في قربي", red: true },
       { text: "و اله بيكونو ف قربي", red: true },
     ],
-    critics: ["في انتظار التقييم"],
+    critics: ["الكلمات بسيطه وسلِسه","اللحن ضعيف نسبياً","مناسبة لصوت كريم محسن","شرين عبد الوهاب"],
   },
   { 
     id: 9,
@@ -412,7 +410,7 @@ const allSongs = [
       { text: "دا ليه سحر جميل ... بيدخل قلبنا يحييه", red: true },
       { text: "دا ملوش توقيت ... دا قدر مكتوب ونصيب", red: true }
     ],
-    critics: ["في انتظار التقييم"],
+    critics: ["الكلمات عاديه وغير مُلفته ","اللحن مناسب و هادء","مناسبة لصوت ناسي عجرم "],
   },
   {
     "id": 10,
@@ -471,7 +469,7 @@ const allSongs = [
         { "text": "أَنْ تَحْفَظَ مِصْرَنَا .. يَا إِلَهَ العَالَمِينْ", "red": false },
         {"text": "\u00A0","red": false},
     ],
-    critics: ["في انتظار التقييم"]
+    critics: ["الكلمات مُميزه","اللحن حماسي","مناسبة لصوت علي الحجار ","مناسبة لصوت أصاله نصري"]
   },
   {
     id: 11,
@@ -515,7 +513,7 @@ const allSongs = [
         { "text": "ولا عٌمر دَخِيل راح يدخلها ..... في صلتنا تملي بندعي لها", "red": false },
         { "text": "أحفظها يا رب", "red": false }
     ],
-    critics: ["في انتظار التقييم"]
+    critics: ["الكلمات بسيطة و إجتماعية ","اللحن مُبهج","مناسبة لصوت حسين الجسمي","مناسبة لصوت بهاء سلطان "]
 },
 {
   id: 12,
@@ -555,7 +553,7 @@ const allSongs = [
       { "text": "وكفايه انك  بتكون وسط الناس الغاليه", "red": true },
       { "text": "الوقت مينفعش يضيع منه و لا ثانيه", "red": true }
   ],
-  critics: ["في انتظار التقييم"]
+  critics: ["الكلمات تقليدية","اللحن مناسب","مناسبة لصوت حماده هلال"]
 },
 {
   id: 13,
@@ -605,7 +603,7 @@ const allSongs = [
       { "text": "دا انت دخلت  ... قلبي خلاص", "red": false },
       { "text": "دا انت شغلت  ... كل العُزاز", "red": false }
   ],
-  critics: ["في انتظار التقييم"]
+  critics: ["الكلمات متناسقه ","اللحن مختلف ","مناسبة لصوت محمد منير "]
 },
 {
   id: 14,
@@ -657,7 +655,7 @@ const allSongs = [
       { "text": "رحته دي عطري ونسيمي", "red": false },
       { "text": "و أسمُه مَفرجش لساني", "red": false }
   ],
-  critics: ["في انتظار التقييم"]
+  critics: ["الكلمات  مُعبره","اللحن غير مناسب","مناسبة لصوت علي الحجار"]
 },
 {
   id: 15,
@@ -693,7 +691,7 @@ const allSongs = [
       { "text": "فكنْ للخيرِ سَبَّاقًا، تَجِدِ اللهَ لَكَ عَونًا", "red": true },
       { "text": "وعِشْ ما شِئتَ، فالدنيا لَنْ يَبقَى فيها أحَدًا.", "red": true }
   ],
-  critics: ["في انتظار التقييم"]
+  critics: ["الكلمات مُأثرة","اللحن مُلائم","مناسبة لصوت الشيخ مشاري راشد العفاسي"]
 },
 {
   id: 16,
@@ -760,7 +758,7 @@ const allSongs = [
       { "text": "وبخُلُقِهِ الكونُ إحتفى.", "red": false },
       { "text": "\u00A0", "red": false }
   ],
-  critics: ["في انتظار التقييم"]
+  critics: ["الكلمات عميقة","اللحن - 1 -أفضل ","اللحن - 2 -أفضل "]
 },
 {
   id: 17,
@@ -808,7 +806,7 @@ const allSongs = [
       { "text": "قد عَجَزَ قولي وهَدَّني الشَّقاءَ", "red": false },
       { "text": "\u00A0", "red": false }
   ],
-  critics: ["في انتظار التقييم"]
+  critics: ["الكلمات بسيطه","اللحن مناسب"]
 },
 {
   id: 18,
@@ -853,37 +851,125 @@ const allSongs = [
       { "text": "إِنِّي أَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِي", "red": true },
       { "text": "فَامْنُنْ عَلَيَّ بِفَضْلِكَ يَا رَبِّي", "red": true }
   ],
-  critics: ["في انتظار التقييم"]
+  critics: ["الكلمات عادية","اللحن - 1 -أفضل ","اللحن - 2 -أفضل "]
 }
-];
+,{
+  id: 19,
+  title: "جمالك ماركة",
+  type: "رومانسي بوب",
+  audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1777006774/Gamalek_marka_1_jo00uq.mp3",
+                "https://res.cloudinary.com/dq3orhpdj/video/upload/v1777006816/Gamalek_marka_2_wp5gfs.mp3"
+                 ],
+  coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777007669/%D8%AC%D9%85%D8%A7%D9%84%D9%83_%D9%85%D8%A7%D8%B1%D9%83%D9%87_gj7ej1.png",
+  views: "0 K",
+  credits: "كلمات والحان : محمد رمزي",
+  lyrics: [
+    { text: "كلهم حلوين وانتي", red: false },
+    { text: "طبعا الاحلى", red: false },
+    { text: "\u00A0", red: false },
+    { text: "هما خطفوا العين وانتي", red: false },
+    { text: "في عيني ساكنه", red: false },
+    { text: "\u00A0", red: false },
+    { text: "الجمال علامات وانتي", red: false },
+    { text: "جمالك ماركة", red: false },
+    { text: "\u00A0", red: false },
+    { text: "هما بيجيبوا هم وانتي", red: false },
+    { text: "طلتك فيها بركة", red: false },
+    { text: "\u00A0", red: false },
+    
+    { text: "عليكي بسمة", red: true },
+    { text: "تفرح القلب الحزين", red: true },
+    { text: "\u00A0", red: false },
+    { text: "يا احلى رسمة", red: true },
+    { text: "احتاروا فيها الرسامين", red: true },
+    { text: "\u00A0", red: false },
+    { text: "يا ارق نسمة", red: true },
+    { text: "مرت عليا من سنين", red: true },
+    { text: "\u00A0", red: false },
+    { text: "يا اهل الهوى", red: true },
+    { text: "زودوا العشاق اتنين", red: true },
+    { text: "\u00A0", red: false },
+    
+    { text: "مهما اغيب عليكي برضه", red: false },
+    { text: "عمري ما انساكي", red: false },
+    { text: "\u00A0", red: false },
+    { text: "ده الحياة بتضحك لي لما", red: false },
+    { text: "ببقى وياكي", red: false },
+    { text: "\u00A0", red: false },
+    { text: "دا كفاية سؤالك عليا", red: false },
+    { text: "من وقت للتاني", red: false },
+    { text: "\u00A0", red: false },
+    { text: "ناس كتير في حياتي وانتي", red: false },
+    { text: "اللي باقية لي", red: false },
+    { text: "\u00A0", red: false },
+    
+    { text: "عليكي بسمة", red: true },
+    { text: "تفرح القلب الحزين", red: true },
+    { text: "\u00A0", red: false },
+    { text: "يا احلى رسمة", red: true },
+    { text: "احتاروا فيها الرسامين", red: true },
+    { text: "\u00A0", red: false },
+    { text: "يا ارق نسمة", red: true },
+    { text: "مرت عليا من سنين", red: true },
+    { text: "\u00A0", red: false },
+    { text: "يا اهل الهوى", red: true },
+    { text: "زودوا العشاق اتنين", red: true },
+  ],
+  critics: [
+    "كلمات جذابة وسهلة الحفظ",
+    "اللحن مناسب",
+    "مناسبة لصوت شبابي",
+  ],
+},{
+  id: 20,
+  title: "نفد صبري",
+  type: "رومانسي بوب",
+  audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1777010342/Nafad_sabry_1_ywtllp.mp3","https://res.cloudinary.com/dq3orhpdj/video/upload/v1777010371/Nafad_sabry_vnklxf.mp3"],
+  coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777010071/%D9%86%D9%81%D8%AF_%D8%B5%D8%A8%D8%B1%D9%8A_q2tahj.png",
+  views: "0 K",
+  credits: "كلمات والحان : محمد رمزي",
+  lyrics: [
+    { text: "هذه الكلمات باللهجة السعوديه ", red: true },
+    { text: "\u00A0", red: false },
+  
+    { text: "يا عالم رسوني قتلتني الحيرة", red: false },
+    { text: "اللي ما ابي غيره هو يبي غيري", red: false },
+    { text: "دموعي ما فارجوني لا يوم ولا ليلة", red: false },
+    { text: "صراحة نفد صبري واشكي انا لليلي", red: false },
+    { text: "\u00A0", red: false },
 
-const CATEGORIES: { key: string; ar: string; en: string; match: (t: string) => boolean }[] = [
-  { key: 'all', ar: 'الكل', en: 'All', match: () => true },
-  { key: 'pop', ar: 'بوب', en: 'Pop', match: (t) => t.includes('بوب') },
-  { key: 'maqsum', ar: 'مقسوم', en: 'Maqsum', match: (t) => t.includes('مقسوم') },
-  { key: 'romantic', ar: 'رومانسي', en: 'Romantic', match: (t) => t.includes('رومانسي') || t.includes('رمانسي') },
-  { key: 'islamic', ar: 'إسلامي', en: 'Islamic', match: (t) => t.includes('إسلامي') || t.includes('اسلامي') },
-  { key: 'patriotic', ar: 'وطني', en: 'Patriotic', match: (t) => t.includes('وطني') },
-  { key: 'classic', ar: 'كلاسيك', en: 'Classic', match: (t) => t.includes('كلاسيك') },
+    { text: "عسى الله يلين جلبه علي ويهواني", red: true },
+    { text: "ترى صعبة هالوحدة وشوجي عياني", red: true },
+    { text: "ما في غيره اخذ عقلي وسكن وجداني", red: true },
+    { text: "تدرون نبض جلبي يزيد لو بس ناداني", red: true },
+    { text: "\u00A0", red: false },
+
+    { text: "اذا كان بيدي ان اختار اقداري", red: false },
+    { text: "ما راح اختار سواك جدري ومكتوبي", red: false },
+    { text: "ولان بعدك عني مدمر اعصابي", red: false },
+    { text: "اتمنى لو بس عيونك الحلوة يزورني", red: false },
+    { text: "\u00A0", red: false },
+
+    { text: "عسى الله يلين جلبه علي ويهواني", red: true },
+    { text: "ترى صعبة هالوحدة وشوجي عياني", red: true },
+    { text: "ما في غيره اخذ عقلي وسكن وجداني", red: true },
+    { text: "تدرون نبض جلبي يزيد لو بس ناداني", red: true },
+  ],
+  critics: [
+    "اللهجة السعودية واضحة وسلسة",
+    "اللحن - 1 -أفضل ","اللحن - 2 -أفضل ",
+    "التجربه بوجه عام ممتازه",
+    "مناسبة لصوت رجالي دافئ",
+  ],
+},
 ];
 
 const SongsPage = () => {
-  const { t, lang } = useLang();
   const [starRatings, setStarRatings] = useState<Record<number, number>>({});
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
   const [playingKey, setPlayingKey] = useState<string | null>(null);
   const [audioTimes, setAudioTimes] = useState<Record<string, { current: number; duration: number }>>({});
-  const [activeCategory, setActiveCategory] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState<string>('');
   const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
-
-  const activeMatcher = CATEGORIES.find((c) => c.key === activeCategory)?.match ?? (() => true);
-  const visibleSongs = useMemo(() => {
-    const q = searchQuery.trim().toLowerCase();
-    return allSongs
-      .filter((s) => activeMatcher(String(s.type || '')))
-      .filter((s) => (q === '' ? true : String(s.title || '').toLowerCase().includes(q)));
-  }, [activeMatcher, searchQuery]);
 
   const normalizeAudioUrls = (audioUrls: string[] | string | undefined): string[] => {
     if (Array.isArray(audioUrls)) return audioUrls.filter((url) => typeof url === 'string' && url.trim() !== '');
@@ -897,25 +983,6 @@ const SongsPage = () => {
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
     return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-  };
-
-  // Translate the Arabic genre/type label into English (best-effort token replacement).
-  const TYPE_DICT: Record<string, string> = {
-    'راب': 'Rap',
-    'بوب': 'Pop',
-    'مقسوم': 'Maqsum',
-    'رومانسي': 'Romantic',
-    'رمانسي': 'Romantic',
-    'إسلامي': 'Islamic',
-    'اسلامي': 'Islamic',
-    'وطني': 'Patriotic',
-    'كلاسيك': 'Classic',
-    'Semi-Romantic': 'Semi-Romantic',
-  };
-  const translateType = (arType: string): string => {
-    const tokens = arType.split(/\s+/).filter(Boolean);
-    const mapped = tokens.map((tok) => TYPE_DICT[tok] || tok);
-    return mapped.join(' ');
   };
 
   const togglePlay = (songId: number, audioIdx: number) => {
@@ -938,11 +1005,11 @@ const SongsPage = () => {
   };
 
   return (
-    <div dir={lang === 'ar' ? 'rtl' : 'ltr'} className="page-wrapper">
+    <div dir="rtl" className="page-wrapper">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&family=Cinzel:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&display=swap');
         
-        .page-wrapper { background: transparent; min-height: 100vh; padding: 40px 20px; color: white; font-family: 'Almarai', sans-serif; }
+        .page-wrapper { background: linear-gradient(180deg, #1a051a 0%, #000 100%); min-height: 100vh; padding: 40px 20px; color: white; font-family: 'Almarai', sans-serif; }
         .main-card { max-width: 1100px; margin: 0 auto 60px; background: #040828; border: 2px solid #c9a84c; border-radius: 40px; display: flex; flex-direction: row-reverse; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8); }
         .player-side { flex: 1; padding: 30px; background: rgba(0,0,0,0.3); display: flex; flex-direction: column; align-items: center; }
         
@@ -1008,77 +1075,13 @@ const SongsPage = () => {
 
         .critic-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; margin-bottom: 8px; cursor: pointer; display: flex; justify-content: space-between; border: 1px solid rgba(201,168,76,0.1); }
 
-        .filter-row { max-width: 1100px; margin: 0 auto 30px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-        .filter-chip { background: rgba(4, 8, 40, 0.6); color: #f3d98a; border: 1px solid rgba(201, 168, 76, 0.4); border-radius: 999px; padding: 8px 18px; cursor: pointer; font-family: 'Almarai', sans-serif; font-size: 0.95rem; transition: all 0.25s ease; }
-        .filter-chip:hover { background: rgba(201, 168, 76, 0.2); }
-        .filter-chip.active { background: #c9a84c; color: #040828; font-weight: 700; border-color: #c9a84c; }
-
-        .search-row { max-width: 1100px; margin: 0 auto 20px; display: flex; justify-content: center; }
-        .search-box { position: relative; width: 100%; max-width: 520px; }
-        .search-input {
-          width: 100%;
-          background: rgba(4, 8, 40, 0.6);
-          color: #f3d98a;
-          border: 1px solid rgba(201, 168, 76, 0.4);
-          border-radius: 999px;
-          padding: 12px 48px 12px 20px;
-          font-family: 'Almarai', sans-serif;
-          font-size: 0.95rem;
-          outline: none;
-          transition: all 0.25s ease;
-        }
-        .search-input::placeholder { color: rgba(243, 217, 138, 0.55); }
-        .search-input:focus { border-color: #c9a84c; box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15); }
-        .search-icon {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          color: #c9a84c;
-          pointer-events: none;
-        }
-        [dir="rtl"] .search-input { padding: 12px 20px 12px 48px; }
-        [dir="rtl"] .search-icon { left: 16px; }
-        [dir="ltr"] .search-icon { right: 16px; }
-
         @media (max-width: 900px) { .main-card { flex-direction: column; } .lyrics-side { border-left: none; border-top: 1px solid rgba(201,168,76,0.2); } }
       `}</style>
 
-      <div className="search-row">
-        <div className="search-box">
-          <Search className="search-icon" size={18} />
-          <input
-            type="text"
-            className="search-input"
-            placeholder={t('Search by song title…', 'ابحث عن أغنية بالاسم…')}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            aria-label={t('Search songs', 'ابحث عن أغنية')}
-          />
-        </div>
-      </div>
-
-      <div className="filter-row">
-        {CATEGORIES.map((c) => (
-          <button
-            key={c.key}
-            className={`filter-chip ${activeCategory === c.key ? 'active' : ''}`}
-            onClick={() => setActiveCategory(c.key)}
-          >
-            {lang === 'ar' ? c.ar : c.en}
-          </button>
-        ))}
-      </div>
-
-      {visibleSongs.length === 0 && (
-        <div style={{ textAlign: 'center', color: '#c9a84c', opacity: 0.8, padding: '40px 20px', fontFamily: lang === 'ar' ? 'Aref Ruqaa Ink, serif' : 'Cinzel, serif' }}>
-          ♪ {t('No songs match your search.', 'لا توجد أغانٍ مطابقة لبحثك.')}
-        </div>
-      )}
-
-      {visibleSongs.map((song) => (
+      {allSongs.map((song) => (
         <div key={song.id} className="main-card">
           <div className="player-side">
-            <div className="song-tag">{lang === 'ar' ? song.type : translateType(String(song.type || ''))}</div>
+            <div className="song-tag">{song.type}</div>
             <div className="cover-box" style={{ backgroundImage: `url(${toDriveDirectDownloadUrl(song.coverImg)})` }} />
             
             <div className="views-badge">{song.views}</div>
@@ -1117,7 +1120,7 @@ const SongsPage = () => {
             })}
 
             <div style={{marginTop: '20px', textAlign: 'center'}}>
-              <span className="label-gold">{t('Your rating', 'تقييمك')}</span>
+              <span className="label-gold">تقييمك</span>
               <div className="star-rating">
                 {[1, 2, 3, 4, 5].map((num) => (
                   <span key={num} className={`star ${num <= (starRatings[song.id] || 0) ? 'active' : ''}`} onClick={() => setStarRatings(prev => ({ ...prev, [song.id]: num }))}>★</span>
@@ -1127,19 +1130,17 @@ const SongsPage = () => {
           </div>
 
           <div className="lyrics-side">
-            <span className="label-gold">{t('Song lyrics', 'كلمات الأغنية')}</span>
+            <span className="label-gold">كلمات الأغنية</span>
             <div className="title-row">
               <h2 className="song-title-red">{song.title}</h2>
-              {'duet' in song && song.duet && <span className="duet-badge">{t('Duet', 'ديو')}</span>}
+              {'duet' in song && song.duet && <span className="duet-badge">ديو</span>}
             </div>
-            <div className="lyrics-scroll" dir="rtl">
+            <div className="lyrics-scroll">
               {song.lyrics.map((l, i) => (
                 <div key={i} className={`line ${l.red ? 'red' : ''}`}>{l.text}</div>
               ))}
             </div>
-            <span className="label-gold">
-              {t('Critic reviews (click to rate)', 'الآراء النقدية (اضغط للتقييم)')}
-            </span>
+            <span className="label-gold">الآراء النقدية (اضغط للتقييم)</span>
             {song.critics.map((critic, idx) => (
               <div key={idx} className="critic-item" onClick={() => handleCriticClick(song.id, idx)}>
                 <span style={{fontSize: '14px'}}>{critic}</span>

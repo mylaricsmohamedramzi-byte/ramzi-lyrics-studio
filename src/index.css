@@ -6,6 +6,19 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'VLAX';
+  src: url('/fonts/VLAX.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Omnes Arabic';
+  src: url('/fonts/OmnesArabic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -80,14 +93,74 @@
     --sidebar-ring: 357 73% 46%;
   }
 
-  /* Global Arabic typography: unify everything to Aref Ruqaa Ink */
+  /* Body text default — Omnes Arabic across the site (both languages) */
+  body, p, span, li, a, button, input, textarea, label, div {
+    font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif;
+  }
+
+  /* Arabic mode keeps Aref Ruqaa Ink for headings/titles, Omnes for body */
   [data-lang="ar"] body,
-  [data-lang="ar"] * {
-    font-family: 'Aref Ruqaa Ink', serif !important;
+  [data-lang="ar"] p,
+  [data-lang="ar"] span,
+  [data-lang="ar"] li,
+  [data-lang="ar"] a,
+  [data-lang="ar"] button,
+  [data-lang="ar"] input,
+  [data-lang="ar"] textarea,
+  [data-lang="ar"] label,
+  [data-lang="ar"] div {
+    font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif;
   }
 
   [data-lang="ar"] {
     direction: rtl;
+  }
+}
+
+@layer utilities {
+  /* Navbar font */
+  .font-nav {
+    font-family: 'VLAX', 'Cinzel', serif !important;
+    color: rgb(149, 139, 137);
+  }
+
+  /* Main page heading frame: bordered box, bg rgb(187,174,172) dark / black light */
+  .heading-frame {
+    font-family: 'Aref Ruqaa Ink', serif !important;
+    display: inline-block;
+    padding: 0.5rem 1.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #000000;
+    color: #ffffff;
+  }
+  .dark .heading-frame {
+    background: rgb(187, 174, 172);
+    color: #000000;
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+
+  /* Subtitle line under headings */
+  .heading-subtitle {
+    color: #000000;
+    font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif;
+  }
+  .dark .heading-subtitle {
+    color: #ffffff;
+  }
+
+  /* Song titles across all pages */
+  .song-title {
+    font-family: 'Aref Ruqaa Ink', serif !important;
+  }
+
+  /* Song lyric line — DG Forsha, white by default */
+  .lyric-line {
+    font-family: 'DG Forsha', 'Aref Ruqaa Ink', serif !important;
+    color: #ffffff;
+  }
+  .lyric-line.lyric-red {
+    color: #e63946;
   }
 }
 

@@ -518,7 +518,32 @@ const VideosPage = () => {
         @media (max-width: 900px) { .card-content { grid-template-columns: 1fr; } .video-container { padding: 0 15px; } .main-card { border-radius: 20px; } }
       `}</style>
 
-      {allVideos.map((video) => (
+      {/* Search + Filter */}
+      <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
+        <SearchBar
+          value={search}
+          onChange={setSearch}
+          placeholder="ابحث عن فيديو..."
+          className="mb-5"
+        />
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
+          {VIDEO_CATEGORIES.map((c) => (
+            <button
+              key={c.key}
+              type="button"
+              className={`filter-chip ${activeCat === c.key ? 'active' : ''}`}
+              onClick={() => setActiveCat(c.key)}
+            >
+              {c.label}
+            </button>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 12, color: '#c9a84c', fontSize: 13 }}>
+          {filteredVideos.length} / {allVideos.length}
+        </div>
+      </div>
+
+      {filteredVideos.map((video) => (
         <div key={video.id} className="main-card">
           <div className="card-header">
             <span className="song-label">Song lyrics</span>

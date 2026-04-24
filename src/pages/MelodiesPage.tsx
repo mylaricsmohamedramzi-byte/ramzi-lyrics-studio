@@ -474,7 +474,32 @@ const MelodiesPage  = () => {
         @media (max-width: 900px) { .main-card { flex-direction: column; } .lyrics-side { border-left: none; border-top: 1px solid rgba(201,168,76,0.2); } }
       `}</style>
 
-      {allSongs.map((song) => (
+      {/* Search + Filter */}
+      <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
+        <SearchBar
+          value={search}
+          onChange={setSearch}
+          placeholder="ابحث عن لحن..."
+          className="mb-5"
+        />
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
+          {MEL_CATEGORIES.map((c) => (
+            <button
+              key={c.key}
+              type="button"
+              className={`filter-chip ${activeCat === c.key ? 'active' : ''}`}
+              onClick={() => setActiveCat(c.key)}
+            >
+              {c.label}
+            </button>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 12, color: '#c9a84c', fontSize: 13 }}>
+          {filteredSongs.length} / {allSongs.length}
+        </div>
+      </div>
+
+      {filteredSongs.map((song) => (
         <div key={song.id} className="main-card">
           <div className="player-side">
             <div className="song-tag">{song.type}</div>

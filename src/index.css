@@ -290,3 +290,42 @@
 .animate-stamp-pulse {
   animation: stamp-pulse 4s ease-in-out infinite;
 }
+
+/* ==========================================================
+   Global overrides for Songs / Melodies / Videos pages
+   (pages use inline <style> blocks; these win via specificity)
+   ========================================================== */
+
+/* Song / video titles → Aref Ruqaa Ink (color preserved per page) */
+.song-title-red,
+.video-title,
+.song-title {
+  font-family: 'Aref Ruqaa Ink', serif !important;
+}
+
+/* Lyric lines → DG Forsha, white default */
+.line {
+  font-family: 'DG Forsha', 'Aref Ruqaa Ink', serif !important;
+  color: #ffffff !important;
+}
+/* Red lines stay red */
+.line.red {
+  color: #ff4d4d !important;
+}
+
+/* All body / paragraph text on these pages → Omnes Arabic */
+.page-wrapper,
+.page-wrapper p,
+.page-wrapper span:not(.song-title-red):not(.video-title),
+.page-wrapper button,
+.page-wrapper input,
+.page-wrapper label,
+.page-wrapper a {
+  font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif !important;
+}
+/* Light mode body text: black */
+:root:not(.dark) .page-wrapper {
+  color: #000000;
+}
+/* Page wrapper background should respect site theme (kept dark per page design) */
+

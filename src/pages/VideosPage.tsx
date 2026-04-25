@@ -122,7 +122,7 @@ const allVideos = [
   {
     id: 2,
     title: "كَيْفَ حَالُكِ؟",
-    category: "Behind the Scenes",
+    category: "قصائد",
     videoUrls: ["https://youtu.be/tb7sTXQKBwI"],
     views: "156",
     critics: ["الكلمات عميقه وقويه ","اللحن أفضل من اللحن 1 و اللحن 2","الفيديو ممتاز وبه مجهود و تفاصيل ","مناسبة لصوت كاظم الساهر"],
@@ -549,7 +549,11 @@ const VideosPage = () => {
         <div key={video.id} className="main-card">
           <div className="card-header">
             <span className="song-label">Song lyrics</span>
-            <div className="category-badge">{video.category || "General"}</div>
+            <div className="category-badge">{(() => {
+              const matched = VIDEO_CATEGORIES.find((c) => c.key !== 'all' && c.match(video.category || ''));
+              if (matched) return lang === 'ar' ? matched.ar : matched.en;
+              return video.category || (lang === 'ar' ? 'عام' : 'General');
+            })()}</div>
           </div>
 
           <div className="video-container">

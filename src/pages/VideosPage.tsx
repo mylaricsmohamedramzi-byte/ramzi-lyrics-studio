@@ -1,15 +1,16 @@
 import { useState, useRef, useMemo } from 'react';
 import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
+import { useLang } from '@/contexts/LangContext';
 
-const VIDEO_CATEGORIES: { key: string; label: string; match: (c: string) => boolean }[] = [
-  { key: 'all',      label: 'الكل',      match: () => true },
-  { key: 'romantic', label: 'رومانسي',  match: (c) => /romantic|رومانسي|رمانسي|maqsum/i.test(c) },
-  { key: 'rap',      label: 'راب',       match: (c) => /rap|راب/i.test(c) },
-  { key: 'rock',     label: 'روك',       match: (c) => /rock/i.test(c) },
-  { key: 'drama',    label: 'دراما',     match: (c) => /drama|دراما/i.test(c) },
-  { key: 'bts',      label: 'كواليس',    match: (c) => /behind|كواليس/i.test(c) },
-  { key: 'social',   label: 'اجتماعي',  match: (c) => /اجتماعي|إجتماعي|social/i.test(c) },
+const VIDEO_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean }[] = [
+  { key: 'all',      ar: 'الكل',     en: 'All',                match: () => true },
+  { key: 'romantic', ar: 'رومانسي',  en: 'Romantic',           match: (c) => /romantic|رومانسي|رمانسي|maqsum/i.test(c) },
+  { key: 'rap',      ar: 'راب',       en: 'Rap',                match: (c) => /rap|راب/i.test(c) },
+  { key: 'rock',     ar: 'روك',       en: 'Rock',               match: (c) => /rock/i.test(c) },
+  { key: 'drama',    ar: 'دراما',     en: 'Drama',              match: (c) => /drama|دراما/i.test(c) },
+  { key: 'bts',      ar: 'قصائد',    en: 'Poems',              match: (c) => /behind|كواليس|قصائد|قصيدة|poem/i.test(c) },
+  { key: 'social',   ar: 'اجتماعي',  en: 'Social',             match: (c) => /اجتماعي|إجتماعي|social/i.test(c) },
 ];
 
 // دالة استخراج ID اليوتيوب
@@ -383,6 +384,7 @@ const allVideos = [
 ];
 
 const VideosPage = () => {
+  const { lang } = useLang();
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
   const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
   const [search, setSearch] = useState('');
@@ -534,7 +536,7 @@ const VideosPage = () => {
               className={`filter-chip ${activeCat === c.key ? 'active' : ''}`}
               onClick={() => setActiveCat(c.key)}
             >
-              {c.label}
+              {lang === 'ar' ? c.ar : c.en}
             </button>
           ))}
         </div>

@@ -10,7 +10,7 @@ const navItems = [
   { path: '/home', en: 'Home', ar: 'الرئيسية' },
   { path: '/videos', en: 'Videos', ar: 'فيديوهات' },
   { path: '/songs', en: 'Songs', ar: 'أغاني' },
-  { path: '/melodies', en: 'Melodies', ar: 'ألحان' },
+  { path: '/melodies', en: 'Poems', ar: 'قصائد' },
   { path: '/lyrics', en: 'Lyrics', ar: 'كلمات' },
   { path: '/songwriting-art', en: 'Songwriting Art', ar: 'فن كتابة الأغاني' },
   { path: '/copyright', en: 'Copyright', ar: 'حقوق الملكية' },

@@ -479,7 +479,7 @@ const MelodiesPage  = () => {
         <SearchBar
           value={search}
           onChange={setSearch}
-          placeholder="ابحث عن لحن..."
+          placeholder="ابحث عن قصيدة..."
           className="mb-5"
         />
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>

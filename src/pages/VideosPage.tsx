@@ -46,7 +46,7 @@ const allVideos = [
   {
     id: 1,
     title: "عداد الرقان ",
-    category: "Romantic maqsum",
+    category: " maqsum",
     videoUrls: ["https://youtu.be/kEgSPLkl0oQ?si=ITml38SiSzPgmF2T"],
     views: "88",
     critics: ["كلمات مُبتكره ","لحن مميز", "أداء قوي", "توزيع ضعيف "], 

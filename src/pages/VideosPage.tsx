@@ -302,7 +302,7 @@ const allVideos = [
     title: "تِلْكَ السُّلطَانَهْ",
     category: "روك",
     videoUrls: [
-      "https://drive.google.com/file/d/1xqrGDUuImcTSg1P7hIYym-aVRVxz1GM3/view?usp=sharing",
+      "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777268589/%D8%AA%D9%84%D9%83_%D8%A7%D9%84%D8%B3%D9%8F%D9%84%D8%B7%D8%A7%D9%86%D9%87_cnzxvg_poster.jpg",
     ],
     views: "0",
     critics: [

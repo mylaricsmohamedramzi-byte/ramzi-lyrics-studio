@@ -124,7 +124,7 @@ const allVideos = [
     id: 2,
     title: "كَيْفَ حَالُكِ؟",
     category: "قصائد",
-    videoUrls: ["https://youtu.be/tb7sTXQKBwI"],
+    videoUrls: ["https://canva.link/2rx751bknulje0u"],
     views: "156",
     critics: ["الكلمات عميقه وقويه ","اللحن أفضل من اللحن 1 و اللحن 2","الفيديو ممتاز وبه مجهود و تفاصيل ","مناسبة لصوت كاظم الساهر"],
     lyrics: [

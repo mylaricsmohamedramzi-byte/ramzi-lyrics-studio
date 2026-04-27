@@ -5,11 +5,12 @@ import { useLang } from '@/contexts/LangContext';
 
 const VIDEO_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean }[] = [
   { key: 'all',      ar: 'الكل',     en: 'All',                match: () => true },
-  { key: 'romantic', ar: 'رومانسي',  en: 'Romantic',           match: (c) => /romantic|رومانسي|رمانسي|maqsum/i.test(c) },
+ {  key: 'maqsum',   ar: 'مقسوم',   en: 'Maqsum',              match: (c) => /maqsum|مقسوم/i.test(c) },
   { key: 'rap',      ar: 'راب',       en: 'Rap',                match: (c) => /rap|راب/i.test(c) },
+  { key: 'rap',      ar: 'تراب',       en: 'Trap',                match: (c) => /trap|تراب/i.test(c) },
   { key: 'rock',     ar: 'روك',       en: 'Rock',               match: (c) => /rock/i.test(c) },
   { key: 'drama',    ar: 'دراما',     en: 'Drama',              match: (c) => /drama|دراما/i.test(c) },
-  { key: 'bts',      ar: 'قصائد',    en: 'Poems',              match: (c) => /behind|كواليس|قصائد|قصيدة|poem/i.test(c) },
+  { key: 'poems',    ar: 'قصائد',     en: 'Poems',             match: (c) => /قصائد|قصيدة|poem/i.test(c) },
   { key: 'social',   ar: 'اجتماعي',  en: 'Social',             match: (c) => /اجتماعي|إجتماعي|social/i.test(c) },
 ];
 
@@ -46,7 +47,7 @@ const allVideos = [
   {
     id: 1,
     title: "عداد الرقان ",
-    category: " maqsum",
+    category: " مقسوم",
     videoUrls: ["https://youtu.be/kEgSPLkl0oQ?si=ITml38SiSzPgmF2T"],
     views: "88",
     critics: ["كلمات مُبتكره ","لحن مميز", "أداء قوي", "توزيع ضعيف "], 
@@ -159,9 +160,9 @@ const allVideos = [
   },  {
     id: 3,
     title: "نبره حزينه",
-    category: "Drama",
+    category: "دراما",
     videoUrls: [
-      "https://youtu.be/kerALDxqYnE",
+      "https://drive.google.com/file/d/1Qs6lahSehy2KfDEMoTC9jOSpJgbudayK/view?usp=sharing",
     ],
     views: "0",
     critics: [
@@ -200,7 +201,7 @@ const allVideos = [
   },  {
     id: 4,
     title: "كلامي واضح",
-    category: "راب حماسي",
+    category: "تراب",
     videoUrls: [
       "https://drive.google.com/file/d/1LmDxEar_OOyBdgNOfoW23q6l8kvwrKmK/view?usp=sharing",
     ],
@@ -299,7 +300,7 @@ const allVideos = [
   {
     id: 5,
     title: "تِلْكَ السُّلطَانَهْ",
-    category: "Romantic Rock",
+    category: "روك",
     videoUrls: [
       "https://drive.google.com/file/d/1xqrGDUuImcTSg1P7hIYym-aVRVxz1GM3/view?usp=sharing",
     ],

@@ -302,7 +302,7 @@ const allVideos = [
     title: "تِلْكَ السُّلطَانَهْ",
     category: "روك",
     videoUrls: [
-      "https://player.cloudinary.com/embed/?cloud_name=dq3orhpdj&public_id=%D8%AA%D9%84%D9%83_%D8%A7%D9%84%D8%B3%D9%8F%D9%84%D8%B7%D8%A7%D9%86%D9%87_cnzxvg",
+      "https://drive.google.com/file/d/12TWS402XYp6SEZXr5Kn9PdnZW4Y-0Va_/view?usp=sharing",
     ],
     views: "0",
     critics: [

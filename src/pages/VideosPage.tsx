@@ -7,7 +7,7 @@ const VIDEO_CATEGORIES: { key: string; ar: string; en: string; match: (c: string
   { key: 'all',      ar: 'الكل',     en: 'All',                match: () => true },
  {  key: 'maqsum',   ar: 'مقسوم',   en: 'Maqsum',              match: (c) => /maqsum|مقسوم/i.test(c) },
   { key: 'rap',      ar: 'راب',       en: 'Rap',                match: (c) => /rap|راب/i.test(c) },
-  { key: 'rap',      ar: 'تراب',       en: 'Trap',                match: (c) => /trap|تراب/i.test(c) },
+  { key: 'trap',      ar: 'تراب',       en: 'Trap',                match: (c) => /trap|تراب/i.test(c) },
   { key: 'rock',     ar: 'روك',       en: 'Rock',               match: (c) => /rock/i.test(c) },
   { key: 'drama',    ar: 'دراما',     en: 'Drama',              match: (c) => /drama|دراما/i.test(c) },
   { key: 'poems',    ar: 'قصائد',     en: 'Poems',             match: (c) => /قصائد|قصيدة|poem/i.test(c) },

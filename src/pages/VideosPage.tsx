@@ -162,7 +162,7 @@ const allVideos = [
     title: "نبره حزينه",
     category: "دراما",
     videoUrls: [
-      "https://drive.google.com/file/d/1aPqfMritT-rkOOxMI-ddesieDgpO9Ra-/view?usp=sharing",
+      "https://res.cloudinary.com/dq3orhpdj/video/upload/v1777259384/%D9%86%D8%A8%D8%B1%D8%A9_%D8%AD%D8%B2%D9%8A%D9%86%D8%A9_gzmks7.mp4",
     ],
     views: "0",
     critics: [

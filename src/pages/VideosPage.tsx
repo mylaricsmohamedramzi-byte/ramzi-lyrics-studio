@@ -11,7 +11,7 @@ const VIDEO_CATEGORIES: { key: string; ar: string; en: string; match: (c: string
   { key: 'rock',     ar: 'روك',       en: 'Rock',               match: (c) => /rock/i.test(c) },
   { key: 'drama',    ar: 'دراما',     en: 'Drama',              match: (c) => /drama|دراما/i.test(c) },
   { key: 'poems',    ar: 'قصائد',     en: 'Poems',             match: (c) => /قصائد|قصيدة|poem/i.test(c) },
-  { key: 'social',   ar: 'اجتماعي',  en: 'Social',             match: (c) => /اجتماعي|إجتماعي|social/i.test(c) },
+  { key: 'social',   ar: 'إجتماعي& عائلي',  en: 'Socila &Famliy',             match: (c) => /إجتماعي& عائلي|إجتماعي& عائلي|Socila &Famliy/i.test(c) },
 ];
 
 // دالة استخراج ID اليوتيوب

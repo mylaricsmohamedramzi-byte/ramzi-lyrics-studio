@@ -46,7 +46,7 @@ const CardFloatingNotes = ({ seed }: { seed: number }) => {
   );
 };
 
-// ─── فئات الأغاني (نفس هيكل VIDEO_CATEGORIES للتوحيد) ────────────────────────
+// ─── فئات الأغاني ────────────────────────────────────────────────────────────
 const SONG_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean; order: number }[] = [
   { key: 'all',             ar: 'الكل',             en: 'All',              match: () => true,                                                       order: 0  },
   { key: 'islamic',         ar: 'إسلامي',           en: 'Islamic',          match: (c) => /islamic|إسلامي/i.test(c),                                order: 1  },
@@ -75,7 +75,6 @@ function getCategoryOrder(type: string): number {
   return match ? match.order : 99;
 }
 
-/** Converts Google Drive sharing / open links to direct download URLs. */
 function toDriveDirectDownloadUrl(url: string): string {
   const trimmed = url.trim();
   if (!trimmed || !trimmed.includes('drive.google.com')) return trimmed;
@@ -94,9 +93,8 @@ function toDriveDirectDownloadUrl(url: string): string {
   } catch { return trimmed; }
   return trimmed;
 }
-                                                                                                                                                               دا كود الصفحة يله اشتغل :
 
-// ─── بيانات الأغاني (محدَّثة من الجدول) ──────────────────────────────────────
+// ─── بيانات الأغاني ───────────────────────────────────────────────────────────
 const allSongs = [
   {
     id: 1,
@@ -801,7 +799,6 @@ const SongsPage = () => {
   const [activeCat, setActiveCat] = useState('all');
   const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
 
-  // ─── الفئات الموجودة فعلاً ────────────────────────────────────────────────
   const presentCategoryKeys = useMemo(() => {
     const keys = new Set<string>();
     allSongs.forEach((s) => {
@@ -816,7 +813,6 @@ const SongsPage = () => {
     [presentCategoryKeys]
   );
 
-  // ─── تصفية + ترتيب ────────────────────────────────────────────────────────
   const filteredSongs = useMemo(() => {
     const q = normalizeArabic(search);
     const cat = SONG_CATEGORIES.find((c) => c.key === activeCat) || SONG_CATEGORIES[0];
@@ -878,7 +874,6 @@ const SongsPage = () => {
 
         :root { --leather-black: #0a0205; }
 
-        /* ─── خلفية الصفحة ─── */
         .page-wrapper {
           position: relative;
           background: radial-gradient(ellipse at 50% 50%, #3d0a12 0%, #1a0509 40%, #0a0205 100%);
@@ -886,7 +881,6 @@ const SongsPage = () => {
           color: white; font-family: 'Almarai', sans-serif;
         }
 
-        /* ─── ملاحظات عائمة ─── */
         .floating-notes-layer { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
         .floating-note {
           position: absolute; user-select: none;
@@ -903,18 +897,15 @@ const SongsPage = () => {
 
         .content-layer { position: relative; z-index: 1; }
 
-        /* ─── الكارد (جلد أحمر) ─── */
         .main-card {
           position: relative;
           max-width: 1100px; margin: 0 auto 60px;
           border: 2px solid #c9a84c; border-radius: 40px;
           display: flex; flex-direction: row-reverse; overflow: hidden;
           box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-          background-image: url('https://www.transparenttextures.com/patterns/leather.png');
           background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, var(--leather-black) 100%);
         }
 
-        /* ─── ملاحظات الكارد ─── */
         .card-floating-notes { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
         .card-floating-note {
           position: absolute; user-select: none;
@@ -929,7 +920,6 @@ const SongsPage = () => {
           100% { transform: translateY(-900px) rotate(16deg); opacity: 0; }
         }
 
-        /* ─── جانب المشغّل ─── */
         .player-side {
           position: relative; z-index: 1;
           flex: 1; padding: 30px;
@@ -947,7 +937,6 @@ const SongsPage = () => {
           border-radius: 20px; border: 1px solid rgba(201,168,76,0.3);
         }
 
-        /* مشاهدات + نجوم */
         .views-stars-row {
           display: flex; align-items: center; justify-content: space-between;
           width: 100%; margin-top: 15px; gap: 10px;
@@ -969,7 +958,6 @@ const SongsPage = () => {
         }
         .star.active { color: #c9a84c; text-shadow: 0 0 8px rgba(201,168,76,0.7); }
 
-        /* مشغّل الصوت */
         .custom-player-wrapper {
           width: 100%; background: rgba(74,29,77,0.7); border-radius: 50px;
           padding: 8px 15px; display: flex; align-items: center; gap: 12px; margin-top: 12px;
@@ -991,7 +979,6 @@ const SongsPage = () => {
         }
         @keyframes wave-anim { 0%, 100% { height: 8px; } 50% { height: 24px; } }
 
-        /* ─── جانب الكلمات (داكن) ─── */
         .lyrics-side {
           position: relative; z-index: 1;
           flex: 1.3; padding: 40px;
@@ -1018,6 +1005,48 @@ const SongsPage = () => {
         }
         .critic-item:hover { background: rgba(0,0,0,0.55); }
 
+        /* ─── بلوك التوضيح ─── */
+        .clarification-block {
+          max-width: 760px;
+          margin: 0 auto 28px;
+          border-radius: 14px;
+          padding: 24px 28px;
+          border: 1px solid rgba(201,168,76,0.25);
+          background: linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%));
+          background-image: repeating-linear-gradient(
+            transparent, transparent 28px,
+            rgba(201,168,76,0.06) 28px, rgba(201,168,76,0.06) 29px
+          );
+          position: relative;
+          overflow: hidden;
+        }
+        .clarification-block .note-top {
+          position: absolute; top: 10px; right: 16px;
+          color: rgba(201,168,76,0.2); font-size: 28px;
+          font-family: 'Aref Ruqaa Ink', serif; pointer-events: none;
+        }
+        .clarification-block .note-bottom {
+          position: absolute; bottom: 10px; left: 16px;
+          color: rgba(201,168,76,0.2); font-size: 22px;
+          font-family: 'Aref Ruqaa Ink', serif; pointer-events: none;
+        }
+        .clarification-title {
+          color: #c9a84c;
+          font-family: 'Aref Ruqaa Ink', serif;
+          font-size: 1.15rem;
+          font-weight: bold;
+          text-align: center;
+          margin: 0 0 14px;
+        }
+        .clarification-text {
+          color: rgba(232, 213, 176, 0.78);
+          line-height: 1.85;
+          text-align: center;
+          font-family: 'Almarai', sans-serif;
+          font-size: 0.95rem;
+          margin: 0;
+        }
+
         /* ─── أزرار الفلتر ─── */
         .filter-chip {
           background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
@@ -1031,13 +1060,32 @@ const SongsPage = () => {
         @media (max-width: 900px) {
           .main-card { flex-direction: column; }
           .lyrics-side { border-left: none; border-top: 1px solid rgba(201,168,76,0.2); }
+          .clarification-block { margin: 0 0 24px; }
         }
       `}</style>
 
       <div className="content-layer">
-        {/* ─── سرش + فلتر ─── */}
+        {/* ─── سرش + توضيح + فلتر ─── */}
         <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
+
+          {/* السرش بار */}
           <SearchBar value={search} onChange={setSearch} placeholder="ابحث عن أغنية..." className="mb-5" />
+
+          {/* ─── بلوك التوضيح المهم ─── */}
+          <div className="clarification-block">
+            <span className="note-top">♪</span>
+            <span className="note-bottom">♫</span>
+            <h3 className="clarification-title">
+              {lang === 'ar' ? 'توضيح مهم' : 'Important Clarification'}
+            </h3>
+            <p className="clarification-text">
+              {lang === 'ar'
+                ? 'لقد استخدمت أدوات الذكاء الاصطناعي لمساعدتي في ربط أقرب شكل موسيقي بالأفكار والألحان التي ابتكرتها. لذلك ستجد في بعض الأغاني أن هناك أجزاء من الكلمات لا تُنطق بشكل صحيح تمامًا. أما الفيديوهات فهي جهدي لمساعدتك على فهم معنى الكلمات.'
+                : 'I have used artificial intelligence tools to help me connect the closest musical form to the ideas and melodies I have created. Therefore, you will find in some songs that there are parts of the words that are not pronounced completely correctly. As for the videos, they are my effort to help in understanding the meaning of the words.'}
+            </p>
+          </div>
+
+          {/* أزرار الفلتر */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
             {visibleCategories.map((c) => (
               <button key={c.key} type="button"
@@ -1047,6 +1095,7 @@ const SongsPage = () => {
               </button>
             ))}
           </div>
+
           <div style={{ textAlign: 'center', marginTop: 12, color: '#c9a84c', fontSize: 13 }}>
             {filteredSongs.length} / {allSongs.length}
           </div>
@@ -1062,7 +1111,6 @@ const SongsPage = () => {
               <div className="song-tag">{getCategoryLabel(song.type)}</div>
               <div className="cover-box" style={{ backgroundImage: `url(${toDriveDirectDownloadUrl(song.coverImg)})` }} />
 
-              {/* مشاهدات + نجوم */}
               <div className="views-stars-row">
                 <button className="views-badge">{song.views}</button>
                 <div className="star-rating">

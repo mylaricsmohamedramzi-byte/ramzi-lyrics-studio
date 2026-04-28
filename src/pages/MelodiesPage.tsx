@@ -1,10 +1,8 @@
-import { useState, useRef, useMemo, useEffect } from 'react';
+import { useState, useRef, useMemo } from 'react';
 import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
-import { useTheme } from '@/hooks/useTheme'; // adjust path as needed
-import { useLanguage } from '@/hooks/useLanguage'; // adjust path as needed
 
-// ─── Floating Musical Notes (Page Background) ───────────────────────────────
+// ─── Floating Musical Notes (Page Background) ────────────────────────────────
 const NOTES = ['♩', '♪', '♫', '♬', '𝄞', '𝄢'];
 
 function FloatingNotes({ count = 18, seed = 0 }: { count?: number; seed?: number }) {
@@ -26,14 +24,6 @@ function FloatingNotes({ count = 18, seed = 0 }: { count?: number; seed?: number
 
   return (
     <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', overflow: 'hidden', zIndex: 0 }}>
-      <style>{`
-        @keyframes float-up {
-          0%   { transform: translateY(110vh) rotate(0deg); opacity: 0; }
-          10%  { opacity: 1; }
-          90%  { opacity: 1; }
-          100% { transform: translateY(-10vh) rotate(25deg); opacity: 0; }
-        }
-      `}</style>
       {notes.map((n) => (
         <span
           key={n.id}
@@ -54,7 +44,6 @@ function FloatingNotes({ count = 18, seed = 0 }: { count?: number; seed?: number
   );
 }
 
-// ─── Floating Notes inside each Card ─────────────────────────────────────────
 function CardFloatingNotes({ seed = 0 }: { seed?: number }) {
   const notes = useMemo(() => {
     return Array.from({ length: 8 }, (_, i) => {
@@ -114,9 +103,7 @@ function toDriveDirectDownloadUrl(url: string): string {
   return trimmed;
 }
 
-// ─── Song Data (updated from table) ──────────────────────────────────────────
-// Table: 1-حل إيجابي→طرب | 2-لو سمحتي→رومانسي | 3-كاريزما→رومانسي&مقسوم
-//        4-حبيبي الغالي→سلو | 5-وعدي الليل→كلاسيك | 6-بلاش تضيع وقت→شعبي | 7-عرض خاص→شعبي
+// ─── Song Data — أنواع محدّثة من الجدول ─────────────────────────────────────
 const allSongs = [
   {
     id: 1,
@@ -188,6 +175,11 @@ const allSongs = [
       { text: "من الحاجات الحلوه فيكي", red: false },
       { text: "عوزه رأيي وبصراحه", red: false },
       { text: "بالغالي انا مشتريكي", red: false },
+      { text: "\u00A0", red: false },
+      { text: "خدتي قلبي وبجداره", red: false },
+      { text: "ايوه انا لازم اهنيكي", red: false },
+      { text: "ياللي كل لما اشوفك", red: false },
+      { text: "بدعي ربي انه يخليكي", red: false },
     ],
     critics: ["كلمات مُبهجة", "مناسبة لصوت رامي صبري "],
   },
@@ -221,6 +213,18 @@ const allSongs = [
       { text: "واشغل باله زي ما شغلني", red: true },
       { text: "ياما سنين فاتوا من قبله", red: true },
       { text: "كان فيهم ماساه", red: true },
+      { text: "\u00A0", red: false },
+      { text: "براحتها.. تتقل براحتها", red: false },
+      { text: "اصل انتو مشفتوش براءتها.. ولا لون شعرها ولا قصتها", red: false },
+      { text: " كل المقاييس دي قفلتها", red: false },
+      { text: "\u00A0", red: false },
+      { text: "كعبها.. عليه رنت خلخال", red: false },
+      { text: "وملفوف في الايد انسيال.. لا مفيش بعد دا جمال!", red: false },
+      { text: " كدا فل وعال", red: false },
+      { text: "\u00A0", red: false },
+      { text: "دي شخصية.. مش طبيعية", red: false },
+      { text: "عفوية وكمان حنية.. معدية وردة مصرية", red: false },
+      { text: " وبنسبة 100x100", red: false },
     ],
     critics: ["كلمات مُعبرة", "مناسبة لصوت محمد حماقي "],
   },
@@ -239,14 +243,40 @@ const allSongs = [
       { text: "انا عمري في يوم ما انساه", red: false },
       { text: "لو حتي هيحصل ايه", red: false },
       { text: "\u00A0", red: false },
+      { text: "ومعذب فكري", red: false },
+      { text: "الخوف من اني مبقاش ليه", red: false },
+      { text: "\u00A0", red: false },
+      { text: "وانا مهما يعيد ويقول", red: false },
+      { text: "هفضل برضه ابقي عليه", red: false },
+      { text: "\u00A0", red: false },
       { text: "دا حبيبي", red: true },
       { text: "وغالي عندي وكل يوم بحبه اكثر", red: true },
       { text: "\u00A0", red: false },
       { text: "لو ليله بعد عني", red: true },
       { text: "مقدرش اني في غيره افكر", red: true },
       { text: "\u00A0", red: false },
+      { text: "بيزيد وصفي وكلامي عنه", red: true },
+      { text: "وبيزيد اكير في تفاصيله", red: true },
+      { text: "\u00A0", red: false },
+      { text: "دا انا قلبي بيطمن يادوب لما", red: true },
+      { text: "لما بس بشوف عينه", red: true },
+      { text: "\u00A0", red: false },
       { text: "دا حبيبي الغالي", red: true },
       { text: "حبيبي الغالي حبيبي وروحي كمان", red: true },
+      { text: "دا في كل دقيقه", red: true },
+      { text: "في كل ثواني بشوفه في كل مكان", red: true },
+      { text: "\u00A0", red: false },
+      { text: "وبحس اني", red: false },
+      { text: "بطير واسرح بخيالي في وسط سماه", red: false },
+      { text: "\u00A0", red: false },
+      { text: "سحرتني عيناه", red: false },
+      { text: "وارتاحت انا لي وكأن وجوده حياه", red: false },
+      { text: "\u00A0", red: false },
+      { text: "سلمت اليه", red: false },
+      { text: "روحي دابت فيه ضحكت لي الدنيا معاه", red: false },
+      { text: "\u00A0", red: false },
+      { text: "والايام بيه", red: false },
+      { text: "بقت تحلي والعين عشقاه وبقيت مغرم بهواه", red: false },
     ],
     critics: ["الكلمات مُعبرة", "اللحن مختلف ", "مناسبة لصوت تامر عاشور"],
   },
@@ -267,6 +297,12 @@ const allSongs = [
       { text: "وبستلهف وصوله", red: false },
       { text: "وبيقلل وصاله", red: false },
       { text: "\u00A0", red: false },
+      { text: "وحشاني عيونه", red: false },
+      { text: "وبتغني بجماله", red: false },
+      { text: "\u00A0", red: false },
+      { text: "وغيرني بجنونه", red: false },
+      { text: "وحيرني بدلاله", red: false },
+      { text: "\u00A0", red: false },
       { text: "وكل اما بشوفه", red: true },
       { text: "وايدي تنول سلامه", red: true },
       { text: "\u00A0", red: false },
@@ -286,6 +322,18 @@ const allSongs = [
     lyrics: [
       { text: "قال يعني بقى فارق لك بعدي.. وبقيت مهتم", red: false },
       { text: "وفاكرني هفوت وهعدي.. وجرحي دا هيلم", red: false },
+      { text: "وانا اللي جابرني ارجع تاني.. بدل ما حرقت دم", red: false },
+      { text: "مبقاش في حاجة ما بينا.. خلاص وكفاية بقا غم", red: false },
+      { text: "\u00A0", red: false },
+      { text: "فبلاش يعني تضيع وقت.. في كلام مالوش عازة", red: true },
+      { text: "بصراحة كدا انا مصدقت.. من الهم اخد اجازة", red: true },
+      { text: "لو انا عندك كنت فرقت.. مكنش القلب قاسي", red: true },
+      { text: "معرفش ايه بس الذنب.. اللي عليه بتجازة", red: true },
+      { text: "\u00A0", red: false },
+      { text: "العيب عندك لا مش عندي.. انا مش غلطان", red: false },
+      { text: "انتي اللي وافقت انك تدخل.. في سباق خسران", red: false },
+      { text: "انا مرتاح من يوم ما فارقتك.. لا مش زعلان", red: false },
+      { text: "مدخلش عليا خالص.. موضوع انك ندمان", red: false },
       { text: "\u00A0", red: false },
       { text: "فبلاش يعني تضيع وقت.. في كلام مالوش عازة", red: true },
       { text: "بصراحة كدا انا مصدقت.. من الهم اخد اجازة", red: true },
@@ -307,48 +355,55 @@ const allSongs = [
       { text: "مش دا اللي كان عامل بيحبنا", red: false },
       { text: "وبدون مبرر راح وفارق قلبنا", red: false },
       { text: "\u00A0", red: false },
+      { text: "دلوقتي جاي يقول انه مشتاق لنا", red: false },
+      { text: "مع ان الغلطة عنده ومش عندنا", red: false },
+      { text: "\u00A0", red: false },
+      { text: "مغرور اوي وغروره دا اللي وقعه", red: false },
+      { text: "حذرته وكلامي مرضيش يسمعه", red: false },
+      { text: "\u00A0", red: false },
+      { text: "بيقول اعذار مش مقنعين ولا ينفعه", red: false },
+      { text: "انا قلبي كان معاه واختار يضيعه", red: false },
+      { text: "\u00A0", red: false },
       { text: "بطلنا خلاص نشتري في الرخاص", red: true },
       { text: "قررنا نبيعهم وعملنا عرض خاص", red: true },
       { text: "اشتري بياع ووحيد مالوش عزاز", red: true },
       { text: "هتاخد عليهم واحد معدوم الاحساس", red: true },
       { text: "\u00A0", red: false },
+      { text: "كان بيقول حاجة وبيعمل عكسها", red: false },
+      { text: "كان فيه شروط ماعملهاش كلها", red: false },
+      { text: "\u00A0", red: false },
+      { text: "كان عامل طيب وفاكرني هصدقه", red: false },
+      { text: " واهو برضه طمعه كشفه وغرقه", red: false },
+      { text: "\u00A0", red: false },
+      { text: "رغم انه عارف اني بعشقه", red: false },
+      { text: "دلوقتي اسمه مبقتش بنطقه", red: false },
+      { text: "\u00A0", red: false },
       { text: "لا مستحيل قلبنا يضعف ويميل", red: true },
       { text: "عدينا كتير واهو مطلعش اصيل", red: true },
+      { text: "من اجل جنابه ياما داخل في مواويل", red: true },
+      { text: "بقا دي اخرها بقا دا رد الجميل", red: true },
     ],
     critics: ["الكلمات سهلة الحفظ", "مناسبة لصوت حوده بندق"],
   },
 ];
 
-// ─── Categories: derived from actual song types in allSongs ──────────────────
-// Types present: طرب, رومانسي, رومانسي مقسوم, سلو, كلاسيك, شعبي
-const ALL_POSSIBLE_CATEGORIES: { key: string; label: string; match: (t: string) => boolean }[] = [
-  { key: 'all',              label: 'الكل',          match: () => true },
-  { key: 'tarab',            label: 'طرب',           match: (t) => /طرب/i.test(t) },
-  { key: 'romantic',         label: 'رومانسي',       match: (t) => /رومانسي/i.test(t) && !/مقسوم/i.test(t) },
-  { key: 'romantic_maqsum',  label: 'رومانسي مقسوم', match: (t) => /رومانسي مقسوم/i.test(t) },
-  { key: 'slow',             label: 'سلو',           match: (t) => /سلو/i.test(t) },
-  { key: 'classic',          label: 'كلاسيك',        match: (t) => /كلاسيك/i.test(t) },
-  { key: 'shaabi',           label: 'شعبي',          match: (t) => /شعبي/i.test(t) },
-  { key: 'maqsum',           label: 'مقسوم',         match: (t) => /مقسوم/i.test(t) && !/رومانسي/i.test(t) },
-  { key: 'pop',              label: 'بوب',           match: (t) => /بوب/i.test(t) },
+// ─── Categories — بس الموجودة فعلاً في allSongs (constant، مش داخل component) ──
+const ALL_CAT_DEFS: { key: string; label: string; match: (t: string) => boolean }[] = [
+  { key: 'all',             label: 'الكل',          match: () => true },
+  { key: 'tarab',           label: 'طرب',           match: (t) => /طرب/.test(t) },
+  { key: 'romantic',        label: 'رومانسي',       match: (t) => /رومانسي/.test(t) && !/مقسوم/.test(t) },
+  { key: 'romantic_maqsum', label: 'رومانسي مقسوم', match: (t) => /رومانسي مقسوم/.test(t) },
+  { key: 'slow',            label: 'سلو',           match: (t) => /سلو/.test(t) },
+  { key: 'classic',         label: 'كلاسيك',        match: (t) => /كلاسيك/.test(t) },
+  { key: 'shaabi',          label: 'شعبي',          match: (t) => /شعبي/.test(t) },
 ];
 
-// Only show categories that have at least one matching song
-function getActiveCategories() {
-  const used = ALL_POSSIBLE_CATEGORIES.filter((cat) => {
-    if (cat.key === 'all') return true;
-    return allSongs.some((s) => cat.match(s.type || ''));
-  });
-  return used;
-}
+const MEL_CATEGORIES = ALL_CAT_DEFS.filter(
+  (cat) => cat.key === 'all' || allSongs.some((s) => cat.match(s.type || ''))
+);
 
 // ─── Component ────────────────────────────────────────────────────────────────
 const MelodiesPage = () => {
-  // ── If your app doesn't have these hooks, replace with simple state ──
-  // const isDark = true; const t = (en: string, ar: string) => ar;
-  const { isDark } = useTheme?.() ?? { isDark: true };
-  const { t } = useLanguage?.() ?? { t: (_e: string, ar: string) => ar };
-
   const [starRatings, setStarRatings] = useState<Record<number, number>>({});
   const [hoveredStar, setHoveredStar] = useState<{ songId: number; star: number } | null>(null);
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
@@ -357,8 +412,6 @@ const MelodiesPage = () => {
   const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
   const [search, setSearch] = useState('');
   const [activeCat, setActiveCat] = useState('all');
-
-  const MEL_CATEGORIES = useMemo(() => getActiveCategories(), []);
 
   const filteredSongs = useMemo(() => {
     const q = normalizeArabic(search);
@@ -369,7 +422,7 @@ const MelodiesPage = () => {
       const hay = [s.title, s.type, ...(s.lyrics?.map((l) => l.text) || [])].join(' ');
       return normalizeArabic(hay).includes(q);
     });
-  }, [search, activeCat, MEL_CATEGORIES]);
+  }, [search, activeCat]);
 
   const normalizeAudioUrls = (audioUrls: string[] | string | undefined): string[] => {
     if (Array.isArray(audioUrls)) return audioUrls.filter((url) => typeof url === 'string' && url.trim() !== '');
@@ -377,10 +430,12 @@ const MelodiesPage = () => {
     return [];
   };
 
-  const formatTime = (s: number) => {
-    if (!Number.isFinite(s) || s < 0) return '00:00';
-    const m = Math.floor(s / 60);
-    return `${String(m).padStart(2, '0')}:${String(Math.floor(s) % 60).padStart(2, '0')}`;
+  const formatTime = (timeInSeconds: number): string => {
+    if (!Number.isFinite(timeInSeconds) || timeInSeconds < 0) return '00:00';
+    const totalSeconds = Math.floor(timeInSeconds);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
   };
 
   const togglePlay = (songId: number, audioIdx: number) => {
@@ -389,7 +444,7 @@ const MelodiesPage = () => {
       audioRefs.current[key]?.pause();
       setPlayingKey(null);
     } else {
-      if (playingKey) audioRefs.current[playingKey]?.pause();
+      if (playingKey !== null) audioRefs.current[playingKey]?.pause();
       audioRefs.current[key]?.play();
       setPlayingKey(key);
     }
@@ -397,13 +452,14 @@ const MelodiesPage = () => {
 
   const handleCriticClick = (songId: number, idx: number) => {
     const key = `${songId}-${idx}`;
-    if (!selectedCritics[key])
+    if (!selectedCritics[key]) {
       setSelectedCritics((prev) => ({ ...prev, [key]: Math.floor(Math.random() * 31) + 65 }));
+    }
   };
 
   return (
     <div dir="rtl" className="page-wrapper" style={{ position: 'relative' }}>
-      {/* ── Page-level floating notes ── */}
+      {/* ── ملاحظات موسيقية عائمة ── */}
       <FloatingNotes count={18} seed={42} />
 
       <style>{`
@@ -416,7 +472,6 @@ const MelodiesPage = () => {
           100% { transform: translateY(-10vh) rotate(25deg); opacity: 0; }
         }
 
-        /* ── Page background: dark radial red (matches LyricsPage) ── */
         .page-wrapper {
           background: radial-gradient(ellipse at 50% 20%, #3a0000 0%, #1a000a 40%, #000 100%);
           min-height: 100vh;
@@ -425,7 +480,6 @@ const MelodiesPage = () => {
           font-family: 'Almarai', sans-serif;
         }
 
-        /* ── Card: red leather ── */
         .main-card {
           max-width: 1100px;
           margin: 0 auto 60px;
@@ -436,7 +490,6 @@ const MelodiesPage = () => {
           overflow: hidden;
           box-shadow: 0 20px 60px rgba(0,0,0,0.8);
           position: relative;
-          /* red leather gradient */
           background:
             radial-gradient(circle at center, rgb(103,6,6) 0%, #0a0205 100%),
             url('https://www.transparenttextures.com/patterns/leather.png');
@@ -444,72 +497,45 @@ const MelodiesPage = () => {
         }
 
         .player-side {
-          flex: 1;
-          padding: 30px;
+          flex: 1; padding: 30px;
           background: rgba(0,0,0,0.25);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          position: relative;
-          z-index: 1;
+          display: flex; flex-direction: column; align-items: center;
+          position: relative; z-index: 1;
         }
 
         .song-tag {
-          background: #c9a84c;
-          color: #000;
-          padding: 4px 20px;
-          border-radius: 20px;
-          font-size: 14px;
-          font-weight: bold;
-          margin-bottom: 15px;
+          background: #c9a84c; color: #000;
+          padding: 4px 20px; border-radius: 20px;
+          font-size: 14px; font-weight: bold; margin-bottom: 15px;
         }
 
         .cover-box {
-          width: 100%;
-          aspect-ratio: 1;
-          background-size: cover;
-          background-position: center;
-          border-radius: 20px;
-          border: 1px solid rgba(201,168,76,0.3);
+          width: 100%; aspect-ratio: 1;
+          background-size: cover; background-position: center;
+          border-radius: 20px; border: 1px solid rgba(201,168,76,0.3);
         }
 
-        /* Views badge + stars row */
         .views-stars-row {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          margin-top: 15px;
-          justify-content: center;
-          flex-wrap: wrap;
+          display: flex; align-items: center; gap: 12px;
+          margin-top: 15px; justify-content: center; flex-wrap: wrap;
         }
 
         .views-badge {
-          background-color: #f0fdf4;
-          color: #1a2e44;
-          padding: 8px 30px;
-          border-radius: 50px;
-          font-weight: bold;
-          font-size: 1.4rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          display: inline-block;
-          border: none;
+          background-color: #f0fdf4; color: #1a2e44;
+          padding: 8px 30px; border-radius: 50px;
+          font-weight: bold; font-size: 1.4rem;
+          cursor: pointer; transition: all 0.3s ease;
+          display: inline-block; border: none;
         }
         .views-badge:hover { background-color: #c9a84c; color: #000; transform: scale(1.05); }
 
-        /* Stars inline */
         .star-inline { font-size: 22px; cursor: pointer; color: #3a0a0a; transition: 0.2s; line-height: 1; }
-        .star-inline.active, .star-inline.hovered { color: #f5c518; text-shadow: 0 0 8px rgba(245,197,24,0.7); }
+        .star-inline.lit { color: #f5c518; text-shadow: 0 0 8px rgba(245,197,24,0.7); }
 
         .custom-player-wrapper {
-          width: 100%;
-          background: #4a1d4d;
-          border-radius: 50px;
-          padding: 8px 15px;
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          margin-top: 15px;
+          width: 100%; background: #4a1d4d; border-radius: 50px;
+          padding: 8px 15px; display: flex; align-items: center;
+          gap: 12px; margin-top: 15px;
         }
         .play-btn {
           background: #c9a84c; border: none; width: 35px; height: 35px;
@@ -528,14 +554,10 @@ const MelodiesPage = () => {
         }
         @keyframes wave-anim { 0%, 100% { height: 8px; } 50% { height: 24px; } }
 
-        /* Lyrics side */
         .lyrics-side {
-          flex: 1.3;
-          padding: 40px;
+          flex: 1.3; padding: 40px;
           border-left: 1px solid rgba(201,168,76,0.2);
-          position: relative;
-          z-index: 1;
-          /* dark bg so red text is readable on red card */
+          position: relative; z-index: 1;
           background: rgba(4,4,20,0.82);
         }
         .label-gold { color: #c9a84c; font-size: 13px; margin-bottom: 10px; display: block; }
@@ -545,35 +567,21 @@ const MelodiesPage = () => {
         .lyrics-scroll { height: 250px; overflow-y: auto; margin-bottom: 30px; }
         .lyrics-scroll::-webkit-scrollbar { width: 6px; }
         .lyrics-scroll::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
-
-        /* Normal lyrics line: golden instead of white */
-        .line {
-          font-size: 1.2rem;
-          margin-bottom: 10px;
-          border-right: 3px solid #c9a84c;
-          padding-right: 15px;
-          color: #e8d5b0;
-        }
+        .line { font-size: 1.2rem; margin-bottom: 10px; border-right: 3px solid #c9a84c; padding-right: 15px; color: #e8d5b0; }
         .line.red { color: #ff4d4d; border-right-color: #ff4d4d; font-weight: bold; }
 
         .critic-item {
-          background: rgba(255,255,255,0.03);
-          padding: 12px; border-radius: 12px; margin-bottom: 8px;
-          cursor: pointer; display: flex; justify-content: space-between;
+          background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px;
+          margin-bottom: 8px; cursor: pointer; display: flex; justify-content: space-between;
           border: 1px solid rgba(201,168,76,0.1);
         }
 
-        /* Filter chips */
         .filter-chip {
           background: rgba(103,6,6,0.4);
           border: 1px solid rgba(201,168,76,0.4);
-          color: #e8d5b0;
-          padding: 6px 16px;
-          border-radius: 20px;
-          cursor: pointer;
-          font-family: 'Almarai', sans-serif;
-          font-size: 14px;
-          transition: all 0.2s;
+          color: #e8d5b0; padding: 6px 16px; border-radius: 20px;
+          cursor: pointer; font-family: 'Almarai', sans-serif;
+          font-size: 14px; transition: all 0.2s;
         }
         .filter-chip:hover { background: rgba(201,168,76,0.2); }
         .filter-chip.active { background: #c9a84c; color: #000; font-weight: bold; border-color: #c9a84c; }
@@ -584,7 +592,7 @@ const MelodiesPage = () => {
         }
       `}</style>
 
-      {/* ── Search + Filter ── */}
+      {/* ── السرش بار + الفلاتر ── */}
       <div style={{ maxWidth: 1100, margin: '0 auto 30px', position: 'relative', zIndex: 2 }}>
         <SearchBar value={search} onChange={setSearch} placeholder="ابحث عن لحن..." className="mb-5" />
 
@@ -606,17 +614,12 @@ const MelodiesPage = () => {
         </div>
       </div>
 
-      {/* ── Clarification Box ── */}
-      <div className="max-w-3xl mx-auto animate-fade-in-up animate-fade-in-up-4" style={{ maxWidth: 750, margin: '0 auto 40px', position: 'relative', zIndex: 2 }}>
+      {/* ── بوكس التوضيح ── */}
+      <div style={{ maxWidth: 750, margin: '0 auto 40px', position: 'relative', zIndex: 2 }}>
         <div
-          className="rounded-lg p-6 sm:p-8 border border-accent/20 relative overflow-hidden"
           style={{
-            background: isDark
-              ? 'linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%))'
-              : 'linear-gradient(135deg, hsl(30 30% 97%), hsl(30 25% 95%))',
-            backgroundImage: isDark
-              ? `repeating-linear-gradient(transparent, transparent 28px, rgba(201,168,76,0.06) 28px, rgba(201,168,76,0.06) 29px)`
-              : `repeating-linear-gradient(transparent, transparent 28px, rgba(154,107,26,0.08) 28px, rgba(154,107,26,0.08) 29px)`,
+            background: 'linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%))',
+            backgroundImage: `repeating-linear-gradient(transparent, transparent 28px, rgba(201,168,76,0.06) 28px, rgba(201,168,76,0.06) 29px)`,
             borderRadius: 16,
             border: '1px solid rgba(201,168,76,0.2)',
             padding: '24px 32px',
@@ -627,38 +630,33 @@ const MelodiesPage = () => {
           <div style={{ position: 'absolute', top: 12, right: 16, color: 'rgba(201,168,76,0.2)', fontSize: 30 }}>♪</div>
           <div style={{ position: 'absolute', bottom: 12, left: 16, color: 'rgba(201,168,76,0.2)', fontSize: 24 }}>♫</div>
           <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#c9a84c', marginBottom: 16, textAlign: 'center' }}>
-            {t('Important Clarification', 'توضيح مهم')}
+            توضيح مهم
           </h3>
-          <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'center', fontFamily: 'Almarai, sans-serif' }}>
-            {t(
-              "I have used artificial intelligence tools to help me connect the closest musical form to the ideas and melodies I have created. Therefore, you will find in some songs that there are parts of the words that are not pronounced completely correctly. As for the videos, they are my effort to help in understanding the meaning of the words.",
-              'لقد استخدمت أدوات الذكاء الاصطناعي لمساعدتي في ربط أقرب شكل موسيقي بالأفكار والألحان التي ابتكرتها. لذلك ستجد في بعض الأغاني أن هناك أجزاء من الكلمات لا تُنطق بشكل صحيح تمامًا. أما الفيديوهات فهي جهدي لمساعدتك على فهم معنى الكلمات.'
-            )}
+          <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'center', fontFamily: 'Almarai, sans-serif', margin: 0 }}>
+            لقد استخدمت أدوات الذكاء الاصطناعي لمساعدتي في ربط أقرب شكل موسيقي بالأفكار والألحان التي ابتكرتها. لذلك ستجد في بعض الأغاني أن هناك أجزاء من الكلمات لا تُنطق بشكل صحيح تمامًا. أما الفيديوهات فهي جهدي لمساعدتك على فهم معنى الكلمات.
           </p>
         </div>
       </div>
 
-      {/* ── Song Cards ── */}
+      {/* ── كروت الأغاني ── */}
       {filteredSongs.map((song) => (
-        <div key={song.id} className="main-card" style={{ position: 'relative', zIndex: 1 }}>
-          {/* Card floating notes */}
+        <div key={song.id} className="main-card">
           <CardFloatingNotes seed={song.id * 31} />
 
-          {/* Player Side */}
           <div className="player-side">
             <div className="song-tag">{song.type}</div>
             <div className="cover-box" style={{ backgroundImage: `url(${toDriveDirectDownloadUrl(song.coverImg)})` }} />
 
-            {/* Views badge + Stars in one flex row */}
             <div className="views-stars-row">
               <div className="views-badge">{song.views}</div>
               <div style={{ display: 'flex', gap: 4 }}>
                 {[1, 2, 3, 4, 5].map((num) => {
-                  const filled = num <= (hoveredStar?.songId === song.id ? hoveredStar.star : (starRatings[song.id] || 0));
+                  const hovered = hoveredStar?.songId === song.id ? hoveredStar.star : 0;
+                  const lit = num <= (hovered || starRatings[song.id] || 0);
                   return (
                     <span
                       key={num}
-                      className={`star-inline ${filled ? 'active' : ''}`}
+                      className={`star-inline${lit ? ' lit' : ''}`}
                       onMouseEnter={() => setHoveredStar({ songId: song.id, star: num })}
                       onMouseLeave={() => setHoveredStar(null)}
                       onClick={() => setStarRatings((prev) => ({ ...prev, [song.id]: num }))}
@@ -704,7 +702,6 @@ const MelodiesPage = () => {
             })}
           </div>
 
-          {/* Lyrics Side */}
           <div className="lyrics-side">
             <span className="label-gold">كلمات الأغنية</span>
             <div className="title-row">
@@ -719,7 +716,7 @@ const MelodiesPage = () => {
             <span className="label-gold">الآراء النقدية (اضغط للتقييم)</span>
             {song.critics.map((critic, idx) => (
               <div key={idx} className="critic-item" onClick={() => handleCriticClick(song.id, idx)}>
-                <span style={{ fontSize: 14 }}>{critic}</span>
+                <span style={{ fontSize: '14px' }}>{critic}</span>
                 {selectedCritics[`${song.id}-${idx}`] && (
                   <span style={{ color: '#c9a84c', fontWeight: 'bold' }}>{selectedCritics[`${song.id}-${idx}`]}%</span>
                 )}

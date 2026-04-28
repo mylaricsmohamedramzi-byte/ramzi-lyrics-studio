@@ -480,7 +480,7 @@ const VideosPage = () => {
 
         .page-container { background: #010416; min-height: 100vh; padding: 40px 20px; font-family: 'Almarai', sans-serif; }
         
-        .main-card { max-width: 1100px; margin: 0 auto 80px; background: radial-gradient(circle at center,rgb(103, 6, 6) 0%, var(--leather-black) 100%); border: 1.5px solid #1a2245; border-radius: 40px; overflow: hidden; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+        .main-card { max-width: 1100px; margin: 0 auto 80px; background: #050a24; border: 1.5px solid #1a2245; border-radius: 40px; overflow: hidden; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
         
         .card-header { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
         .song-label { color: #5a6491; font-size: 14px; }

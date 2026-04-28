@@ -425,6 +425,8 @@ const allVideos = [
 const VideosPage = () => {
   const { lang } = useLang();
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
+  const [starRatings, setStarRatings] = useState<Record<number, number>>({});
+  const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
   const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
   const [search, setSearch] = useState('');
   const [activeCat, setActiveCat] = useState('all');
@@ -674,7 +676,24 @@ const VideosPage = () => {
         .ok-badge {
           background: #f0fdf4; color: #1a2e44;
           padding: 8px 30px; border-radius: 30px;
-          font-weight: bold; float: left; margin-top: 20px;
+          font-weight: bold;
+        }
+
+        .views-stars-row {
+          display: flex; align-items: center; justify-content: space-between;
+          margin-top: 20px;
+        }
+
+        .star-rating { display: flex; gap: 4px; }
+        .star {
+          font-size: 22px; cursor: pointer;
+          color: rgba(201,168,76,0.25);
+          transition: color 0.2s, text-shadow 0.2s;
+          user-select: none;
+        }
+        .star.active {
+          color: #c9a84c;
+          text-shadow: 0 0 8px rgba(201,168,76,0.7);
         }
 
         /* ─── أزرار الفلتر ─── */
@@ -766,7 +785,20 @@ const VideosPage = () => {
                       )}
                     </div>
                   ))}
-                  <div className="ok-badge">{video.views} K</div>
+                  <div className="views-stars-row">
+                    <div className="ok-badge">{video.views} K</div>
+                    <div className="star-rating">
+                      {[1, 2, 3, 4, 5].map((num) => (
+                        <span
+                          key={num}
+                          className={`star ${num <= (hoverStar[video.id] ?? starRatings[video.id] ?? 0) ? 'active' : ''}`}
+                          onClick={() => setStarRatings((prev) => ({ ...prev, [video.id]: num }))}
+                          onMouseEnter={() => setHoverStar((prev) => ({ ...prev, [video.id]: num }))}
+                          onMouseLeave={() => setHoverStar((prev) => { const n = { ...prev }; delete n[video.id]; return n; })}
+                        >★</span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

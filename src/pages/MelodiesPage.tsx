@@ -1,33 +1,6 @@
 import { useState, useRef, useMemo } from 'react'; import SearchBar from '@/components/SearchBar'; import { normalizeArabic } from '@/lib/arabic'; const MEL_CATEGORIES: { key: string; label: string; match: (t: string) => boolean }[] = [ { key: 'all', label: 'الكل', match: () => true
 
-pasted
-
-
-1777349847856_image.png
-
-دلوقتي الكود المرفق بتاع صفحة الالحان  و كمان في صور  عباره عن جدول في اسم كل اغنية في الصفحة و النوع بتاعها   انت هتحدث البيانات دي من الجدول دا و بعدها بنائاً علي البيانات دي                                                                                                                                                                          const VIDEO_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean }[] = [   { key: 'all', ar: 'الكل', en: 'All', match: () => true },   { key: 'islamic', ar: 'إسلامي', en: 'Islamic', match: (c) => /islamic|إسلامي/i.test(c) },   { key: 'patriotic', ar: 'وطني', en: 'Patriotic', match: (c) => /patriotic|وطني/i.test(c) },   { key: 'social', ar: 'اجتماعي وعائلي', en: 'Social & Family', match: (c) => /social|family|اجتماعي|عائلي/i.test(c) },   { key: 'occasion', ar: 'مناسبات وأعياد', en: 'Occasion & Holiday', match: (c) => /occasion|holiday|مناسبات|أعياد/i.test(c) },   { key: 'motivational', ar: 'تحفيزية', en: 'Motivational', match: (c) => /motivational|تحفيزية|تحفيز/i.test(c) },   { key: 'poems', ar: 'قصائد', en: 'Poems', match: (c) => /poems|قصائد|قصيدة/i.test(c) },   { key: 'classic', ar: 'كلاسيك', en: 'Classic', match: (c) => /classic|كلاسيك/i.test(c) },   { key: 'drama', ar: 'دراما', en: 'Drama', match: (c) => /drama|دراما/i.test(c) },   { key: 'slow', ar: 'سلو', en: 'Slow', match: (c) => /slow|سلو/i.test(c) },   { key: 'romantic', ar: 'رومانسي', en: 'Romantic', match: (c) => /romantic|رومانسي/i.test(c) },   { key: 'romantic_maqsum', ar: 'رومانسي مقسوم', en: 'Romantic Maqsum', match: (c) => /romantic maqsum|رومانسي مقسوم/i.test(c) },   { key: 'pop', ar: 'بوب', en: 'Pop', match: (c) => /pop|بوب/i.test(c) },   { key: 'rock', ar: 'روك', en: 'Rock', match: (c) => /rock|روك/i.test(c) },   { key: 'maqsum', ar: 'مقسوم', en: 'Maqsum', match: (c) => /maqsum|مقسوم/i.test(c) },   { key: 'tarab', ar: 'طرب', en: 'Tarab', match: (c) => /tarab|طرب/i.test(c) },   { key: 'shaabi', ar: 'شعبي', en: 'Shaabi', match: (c) => /shaabi|شعبي/i.test(c) },   { key: 'saidi', ar: 'صعيدي', en: 'Sa\'idi', match: (c) => /sa'idi|saidi|صعيدي/i.test(c) },   { key: 'rap', ar: 'راب', en: 'Rap', match: (c) => /rap|راب/i.test(c) },   { key: 'trap', ar: 'تراب', en: 'Trap', match: (c) => /trap|تراب/i.test(c) }, ];                                                                                                                                                                                      ... | # | التعديل | التفاصيل |
-
-|---|---------|----------|
-
-| 1 | **فلتر السرش بار** | بيعرض بس الفئات الموجودة فعلاً في الفيديوهات (قصائد، دراما، روك، مقسوم، تراب) + الكل — بدل ما كان بيعرض كل الفئات الـ 20 |
-
-| 2 | **ترتيب الفيديوهات** | الفيديوهات بتتترتب تلقائياً حسب أولوية الفئة: قصائد ← دراما ← روك ← مقسوم ← تراب |
-
-| 3 | **خلفية الصفحة** | اتغيرت من `#010416` الساكنة لـ `radial-gradient` أحمر داكن زي LyricsPage |
-
-| 4 | **FloatingNotes (الصفحة)** | أُضيف مكوّن الملاحظات الموسيقية العائمة في خلفية الصفحة كلها |
-
-| 5 | **CardFloatingNotes (الكارد)** | أُضيف مكوّن ملاحظات عائمة داخل كل كارد بـ seed مختلف لكل فيديو |
-
-| 6 | **خلفية الكارد** | اتغيرت لجلد أحمر: `radial-gradient(circle at center, rgb(103,6,6) 0%, #0a0205 100%)` + texture الجلد من transparenttextures |
-
-| 7 | **خلفية قسم الكلمات** | خلفية داكنة `rgba(4,4,20,0.82)` عشان الكلمات الحمراء تظهر واضحة على الكارد الأحمر |
-
-| 8 | **لون الكلمات العادية** | اتغير من أبيض `#fff` لذهبي فاتح `#e8d5b0` يناسب ثيم الجلد |
-
-| 9 | **نجوم التقييم** | أُضيفت 5 نجوم ذهبية بجانب نسبة المشاهدات، بتدعم hover وتثبيت الاختيار |
-
-| 10 | **صف المشاهدات + النجوم** | الـ ok-badge والنجوم اتحطوا في صف flex واحد جنب بعض بدل ما الـ badge يكون float |                                                                                                                                                          هتعمل حوار فلترت السرش بار و كمان هتعمل التعديلات اللي هيا من 3    الي 10 بحيث ان الموقع يكون الصفاحات بتعته موحده و كمان هتضيف النص دا  بعد السرش بار   <div className="max-w-3xl mx-auto animate-fade-in-up animate-fade-in-up-4">
+                                                                                                                                                        هتعمل حوار فلترت السرش بار و كمان هتعمل التعديلات اللي هيا من 3    الي 10 بحيث ان الموقع يكون الصفاحات بتعته موحده و كمان هتضيف النص دا  بعد السرش بار   <div className="max-w-3xl mx-auto animate-fade-in-up animate-fade-in-up-4">
 
           <div
 

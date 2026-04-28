@@ -2,56 +2,29 @@ import { useState, useRef, useMemo } from 'react'; import SearchBar from '@/comp
 
           <div className="max-w-3xl mx-auto animate-fade-in-up animate-fade-in-up-4">
 
-          <div
-
-            className="rounded-lg p-6 sm:p-8 border border-accent/20 relative overflow-hidden"
-
-            style={{
-
-              background: isDark
-
-                ? 'linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%))'
-
-                : 'linear-gradient(135deg, hsl(30 30% 97%), hsl(30 25% 95%))',
-
-              backgroundImage: isDark
-
-                ? `repeating-linear-gradient(transparent, transparent 28px, rgba(201,168,76,0.06) 28px, rgba(201,168,76,0.06) 29px)`
-
-                : `repeating-linear-gradient(transparent, transparent 28px, rgba(154,107,26,0.08) 28px, rgba(154,107,26,0.08) 29px)`,
-
-            }}
-
-          >
-
-            <div className="absolute top-3 right-4 text-accent/20 text-3xl">♪</div>
-
-            <div className="absolute bottom-3 left-4 text-accent/20 text-2xl">♫</div>
-
-            <h3 className="text-lg font-subheading font-bold text-primary mb-4 text-center">
-
-              {t('Important Clarification', 'توضيح هام')}
-
-            </h3>
-
-            <p className="text-foreground/70 leading-relaxed text-center font-body">
-
-              {t(
-
-                "This page contains songs I have written, but with the melody for each song.",
-                <br></br>,
-                "Regardless of who sang these melodies, the goal is to convey the melody to you and help you imagine the general mood of the lyrics.",
-
-                ' هذه الصفحة تحتوي علي أغاني من كتاباتي و لكن مع اللحن الخاص بكل أغنية   .',
-                <br></br>,
-                ' بغض النظر عن الشخص الذي قام بغناء هذه الالحان فإن الهدف هو توصيل اللحن لكم ومساعدتكم في تخيل الحالة العامه للكلمات  .'
-              )}
-
-            </p>
-
-          </div>
-
-        </div>   :                                                                                                                                                                 
+         <div
+                      className="rounded-lg p-6 sm:p-8 border border-accent/20 relative overflow-hidden"
+                      style={{
+                        background: isDark
+                          ? 'linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%))'
+                          : 'linear-gradient(135deg, hsl(30 30% 97%), hsl(30 25% 95%))',
+                      }}
+                    >
+                      <div className="absolute top-3 right-4 text-accent/20 text-3xl">♪</div>
+                      <div className="absolute bottom-3 left-4 text-accent/20 text-2xl">♫</div>
+                    
+                      <h3 className="text-lg font-subheading font-bold text-primary mb-4 text-center">
+                        {t('Important Clarification', 'توضيح هام')}
+                      </h3>
+                    
+                      <p className="text-foreground/70 leading-relaxed text-center font-body whitespace-pre-line">
+                        {/* الطريقة الصحيحة: دمج النص في سلسلة واحدة مع استخدام \n للسطر الجديد */}
+                        {t(
+                          "This page contains songs I have written, but with the melody for each song.\nRegardless of who sang these melodies, the goal is to convey the melody to you and help you imagine the general mood of the lyrics.",
+                          "هذه الصفحة تحتوي على أغاني من كتاباتي ولكن مع اللحن الخاص بكل أغنية.\nبغض النظر عن الشخص الذي قام بغناء هذه الألحان، فإن الهدف هو توصيل اللحن لكم ومساعدتكم في تخيل الحالة العامة للكلمات."
+                        )}
+                      </p>
+       </div>                                                                                                                                                               
 
 
 

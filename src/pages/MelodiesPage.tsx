@@ -1,6 +1,6 @@
 import { useState, useRef, useMemo } from 'react'; import SearchBar from '@/components/SearchBar'; import { normalizeArabic } from '@/lib/arabic'; const MEL_CATEGORIES: { key: string; label: string; match: (t: string) => boolean }[] = [ { key: 'all', label: 'الكل', match: () => true
 
-                                                                                                                                                        هتعمل حوار فلترت السرش بار و كمان هتعمل التعديلات اللي هيا من 3    الي 10 بحيث ان الموقع يكون الصفاحات بتعته موحده و كمان هتضيف النص دا  بعد السرش بار   <div className="max-w-3xl mx-auto animate-fade-in-up animate-fade-in-up-4">
+          <div className="max-w-3xl mx-auto animate-fade-in-up animate-fade-in-up-4">
 
           <div
 
@@ -48,16 +48,10 @@ import { useState, useRef, useMemo } from 'react'; import SearchBar from '@/comp
 
           </div>
 
-        </div>   :                                                                                                                                                                 دا كود الصفحة يله اشتغل :
+        </div>   :                                                                                                                                                                 
 
 
 
-Explain
-
-Pasted content
-30.14 KB •578 lines
-•
-Formatting may be inconsistent from source
 
 import { useState, useRef, useMemo } from 'react';
 import SearchBar from '@/components/SearchBar';

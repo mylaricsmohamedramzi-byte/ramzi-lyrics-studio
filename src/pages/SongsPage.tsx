@@ -93,7 +93,35 @@ function toDriveDirectDownloadUrl(url: string): string {
   } catch { return trimmed; }
   return trimmed;
 }
-
+const ImportantNote = () => {
+  return (
+    <div className="important-note" style={{
+      border: '1px solid #ccc',
+      borderRadius: '8px',
+      padding: '12px 16px',
+      margin: '16px 0',
+      backgroundColor: '#2c2c2c',
+      color: '#f0d57a',
+      fontSize: '14px',
+      lineHeight: '1.5',
+      fontWeight: 'bold',
+      direction: 'rtl',
+      textAlign: 'right',
+      position: 'relative',
+    }}>
+      <p style={{ margin: 0 }}>
+        لقد استخدمت أدوات الذكاء الاصطناعي لمساعدتي في ربط أقرب شكل موسيقي بالأفكار والألحان التي ابتكرتها. لذلك ستجد في بعض الأغاني أن هناك أجزاء من الكلمات لا تُنطق بشكل صحيح تمامًا. أما الفيديوهات فهي جهدي لمساعدتك على فهم معنى الكلمات.
+      </p>
+      <span style={{
+        position: 'absolute',
+        top: '12px',
+        left: '12px',
+        fontSize: '18px',
+        color: '#f0d57a',
+      }}>🎵</span>
+    </div>
+  );
+};
 // ─── بيانات الأغاني ───────────────────────────────────────────────────────────
 const allSongs = [
   {

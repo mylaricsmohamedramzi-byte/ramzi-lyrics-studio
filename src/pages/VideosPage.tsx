@@ -3,60 +3,113 @@ import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
 
-// مكون النوتات الموسيقية الطائرة
-const FloatingNotes = () => {
-  const NOTES = ['♩', '♪', '♫', '♬', '𝄞', '♭', '♯'];
-  const floatingItems = Array.from({ length: 20 }, (_, i) => ({
-    note: NOTES[i % NOTES.length],
-    left: (i * 15 + 5) % 95,
-    size: 20 + (i % 30),
-    duration: 10 + (i % 10),
-    delay: i * 0.5,
-  }));
+// ─── ملاحظات موسيقية عائمة (خلفية الصفحة) ───────────────────────────────────
+const NOTES = ['♩', '♪', '♫', '♬', '𝄞', '𝄢', '♭', '♮', '♯', '𝄡', '♬', '♪', '♫', '♩'];
 
+const FloatingNotes = () => {
+  const items = Array.from({ length: 24 }, (_, i) => ({
+    note: NOTES[i % NOTES.length],
+    left: (i * 11 + 5) % 96,
+    size: 30 + ((i * 9) % 36),
+    duration: 8 + ((i * 3) % 9),
+    delay: (i * 1.1) % 7,
+  }));
   return (
-    <div className="floating-notes-container">
-      {floatingItems.map((item, i) => (
+    <div aria-hidden="true" className="floating-notes-layer">
+      {items.map(({ note, left, size, duration, delay }, i) => (
         <span
           key={i}
           className="floating-note"
-          style={{
-            left: `${item.left}%`,
-            fontSize: `${item.size}px`,
-            animationDuration: `${item.duration}s`,
-            animationDelay: `${item.delay}s`,
-          }}
+          style={{ left: `${left}%`, top: '110%', fontSize: `${size}px`, animationDuration: `${duration}s`, animationDelay: `${delay}s` }}
         >
-          {item.note}
+          {note}
         </span>
       ))}
     </div>
   );
 };
 
-const CATEGORY_ORDER = ['poems', 'classic', 'drama', 'romantic', 'maqsum', 'pop', 'rock', 'tarab', 'trap', 'shaabi'];
+const CardFloatingNotes = ({ seed }: { seed: number }) => {
+  const items = Array.from({ length: 12 }, (_, i) => ({
+    note: NOTES[(i + seed) % NOTES.length],
+    left: (i * 17 + seed * 9) % 96,
+    size: 20 + ((i * 5 + seed) % 20),
+    duration: 7 + ((i * 2 + seed) % 7),
+    delay: (i * 0.9 + seed * 0.3) % 6,
+  }));
+  return (
+    <div aria-hidden="true" className="card-floating-notes">
+      {items.map(({ note, left, size, duration, delay }, i) => (
+        <span
+          key={`${seed}-${i}`}
+          className="card-floating-note"
+          style={{ left: `${left}%`, top: '112%', fontSize: `${size}px`, animationDuration: `${duration}s`, animationDelay: `${delay}s` }}
+        >
+          {note}
+        </span>
+      ))}
+    </div>
+  );
+};
 
-const ALL_CATEGORIES_CONFIG = [
-  { key: 'all', ar: 'الكل', en: 'All', match: () => true },
-  { key: 'poems', ar: 'قصائد', en: 'Poems', match: (c) => /قصائد|poems/i.test(c) },
-  { key: 'classic', ar: 'كلاسيك', en: 'Classic', match: (c) => /كلاسيك|classic/i.test(c) },
-  { key: 'drama', ar: 'دراما', en: 'Drama', match: (c) => /دراما|drama/i.test(c) },
-  { key: 'romantic', ar: 'رومانسي', en: 'Romantic', match: (c) => /رومانسي|romantic/i.test(c) },
-  { key: 'maqsum', ar: 'مقسوم', en: 'Maqsum', match: (c) => /مقسوم|maqsum/i.test(c) },
-  { key: 'pop', ar: 'بوب', en: 'Pop', match: (c) => /بوب|pop/i.test(c) },
-  { key: 'rock', ar: 'روك', en: 'Rock', match: (c) => /روك|rock/i.test(c) },
-  { key: 'tarab', ar: 'طرب', en: 'Tarab', match: (c) => /طرب|tarab/i.test(c) },
-  { key: 'trap', ar: 'تراب', en: 'Trap', match: (c) => /تراب|trap/i.test(c) },
+// ─── ترتيب الأولوية للفئات ───────────────────────────────────────────────────
+const VIDEO_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean; order: number }[] = [
+  { key: 'all',             ar: 'الكل',             en: 'All',             match: () => true,                                                        order: 0  },
+  { key: 'islamic',         ar: 'إسلامي',           en: 'Islamic',         match: (c) => /islamic|إسلامي/i.test(c),                                 order: 1  },
+  { key: 'patriotic',       ar: 'وطني',             en: 'Patriotic',       match: (c) => /patriotic|وطني/i.test(c),                                  order: 2  },
+  { key: 'social',          ar: 'اجتماعي وعائلي',   en: 'Social & Family', match: (c) => /social|family|اجتماعي|عائلي/i.test(c),                   order: 3  },
+  { key: 'occasion',        ar: 'مناسبات وأعياد',   en: 'Occasion & Holiday', match: (c) => /occasion|holiday|مناسبات|أعياد/i.test(c),             order: 4  },
+  { key: 'motivational',    ar: 'تحفيزية',          en: 'Motivational',    match: (c) => /motivational|تحفيزية|تحفيز/i.test(c),                     order: 5  },
+  { key: 'poems',           ar: 'قصائد',            en: 'Poems',           match: (c) => /poems|قصائد|قصيدة/i.test(c),                               order: 6  },
+  { key: 'classic',         ar: 'كلاسيك',           en: 'Classic',         match: (c) => /classic|كلاسيك/i.test(c),                                  order: 7  },
+  { key: 'drama',           ar: 'دراما',            en: 'Drama',           match: (c) => /drama|دراما/i.test(c),                                     order: 8  },
+  { key: 'slow',            ar: 'سلو',              en: 'Slow',            match: (c) => /slow|سلو/i.test(c),                                        order: 9  },
+  { key: 'romantic',        ar: 'رومانسي',          en: 'Romantic',        match: (c) => /romantic|رومانسي/i.test(c),                                order: 10 },
+  { key: 'romantic_maqsum', ar: 'رومانسي مقسوم',   en: 'Romantic Maqsum', match: (c) => /romantic maqsum|رومانسي مقسوم/i.test(c),                  order: 11 },
+  { key: 'pop',             ar: 'بوب',              en: 'Pop',             match: (c) => /pop|بوب/i.test(c),                                         order: 12 },
+  { key: 'rock',            ar: 'روك',              en: 'Rock',            match: (c) => /rock|روك/i.test(c),                                        order: 13 },
+  { key: 'maqsum',          ar: 'مقسوم',            en: 'Maqsum',          match: (c) => /maqsum|مقسوم/i.test(c),                                    order: 14 },
+  { key: 'tarab',           ar: 'طرب',              en: 'Tarab',           match: (c) => /tarab|طرب/i.test(c),                                       order: 15 },
+  { key: 'shaabi',          ar: 'شعبي',             en: 'Shaabi',          match: (c) => /shaabi|شعبي/i.test(c),                                     order: 16 },
+  { key: 'saidi',           ar: 'صعيدي',            en: "Sa'idi",          match: (c) => /sa'idi|saidi|صعيدي/i.test(c),                              order: 17 },
+  { key: 'rap',             ar: 'راب',              en: 'Rap',             match: (c) => /rap|راب/i.test(c),                                         order: 18 },
+  { key: 'trap',            ar: 'تراب',             en: 'Trap',            match: (c) => /trap|تراب/i.test(c),                                       order: 19 },
 ];
 
+/** ترتيب رقمي للفئة بحسب قائمة الأولويات */
+function getCategoryOrder(category: string): number {
+  const match = VIDEO_CATEGORIES.find((c) => c.key !== 'all' && c.match(category || ''));
+  return match ? match.order : 99;
+}
+
+// ─── دالة استخراج ID يوتيوب ──────────────────────────────────────────────────
+function getYouTubeVideoId(url: string): string | null {
+  try {
+    const t = url.trim();
+    if (t.includes('youtu.be/')) return t.match(/youtu\.be\/([a-zA-Z0-9_-]+)/)?.[1] ?? null;
+    if (t.includes('youtube.com')) return new URL(t).searchParams.get('v');
+    if (t.length === 11 && /^[a-zA-Z0-9_-]+$/.test(t)) return t;
+  } catch { return null; }
+  return null;
+}
+
+function getVideoSourceType(url: string): 'youtube' | 'cloudinary' | 'gdrive' | 'direct' {
+  const l = url.toLowerCase();
+  if (l.includes('youtube.com') || l.includes('youtu.be')) return 'youtube';
+  if (l.includes('cloudinary.com')) return 'cloudinary';
+  if (l.includes('drive.google.com')) return 'gdrive';
+  return 'direct';
+}
+
+// ─── بيانات الفيديوهات ────────────────────────────────────────────────────────
 const allVideos = [
   {
     id: 1,
-    title: "عداد الروقان",
-    category: "مقسوم",
+    title: "عداد الرقان ",
+    category: " مقسوم",
     videoUrls: ["https://youtu.be/kEgSPLkl0oQ?si=ITml38SiSzPgmF2T"],
     views: "88",
-    critics: ["كلمات مُبتكره", "لحن مميز", "أداء قوي", "توزيع ضعيف"],
+    critics: ["كلمات مُبتكره ","لحن مميز", "أداء قوي", "توزيع ضعيف "],
     lyrics: [
       { text: "أنا هبعت كلمة مهمة", red: false },
       { text: " من قلبي لقلب حبيبي", red: false },
@@ -127,7 +180,7 @@ const allVideos = [
     category: "قصائد",
     videoUrls: ["https://drive.google.com/file/d/1t3l9R8m8oWxm4C31MZQbZKn-iv_F06y2/view?usp=sharing"],
     views: "156",
-    critics: ["الكلمات عميقه وقويه", "اللحن أفضل من اللحن 1 و اللحن 2", "الفيديو ممتاز وبه مجهود و تفاصيل", "مناسبة لصوت كاظم الساهر"],
+    critics: ["الكلمات عميقه وقويه ","اللحن أفضل من اللحن 1 و اللحن 2","الفيديو ممتاز وبه مجهود و تفاصيل ","مناسبة لصوت كاظم الساهر"],
     lyrics: [
       { text: "حَبِيبَتِي قَدْ أَتَتْنِي اَلْرِّيِحُ بِمَا لَا أَشْتَهِي", red: false },
       { text: "وَلَقَدْ صَبَرْتُ حَتَّى صَارَ الصَّبْرُ مِنِّي يَشْتَكِي", red: false },
@@ -156,15 +209,23 @@ const allVideos = [
       { text: "\u00A0", red: false },
       { text: "مَهْمَا جَارَ عَلَيَّ الزَّمَانُ فَإِنَّنِي إِنَّنِي لَنْ أَجُورَ عَلَيْكِ", red: false },
       { text: "وَاللهِ إِنَّ جُرْحِي يَطِيبُ حِينَ أَرَى عَيْنَيْكِ", red: false },
+      { text: "\u00A0", red: false },
     ],
   },
   {
     id: 3,
     title: "نبره حزينه",
     category: "دراما",
-    videoUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1777259384/%D9%86%D8%A8%D8%B1%D8%A9_%D8%AD%D8%B2%D9%8A%D9%86%D8%A9_gzmks7.mp4"],
+    videoUrls: [
+      "https://res.cloudinary.com/dq3orhpdj/video/upload/v1777259384/%D9%86%D8%A8%D8%B1%D8%A9_%D8%AD%D8%B2%D9%8A%D9%86%D8%A9_gzmks7.mp4",
+    ],
     views: "0",
-    critics: ["الكلمات دقيقة وتروي قصة", "اللحن متناغم مع الكلمات", "مناسبة لصوت تامر عاشور", "مناسبة لصوت رامي جمال"],
+    critics: [
+      "الكلمات دقيقة وتروي قصة",
+      "اللحن متناغم مع الكلمات",
+      "مناسبة لصوت تامر عاشور",
+      "مناسبة لصوت رامي جمال",
+    ],
     lyrics: [
       { text: "نبره حزينه", red: false },
       { text: "\u00A0", red: false },
@@ -193,9 +254,16 @@ const allVideos = [
     id: 4,
     title: "كلامي واضح",
     category: "تراب",
-    videoUrls: ["https://drive.google.com/file/d/1LmDxEar_OOyBdgNOfoW23q6l8kvwrKmK/view?usp=sharing"],
+    videoUrls: [
+      "https://drive.google.com/file/d/1LmDxEar_OOyBdgNOfoW23q6l8kvwrKmK/view?usp=sharing",
+    ],
     views: "0",
-    critics: ["كلمات قوية", "إيقاع مناسب للراب الحماسي", "أداء واضح", "مناسب للفيديو"],
+    critics: [
+      "كلمات قوية",
+      "إيقاع مناسب للراب الحماسي",
+      "أداء واضح",
+      "مناسب للفيديو",
+    ],
     lyrics: [
       { text: "ودي مسا على مسا", red: false },
       { text: "جينا ريحنا العدا", red: false },
@@ -283,9 +351,16 @@ const allVideos = [
     id: 5,
     title: "تِلْكَ السُّلطَانَهْ",
     category: "روك",
-    videoUrls: ["https://drive.google.com/file/d/12TWS402XYp6SEZXr5Kn9PdnZW4Y-0Va_/view?usp=sharing"],
+    videoUrls: [
+      "https://drive.google.com/file/d/12TWS402XYp6SEZXr5Kn9PdnZW4Y-0Va_/view?usp=sharing",
+    ],
     views: "0",
-    critics: ["مزج رومانسي وروك مناسب للنص", "كلمات فصحى بليغة", "هيكل مقاطع واضح", "مناسب لعرض فيديو عالي الطاقة"],
+    critics: [
+      "مزج رومانسي وروك مناسب للنص",
+      "كلمات فصحى بليغة وقافية واضحة",
+      "هيكل مقاطع واضح (بيت، لازمة، تطوير)",
+      "مناسب لعرض فيديو عالي الطاقة",
+    ],
     lyrics: [
       { text: "_ يَوْماً مَ", red: false },
       { text: "_ سَنَكُونُ مَعاً", red: false },
@@ -296,7 +371,6 @@ const allVideos = [
       { text: "_ هلْ تَقْبَلِي بِي؟", red: false },
       { text: "_ فَتَقُولِي أَجَلْ", red: false },
       { text: "\u00A0", red: false },
-      { text: "\u00A0", red: false },
       { text: "_ وَأَطْلُبُ يَدَكِ", red: false },
       { text: "_ مِنْ وَالِدَكِ", red: false },
       { text: "_ وَأُقِيمُ زِفَافاً", red: false },
@@ -306,14 +380,12 @@ const allVideos = [
       { text: "_ تِلْكَ السُّلطَانَهْ", red: false },
       { text: "_ صَارَتْ حَرَمِي", red: false },
       { text: "\u00A0", red: false },
-      { text: "\u00A0", red: false },
       { text: "_ تِلْكَ الَّتِي شَغَلَتْ أَفْكَارِي", red: true },
       { text: "_ طِيلَةَ لَيْلِي وَنَهاري", red: true },
       { text: "_ بِجَمَالِهَا لَفَتَتْ أَنْظَارِي", red: true },
       { text: "_ مِنْ أَجْلِهَا زَادَ إِصْرَارِي", red: true },
       { text: "_ أَنْ تَسْكُنَ قَلْبِي وَدِيَارِي", red: true },
       { text: "_ هِيَ رُوحِي وَأَجْمَلُ أَقْدَارِي", red: true },
-      { text: "\u00A0", red: false },
       { text: "\u00A0", red: false },
       { text: "_ وَتَمْضِي الأَيَّامْ", red: false },
       { text: "_ بِنَا فِي سَلامْ", red: false },
@@ -334,7 +406,6 @@ const allVideos = [
       { text: "_ وَقْتَ الأَزَمَاتِ", red: false },
       { text: "_ وَالأَحْزَانِ", red: false },
       { text: "\u00A0", red: false },
-      { text: "\u00A0", red: false },
       { text: "_ وَنُكَوِّنُ نَسْلاً يَجْمَعُنَا", red: true },
       { text: "_ يَسْتَمْتِعُ بِالكَوْنِ مَعَنَا", red: true },
       { text: "_ لا نَتْرُكُ هَمّاً يَمْنَعُنَا", red: true },
@@ -350,140 +421,352 @@ const allVideos = [
   },
 ];
 
+// ─── المكوّن الرئيسي ──────────────────────────────────────────────────────────
 const VideosPage = () => {
   const { lang } = useLang();
+  const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
+  const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
   const [search, setSearch] = useState('');
   const [activeCat, setActiveCat] = useState('all');
-  const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
 
-  const availableCategories = useMemo(() => {
-    const presentKeys = new Set(allVideos.map(v => {
-      const found = ALL_CATEGORIES_CONFIG.find(c => c.key !== 'all' && c.match(v.category));
-      return found ? found.key : null;
-    }));
-    return ALL_CATEGORIES_CONFIG.filter(c => c.key === 'all' || presentKeys.has(c.key));
+  // ─── الفئات الموجودة فعلاً في الفيديوهات ─────────────────────────────────
+  const presentCategoryKeys = useMemo(() => {
+    const keys = new Set<string>();
+    allVideos.forEach((v) => {
+      const match = VIDEO_CATEGORIES.find((c) => c.key !== 'all' && c.match(v.category || ''));
+      if (match) keys.add(match.key);
+    });
+    return keys;
   }, []);
 
+  // فئات السرش بار: all + الفئات الموجودة فقط بنفس الترتيب
+  const visibleCategories = useMemo(
+    () => VIDEO_CATEGORIES.filter((c) => c.key === 'all' || presentCategoryKeys.has(c.key)),
+    [presentCategoryKeys]
+  );
+
+  // ─── تصفية + ترتيب ────────────────────────────────────────────────────────
   const filteredVideos = useMemo(() => {
     const q = normalizeArabic(search);
-    const catConfig = ALL_CATEGORIES_CONFIG.find(c => c.key === activeCat);
-    let result = allVideos.filter(v => {
-      const matchesCat = catConfig ? catConfig.match(v.category) : true;
-      if (!matchesCat) return false;
-      if (!q) return true;
-      const hay = [v.title, v.category, ...(v.lyrics?.map(l => l.text) || [])].join(' ');
-      return normalizeArabic(hay).includes(q);
-    });
-    return result.sort((a, b) => {
-      const orderA = CATEGORY_ORDER.indexOf(ALL_CATEGORIES_CONFIG.find(c => c.match(a.category))?.key || '');
-      const orderB = CATEGORY_ORDER.indexOf(ALL_CATEGORIES_CONFIG.find(c => c.match(b.category))?.key || '');
-      return (orderA === -1 ? 99 : orderA) - (orderB === -1 ? 99 : orderB);
-    });
+    const cat = VIDEO_CATEGORIES.find((c) => c.key === activeCat) || VIDEO_CATEGORIES[0];
+    return allVideos
+      .filter((v) => {
+        if (!cat.match(v.category || '')) return false;
+        if (!q) return true;
+        const hay = [v.title, v.category, ...(v.lyrics?.map((l) => l.text) || [])].join(' ');
+        return normalizeArabic(hay).includes(q);
+      })
+      .slice()
+      .sort((a, b) => getCategoryOrder(a.category) - getCategoryOrder(b.category));
   }, [search, activeCat]);
+
+  const handleCriticClick = (videoId: number, idx: number) => {
+    const key = `${videoId}-${idx}`;
+    if (!selectedCritics[key]) {
+      setSelectedCritics((prev) => ({ ...prev, [key]: Math.floor(Math.random() * 31) + 65 }));
+    }
+  };
+
+  const renderVideo = (url: string, idx: number, videoId: number) => {
+    const sourceType = getVideoSourceType(url);
+    const key = `${videoId}-${idx}`;
+
+    if (sourceType === 'youtube') {
+      const vid = getYouTubeVideoId(url);
+      if (!vid) return null;
+      return (
+        <div key={idx} className="video-wrapper">
+          <iframe
+            className="video-frame"
+            src={`https://www.youtube.com/embed/${vid}`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      );
+    }
+
+    if (sourceType === 'gdrive') {
+      return (
+        <div key={idx} className="video-wrapper">
+          <iframe
+            className="video-frame"
+            src={url.replace('/open', '/preview').replace('/view', '/preview')}
+            allowFullScreen
+          />
+        </div>
+      );
+    }
+
+    return (
+      <video key={idx} ref={(el) => { videoRefs.current[key] = el; }} className="video-player" controls>
+        <source src={url} type="video/mp4" />
+      </video>
+    );
+  };
 
   return (
     <div dir="rtl" className="page-wrapper">
+      {/* ملاحظات عائمة خلفية الصفحة */}
       <FloatingNotes />
-      
+
       <style>{`
-        .page-wrapper { 
-          background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, #000 100%);
-          min-height: 100vh; padding: 40px 20px; position: relative; overflow-x: hidden;
+        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&display=swap');
+
+        @font-face {
+          font-family: 'DG Forsha';
+          src: url('/fonts/DG-Forsha.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
         }
 
-        .floating-notes-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-        .floating-note { position: absolute; bottom: -50px; color: rgba(255, 255, 255, 0.1); animation: floatUp linear infinite; }
-        @keyframes floatUp {
-          0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-          10% { opacity: 0.4; }
-          100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        /* ─── متغيرات ─── */
+        :root { --leather-black: #0a0205; }
+
+        /* ─── خلفية الصفحة (مثل LyricsPage) ─── */
+        .page-wrapper {
+          position: relative;
+          background: radial-gradient(ellipse at 50% 50%, #3d0a12 0%, #1a0509 40%, #0a0205 100%);
+          min-height: 100vh;
+          padding: 40px 20px;
+          color: white;
+          font-family: 'Almarai', sans-serif;
         }
 
-        .main-card { 
-          max-width: 1100px; margin: 0 auto 60px; 
-          /* خلفية الكارد أحمر أفتح قليلاً مع نسيج الجلد */
+        /* ─── طبقة الملاحظات العائمة ─── */
+        .floating-notes-layer {
+          position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
+        }
+        .floating-note {
+          position: absolute; user-select: none;
+          color: rgba(201, 168, 76, 0.32);
+          font-family: 'Aref Ruqaa Ink', serif;
+          animation-name: floatNote;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+        @keyframes floatNote {
+          0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+          10%  { opacity: 0.72; }
+          85%  { opacity: 0.56; }
+          100% { transform: translateY(-125vh) rotate(22deg); opacity: 0; }
+        }
+
+        /* ─── طبقة المحتوى ─── */
+        .content-layer { position: relative; z-index: 1; }
+
+        /* ─── الكارد (جلد أحمر) ─── */
+        .main-card {
+          position: relative;
+          max-width: 1100px;
+          margin: 0 auto 80px;
+          border: 2px solid #c9a84c;
+          border-radius: 40px;
+          overflow: hidden;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+          /* خلفية الجلد الأحمر */
           background-image: url('https://www.transparenttextures.com/patterns/leather.png');
-          background-color: #8b0000; 
-          border-radius: 30px; overflow: hidden; position: relative;
-          box-shadow: 0 20px 50px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);
+          background-color: transparent;
+          background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, var(--leather-black) 100%);
         }
 
-        .card-content { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 25px; padding: 35px; position: relative; z-index: 2; }
-        
-        /* صندوق الكلمات بلون أزرق غامق (نفس لون الصفحة القديم) */
-        .lyrics-section { 
-          background: #0a0f2b; 
-          padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
-          box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        /* ─── ملاحظات عائمة داخل الكارد ─── */
+        .card-floating-notes {
+          position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
+        }
+        .card-floating-note {
+          position: absolute; user-select: none;
+          color: rgba(201, 168, 76, 0.18);
+          font-family: 'Aref Ruqaa Ink', serif;
+          animation-name: floatNoteCard;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+        @keyframes floatNoteCard {
+          0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+          12%  { opacity: 0.5; }
+          82%  { opacity: 0.36; }
+          100% { transform: translateY(-900px) rotate(16deg); opacity: 0; }
         }
 
-        .video-title { color: #fff; font-size: 2.2rem; margin-bottom: 20px; font-family: 'Aref Ruqaa Ink', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .line { color: #e0e0e0; font-size: 1.15rem; margin-bottom: 6px; line-height: 1.6; }
-        .line.red { color: #ff3333; font-weight: bold; text-shadow: 0 0 8px rgba(255,0,0,0.2); }
+        /* ─── محتوى الكارد فوق الطبقات ─── */
+        .card-inner { position: relative; z-index: 1; }
 
+        .card-header {
+          padding: 20px 40px;
+          display: flex; justify-content: space-between; align-items: center;
+        }
+        .song-label { color: #d4a0a0; font-size: 14px; }
+        .category-badge {
+          background: #c9a84c; color: #000;
+          padding: 6px 25px; border-radius: 20px;
+          font-weight: bold; font-size: 14px;
+        }
+
+        .video-container { padding: 0 40px; margin-bottom: 30px; }
+        .video-wrapper {
+          position: relative; padding-bottom: 50.25%; height: 0;
+          border-radius: 60px; overflow: hidden;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        }
+        .video-frame { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .video-player { width: 100%; border-radius: 60px; background: #000; }
+
+        /* ─── قسم الكلمات: خلفية داكنة (مش أحمر) ─── */
+        .card-content {
+          display: grid; grid-template-columns: 1.2fr 0.8fr;
+          gap: 0; padding: 0;
+        }
+        .lyrics-section {
+          display: flex; flex-direction: column;
+          padding: 30px 40px;
+          /* خلفية داكنة حتى تظهر الكلمات المكتوبة بالأحمر */
+          background: rgba(4, 4, 20, 0.82);
+          border-left: 1px solid rgba(201, 168, 76, 0.2);
+        }
+        .video-title {
+          color: #ff4d4d; font-family: 'Aref Ruqaa Ink', serif;
+          font-size: 2.5rem; margin: 10px 0;
+        }
+
+        .lyrics-scroll-container {
+          margin-top: 20px;
+          border-right: 3px solid #c9a84c;
+          padding-right: 20px;
+          max-height: 300px;
+          overflow-y: auto;
+          scrollbar-width: thin;
+          scrollbar-color: #c9a84c transparent;
+        }
+        .lyrics-scroll-container::-webkit-scrollbar { width: 5px; }
+        .lyrics-scroll-container::-webkit-scrollbar-track { background: transparent; }
+        .lyrics-scroll-container::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
+
+        .line {
+          font-family: 'DG Forsha', 'Almarai', sans-serif;
+          font-size: 1.3rem; color: #e8d5b0;
+          margin-bottom: 12px; line-height: 1.8; opacity: 0.9;
+        }
+        .line.red { color: #ff4d4d; font-weight: bold; }
+
+        /* ─── قسم التقييم ─── */
+        .rating-section {
+          padding: 30px;
+          background: rgba(103, 6, 6, 0.25);
+          border-radius: 0;
+          height: fit-content;
+        }
+        .rating-title {
+          color: #d4a0a0; font-size: 14px;
+          margin-bottom: 15px; display: block; text-align: center;
+        }
+        .critic-item {
+          background: rgba(0, 0, 0, 0.4);
+          padding: 12px 20px; border-radius: 10px; margin-bottom: 10px;
+          border: 1px solid rgba(201, 168, 76, 0.25);
+          display: flex; justify-content: space-between;
+          cursor: pointer; color: #e8d5b0 !important;
+          transition: background 0.2s;
+        }
+        .critic-item:hover { background: rgba(0,0,0,0.6); }
+        .critic-percent { color: #c9a84c; font-weight: bold; }
+
+        .ok-badge {
+          background: #f0fdf4; color: #1a2e44;
+          padding: 8px 30px; border-radius: 30px;
+          font-weight: bold; float: left; margin-top: 20px;
+        }
+
+        /* ─── أزرار الفلتر ─── */
         .filter-chip {
-          padding: 10px 25px; border-radius: 25px; background: rgba(0,0,0,0.3);
-          color: #fff; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: 0.3s;
+          background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
+          color: #c9a84c; padding: 6px 18px; border-radius: 20px;
+          cursor: pointer; font-family: 'Almarai', sans-serif; font-size: 13px;
+          transition: all 0.2s;
         }
-        .filter-chip.active { background: #fff; color: #8b0000; font-weight: bold; }
+        .filter-chip:hover { background: rgba(201,168,76,0.2); }
+        .filter-chip.active { background: #c9a84c; color: #000; border-color: #c9a84c; font-weight: bold; }
 
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 15px; overflow: hidden; margin-bottom: 25px; border: 3px solid rgba(0,0,0,0.2); }
-        .video-frame { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        
-        .critic-item { background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 12px; margin-bottom: 10px; color: #fff; border-right: 4px solid #fff; }
-        .views-badge { background: #fff; color: #8b0000; padding: 6px 18px; border-radius: 20px; font-weight: bold; display: inline-block; }
+        @media (max-width: 900px) {
+          .card-content { grid-template-columns: 1fr; }
+          .lyrics-section { border-left: none; border-top: 1px solid rgba(201,168,76,0.2); }
+          .video-container { padding: 0 15px; }
+          .main-card { border-radius: 20px; }
+        }
       `}</style>
 
-      {/* البحث والفلترة */}
-      <div style={{ maxWidth: 1100, margin: '0 auto 40px', position: 'relative', zIndex: 10 }}>
-        <SearchBar value={search} onChange={setSearch} placeholder="ابحث في القصائد أو الأغاني..." />
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center', marginTop: 25 }}>
-          {availableCategories.map((c) => (
-            <button key={c.key} className={`filter-chip ${activeCat === c.key ? 'active' : ''}`} onClick={() => setActiveCat(c.key)}>
-              {lang === 'ar' ? c.ar : c.en}
-            </button>
-          ))}
+      <div className="content-layer">
+        {/* ─── سرش + فلتر ─── */}
+        <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
+          <SearchBar
+            value={search}
+            onChange={setSearch}
+            placeholder="ابحث عن فيديو..."
+            className="mb-5"
+          />
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
+            {visibleCategories.map((c) => (
+              <button
+                key={c.key}
+                type="button"
+                className={`filter-chip ${activeCat === c.key ? 'active' : ''}`}
+                onClick={() => setActiveCat(c.key)}
+              >
+                {lang === 'ar' ? c.ar : c.en}
+              </button>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: 12, color: '#c9a84c', fontSize: 13 }}>
+            {filteredVideos.length} / {allVideos.length}
+          </div>
         </div>
-      </div>
 
-      {/* عرض الفيديوهات */}
-      <div style={{ position: 'relative', zIndex: 10 }}>
+        {/* ─── الكاردات ─── */}
         {filteredVideos.map((video) => (
           <div key={video.id} className="main-card">
-            <div className="card-content">
-              {/* يمين: الفيديو والكلمات */}
-              <div className="right-col">
-                <div className="video-wrapper">
-                  {video.videoUrls[0].includes('youtube') || video.videoUrls[0].includes('youtu.be') ? (
-                    <iframe className="video-frame" src={`https://www.youtube.com/embed/${video.videoUrls[0].split('/').pop()?.split('?')[0]}`} allowFullScreen />
-                  ) : (
-                    <video className="video-frame" controls src={video.videoUrls[0]} />
-                  )}
-                </div>
-                
-                <div className="lyrics-section">
-                  <h2 className="video-title">{video.title}</h2>
-                  <div style={{ maxHeight: '400px', overflowY: 'auto', paddingRight: '10px' }}>
-                    {video.lyrics?.map((lyric, i) => (
-                      <div key={i} className={`line ${lyric.red ? 'red' : ''}`}>
-                        {lyric.text === '\u00A0' ? <br /> : lyric.text}
-                      </div>
-                    ))}
-                  </div>
+            {/* ملاحظات عائمة داخل الكارد */}
+            <CardFloatingNotes seed={video.id} />
+
+            <div className="card-inner">
+              <div className="card-header">
+                <span className="song-label">Song lyrics</span>
+                <div className="category-badge">
+                  {(() => {
+                    const matched = VIDEO_CATEGORIES.find((c) => c.key !== 'all' && c.match(video.category || ''));
+                    if (matched) return lang === 'ar' ? matched.ar : matched.en;
+                    return video.category || (lang === 'ar' ? 'عام' : 'General');
+                  })()}
                 </div>
               </div>
 
-              {/* يسار: التقييمات والمعلومات */}
-              <div className="left-col">
-                <h4 style={{ color: '#fff', marginBottom: '20px', fontSize: '1.4rem' }}>آراء النقاد</h4>
-                {video.critics?.map((critic, idx) => (
-                  <div key={idx} className="critic-item">
-                    {critic}
+              <div className="video-container">
+                {video.videoUrls?.map((url, idx) => renderVideo(url, idx, video.id))}
+              </div>
+
+              <div className="card-content">
+                {/* قسم الكلمات – خلفية داكنة */}
+                <div className="lyrics-section">
+                  <span className="song-label">Song lyrics</span>
+                  <h2 className="video-title">{video.title}</h2>
+                  <div className="lyrics-scroll-container">
+                    {video.lyrics?.map((lyric, i) => (
+                      <div key={i} className={`line ${lyric.red ? 'red' : ''}`}>{lyric.text}</div>
+                    ))}
                   </div>
-                ))}
-                <div style={{ marginTop: '30px', textAlign: 'center' }}>
-                  <div className="views-badge">{video.views} K VIEWS</div>
-                  <p style={{ color: 'rgba(255,255,255,0.7)', marginTop: '10px', fontSize: '0.9rem' }}>التصنيف: {video.category}</p>
+                </div>
+
+                {/* قسم التقييم */}
+                <div className="rating-section">
+                  <span className="rating-title">Critic reviews (click to rate)</span>
+                  {video.critics?.map((critic, idx) => (
+                    <div key={idx} className="critic-item" onClick={() => handleCriticClick(video.id, idx)}>
+                      <span>{critic}</span>
+                      {selectedCritics[`${video.id}-${idx}`] && (
+                        <span className="critic-percent">{selectedCritics[`${video.id}-${idx}`]}%</span>
+                      )}
+                    </div>
+                  ))}
+                  <div className="ok-badge">{video.views} K</div>
                 </div>
               </div>
             </div>

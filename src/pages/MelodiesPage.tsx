@@ -30,7 +30,7 @@ import { useState, useRef, useMemo } from 'react'; import SearchBar from '@/comp
 
             <h3 className="text-lg font-subheading font-bold text-primary mb-4 text-center">
 
-              {t('Important Clarification', 'توضيح مهم')}
+              {t('Important Clarification', 'توضيح هام')}
 
             </h3>
 
@@ -38,10 +38,13 @@ import { useState, useRef, useMemo } from 'react'; import SearchBar from '@/comp
 
               {t(
 
-                "I have used artificial intelligence tools to help me connect the closest musical form to the ideas and melodies I have created. Therefore, you will find in some songs that there are parts of the words that are not pronounced completely correctly. As for the videos, they are my effort to help in understanding the meaning of the words.",
+                "This page contains songs I have written, but with the melody for each song.",
+                <br></br>,
+                "Regardless of who sang these melodies, the goal is to convey the melody to you and help you imagine the general mood of the lyrics.",
 
-                'لقد استخدمت أدوات الذكاء الاصطناعي لمساعدتي في ربط أقرب شكل موسيقي بالأفكار والألحان التي ابتكرتها. لذلك ستجد في بعض الأغاني أن هناك أجزاء من الكلمات لا تُنطق بشكل صحيح تمامًا. أما الفيديوهات فهي جهدي لمساعدتك على فهم معنى الكلمات.'
-
+                ' هذه الصفحة تحتوي علي أغاني من كتاباتي و لكن مع اللحن الخاص بكل أغنية   .',
+                <br></br>,
+                ' بغض النظر عن الشخص الذي قام بغناء هذه الالحان فإن الهدف هو توصيل اللحن لكم ومساعدتكم في تخيل الحالة العامه للكلمات  .'
               )}
 
             </p>

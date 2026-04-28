@@ -94,6 +94,53 @@ function toDriveDirectDownloadUrl(url: string): string {
   } catch { return trimmed; }
   return trimmed;
 }
+<div
+
+            className="rounded-lg p-6 sm:p-8 border border-accent/20 relative overflow-hidden"
+
+            style={{
+
+              background: isDark
+
+                ? 'linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%))'
+
+                : 'linear-gradient(135deg, hsl(30 30% 97%), hsl(30 25% 95%))',
+
+              backgroundImage: isDark
+
+                ? `repeating-linear-gradient(transparent, transparent 28px, rgba(201,168,76,0.06) 28px, rgba(201,168,76,0.06) 29px)`
+
+                : `repeating-linear-gradient(transparent, transparent 28px, rgba(154,107,26,0.08) 28px, rgba(154,107,26,0.08) 29px)`,
+
+            }}
+
+          >
+
+            <div className="absolute top-3 right-4 text-accent/20 text-3xl">♪</div>
+
+            <div className="absolute bottom-3 left-4 text-accent/20 text-2xl">♫</div>
+
+            <h3 className="text-lg font-subheading font-bold text-primary mb-4 text-center">
+
+              {t('Important Clarification', 'توضيح مهم')}
+
+            </h3>
+
+            <p className="text-foreground/70 leading-relaxed text-center font-body">
+
+              {t(
+
+                "I have used artificial intelligence tools to help me connect the closest musical form to the ideas and melodies I have created. Therefore, you will find in some songs that there are parts of the words that are not pronounced completely correctly. As for the videos, they are my effort to help in understanding the meaning of the words.",
+
+                'لقد استخدمت أدوات الذكاء الاصطناعي لمساعدتي في ربط أقرب شكل موسيقي بالأفكار والألحان التي ابتكرتها. لذلك ستجد في بعض الأغاني أن هناك أجزاء من الكلمات لا تُنطق بشكل صحيح تمامًا. أما الفيديوهات فهي جهدي لمساعدتك على فهم معنى الكلمات.'
+
+              )}
+
+            </p>
+
+          </div>
+
+        </div>   :                                                                                                                                                                 دا كود الصفحة يله اشتغل :
 
 // ─── بيانات الأغاني (محدَّثة من الجدول) ──────────────────────────────────────
 const allSongs = [

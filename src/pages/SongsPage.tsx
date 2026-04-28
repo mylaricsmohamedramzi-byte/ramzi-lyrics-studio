@@ -1072,18 +1072,7 @@ const SongsPage = () => {
           <SearchBar value={search} onChange={setSearch} placeholder="ابحث عن أغنية..." className="mb-5" />
 
           {/* ─── بلوك التوضيح المهم ─── */}
-          <div className="clarification-block">
-            <span className="note-top">♪</span>
-            <span className="note-bottom">♫</span>
-            <h3 className="clarification-title">
-              {lang === 'ar' ? 'توضيح مهم' : 'Important Clarification'}
-            </h3>
-            <p className="clarification-text">
-              {lang === 'ar'
-                ? 'لقد استخدمت أدوات الذكاء الاصطناعي لمساعدتي في ربط أقرب شكل موسيقي بالأفكار والألحان التي ابتكرتها. لذلك ستجد في بعض الأغاني أن هناك أجزاء من الكلمات لا تُنطق بشكل صحيح تمامًا. أما الفيديوهات فهي جهدي لمساعدتك على فهم معنى الكلمات.'
-                : 'I have used artificial intelligence tools to help me connect the closest musical form to the ideas and melodies I have created. Therefore, you will find in some songs that there are parts of the words that are not pronounced completely correctly. As for the videos, they are my effort to help in understanding the meaning of the words.'}
-            </p>
-          </div>
+          
 
           {/* أزرار الفلتر */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
@@ -1096,6 +1085,29 @@ const SongsPage = () => {
             ))}
           </div>
 
+           <div style={{ maxWidth: 750, margin: '0 auto 40px', position: 'relative', zIndex: 2 }}>
+                <div
+                  style={{
+                    background: 'linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%))',
+                    backgroundImage: `repeating-linear-gradient(transparent, transparent 28px, rgba(201,168,76,0.06) 28px, rgba(201,168,76,0.06) 29px)`,
+                    borderRadius: 16,
+                    border: '1px solid rgba(201,168,76,0.2)',
+                    padding: '24px 32px',
+                    position: 'relative',
+                    overflow: 'hidden',
+                  }}
+                >
+                  <div style={{ position: 'absolute', top: 12, right: 16, color: 'rgba(201,168,76,0.2)', fontSize: 30 }}>♪</div>
+                  <div style={{ position: 'absolute', bottom: 12, left: 16, color: 'rgba(201,168,76,0.2)', fontSize: 24 }}>♫</div>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#c9a84c', marginBottom: 16, textAlign: 'center' }}>
+                    توضيح مهم
+                  </h3>
+                  <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, textAlign: 'center', fontFamily: 'Almarai, sans-serif', margin: 0 }}>
+                    لقد استخدمت أدوات الذكاء الاصطناعي لمساعدتي في ربط أقرب شكل موسيقي بالأفكار والألحان التي ابتكرتها. لذلك ستجد في بعض الأغاني أن هناك أجزاء من الكلمات لا تُنطق بشكل صحيح تمامًا. أما الفيديوهات فهي جهدي لمساعدتك على فهم معنى الكلمات.
+                  </p>
+                </div>
+           </div>
+          
           <div style={{ textAlign: 'center', marginTop: 12, color: '#c9a84c', fontSize: 13 }}>
             {filteredSongs.length} / {allSongs.length}
           </div>

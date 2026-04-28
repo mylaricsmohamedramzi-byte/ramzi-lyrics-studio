@@ -91,8 +91,8 @@ const WelcomePage = () => {
             </h3>
             <p className="text-foreground/70 leading-relaxed text-center font-body">
               {t(
-                "I have used artificial intelligence tools to help me connect the closest musical form to the ideas and melodies I have created. Therefore, you will find in some songs that there are parts of the words that are not pronounced completely correctly. As for the videos, they are my effort to help in understanding the meaning of the words.",
-                'لقد استخدمت أدوات الذكاء الاصطناعي لمساعدتي في ربط أقرب شكل موسيقي بالأفكار والألحان التي ابتكرتها. لذلك ستجد في بعض الأغاني أن هناك أجزاء من الكلمات لا تُنطق بشكل صحيح تمامًا. أما الفيديوهات فهي جهدي لمساعدتك على فهم معنى الكلمات.'
+                "The difference between the talented and the exceptional is that the talented person is content with their talent and does not make the extra effort to significantly improve upon it, whereas when talent is combined with study, self-improvement, and the ability to keep up with the times, the result is an exceptional person — Mohamed Ramzi.",
+                'الفرق بين الموهوب والمُميز، هو أن الموهوب يكتفي بموهبته ولا يبذل جهد أكثر في عمل تغيير ملحوظ على الموهبة، بينما عندما تجتمع الموهبة مع الدراسة والتطوير من المستوى والقدرة على المواكبة، ينتج شخص مُتميز — محمد رمزي.'
               )}
             </p>
           </div>

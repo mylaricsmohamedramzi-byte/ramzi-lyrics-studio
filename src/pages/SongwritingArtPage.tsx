@@ -379,18 +379,23 @@ const methods: Method[] = [
           <span className="cyan">• تاني حاله</span>
           <br />
           <span className="cyan" style={{ color: 'rgb(200, 50, 70)' }}>-- بيكون الكاتب مطلوب منه يكتب علي لحن أغنيه معينه عشان الأغنيه دي نجحت</span>
+          <br />
           <span className="cyan" style={{ color: 'rgb(29, 49, 243)' }}>خليني أضرب لكم مثالين من باب الهزار 😂 أغنية عمرو دياب اللي أسمها  "وهي عامله إيه " لو أنا ممكن أخلي الموضوع عبثي و أكتب علي نفس اللحن   </span>. <br /><br />
           <br />
           <span className="cyan">• الكلمات الاصليه </span>
           <br />
           <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• وهي عامله إيه دلوقت ... ومين هون عليها الوقت </span>
+          <br />
           <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• قولولي لو فى صالحها ... أروحلها و أصالحها</span>
+          <br />
           <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• ظالمها وقلبي جارحها  ... أجيلها ولا مش دلوقت</span>
           <br />
           <span className="cyan">• 🤣 الكلمات العبثيه </span>
           <br />
           <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• وهيّ بتاكل إيه دلوقت ... ومين اللي قاعد معاها عالاكل</span>
+          <br />
           <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• أخوها ولا صحبتها ... ولا لوحدها مفيش حدّ </span>
+          <br />
           <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• يا تري الاكل عاجبها ...ولا أجيلها ومعايا أكل </span>
           <br />
         </div>

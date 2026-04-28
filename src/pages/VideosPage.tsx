@@ -4,14 +4,26 @@ import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
 
 const VIDEO_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean }[] = [
-  { key: 'all',      ar: 'الكل',     en: 'All',                match: () => true },
-  {  key: 'maqsum',   ar: 'مقسوم',   en: 'Maqsum',              match: (c) => /maqsum|مقسوم/i.test(c) },
-  { key: 'trap',      ar: 'تراب',       en: 'Trap',                match: (c) => /trap|تراب/i.test(c) },
-  { key: 'rap',      ar: 'راب',       en: 'Rap',                match: (c) => /rap|راب/i.test(c) },
-  { key: 'rock',     ar: 'روك',       en: 'Rock',               match: (c) => /rock/i.test(c) },
-  { key: 'drama',    ar: 'دراما',     en: 'Drama',              match: (c) => /drama|دراما/i.test(c) },
-  { key: 'poems',    ar: 'قصائد',     en: 'Poems',             match: (c) => /قصائد|قصيدة|poem/i.test(c) },
-  { key: 'social',   ar: 'إجتماعي& عائلي',  en: 'Socila &Famliy',             match: (c) => /إجتماعي& عائلي|إجتماعي& عائلي|Socila &Famliy/i.test(c) },
+  { key: 'all', ar: 'الكل', en: 'All', match: () => true },
+  { key: 'islamic', ar: 'إسلامي', en: 'Islamic', match: (c) => /islamic|إسلامي/i.test(c) },
+  { key: 'patriotic', ar: 'وطني', en: 'Patriotic', match: (c) => /patriotic|وطني/i.test(c) },
+  { key: 'social', ar: 'اجتماعي وعائلي', en: 'Social & Family', match: (c) => /social|family|اجتماعي|عائلي/i.test(c) },
+  { key: 'occasion', ar: 'مناسبات وأعياد', en: 'Occasion & Holiday', match: (c) => /occasion|holiday|مناسبات|أعياد/i.test(c) },
+  { key: 'motivational', ar: 'تحفيزية', en: 'Motivational', match: (c) => /motivational|تحفيزية|تحفيز/i.test(c) },
+  { key: 'poems', ar: 'قصائد', en: 'Poems', match: (c) => /poems|قصائد|قصيدة/i.test(c) },
+  { key: 'classic', ar: 'كلاسيك', en: 'Classic', match: (c) => /classic|كلاسيك/i.test(c) },
+  { key: 'drama', ar: 'دراما', en: 'Drama', match: (c) => /drama|دراما/i.test(c) },
+  { key: 'slow', ar: 'سلو', en: 'Slow', match: (c) => /slow|سلو/i.test(c) },
+  { key: 'romantic', ar: 'رومانسي', en: 'Romantic', match: (c) => /romantic|رومانسي/i.test(c) },
+  { key: 'romantic_maqsum', ar: 'رومانسي مقسوم', en: 'Romantic Maqsum', match: (c) => /romantic maqsum|رومانسي مقسوم/i.test(c) },
+  { key: 'pop', ar: 'بوب', en: 'Pop', match: (c) => /pop|بوب/i.test(c) },
+  { key: 'rock', ar: 'روك', en: 'Rock', match: (c) => /rock|روك/i.test(c) },
+  { key: 'maqsum', ar: 'مقسوم', en: 'Maqsum', match: (c) => /maqsum|مقسوم/i.test(c) },
+  { key: 'tarab', ar: 'طرب', en: 'Tarab', match: (c) => /tarab|طرب/i.test(c) },
+  { key: 'shaabi', ar: 'شعبي', en: 'Shaabi', match: (c) => /shaabi|شعبي/i.test(c) },
+  { key: 'saidi', ar: 'صعيدي', en: 'Sa\'idi', match: (c) => /sa'idi|saidi|صعيدي/i.test(c) },
+  { key: 'rap', ar: 'راب', en: 'Rap', match: (c) => /rap|راب/i.test(c) },
+  { key: 'trap', ar: 'تراب', en: 'Trap', match: (c) => /trap|تراب/i.test(c) },
 ];
 
 // دالة استخراج ID اليوتيوب

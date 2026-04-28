@@ -372,6 +372,8 @@ const methods: Method[] = [
           (<span className="cyan" style={{ color: 'rgb(29, 49, 243)' }}>ودي منتشره جدا في أغاني المهرجانات</span>). <br /><br />
           بيكون في حالتين:
           <br />
+          <span className="cyan">• أول حاله</span>
+          <br />
           <span className="cyan" style={{ color: 'rgb(200, 50, 70)' }}>-- أن الكاتب يتبعت له اللحن ويطلب منه يكتب عليه من غير ما يكون عارف أنه مسروق</span>
           <br />
           ودا من الأسباب اللي بتخليني مُجبر أسمع كل الأغاني اللي بتنزل والقديمه كمان، وبالتالي لو حد بعت حاجه هقدر أحدد هل مسروقه أم لا.
@@ -380,7 +382,7 @@ const methods: Method[] = [
           <br />
           <span className="cyan" style={{ color: 'rgb(200, 50, 70)' }}>-- بيكون الكاتب مطلوب منه يكتب علي لحن أغنيه معينه عشان الأغنيه دي نجحت</span>
           <br />
-          <span className="cyan" style={{ color: 'rgb(29, 49, 243)' }}>😂خليني أضرب لكم مِثال من باب الهزار 
+          <span className="cyan" style={{ color: 'rgb(29, 49, 243)' }}>خليني أضرب لكم مِثال من باب الهزار 😂
           <br />
             أغنية عمرو دياب اللي أسمها  "وهي عامله إيه " لو أنا ممكن أخلي الموضوع عبثي و أكتب علي نفس اللحن   </span>. <br /><br />
           <br />
@@ -392,7 +394,7 @@ const methods: Method[] = [
           <br />
           <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• ظالمها وقلبي جارحها  ... أجيلها ولا مش دلوقت</span>
           <br />
-          <span className="cyan">• 🤣 الكلمات العبثيه </span>
+          <span className="cyan">•  الكلمات العبثيه 🤣</span>
           <br />
           <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• وهيّ بتاكل إيه دلوقت ... ومين اللي قاعد معاها عالاكل</span>
           <br />

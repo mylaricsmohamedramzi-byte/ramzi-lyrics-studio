@@ -486,18 +486,16 @@ const MelodiesPage  = () => {
         .song-tag { background: #c9a84c; color: #000; padding: 4px 20px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-bottom: 15px; }
         .cover-box { width: 100%; aspect-ratio: 1; background-size: cover; background-position: center; border-radius: 20px; border: 1px solid rgba(201, 168, 76, 0.3); }
 
+        .views-stars-row {
+          display: flex; align-items: center; justify-content: space-between;
+          width: 100%; margin-top: 15px; gap: 10px;
+        }
         .views-badge {
-          background-color: #f0fdf4;
-          color: #1a2e44;
-          padding: 8px 30px;
-          border-radius: 50px;
-          font-weight: bold;
-          font-size: 1.4rem;
-          margin-top: 15px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          display: inline-block;
-          border: none;
+          background-color: #f0fdf4; color: #1a2e44;
+          padding: 8px 20px; border-radius: 50px;
+          font-weight: bold; font-size: 1.2rem;
+          cursor: pointer; transition: all 0.3s ease;
+          border: none; flex-shrink: 0;
         }
 
         .views-badge:hover {
@@ -638,8 +636,8 @@ const MelodiesPage  = () => {
             <div className="song-tag">{song.type}</div>
             <div className="cover-box" style={{ backgroundImage: `url(${toDriveDirectDownloadUrl(song.coverImg)})` }} />
 
-            <div className="views-stars-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginTop: 15, gap: 10 }}>
-              <div className="views-badge">{song.views}</div>
+            <div className="views-stars-row">
+              <button className="views-badge">{lang === 'ar' ? `مشاهدة ${song.views}` : `Views ${song.views}`}</button>
               <div className="star-rating">
                 {[1, 2, 3, 4, 5].map((num) => (
                   <span key={num}

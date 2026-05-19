@@ -1557,6 +1557,23 @@ export default function SongsPage() {
                 >
                   <Edit className="w-5 h-5" />
                 </button>
+                <button
+                  onClick={async (e) => {
+                    e.stopPropagation();
+                    if(window.confirm('هل أنت متأكد من حذف هذه الأغنية؟')) {
+                       // Delete logic here or dispatch event
+                       const evt = new CustomEvent('admin-delete-item', { detail: { id: song.id, section: 'songs' } });
+                       window.dispatchEvent(evt);
+                       // We can also optimistically hide the element
+                       const card = document.getElementById(`card-${song.id}`);
+                       if(card) card.style.display = 'none';
+                    }
+                  }}
+                  className="p-2 bg-red-500/20 text-red-400 rounded-lg backdrop-blur-md border border-red-500/30 hover:bg-red-500/40 transition-colors shadow-lg"
+                  title="حذف"
+                >
+                  <Trash2 className="w-5 h-5" />
+                </button>
               </div>
             )}
 

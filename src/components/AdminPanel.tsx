@@ -31,8 +31,26 @@ export default function AdminPanel() {
         setIsOpen(true);
       }
     };
+
+    const handleDeleteItem = async (e: any) => {
+      const { id, section } = e.detail;
+      if (id && section) {
+        try {
+          await supabase.from(section).delete().eq('id', id);
+          toast.success(t('Deleted successfully', 'تم الحذف بنجاح'));
+        } catch(err) {
+          console.error(err);
+        }
+      }
+    };
+
     window.addEventListener('open-admin-edit', handleOpenEdit);
-    return () => window.removeEventListener('open-admin-edit', handleOpenEdit);
+    window.addEventListener('admin-delete-item', handleDeleteItem);
+    
+    return () => {
+      window.removeEventListener('open-admin-edit', handleOpenEdit);
+      window.removeEventListener('admin-delete-item', handleDeleteItem);
+    };
   }, [location.pathname]);
 
   if (!isAdmin) return null;

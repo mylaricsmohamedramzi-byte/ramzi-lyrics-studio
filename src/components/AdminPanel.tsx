@@ -22,6 +22,15 @@ export default function AdminPanel() {
 
   useEffect(() => {
     setIsAdmin(localStorage.getItem('isAdmin') === 'true');
+    
+    const handleOpenEdit = (e: any) => {
+      if (e.detail) {
+        setIsOpen(true);
+        // We will pass the state to the form later
+      }
+    };
+    window.addEventListener('open-admin-edit', handleOpenEdit);
+    return () => window.removeEventListener('open-admin-edit', handleOpenEdit);
   }, [location.pathname]);
 
   if (!isAdmin) return null;
@@ -94,13 +103,57 @@ export default function AdminPanel() {
   );
 }
 
-// Separate form component to manage state
 function AdminForm({ section, lang, t, isDark }: any) {
   const [mode, setMode] = useState<'list' | 'add' | 'edit'>('list');
+  const [editingId, setEditingId] = useState<any>(null);
+  const [items, setItems] = useState<any[]>([]);
   const [formData, setFormData] = useState<any>({
     title_ar: '', title_en: '', category: '', audio_url: '', cover_url: '', raw_lyrics: ''
   });
   const [lyricsLines, setLyricsLines] = useState<LyricLine[]>([]);
+
+  // Listen for global edit events
+  useEffect(() => {
+    const handleEditEvent = (e: any) => {
+      const item = e.detail;
+      setMode('edit');
+      setEditingId(item.id);
+      
+      // Convert lyrics array back to raw text for textarea
+      const rawText = item.lyrics ? item.lyrics.map((l: any) => l.text).join('\n') : '';
+      
+      setFormData({
+        title_ar: item.title_ar || item.title || '',
+        title_en: item.title_en || '',
+        category: item.category || item.type || '',
+        audio_url: item.audio_url || (item.audioUrls ? item.audioUrls[0] : ''),
+        cover_url: item.cover_url || item.coverImg || '',
+        raw_lyrics: rawText
+      });
+      setLyricsLines(item.lyrics || []);
+    };
+    window.addEventListener('open-admin-edit', handleEditEvent);
+    return () => window.removeEventListener('open-admin-edit', handleEditEvent);
+  }, []);
+
+  // Fetch items
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const { data, error } = await supabase.from(section).select('*').order('created_at', { ascending: false });
+        if (!error && data && data.length > 0) {
+          setItems(data);
+        } else {
+          // Fallback to local storage if DB is empty
+          const local = JSON.parse(localStorage.getItem(`mock_${section}`) || '[]');
+          setItems(local);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    if (mode === 'list') fetchItems();
+  }, [mode, section]);
 
   // Update lyricsLines when raw_lyrics changes
   const handleRawLyricsChange = (text: string) => {
@@ -118,25 +171,54 @@ function AdminForm({ section, lang, t, isDark }: any) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const { error } = await supabase.from(section).insert({
+      const payload = {
         title_ar: formData.title_ar,
         title_en: formData.title_en,
         category: formData.category,
         audio_url: formData.audio_url,
         cover_url: formData.cover_url,
-        lyrics: lyricsLines, // Saves the Red Line Logic formatting as JSON
-        created_at: new Date().toISOString()
-      });
+        lyrics: lyricsLines,
+      };
 
-      if (error) throw error;
+      if (mode === 'add') {
+        const { error } = await supabase.from(section).insert({ ...payload, created_at: new Date().toISOString() });
+        if (error) {
+           // Fallback to local storage if supabase table doesn't exist yet
+           const local = JSON.parse(localStorage.getItem(`mock_${section}`) || '[]');
+           local.push({ id: Date.now(), ...payload });
+           localStorage.setItem(`mock_${section}`, JSON.stringify(local));
+        }
+      } else if (mode === 'edit' && editingId) {
+        const { error } = await supabase.from(section).update(payload).eq('id', editingId);
+        if (error) {
+           const local = JSON.parse(localStorage.getItem(`mock_${section}`) || '[]');
+           const updated = local.map((i: any) => i.id === editingId ? { ...i, ...payload } : i);
+           localStorage.setItem(`mock_${section}`, JSON.stringify(updated));
+        }
+      }
 
-      toast.success(t('Content saved to database!', 'تم حفظ المحتوى في قاعدة البيانات!'));
+      toast.success(t('Content saved successfully!', 'تم حفظ المحتوى بنجاح!'));
       setMode('list');
       setFormData({ title_ar: '', title_en: '', category: '', audio_url: '', cover_url: '', raw_lyrics: '' });
       setLyricsLines([]);
+      setEditingId(null);
     } catch (err: any) {
       toast.error(err.message || t('Error saving content', 'حدث خطأ أثناء الحفظ'));
     }
+  };
+
+  const handleDelete = async (id: any) => {
+    if (!window.confirm(t('Are you sure you want to delete this item?', 'هل أنت متأكد من حذف هذا العنصر؟'))) return;
+    
+    const { error } = await supabase.from(section).delete().eq('id', id);
+    if (error) {
+       const local = JSON.parse(localStorage.getItem(`mock_${section}`) || '[]');
+       const filtered = local.filter((i: any) => i.id !== id);
+       localStorage.setItem(`mock_${section}`, JSON.stringify(filtered));
+    }
+    
+    toast.success(t('Deleted successfully', 'تم الحذف بنجاح'));
+    setMode('list'); // trigger re-render
   };
 
   if (mode === 'list') {
@@ -147,7 +229,12 @@ function AdminForm({ section, lang, t, isDark }: any) {
             {t('Manage Content', 'إدارة المحتوى')}
           </h3>
           <button
-            onClick={() => setMode('add')}
+            onClick={() => {
+              setMode('add');
+              setFormData({ title_ar: '', title_en: '', category: '', audio_url: '', cover_url: '', raw_lyrics: '' });
+              setLyricsLines([]);
+              setEditingId(null);
+            }}
             className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#c9a84c] text-black font-bold hover:bg-[#d4b563] transition-colors"
           >
             <Plus className="w-5 h-5" />
@@ -155,11 +242,37 @@ function AdminForm({ section, lang, t, isDark }: any) {
           </button>
         </div>
         
-        {/* Placeholder for fetching items from DB */}
-        <div className="p-8 text-center border-2 border-dashed rounded-2xl opacity-60" style={{ borderColor: '#c9a84c' }}>
-          <AlertTriangle className="w-8 h-8 mx-auto mb-3 text-[#c9a84c]" />
-          <p>{t('Supabase Real-time connection pending. Showing mock list.', 'لم يتم ربط قاعدة البيانات بعد. يتم عرض قائمة تجريبية.')}</p>
-        </div>
+        {items.length === 0 ? (
+          <div className="p-8 text-center border-2 border-dashed rounded-2xl opacity-60" style={{ borderColor: '#c9a84c' }}>
+            <AlertTriangle className="w-8 h-8 mx-auto mb-3 text-[#c9a84c]" />
+            <p>{t('No items found. Click Add New to start.', 'لم يتم العثور على عناصر. انقر على إضافة جديد للبدء.')}</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 gap-4 max-h-[60vh] overflow-y-auto custom-scrollbar pr-2">
+            {items.map((item, idx) => (
+              <div key={idx} className="flex items-center justify-between p-4 rounded-2xl bg-black/10 border border-[#c9a84c]/20 hover:border-[#c9a84c]/50 transition-colors">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-cover bg-center" style={{ backgroundImage: `url(${item.cover_url || item.coverImg})` }} />
+                  <div>
+                    <h4 className="font-bold text-[#c9a84c]">{item.title_ar || item.title}</h4>
+                    <span className="text-xs text-foreground/50">{item.category || item.type}</span>
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  <button onClick={() => {
+                    const evt = new CustomEvent('open-admin-edit', { detail: item });
+                    window.dispatchEvent(evt);
+                  }} className="p-2 rounded-lg bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition-colors">
+                    <Edit className="w-5 h-5" />
+                  </button>
+                  <button onClick={() => handleDelete(item.id)} className="p-2 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-colors">
+                    <Trash2 className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     );
   }

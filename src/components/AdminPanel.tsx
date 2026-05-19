@@ -22,7 +22,7 @@ export default function AdminPanel() {
 
   useEffect(() => {
     setIsAdmin(localStorage.getItem('isAdmin') === 'true');
-  }, []);
+  }, [location.pathname]);
 
   if (!isAdmin) return null;
 

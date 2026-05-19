@@ -825,11 +825,18 @@ interface Comment {
   timestamp: number;
 }
 
+import { Edit, Trash2 } from 'lucide-react';
+
 // ─── المكوّن الرئيسي ──────────────────────────────────────────────────────────
-const SongsPage = () => {
+export default function SongsPage() {
   const { lang } = useLang();
   const { isDark } = useTheme();
   const location = useLocation();
+
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    setIsAdmin(localStorage.getItem('isAdmin') === 'true');
+  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -1534,8 +1541,24 @@ const SongsPage = () => {
 
         {/* ─── الكاردات ─── */}
         {filteredSongs.map((song) => (
-          <div key={song.id} id={`card-${song.id}`} className="main-card">
+          <div key={song.id} id={`card-${song.id}`} className="main-card relative group">
             <CardFloatingNotes seed={song.id} />
+            
+            {isAdmin && (
+              <div className="absolute top-4 left-4 z-50 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const evt = new CustomEvent('open-admin-edit', { detail: song });
+                    window.dispatchEvent(evt);
+                  }}
+                  className="p-2 bg-blue-500/20 text-blue-400 rounded-lg backdrop-blur-md border border-blue-500/30 hover:bg-blue-500/40 transition-colors shadow-lg"
+                  title="تعديل"
+                >
+                  <Edit className="w-5 h-5" />
+                </button>
+              </div>
+            )}
 
             {/* جانب المشغّل */}
             <div className="player-side">
@@ -1741,5 +1764,3 @@ const SongsPage = () => {
     </div>
   );
 };
-
-export default SongsPage;

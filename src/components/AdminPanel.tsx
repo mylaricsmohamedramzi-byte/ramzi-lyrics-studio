@@ -20,13 +20,15 @@ export default function AdminPanel() {
   const [isOpen, setIsOpen] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
+  const [editItemDetails, setEditItemDetails] = useState<any>(null);
+
   useEffect(() => {
     setIsAdmin(localStorage.getItem('isAdmin') === 'true');
     
     const handleOpenEdit = (e: any) => {
       if (e.detail) {
+        setEditItemDetails(e.detail);
         setIsOpen(true);
-        // We will pass the state to the form later
       }
     };
     window.addEventListener('open-admin-edit', handleOpenEdit);
@@ -87,13 +89,19 @@ export default function AdminPanel() {
                   <Settings className="w-6 h-6" />
                   {t('Admin Dashboard', 'لوحة تحكم المسؤول')} - {currentSection}
                 </h2>
-                <button onClick={() => setIsOpen(false)} className="p-2 rounded-full hover:bg-black/10 text-[#c9a84c]">
+                <button 
+                  onClick={() => {
+                    setIsOpen(false);
+                    setEditItemDetails(null);
+                  }} 
+                  className="p-2 rounded-full hover:bg-black/10 text-[#c9a84c]"
+                >
                   <X className="w-6 h-6" />
                 </button>
               </div>
 
               <div className="p-6">
-                <AdminForm section={currentSection} lang={lang} t={t} isDark={isDark} />
+                <AdminForm section={currentSection} lang={lang} t={t} isDark={isDark} initialEditItem={editItemDetails} />
               </div>
             </motion.div>
           </motion.div>
@@ -103,7 +111,7 @@ export default function AdminPanel() {
   );
 }
 
-function AdminForm({ section, lang, t, isDark }: any) {
+function AdminForm({ section, lang, t, isDark, initialEditItem }: any) {
   const [mode, setMode] = useState<'list' | 'add' | 'edit'>('list');
   const [editingId, setEditingId] = useState<any>(null);
   const [items, setItems] = useState<any[]>([]);
@@ -112,14 +120,13 @@ function AdminForm({ section, lang, t, isDark }: any) {
   });
   const [lyricsLines, setLyricsLines] = useState<LyricLine[]>([]);
 
-  // Listen for global edit events
+  // Open edit mode if initialEditItem is passed
   useEffect(() => {
-    const handleEditEvent = (e: any) => {
-      const item = e.detail;
+    if (initialEditItem) {
+      const item = initialEditItem;
       setMode('edit');
       setEditingId(item.id);
       
-      // Convert lyrics array back to raw text for textarea
       const rawText = item.lyrics ? item.lyrics.map((l: any) => l.text).join('\n') : '';
       
       setFormData({
@@ -131,10 +138,8 @@ function AdminForm({ section, lang, t, isDark }: any) {
         raw_lyrics: rawText
       });
       setLyricsLines(item.lyrics || []);
-    };
-    window.addEventListener('open-admin-edit', handleEditEvent);
-    return () => window.removeEventListener('open-admin-edit', handleEditEvent);
-  }, []);
+    }
+  }, [initialEditItem]);
 
   // Fetch items
   useEffect(() => {

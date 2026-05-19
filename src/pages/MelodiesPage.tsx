@@ -509,16 +509,139 @@ const MelodiesPage  = () => {
           z-index: 10;
         }
         .unified-header-title {
-          font-family: 'Aref Ruqaa Ink', serif;
-          font-size: 3rem;
+          font-family: 'Aref Ruqaa Ink', 'Cinzel', serif !important;
+          font-size: clamp(28px, 5vw, 42px) !important;
+          font-weight: 800;
           color: #c9a84c;
-          margin-bottom: 10px;
+          margin-bottom: 12px;
+          text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
         }
         .unified-header-subtitle {
-          font-family: 'Almarai', sans-serif;
-          color: #ffffff;
-          font-size: 1.1rem;
+          font-family: 'Tajawal', 'Almarai', 'Outfit', sans-serif !important;
+          font-size: clamp(14px, 3vw, 17px) !important;
+          color: #e8d5b0;
           opacity: 0.9;
+          line-height: 1.6;
+        }
+
+        /* ─── التعليقات ─── */
+        .comments-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 15px;
+        }
+
+        .label-gold {
+          color: #c9a84c;
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        .add-comment-btn {
+          background: rgba(201, 168, 76, 0.15);
+          color: #c9a84c;
+          border: 1px solid rgba(201, 168, 76, 0.3);
+          padding: 4px 14px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .add-comment-btn:hover {
+          background: rgba(201, 168, 76, 0.3);
+        }
+
+        .comment-input-area {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-bottom: 15px;
+          background: rgba(0, 0, 0, 0.2);
+          padding: 15px;
+          border-radius: 15px;
+          border: 1px solid rgba(201, 168, 76, 0.15);
+        }
+
+        .comment-textarea {
+          width: 100%;
+          min-height: 80px;
+          border-radius: 10px;
+          padding: 10px;
+          font-size: 14px;
+          resize: none;
+          outline: none;
+          direction: rtl;
+        }
+
+        .emoji-row {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+        }
+        .emoji-btn {
+          background: none;
+          border: none;
+          font-size: 20px;
+          cursor: pointer;
+          transition: transform 0.1s;
+        }
+        .emoji-btn:hover {
+          transform: scale(1.2);
+        }
+
+        .action-buttons {
+          display: flex;
+          gap: 10px;
+          justify-content: flex-end;
+        }
+        .btn-done {
+          background: #c9a84c;
+          color: #0a0205;
+          border: none;
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-weight: bold;
+          font-size: 13px;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+        .btn-done:hover { background: #d4b563; }
+
+        .btn-cancel {
+          border: none;
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-size: 13px;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+
+        .comments-scroll-list {
+          max-height: 180px;
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding-right: 5px;
+          scrollbar-width: thin;
+          scrollbar-color: #c9a84c transparent;
+        }
+        .comments-scroll-list::-webkit-scrollbar { width: 4px; }
+        .comments-scroll-list::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
+
+        .comment-bubble {
+          border-radius: 15px;
+          padding: 10px 14px;
+          font-size: 13px;
+          animation: slideUpFade 0.3s ease-out forwards;
+        }
+
+        @keyframes slideUpFade {
+          from { opacity: 0; transform: translateY(4px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         .player-side { flex: 1; padding: 30px; background: rgba(0,0,0,0.3); display: flex; flex-direction: column; align-items: center; }

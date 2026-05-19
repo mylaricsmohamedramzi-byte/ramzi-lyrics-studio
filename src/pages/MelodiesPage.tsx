@@ -590,22 +590,25 @@ const MelodiesPage  = () => {
       {/* Unified Black Header Box */}
       <div className="unified-header-box animate-fade-in-up">
         <h1 className="unified-header-title">
-          {lang === 'ar' ? 'الألحان' : 'MELODIES'}
+          {lang === 'ar' ? '\u0627\u0644\u0623\u0644\u062d\u0627\u0646' : 'MELODIES'}
         </h1>
         <p className="unified-header-subtitle">
-          {lang === 'ar' ? 'هذه الصفحة تحتوي على ألحان أغاني من كتاباتي لتوصيل الحالة العامة للكلمات.' : 'This page contains melodies for my songs to convey the general mood of the lyrics.'}
+          {lang === 'ar' ? '\u0647\u0630\u0647 \u0627\u0644\u0635\u0641\u062d\u0629 \u062a\u062d\u062a\u0648\u064a \u0639\u0644\u0649 \u0623\u0644\u062d\u0627\u0646 \u0623\u063a\u0627\u0646\u064a \u0645\u0646 \u0643\u062a\u0627\u0628\u0627\u062a\u064a \u0644\u062a\u0648\u0635\u064a\u0644 \u0627\u0644\u062d\u0627\u0644\u0629 \u0627\u0644\u0639\u0627\u0645\u0629 \u0644\u0644\u0643\u0644\u0645\u0627\u062a.' : 'This page contains melodies for my songs to convey the general mood of the lyrics.'}
         </p>
-        
-        <div style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid rgba(201, 168, 76, 0.2)' }}>
-          <h3 className="text-lg font-subheading font-bold mb-3" style={{ color: '#c9a84c' }}>
-            {lang === 'ar' ? 'توضيح هام' : 'Important Clarification'}
-          </h3>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: '1.6', whiteSpace: 'pre-line' }}>
-            {lang === 'ar' 
-              ? "هذه الصفحة تحتوي على أغاني من كتاباتي ولكن مع اللحن الخاص بكل أغنية.\nبغض النظر عن الشخص الذي قام بغناء هذه الألحان، فإن الهدف هو توصيل اللحن لكم ومساعدتكم في تخيل الحالة العامة للكلمات."
-              : "This page contains songs I have written, but with the melody for each song.\nRegardless of who sang these melodies, the goal is to convey the melody to you and help you imagine the general mood of the lyrics."}
-          </p>
-        </div>
+      </div>
+
+      {/* Clarification Block — styled like SongsPage */}
+      <div className="clarification-block">
+        <span className="clarification-note-top">&#9834;</span>
+        <span className="clarification-note-bottom">&#9835;</span>
+        <h3 className="clarification-title">
+          {lang === 'ar' ? '\u062a\u0648\u0636\u064a\u062d \u0647\u0627\u0645' : 'Important Clarification'}
+        </h3>
+        <p className="clarification-text">
+          {lang === 'ar'
+            ? '\u0647\u0630\u0647 \u0627\u0644\u0635\u0641\u062d\u0629 \u062a\u062d\u062a\u0648\u064a \u0639\u0644\u0649 \u0623\u063a\u0627\u0646\u064a \u0645\u0646 \u0643\u062a\u0627\u0628\u0627\u062a\u064a \u0648\u0644\u0643\u0646 \u0645\u0639 \u0627\u0644\u0644\u062d\u0646 \u0627\u0644\u062e\u0627\u0635 \u0628\u0643\u0644 \u0623\u063a\u0646\u064a\u0629. \u0628\u063a\u0636 \u0627\u0644\u0646\u0638\u0631 \u0639\u0646 \u0627\u0644\u0634\u062e\u0635 \u0627\u0644\u0630\u064a \u0642\u0627\u0645 \u0628\u063a\u0646\u0627\u0621 \u0647\u0630\u0647 \u0627\u0644\u0623\u0644\u062d\u0627\u0646\u060c \u0641\u0625\u0646 \u0627\u0644\u0647\u062f\u0641 \u0647\u0648 \u062a\u0648\u0635\u064a\u0644 \u0627\u0644\u0644\u062d\u0646 \u0644\u0643\u0645 \u0648\u0645\u0633\u0627\u0639\u062f\u062a\u0643\u0645 \u0641\u064a \u062a\u062e\u064a\u0644 \u0627\u0644\u062d\u0627\u0644\u0629 \u0627\u0644\u0639\u0627\u0645\u0629 \u0644\u0644\u0643\u0644\u0645\u0627\u062a.'
+            : 'This page contains songs I have written, but with the melody for each song. Regardless of who sang these melodies, the goal is to convey the melody to you and help you imagine the general mood of the lyrics.'}
+        </p>
       </div>
 
       {/* Search + Filter */}

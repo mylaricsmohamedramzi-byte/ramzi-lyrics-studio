@@ -445,10 +445,7 @@ const MelodiesPage  = () => {
   };
 
   return (
-    <div dir={lang === 'ar' ? 'rtl' : 'ltr'} className="page-wrapper content-layer" style={{
-      background: isDark ? 'radial-gradient(circle at top right, #1a051a, #000000)' : '#fbfbfb',
-      color: isDark ? '#ffffff' : '#000000'
-    }}>
+    <div dir={lang === 'ar' ? 'rtl' : 'ltr'} className="page-wrapper content-layer">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&display=swap');
         
@@ -552,7 +549,7 @@ const MelodiesPage  = () => {
       {/* Unified Black Header Box */}
       <div className="unified-header-box animate-fade-in-up">
         <h1 className="unified-header-title">
-          {lang === 'ar' ? 'الألحان والترانيم' : 'MELODIES & HYMNS'}
+          {lang === 'ar' ? 'الألحان' : 'MELODIES'}
         </h1>
         <p className="unified-header-subtitle">
           {lang === 'ar' ? 'هذه الصفحة تحتوي على ألحان أغاني من كتاباتي لتوصيل الحالة العامة للكلمات.' : 'This page contains melodies for my songs to convey the general mood of the lyrics.'}

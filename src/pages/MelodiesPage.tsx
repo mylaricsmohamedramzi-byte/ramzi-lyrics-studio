@@ -363,6 +363,7 @@ const MelodiesPage  = () => {
   const [playingKey, setPlayingKey] = useState<string | null>(null);
   const [audioTimes, setAudioTimes] = useState<Record<string, { current: number; duration: number }>>({});
   const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
+  const [volume, setVolume] = useState(0.8);
   const [search, setSearch] = useState('');
   const [activeCat, setActiveCat] = useState('all');
 
@@ -504,33 +505,32 @@ const MelodiesPage  = () => {
           transform: scale(1.05);
         }
 
-        .custom-player-wrapper { width: 100%; background: #4a1d4d; border-radius: 50px; padding: 8px 15px; display: flex; align-items: center; gap: 12px; margin-top: 15px; }
-        .play-btn { background: #c9a84c; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; color: #040828; display: flex; align-items: center; justify-content: center; }
-        .player-time { min-width: 92px; font-size: 0.85rem; color: #f3d98a; text-align: center; letter-spacing: 0.5px; }
-        .wave-container { display: flex; align-items: center; gap: 3px; height: 24px; flex: 1; }
-        .wave-bar { width: 3px; height: 8px; background: rgba(201, 168, 76, 0.35); border-radius: 2px; }
-        .wave-bar.active { background: #ff0000; animation: wave-anim 1s infinite; }
-        .audio-index-badge {
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          border: 1px solid #c9a84c;
-          background: rgba(4, 8, 40, 0.95);
-          color: #f3d98a;
-          font-size: 0.9rem;
-          font-weight: 700;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-        @keyframes wave-anim { 0%, 100% { height: 8px; } 50% { height: 24px; } }
+        .custom-player-wrapper { width: 100%; background: rgba(20,5,8,0.75); border: 1px solid rgba(201,168,76,0.35); border-radius: 20px; padding: 12px 16px; display: flex; flex-direction: column; gap: 10px; margin-top: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+        .player-row-top { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 10px; }
+        .player-controls-left { display: flex; align-items: center; gap: 12px; }
+        .player-controls-right { display: flex; align-items: center; gap: 15px; }
+        .play-btn { background: #c9a84c; border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; color: #040828; display: flex; align-items: center; justify-content: center; font-size: 14px; transition: transform 0.2s, background-color 0.2s; }
+        .play-btn:hover { transform: scale(1.1); background: #d4b563; }
+        .player-time { font-size: 0.85rem; color: #f3d98a; font-family: monospace; min-width: 80px; text-align: left; }
+        .seeker-container { display: flex; align-items: center; width: 100%; }
+        .audio-seeker-slider { flex: 1; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 3px; background: rgba(201,168,76,0.2); outline: none; cursor: pointer; }
+        .audio-seeker-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 14px; height: 14px; border-radius: 50%; background: #c0272d; border: 2px solid #c9a84c; cursor: pointer; }
+        .volume-container { display: flex; align-items: center; gap: 6px; }
+        .volume-icon { color: #c9a84c; font-size: 16px; cursor: pointer; user-select: none; transition: transform 0.2s; }
+        .volume-icon:hover { transform: scale(1.15); }
+        .volume-slider { width: 60px; -webkit-appearance: none; appearance: none; height: 4px; border-radius: 2px; background: rgba(201,168,76,0.25); outline: none; cursor: pointer; }
+        .volume-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 10px; height: 10px; border-radius: 50%; background: #c9a84c; cursor: pointer; }
+        .wave-container { display: flex; align-items: center; gap: 3px; height: 20px; }
+        .wave-bar { width: 3px; height: 6px; background: rgba(201,168,76,0.25); border-radius: 2px; }
+        .wave-bar.active { background: #c9a84c; animation: wave-anim 1s infinite; }
+        .audio-index-badge { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #c9a84c; background: rgba(4,8,40,0.95); color: #f3d98a; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0 10px; }
+        @keyframes wave-anim { 0%, 100% { height: 6px; } 50% { height: 20px; } }
 
-        .star-rating { display: flex; justify-content: center; gap: 8px; margin: 10px 0; }
-        .star { font-size: 28px; cursor: pointer; color: #2a102a; transition: 0.3s; }
-        .star.active { color: #8b008b; text-shadow: 0 0 10px #ff0055; }
+        .star-rating { display: flex; justify-content: center; gap: 4px; margin: 10px 0; }
+        .star { font-size: 24px; cursor: pointer; color: rgba(201,168,76,0.25); transition: color 0.2s, text-shadow 0.2s; user-select: none; }
+        .star.active { color: #c9a84c; text-shadow: 0 0 8px rgba(201,168,76,0.7); }
 
-        .lyrics-side { flex: 1.3; padding: 40px; border-left: 1px solid rgba(201, 168, 76, 0.2); }
+        .lyrics-side { flex: 1.3; padding: 40px; background: rgba(4,4,20,0.82); border-left: 1px solid rgba(201,168,76,0.2); position: relative; z-index: 1; }
         .label-gold { color: #c9a84c; font-size: 13px; margin-bottom: 10px; display: block; }
         .title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
         .song-title-red { color: #ff4d4d; font-family: 'Aref Ruqaa Ink', serif; font-size: 2.8rem; margin-bottom: 0; }
@@ -538,12 +538,53 @@ const MelodiesPage  = () => {
         .lyrics-scroll { height: 250px; overflow-y: auto; margin-bottom: 30px; }
         .lyrics-scroll::-webkit-scrollbar { width: 6px; }
         .lyrics-scroll::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
-        .line { font-size: 1.2rem; margin-bottom: 10px; border-right: 3px solid #c9a84c; padding-right: 15px; }
+        .line { font-size: 1.2rem; color: #e8d5b0; margin-bottom: 10px; border-right: 3px solid #c9a84c; padding-right: 15px; }
         .line.red { color: #ff4d4d; border-right-color: #ff4d4d; font-weight: bold; }
 
-        .critic-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; margin-bottom: 8px; cursor: pointer; display: flex; justify-content: space-between; border: 1px solid rgba(201,168,76,0.1); color: #fff; }
+        .clarification-block {
+          max-width: 800px;
+          margin: 0 auto 28px;
+          border-radius: 14px;
+          padding: 24px 28px;
+          border: 1px solid rgba(201,168,76,0.25);
+          background: linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%));
+          background-image: repeating-linear-gradient(
+            transparent, transparent 28px,
+            rgba(201,168,76,0.06) 28px, rgba(201,168,76,0.06) 29px
+          );
+          position: relative;
+          overflow: hidden;
+        }
+        .clarification-note-top {
+          position: absolute; top: 10px; right: 16px;
+          color: rgba(201,168,76,0.2); font-size: 28px;
+          font-family: 'Aref Ruqaa Ink', serif; pointer-events: none;
+        }
+        .clarification-note-bottom {
+          position: absolute; bottom: 10px; left: 16px;
+          color: rgba(201,168,76,0.2); font-size: 22px;
+          font-family: 'Aref Ruqaa Ink', serif; pointer-events: none;
+        }
+        .clarification-title {
+          color: #c9a84c;
+          font-family: 'Aref Ruqaa Ink', serif;
+          font-size: 1.15rem;
+          font-weight: bold;
+          text-align: center;
+          margin: 0 0 14px;
+        }
+        .clarification-text {
+          color: rgba(232, 213, 176, 0.78);
+          line-height: 1.85;
+          text-align: center;
+          font-family: 'Almarai', sans-serif;
+          font-size: 0.95rem;
+          margin: 0;
+        }
 
-        @media (max-width: 900px) { .main-card { flex-direction: column; } .lyrics-side { border-left: none; border-top: 1px solid rgba(201,168,76,0.2); } }
+        .filter-chip { background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); color: #c9a84c; padding: 6px 18px; border-radius: 20px; cursor: pointer; font-family: 'Almarai', sans-serif; font-size: 13px; transition: all 0.2s; }
+        .filter-chip:hover { background: rgba(201,168,76,0.2); }
+        .filter-chip.active { background: #c9a84c; color: #000; border-color: #c9a84c; font-weight: bold; }
       `}</style>
 
       {/* Unified Black Header Box */}
@@ -606,26 +647,69 @@ const MelodiesPage  = () => {
           <div className="player-side">
             <div className="song-tag">{song.type}</div>
             <div className="cover-box" style={{ backgroundImage: `url(${toDriveDirectDownloadUrl(song.coverImg)})` }} />
-            
-            <div className="views-badge">{song.views}</div>
+
+            <div className="views-stars-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginTop: 15, gap: 10 }}>
+              <div className="views-badge">{song.views}</div>
+              <div className="star-rating">
+                {[1, 2, 3, 4, 5].map((num) => (
+                  <span key={num}
+                    className={`star ${num <= (hoverStar[song.id] ?? starRatings[song.id] ?? 0) ? 'active' : ''}`}
+                    onClick={() => saveRating(song.id, num)}
+                    onMouseEnter={() => setHoverStar((prev) => ({ ...prev, [song.id]: num }))}
+                    onMouseLeave={() => setHoverStar((prev) => { const n = { ...prev }; delete n[song.id]; return n; })}
+                  >★</span>
+                ))}
+              </div>
+            </div>
 
             {normalizeAudioUrls(song.audioUrls).map((url, idx) => {
               const key = `${song.id}-${idx}`;
               const time = audioTimes[key] || { current: 0, duration: 0 };
               return (
                 <div key={idx} className="custom-player-wrapper">
-                  <button className="play-btn" onClick={() => togglePlay(song.id, idx)}>
-                    {playingKey === key ? '⏸' : '▶'}
-                  </button>
-                  <span className="player-time">{formatTime(time.current)} / {formatTime(time.duration)}</span>
-                  <div className="wave-container">
-                    {[...Array(15)].map((_, i) => (
-                      <div key={i} className={`wave-bar ${playingKey === key ? 'active' : ''}`} style={{ animationDelay: `${i * 0.05}s` }} />
-                    ))}
+                  <div className="player-row-top">
+                    <div className="player-controls-left">
+                      <button className="play-btn" onClick={() => togglePlay(song.id, idx)}>
+                        {playingKey === key ? '⏸' : '▶'}
+                      </button>
+                      <span className="player-time">{formatTime(time.current)} / {formatTime(time.duration)}</span>
+                    </div>
+
+                    <div className="player-controls-right">
+                      <div className="volume-container">
+                        <span className="volume-icon" onClick={() => setVolume((prev) => (prev > 0 ? 0 : 0.8))}>
+                          {volume === 0 ? '🔇' : volume < 0.4 ? '🔈' : volume < 0.7 ? '🔉' : '🔊'}
+                        </span>
+                        <input type="range" min="0" max="1" step="0.05" value={volume}
+                          onChange={(e) => setVolume(parseFloat(e.target.value))}
+                          className="volume-slider" />
+                      </div>
+
+                      <div className="wave-container">
+                        {[...Array(8)].map((_, i) => (
+                          <div key={i} className={`wave-bar ${playingKey === key ? 'active' : ''}`} style={{ animationDelay: `${i * 0.05}s` }} />
+                        ))}
+                      </div>
+
+                      <span className="audio-index-badge">{idx + 1}</span>
+                    </div>
                   </div>
-                  <span className="audio-index-badge">{idx + 1}</span>
+
+                  <div className="seeker-container">
+                    <input type="range" min="0" max={time.duration || 100} value={time.current || 0}
+                      onChange={(e) => {
+                        const val = parseFloat(e.target.value);
+                        const audio = audioRefs.current[key];
+                        if (audio) {
+                          audio.currentTime = val;
+                          setAudioTimes((prev) => ({ ...prev, [key]: { ...prev[key], current: val } }));
+                        }
+                      }}
+                      className="audio-seeker-slider" />
+                  </div>
+
                   <audio
-                    ref={(el) => { audioRefs.current[key] = el; }}
+                    ref={(el) => { audioRefs.current[key] = el; if (el) el.volume = volume; }}
                     src={toDriveDirectDownloadUrl(url)}
                     onLoadedMetadata={(e) => {
                       const duration = e.currentTarget.duration || 0;
@@ -641,15 +725,6 @@ const MelodiesPage  = () => {
                 </div>
               );
             })}
-
-            <div style={{marginTop: '20px', textAlign: 'center'}}>
-              <span className="label-gold">تقييمك</span>
-              <div className="star-rating">
-                {[1, 2, 3, 4, 5].map((num) => (
-                  <span key={num} className={`star ${num <= (starRatings[song.id] || 0) ? 'active' : ''}`} onClick={() => setStarRatings(prev => ({ ...prev, [song.id]: num }))}>★</span>
-                ))}
-              </div>
-            </div>
           </div>
 
           <div className="lyrics-side">

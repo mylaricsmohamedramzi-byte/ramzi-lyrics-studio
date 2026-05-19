@@ -1352,7 +1352,7 @@ const SongsPage = () => {
         .lyrics-side {
           position: relative; z-index: 1;
           flex: 1.3; padding: 40px;
-          background: rgba(20, 5, 8, 0.82);
+          background: rgba(4, 4, 20, 0.82);
           border-left: 1px solid rgba(201,168,76,0.2);
         }
         .label-gold { color: #c9a84c; font-size: 13px; margin-bottom: 10px; display: block; }

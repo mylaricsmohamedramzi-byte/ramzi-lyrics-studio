@@ -1,9 +1,8 @@
 import { useState, useRef, useMemo } from 'react';
+import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import SearchBar from '@/components/SearchBar';
-import { toDriveDirectDownloadUrl } from '@/lib/googleDrive';
 
 const MEL_CATEGORIES: { key: string; label: string; match: (t: string) => boolean }[] = [
   { key: 'all',      label: 'الكل',     match: () => true },
@@ -486,16 +485,18 @@ const MelodiesPage  = () => {
         .song-tag { background: #c9a84c; color: #000; padding: 4px 20px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-bottom: 15px; }
         .cover-box { width: 100%; aspect-ratio: 1; background-size: cover; background-position: center; border-radius: 20px; border: 1px solid rgba(201, 168, 76, 0.3); }
 
-        .views-stars-row {
-          display: flex; align-items: center; justify-content: space-between;
-          width: 100%; margin-top: 15px; gap: 10px;
-        }
         .views-badge {
-          background-color: #f0fdf4; color: #1a2e44;
-          padding: 8px 20px; border-radius: 50px;
-          font-weight: bold; font-size: 1.2rem;
-          cursor: pointer; transition: all 0.3s ease;
-          border: none; flex-shrink: 0;
+          background-color: #f0fdf4;
+          color: #1a2e44;
+          padding: 8px 30px;
+          border-radius: 50px;
+          font-weight: bold;
+          font-size: 1.4rem;
+          margin-top: 15px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          display: inline-block;
+          border: none;
         }
 
         .views-badge:hover {
@@ -529,7 +530,7 @@ const MelodiesPage  = () => {
         .star { font-size: 24px; cursor: pointer; color: rgba(201,168,76,0.25); transition: color 0.2s, text-shadow 0.2s; user-select: none; }
         .star.active { color: #c9a84c; text-shadow: 0 0 8px rgba(201,168,76,0.7); }
 
-        .lyrics-side { flex: 1.3; padding: 40px; background: rgba(20, 5, 8, 0.82); border-left: 1px solid rgba(201,168,76,0.2); position: relative; z-index: 1; }
+        .lyrics-side { flex: 1.3; padding: 40px; background: rgba(4,4,20,0.82); border-left: 1px solid rgba(201,168,76,0.2); position: relative; z-index: 1; }
         .label-gold { color: #c9a84c; font-size: 13px; margin-bottom: 10px; display: block; }
         .title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
         .song-title-red { color: #ff4d4d; font-family: 'Aref Ruqaa Ink', serif; font-size: 2.8rem; margin-bottom: 0; }
@@ -589,30 +590,41 @@ const MelodiesPage  = () => {
       {/* Unified Black Header Box */}
       <div className="unified-header-box animate-fade-in-up">
         <h1 className="unified-header-title">
-          {lang === 'ar' ? '\u0627\u0644\u0623\u0644\u062d\u0627\u0646' : 'MELODIES'}
+          {lang === 'ar' ? 'الألحان' : 'MELODIES'}
         </h1>
         <p className="unified-header-subtitle">
-          {lang === 'ar' ? '\u0647\u0630\u0647 \u0627\u0644\u0635\u0641\u062d\u0629 \u062a\u062d\u062a\u0648\u064a \u0639\u0644\u0649 \u0623\u0644\u062d\u0627\u0646 \u0623\u063a\u0627\u0646\u064a \u0645\u0646 \u0643\u062a\u0627\u0628\u0627\u062a\u064a \u0644\u062a\u0648\u0635\u064a\u0644 \u0627\u0644\u062d\u0627\u0644\u0629 \u0627\u0644\u0639\u0627\u0645\u0629 \u0644\u0644\u0643\u0644\u0645\u0627\u062a.' : 'This page contains melodies for my songs to convey the general mood of the lyrics.'}
+          {lang === 'ar' ? 'هذه الصفحة تحتوي على ألحان أغاني من كتاباتي لتوصيل الحالة العامة للكلمات.' : 'This page contains melodies for my songs to convey the general mood of the lyrics.'}
         </p>
-      </div>
-
-      {/* Clarification Block — styled like SongsPage */}
-      <div className="clarification-block">
-        <span className="clarification-note-top">&#9834;</span>
-        <span className="clarification-note-bottom">&#9835;</span>
-        <h3 className="clarification-title">
-          {lang === 'ar' ? '\u062a\u0648\u0636\u064a\u062d \u0647\u0627\u0645' : 'Important Clarification'}
-        </h3>
-        <p className="clarification-text">
-          {lang === 'ar'
-            ? '\u0647\u0630\u0647 \u0627\u0644\u0635\u0641\u062d\u0629 \u062a\u062d\u062a\u0648\u064a \u0639\u0644\u0649 \u0623\u063a\u0627\u0646\u064a \u0645\u0646 \u0643\u062a\u0627\u0628\u0627\u062a\u064a \u0648\u0644\u0643\u0646 \u0645\u0639 \u0627\u0644\u0644\u062d\u0646 \u0627\u0644\u062e\u0627\u0635 \u0628\u0643\u0644 \u0623\u063a\u0646\u064a\u0629. \u0628\u063a\u0636 \u0627\u0644\u0646\u0638\u0631 \u0639\u0646 \u0627\u0644\u0634\u062e\u0635 \u0627\u0644\u0630\u064a \u0642\u0627\u0645 \u0628\u063a\u0646\u0627\u0621 \u0647\u0630\u0647 \u0627\u0644\u0623\u0644\u062d\u0627\u0646\u060c \u0641\u0625\u0646 \u0627\u0644\u0647\u062f\u0641 \u0647\u0648 \u062a\u0648\u0635\u064a\u0644 \u0627\u0644\u0644\u062d\u0646 \u0644\u0643\u0645 \u0648\u0645\u0633\u0627\u0639\u062f\u062a\u0643\u0645 \u0641\u064a \u062a\u062e\u064a\u0644 \u0627\u0644\u062d\u0627\u0644\u0629 \u0627\u0644\u0639\u0627\u0645\u0629 \u0644\u0644\u0643\u0644\u0645\u0627\u062a.'
-            : 'This page contains songs I have written, but with the melody for each song. Regardless of who sang these melodies, the goal is to convey the melody to you and help you imagine the general mood of the lyrics.'}
-        </p>
+        
+        <div style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid rgba(201, 168, 76, 0.2)' }}>
+          <h3 className="text-lg font-subheading font-bold mb-3" style={{ color: '#c9a84c' }}>
+            {lang === 'ar' ? 'توضيح هام' : 'Important Clarification'}
+          </h3>
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: '1.6', whiteSpace: 'pre-line' }}>
+            {lang === 'ar' 
+              ? "هذه الصفحة تحتوي على أغاني من كتاباتي ولكن مع اللحن الخاص بكل أغنية.\nبغض النظر عن الشخص الذي قام بغناء هذه الألحان، فإن الهدف هو توصيل اللحن لكم ومساعدتكم في تخيل الحالة العامة للكلمات."
+              : "This page contains songs I have written, but with the melody for each song.\nRegardless of who sang these melodies, the goal is to convey the melody to you and help you imagine the general mood of the lyrics."}
+          </p>
+        </div>
       </div>
 
       {/* Search + Filter */}
       <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
-        <SearchBar value={search} onChange={setSearch} placeholder={lang === 'ar' ? 'ابحث عن لحن...' : 'Search for a melody...'} className="mb-5" />
+        <div className="relative mb-5" style={{ maxWidth: '600px', margin: '0 auto' }}>
+          <input
+            type="text"
+            className="w-full px-5 py-4 pl-12 rounded-full border-2 focus:outline-none focus:border-accent transition-all duration-300"
+            style={{
+              background: isDark ? 'rgba(0, 0, 0, 0.4)' : '#ffffff',
+              borderColor: 'var(--accent)',
+              color: isDark ? '#ffffff' : '#000000',
+              fontFamily: 'Almarai, sans-serif'
+            }}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder={lang === 'ar' ? 'ابحث عن لحن...' : 'Search for a melody...'}
+          />
+        </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
           {MEL_CATEGORIES.map((c) => (
             <button
@@ -636,8 +648,8 @@ const MelodiesPage  = () => {
             <div className="song-tag">{song.type}</div>
             <div className="cover-box" style={{ backgroundImage: `url(${toDriveDirectDownloadUrl(song.coverImg)})` }} />
 
-            <div className="views-stars-row">
-              <button className="views-badge">{lang === 'ar' ? `مشاهدة ${song.views}` : `Views ${song.views}`}</button>
+            <div className="views-stars-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginTop: 15, gap: 10 }}>
+              <div className="views-badge">{song.views}</div>
               <div className="star-rating">
                 {[1, 2, 3, 4, 5].map((num) => (
                   <span key={num}

@@ -1,7 +1,11 @@
-import { useState, useRef, useMemo } from 'react';
+import { useState, useRef, useMemo, useEffect } from 'react';
 import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
+import { useTheme } from '@/contexts/ThemeContext';
+import nameArabic from '@/assets/name-arabic.png';
+import nameEnglish from '@/assets/name-english.png';
+
 
 // ─── ملاحظات موسيقية عائمة (خلفية الصفحة) ───────────────────────────────────
 const NOTES = ['♩', '♪', '♫', '♬', '𝄞', '𝄢', '♭', '♮', '♯', '𝄡', '♬', '♪', '♫', '♩'];
@@ -108,7 +112,7 @@ const allVideos = [
     title: "عداد الرقان ",
     category: " مقسوم",
     videoUrls: ["https://youtu.be/kEgSPLkl0oQ?si=ITml38SiSzPgmF2T"],
-    views: "88",
+    views: "0",
     critics: ["كلمات مُبتكره ","لحن مميز", "أداء قوي", "توزيع ضعيف "],
     lyrics: [
       { text: "أنا هبعت كلمة مهمة", red: false },
@@ -179,7 +183,7 @@ const allVideos = [
     title: "كَيْفَ حَالُكِ؟",
     category: "قصائد",
     videoUrls: ["https://drive.google.com/file/d/1t3l9R8m8oWxm4C31MZQbZKn-iv_F06y2/view?usp=sharing"],
-    views: "156",
+    views: "0",
     critics: ["الكلمات عميقه وقويه ","اللحن أفضل من اللحن 1 و اللحن 2","الفيديو ممتاز وبه مجهود و تفاصيل ","مناسبة لصوت كاظم الساهر"],
     lyrics: [
       { text: "حَبِيبَتِي قَدْ أَتَتْنِي اَلْرِّيِحُ بِمَا لَا أَشْتَهِي", red: false },
@@ -421,12 +425,94 @@ const allVideos = [
   },
 ];
 
+interface Comment {
+  id: string;
+  text: string;
+  timestamp: number;
+}
+
 // ─── المكوّن الرئيسي ──────────────────────────────────────────────────────────
 const VideosPage = () => {
   const { lang } = useLang();
+  const { isDark } = useTheme();
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
-  const [starRatings, setStarRatings] = useState<Record<number, number>>({});
+  
+  const [starRatings, setStarRatings] = useState<Record<number, number>>(() => {
+    const saved = localStorage.getItem('videos_ratings');
+    if (saved) {
+      try { return JSON.parse(saved); } catch (e) { console.error(e); }
+    }
+    return {};
+  });
+
+  const saveRating = (songId: number, rating: number) => {
+    const updated = { ...starRatings, [songId]: rating };
+    setStarRatings(updated);
+    localStorage.setItem('videos_ratings', JSON.stringify(updated));
+  };
+
   const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
+  
+  // Comments State
+  const [comments, setComments] = useState<Record<number, Comment[]>>(() => {
+    const saved = localStorage.getItem('videos_comments');
+    if (saved) {
+      try { return JSON.parse(saved); } catch (e) { console.error(e); }
+    }
+    return {};
+  });
+
+  const [activeInputSongId, setActiveInputSongId] = useState<number | null>(null);
+  const [newCommentText, setNewCommentText] = useState<Record<number, string>>({});
+  const commentsEndRefs = useRef<Record<number, HTMLDivElement | null>>({});
+
+  useEffect(() => {
+    localStorage.setItem('videos_comments', JSON.stringify(comments));
+  }, [comments]);
+
+  const scrollToBottom = (songId: number) => {
+    setTimeout(() => {
+      commentsEndRefs.current[songId]?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }, 100);
+  };
+
+  const handleEmojiClick = (songId: number, emoji: string) => {
+    setNewCommentText(prev => ({
+      ...prev,
+      [songId]: (prev[songId] || '') + emoji
+    }));
+  };
+
+  const handleAddComment = (songId: number) => {
+    setActiveInputSongId(songId);
+    scrollToBottom(songId);
+  };
+
+  const handleCancelComment = (songId: number) => {
+    setNewCommentText(prev => ({ ...prev, [songId]: '' }));
+    setActiveInputSongId(null);
+  };
+
+  const handleSubmitComment = (songId: number) => {
+    const text = newCommentText[songId]?.trim();
+    if (!text) return;
+
+    const newComment = {
+      id: `comment-${songId}-${Date.now()}`,
+      text: text,
+      timestamp: Date.now()
+    };
+
+    setComments(prev => ({
+      ...prev,
+      [songId]: [...(prev[songId] || []), newComment]
+    }));
+
+    setNewCommentText(prev => ({ ...prev, [songId]: '' }));
+    setActiveInputSongId(null);
+    scrollToBottom(songId);
+  };
+
   const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
   const [search, setSearch] = useState('');
   const [activeCat, setActiveCat] = useState('all');
@@ -515,6 +601,126 @@ const VideosPage = () => {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&display=swap');
 
+        /* ─── التعليقات ─── */
+        .comments-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 15px;
+        }
+
+        .label-gold {
+          color: #c9a84c;
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        .add-comment-btn {
+          background: rgba(201, 168, 76, 0.15);
+          color: #c9a84c;
+          border: 1px solid rgba(201, 168, 76, 0.3);
+          padding: 4px 14px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .add-comment-btn:hover {
+          background: rgba(201, 168, 76, 0.3);
+        }
+
+        .comment-input-area {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-bottom: 15px;
+          background: rgba(0, 0, 0, 0.2);
+          padding: 15px;
+          border-radius: 15px;
+          border: 1px solid rgba(201, 168, 76, 0.15);
+        }
+
+        .comment-textarea {
+          width: 100%;
+          min-height: 80px;
+          border-radius: 10px;
+          padding: 10px;
+          font-size: 14px;
+          resize: none;
+          outline: none;
+          direction: rtl;
+        }
+
+        .emoji-row {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+        }
+        .emoji-btn {
+          background: none;
+          border: none;
+          font-size: 20px;
+          cursor: pointer;
+          transition: transform 0.1s;
+        }
+        .emoji-btn:hover {
+          transform: scale(1.2);
+        }
+
+        .action-buttons {
+          display: flex;
+          gap: 10px;
+          justify-content: flex-end;
+        }
+        .btn-done {
+          background: #c9a84c;
+          color: #0a0205;
+          border: none;
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-weight: bold;
+          font-size: 13px;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+        .btn-done:hover { background: #d4b563; }
+
+        .btn-cancel {
+          border: none;
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-size: 13px;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+
+        .comments-scroll-list {
+          max-height: 180px;
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding-right: 5px;
+          scrollbar-width: thin;
+          scrollbar-color: #c9a84c transparent;
+        }
+        .comments-scroll-list::-webkit-scrollbar { width: 4px; }
+        .comments-scroll-list::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
+
+        .comment-bubble {
+          border-radius: 15px;
+          padding: 10px 14px;
+          font-size: 13px;
+          animation: slideUpFade 0.3s ease-out forwards;
+        }
+
+        @keyframes slideUpFade {
+          from { opacity: 0; transform: translateY(4px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
         @font-face {
           font-family: 'DG Forsha';
           src: url('/fonts/DG-Forsha.ttf') format('truetype');
@@ -528,10 +734,10 @@ const VideosPage = () => {
         /* ─── خلفية الصفحة (مثل LyricsPage) ─── */
         .page-wrapper {
           position: relative;
-          background: radial-gradient(ellipse at 50% 50%, #3d0a12 0%, #1a0509 40%, #0a0205 100%);
+          background: transparent;
           min-height: 100vh;
           padding: 40px 20px;
-          color: white;
+          color: inherit;
           font-family: 'Almarai', sans-serif;
         }
 
@@ -605,6 +811,34 @@ const VideosPage = () => {
           font-weight: bold; font-size: 14px;
         }
 
+        .unified-header-box {
+          background: #000000;
+          border: 1px solid rgba(201, 168, 76, 0.35);
+          border-radius: 20px;
+          padding: 30px 40px;
+          max-width: 800px;
+          margin: 40px auto 30px;
+          text-align: center;
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(201, 168, 76, 0.08);
+          position: relative;
+          z-index: 10;
+        }
+        .unified-header-title {
+          font-family: 'Aref Ruqaa Ink', 'Cinzel', serif !important;
+          font-size: clamp(28px, 5vw, 42px) !important;
+          font-weight: 800;
+          color: #c9a84c;
+          margin-bottom: 12px;
+          text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+        }
+        .unified-header-subtitle {
+          font-family: 'Tajawal', 'Almarai', 'Outfit', sans-serif !important;
+          font-size: clamp(14px, 3vw, 17px) !important;
+          color: #e8d5b0;
+          opacity: 0.9;
+          line-height: 1.6;
+        }
+
         .video-container { padding: 0 40px; margin-bottom: 30px; }
         .video-wrapper {
           position: relative; padding-bottom: 50.25%; height: 0;
@@ -614,17 +848,24 @@ const VideosPage = () => {
         .video-frame { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         .video-player { width: 100%; border-radius: 60px; background: #000; }
 
-        /* ─── قسم الكلمات: خلفية داكنة (مش أحمر) ─── */
+        /* ─── قسم الكلمات: خلفية داكنة حمراء ─── */
         .card-content {
           display: grid; grid-template-columns: 1.2fr 0.8fr;
           gap: 0; padding: 0;
         }
+        @media (max-width: 900px) {
+          .card-content {
+            grid-template-columns: 1fr;
+          }
+          .rating-section {
+            border-right: none !important;
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+          }
+        }
         .lyrics-section {
           display: flex; flex-direction: column;
           padding: 30px 40px;
-          /* خلفية داكنة حتى تظهر الكلمات المكتوبة بالأحمر */
-          background: rgba(4, 4, 20, 0.82);
-          border-left: 1px solid rgba(201, 168, 76, 0.2);
+          background: radial-gradient(circle at center, rgb(80, 5, 5) 0%, var(--leather-black) 100%);
         }
         .video-title {
           color: #ff4d4d; font-family: 'Aref Ruqaa Ink', serif;
@@ -653,10 +894,12 @@ const VideosPage = () => {
 
         /* ─── قسم التقييم ─── */
         .rating-section {
-          padding: 30px;
-          background: rgba(103, 6, 6, 0.25);
-          border-radius: 0;
-          height: fit-content;
+          padding: 30px 40px;
+          background: rgba(0, 0, 0, 0.35);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          border-right: 1px solid rgba(201, 168, 76, 0.2);
         }
         .rating-title {
           color: #d4a0a0; font-size: 14px;
@@ -715,14 +958,72 @@ const VideosPage = () => {
       `}</style>
 
       <div className="content-layer">
+        {/* Unified Black Header Box */}
+        <div className="unified-header-box animate-fade-in-up">
+          <h1 className="unified-header-title">
+            {lang === 'ar' ? 'الفيديوهات' : 'VIDEOS'}
+          </h1>
+          <p className="unified-header-subtitle">
+            {lang === 'ar' ? 'شاهد أعمالي وفيديوهاتي الموسيقية' : 'Watch my works and music videos'}
+          </p>
+        </div>
+
         {/* ─── سرش + فلتر ─── */}
         <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
-          <SearchBar
+           <SearchBar
             value={search}
             onChange={setSearch}
             placeholder="ابحث عن فيديو..."
             className="mb-5"
           />
+
+          <div className="max-w-3xl mx-auto" style={{ margin: '0 auto 24px', maxWidth: 760 }}>
+            <div
+              style={{
+                borderRadius: '12px',
+                padding: '24px 28px',
+                border: isDark ? '1px solid rgba(201,168,76,0.25)' : '1px solid rgba(139,26,42,0.2)',
+                background: isDark
+                  ? 'linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%))'
+                  : 'linear-gradient(135deg, hsl(30 30% 97%), hsl(30 25% 95%))',
+                backgroundImage: isDark
+                  ? `repeating-linear-gradient(transparent, transparent 28px, rgba(201,168,76,0.06) 28px, rgba(201,168,76,0.06) 29px)`
+                  : `repeating-linear-gradient(transparent, transparent 28px, rgba(154,107,26,0.08) 28px, rgba(154,107,26,0.08) 29px)`,
+                position: 'relative',
+                overflow: 'hidden',
+              }}>
+              {/* ملاحظات زخرفية */}
+              <div style={{ position: 'absolute', top: 10, right: 16, color: isDark ? 'rgba(201,168,76,0.2)' : 'rgba(139,26,42,0.15)', fontSize: 28, fontFamily: "'Aref Ruqaa Ink', serif", pointerEvents: 'none' }}>♪</div>
+              <div style={{ position: 'absolute', bottom: 10, left: 16, color: isDark ? 'rgba(201,168,76,0.2)' : 'rgba(139,26,42,0.15)', fontSize: 22, fontFamily: "'Aref Ruqaa Ink', serif", pointerEvents: 'none' }}>♫</div>
+        
+              <h3 style={{
+                color: isDark ? '#c9a84c' : '#8b1a2a',
+                fontFamily: "'Aref Ruqaa Ink', serif",
+                fontSize: '1.15rem',
+                fontWeight: 'bold',
+                textAlign: 'center',
+                marginBottom: 14,
+              }}>
+                {lang === 'ar' ? 'توضيح هام' : 'Important Clarification'}
+              </h3>
+        
+              <p style={{
+                color: isDark ? 'rgba(232, 213, 176, 0.78)' : '#1a1a1a',
+                lineHeight: '1.85',
+                textAlign: 'center',
+                fontFamily: "'Almarai', sans-serif",
+                fontSize: '0.95rem',
+                margin: 0,
+                whiteSpace: 'pre-line'
+              }}>
+                {lang === 'ar'
+                  ? `هذه الصفحة تحتوي على أغاني من كتاباتي ولكن مع اللحن الخاص بكل أغنية.
+بغض النظر عن الشخص الذي قام بغناء هذه الألحان، فإن الهدف هو توصيل اللحن لكم ومساعدتكم في تخيل الحالة العامة للكلمات.`
+                  : `This page contains songs I have written, but with the melody for each song.
+Regardless of who sang these melodies, the goal is to convey the melody to you and help you imagine the general mood of the lyrics.`}
+              </p>
+            </div>
+          </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
             {visibleCategories.map((c) => (
               <button
@@ -763,9 +1064,9 @@ const VideosPage = () => {
               </div>
 
               <div className="card-content">
-                {/* قسم الكلمات – خلفية داكنة */}
+                {/* قسم الكلمات – خلفية داكنة حمراء */}
                 <div className="lyrics-section">
-                  <span className="song-label">Song lyrics</span>
+                  <span className="song-label">{lang === 'ar' ? 'كلمات الأغنية' : 'Song lyrics'}</span>
                   <h2 className="video-title">{video.title}</h2>
                   <div className="lyrics-scroll-container">
                     {video.lyrics?.map((lyric, i) => (
@@ -774,25 +1075,102 @@ const VideosPage = () => {
                   </div>
                 </div>
 
-                {/* قسم التقييم */}
+                {/* قسم التقييم والتعليقات والنجوم */}
                 <div className="rating-section">
-                  <span className="rating-title">Critic reviews (click to rate)</span>
-                  {video.critics?.map((critic, idx) => (
-                    <div key={idx} className="critic-item" onClick={() => handleCriticClick(video.id, idx)}>
-                      <span>{critic}</span>
-                      {selectedCritics[`${video.id}-${idx}`] && (
-                        <span className="critic-percent">{selectedCritics[`${video.id}-${idx}`]}%</span>
+                  <div>
+                    <div className="comments-header">
+                      <span className="label-gold">{lang === 'ar' ? 'التعليقات' : 'Comments'}</span>
+                      {activeInputSongId !== video.id && (
+                        <button
+                          className="add-comment-btn"
+                          onClick={() => handleAddComment(video.id)}
+                        >
+                          {lang === 'ar' ? 'أضف تعليق +' : '+ Add comment'}
+                        </button>
                       )}
                     </div>
-                  ))}
-                  <div className="views-stars-row">
-                    <div className="ok-badge">{video.views} K</div>
+
+                    {/* Comment Input Area */}
+                    {activeInputSongId === video.id && (
+                      <div className="comment-input-area" style={{ marginBottom: '15px' }}>
+                        <textarea
+                          className="comment-textarea"
+                          style={{
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            color: isDark ? '#ffffff' : '#000000',
+                            borderColor: 'rgba(201, 168, 76, 0.2)',
+                          }}
+                          value={newCommentText[video.id] || ''}
+                          onChange={(e) => setNewCommentText(prev => ({ ...prev, [video.id]: e.target.value }))}
+                          placeholder={lang === 'ar' ? 'اكتب تعليقك...' : 'Write your comment...'}
+                          autoFocus
+                        />
+
+                        <div className="emoji-row">
+                          {['😍', '🔥', '❤️', '👏', '🎵', '💯', '😢'].map((emoji) => (
+                            <button
+                              key={emoji}
+                              type="button"
+                              className="emoji-btn"
+                              onClick={() => handleEmojiClick(video.id, emoji)}
+                            >
+                              {emoji}
+                            </button>
+                          ))}
+                        </div>
+
+                        <div className="action-buttons">
+                          <button
+                            type="button"
+                            className="btn-cancel"
+                            style={{
+                              color: isDark ? '#ffffff' : '#000000',
+                              background: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
+                            }}
+                            onClick={() => handleCancelComment(video.id)}
+                          >
+                            {lang === 'ar' ? 'إلغاء' : 'Cancel'}
+                          </button>
+                          <button
+                            type="button"
+                            className="btn-done"
+                            onClick={() => handleSubmitComment(video.id)}
+                          >
+                            {lang === 'ar' ? 'تم ✓' : 'Done ✓'}
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Comments Scroll List */}
+                    <div className="comments-scroll-list" style={{ maxHeight: '180px' }}>
+                      {(comments[video.id] || []).map((comment) => (
+                        <div
+                          key={comment.id}
+                          className="comment-bubble"
+                          style={{
+                            background: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.03)',
+                            color: isDark ? '#ffffff' : '#000000',
+                            borderColor: isDark ? 'rgba(201, 168, 76, 0.15)' : 'rgba(201, 168, 76, 0.3)',
+                            borderWidth: '1px',
+                            borderStyle: 'solid'
+                          }}
+                        >
+                          {comment.text}
+                        </div>
+                      ))}
+                      <div ref={(el) => { commentsEndRefs.current[video.id] = el; }} />
+                    </div>
+                  </div>
+
+                  <div className="views-stars-row" style={{ marginTop: '20px' }}>
+                    <div className="ok-badge">{lang === 'ar' ? `مشاهدة ${video.views}` : `Views ${video.views}`}</div>
                     <div className="star-rating">
                       {[1, 2, 3, 4, 5].map((num) => (
                         <span
                           key={num}
                           className={`star ${num <= (hoverStar[video.id] ?? starRatings[video.id] ?? 0) ? 'active' : ''}`}
-                          onClick={() => setStarRatings((prev) => ({ ...prev, [video.id]: num }))}
+                          onClick={() => saveRating(video.id, num)}
                           onMouseEnter={() => setHoverStar((prev) => ({ ...prev, [video.id]: num }))}
                           onMouseLeave={() => setHoverStar((prev) => { const n = { ...prev }; delete n[video.id]; return n; })}
                         >★</span>

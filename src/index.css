@@ -169,7 +169,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    background: radial-gradient(ellipse at 50% 50%, #fdfbf7 0%, #f7f3eb 100%);
     font-family: var(--font-body);
     transition: background-color 0.4s ease, color 0.4s ease;
   }

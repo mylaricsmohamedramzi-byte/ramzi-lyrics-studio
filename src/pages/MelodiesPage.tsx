@@ -1,37 +1,8 @@
-import { useState, useRef, useMemo } from 'react'; import SearchBar from '@/components/SearchBar'; import { normalizeArabic } from '@/lib/arabic'; const MEL_CATEGORIES: { key: string; label: string; match: (t: string) => boolean }[] = [ { key: 'all', label: 'الكل', match: () => true
-
-          <div className="max-w-3xl mx-auto animate-fade-in-up animate-fade-in-up-4">
-
-         <div
-                      className="rounded-lg p-6 sm:p-8 border border-accent/20 relative overflow-hidden"
-                      style={{
-                        background: isDark
-                          ? 'linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%))'
-                          : 'linear-gradient(135deg, hsl(30 30% 97%), hsl(30 25% 95%))',
-                      }}
-                    >
-                      <div className="absolute top-3 right-4 text-accent/20 text-3xl">♪</div>
-                      <div className="absolute bottom-3 left-4 text-accent/20 text-2xl">♫</div>
-                    
-                      <h3 className="text-lg font-subheading font-bold text-primary mb-4 text-center">
-                        {t('Important Clarification', 'توضيح هام')}
-                      </h3>
-                    
-                      <p className="text-foreground/70 leading-relaxed text-center font-body whitespace-pre-line">
-                        {/* الطريقة الصحيحة: دمج النص في سلسلة واحدة مع استخدام \n للسطر الجديد */}
-                        {t(
-                          "This page contains songs I have written, but with the melody for each song.\nRegardless of who sang these melodies, the goal is to convey the melody to you and help you imagine the general mood of the lyrics.",
-                          "هذه الصفحة تحتوي على أغاني من كتاباتي ولكن مع اللحن الخاص بكل أغنية.\nبغض النظر عن الشخص الذي قام بغناء هذه الألحان، فإن الهدف هو توصيل اللحن لكم ومساعدتكم في تخيل الحالة العامة للكلمات."
-                        )}
-                      </p>
-       </div>                                                                                                                                                               
-
-
-
-
 import { useState, useRef, useMemo } from 'react';
 import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
+import { useLang } from '@/contexts/LangContext';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const MEL_CATEGORIES: { key: string; label: string; match: (t: string) => boolean }[] = [
   { key: 'all',      label: 'الكل',     match: () => true },
@@ -378,7 +349,16 @@ const allSongs = [
 ];
 
 const MelodiesPage  = () => {
+  const { lang, t } = useLang();
+  const { isDark } = useTheme();
+
   const [starRatings, setStarRatings] = useState<Record<number, number>>({});
+  const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
+  const [comments, setComments] = useState<Record<number, { id: number; text: string }[]>>({});
+  const [newCommentText, setNewCommentText] = useState<Record<number, string>>({});
+  const [activeInputSongId, setActiveInputSongId] = useState<number | null>(null);
+  const commentsEndRefs = useRef<Record<number, HTMLDivElement | null>>({});
+
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
   const [playingKey, setPlayingKey] = useState<string | null>(null);
   const [audioTimes, setAudioTimes] = useState<Record<string, { current: number; duration: number }>>({});
@@ -424,20 +404,84 @@ const MelodiesPage  = () => {
     }
   };
 
-  const handleCriticClick = (songId: number, idx: number) => {
-    const key = `${songId}-${idx}`;
-    if (!selectedCritics[key]) {
-      setSelectedCritics(prev => ({ ...prev, [key]: Math.floor(Math.random() * 31) + 65 }));
+  const handleAddComment = (songId: number) => {
+    setActiveInputSongId(songId);
+  };
+
+  const handleCancelComment = (songId: number) => {
+    setActiveInputSongId(null);
+    setNewCommentText(prev => ({ ...prev, [songId]: '' }));
+  };
+
+  const handleSubmitComment = (songId: number) => {
+    const txt = newCommentText[songId]?.trim();
+    if (!txt) {
+      setActiveInputSongId(null);
+      return;
     }
+    const newComment = { id: Date.now(), text: txt };
+    setComments(prev => ({
+      ...prev,
+      [songId]: [...(prev[songId] || []), newComment]
+    }));
+    setNewCommentText(prev => ({ ...prev, [songId]: '' }));
+    setActiveInputSongId(null);
+    
+    setTimeout(() => {
+      const el = commentsEndRefs.current[songId];
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  };
+
+  const handleEmojiClick = (songId: number, emoji: string) => {
+    setNewCommentText(prev => ({
+      ...prev,
+      [songId]: (prev[songId] || '') + emoji
+    }));
+  };
+
+  const saveRating = (songId: number, val: number) => {
+    setStarRatings(prev => ({ ...prev, [songId]: val }));
   };
 
   return (
-    <div dir="rtl" className="page-wrapper">
+    <div dir={lang === 'ar' ? 'rtl' : 'ltr'} className="page-wrapper content-layer" style={{
+      background: isDark ? 'linear-gradient(180deg, #1a051a 0%, #000 100%)' : '#fbfbfb',
+      color: isDark ? '#ffffff' : '#000000'
+    }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&display=swap');
         
-        .page-wrapper { background: linear-gradient(180deg, #1a051a 0%, #000 100%); min-height: 100vh; padding: 40px 20px; color: white; font-family: 'Almarai', sans-serif; }
-        .main-card { max-width: 1100px; margin: 0 auto 60px; background: #040828; border: 2px solid #c9a84c; border-radius: 40px; display: flex; flex-direction: row-reverse; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8); }
+        :root { --leather-black: #0a0205; }
+        .page-wrapper { min-height: 100vh; padding: 40px 20px; font-family: 'Outfit', 'Almarai', sans-serif; position: relative; overflow: hidden; }
+        .main-card { max-width: 1100px; margin: 0 auto 60px; background: ${isDark ? '#040828' : '#ffffff'}; border: 1px solid rgba(201, 168, 76, 0.4); border-radius: 40px; display: flex; flex-direction: ${lang === 'ar' ? 'row-reverse' : 'row'}; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8); position: relative; }
+        
+        /* Unified Header Box */
+        .unified-header-box {
+          background: ${isDark ? '#000000' : '#ffffff'};
+          border: 1px solid rgba(201, 168, 76, 0.35);
+          border-radius: 20px;
+          padding: 30px 40px;
+          max-width: 800px;
+          margin: 40px auto 30px;
+          text-align: center;
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(201, 168, 76, 0.08);
+          position: relative;
+          z-index: 10;
+        }
+        .unified-header-title {
+          font-family: 'Aref Ruqaa Ink', serif;
+          font-size: 3rem;
+          color: #c9a84c;
+          margin-bottom: 10px;
+        }
+        .unified-header-subtitle {
+          font-family: 'Almarai', sans-serif;
+          color: #ffffff;
+          font-size: 1.1rem;
+          opacity: 0.9;
+        }
+
         .player-side { flex: 1; padding: 30px; background: rgba(0,0,0,0.3); display: flex; flex-direction: column; align-items: center; }
         
         .song-tag { background: #c9a84c; color: #000; padding: 4px 20px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-bottom: 15px; }
@@ -500,19 +544,49 @@ const MelodiesPage  = () => {
         .line { font-size: 1.2rem; margin-bottom: 10px; border-right: 3px solid #c9a84c; padding-right: 15px; }
         .line.red { color: #ff4d4d; border-right-color: #ff4d4d; font-weight: bold; }
 
-        .critic-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; margin-bottom: 8px; cursor: pointer; display: flex; justify-content: space-between; border: 1px solid rgba(201,168,76,0.1); }
+        .critic-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; margin-bottom: 8px; cursor: pointer; display: flex; justify-content: space-between; border: 1px solid rgba(201,168,76,0.1); color: #fff; }
 
         @media (max-width: 900px) { .main-card { flex-direction: column; } .lyrics-side { border-left: none; border-top: 1px solid rgba(201,168,76,0.2); } }
       `}</style>
 
+      {/* Unified Black Header Box */}
+      <div className="unified-header-box animate-fade-in-up">
+        <h1 className="unified-header-title">
+          {lang === 'ar' ? 'الألحان' : 'MELODIES'}
+        </h1>
+        <p className="unified-header-subtitle">
+          {lang === 'ar' ? 'هذه الصفحة تحتوي على ألحان أغاني من كتاباتي لتوصيل الحالة العامة للكلمات.' : 'This page contains melodies for my songs to convey the general mood of the lyrics.'}
+        </p>
+        
+        <div style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid rgba(201, 168, 76, 0.2)' }}>
+          <h3 className="text-lg font-subheading font-bold mb-3" style={{ color: '#c9a84c' }}>
+            {lang === 'ar' ? 'توضيح هام' : 'Important Clarification'}
+          </h3>
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: '1.6', whiteSpace: 'pre-line' }}>
+            {lang === 'ar' 
+              ? "هذه الصفحة تحتوي على أغاني من كتاباتي ولكن مع اللحن الخاص بكل أغنية.\nبغض النظر عن الشخص الذي قام بغناء هذه الألحان، فإن الهدف هو توصيل اللحن لكم ومساعدتكم في تخيل الحالة العامة للكلمات."
+              : "This page contains songs I have written, but with the melody for each song.\nRegardless of who sang these melodies, the goal is to convey the melody to you and help you imagine the general mood of the lyrics."}
+          </p>
+        </div>
+      </div>
+
       {/* Search + Filter */}
       <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
-        <SearchBar
-          value={search}
-          onChange={setSearch}
-          placeholder="ابحث عن لحن..."
-          className="mb-5"
-        />
+        <div className="relative mb-5" style={{ maxWidth: '600px', margin: '0 auto' }}>
+          <input
+            type="text"
+            className="w-full px-5 py-4 pl-12 rounded-full border-2 focus:outline-none focus:border-accent transition-all duration-300"
+            style={{
+              background: isDark ? 'rgba(0, 0, 0, 0.4)' : '#ffffff',
+              borderColor: 'var(--accent)',
+              color: isDark ? '#ffffff' : '#000000',
+              fontFamily: 'Almarai, sans-serif'
+            }}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder={lang === 'ar' ? 'ابحث عن لحن...' : 'Search for a melody...'}
+          />
+        </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
           {MEL_CATEGORIES.map((c) => (
             <button
@@ -592,13 +666,89 @@ const MelodiesPage  = () => {
                 <div key={i} className={`line ${l.red ? 'red' : ''}`}>{l.text}</div>
               ))}
             </div>
-            <span className="label-gold">الآراء النقدية (اضغط للتقييم)</span>
-            {song.critics.map((critic, idx) => (
-              <div key={idx} className="critic-item" onClick={() => handleCriticClick(song.id, idx)}>
-                <span style={{fontSize: '14px'}}>{critic}</span>
-                {selectedCritics[`${song.id}-${idx}`] && <span style={{color: '#c9a84c', fontWeight: 'bold'}}>{selectedCritics[`${song.id}-${idx}`]}%</span>}
+            <div className="comments-header" style={{ marginTop: '15px' }}>
+              <span className="label-gold">{lang === 'ar' ? 'التعليقات' : 'Comments'}</span>
+              {activeInputSongId !== song.id && (
+                <button
+                  className="add-comment-btn"
+                  onClick={() => handleAddComment(song.id)}
+                >
+                  {lang === 'ar' ? 'أضف تعليق +' : '+ Add comment'}
+                </button>
+              )}
+            </div>
+
+            {/* Comment Input Area */}
+            {activeInputSongId === song.id && (
+              <div className="comment-input-area">
+                <textarea
+                  className="comment-textarea"
+                  style={{
+                    background: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
+                    color: isDark ? '#ffffff' : '#000000',
+                    borderColor: isDark ? 'rgba(201, 168, 76, 0.2)' : 'rgba(201, 168, 76, 0.4)',
+                  }}
+                  value={newCommentText[song.id] || ''}
+                  onChange={(e) => setNewCommentText(prev => ({ ...prev, [song.id]: e.target.value }))}
+                  placeholder={lang === 'ar' ? 'اكتب تعليقك...' : 'Write your comment...'}
+                  autoFocus
+                />
+
+                <div className="emoji-row">
+                  {['😍', '🔥', '❤️', '👏', '🎵', '💯', '😢'].map((emoji) => (
+                    <button
+                      key={emoji}
+                      type="button"
+                      className="emoji-btn"
+                      onClick={() => handleEmojiClick(song.id, emoji)}
+                    >
+                      {emoji}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="action-buttons">
+                  <button
+                    type="button"
+                    className="btn-cancel"
+                    style={{
+                      color: isDark ? '#ffffff' : '#000000',
+                      background: isDark ? 'rgba(255, 255, 255, 0.1)' : '#f3f3f3',
+                    }}
+                    onClick={() => handleCancelComment(song.id)}
+                  >
+                    {lang === 'ar' ? 'إلغاء' : 'Cancel'}
+                  </button>
+                  <button
+                    type="button"
+                    className="btn-done"
+                    onClick={() => handleSubmitComment(song.id)}
+                  >
+                    {lang === 'ar' ? 'تم ✓' : 'Done ✓'}
+                  </button>
+                </div>
               </div>
-            ))}
+            )}
+
+            {/* Comments Scroll List */}
+            <div className="comments-scroll-list" style={{ maxHeight: '140px' }}>
+              {(comments[song.id] || []).map((comment) => (
+                <div
+                  key={comment.id}
+                  className="comment-bubble"
+                  style={{
+                    background: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
+                    color: isDark ? '#ffffff' : '#000000',
+                    borderColor: isDark ? 'rgba(201, 168, 76, 0.15)' : 'rgba(201, 168, 76, 0.3)',
+                    borderWidth: '1px',
+                    borderStyle: 'solid'
+                  }}
+                >
+                  {comment.text}
+                </div>
+              ))}
+              <div ref={(el) => { commentsEndRefs.current[song.id] = el; }} />
+            </div>
           </div>
         </div>
       ))}

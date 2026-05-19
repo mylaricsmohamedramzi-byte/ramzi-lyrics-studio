@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useLang } from '@/contexts/LangContext';
+import nameArabic from '@/assets/name-arabic.png';
+import nameEnglish from '@/assets/name-english.png';
 
 const EASTERN_TO_WESTERN: Record<string, string> = {
   '٠': '0', '١': '1', '٢': '2', '٣': '3', '٤': '4',
@@ -279,11 +281,11 @@ const methods: Method[] = [
       ar: (
         <div className="method-text">
           هيا أني أقعد و أقرر أني هكتب أغنيه ساعتها ببدأ أعمل كام حاجه وهما: <br />
-          <span className="cyan">1_ أدور علي فكره:</span>
+          <span className="cyan">1 - أدور علي فكره:</span>
           <br />
           خلينا نقول أني أخترت أتكلم عن فكرة الأشخاص اللي بتظهر ف حياتنا من العدم وتقرب مننا في وقت قليل جداً وتدّعي أننا غالين عندها وكدا، وبمجرد ما توصل لحاجه معينه مننا بتختفي تاني وكأنها عرفانه
           (<span className="cyan" style={{ color: 'rgb(29, 49, 243)' }}>الناس بتاعة المصلحه و بس</span>). <br /><br />
-          <span className="cyan">2_ أقرر الحالة:</span>
+          <span className="cyan">2 - أقرر الحالة:</span>
           <br />
           يعني أقرر هتكون حزينه ولا فيها بهجه، وساعتها لازم أجاوب علي سؤال من دول:
           <br />
@@ -291,17 +293,17 @@ const methods: Method[] = [
           <br />
           <span className="cyan">• ولا</span>
           <br />
-          <span className="cyan" style={{ color: 'rgb(200, 50, 70)' }}>-- هل أنا عاوز أوصل أني مش متأثر خالص و حياتي تمام؟</span>
+          <span className="cyan" style={{ color: 'rgb(200, 50, 70)' }}>-- هل أنا عاوز أوصل أني مش متأثر خالص و حياتي تمام?</span>
           <br /><br />
-          <span className="cyan">3_ أشوف هتكون سريعه أم بطيئه:</span>
+          <span className="cyan">3 - أشوف هتكون سريعه أم بطيئه:</span>
           <br />
           طب أنا بعمل كدا إزاي؟ الإجابة هيا
           <span className="cyan" style={{ color: 'rgb(29, 49, 243)' }}> • اللحن </span>
           ، وهو الطريقة اللي بحول بيها الكلام من مجرد جملة لحاجة بتولد مشاعر تأثر أو فرح. <br />
-          <span className="cyan">4_ أبدأ أكتب الكلمات المفتاحية:</span>
+          <span className="cyan">4 - أبدأ أكتب الكلمات المفتاحية:</span>
           <br />
           زي (عامل بيحبنا - مش قد كلمة - أنه شخصية رخيصة). <br />
-          <span className="cyan">5_ الصياغة النهائية:</span>
+          <span className="cyan">5 - الصياغة النهائية:</span>
           <br />
           أرجع أكتب تاني بطريقة منظمة متوافقة مع مبادئ الكتابة، لحد ما أوصل لأغنيه كامله.
         </div>
@@ -309,11 +311,11 @@ const methods: Method[] = [
       en: (
         <div className="method-text">
           This is when I sit down and decide I'm going to write a song. I then go through several steps: <br />
-          <span className="cyan">1_ Find an idea:</span> e.g. writing about opportunistic people who appear in our lives, get close fast, then disappear once they get what they want. <br /><br />
-          <span className="cyan">2_ Decide the mood:</span> Will it be sad or joyful? I have to answer one of two questions — am I trying to show that I'm truly hurt, or that I'm completely unaffected and life is great? <br /><br />
-          <span className="cyan">3_ Decide the pace:</span> fast or slow — and the <span className="cyan" style={{ color: 'rgb(29, 49, 243)' }}>melody</span> is what turns words into emotion. <br />
-          <span className="cyan">4_ Write the keywords</span> that anchor the song. <br />
-          <span className="cyan">5_ Final draft:</span> Rewrite everything in an organized way, following the principles of songwriting, until it becomes a complete song.
+          <span className="cyan">1 - Find an idea:</span> e.g. writing about opportunistic people who appear in our lives, get close fast, then disappear once they get what they want. <br /><br />
+          <span className="cyan">2 - Decide the mood:</span> Will it be sad or joyful? I have to answer one of two questions — am I trying to show that I'm truly hurt, or that I'm completely unaffected and life is great? <br /><br />
+          <span className="cyan">3 - Decide the pace:</span> fast or slow — and the <span className="cyan" style={{ color: 'rgb(29, 49, 243)' }}>melody</span> is what turns words into emotion. <br />
+          <span className="cyan">4 - Write the keywords</span> that anchor the song. <br />
+          <span className="cyan">5 - Final draft:</span> Rewrite everything in an organized way, following the principles of songwriting, until it becomes a complete song.
         </div>
       ),
     },
@@ -380,28 +382,27 @@ const methods: Method[] = [
           <br />
           <span className="cyan">• تاني حاله</span>
           <br />
-          <span className="cyan" style={{ color: 'rgb(200, 50, 70)' }}>-- بيكون الكاتب مطلوب منه يكتب علي لحن أغنيه معينه عشان الأغنيه دي نجحت</span>
+          <span className="cyan" style={{ color: 'rgb(200, 50, 70)' }}>-- بيكون الكاتب مطلوب منه يكتب علي لحن أغنيه معينة عشان الأغنيه دي نجحت</span>
+          <br /><br />
+          <span className="cyan">خليني أضرب لكم مِثال من باب الهزار 😂</span>
           <br />
-          <span className="cyan" style={{ color: 'rgb(29, 49, 243)' }}>خليني أضرب لكم مِثال من باب الهزار 😂
+          أغنية عمرو دياب اللي أسمها "وهي عامله إيه " لو أنا ممكن أخلي الموضوع عبثي و أكتب علي نفس اللحن .
+          <br /><br />
+          <strong style={{ color: 'var(--swa-card-gold)' }}>• الكلمات الاصليه</strong>
           <br />
-            أغنية عمرو دياب اللي أسمها  "وهي عامله إيه " لو أنا ممكن أخلي الموضوع عبثي و أكتب علي نفس اللحن   </span>. <br /><br />
+          • وهي عامله إيه دلوقت ... ومين هون عليها الوقت
           <br />
-          <span className="cyan">• الكلمات الاصليه </span>
+          • قولولي لو فى صالحها ... أروحلها و أصالحها
           <br />
-          <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• وهي عامله إيه دلوقت ... ومين هون عليها الوقت </span>
+          • ظالمها وقلبي جارحها ... أجيلها ولا مش دلوقت
+          <br /><br />
+          <strong style={{ color: '#ff4d4d' }}>• الكلمات العبثيه 🤣</strong>
           <br />
-          <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• قولولي لو فى صالحها ... أروحلها و أصالحها</span>
+          • وهيّ بتاكل إيه دلوقت ... ومين اللي قاعد معاها عالاكل
           <br />
-          <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• ظالمها وقلبي جارحها  ... أجيلها ولا مش دلوقت</span>
+          • أخوها ولا صحبتها ... ولا لوحدها مفيش حدّ
           <br />
-          <span className="cyan">•  الكلمات العبثيه 🤣</span>
-          <br />
-          <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• وهيّ بتاكل إيه دلوقت ... ومين اللي قاعد معاها عالاكل</span>
-          <br />
-          <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• أخوها ولا صحبتها ... ولا لوحدها مفيش حدّ </span>
-          <br />
-          <span className="cyan" style={{ color: 'rgb(7, 140, 31)' }}>• يا تري الاكل عاجبها ...ولا أجيلها ومعايا أكل </span>
-          <br />
+          • يا تري الاكل عاجبها ...ولا أجيلها ومعايا أكل
         </div>
       ),
       en: (
@@ -424,6 +425,26 @@ const methods: Method[] = [
           That's one of the reasons I'm forced to listen to every new and old song so that I can tell if a melody sent to me is stolen.
           <br />
           <span className="cyan" style={{ color: 'rgb(200, 50, 70)' }}>-- The writer is asked to write lyrics over the melody of a successful song on purpose.</span>
+          <br /><br />
+          <span className="cyan">Let me give you a funny example 😂</span>
+          <br />
+          Amr Diab's song "We Heya Amla Eih" (How is she doing now), if I wanted to make it absurd and write to the same melody:
+          <br /><br />
+          <strong style={{ color: 'var(--swa-card-gold)' }}>• Original Lyrics</strong>
+          <br />
+          • How is she doing now... and who made the time easier for her
+          <br />
+          • Tell me if it is good for her... should I go to her and reconcile
+          <br />
+          • I wronged her and my heart hurt her... should I come to her or not now
+          <br /><br />
+          <strong style={{ color: '#ff4d4d' }}>• Absurd Lyrics 🤣</strong>
+          <br />
+          • What is she eating now... and who is sitting with her to eat
+          <br />
+          • Her brother or her friend... or is she all alone
+          <br />
+          • I wonder if she likes the food... or should I come to her with food
         </div>
       ),
     },
@@ -438,7 +459,7 @@ const SongwritingArtPage = () => {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Aref+Ruqaa+Ink:wght@700&family=Tajawal:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Aref+Ruqaa+Ink:wght@700&family=Tajawal:wght@400;700&family=Cinzel:wght@400;700&display=swap');
 
         @font-face {
           font-family: 'DG Forsha';
@@ -446,49 +467,47 @@ const SongwritingArtPage = () => {
           font-display: swap;
         }
 
-        .swa-root {
+        :root {
+          --leather-black: #0a0205;
           --deep-burgundy: rgb(53, 3, 3);
           --silver: rgb(192, 192, 192);
-          --leather-black: rgba(40, 9, 13, 1);
           --gold: #c9a84c;
           --cyan: #4cc9f0;
           --red: #ff4d4d;
-
-          /* Card colors are FIXED (midnight blue) regardless of theme */
-          --swa-card-bg: #040828;
           --swa-card-border: rgba(201, 168, 76, 0.35);
           --swa-card-text: #ffffff;
           --swa-card-muted: #d8d4c2;
           --swa-card-cyan: #4cc9f0;
           --swa-card-gold: #c9a84c;
           --swa-grain-opacity: 0.35;
-
-          /* Page-level (background, headings) follow theme */
           --swa-text: white;
           --swa-silver: var(--silver);
           --swa-heading-shadow: 2px 2px 10px rgba(0, 0, 0, 0.54);
           --swa-gold-text: var(--gold);
         }
 
-        :root:not(.dark) .swa-root {
-          --swa-text: #1a0509;
-          --swa-silver: #2a1418;
-          --swa-heading-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
-          --swa-gold-text: #8a6a14;
+        .swa-root {
+          min-height: 100vh;
+          background: transparent;
+          font-family: 'Tajawal', sans-serif;
+          color: var(--swa-text);
+          padding: 80px 20px;
+          position: relative;
         }
 
-        /* Override the global Cairo !important for Arabic so our fonts apply */
         [data-lang="ar"] .swa-root,
         [data-lang="ar"] .swa-root * {
           font-family: inherit !important;
         }
         [data-lang="ar"] .swa-heading,
-        [data-lang="ar"] .swa-subheading,
+        [data-lang="ar"] .swa-subheading {
+          font-family: 'Aref Ruqaa Ink', serif !important;
+        }
         [data-lang="ar"] .swa-card-title,
         [data-lang="ar"] .swa-bg-number,
         [data-lang="ar"] .method-text,
         [data-lang="ar"] .method-text * {
-          font-family: 'Almarai', sans-serif !important;
+          font-family: 'Omnes Arabic', sans-serif !important;
         }
         [data-lang="ar"] .swa-song-header {
           font-family: 'Aref Ruqaa Ink', serif !important;
@@ -497,44 +516,41 @@ const SongwritingArtPage = () => {
           font-family: 'DG Forsha', 'Aref Ruqaa Ink', serif !important;
         }
 
-        .swa-grain-overlay {
-          position: absolute;
-          inset: 0;
-          background-image: url('https://www.transparenttextures.com/patterns/leather.png');
-          opacity: 0.18;
-          pointer-events: none;
-          z-index: 1;
-        }
-
         .swa-container {
           min-height: 100vh;
-          /* Match the rest of the site: transparent so the global body bg shows through */
           background: transparent;
-          font-family: 'Tajawal', sans-serif;
+          font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif;
           color: var(--swa-text);
           padding: 80px 20px;
           position: relative;
         }
 
-        .swa-heading {
-          font-family: 'Almarai', sans-serif;
-          font-size: clamp(35px, 7vw, 70px);
+        .unified-header-box {
+          background: #000000;
+          border: 1px solid rgba(201, 168, 76, 0.35);
+          border-radius: 20px;
+          padding: 30px 40px;
+          max-width: 800px;
+          margin: 0 auto 50px;
           text-align: center;
-          color: var(--swa-gold-text);
-          margin-bottom: 16px;
-          text-shadow: var(--swa-heading-shadow);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(201, 168, 76, 0.08);
           position: relative;
           z-index: 10;
         }
-
-        .swa-subheading {
-          text-align: center;
-          color: var(--swa-silver);
-          font-family: 'Almarai', sans-serif;
-          opacity: 0.85;
-          margin-bottom: 60px;
-          position: relative;
-          z-index: 10;
+        .unified-header-title {
+          font-family: 'Aref Ruqaa Ink', 'Cinzel', serif !important;
+          font-size: clamp(28px, 5vw, 42px) !important;
+          font-weight: 800;
+          color: #c9a84c;
+          margin-bottom: 12px;
+          text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+        }
+        .unified-header-subtitle {
+          font-family: 'Tajawal', 'Almarai', 'Outfit', sans-serif !important;
+          font-size: clamp(14px, 3vw, 17px) !important;
+          color: #e8d5b0;
+          opacity: 0.9;
+          line-height: 1.6;
         }
 
         .swa-grid {
@@ -548,7 +564,7 @@ const SongwritingArtPage = () => {
         }
 
         .swa-card {
-          background: var(--swa-card-bg);
+          background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, var(--leather-black) 100%);
           border: 1px solid var(--swa-card-border);
           padding: 35px;
           cursor: pointer;
@@ -575,7 +591,6 @@ const SongwritingArtPage = () => {
         .swa-card:hover { border-color: var(--swa-card-gold); transform: translateY(-5px); }
 
         .swa-bg-number {
-          font-family: 'Almarai', sans-serif;
           font-size: 80px;
           opacity: 0.18;
           position: absolute;
@@ -584,9 +599,58 @@ const SongwritingArtPage = () => {
           color: var(--swa-card-gold);
         }
 
-        .swa-card-title { font-family: 'Almarai', sans-serif; font-size: 28px; color: var(--swa-card-gold); margin-bottom: 15px; }
+        .swa-card-title { font-size: 28px; color: var(--swa-card-gold); margin-bottom: 15px; }
         .method-text { line-height: 2; font-size: 16px; color: var(--swa-card-muted); margin-bottom: 25px; }
         .method-text .cyan { color: var(--swa-card-cyan); font-weight: 800; }
+
+        /* Animated arrow and reveal phrase at the bottom of the card */
+        .swa-reveal-trigger {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-top: 25px;
+          margin-bottom: 10px;
+          padding: 12px;
+          background: rgba(201, 168, 76, 0.05);
+          border: 1px dashed rgba(201, 168, 76, 0.25);
+          border-radius: 12px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          position: relative;
+          z-index: 10;
+        }
+        .swa-reveal-trigger:hover {
+          background: rgba(201, 168, 76, 0.12);
+          border-color: var(--swa-card-gold);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .swa-arrow-icon {
+          font-size: 24px;
+          color: var(--swa-card-gold);
+          transition: transform 0.4s ease;
+          animation: swaBounce 2s infinite;
+          line-height: 1;
+        }
+        .swa-reveal-trigger.is-active .swa-arrow-icon {
+          transform: rotate(180deg);
+          animation: none;
+        }
+        .swa-reveal-text {
+          font-size: 14px;
+          color: var(--swa-card-muted);
+          margin-top: 6px;
+          transition: color 0.3s;
+          text-align: center;
+        }
+        .swa-reveal-trigger:hover .swa-reveal-text {
+          color: var(--swa-card-gold);
+        }
+        @keyframes swaBounce {
+          0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+          40% { transform: translateY(-8px); }
+          60% { transform: translateY(-4px); }
+        }
 
         .swa-song-reveal {
           max-height: 0;
@@ -602,7 +666,6 @@ const SongwritingArtPage = () => {
         }
 
         .swa-song-header {
-          font-family: 'Aref Ruqaa Ink', serif;
           font-size: 34px;
           color: var(--swa-card-gold);
           margin-bottom: 25px;
@@ -611,7 +674,6 @@ const SongwritingArtPage = () => {
         }
 
         .swa-lyric-line {
-          font-family: 'DG Forsha', 'Aref Ruqaa Ink', serif;
           font-size: 24px;
           margin-bottom: 12px;
           padding-right: 15px;
@@ -636,14 +698,17 @@ const SongwritingArtPage = () => {
 
       <div className="swa-root">
         <div className="swa-container" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-          <h1 className="swa-heading">
-            {lang === 'ar' ? 'فن كتابة الأغنية' : 'The Art of Songwriting'}
-          </h1>
-          <p className="swa-subheading">
-            {lang === 'ar'
-              ? 'تعلم أساليب وتقنيات كتابة الأغاني'
-              : 'Learn songwriting methods and techniques'}
-          </p>
+          {/* Unified Black Header Box */}
+          <div className="unified-header-box animate-fade-in-up">
+            <h1 className="unified-header-title">
+              {lang === 'ar' ? 'فن كتابة الأغنية' : 'The Art of Songwriting'}
+            </h1>
+            <p className="unified-header-subtitle">
+              {lang === 'ar'
+                ? 'تعلم أساليب وتقنيات كتابة الأغاني'
+                : 'Learn songwriting methods and techniques'}
+            </p>
+          </div>
 
           <div className="swa-grid">
             {methods.map((m, idx) => (
@@ -662,6 +727,23 @@ const SongwritingArtPage = () => {
                 <div className="method-text">
                   {lang === 'ar' ? m.description.ar : m.description.en}
                 </div>
+
+                {m.lyrics.length > 0 && (
+                  <div
+                    className={`swa-reveal-trigger ${active === idx ? 'is-active' : ''}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActive(active === idx ? null : idx);
+                    }}
+                  >
+                    <div className="swa-arrow-icon">↓</div>
+                    <div className="swa-reveal-text">
+                      {active === idx
+                        ? (lang === 'ar' ? 'اضغط لإخفاء كلمات الأغنية' : 'Click to hide song lyrics')
+                        : (lang === 'ar' ? 'اضغط لعرض كلمات الأغنية المكتوبة' : 'Click to show the written lyrics')}
+                    </div>
+                  </div>
+                )}
 
                 {m.lyrics.length > 0 && (
                   <div className="swa-song-reveal">

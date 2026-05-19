@@ -1,7 +1,10 @@
-import { useState, useRef, useMemo } from 'react';
+import { useState, useRef, useMemo, useEffect } from 'react';
 import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
+import { useTheme } from '@/contexts/ThemeContext';
+import nameArabic from '@/assets/name-arabic.png';
+import nameEnglish from '@/assets/name-english.png';
 
 // ─── ملاحظات موسيقية عائمة ────────────────────────────────────────────────────
 const NOTES = ['♩', '♪', '♫', '♬', '𝄞', '𝄢', '♭', '♮', '♯', '𝄡', '♬', '♪', '♫', '♩'];
@@ -130,7 +133,7 @@ const allSongs = [
     type: "راب",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509740/%D9%85%D9%84%D9%8A%D8%B4_%D8%BA%D9%8A%D8%B1%D9%83-%D8%B1%D8%A7%D8%A8_%D8%B1%D9%88%D9%85%D8%A7%D9%86%D8%B3%D9%8A_j5mdkx.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776510464/%D9%85%D9%84%D9%8A%D8%B4_%D8%BA%D9%8A%D8%B1%D9%83_weld7x.png",
-    views: "88 ",
+    views: "0",
     credits: "كلمات وألحان : محمد رمزي",
     lyrics: [
       { text: "نفسي لو بقا قلبي دايب ... تبقي انتي ليه المدد", red: false },
@@ -180,7 +183,7 @@ const allSongs = [
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509727/asal_mgr%D9%91b_pop_i91mvo.mp3 ",
     ],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776510465/%D8%A5%D8%B3%D8%A3%D9%84_%D9%85%D8%AC%D8%B1%D8%A8_qr7zra.png",
-    views: "0 K",
+    views: "0",
     credits: "كلمات وألحان : محمد رمزي",
     lyrics: [
       { text: "", red: true },
@@ -233,7 +236,7 @@ const allSongs = [
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509720/Sirr_A5tlAfy-3_iednte.mp3",
     ],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776510465/%D8%B3%D8%B1_%D9%91%D8%A5%D8%AE%D8%AA%D9%84%D8%A7%D9%81%D9%8A_otkvhz.png",
-    views: "0 K",
+    views: "0",
     credits: "كلمات وألحان : محمد رمزي",
     lyrics: [
       { text: "المطرب 👨‍💼", red: false },
@@ -279,7 +282,7 @@ const allSongs = [
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509722/%D9%83%D8%A7%D9%85_%D8%AF%D9%82%D9%8A%D9%82%D9%87_%D9%85%D9%82%D8%B3%D9%88%D9%85_wcqx5a.mp3",
     ],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776512148/%D9%83%D8%A7%D9%85_%D8%AF%D9%82%D9%8A%D9%82%D9%87_gczdu3.png",
-    views: "0 K",
+    views: "0",
     credits: "كلمات وألحان : محمد رمزي",
     lyrics: [
       { text: "المطرب 👨‍💼", red: false },
@@ -316,7 +319,7 @@ const allSongs = [
     type: "روك",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509741/Nafsy_Ashofoo-2_hjtoq1.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776512869/%D9%86%D9%81%D8%B3%D9%8A_%D8%A7%D8%B4%D9%88%D9%81%D9%87_pjgqah.png",
-    views: "0 K",
+    views: "0",
     credits: "كلمات وألحان : محمد رمزي",
     lyrics: [
       { text: "نفسي أشوفه أو أقابله ... بس بيطلع لي حجه", red: false },
@@ -352,7 +355,7 @@ const allSongs = [
     type: "رومانسي مقسوم",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509748/%D8%B9%D9%8E%D8%A7%D9%85%D9%90%D9%84%D9%92_%D9%86%D9%8E%D8%A7%D8%B3%D9%90%D9%8A%D9%86%D9%90%D9%8A_1_b5cueb.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776514519/%D8%B9%D8%A7%D9%85%D9%84_%D9%86%D8%A7%D8%B3%D9%8A%D9%86%D9%8A_h0iwop.png",
-    views: "0 K",
+    views: "0",
     credits: "كلمات وألحان : محمد رمزي",
     lyrics: [
       { text: "يا ويلي من اللي بحبه.. اه يا ويلي", red: false },
@@ -390,7 +393,7 @@ const allSongs = [
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509723/%D9%83%D9%8A%D9%81_%D8%AD%D8%A7%D9%84%D9%83_-Duets_w2xrh0.mp3",
     ],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776515834/%D9%83%D9%8A%D9%81_%D8%AD%D8%A7%D9%84%D9%83_zhidhs.png",
-    views: "0 K",
+    views: "0",
     credits: "كلمات وألحان : محمد رمزي",
     lyrics: [
       { text: "حَبِيبَتِي قَدْ أَتَتْنِي اَلْرِّيِحُ بِمَا لَا أَشْتَهِي", red: false },
@@ -419,7 +422,7 @@ const allSongs = [
     type: "بوب",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509714/%D9%84%D9%88_%D8%B4%D8%A7%D9%81%D9%86%D9%8A_aygdxm.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776517974/%D9%84%D9%88_%D8%B4%D8%A7%D9%81%D9%86%D9%8A_ggebvl.png",
-    views: "0 K",
+    views: "0",
     credits: "كلمات وألحان : محمد رمزي",
     lyrics: [
       { text: "واله وبقا ليك .. غيري يخليك", red: false },
@@ -457,7 +460,7 @@ const allSongs = [
     type: "رومانسي مقسوم",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509726/%D9%85%D8%B4_%D8%B9%D9%8A%D8%A8_vedbxq.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776520011/%D9%85%D8%B4_%D8%B9%D9%8A%D8%A8_dhn3py.png",
-    views: "0 K",
+    views: "0",
     credits: "كلمات وألحان : محمد رمزي",
     lyrics: [
       { text: "متزعلش وحياتي عندك ... مبقدرش أنا علي زعلك", red: false },
@@ -490,7 +493,7 @@ const allSongs = [
     type: "وطني",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509733/%D8%AD%D9%8E%D9%8A%D9%91%D9%8E_%D8%B9%D9%8E%D9%84%D9%8E%D9%89_%D8%A7%D9%84%D8%AC%D9%90%D9%87%D9%8E%D8%A7%D8%AF%D9%90_ksmmfm.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776522138/%D8%AD%D9%8A_%D8%B9%D9%84%D9%8A_%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%AF_rprtdg.png",
-    views: "0 K",
+    views: "0",
     lyrics: [
       { text: "مِصْرُ يَا هَدَفَ الأَعَادِي .. جَيْشُكِ وَصَلَ الأَعَالِي", red: false },
       { text: "أَنْتِ يَا أَرْضَ السَّلَامِ .. قَدْ غُرِفْتِ بِالأَمَانِي", red: false },
@@ -521,7 +524,7 @@ const allSongs = [
     type: "وطني",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509732/%D9%88%D8%AD%D8%B4%D8%A7%D9%86%D9%8A_%D9%8A%D8%A7_%D9%85%D8%B5%D8%B1_zs1fuw.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776526375/%D9%88%D8%AD%D8%B4%D8%A7%D9%86%D9%8A_%D9%8A%D8%A7_%D9%85%D8%B5%D8%B1_ovf9vr.png",
-    views: "0 K",
+    views: "0",
     lyrics: [
       { text: "وحشاني يا مصر وحشاني ..... وبقالي سنين عليكي غايب", red: false },
       { text: "بتمني أرجع ليكي تاني .....علشان سايب فيكي حبايب", red: false },
@@ -548,7 +551,7 @@ const allSongs = [
     type: "مناسبات وأعياد",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509712/%D8%A3%D9%8A%D8%A7%D9%85_%D8%B1%D9%85%D8%B6%D8%A7%D9%86_bfi8na.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776527528/%D8%A3%D9%8A%D8%A7%D9%85_%D8%B1%D9%85%D8%B6%D8%A7%D9%86_xzw22b.png",
-    views: "0 K",
+    views: "0",
     lyrics: [
       { text: "يبدأ رمضان لما نعلق زينه وفنوس", red: false },
       { text: "وفي أخر الليل نتسحر علشان نصوم", red: false },
@@ -578,7 +581,7 @@ const allSongs = [
     type: "صعيدي",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509717/%D8%B9%D8%B7%D8%B4%D8%A7%D9%86_%D8%BA%D8%B1%D8%A7%D9%85_ybv7af.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776529300/%D8%B9%D8%B7%D8%B4%D8%A7%D9%86_%D8%BA%D8%B1%D8%A7%D9%85_cs0dly.png",
-    views: "0 K",
+    views: "0",
     lyrics: [
       { text: "أنا حدّ هاوي ... للحب غاوي", red: false },
       { text: "بتمني اداوي ، كل القلوب", red: false },
@@ -605,7 +608,7 @@ const allSongs = [
     id: 14,
     title: "زمن العجائب",
     type: "صعيدي",
-    views: "0 K",
+    views: "0",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509730/1-%D8%B2%D9%85%D9%86_%D8%A7%D9%84%D8%B9%D8%AC%D8%A7%D9%8A%D8%A8_w1o5w8.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776530659/%D8%B2%D9%85%D9%86_%D8%A7%D9%84%D8%B9%D8%AC%D8%A7%D8%A6%D8%A8_qqvpkl.jpg",
     lyrics: [
@@ -635,7 +638,7 @@ const allSongs = [
     id: 15,
     title: "زارِعَ الخَيرِ",
     type: "إسلامي",
-    views: "0 K",
+    views: "0",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509722/%D8%B2%D8%A7%D8%B1%D8%B9_%D8%A7%D9%84%D8%AE%D9%8A%D8%B1_wgt66w.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776533422/%D8%B2%D8%A7%D8%B1%D8%B9_%D8%A7%D9%84%D8%AE%D9%8A%D8%B1_qypvad.png",
     lyrics: [
@@ -659,7 +662,7 @@ const allSongs = [
     id: 16,
     title: "الكون إحتفي",
     type: "إسلامي",
-    views: "0 K",
+    views: "0",
     audioUrls: [
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509712/%D8%A7%D9%84%D9%83%D9%88%D9%86_%D8%A5%D8%AD%D8%AA%D9%81%D9%8A_1_fm1xwc.mp3",
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509730/%D8%A7%D9%84%D9%83%D9%88%D9%86%D9%8F_%D8%A7%D8%AD%D8%AA%D9%81%D9%892_npglvq.mp3",
@@ -691,7 +694,7 @@ const allSongs = [
     id: 17,
     title: "ألهتني نفسي",
     type: "إسلامي",
-    views: "0 K",
+    views: "0",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509739/%D8%A3%D9%8E%D9%84%D9%92%D9%87%D9%8E%D8%AA%D9%92%D9%86%D9%8A_%D9%86%D9%8E%D9%81%D8%B3%D9%8A_qlikwi.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776535539/%D8%A3%D9%84%D9%87%D8%AA%D9%86%D9%8A_%D9%86%D9%81%D8%B3%D9%8A_uqkgyi.png",
     lyrics: [
@@ -719,7 +722,7 @@ const allSongs = [
     id: 18,
     title: "مُبتغي الاُممي",
     type: "إسلامي",
-    views: "0 K",
+    views: "0",
     audioUrls: [
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509713/%D9%85%D9%8F%D8%A8%D9%92%D8%AA%D9%8E%D8%BA%D9%8E%D9%89_%D8%A7%D9%84%D9%92%D8%A3%D9%8F%D9%85%D9%8E%D9%85%D9%90%D9%8A_1_gw4yoj.mp3",
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509731/%D9%85%D9%8F%D8%A8%D9%92%D8%AA%D9%8E%D8%BA%D9%8E%D9%89_%D8%A7%D9%84%D9%92%D8%A3%D9%8F%D9%85%D9%8E%D9%85%D9%90%D9%8A_2_y9ptqo.mp3",
@@ -751,7 +754,7 @@ const allSongs = [
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1777006816/Gamalek_marka_2_wp5gfs.mp3",
     ],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777007669/%D8%AC%D9%85%D8%A7%D9%84%D9%83_%D9%85%D8%A7%D8%B1%D9%83%D9%87_gj7ej1.png",
-    views: "0 K",
+    views: "0",
     credits: "كلمات والحان : محمد رمزي",
     lyrics: [
       { text: "كلهم حلوين وانتي", red: false },
@@ -792,7 +795,7 @@ const allSongs = [
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1777010371/Nafad_sabry_vnklxf.mp3",
     ],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777010071/%D9%86%D9%81%D8%AF_%D8%B5%D8%A8%D8%B1%D9%8A_q2tahj.png",
-    views: "0 K",
+    views: "0",
     credits: "كلمات والحان : محمد رمزي",
     lyrics: [
       { text: "هذه الكلمات باللهجة السعوديه", red: true },
@@ -815,17 +818,106 @@ const allSongs = [
   },
 ];
 
+interface Comment {
+  id: string;
+  text: string;
+  timestamp: number;
+}
+
 // ─── المكوّن الرئيسي ──────────────────────────────────────────────────────────
 const SongsPage = () => {
   const { lang } = useLang();
-  const [starRatings, setStarRatings] = useState<Record<number, number>>({});
+  const { isDark } = useTheme();
+  const [starRatings, setStarRatings] = useState<Record<number, number>>(() => {
+    const saved = localStorage.getItem('songs_ratings');
+    if (saved) {
+      try { return JSON.parse(saved); } catch (e) { console.error(e); }
+    }
+    return {};
+  });
+
+  const saveRating = (songId: number, rating: number) => {
+    const updated = { ...starRatings, [songId]: rating };
+    setStarRatings(updated);
+    localStorage.setItem('songs_ratings', JSON.stringify(updated));
+  };
+
   const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
+
+  // Comments State
+  const [comments, setComments] = useState<Record<number, Comment[]>>(() => {
+    const saved = localStorage.getItem('songs_comments');
+    if (saved) {
+      try { return JSON.parse(saved); } catch (e) { console.error(e); }
+    }
+    return {};
+  });
+
+  const [activeInputSongId, setActiveInputSongId] = useState<number | null>(null);
+  const [newCommentText, setNewCommentText] = useState<Record<number, string>>({});
+  const commentsEndRefs = useRef<Record<number, HTMLDivElement | null>>({});
+
+  useEffect(() => {
+    localStorage.setItem('songs_comments', JSON.stringify(comments));
+  }, [comments]);
+
+  const scrollToBottom = (songId: number) => {
+    setTimeout(() => {
+      commentsEndRefs.current[songId]?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }, 100);
+  };
+
+  const handleEmojiClick = (songId: number, emoji: string) => {
+    setNewCommentText(prev => ({
+      ...prev,
+      [songId]: (prev[songId] || '') + emoji
+    }));
+  };
+
+  const handleAddComment = (songId: number) => {
+    setActiveInputSongId(songId);
+    scrollToBottom(songId);
+  };
+
+  const handleCancelComment = (songId: number) => {
+    setNewCommentText(prev => ({ ...prev, [songId]: '' }));
+    setActiveInputSongId(null);
+  };
+
+  const handleSubmitComment = (songId: number) => {
+    const text = newCommentText[songId]?.trim();
+    if (!text) return;
+
+    const newComment = {
+      id: `comment-${songId}-${Date.now()}`,
+      text: text,
+      timestamp: Date.now()
+    };
+
+    setComments(prev => ({
+      ...prev,
+      [songId]: [...(prev[songId] || []), newComment]
+    }));
+
+    setNewCommentText(prev => ({ ...prev, [songId]: '' }));
+    setActiveInputSongId(null);
+    scrollToBottom(songId);
+  };
   const [playingKey, setPlayingKey] = useState<string | null>(null);
   const [audioTimes, setAudioTimes] = useState<Record<string, { current: number; duration: number }>>({});
   const [search, setSearch] = useState('');
   const [activeCat, setActiveCat] = useState('all');
   const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
+  const [volume, setVolume] = useState<number>(0.8);
+
+  useEffect(() => {
+    Object.values(audioRefs.current).forEach((audio) => {
+      if (audio) {
+        audio.volume = volume;
+      }
+    });
+  }, [volume]);
 
   const presentCategoryKeys = useMemo(() => {
     const keys = new Set<string>();
@@ -900,11 +992,159 @@ const SongsPage = () => {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&display=swap');
 
+        .unified-header-box {
+          background: #000000;
+          border: 1px solid rgba(201, 168, 76, 0.35);
+          border-radius: 20px;
+          padding: 30px 40px;
+          max-width: 800px;
+          margin: 40px auto 30px;
+          text-align: center;
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(201, 168, 76, 0.08);
+          position: relative;
+          z-index: 10;
+        }
+        .unified-header-title {
+          font-family: 'Aref Ruqaa Ink', 'Cinzel', serif !important;
+          font-size: clamp(28px, 5vw, 42px) !important;
+          font-weight: 800;
+          color: #c9a84c;
+          margin-bottom: 12px;
+          text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+        }
+        .unified-header-subtitle {
+          font-family: 'Tajawal', 'Almarai', 'Outfit', sans-serif !important;
+          font-size: clamp(14px, 3vw, 17px) !important;
+          color: #e8d5b0;
+          opacity: 0.9;
+          line-height: 1.6;
+        }
+
+        /* ─── التعليقات ─── */
+        .comments-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 15px;
+        }
+
+        .label-gold {
+          color: #c9a84c;
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        .add-comment-btn {
+          background: rgba(201, 168, 76, 0.15);
+          color: #c9a84c;
+          border: 1px solid rgba(201, 168, 76, 0.3);
+          padding: 4px 14px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .add-comment-btn:hover {
+          background: rgba(201, 168, 76, 0.3);
+        }
+
+        .comment-input-area {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-bottom: 15px;
+          background: rgba(0, 0, 0, 0.2);
+          padding: 15px;
+          border-radius: 15px;
+          border: 1px solid rgba(201, 168, 76, 0.15);
+        }
+
+        .comment-textarea {
+          width: 100%;
+          min-height: 80px;
+          border-radius: 10px;
+          padding: 10px;
+          font-size: 14px;
+          resize: none;
+          outline: none;
+          direction: rtl;
+        }
+
+        .emoji-row {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+        }
+        .emoji-btn {
+          background: none;
+          border: none;
+          font-size: 20px;
+          cursor: pointer;
+          transition: transform 0.1s;
+        }
+        .emoji-btn:hover {
+          transform: scale(1.2);
+        }
+
+        .action-buttons {
+          display: flex;
+          gap: 10px;
+          justify-content: flex-end;
+        }
+        .btn-done {
+          background: #c9a84c;
+          color: #0a0205;
+          border: none;
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-weight: bold;
+          font-size: 13px;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+        .btn-done:hover { background: #d4b563; }
+
+        .btn-cancel {
+          border: none;
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-size: 13px;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+
+        .comments-scroll-list {
+          max-height: 180px;
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding-right: 5px;
+          scrollbar-width: thin;
+          scrollbar-color: #c9a84c transparent;
+        }
+        .comments-scroll-list::-webkit-scrollbar { width: 4px; }
+        .comments-scroll-list::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
+
+        .comment-bubble {
+          border-radius: 15px;
+          padding: 10px 14px;
+          font-size: 13px;
+          animation: slideUpFade 0.3s ease-out forwards;
+        }
+
+        @keyframes slideUpFade {
+          from { opacity: 0; transform: translateY(4px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
         :root { --leather-black: #0a0205; }
 
         .page-wrapper {
           position: relative;
-          background: radial-gradient(ellipse at 50% 50%, #3d0a12 0%, #1a0509 40%, #0a0205 100%);
+          background: transparent;
           min-height: 100vh; padding: 40px 20px;
           color: white; font-family: 'Almarai', sans-serif;
         }
@@ -987,25 +1227,127 @@ const SongsPage = () => {
         .star.active { color: #c9a84c; text-shadow: 0 0 8px rgba(201,168,76,0.7); }
 
         .custom-player-wrapper {
-          width: 100%; background: rgba(74,29,77,0.7); border-radius: 50px;
-          padding: 8px 15px; display: flex; align-items: center; gap: 12px; margin-top: 12px;
+          width: 100%;
+          background: rgba(20, 5, 8, 0.75);
+          border: 1px solid rgba(201, 168, 76, 0.35);
+          border-radius: 20px;
+          padding: 12px 16px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 14px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .player-row-top {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          gap: 10px;
+        }
+        .player-controls-left {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        .player-controls-right {
+          display: flex;
+          align-items: center;
+          gap: 15px;
         }
         .play-btn {
-          background: #c9a84c; border: none; width: 35px; height: 35px;
+          background: #c9a84c; border: none; width: 36px; height: 36px;
           border-radius: 50%; cursor: pointer; color: #040828;
           display: flex; align-items: center; justify-content: center;
+          font-size: 14px;
+          transition: transform 0.2s, background-color 0.2s;
         }
-        .player-time { min-width: 92px; font-size: 0.85rem; color: #f3d98a; text-align: center; letter-spacing: 0.5px; }
-        .wave-container { display: flex; align-items: center; gap: 3px; height: 24px; flex: 1; }
-        .wave-bar { width: 3px; height: 8px; background: rgba(201,168,76,0.35); border-radius: 2px; }
+        .play-btn:hover {
+          transform: scale(1.1);
+          background: #d4b563;
+        }
+        .player-time {
+          font-size: 0.85rem;
+          color: #f3d98a;
+          font-family: monospace;
+          min-width: 80px;
+          text-align: left;
+        }
+        .seeker-container {
+          display: flex;
+          align-items: center;
+          width: 100%;
+        }
+        .audio-seeker-slider {
+          flex: 1;
+          -webkit-appearance: none;
+          appearance: none;
+          height: 6px;
+          border-radius: 3px;
+          background: rgba(201, 168, 76, 0.2);
+          outline: none;
+          cursor: pointer;
+          transition: background 0.3s;
+        }
+        .audio-seeker-slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background: #c0272d;
+          border: 2px solid #c9a84c;
+          cursor: pointer;
+          transition: transform 0.2s;
+        }
+        .audio-seeker-slider::-webkit-slider-thumb:hover {
+          transform: scale(1.25);
+        }
+        .volume-container {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .volume-icon {
+          color: #c9a84c;
+          font-size: 16px;
+          cursor: pointer;
+          user-select: none;
+          transition: transform 0.2s;
+        }
+        .volume-icon:hover {
+          transform: scale(1.15);
+        }
+        .volume-slider {
+          width: 60px;
+          -webkit-appearance: none;
+          appearance: none;
+          height: 4px;
+          border-radius: 2px;
+          background: rgba(201, 168, 76, 0.25);
+          outline: none;
+          cursor: pointer;
+        }
+        .volume-slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #c9a84c;
+          cursor: pointer;
+        }
+        .wave-container { display: flex; align-items: center; gap: 3px; height: 20px; }
+        .wave-bar { width: 3px; height: 6px; background: rgba(201,168,76,0.25); border-radius: 2px; }
         .wave-bar.active { background: #c9a84c; animation: wave-anim 1s infinite; }
         .audio-index-badge {
-          width: 30px; height: 30px; border-radius: 50%;
+          width: 28px; height: 28px; border-radius: 50%;
           border: 1px solid #c9a84c; background: rgba(4,8,40,0.95);
-          color: #f3d98a; font-size: 0.9rem; font-weight: 700;
+          color: #f3d98a; font-size: 0.85rem; font-weight: 700;
           display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+          margin: 0 10px;
         }
-        @keyframes wave-anim { 0%, 100% { height: 8px; } 50% { height: 24px; } }
+        @keyframes wave-anim { 0%, 100% { height: 6px; } 50% { height: 20px; } }
 
         .lyrics-side {
           position: relative; z-index: 1;
@@ -1093,6 +1435,16 @@ const SongsPage = () => {
       `}</style>
 
       <div className="content-layer">
+        {/* Unified Black Header Box */}
+        <div className="unified-header-box animate-fade-in-up">
+          <h1 className="unified-header-title">
+            {lang === 'ar' ? 'الأغاني والأفكار' : 'SONGS & IDEAS'}
+          </h1>
+          <p className="unified-header-subtitle">
+            {lang === 'ar' ? 'استمع إلى الأفكار والألحان واستمتع بالكلمات' : 'Listen to song ideas, melodies and enjoy the lyrics'}
+          </p>
+        </div>
+
         {/* ─── سرش + توضيح + فلتر ─── */}
         <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
          <div className="max-w-3xl mx-auto" style={{ margin: '0 auto 24px', maxWidth: 760 }}>
@@ -1100,29 +1452,33 @@ const SongsPage = () => {
             style={{
               borderRadius: '12px',
               padding: '24px 28px',
-              border: '1px solid rgba(201,168,76,0.25)',
-              background: 'linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%))',
-              backgroundImage: `repeating-linear-gradient(transparent, transparent 28px, rgba(201,168,76,0.06) 28px, rgba(201,168,76,0.06) 29px)`,
+              border: isDark ? '1px solid rgba(201,168,76,0.25)' : '1px solid rgba(139,26,42,0.2)',
+              background: isDark
+                ? 'linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%))'
+                : 'linear-gradient(135deg, hsl(30 30% 97%), hsl(30 25% 95%))',
+              backgroundImage: isDark
+                ? `repeating-linear-gradient(transparent, transparent 28px, rgba(201,168,76,0.06) 28px, rgba(201,168,76,0.06) 29px)`
+                : `repeating-linear-gradient(transparent, transparent 28px, rgba(154,107,26,0.08) 28px, rgba(154,107,26,0.08) 29px)`,
               position: 'relative',
               overflow: 'hidden',
             }}>
             {/* ملاحظات زخرفية */}
-            <div style={{ position: 'absolute', top: 10, right: 16, color: 'rgba(201,168,76,0.2)', fontSize: 28, fontFamily: "'Aref Ruqaa Ink', serif", pointerEvents: 'none' }}>♪</div>
-            <div style={{ position: 'absolute', bottom: 10, left: 16, color: 'rgba(201,168,76,0.2)', fontSize: 22, fontFamily: "'Aref Ruqaa Ink', serif", pointerEvents: 'none' }}>♫</div>
+            <div style={{ position: 'absolute', top: 10, right: 16, color: isDark ? 'rgba(201,168,76,0.2)' : 'rgba(139,26,42,0.15)', fontSize: 28, fontFamily: "'Aref Ruqaa Ink', serif", pointerEvents: 'none' }}>♪</div>
+            <div style={{ position: 'absolute', bottom: 10, left: 16, color: isDark ? 'rgba(201,168,76,0.2)' : 'rgba(139,26,42,0.15)', fontSize: 22, fontFamily: "'Aref Ruqaa Ink', serif", pointerEvents: 'none' }}>♫</div>
       
             <h3 style={{
-              color: '#c9a84c',
+              color: isDark ? '#c9a84c' : '#8b1a2a',
               fontFamily: "'Aref Ruqaa Ink', serif",
               fontSize: '1.15rem',
               fontWeight: 'bold',
               textAlign: 'center',
               marginBottom: 14,
             }}>
-              {lang === 'ar' ? 'توضيح مهم' : 'Important Clarification'}
+              {lang === 'ar' ? 'توضيح هام' : 'Important Clarification'}
             </h3>
       
             <p style={{
-              color: 'rgba(232, 213, 176, 0.78)',
+              color: isDark ? 'rgba(232, 213, 176, 0.78)' : '#1a1a1a',
               lineHeight: '1.85',
               textAlign: 'center',
               fontFamily: "'Almarai', sans-serif",
@@ -1167,12 +1523,12 @@ const SongsPage = () => {
               <div className="cover-box" style={{ backgroundImage: `url(${toDriveDirectDownloadUrl(song.coverImg)})` }} />
 
               <div className="views-stars-row">
-                <button className="views-badge">{song.views}</button>
+                <button className="views-badge">{lang === 'ar' ? `مشاهدة ${song.views}` : `Views ${song.views}`}</button>
                 <div className="star-rating">
                   {[1, 2, 3, 4, 5].map((num) => (
                     <span key={num}
                       className={`star ${num <= (hoverStar[song.id] ?? starRatings[song.id] ?? 0) ? 'active' : ''}`}
-                      onClick={() => setStarRatings((prev) => ({ ...prev, [song.id]: num }))}
+                      onClick={() => saveRating(song.id, num)}
                       onMouseEnter={() => setHoverStar((prev) => ({ ...prev, [song.id]: num }))}
                       onMouseLeave={() => setHoverStar((prev) => { const n = { ...prev }; delete n[song.id]; return n; })}>
                       ★
@@ -1186,18 +1542,66 @@ const SongsPage = () => {
                 const time = audioTimes[key] || { current: 0, duration: 0 };
                 return (
                   <div key={idx} className="custom-player-wrapper">
-                    <button className="play-btn" onClick={() => togglePlay(song.id, idx)}>
-                      {playingKey === key ? '⏸' : '▶'}
-                    </button>
-                    <span className="player-time">{formatTime(time.current)} / {formatTime(time.duration)}</span>
-                    <div className="wave-container">
-                      {[...Array(15)].map((_, i) => (
-                        <div key={i} className={`wave-bar ${playingKey === key ? 'active' : ''}`} style={{ animationDelay: `${i * 0.05}s` }} />
-                      ))}
+                    <div className="player-row-top">
+                      <div className="player-controls-left">
+                        <button className="play-btn" onClick={() => togglePlay(song.id, idx)}>
+                          {playingKey === key ? '⏸' : '▶'}
+                        </button>
+                        <span className="player-time">{formatTime(time.current)} / {formatTime(time.duration)}</span>
+                      </div>
+
+                      <div className="player-controls-right">
+                        <div className="volume-container">
+                          <span
+                            className="volume-icon"
+                            onClick={() => setVolume((prev) => (prev > 0 ? 0 : 0.8))}
+                          >
+                            {volume === 0 ? '🔇' : volume < 0.4 ? '🔈' : volume < 0.7 ? '🔉' : '🔊'}
+                          </span>
+                          <input
+                            type="range"
+                            min="0"
+                            max="1"
+                            step="0.05"
+                            value={volume}
+                            onChange={(e) => setVolume(parseFloat(e.target.value))}
+                            className="volume-slider"
+                          />
+                        </div>
+
+                        <div className="wave-container">
+                          {[...Array(8)].map((_, i) => (
+                            <div key={i} className={`wave-bar ${playingKey === key ? 'active' : ''}`} style={{ animationDelay: `${i * 0.05}s` }} />
+                          ))}
+                        </div>
+
+                        <span className="audio-index-badge">{idx + 1}</span>
+                      </div>
                     </div>
-                    <span className="audio-index-badge">{idx + 1}</span>
+
+                    <div className="seeker-container">
+                      <input
+                        type="range"
+                        min="0"
+                        max={time.duration || 100}
+                        value={time.current || 0}
+                        onChange={(e) => {
+                          const val = parseFloat(e.target.value);
+                          const audio = audioRefs.current[key];
+                          if (audio) {
+                            audio.currentTime = val;
+                            setAudioTimes((prev) => ({
+                              ...prev,
+                              [key]: { ...prev[key], current: val }
+                            }));
+                          }
+                        }}
+                        className="audio-seeker-slider"
+                      />
+                    </div>
+
                     <audio
-                      ref={(el) => { audioRefs.current[key] = el; }}
+                      ref={(el) => { audioRefs.current[key] = el; if (el) el.volume = volume; }}
                       src={toDriveDirectDownloadUrl(url)}
                       onLoadedMetadata={(e) => {
                         const duration = e.currentTarget.duration || 0;
@@ -1227,17 +1631,89 @@ const SongsPage = () => {
                   <div key={i} className={`line ${l.red ? 'red' : ''}`}>{l.text}</div>
                 ))}
               </div>
-              {(song as any).critics?.length > 0 && (
-                <span className="label-gold">الآراء النقدية (اضغط للتقييم)</span>
-              )}
-              {((song as any).critics ?? []).map((critic: string, idx: number) => (
-                <div key={idx} className="critic-item" onClick={() => handleCriticClick(song.id, idx)}>
-                  <span style={{ fontSize: '14px' }}>{critic}</span>
-                  {selectedCritics[`${song.id}-${idx}`] && (
-                    <span style={{ color: '#c9a84c', fontWeight: 'bold' }}>{selectedCritics[`${song.id}-${idx}`]}%</span>
-                  )}
+              <div className="comments-header" style={{ marginTop: '15px' }}>
+                <span className="label-gold">{lang === 'ar' ? 'التعليقات' : 'Comments'}</span>
+                {activeInputSongId !== song.id && (
+                  <button
+                    className="add-comment-btn"
+                    onClick={() => handleAddComment(song.id)}
+                  >
+                    {lang === 'ar' ? 'أضف تعليق +' : '+ Add comment'}
+                  </button>
+                )}
+              </div>
+
+              {/* Comment Input Area */}
+              {activeInputSongId === song.id && (
+                <div className="comment-input-area">
+                  <textarea
+                    className="comment-textarea"
+                    style={{
+                      background: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
+                      color: isDark ? '#ffffff' : '#000000',
+                      borderColor: isDark ? 'rgba(201, 168, 76, 0.2)' : 'rgba(201, 168, 76, 0.4)',
+                    }}
+                    value={newCommentText[song.id] || ''}
+                    onChange={(e) => setNewCommentText(prev => ({ ...prev, [song.id]: e.target.value }))}
+                    placeholder={lang === 'ar' ? 'اكتب تعليقك...' : 'Write your comment...'}
+                    autoFocus
+                  />
+
+                  <div className="emoji-row">
+                    {['😍', '🔥', '❤️', '👏', '🎵', '💯', '😢'].map((emoji) => (
+                      <button
+                        key={emoji}
+                        type="button"
+                        className="emoji-btn"
+                        onClick={() => handleEmojiClick(song.id, emoji)}
+                      >
+                        {emoji}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="action-buttons">
+                    <button
+                      type="button"
+                      className="btn-cancel"
+                      style={{
+                        color: isDark ? '#ffffff' : '#000000',
+                        background: isDark ? 'rgba(255, 255, 255, 0.1)' : '#f3f3f3',
+                      }}
+                      onClick={() => handleCancelComment(song.id)}
+                    >
+                      {lang === 'ar' ? 'إلغاء' : 'Cancel'}
+                    </button>
+                    <button
+                      type="button"
+                      className="btn-done"
+                      onClick={() => handleSubmitComment(song.id)}
+                    >
+                      {lang === 'ar' ? 'تم ✓' : 'Done ✓'}
+                    </button>
+                  </div>
                 </div>
-              ))}
+              )}
+
+              {/* Comments Scroll List */}
+              <div className="comments-scroll-list" style={{ maxHeight: '140px' }}>
+                {(comments[song.id] || []).map((comment) => (
+                  <div
+                    key={comment.id}
+                    className="comment-bubble"
+                    style={{
+                      background: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
+                      color: isDark ? '#ffffff' : '#000000',
+                      borderColor: isDark ? 'rgba(201, 168, 76, 0.15)' : 'rgba(201, 168, 76, 0.3)',
+                      borderWidth: '1px',
+                      borderStyle: 'solid'
+                    }}
+                  >
+                    {comment.text}
+                  </div>
+                ))}
+                <div ref={(el) => { commentsEndRefs.current[song.id] = el; }} />
+              </div>
             </div>
           </div>
         ))}

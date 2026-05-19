@@ -87,7 +87,7 @@ const WelcomePage = () => {
             <div className="absolute bottom-3 left-4 text-accent/20 text-2xl">♫</div>
 
             <h3 className="text-lg font-subheading font-bold text-primary mb-4 text-center">
-              {t('Important Clarification', 'توضيح مهم')}
+              {t('Important Clarification', 'توضيح هام')}
             </h3>
             <p className="text-foreground/70 leading-relaxed text-center font-body">
               {t(

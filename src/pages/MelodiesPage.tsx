@@ -446,7 +446,7 @@ const MelodiesPage  = () => {
 
   return (
     <div dir={lang === 'ar' ? 'rtl' : 'ltr'} className="page-wrapper content-layer" style={{
-      background: isDark ? 'linear-gradient(180deg, #1a051a 0%, #000 100%)' : '#fbfbfb',
+      background: isDark ? 'radial-gradient(circle at top right, #1a051a, #000000)' : '#fbfbfb',
       color: isDark ? '#ffffff' : '#000000'
     }}>
       <style>{`
@@ -454,11 +454,11 @@ const MelodiesPage  = () => {
         
         :root { --leather-black: #0a0205; }
         .page-wrapper { min-height: 100vh; padding: 40px 20px; font-family: 'Outfit', 'Almarai', sans-serif; position: relative; overflow: hidden; }
-        .main-card { max-width: 1100px; margin: 0 auto 60px; background: ${isDark ? '#040828' : '#ffffff'}; border: 1px solid rgba(201, 168, 76, 0.4); border-radius: 40px; display: flex; flex-direction: ${lang === 'ar' ? 'row-reverse' : 'row'}; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8); position: relative; }
+        .main-card { max-width: 1100px; margin: 0 auto 60px; background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, var(--leather-black) 100%); border: 1px solid rgba(201, 168, 76, 0.4); border-radius: 40px; display: flex; flex-direction: ${lang === 'ar' ? 'row-reverse' : 'row'}; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8); position: relative; }
         
         /* Unified Header Box */
         .unified-header-box {
-          background: ${isDark ? '#000000' : '#ffffff'};
+          background: #000000;
           border: 1px solid rgba(201, 168, 76, 0.35);
           border-radius: 20px;
           padding: 30px 40px;
@@ -552,7 +552,7 @@ const MelodiesPage  = () => {
       {/* Unified Black Header Box */}
       <div className="unified-header-box animate-fade-in-up">
         <h1 className="unified-header-title">
-          {lang === 'ar' ? 'الألحان' : 'MELODIES'}
+          {lang === 'ar' ? 'الألحان والترانيم' : 'MELODIES & HYMNS'}
         </h1>
         <p className="unified-header-subtitle">
           {lang === 'ar' ? 'هذه الصفحة تحتوي على ألحان أغاني من كتاباتي لتوصيل الحالة العامة للكلمات.' : 'This page contains melodies for my songs to convey the general mood of the lyrics.'}

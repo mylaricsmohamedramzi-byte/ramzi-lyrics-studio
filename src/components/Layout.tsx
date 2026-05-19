@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import FloatingNotes from './FloatingNotes';
+import AdminPanel from './AdminPanel';
 
 const Layout = () => {
   return (
@@ -11,6 +12,7 @@ const Layout = () => {
       <main className="flex-1 pt-16 relative z-10 watermark-bg">
         <Outlet />
       </main>
+      <AdminPanel />
       <Footer />
     </div>
   );

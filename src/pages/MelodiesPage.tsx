@@ -349,12 +349,17 @@ export const allSongs = [
     
 ];
 
-const MelodiesPage  = () => {
+import { Edit, Trash2 } from 'lucide-react';
+
+const MelodiesPage = () => {
   const { lang, t } = useLang();
   const { isDark } = useTheme();
   const location = useLocation();
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
+    setIsAdmin(localStorage.getItem('isAdmin') === 'true');
     const params = new URLSearchParams(location.search);
     const id = params.get('id');
     if (id) {
@@ -857,7 +862,39 @@ const MelodiesPage  = () => {
       </div>
 
       {filteredSongs.map((song) => (
-        <div key={song.id} id={`card-${song.id}`} className="main-card">
+        <div key={song.id} id={`card-${song.id}`} className="main-card relative group">
+          
+          {isAdmin && (
+            <div className="absolute top-4 left-4 z-50 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  const evt = new CustomEvent('open-admin-edit', { detail: song });
+                  window.dispatchEvent(evt);
+                }}
+                className="p-2 bg-blue-500/20 text-blue-400 rounded-lg backdrop-blur-md border border-blue-500/30 hover:bg-blue-500/40 transition-colors shadow-lg"
+                title="تعديل"
+              >
+                <Edit className="w-5 h-5" />
+              </button>
+              <button
+                onClick={async (e) => {
+                  e.stopPropagation();
+                  if(window.confirm('هل أنت متأكد من حذف هذا اللحن؟')) {
+                     const evt = new CustomEvent('admin-delete-item', { detail: { id: song.id, section: 'melodies' } });
+                     window.dispatchEvent(evt);
+                     const card = document.getElementById(`card-${song.id}`);
+                     if(card) card.style.display = 'none';
+                  }
+                }}
+                className="p-2 bg-red-500/20 text-red-400 rounded-lg backdrop-blur-md border border-red-500/30 hover:bg-red-500/40 transition-colors shadow-lg"
+                title="حذف"
+              >
+                <Trash2 className="w-5 h-5" />
+              </button>
+            </div>
+          )}
+
           <div className="player-side">
             <div className="song-tag">{song.type}</div>
             <div className="cover-box" style={{ backgroundImage: `url(${toDriveDirectDownloadUrl(song.coverImg)})` }} />
@@ -946,7 +983,7 @@ const MelodiesPage  = () => {
           <div className="lyrics-side">
             <span className="label-gold">كلمات الأغنية</span>
             <div className="title-row">
-              <h2 className="song-title-red">{song.title}</h2>
+              <h2 className="song-title-red">{(lang === 'en' && song.title_en) ? song.title_en : song.title}</h2>
               {'duet' in song && song.duet && <span className="duet-badge">ديو</span>}
             </div>
             <div className="lyrics-scroll">

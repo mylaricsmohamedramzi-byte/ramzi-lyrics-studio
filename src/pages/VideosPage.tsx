@@ -115,12 +115,18 @@ interface Comment {
   timestamp: number;
 }
 
-// ─── المكوّن الرئيسي ──────────────────────────────────────────────────────────
+import { Edit, Trash2 } from 'lucide-react';
+
 const VideosPage = () => {
   const { lang } = useLang();
   const { isDark } = useTheme();
   const location = useLocation();
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
+  
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    setIsAdmin(localStorage.getItem('isAdmin') === 'true');
+  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -746,9 +752,40 @@ Regardless of who sang these melodies, the goal is to convey the melody to you a
 
         {/* ─── الكاردات ─── */}
         {filteredVideos.map((video) => (
-          <div key={video.id} id={`card-${video.id}`} className="main-card">
+          <div key={video.id} id={`card-${video.id}`} className="main-card relative group">
             {/* ملاحظات عائمة داخل الكارد */}
             <CardFloatingNotes seed={video.id} />
+            
+            {isAdmin && (
+              <div className="absolute top-4 left-4 z-50 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const evt = new CustomEvent('open-admin-edit', { detail: video });
+                    window.dispatchEvent(evt);
+                  }}
+                  className="p-2 bg-blue-500/20 text-blue-400 rounded-lg backdrop-blur-md border border-blue-500/30 hover:bg-blue-500/40 transition-colors shadow-lg"
+                  title="تعديل"
+                >
+                  <Edit className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={async (e) => {
+                    e.stopPropagation();
+                    if(window.confirm('هل أنت متأكد من حذف هذا الفيديو؟')) {
+                       const evt = new CustomEvent('admin-delete-item', { detail: { id: video.id, section: 'videos' } });
+                       window.dispatchEvent(evt);
+                       const card = document.getElementById(`card-${video.id}`);
+                       if(card) card.style.display = 'none';
+                    }
+                  }}
+                  className="p-2 bg-red-500/20 text-red-400 rounded-lg backdrop-blur-md border border-red-500/30 hover:bg-red-500/40 transition-colors shadow-lg"
+                  title="حذف"
+                >
+                  <Trash2 className="w-5 h-5" />
+                </button>
+              </div>
+            )}
 
             <div className="card-inner">
               <div className="card-header">
@@ -770,7 +807,7 @@ Regardless of who sang these melodies, the goal is to convey the melody to you a
                 {/* قسم الكلمات – خلفية داكنة حمراء */}
                 <div className="lyrics-section">
                   <span className="song-label">{lang === 'ar' ? 'كلمات الأغنية' : 'Song lyrics'}</span>
-                  <h2 className="video-title">{video.title}</h2>
+                  <h2 className="video-title">{(lang === 'en' && video.title_en) ? video.title_en : video.title}</h2>
                   <div className="lyrics-scroll-container">
                     {video.lyrics?.map((lyric, i) => (
                       <div key={i} className={`line ${lyric.red ? 'red' : ''}`}>{lyric.text}</div>

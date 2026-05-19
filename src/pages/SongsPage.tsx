@@ -1683,7 +1683,7 @@ export default function SongsPage() {
             <div className="lyrics-side">
               <span className="label-gold">كلمات الأغنية</span>
               <div className="title-row">
-                <h2 className="song-title-red">{song.title}</h2>
+                <h2 className="song-title-red">{(lang === 'en' && song.title_en) ? song.title_en : song.title}</h2>
                 {'duet' in song && song.duet && <span className="duet-badge">ديو</span>}
               </div>
               <div className="lyrics-scroll">

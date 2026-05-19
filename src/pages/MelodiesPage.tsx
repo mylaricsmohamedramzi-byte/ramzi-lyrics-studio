@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo } from 'react';
+import { useState, useRef, useMemo, useEffect } from 'react';
 import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
@@ -352,12 +352,33 @@ const MelodiesPage  = () => {
   const { lang, t } = useLang();
   const { isDark } = useTheme();
 
-  const [starRatings, setStarRatings] = useState<Record<number, number>>({});
+  const [starRatings, setStarRatings] = useState<Record<number, number>>(() => {
+    const saved = localStorage.getItem('melodies_star_ratings');
+    if (saved) {
+      try { return JSON.parse(saved); } catch (e) { console.error(e); }
+    }
+    return {};
+  });
   const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
-  const [comments, setComments] = useState<Record<number, { id: number; text: string }[]>>({});
+  
+  const [comments, setComments] = useState<Record<number, { id: number; text: string }[]>>(() => {
+    const saved = localStorage.getItem('melodies_comments');
+    if (saved) {
+      try { return JSON.parse(saved); } catch (e) { console.error(e); }
+    }
+    return {};
+  });
   const [newCommentText, setNewCommentText] = useState<Record<number, string>>({});
   const [activeInputSongId, setActiveInputSongId] = useState<number | null>(null);
   const commentsEndRefs = useRef<Record<number, HTMLDivElement | null>>({});
+
+  useEffect(() => {
+    localStorage.setItem('melodies_star_ratings', JSON.stringify(starRatings));
+  }, [starRatings]);
+
+  useEffect(() => {
+    localStorage.setItem('melodies_comments', JSON.stringify(comments));
+  }, [comments]);
 
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
   const [playingKey, setPlayingKey] = useState<string | null>(null);
@@ -485,20 +506,17 @@ const MelodiesPage  = () => {
         .song-tag { background: #c9a84c; color: #000; padding: 4px 20px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-bottom: 15px; }
         .cover-box { width: 100%; aspect-ratio: 1; background-size: cover; background-position: center; border-radius: 20px; border: 1px solid rgba(201, 168, 76, 0.3); }
 
-        .views-badge {
-          background-color: #f0fdf4;
-          color: #1a2e44;
-          padding: 8px 30px;
-          border-radius: 50px;
-          font-weight: bold;
-          font-size: 1.4rem;
-          margin-top: 15px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          display: inline-block;
-          border: none;
+        .views-stars-row {
+          display: flex; align-items: center; justify-content: space-between;
+          width: 100%; margin-top: 15px; gap: 10px;
         }
-
+        .views-badge {
+          background-color: #f0fdf4; color: #1a2e44;
+          padding: 8px 20px; border-radius: 50px;
+          font-weight: bold; font-size: 1.2rem;
+          cursor: pointer; transition: all 0.3s ease;
+          border: none; flex-shrink: 0;
+        }
         .views-badge:hover {
           background-color: #c9a84c;
           color: #000;
@@ -530,7 +548,7 @@ const MelodiesPage  = () => {
         .star { font-size: 24px; cursor: pointer; color: rgba(201,168,76,0.25); transition: color 0.2s, text-shadow 0.2s; user-select: none; }
         .star.active { color: #c9a84c; text-shadow: 0 0 8px rgba(201,168,76,0.7); }
 
-        .lyrics-side { flex: 1.3; padding: 40px; background: rgba(4,4,20,0.82); border-left: 1px solid rgba(201,168,76,0.2); position: relative; z-index: 1; }
+        .lyrics-side { flex: 1.3; padding: 40px; background: rgba(20, 5, 8, 0.82); border-left: 1px solid rgba(201,168,76,0.2); position: relative; z-index: 1; }
         .label-gold { color: #c9a84c; font-size: 13px; margin-bottom: 10px; display: block; }
         .title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
         .song-title-red { color: #ff4d4d; font-family: 'Aref Ruqaa Ink', serif; font-size: 2.8rem; margin-bottom: 0; }
@@ -538,53 +556,126 @@ const MelodiesPage  = () => {
         .lyrics-scroll { height: 250px; overflow-y: auto; margin-bottom: 30px; }
         .lyrics-scroll::-webkit-scrollbar { width: 6px; }
         .lyrics-scroll::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
-        .line { font-size: 1.2rem; color: #e8d5b0; margin-bottom: 10px; border-right: 3px solid #c9a84c; padding-right: 15px; }
+        .line { font-size: 1.2rem; margin-bottom: 10px; border-right: 3px solid #c9a84c; padding-right: 15px; }
         .line.red { color: #ff4d4d; border-right-color: #ff4d4d; font-weight: bold; }
 
-        .clarification-block {
-          max-width: 800px;
-          margin: 0 auto 28px;
-          border-radius: 14px;
-          padding: 24px 28px;
-          border: 1px solid rgba(201,168,76,0.25);
-          background: linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%));
-          background-image: repeating-linear-gradient(
-            transparent, transparent 28px,
-            rgba(201,168,76,0.06) 28px, rgba(201,168,76,0.06) 29px
-          );
-          position: relative;
-          overflow: hidden;
-        }
-        .clarification-note-top {
-          position: absolute; top: 10px; right: 16px;
-          color: rgba(201,168,76,0.2); font-size: 28px;
-          font-family: 'Aref Ruqaa Ink', serif; pointer-events: none;
-        }
-        .clarification-note-bottom {
-          position: absolute; bottom: 10px; left: 16px;
-          color: rgba(201,168,76,0.2); font-size: 22px;
-          font-family: 'Aref Ruqaa Ink', serif; pointer-events: none;
-        }
-        .clarification-title {
-          color: #c9a84c;
-          font-family: 'Aref Ruqaa Ink', serif;
-          font-size: 1.15rem;
-          font-weight: bold;
-          text-align: center;
-          margin: 0 0 14px;
-        }
-        .clarification-text {
-          color: rgba(232, 213, 176, 0.78);
-          line-height: 1.85;
-          text-align: center;
-          font-family: 'Almarai', sans-serif;
-          font-size: 0.95rem;
-          margin: 0;
+        .critic-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; margin-bottom: 8px; cursor: pointer; display: flex; justify-content: space-between; border: 1px solid rgba(201,168,76,0.1); color: #fff; }
+
+        /* ─── التعليقات ─── */
+        .comments-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 15px;
         }
 
-        .filter-chip { background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); color: #c9a84c; padding: 6px 18px; border-radius: 20px; cursor: pointer; font-family: 'Almarai', sans-serif; font-size: 13px; transition: all 0.2s; }
-        .filter-chip:hover { background: rgba(201,168,76,0.2); }
-        .filter-chip.active { background: #c9a84c; color: #000; border-color: #c9a84c; font-weight: bold; }
+        .add-comment-btn {
+          background: rgba(201, 168, 76, 0.15);
+          color: #c9a84c;
+          border: 1px solid rgba(201, 168, 76, 0.3);
+          padding: 4px 14px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .add-comment-btn:hover {
+          background: rgba(201, 168, 76, 0.3);
+        }
+
+        .comment-input-area {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-bottom: 15px;
+          background: rgba(0, 0, 0, 0.2);
+          padding: 15px;
+          border-radius: 15px;
+          border: 1px solid rgba(201, 168, 76, 0.15);
+        }
+
+        .comment-textarea {
+          width: 100%;
+          min-height: 80px;
+          border-radius: 10px;
+          padding: 10px;
+          font-size: 14px;
+          resize: none;
+          outline: none;
+          direction: rtl;
+        }
+
+        .emoji-row {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+        }
+        .emoji-btn {
+          background: none;
+          border: none;
+          font-size: 20px;
+          cursor: pointer;
+          transition: transform 0.1s;
+        }
+        .emoji-btn:hover {
+          transform: scale(1.2);
+        }
+
+        .action-buttons {
+          display: flex;
+          gap: 10px;
+          justify-content: flex-end;
+        }
+        .btn-done {
+          background: #c9a84c;
+          color: #0a0205;
+          border: none;
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-weight: bold;
+          font-size: 13px;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+        .btn-done:hover { background: #d4b563; }
+
+        .btn-cancel {
+          border: none;
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-size: 13px;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+
+        .comments-scroll-list {
+          max-height: 180px;
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding-right: 5px;
+          scrollbar-width: thin;
+          scrollbar-color: #c9a84c transparent;
+        }
+        .comments-scroll-list::-webkit-scrollbar { width: 4px; }
+        .comments-scroll-list::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
+
+        .comment-bubble {
+          border-radius: 15px;
+          padding: 10px 14px;
+          font-size: 13px;
+          animation: slideUpFade 0.3s ease-out forwards;
+        }
+
+        @keyframes slideUpFade {
+          from { opacity: 0; transform: translateY(4px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) { .main-card { flex-direction: column; } .lyrics-side { border-left: none; border-top: 1px solid rgba(201,168,76,0.2); } }
       `}</style>
 
       {/* Unified Black Header Box */}
@@ -648,8 +739,10 @@ const MelodiesPage  = () => {
             <div className="song-tag">{song.type}</div>
             <div className="cover-box" style={{ backgroundImage: `url(${toDriveDirectDownloadUrl(song.coverImg)})` }} />
 
-            <div className="views-stars-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginTop: 15, gap: 10 }}>
-              <div className="views-badge">{song.views}</div>
+            <div className="views-stars-row">
+              <button className="views-badge">
+                {lang === 'ar' ? `مشاهدة ${song.views}` : `Views ${song.views}`}
+              </button>
               <div className="star-rating">
                 {[1, 2, 3, 4, 5].map((num) => (
                   <span key={num}
@@ -738,88 +831,92 @@ const MelodiesPage  = () => {
                 <div key={i} className={`line ${l.red ? 'red' : ''}`}>{l.text}</div>
               ))}
             </div>
-            <div className="comments-header" style={{ marginTop: '15px' }}>
-              <span className="label-gold">{lang === 'ar' ? 'التعليقات' : 'Comments'}</span>
-              {activeInputSongId !== song.id && (
-                <button
-                  className="add-comment-btn"
-                  onClick={() => handleAddComment(song.id)}
-                >
-                  {lang === 'ar' ? 'أضف تعليق +' : '+ Add comment'}
-                </button>
-              )}
-            </div>
 
-            {/* Comment Input Area */}
-            {activeInputSongId === song.id && (
-              <div className="comment-input-area">
-                <textarea
-                  className="comment-textarea"
-                  style={{
-                    background: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
-                    color: isDark ? '#ffffff' : '#000000',
-                    borderColor: isDark ? 'rgba(201, 168, 76, 0.2)' : 'rgba(201, 168, 76, 0.4)',
-                  }}
-                  value={newCommentText[song.id] || ''}
-                  onChange={(e) => setNewCommentText(prev => ({ ...prev, [song.id]: e.target.value }))}
-                  placeholder={lang === 'ar' ? 'اكتب تعليقك...' : 'Write your comment...'}
-                  autoFocus
-                />
-
-                <div className="emoji-row">
-                  {['😍', '🔥', '❤️', '👏', '🎵', '💯', '😢'].map((emoji) => (
-                    <button
-                      key={emoji}
-                      type="button"
-                      className="emoji-btn"
-                      onClick={() => handleEmojiClick(song.id, emoji)}
-                    >
-                      {emoji}
-                    </button>
-                  ))}
-                </div>
-
-                <div className="action-buttons">
+            {/* Comments block */}
+            <div style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid rgba(201, 168, 76, 0.2)' }}>
+              <div className="comments-header" style={{ marginTop: '15px' }}>
+                <span className="label-gold">{lang === 'ar' ? 'التعليقات' : 'Comments'}</span>
+                {activeInputSongId !== song.id && (
                   <button
-                    type="button"
-                    className="btn-cancel"
-                    style={{
-                      color: isDark ? '#ffffff' : '#000000',
-                      background: isDark ? 'rgba(255, 255, 255, 0.1)' : '#f3f3f3',
-                    }}
-                    onClick={() => handleCancelComment(song.id)}
+                    className="add-comment-btn"
+                    onClick={() => handleAddComment(song.id)}
                   >
-                    {lang === 'ar' ? 'إلغاء' : 'Cancel'}
+                    {lang === 'ar' ? 'أضف تعليق +' : '+ Add comment'}
                   </button>
-                  <button
-                    type="button"
-                    className="btn-done"
-                    onClick={() => handleSubmitComment(song.id)}
-                  >
-                    {lang === 'ar' ? 'تم ✓' : 'Done ✓'}
-                  </button>
-                </div>
+                )}
               </div>
-            )}
 
-            {/* Comments Scroll List */}
-            <div className="comments-scroll-list" style={{ maxHeight: '140px' }}>
-              {(comments[song.id] || []).map((comment) => (
-                <div
-                  key={comment.id}
-                  className="comment-bubble"
-                  style={{
-                    background: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
-                    color: isDark ? '#ffffff' : '#000000',
-                    borderColor: isDark ? 'rgba(201, 168, 76, 0.15)' : 'rgba(201, 168, 76, 0.3)',
-                    borderWidth: '1px',
-                    borderStyle: 'solid'
-                  }}
-                >
-                  {comment.text}
+              {/* Comment Input Area */}
+              {activeInputSongId === song.id && (
+                <div className="comment-input-area">
+                  <textarea
+                    className="comment-textarea"
+                    style={{
+                      background: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
+                      color: isDark ? '#ffffff' : '#000000',
+                      borderColor: isDark ? 'rgba(201, 168, 76, 0.2)' : 'rgba(201, 168, 76, 0.4)',
+                    }}
+                    value={newCommentText[song.id] || ''}
+                    onChange={(e) => setNewCommentText(prev => ({ ...prev, [song.id]: e.target.value }))}
+                    placeholder={lang === 'ar' ? 'اكتب تعليقك...' : 'Write your comment...'}
+                    autoFocus
+                  />
+
+                  <div className="emoji-row">
+                    {['😍', '🔥', '❤️', '👏', '🎵', '💯', '😢'].map((emoji) => (
+                      <button
+                        key={emoji}
+                        type="button"
+                        className="emoji-btn"
+                        onClick={() => handleEmojiClick(song.id, emoji)}
+                      >
+                        {emoji}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="action-buttons">
+                    <button
+                      type="button"
+                      className="btn-cancel"
+                      style={{
+                        color: isDark ? '#ffffff' : '#000000',
+                        background: isDark ? 'rgba(255, 255, 255, 0.1)' : '#f3f3f3',
+                      }}
+                      onClick={() => handleCancelComment(song.id)}
+                    >
+                      {lang === 'ar' ? 'إلغاء' : 'Cancel'}
+                    </button>
+                    <button
+                      type="button"
+                      className="btn-done"
+                      onClick={() => handleSubmitComment(song.id)}
+                    >
+                      {lang === 'ar' ? 'تم ✓' : 'Done ✓'}
+                    </button>
+                  </div>
                 </div>
-              ))}
-              <div ref={(el) => { commentsEndRefs.current[song.id] = el; }} />
+              )}
+
+              {/* Comments Scroll List */}
+              <div className="comments-scroll-list" style={{ maxHeight: '140px' }}>
+                {(comments[song.id] || []).map((comment) => (
+                  <div
+                    key={comment.id}
+                    className="comment-bubble"
+                    style={{
+                      background: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
+                      color: isDark ? '#ffffff' : '#000000',
+                      borderColor: isDark ? 'rgba(201, 168, 76, 0.15)' : 'rgba(201, 168, 76, 0.3)',
+                      borderWidth: '1px',
+                      borderStyle: 'solid'
+                    }}
+                  >
+                    {comment.text}
+                  </div>
+                ))}
+                <div ref={(el) => { commentsEndRefs.current[song.id] = el; }} />
+              </div>
             </div>
           </div>
         </div>

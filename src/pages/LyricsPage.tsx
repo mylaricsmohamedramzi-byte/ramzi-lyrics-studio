@@ -1,4 +1,5 @@
 import { useState, useRef, useMemo, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
@@ -89,6 +90,25 @@ interface Comment {
 const LyricsPage = () => {
   const { t, lang } = useLang();
   const { isDark } = useTheme();
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+    if (id) {
+      setTimeout(() => {
+        const element = document.getElementById(`card-${id}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          element.style.outline = '2px solid #c9a84c';
+          element.style.borderRadius = '16px';
+          setTimeout(() => {
+            element.style.outline = 'none';
+          }, 3000);
+        }
+      }, 500);
+    }
+  }, [location.search]);
   const [search, setSearch] = useState('');
   const [activeCat, setActiveCat] = useState('all');
 
@@ -355,7 +375,7 @@ const LyricsPage = () => {
         /* ─── النصف العلوي ─── */
         .lyrics-top-half {
           padding: 30px 40px;
-          background: rgba(4, 4, 20, 0.85);
+          background: rgba(20, 5, 8, 0.82);
           border-bottom: 1px solid rgba(201, 168, 76, 0.2);
         }
 
@@ -671,7 +691,7 @@ const LyricsPage = () => {
         <div className="container mx-auto px-4 max-w-5xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           {filteredSongs.length > 0 ? (
             filteredSongs.map((song) => (
-              <div key={song.id} className="lyrics-card">
+              <div key={song.id} id={`card-${song.id}`} className="lyrics-card">
                 <CardFloatingNotes seed={song.id} />
 
                 <div className="card-inner">

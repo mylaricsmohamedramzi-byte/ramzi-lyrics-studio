@@ -1,4 +1,5 @@
 import { useState, useRef, useMemo, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
@@ -37,7 +38,7 @@ function toDriveDirectDownloadUrl(url: string): string {
   return trimmed;
 }
 
-const allSongs = [
+export const allSongs = [
   {
     id: 1,
     title: "حلّ إيجابي",
@@ -351,6 +352,25 @@ const allSongs = [
 const MelodiesPage  = () => {
   const { lang, t } = useLang();
   const { isDark } = useTheme();
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+    if (id) {
+      setTimeout(() => {
+        const element = document.getElementById(`card-${id}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          element.style.outline = '2px solid #c9a84c';
+          element.style.borderRadius = '16px';
+          setTimeout(() => {
+            element.style.outline = 'none';
+          }, 3000);
+        }
+      }, 500);
+    }
+  }, [location.search]);
 
   const [starRatings, setStarRatings] = useState<Record<number, number>>(() => {
     const saved = localStorage.getItem('melodies_star_ratings');
@@ -686,36 +706,16 @@ const MelodiesPage  = () => {
         <p className="unified-header-subtitle">
           {lang === 'ar' ? 'هذه الصفحة تحتوي على ألحان أغاني من كتاباتي لتوصيل الحالة العامة للكلمات.' : 'This page contains melodies for my songs to convey the general mood of the lyrics.'}
         </p>
-        
-        <div style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid rgba(201, 168, 76, 0.2)' }}>
-          <h3 className="text-lg font-subheading font-bold mb-3" style={{ color: '#c9a84c' }}>
-            {lang === 'ar' ? 'توضيح هام' : 'Important Clarification'}
-          </h3>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', lineHeight: '1.6', whiteSpace: 'pre-line' }}>
-            {lang === 'ar' 
-              ? "هذه الصفحة تحتوي على أغاني من كتاباتي ولكن مع اللحن الخاص بكل أغنية.\nبغض النظر عن الشخص الذي قام بغناء هذه الألحان، فإن الهدف هو توصيل اللحن لكم ومساعدتكم في تخيل الحالة العامة للكلمات."
-              : "This page contains songs I have written, but with the melody for each song.\nRegardless of who sang these melodies, the goal is to convey the melody to you and help you imagine the general mood of the lyrics."}
-          </p>
-        </div>
       </div>
 
       {/* Search + Filter */}
       <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
-        <div className="relative mb-5" style={{ maxWidth: '600px', margin: '0 auto' }}>
-          <input
-            type="text"
-            className="w-full px-5 py-4 pl-12 rounded-full border-2 focus:outline-none focus:border-accent transition-all duration-300"
-            style={{
-              background: isDark ? 'rgba(0, 0, 0, 0.4)' : '#ffffff',
-              borderColor: 'var(--accent)',
-              color: isDark ? '#ffffff' : '#000000',
-              fontFamily: 'Almarai, sans-serif'
-            }}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder={lang === 'ar' ? 'ابحث عن لحن...' : 'Search for a melody...'}
-          />
-        </div>
+        <SearchBar
+          value={search}
+          onChange={setSearch}
+          placeholder={lang === 'ar' ? 'ابحث عن لحن...' : 'Search for a melody...'}
+          className="mb-5"
+        />
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
           {MEL_CATEGORIES.map((c) => (
             <button
@@ -734,7 +734,7 @@ const MelodiesPage  = () => {
       </div>
 
       {filteredSongs.map((song) => (
-        <div key={song.id} className="main-card">
+        <div key={song.id} id={`card-${song.id}`} className="main-card">
           <div className="player-side">
             <div className="song-tag">{song.type}</div>
             <div className="cover-box" style={{ backgroundImage: `url(${toDriveDirectDownloadUrl(song.coverImg)})` }} />

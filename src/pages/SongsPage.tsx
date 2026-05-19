@@ -1,4 +1,5 @@
 import { useState, useRef, useMemo, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
@@ -51,26 +52,26 @@ const CardFloatingNotes = ({ seed }: { seed: number }) => {
 
 // ─── فئات الأغاني ────────────────────────────────────────────────────────────
 const SONG_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean; order: number }[] = [
-  { key: 'all',             ar: 'الكل',             en: 'All',              match: () => true,                                                       order: 0  },
-  { key: 'islamic',         ar: 'إسلامي',           en: 'Islamic',          match: (c) => /islamic|إسلامي/i.test(c),                                order: 1  },
-  { key: 'patriotic',       ar: 'وطني',             en: 'Patriotic',        match: (c) => /patriotic|وطني/i.test(c),                                 order: 2  },
-  { key: 'social',          ar: 'اجتماعي وعائلي',   en: 'Social & Family',  match: (c) => /social|family|اجتماعي|عائلي/i.test(c),                  order: 3  },
-  { key: 'occasion',        ar: 'مناسبات وأعياد',   en: 'Occasion & Holiday', match: (c) => /occasion|holiday|مناسبات|أعياد/i.test(c),            order: 4  },
-  { key: 'motivational',    ar: 'تحفيزية',          en: 'Motivational',     match: (c) => /motivational|تحفيزية|تحفيز/i.test(c),                    order: 5  },
-  { key: 'poems',           ar: 'قصائد',            en: 'Poems',            match: (c) => /poems|قصائد|قصيدة/i.test(c),                              order: 6  },
-  { key: 'classic',         ar: 'كلاسيك',           en: 'Classic',          match: (c) => /classic|كلاسيك/i.test(c),                                 order: 7  },
-  { key: 'drama',           ar: 'دراما',            en: 'Drama',            match: (c) => /drama|دراما/i.test(c),                                    order: 8  },
-  { key: 'slow',            ar: 'سلو',              en: 'Slow',             match: (c) => /slow|سلو/i.test(c),                                       order: 9  },
-  { key: 'romantic',        ar: 'رومانسي',          en: 'Romantic',         match: (c) => /^رومانسي$/i.test(c.trim()),                               order: 10 },
-  { key: 'romantic_maqsum', ar: 'رومانسي مقسوم',   en: 'Romantic Maqsum',  match: (c) => /رومانسي مقسوم/i.test(c),                                 order: 11 },
-  { key: 'pop',             ar: 'بوب',              en: 'Pop',              match: (c) => /pop|بوب/i.test(c),                                        order: 12 },
-  { key: 'rock',            ar: 'روك',              en: 'Rock',             match: (c) => /rock|روك/i.test(c),                                       order: 13 },
-  { key: 'maqsum',          ar: 'مقسوم',            en: 'Maqsum',           match: (c) => /^مقسوم$/i.test(c.trim()),                                 order: 14 },
-  { key: 'tarab',           ar: 'طرب',              en: 'Tarab',            match: (c) => /tarab|طرب/i.test(c),                                      order: 15 },
-  { key: 'shaabi',          ar: 'شعبي',             en: 'Shaabi',           match: (c) => /shaabi|شعبي/i.test(c),                                    order: 16 },
-  { key: 'saidi',           ar: 'صعيدي',            en: "Sa'idi",           match: (c) => /sa'idi|saidi|صعيدي/i.test(c),                             order: 17 },
-  { key: 'rap',             ar: 'راب',              en: 'Rap',              match: (c) => /^راب$/i.test(c.trim()),                                   order: 18 },
-  { key: 'trap',            ar: 'تراب',             en: 'Trap',             match: (c) => /trap|تراب/i.test(c),                                      order: 19 },
+  { key: 'all', ar: 'الكل', en: 'All', match: () => true, order: 0 },
+  { key: 'islamic', ar: 'إسلامي', en: 'Islamic', match: (c) => /islamic|إسلامي/i.test(c), order: 1 },
+  { key: 'patriotic', ar: 'وطني', en: 'Patriotic', match: (c) => /patriotic|وطني/i.test(c), order: 2 },
+  { key: 'social', ar: 'اجتماعي وعائلي', en: 'Social & Family', match: (c) => /social|family|اجتماعي|عائلي/i.test(c), order: 3 },
+  { key: 'occasion', ar: 'مناسبات وأعياد', en: 'Occasion & Holiday', match: (c) => /occasion|holiday|مناسبات|أعياد/i.test(c), order: 4 },
+  { key: 'motivational', ar: 'تحفيزية', en: 'Motivational', match: (c) => /motivational|تحفيزية|تحفيز/i.test(c), order: 5 },
+  { key: 'poems', ar: 'قصائد', en: 'Poems', match: (c) => /poems|قصائد|قصيدة/i.test(c), order: 6 },
+  { key: 'classic', ar: 'كلاسيك', en: 'Classic', match: (c) => /classic|كلاسيك/i.test(c), order: 7 },
+  { key: 'drama', ar: 'دراما', en: 'Drama', match: (c) => /drama|دراما/i.test(c), order: 8 },
+  { key: 'slow', ar: 'سلو', en: 'Slow', match: (c) => /slow|سلو/i.test(c), order: 9 },
+  { key: 'romantic', ar: 'رومانسي', en: 'Romantic', match: (c) => /^رومانسي$/i.test(c.trim()), order: 10 },
+  { key: 'romantic_maqsum', ar: 'رومانسي مقسوم', en: 'Romantic Maqsum', match: (c) => /رومانسي مقسوم/i.test(c), order: 11 },
+  { key: 'pop', ar: 'بوب', en: 'Pop', match: (c) => /pop|بوب/i.test(c), order: 12 },
+  { key: 'rock', ar: 'روك', en: 'Rock', match: (c) => /rock|روك/i.test(c), order: 13 },
+  { key: 'maqsum', ar: 'مقسوم', en: 'Maqsum', match: (c) => /^مقسوم$/i.test(c.trim()), order: 14 },
+  { key: 'tarab', ar: 'طرب', en: 'Tarab', match: (c) => /tarab|طرب/i.test(c), order: 15 },
+  { key: 'shaabi', ar: 'شعبي', en: 'Shaabi', match: (c) => /shaabi|شعبي/i.test(c), order: 16 },
+  { key: 'saidi', ar: 'صعيدي', en: "Sa'idi", match: (c) => /sa'idi|saidi|صعيدي/i.test(c), order: 17 },
+  { key: 'rap', ar: 'راب', en: 'Rap', match: (c) => /^راب$/i.test(c.trim()), order: 18 },
+  { key: 'trap', ar: 'تراب', en: 'Trap', match: (c) => /trap|تراب/i.test(c), order: 19 },
 ];
 
 function getCategoryOrder(type: string): number {
@@ -126,7 +127,7 @@ const ImportantNote = () => {
   );
 };
 // ─── بيانات الأغاني ───────────────────────────────────────────────────────────
-const allSongs = [
+export const allSongs = [
   {
     id: 1,
     title: "مليش غيرِك",
@@ -828,6 +829,25 @@ interface Comment {
 const SongsPage = () => {
   const { lang } = useLang();
   const { isDark } = useTheme();
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+    if (id) {
+      setTimeout(() => {
+        const element = document.getElementById(`card-${id}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          element.style.outline = '2px solid #c9a84c';
+          element.style.borderRadius = '16px';
+          setTimeout(() => {
+            element.style.outline = 'none';
+          }, 3000);
+        }
+      }, 500);
+    }
+  }, [location.search]);
   const [starRatings, setStarRatings] = useState<Record<number, number>>(() => {
     const saved = localStorage.getItem('songs_ratings');
     if (saved) {
@@ -1352,7 +1372,7 @@ const SongsPage = () => {
         .lyrics-side {
           position: relative; z-index: 1;
           flex: 1.3; padding: 40px;
-          background: rgba(4, 4, 20, 0.82);
+          background: rgba(20, 5, 8, 0.82);
           border-left: 1px solid rgba(201,168,76,0.2);
         }
         .label-gold { color: #c9a84c; font-size: 13px; margin-bottom: 10px; display: block; }
@@ -1438,64 +1458,64 @@ const SongsPage = () => {
         {/* Unified Black Header Box */}
         <div className="unified-header-box animate-fade-in-up">
           <h1 className="unified-header-title">
-            {lang === 'ar' ? 'الأغاني والأفكار' : 'SONGS & IDEAS'}
+            {lang === 'ar' ? 'الأغاني' : 'SONGS '}
           </h1>
           <p className="unified-header-subtitle">
-            {lang === 'ar' ? 'استمع إلى الأفكار والألحان واستمتع بالكلمات' : 'Listen to song ideas, melodies and enjoy the lyrics'}
+            {lang === 'ar' ? 'استمع إلى الألحان واستمتع بالكلمات' : 'Listen to melodies and enjoy the lyrics'}
           </p>
         </div>
 
         {/* ─── سرش + توضيح + فلتر ─── */}
         <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
-         <div className="max-w-3xl mx-auto" style={{ margin: '0 auto 24px', maxWidth: 760 }}>
-          <div
-            style={{
-              borderRadius: '12px',
-              padding: '24px 28px',
-              border: isDark ? '1px solid rgba(201,168,76,0.25)' : '1px solid rgba(139,26,42,0.2)',
-              background: isDark
-                ? 'linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%))'
-                : 'linear-gradient(135deg, hsl(30 30% 97%), hsl(30 25% 95%))',
-              backgroundImage: isDark
-                ? `repeating-linear-gradient(transparent, transparent 28px, rgba(201,168,76,0.06) 28px, rgba(201,168,76,0.06) 29px)`
-                : `repeating-linear-gradient(transparent, transparent 28px, rgba(154,107,26,0.08) 28px, rgba(154,107,26,0.08) 29px)`,
-              position: 'relative',
-              overflow: 'hidden',
-            }}>
-            {/* ملاحظات زخرفية */}
-            <div style={{ position: 'absolute', top: 10, right: 16, color: isDark ? 'rgba(201,168,76,0.2)' : 'rgba(139,26,42,0.15)', fontSize: 28, fontFamily: "'Aref Ruqaa Ink', serif", pointerEvents: 'none' }}>♪</div>
-            <div style={{ position: 'absolute', bottom: 10, left: 16, color: isDark ? 'rgba(201,168,76,0.2)' : 'rgba(139,26,42,0.15)', fontSize: 22, fontFamily: "'Aref Ruqaa Ink', serif", pointerEvents: 'none' }}>♫</div>
-      
-            <h3 style={{
-              color: isDark ? '#c9a84c' : '#8b1a2a',
-              fontFamily: "'Aref Ruqaa Ink', serif",
-              fontSize: '1.15rem',
-              fontWeight: 'bold',
-              textAlign: 'center',
-              marginBottom: 14,
-            }}>
-              {lang === 'ar' ? 'توضيح هام' : 'Important Clarification'}
-            </h3>
-      
-            <p style={{
-              color: isDark ? 'rgba(232, 213, 176, 0.78)' : '#1a1a1a',
-              lineHeight: '1.85',
-              textAlign: 'center',
-              fontFamily: "'Almarai', sans-serif",
-              fontSize: '0.95rem',
-              margin: 0,
-            }}>
-              {lang === 'ar'
-                ? 'لقد استخدمت أدوات الذكاء الاصطناعي لمساعدتي في ربط أقرب شكل موسيقي بالأفكار والألحان التي ابتكرتها. لذلك ستجد في بعض الأغاني أن هناك أجزاء من الكلمات لا تُنطق بشكل صحيح تمامًا. أما الفيديوهات فهي جهدي لمساعدتك على فهم معنى الكلمات.'
-                : 'I have used artificial intelligence tools to help me connect the closest musical form to the ideas and melodies I have created. Therefore, you will find in some songs that there are parts of the words that are not pronounced completely correctly. As for the videos, they are my effort to help in understanding the meaning of the words.'}
-            </p>
+          <div className="max-w-3xl mx-auto" style={{ margin: '0 auto 24px', maxWidth: 760 }}>
+            <div
+              style={{
+                borderRadius: '12px',
+                padding: '24px 28px',
+                border: isDark ? '1px solid rgba(201,168,76,0.25)' : '1px solid rgba(139,26,42,0.2)',
+                background: isDark
+                  ? 'linear-gradient(135deg, hsl(340 25% 6%), hsl(340 20% 8%))'
+                  : 'linear-gradient(135deg, hsl(30 30% 97%), hsl(30 25% 95%))',
+                backgroundImage: isDark
+                  ? `repeating-linear-gradient(transparent, transparent 28px, rgba(201,168,76,0.06) 28px, rgba(201,168,76,0.06) 29px)`
+                  : `repeating-linear-gradient(transparent, transparent 28px, rgba(154,107,26,0.08) 28px, rgba(154,107,26,0.08) 29px)`,
+                position: 'relative',
+                overflow: 'hidden',
+              }}>
+              {/* ملاحظات زخرفية */}
+              <div style={{ position: 'absolute', top: 10, right: 16, color: isDark ? 'rgba(201,168,76,0.2)' : 'rgba(139,26,42,0.15)', fontSize: 28, fontFamily: "'Aref Ruqaa Ink', serif", pointerEvents: 'none' }}>♪</div>
+              <div style={{ position: 'absolute', bottom: 10, left: 16, color: isDark ? 'rgba(201,168,76,0.2)' : 'rgba(139,26,42,0.15)', fontSize: 22, fontFamily: "'Aref Ruqaa Ink', serif", pointerEvents: 'none' }}>♫</div>
+
+              <h3 style={{
+                color: isDark ? '#c9a84c' : '#8b1a2a',
+                fontFamily: "'Aref Ruqaa Ink', serif",
+                fontSize: '1.15rem',
+                fontWeight: 'bold',
+                textAlign: 'center',
+                marginBottom: 14,
+              }}>
+                {lang === 'ar' ? 'توضيح هام' : 'Important Clarification'}
+              </h3>
+
+              <p style={{
+                color: isDark ? 'rgba(232, 213, 176, 0.78)' : '#1a1a1a',
+                lineHeight: '1.85',
+                textAlign: 'center',
+                fontFamily: "'Almarai', sans-serif",
+                fontSize: '0.95rem',
+                margin: 0,
+              }}>
+                {lang === 'ar'
+                  ? 'لقد استخدمت أدوات الذكاء الاصطناعي لمساعدتي في ربط أقرب شكل موسيقي بالأفكار والألحان التي ابتكرتها. لذلك ستجد في بعض الأغاني أن هناك أجزاء من الكلمات لا تُنطق بشكل صحيح تمامًا. أما الفيديوهات فهي جهدي لمساعدتك على فهم معنى الكلمات.'
+                  : 'I have used artificial intelligence tools to help me connect the closest musical form to the ideas and melodies I have created. Therefore, you will find in some songs that there are parts of the words that are not pronounced completely correctly. As for the videos, they are my effort to help in understanding the meaning of the words.'}
+              </p>
+            </div>
           </div>
-        </div>
           {/* السرش بار */}
           <SearchBar value={search} onChange={setSearch} placeholder="ابحث عن أغنية..." className="mb-5" />
 
           {/* ─── بلوك التوضيح المهم ─── */}
-          
+
 
           {/* أزرار الفلتر */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
@@ -1506,7 +1526,7 @@ const SongsPage = () => {
                 {lang === 'ar' ? c.ar : c.en}
               </button>
             ))}
-          </div>      
+          </div>
           <div style={{ textAlign: 'center', marginTop: 12, color: '#c9a84c', fontSize: 13 }}>
             {filteredSongs.length} / {allSongs.length}
           </div>
@@ -1514,7 +1534,7 @@ const SongsPage = () => {
 
         {/* ─── الكاردات ─── */}
         {filteredSongs.map((song) => (
-          <div key={song.id} className="main-card">
+          <div key={song.id} id={`card-${song.id}`} className="main-card">
             <CardFloatingNotes seed={song.id} />
 
             {/* جانب المشغّل */}

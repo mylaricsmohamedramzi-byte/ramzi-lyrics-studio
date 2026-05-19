@@ -355,3 +355,13 @@
 .filter-chip.active { background: #c9a84c; color: #000; border-color: #c9a84c; }
 :root:not(.dark) .filter-chip { background: rgba(0,0,0,0.05); color: #1a0509; }
 :root:not(.dark) .filter-chip.active { background: #c0272d; color: #fff; border-color: #c0272d; }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

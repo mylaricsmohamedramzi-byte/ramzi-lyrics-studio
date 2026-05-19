@@ -495,8 +495,7 @@ const SongwritingArtPage = () => {
           position: relative;
         }
 
-        [data-lang="ar"] .swa-root,
-        [data-lang="ar"] .swa-root * {
+        [data-lang="ar"] .swa-root {
           font-family: inherit !important;
         }
         [data-lang="ar"] .swa-heading,

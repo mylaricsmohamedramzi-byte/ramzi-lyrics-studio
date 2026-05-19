@@ -1,8 +1,9 @@
 import { useState, useRef, useMemo } from 'react';
-import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
+import SearchBar from '@/components/SearchBar';
+import { toDriveDirectDownloadUrl } from '@/lib/googleDrive';
 
 const MEL_CATEGORIES: { key: string; label: string; match: (t: string) => boolean }[] = [
   { key: 'all',      label: 'الكل',     match: () => true },
@@ -530,7 +531,7 @@ const MelodiesPage  = () => {
         .star { font-size: 24px; cursor: pointer; color: rgba(201,168,76,0.25); transition: color 0.2s, text-shadow 0.2s; user-select: none; }
         .star.active { color: #c9a84c; text-shadow: 0 0 8px rgba(201,168,76,0.7); }
 
-        .lyrics-side { flex: 1.3; padding: 40px; background: rgba(4,4,20,0.82); border-left: 1px solid rgba(201,168,76,0.2); position: relative; z-index: 1; }
+        .lyrics-side { flex: 1.3; padding: 40px; background: rgba(20, 5, 8, 0.82); border-left: 1px solid rgba(201,168,76,0.2); position: relative; z-index: 1; }
         .label-gold { color: #c9a84c; font-size: 13px; margin-bottom: 10px; display: block; }
         .title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
         .song-title-red { color: #ff4d4d; font-family: 'Aref Ruqaa Ink', serif; font-size: 2.8rem; margin-bottom: 0; }
@@ -613,21 +614,7 @@ const MelodiesPage  = () => {
 
       {/* Search + Filter */}
       <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
-        <div className="relative mb-5" style={{ maxWidth: '600px', margin: '0 auto' }}>
-          <input
-            type="text"
-            className="w-full px-5 py-4 pl-12 rounded-full border-2 focus:outline-none focus:border-accent transition-all duration-300"
-            style={{
-              background: isDark ? 'rgba(0, 0, 0, 0.4)' : '#ffffff',
-              borderColor: 'var(--accent)',
-              color: isDark ? '#ffffff' : '#000000',
-              fontFamily: 'Almarai, sans-serif'
-            }}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder={lang === 'ar' ? 'ابحث عن لحن...' : 'Search for a melody...'}
-          />
-        </div>
+        <SearchBar value={search} onChange={setSearch} placeholder={lang === 'ar' ? 'ابحث عن لحن...' : 'Search for a melody...'} className="mb-5" />
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
           {MEL_CATEGORIES.map((c) => (
             <button

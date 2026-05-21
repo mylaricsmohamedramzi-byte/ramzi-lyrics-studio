@@ -620,13 +620,25 @@ const LyricsPage = () => {
         }
 
         .views-badge {
-          background: white;
-          color: black;
-          padding: 6px 20px;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          background: rgba(201, 168, 76, 0.12);
+          border: 1px solid rgba(201, 168, 76, 0.35);
+          color: #c9a84c;
+          padding: 6px 16px;
           border-radius: 20px;
           font-weight: bold;
           font-size: 13px;
-          box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+          flex-shrink: 0;
+          font-family: 'Almarai', 'Outfit', sans-serif;
+        }
+        .views-badge:hover {
+          background: rgba(201, 168, 76, 0.25);
+          border-color: #c9a84c;
+          transform: translateY(-1px);
         }
 
         @media (max-width: 768px) {

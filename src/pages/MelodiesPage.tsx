@@ -659,16 +659,25 @@ const MelodiesPage = () => {
           width: 100%; margin-top: 15px; gap: 10px;
         }
         .views-badge {
-          background-color: #f0fdf4; color: #1a2e44;
-          padding: 8px 20px; border-radius: 50px;
-          font-weight: bold; font-size: 1.2rem;
-          cursor: pointer; transition: all 0.3s ease;
-          border: none; flex-shrink: 0;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          background: rgba(201, 168, 76, 0.12);
+          border: 1px solid rgba(201, 168, 76, 0.35);
+          color: #c9a84c;
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-weight: bold;
+          font-size: 13px;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+          flex-shrink: 0;
+          font-family: 'Almarai', 'Outfit', sans-serif;
         }
         .views-badge:hover {
-          background-color: #c9a84c;
-          color: #000;
-          transform: scale(1.05);
+          background: rgba(201, 168, 76, 0.25);
+          border-color: #c9a84c;
+          transform: translateY(-1px);
         }
 
         .custom-player-wrapper { width: 100%; background: rgba(20,5,8,0.75); border: 1px solid rgba(201,168,76,0.35); border-radius: 20px; padding: 12px 16px; display: flex; flex-direction: column; gap: 10px; margin-top: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }

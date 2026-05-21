@@ -280,7 +280,7 @@ const WelcomePage = () => {
               <div className="mb-4 p-3 rounded-2xl bg-white/5 border border-white/10 group-hover:bg-white/10 transition-colors">
                 {stat.icon}
               </div>
-              <span className="text-4xl sm:text-5xl font-bold text-foreground drop-shadow-lg" style={{ fontFamily: 'VLAX, Cinzel, serif' }}>
+              <span className="text-4xl sm:text-5xl font-bold text-foreground drop-shadow-lg" style={{ fontFamily: lang === 'ar' ? 'VLAX, Cinzel, serif' : 'Cinzel, serif' }}>
                 {stat.count}
               </span>
               <span className="text-sm text-foreground/60 mt-2 font-medium tracking-wide uppercase">

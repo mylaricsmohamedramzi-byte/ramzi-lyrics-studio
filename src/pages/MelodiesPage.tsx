@@ -410,7 +410,6 @@ const MelodiesPage = () => {
   const [audioTimes, setAudioTimes] = useState<Record<string, { current: number; duration: number }>>({});
   const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
   const [volume, setVolume] = useState(0.8);
-  const [search, setSearch] = useState('');
   const [activeCat, setActiveCat] = useState('all');
 
   const filteredSongs = useMemo(() => {

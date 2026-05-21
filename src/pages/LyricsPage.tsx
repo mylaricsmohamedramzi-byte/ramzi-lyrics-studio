@@ -4,7 +4,7 @@ import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import { PenLine } from 'lucide-react';
+import { PenLine, Edit, Trash2, Eye } from 'lucide-react';
 import { allSongs } from '@/data/lyricsSongs';
 import nameArabic from '@/assets/name-arabic.png';
 import nameEnglish from '@/assets/name-english.png';
@@ -91,6 +91,11 @@ const LyricsPage = () => {
   const { t, lang } = useLang();
   const { isDark } = useTheme();
   const location = useLocation();
+
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    setIsAdmin(localStorage.getItem('isAdmin') === 'true');
+  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -784,16 +789,49 @@ const LyricsPage = () => {
                         {(comments[song.id] || []).map((comment) => (
                           <div
                             key={comment.id}
-                            className="comment-bubble"
+                            className="comment-bubble group/comment relative"
                             style={{
-                              background: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
-                              color: isDark ? '#ffffff' : '#000000',
+                              background: 'rgba(255, 255, 255, 0.07)',
+                              color: '#ffffff',
                               borderColor: isDark ? 'rgba(201, 168, 76, 0.15)' : 'rgba(201, 168, 76, 0.3)',
                               borderWidth: '1px',
                               borderStyle: 'solid'
                             }}
                           >
                             {comment.text}
+                            {isAdmin && (
+                              <div className="absolute left-2 top-1/2 -translate-y-1/2 flex gap-1 opacity-0 group-hover/comment:opacity-100 transition-opacity bg-black/75 p-1 rounded backdrop-blur-sm border border-white/10">
+                                <button
+                                  onClick={() => {
+                                    const newText = window.prompt(lang === 'ar' ? 'تعديل التعليق' : 'Edit comment', comment.text);
+                                    if (newText && newText.trim() !== '') {
+                                      setComments(prev => ({
+                                        ...prev,
+                                        [song.id]: prev[song.id].map(c => c.id === comment.id ? { ...c, text: newText.trim() } : c)
+                                      }));
+                                    }
+                                  }}
+                                  className="text-blue-400 hover:text-blue-300 p-1"
+                                  title={lang === 'ar' ? 'تعديل' : 'Edit'}
+                                >
+                                  <Edit className="w-3.5 h-3.5" />
+                                </button>
+                                <button
+                                  onClick={() => {
+                                    if (window.confirm(lang === 'ar' ? 'حذف التعليق؟' : 'Delete comment?')) {
+                                      setComments(prev => ({
+                                        ...prev,
+                                        [song.id]: prev[song.id].filter(c => c.id !== comment.id)
+                                      }));
+                                    }
+                                  }}
+                                  className="text-red-400 hover:text-red-300 p-1"
+                                  title={lang === 'ar' ? 'حذف' : 'Delete'}
+                                >
+                                  <Trash2 className="w-3.5 h-3.5" />
+                                </button>
+                              </div>
+                            )}
                           </div>
                         ))}
                         <div ref={(el) => { commentsEndRefs.current[song.id] = el; }} />
@@ -818,7 +856,8 @@ const LyricsPage = () => {
                       </div>
 
                       <div className="views-badge">
-                        {lang === 'ar' ? `مشاهدة ${song.views}` : `Views ${song.views}`}
+                        <Eye className="w-4 h-4 shrink-0" />
+                        <span>{lang === 'ar' ? `مشاهدة ${song.views ?? '0'}` : `Views ${song.views ?? '0'}`}</span>
                       </div>
                     </div>
                   </div>

@@ -696,8 +696,38 @@ const LyricsPage = () => {
         <div className="container mx-auto px-4 max-w-5xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           {filteredSongs.length > 0 ? (
             filteredSongs.map((song) => (
-              <div key={song.id} id={`card-${song.id}`} className="lyrics-card">
+              <div key={song.id} id={`card-${song.id}`} className="lyrics-card relative group">
                 <CardFloatingNotes seed={song.id} />
+                {isAdmin && (
+                  <div className="absolute top-4 left-4 z-50 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        const evt = new CustomEvent('open-admin-edit', { detail: song });
+                        window.dispatchEvent(evt);
+                      }}
+                      className="p-2 bg-blue-500/20 text-blue-400 rounded-lg backdrop-blur-md border border-blue-500/30 hover:bg-blue-500/40 transition-colors shadow-lg"
+                      title={lang === 'ar' ? 'تعديل' : 'Edit'}
+                    >
+                      <Edit className="w-5 h-5" />
+                    </button>
+                    <button
+                      onClick={async (e) => {
+                        e.stopPropagation();
+                        if(window.confirm(lang === 'ar' ? 'هل أنت متأكد من حذف هذه الأغنية؟' : 'Are you sure you want to delete this song?')) {
+                           const evt = new CustomEvent('admin-delete-item', { detail: { id: song.id, section: 'lyrics' } });
+                           window.dispatchEvent(evt);
+                           const card = document.getElementById(`card-${song.id}`);
+                           if(card) card.style.display = 'none';
+                        }
+                      }}
+                      className="p-2 bg-red-500/20 text-red-400 rounded-lg backdrop-blur-md border border-red-500/30 hover:bg-red-500/40 transition-colors shadow-lg"
+                      title={lang === 'ar' ? 'حذف' : 'Delete'}
+                    >
+                      <Trash2 className="w-5 h-5" />
+                    </button>
+                  </div>
+                )}
 
                 <div className="card-inner">
                   {/* TOP HALF — Lyrics Area */}

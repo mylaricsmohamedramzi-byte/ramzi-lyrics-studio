@@ -58,7 +58,8 @@ export default function AdminPanel() {
   // Render context based on path
   const currentSection = location.pathname.includes('songs') ? 'songs' :
                          location.pathname.includes('melodies') ? 'melodies' :
-                         location.pathname.includes('videos') ? 'videos' : null;
+                         location.pathname.includes('videos') ? 'videos' : 
+                         location.pathname.includes('lyrics') ? 'lyrics' : null;
 
   if (!currentSection) return null;
 

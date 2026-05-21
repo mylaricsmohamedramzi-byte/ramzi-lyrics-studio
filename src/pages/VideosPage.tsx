@@ -115,7 +115,7 @@ interface Comment {
   timestamp: number;
 }
 
-import { Edit, Trash2 } from 'lucide-react';
+import { Edit, Trash2, Eye } from 'lucide-react';
 
 const VideosPage = () => {
   const { lang } = useLang();

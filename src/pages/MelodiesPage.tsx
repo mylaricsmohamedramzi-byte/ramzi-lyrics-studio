@@ -350,7 +350,6 @@ export const allSongs = [
     
 ];
 
-import { Edit, Trash2 } from 'lucide-react';
 
 const MelodiesPage = () => {
   const { lang, t } = useLang();

@@ -1,112 +1,90 @@
 const fs = require('fs');
 const file = 'src/data/lyricsSongs.ts';
 let c = fs.readFileSync(file, 'utf8');
+const lines = c.split('\n');
 let changes = 0;
 
-// Helper: replace title at specific line range
-function fixTitle(oldT, newT) {
-  const re = new RegExp(`"title":\\s*"${oldT.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&')}"`, 'g');
-  const before = c;
-  c = c.replace(re, `"title": "${newT}"`);
-  if (c !== before) { changes++; console.log(`  Title: "${oldT}" -> "${newT}"`); }
-  else console.log(`  MISS title: "${oldT}"`);
-}
-
-function fixType(oldT, newT) {
-  const re = new RegExp(`"type":\\s*"${oldT.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&')}"`, 'g');
-  const before = c;
-  c = c.replace(re, `"type": "${newT}"`);
-  if (c !== before) { changes++; console.log(`  Type: "${oldT}" -> "${newT}"`); }
-  else console.log(`  MISS type: "${oldT}"`);
-}
-
-// We need targeted replacements - find by id block
-function fixSongById(id, titleFrom, titleTo, typeFrom, typeTo) {
-  // Find the block for this id
-  const idRe = new RegExp(`"id":\\s*${id},`);
-  const idx = c.search(idRe);
-  if (idx === -1) { console.log(`  ID ${id} NOT FOUND`); return; }
-  // Find next song block (next "id":) or end
-  const nextId = c.indexOf('"id":', idx + 10);
-  const blockEnd = nextId === -1 ? c.length : nextId;
-  let block = c.substring(idx, blockEnd);
-  let changed = false;
-  
-  if (titleFrom && titleTo && titleFrom !== titleTo) {
-    const oldBlock = block;
-    block = block.replace(`"title": "${titleFrom}"`, `"title": "${titleTo}"`);
-    if (block !== oldBlock) { changed = true; console.log(`  [id=${id}] Title: "${titleFrom}" -> "${titleTo}"`); }
-    else console.log(`  [id=${id}] MISS title: "${titleFrom}"`);
+// Helper: find the line range for a song by searching for "id": X
+function findSongRange(id) {
+  for (let i = 0; i < lines.length; i++) {
+    const m = lines[i].match(/^\s*"?id"?\s*:\s*(\d+)/);
+    if (m && parseInt(m[1]) === id) {
+      // Find the end of this song object (next "id": or end)
+      let end = lines.length;
+      for (let j = i + 1; j < lines.length; j++) {
+        if (lines[j].match(/^\s*"?id"?\s*:\s*\d+/)) { end = j; break; }
+      }
+      return { start: i, end };
+    }
   }
-  if (typeFrom && typeTo && typeFrom !== typeTo) {
-    const oldBlock = block;
-    block = block.replace(`"type": "${typeFrom}"`, `"type": "${typeTo}"`);
-    if (block !== oldBlock) { changed = true; console.log(`  [id=${id}] Type: "${typeFrom}" -> "${typeTo}"`); }
-    else console.log(`  [id=${id}] MISS type: "${typeFrom}"`);
+  return null;
+}
+
+// Helper: fix title in a specific song block
+function fixTitleInBlock(id, oldTitle, newTitle) {
+  const range = findSongRange(id);
+  if (!range) { console.log(`  [id=${id}] NOT FOUND`); return; }
+  let found = false;
+  for (let i = range.start; i < range.end; i++) {
+    if (lines[i].includes(`"title"`) && lines[i].includes(oldTitle)) {
+      lines[i] = lines[i].replace(oldTitle, newTitle);
+      found = true;
+      changes++;
+      console.log(`  [id=${id}] Title: "${oldTitle}" -> "${newTitle}"`);
+      break;
+    }
   }
-  if (changed) {
-    c = c.substring(0, idx) + block + c.substring(blockEnd);
-    changes++;
+  if (!found) console.log(`  [id=${id}] MISS title: "${oldTitle}"`);
+}
+
+// Helper: fix type in a specific song block
+function fixTypeInBlock(id, oldType, newType) {
+  const range = findSongRange(id);
+  if (!range) { console.log(`  [id=${id}] NOT FOUND`); return; }
+  let found = false;
+  for (let i = range.start; i < range.end; i++) {
+    if (lines[i].includes(`"type"`) && lines[i].includes(oldType)) {
+      lines[i] = lines[i].replace(oldType, newType);
+      found = true;
+      changes++;
+      console.log(`  [id=${id}] Type: "${oldType}" -> "${newType}"`);
+      break;
+    }
   }
+  if (!found) console.log(`  [id=${id}] MISS type: "${oldType}"`);
 }
 
-console.log("=== Title Fixes ===");
-fixSongById(12, "وعدى الليل", "وعدّي الليل", null, null);
-fixSongById(13, "أبات أقول", "أبات اقول", null, null);
-fixSongById(14, "حائر القلبِ", "حائر القلب", null, null);
-fixSongById(18, "لو خطى", "لو خطّي", null, null);
-fixSongById(23, "برج الميزان", "بُرج الميزان", null, null);
-fixSongById(30, "حاجه تانيه", "حاجة تانيه", null, null);
-fixSongById(35, "أنا مش هوقّف", "مش هوقّف", null, null);
-fixSongById(38, "كلو بيمثل", "كلو بيمثّل", null, null);
-fixSongById(51, "لو بأيدي", "لو بايدي", null, null);
-fixSongById(58, "آخر فرصة", "أخر فرصة", null, null);
-fixSongById(61, "تجربة عدتها", "تجربه عديتها", null, null);
-fixSongById(76, "مهما استجدع", "مهما أستجدع", null, null);
-fixSongById(78, "براحته يشترط", "براحته يتشرط", null, null);
-fixSongById(80, "قلبي اتورط", "قلبي إتورّط", null, null);
-fixSongById(89, "عم الجنيني", "عمّ الجنيني", null, null);
-fixSongById(93, "محدش له جميلة علينا", "محدش له جِميله علينا", null, null);
-fixSongById(94, "اضحك يا عم", "أضحك يا عمّ", null, null);
-fixSongById(98, "سحرتني والله", "سحرتني و الله", null, null);
-fixSongById(101, "حُب و موده", "حُبّ ومودة", null, null);
+console.log("=== Remaining Title Fixes ===");
+fixTitleInBlock(12, "وعدى الليل", "وعدّي الليل");
+fixTitleInBlock(13, "أبات أقول", "أبات اقول");
+fixTitleInBlock(14, "حائر القلبِ", "حائر القلب");
+fixTitleInBlock(18, "لو خطى", "لو خطّي");
+fixTitleInBlock(23, "برج الميزان", "بُرج الميزان");
+fixTitleInBlock(25, "سِنّة سِنّة", "سنّه سنّه");
+fixTitleInBlock(30, "حاجه تانيه", "حاجة تانيه");
+fixTitleInBlock(35, "أنا مش هوقّف", "مش هوقّف");
+fixTitleInBlock(38, "كلو بيمثل", "كلو بيمثّل");
+fixTitleInBlock(37, "طوق نجاه", "كوق نجاه");
+fixTitleInBlock(48, "Master", "ماستر");
+fixTitleInBlock(52, "صفحة جديدة", "صفحة جديده");
 
-console.log("\n=== Type Fixes ===");
-// سِنّة سِنّة: رومانسي -> بوب + title fix
-fixSongById(25, "سِنّة سِنّة", "سنّه سنّه", "رومانسي", "بوب");
-// مش طبيعي, اتفضل, سمّعني, ما يقع, يعمل ما بداله, من غير تفكير: مقسوم -> رومانسي مقسوم
-fixSongById(20, null, null, "مقسوم", "رومانسي مقسوم");
-fixSongById(75, "اتفضل", "أتفضل", "مقسوم", "رومانسي مقسوم");
-fixSongById(77, null, null, "مقسوم", "رومانسي مقسوم");
-fixSongById(79, null, null, "مقسوم", "رومانسي مقسوم");
-fixSongById(85, null, null, "مقسوم", "رومانسي مقسوم");
-fixSongById(86, null, null, "مقسوم", "رومانسي مقسوم");
-// بالتراضي, Master: راب -> تراب
-fixSongById(47, null, null, "راب", "تراب");
-fixSongById(48, "Master", "ماستر", "راب", "تراب");
-// إجتماعي -> إجتماعي& عائلي
-fixSongById(88, null, null, "إجتماعي", "إجتماعي& عائلي");
+console.log("\n=== Remaining Type Fixes ===");
+// سِنّة سِنّة: رومانسي -> بوب
+fixTypeInBlock(25, "رومانسي", "بوب");
+// مش طبيعي: مقسوم -> رومانسي مقسوم
+fixTypeInBlock(20, "مقسوم", "رومانسي مقسوم");
+// بالتراضي: راب -> تراب
+fixTypeInBlock(47, "راب", "تراب");
+// Master: راب -> تراب
+fixTypeInBlock(48, "راب", "تراب");
+// دراما (ids 1-5) -> درامة
+fixTypeInBlock(1, "دراما", "درامة");
+fixTypeInBlock(2, "دراما", "درامة");
+fixTypeInBlock(3, "دراما", "درامة");
+fixTypeInBlock(4, "دراما", "درامة");
+fixTypeInBlock(5, "دراما", "درامة");
 
-console.log("\n=== Drama Type Unification ===");
-// Fix all دراما and درامه to درامة
-fixType("دراما", "درامة");
-fixType("درامه", "درامة");
-
-// Fix حبك مش ذنبي (id 49 at line 1834)
-const hbkRe = /"title":\s*"حبك مش ذنبي"/;
-if (hbkRe.test(c)) {
-  c = c.replace(hbkRe, '"title": "حُبك مش ذنبي"');
-  changes++;
-  console.log('  Title: "حبك مش ذنبي" -> "حُبك مش ذنبي"');
-}
-
-// Fix وأمّا قابلتك -> وأما قابلتك  
-const wamRe = /"title":\s*"وأمّا قابلتك"/;
-if (wamRe.test(c)) {
-  c = c.replace(wamRe, '"title": "وأما قابلتك"');
-  changes++;
-  console.log('  Title: "وأمّا قابلتك" -> "وأما قابلتك"');
-}
-
+// Write back
+c = lines.join('\n');
 fs.writeFileSync(file, c, 'utf8');
 console.log(`\nDone! ${changes} changes applied.`);

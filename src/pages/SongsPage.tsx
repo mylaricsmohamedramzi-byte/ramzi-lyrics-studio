@@ -1264,7 +1264,7 @@ export default function SongsPage() {
       .filter((s) => {
         if (!cat.match(s.type || '')) return false;
         if (!q) return true;
-        const hay = [s.title, s.type, ...(s.lyrics?.map((l) => l.text) || [])].join(' ');
+        const hay = [s.title, s.type].join(' ');
         return normalizeArabic(hay).includes(q);
       })
       .slice()

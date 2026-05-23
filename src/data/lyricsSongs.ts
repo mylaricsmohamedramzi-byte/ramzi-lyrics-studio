@@ -2,7 +2,7 @@ export const allSongs: any[] = [
   {
     id: 1,
     title: "كان حبيبي",
-    type: "دراما",
+    type: "درامة",
 
     coverImg: "",
     views: "0",
@@ -33,7 +33,7 @@ export const allSongs: any[] = [
   {
     id: 2,
     title: "علي العموم",
-    type: "دراما",
+    type: "درامة",
 
     coverImg: "",
     views: "0",
@@ -62,7 +62,7 @@ export const allSongs: any[] = [
     id: 3,
     title: "فضناها سيرة",
     duet: true,
-    type: "دراما",
+    type: "درامة",
 
     coverImg: "",
     views: "0",
@@ -89,7 +89,7 @@ export const allSongs: any[] = [
     id: 4,
     title: "بعدك مش أزمة",
     duet: true,
-    type: "دراما",
+    type: "درامة",
 
     coverImg: "",
     views: "0",
@@ -119,7 +119,7 @@ export const allSongs: any[] = [
   {
     id: 5,
     title: "مطرح م تروح",
-    type: "دراما",
+    type: "درامة",
 
     coverImg: "",
     views: "0",
@@ -391,7 +391,7 @@ export const allSongs: any[] = [
   },
   {
     id: 12,
-    title: "وعدى الليل",
+    title: "وعدّي الليل",
     type: "كلاسيك ",
     lyrics: [
       { text: "يا أعجب من العجائب", red: false },
@@ -460,7 +460,7 @@ export const allSongs: any[] = [
   },
   {
     id: 13,
-    title: "أبات أقول",
+    title: "أبات اقول",
     type: "كلاسيك ",
     lyrics: [
       { text: "ياللي في حبك قلبي داب", red: false },
@@ -496,7 +496,7 @@ export const allSongs: any[] = [
   },
   {
     id: 14,
-    title: "حائر القلبِ",
+    title: "حائر القلب",
     type: "قصائد",
     lyrics: [
       { text: "قَد خَبّرونا أن الحبيبَ يظهرُ في المِحنِ", red: false },
@@ -642,7 +642,7 @@ export const allSongs: any[] = [
   },
   {
     id: 18,
-    title: "لو خطى",
+    title: "لو خطّي",
     type: "بوب",
     lyrics: [
       { text: "حبيبي شفته أنا مرة", red: false },
@@ -707,7 +707,7 @@ export const allSongs: any[] = [
   {
     id: 20,
     title: "مش طبيعي",
-    type: "مقسوم",
+    type: "رومانسي مقسوم",
     lyrics: [
       { text: "دا أكيد مش طبيعي", red: false },
       { text: "دا أكيد مش بجد", red: false },
@@ -782,7 +782,7 @@ export const allSongs: any[] = [
   }
   , {
     id: 23,
-    title: "برج الميزان",
+    title: "بُرج الميزان",
     type: "بوب",
     lyrics: [
       { text: "أنت حبيبي ومفيش .. حبيب غيرك", red: false },
@@ -814,8 +814,8 @@ export const allSongs: any[] = [
   },
   {
     id: 25,
-    title: "سِنّة سِنّة",
-    type: "رومانسي",
+    title: "سنّه سنّه",
+    type: "بوب",
     lyrics: [
       { text: "لو جه جنبي ", red: false },
       { text: "مبصدقشي ... وبخاف يمشي", red: false },
@@ -969,7 +969,7 @@ export const allSongs: any[] = [
   },
   {
     id: 30,
-    title: "حاجه تانيه ",
+    title: "حاجة تانيه",
     type: " رومانسي",
     lyrics: [
       { text: "مش مصدّق ... قلبي غرّق ... قلبها", red: false },
@@ -1142,7 +1142,7 @@ export const allSongs: any[] = [
   },
   {
     id: 35,
-    title: "أنا مش هوقّف",
+    title: "مش هوقّف",
     type: "تحفيزية",
     lyrics: [
       { "text": "بيقولو إن الحلم طريق لازم تمشيه ... وأكيد همشيه ... أنا مش هفضل واقف في مكاني", "red": false },
@@ -1242,8 +1242,8 @@ export const allSongs: any[] = [
 
   {
     id: 38,
-    "title": "كلو بيمثل",
-    "type": "درامه",
+    "title": "كلو بيمثّل",
+    "type": "درامة",
     "lyrics": [
       { "text": "هذه الكلمات باللهجة اللبنانية ", "red": false },
       { "text": "\u00A0", "red": false },
@@ -1336,7 +1336,7 @@ export const allSongs: any[] = [
   {
     "id": 47,
     "title": "حقك تستغرب",
-    "type": "طرب",
+    "type": "تراب",
     "lyrics": [
       { "text": "الجميل دا حد شافه ... حد شافه رُدو قولو", "red": false },
       { "text": "حد لاحظ إختلافه ... حد لاحظ لون عيونه", "red": false },
@@ -1367,8 +1367,8 @@ export const allSongs: any[] = [
   },
   {
     "id": 48,
-    "title": "قمر هادئ",
-    "type": "روك",
+    "title": "Master",
+    "type": "تراب",
     "lyrics": [
       { "text": "مره ليلة من الليالي أتعزمة في سهره عادي", "red": false },
       { "text": "قلت اروح مع صحابي قلت أرجع زكرياتي", "red": false },
@@ -1830,7 +1830,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 49,
-    "title": "حبك مش ذنبي",
+    "title": "حُبك مش ذنبي",
     "type": "روك",
     "lyrics": [
       { "text": "أنا طول ليلي كلامي عليكي", "red": false },
@@ -1881,7 +1881,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 51,
-    "title": "لو بأيدي",
+    "title": "لو بايدي",
     "type": "روك",
     "lyrics": [
       { "text": "سحر عيونك جابني الأرض", "red": false },
@@ -1936,7 +1936,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 52,
-    "title": "صفحة جديدة",
+    "title": "صفحة جديده",
     "type": "سلو",
     "lyrics": [
       { "text": "متسألنيش عن الماضي، يا حبيبي بلاش", "red": false },
@@ -1981,7 +1981,7 @@ export const allSongs: any[] = [
   {
     "id": 55,
     "title": "مين فينا ساب مين؟",
-    "type": "درامه",
+    "type": "درامة",
     "lyrics": [
       { "text": "وأديني بقالي ليالي ... بحاول أن أنا أداري", "red": false },
       { "text": "لا عارف أشيله من بالي ... ولا أرجع تاني", "red": false },
@@ -2031,7 +2031,7 @@ export const allSongs: any[] = [
   {
     "id": 57,
     "title": "أعذارك قدمت",
-    "type": "درامه",
+    "type": "درامة",
     "lyrics": [
       { "text": "مش عاوز ترجع لي براحتك ... لكن متقلش إني جرحتك", "red": false },
       { "text": "متجبش المشكلة دي عندي ... عشان أنت اللي واجع قلبي", "red": false },
@@ -2061,8 +2061,8 @@ export const allSongs: any[] = [
   },
   {
     "id": 58,
-    "title": "آخر فرصة",
-    "type": "درامه",
+    "title": "أخر فرصة",
+    "type": "درامة",
     "lyrics": [
       { "text": "خلاص يعني راحت عليّا؟ ... وبقى في غيري في حياتك", "red": false },
       { "text": "نسيت كل ذكرى ليّا؟ ... دا أنا عايش على ذكرياتك", "red": false },
@@ -2081,7 +2081,7 @@ export const allSongs: any[] = [
   {
     "id": 59,
     "title": "أصح قرار",
-    "type": "درامه",
+    "type": "درامة",
     "lyrics": [
       { "text": "من غير ما أبالغ ولا أكتر ... أنا بالنسبة لي", "red": false },
       { "text": "من يوم بعدك مش متأثر ... وعايش عادي", "red": false },
@@ -2107,7 +2107,7 @@ export const allSongs: any[] = [
   {
     "id": 60,
     "title": "أكتر حد فاهمني",
-    "type": "درامه",
+    "type": "درامة",
     "lyrics": [
       { "text": "حبك موجود في قلبي ... صدقني مخلصش", "red": false },
       { "text": "لسه حكايتنا باقية ... يا حبيبي منتهتش", "red": false },
@@ -2127,8 +2127,8 @@ export const allSongs: any[] = [
   },
   {
     "id": 61,
-    "title": "تجربة عدتها",
-    "type": "درامه",
+    "title": "تجربه عديتها",
+    "type": "درامة",
     "lyrics": [
       { "text": "قالت لي لو كل الظروف ضدك ... صدقني هبقى جنبك", "red": false },
       { "text": "مع أول ظرف ليّه ليه ... ملقتهاش معايا؟", "red": false },
@@ -2174,7 +2174,7 @@ export const allSongs: any[] = [
   {
     "id": 63,
     "title": "زي ضلي",
-    "type": "درامه",
+    "type": "درامة",
     "lyrics": [
       { "text": "وبقابل ناس كتير بعده  ... وبقول مش عاوزة أنا غيره", "red": false },
       { "text": "مش قادر قلبي على بُعده  ...وعيوني والله ما ناسينه", "red": false },
@@ -2200,7 +2200,7 @@ export const allSongs: any[] = [
   {
     "id": 64,
     "title": "فاكرني لعبة",
-    "type": "درامه",
+    "type": "درامة",
     "lyrics": [
       { "text": "أنا مش هعاتبك ولا حتى هرمي اللوم عليك", "red": false },
       { "text": "أنا هتجاهلك مش هسمعك ولا هسأل فيك", "red": false },
@@ -2222,7 +2222,7 @@ export const allSongs: any[] = [
 
     "id": 65,
     "title": "طلعنا كدابيين",
-    "type": "درامه",
+    "type": "درامة",
     "lyrics": [
       { "text": "فرصة رجوعنا أنا أملي فيها كبير", "red": false },
       { "text": "ضاعت وعودنا بعد حب جميل", "red": false },
@@ -2292,7 +2292,7 @@ export const allSongs: any[] = [
   {
     "id": 67,
     "title": "الدنيا بتعلّم",
-    "type": "درامه",
+    "type": "درامة",
     "lyrics": [
       { "text": "زعلت بجد على نفسي عشان أديتها", "red": false },
       { "text": "لحد أزاها وتعبها وطلّع عينها", "red": false },
@@ -2344,7 +2344,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 69,
-    "title": "وأمّا قابلتك",
+    "title": "وأما قابلتك",
     "type": "كلاسيك",
     "lyrics": [
       { "text": "ياما عدّى عليا أيام وليالي", "red": false },
@@ -2409,7 +2409,7 @@ export const allSongs: any[] = [
   {
     "id": 71,
     "title": "من قلبي حبيته",
-    "type": "درامه",
+    "type": "درامة",
     "lyrics": [
       { "text": "هموت و أقول له على اللي في قلبي ", "red": false },
       { "text": " وخايفة أبان ضعيفة في عينه", "red": false },
@@ -2445,7 +2445,7 @@ export const allSongs: any[] = [
   {
     "id": 72,
     "title": "موضوع وخلص",
-    "type": "درامه",
+    "type": "درامة",
     "lyrics": [
       { "text": "أَنَا حَذَّرْتُكَ مِئَةٍ مَرَّة .. وَلَا مَرَّة رَضِيتْ تِسْمَعْنِي", "red": false },
       { "text": "وَنَفْسِيَتِي بقي حُرَّة .. وَإِهِيَّ مَتْ عَاوِزَاكَ تِرْجَعْ لِي", "red": false },
@@ -2516,8 +2516,8 @@ export const allSongs: any[] = [
   },
   {
     "id": 75,
-    "title": "اتفضل",
-    "type": "مقسوم",
+    "title": "أتفضل",
+    "type": "رومانسي مقسوم",
     "lyrics": [
       { "text": "مَ تُهَدِّي اللعب شوية ", "red": false },
       { "text": " حبيبي بلاش بقى تُقَلَّ عليا", "red": false },
@@ -2549,7 +2549,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 76,
-    "title": "مهما استجدع",
+    "title": "مهما أستجدع",
     "type": "مقسوم",
     "lyrics": [
       { "text": "بعد اللَّي كَانَ مَابَيْنَا .. فَجْأَةً وَبِسُهُولَةٌ هَوَنَا", "red": false },
@@ -2572,7 +2572,7 @@ export const allSongs: any[] = [
   {
     "id": 77,
     "title": "سمّعني",
-    "type": "مقسوم",
+    "type": "رومانسي مقسوم",
     "lyrics": [
       { "text": "تسمح من فضلك ", "red": false },
       { "text": " إني أتهور وأتجرأ؟", "red": false },
@@ -2598,7 +2598,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 78,
-    "title": "براحته يشترط",
+    "title": "براحته يتشرط",
     "type": "مقسوم",
     "lyrics": [
       { "text": "دا كدا عظمة على عظمة ", "red": false },
@@ -2629,7 +2629,7 @@ export const allSongs: any[] = [
   {
     "id": 79,
     "title": "ما يقع إلا الشاطر",
-    "type": "مقسوم",
+    "type": "رومانسي مقسوم",
     "lyrics": [
       { "text": "يا اللي موقع قلبي في حبك ", "red": false },
       { "text": " بيقولوا ما يوقع إلا الشاطر", "red": false },
@@ -2653,7 +2653,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 80,
-    "title": "قلبي اتورط",
+    "title": "قلبي إتورّط",
     "type": "بوب",
     "lyrics": [
       { "text": "الله على عيناك الحلوة ", "red": false },
@@ -2853,7 +2853,7 @@ export const allSongs: any[] = [
   {
     "id": 85,
     "title": "يعمل ما بداله",
-    "type": "مقسوم",
+    "type": "رومانسي مقسوم",
     "lyrics": [
       { "text": "حبيبي دا مدلع لوحده ", "red": false },
       { "text": " ومش محتاج حد يدلعه", "red": false },
@@ -2901,7 +2901,7 @@ export const allSongs: any[] = [
   {
     "id": 86,
     "title": "من غير تفكير",
-    "type": "مقسوم",
+    "type": "رومانسي مقسوم",
     "lyrics": [
       { "text": "اسمح لي أقول ", "red": false },
       { "text": " أنا قلبي في بعدك مقفول", "red": false },
@@ -2968,7 +2968,7 @@ export const allSongs: any[] = [
   {
     "id": 88,
     "title": "ست الكل",
-    "type": "إجتماعي",
+    "type": "إجتماعي& عائلي",
     "lyrics": [
       { "text": "ست الكل من حق أمي عليا", "red": false },
       { "text": "وقت تعبها إني أبقا معاها", "red": false },
@@ -3006,7 +3006,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 89,
-    "title": "عم الجنيني",
+    "title": "عمّ الجنيني",
     "type": "مقسوم",
     "lyrics": [
       { "text": "عم الجنيني عم الجنيني بيسقي الزرعة", "red": false },
@@ -3154,7 +3154,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 93,
-    "title": "محدش له جميلة علينا",
+    "title": "محدش له جِميله علينا",
     "type": "شعبي",
     "lyrics": [
       { "text": "محدش له جميلة علينا", "red": false },
@@ -3194,7 +3194,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 94,
-    "title": "اضحك يا عم",
+    "title": "أضحك يا عمّ",
     "type": "شعبي",
     "lyrics": [
       { "text": "إضحك يا عمّ", "red": false },
@@ -3299,7 +3299,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 98,
-    "title": "سحرتني والله",
+    "title": "سحرتني و الله",
     "type": "طرب",
     "lyrics": [
       { "text": "صعبان عليه بُعدك شويه", "red": false },
@@ -3406,7 +3406,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 101,
-    "title": "حُب و موده",
+    "title": "حُبّ ومودة",
     "type": "كلاسيك",
     "lyrics": [
       { "text": "أنَا وَحَبِيبِي مَا لِينَا غَيْرْ بَعْضْ", "red": false },

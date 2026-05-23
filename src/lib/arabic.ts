@@ -22,6 +22,7 @@ export function normalizeArabic(input: string): string {
     // hamza on waw / ya
     .replace(/\u0624/g, '\u0648')
     .replace(/\u0626/g, '\u064A')
+    .replace(/\s+/g, '')
     .toLowerCase()
     .trim();
 }

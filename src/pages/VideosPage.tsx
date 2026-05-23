@@ -69,15 +69,15 @@ const VIDEO_CATEGORIES: { key: string; ar: string; en: string; match: (c: string
   { key: 'classic',         ar: 'كلاسيك',           en: 'Classic',         match: (c) => /classic|كلاسيك/i.test(c),                                  order: 7  },
   { key: 'drama',           ar: 'دراما',            en: 'Drama',           match: (c) => /drama|دراما/i.test(c),                                     order: 8  },
   { key: 'slow',            ar: 'سلو',              en: 'Slow',            match: (c) => /slow|سلو/i.test(c),                                        order: 9  },
-  { key: 'romantic',        ar: 'رومانسي',          en: 'Romantic',        match: (c) => /romantic|رومانسي/i.test(c),                                order: 10 },
+  { key: 'romantic',        ar: 'رومانسي',          en: 'Romantic',        match: (c) => /romantic|رومانسي/i.test(c) && !/maqsum|مقسوم/i.test(c),    order: 10 },
   { key: 'romantic_maqsum', ar: 'رومانسي مقسوم',   en: 'Romantic Maqsum', match: (c) => /romantic maqsum|رومانسي مقسوم/i.test(c),                  order: 11 },
   { key: 'pop',             ar: 'بوب',              en: 'Pop',             match: (c) => /pop|بوب/i.test(c),                                         order: 12 },
   { key: 'rock',            ar: 'روك',              en: 'Rock',            match: (c) => /rock|روك/i.test(c),                                        order: 13 },
-  { key: 'maqsum',          ar: 'مقسوم',            en: 'Maqsum',          match: (c) => /maqsum|مقسوم/i.test(c),                                    order: 14 },
+  { key: 'maqsum',          ar: 'مقسوم',            en: 'Maqsum',          match: (c) => /maqsum|مقسوم/i.test(c) && !/romantic|رومانسي/i.test(c),    order: 14 },
   { key: 'tarab',           ar: 'طرب',              en: 'Tarab',           match: (c) => /tarab|طرب/i.test(c),                                       order: 15 },
   { key: 'shaabi',          ar: 'شعبي',             en: 'Shaabi',          match: (c) => /shaabi|شعبي/i.test(c),                                     order: 16 },
   { key: 'saidi',           ar: 'صعيدي',            en: "Sa'idi",          match: (c) => /sa'idi|saidi|صعيدي/i.test(c),                              order: 17 },
-  { key: 'rap',             ar: 'راب',              en: 'Rap',             match: (c) => /rap|راب/i.test(c),                                         order: 18 },
+  { key: 'rap',             ar: 'راب',              en: 'Rap',             match: (c) => /rap|راب/i.test(c) && !/trap|تراب/i.test(c),                order: 18 },
   { key: 'trap',            ar: 'تراب',             en: 'Trap',            match: (c) => /trap|تراب/i.test(c),                                       order: 19 },
 ];
 
@@ -631,6 +631,28 @@ const VideosPage = () => {
           font-weight: bold;
         }
 
+        .views-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          background: rgba(201, 168, 76, 0.12);
+          border: 1px solid rgba(201, 168, 76, 0.35);
+          color: #c9a84c;
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-weight: bold;
+          font-size: 13px;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+          flex-shrink: 0;
+          font-family: 'Almarai', 'Outfit', sans-serif;
+        }
+        .views-badge:hover {
+          background: rgba(201, 168, 76, 0.25);
+          border-color: #c9a84c;
+          transform: translateY(-1px);
+        }
+
         .views-stars-row {
           display: flex; align-items: center; justify-content: space-between;
           margin-top: 20px;
@@ -757,7 +779,7 @@ Regardless of who sang these melodies, the goal is to convey the melody to you a
             <CardFloatingNotes seed={video.id} />
             
             {isAdmin && (
-              <div className="absolute top-4 left-4 z-50 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute top-6 left-1/2 -translate-x-1/2 z-50 flex gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/60 p-2 rounded-2xl backdrop-blur-md border border-white/10 shadow-2xl scale-95 group-hover:scale-100">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();

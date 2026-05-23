@@ -52,28 +52,27 @@ const CardFloatingNotes = ({ seed }: { seed: number }) => {
   );
 };
 
-// ─── Categories ──────────────────────────────────────────────────────────────
 const SONG_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean; order: number }[] = [
-  { key: 'all',             ar: 'الكل',             en: 'All',              match: () => true,                                                       order: 0  },
-  { key: 'islamic',         ar: 'إسلامي',           en: 'Islamic',          match: (c) => /islamic|إسلامي/i.test(c),                                order: 1  },
-  { key: 'patriotic',       ar: 'وطني',             en: 'Patriotic',        match: (c) => /patriotic|وطني/i.test(c),                                 order: 2  },
-  { key: 'social',          ar: 'اجتماعي وعائلي',   en: 'Social & Family',  match: (c) => /social|family|اجتماعي|عائلي/i.test(c),                  order: 3  },
-  { key: 'occasion',        ar: 'مناسبات وأعياد',   en: 'Occasion & Holiday', match: (c) => /occasion|holiday|مناسبات|أعياد/i.test(c),            order: 4  },
-  { key: 'motivational',    ar: 'تحفيزية',          en: 'Motivational',     match: (c) => /motivational|تحفيزية|تحفيز/i.test(c),                    order: 5  },
-  { key: 'poems',           ar: 'قصائد',            en: 'Poems',            match: (c) => /poems|قصائد|قصيدة/i.test(c),                              order: 6  },
-  { key: 'classic',         ar: 'كلاسيك',           en: 'Classic',          match: (c) => /classic|كلاسيك/i.test(c),                                 order: 7  },
-  { key: 'drama',           ar: 'دراما',            en: 'Drama',            match: (c) => /drama|دراما/i.test(c),                                    order: 8  },
-  { key: 'slow',            ar: 'سلو',              en: 'Slow',             match: (c) => /slow|سلو/i.test(c),                                       order: 9  },
-  { key: 'romantic',        ar: 'رومانسي',          en: 'Romantic',         match: (c) => /^رومانسي$/i.test(c.trim()),                               order: 10 },
-  { key: 'romantic_maqsum', ar: 'رومانسي مقسوم',   en: 'Romantic Maqsum',  match: (c) => /رومانسي مقسوم/i.test(c),                                 order: 11 },
-  { key: 'pop',             ar: 'بوب',              en: 'Pop',              match: (c) => /pop|بوب/i.test(c),                                        order: 12 },
-  { key: 'rock',            ar: 'روك',              en: 'Rock',             match: (c) => /rock|روك/i.test(c),                                       order: 13 },
-  { key: 'maqsum',          ar: 'مقسوم',            en: 'Maqsum',           match: (c) => /^مقسوم$/i.test(c.trim()),                                 order: 14 },
-  { key: 'tarab',           ar: 'طرب',              en: 'Tarab',            match: (c) => /tarab|طرب/i.test(c),                                      order: 15 },
-  { key: 'shaabi',          ar: 'شعبي',             en: 'Shaabi',           match: (c) => /shaabi|شعبي/i.test(c),                                    order: 16 },
-  { key: 'saidi',           ar: 'صعيدي',            en: "Sa'idi",           match: (c) => /sa'idi|saidi|صعيدي/i.test(c),                             order: 17 },
-  { key: 'rap',             ar: 'راب',              en: 'Rap',              match: (c) => /^راب$/i.test(c.trim()),                                   order: 18 },
-  { key: 'trap',            ar: 'تراب',             en: 'Trap',             match: (c) => /trap|تراب/i.test(c),                                      order: 19 },
+  { key: 'all',             ar: 'الكل',             en: 'All',             match: () => true,                                                        order: 0  },
+  { key: 'islamic',         ar: 'إسلامي',           en: 'Islamic',         match: (c) => /islamic|إسلامي/i.test(c),                                 order: 1  },
+  { key: 'patriotic',       ar: 'وطني',             en: 'Patriotic',       match: (c) => /patriotic|وطني/i.test(c),                                  order: 2  },
+  { key: 'social',          ar: 'اجتماعي وعائلي',   en: 'Social & Family', match: (c) => /social|family|اجتماعي|عائلي/i.test(c),                   order: 3  },
+  { key: 'occasion',        ar: 'مناسبات وأعياد',   en: 'Occasion & Holiday', match: (c) => /occasion|holiday|مناسبات|أعياد/i.test(c),             order: 4  },
+  { key: 'motivational',    ar: 'تحفيزية',          en: 'Motivational',    match: (c) => /motivational|تحفيزية|تحفيز/i.test(c),                     order: 5  },
+  { key: 'poems',           ar: 'قصائد',            en: 'Poems',           match: (c) => /poems|قصائد|قصيدة/i.test(c),                               order: 6  },
+  { key: 'classic',         ar: 'كلاسيك',           en: 'Classic',         match: (c) => /classic|كلاسيك/i.test(c),                                  order: 7  },
+  { key: 'drama',           ar: 'دراما',            en: 'Drama',           match: (c) => /drama|دراما/i.test(c),                                     order: 8  },
+  { key: 'slow',            ar: 'سلو',              en: 'Slow',            match: (c) => /slow|سلو/i.test(c),                                        order: 9  },
+  { key: 'romantic',        ar: 'رومانسي',          en: 'Romantic',        match: (c) => /romantic|رومانسي/i.test(c) && !/maqsum|مقسوم/i.test(c),    order: 10 },
+  { key: 'romantic_maqsum', ar: 'رومانسي مقسوم',   en: 'Romantic Maqsum', match: (c) => /romantic maqsum|رومانسي مقسوم/i.test(c),                  order: 11 },
+  { key: 'pop',             ar: 'بوب',              en: 'Pop',             match: (c) => /pop|بوب/i.test(c),                                         order: 12 },
+  { key: 'rock',            ar: 'روك',              en: 'Rock',            match: (c) => /rock|روك/i.test(c),                                        order: 13 },
+  { key: 'maqsum',          ar: 'مقسوم',            en: 'Maqsum',          match: (c) => /maqsum|مقسوم/i.test(c) && !/romantic|رومانسي/i.test(c),    order: 14 },
+  { key: 'tarab',           ar: 'طرب',              en: 'Tarab',           match: (c) => /tarab|طرب/i.test(c),                                       order: 15 },
+  { key: 'shaabi',          ar: 'شعبي',             en: 'Shaabi',          match: (c) => /shaabi|شعبي/i.test(c),                                     order: 16 },
+  { key: 'saidi',           ar: 'صعيدي',            en: "Sa'idi",          match: (c) => /sa'idi|saidi|صعيدي/i.test(c),                              order: 17 },
+  { key: 'rap',             ar: 'راب',              en: 'Rap',             match: (c) => /rap|راب/i.test(c) && !/trap|تراب/i.test(c),                order: 18 },
+  { key: 'trap',            ar: 'تراب',             en: 'Trap',            match: (c) => /trap|تراب/i.test(c),                                       order: 19 },
 ];
 
 function getCategoryOrder(type: string): number {
@@ -711,7 +710,7 @@ const LyricsPage = () => {
               <div key={song.id} id={`card-${song.id}`} className="lyrics-card relative group">
                 <CardFloatingNotes seed={song.id} />
                 {isAdmin && (
-                  <div className="absolute top-4 left-4 z-50 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute top-6 left-1/2 -translate-x-1/2 z-50 flex gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/60 p-2 rounded-2xl backdrop-blur-md border border-white/10 shadow-2xl scale-95 group-hover:scale-100">
                     <button
                       onClick={(e) => {
                         e.stopPropagation();

@@ -6,14 +6,34 @@ import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Eye, Edit, Trash2 } from 'lucide-react';
 
-const MEL_CATEGORIES: { key: string; label: string; match: (t: string) => boolean }[] = [
-  { key: 'all',      label: 'الكل',     match: () => true },
-  { key: 'romantic', label: 'رومانسي', match: (t) => /رومانسي|رمانسي|سلو/.test(t) },
-  { key: 'pop',      label: 'بوب',      match: (t) => /بوب/.test(t) },
-  { key: 'maqsum',   label: 'مقسوم',    match: (t) => /مقسوم/.test(t) },
-  { key: 'shaabi',   label: 'شعبي',     match: (t) => /شعبي/.test(t) },
-  { key: 'social',   label: 'اجتماعي', match: (t) => /اجتماعي|إجتماعي/.test(t) },
+const MEL_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean; order: number }[] = [
+  { key: 'all',             ar: 'الكل',             en: 'All',             match: () => true,                                                        order: 0  },
+  { key: 'islamic',         ar: 'إسلامي',           en: 'Islamic',         match: (c) => /islamic|إسلامي/i.test(c),                                 order: 1  },
+  { key: 'patriotic',       ar: 'وطني',             en: 'Patriotic',       match: (c) => /patriotic|وطني/i.test(c),                                  order: 2  },
+  { key: 'social',          ar: 'اجتماعي وعائلي',   en: 'Social & Family', match: (c) => /social|family|اجتماعي|عائلي/i.test(c),                   order: 3  },
+  { key: 'occasion',        ar: 'مناسبات وأعياد',   en: 'Occasion & Holiday', match: (c) => /occasion|holiday|مناسبات|أعياد/i.test(c),             order: 4  },
+  { key: 'motivational',    ar: 'تحفيزية',          en: 'Motivational',    match: (c) => /motivational|تحفيزية|تحفيز/i.test(c),                     order: 5  },
+  { key: 'poems',           ar: 'قصائد',            en: 'Poems',           match: (c) => /poems|قصائد|قصيدة/i.test(c),                               order: 6  },
+  { key: 'classic',         ar: 'كلاسيك',           en: 'Classic',         match: (c) => /classic|كلاسيك/i.test(c),                                  order: 7  },
+  { key: 'drama',           ar: 'دراما',            en: 'Drama',           match: (c) => /drama|دراما/i.test(c),                                     order: 8  },
+  { key: 'slow',            ar: 'سلو',              en: 'Slow',            match: (c) => /slow|سلو/i.test(c),                                        order: 9  },
+  { key: 'romantic',        ar: 'رومانسي',          en: 'Romantic',        match: (c) => /romantic|رومانسي/i.test(c) && !/maqsum|مقسوم/i.test(c),    order: 10 },
+  { key: 'romantic_maqsum', ar: 'رومانسي مقسوم',   en: 'Romantic Maqsum', match: (c) => /romantic maqsum|رومانسي مقسوم/i.test(c),                  order: 11 },
+  { key: 'pop',             ar: 'بوب',              en: 'Pop',             match: (c) => /pop|بوب/i.test(c),                                         order: 12 },
+  { key: 'rock',            ar: 'روك',              en: 'Rock',            match: (c) => /rock|روك/i.test(c),                                        order: 13 },
+  { key: 'maqsum',          ar: 'مقسوم',            en: 'Maqsum',          match: (c) => /maqsum|مقسوم/i.test(c) && !/romantic|رومانسي/i.test(c),    order: 14 },
+  { key: 'tarab',           ar: 'طرب',              en: 'Tarab',           match: (c) => /tarab|طرب/i.test(c),                                       order: 15 },
+  { key: 'shaabi',          ar: 'شعبي',             en: 'Shaabi',          match: (c) => /shaabi|شعبي/i.test(c),                                     order: 16 },
+  { key: 'saidi',           ar: 'صعيدي',            en: "Sa'idi",          match: (c) => /sa'idi|saidi|صعيدي/i.test(c),                              order: 17 },
+  { key: 'rap',             ar: 'راب',              en: 'Rap',             match: (c) => /rap|راب/i.test(c) && !/trap|تراب/i.test(c),                order: 18 },
+  { key: 'trap',            ar: 'تراب',             en: 'Trap',            match: (c) => /trap|تراب/i.test(c),                                       order: 19 },
 ];
+
+/** ترتيب رقمي للفئة بحسب قائمة الأولويات */
+function getCategoryOrder(category: string): number {
+  const match = MEL_CATEGORIES.find((c) => c.key !== 'all' && c.match(category || ''));
+  return match ? match.order : 99;
+}
 
 /** Converts Google Drive sharing / open links to direct download URLs. Leaves other URLs unchanged. */
 function toDriveDirectDownloadUrl(url: string): string {
@@ -40,246 +60,16 @@ function toDriveDirectDownloadUrl(url: string): string {
 }
 
 export const allSongs = [
-  {
-    id: 1,
-    title: "حلّ إيجابي",
-    type: "مقسوم رومانسي",
-    audioUrls: [
-      "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776497771/La7n_7all_Egaby_tedj3g.mp3",
-    ],
-    coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002508/%D8%AD%D9%84_%D8%A7%D9%8A%D8%AC%D8%A7%D8%A8%D9%8A_avn3ul.png",
-    views: "0 ",
-    credits: "كلمات وألحان : محمد رمزي",
-    lyrics: [
-          { text: "وعاوزني أنساك ومفكّر .. أن النسيان سهل وعادي", red: false },
-          { text: "طب دا أنت كمان شايف أن .. بُعدنا هيكون حل إيجابي", red: false },
-          { text: "\u00A0", red: false },
-        
-          { text: "وكأنك ولا مره هويت .. ولا قلبك دق وحبيت", red: false },
-          { text: "و كأن اللي ما بينا دا كان .. حبت كلام وحواديت", red: false },
-          { text: "\u00A0", red: false },
-        
-          { text: "وهتيجي مين بقا رحتي", red: true },
-          { text: "طول ما أنت سايبني لوحدي", red: true },
-          { text: "والعمر علينا بيعدي ", red: true },
-          { text: " وأحنا لسه متفارقين", red: true },
-          { text: "\u00A0", red: false },
-        
-          { text: "نفسي أعرف أيه سبب بُعدك", red: true },
-          { text: "وإن كنت أنا اللي زعلتك", red: true },
-          { text: "أرجع يا حبيبي وأنا أصالحك", red: true },
-          { text: "وإعتب علي قلبي براحتك ", red: true },
-          { text: " لكن متسبنيش بين البنين", red: true },
-          { text: "\u00A0", red: false },
-        
-          { text: "رغم المسافات بفتكرك .. دا أحنا ما بينا أحلي ليالي", red: false },
-          { text: "أعمل أيه عشان أثبتلك .. أن أنت دائماً علي بالي", red: false },
-          { text: "\u00A0", red: false },
-        
-          { text: "علي بالي ولا مره بتغيب .. ولُقانا كان أحلي نصيب", red: false },
-          { text: "مكنتش بحس بأمان .. غير وأنا واياك بالتحديد", red: false },
-         ],
-          critics: ["الكلمات مبهره واللحن متناغم", " الأغنية مناسبة لصوت عمرو دياب",]
-  },
-  {
-    id: 2,
-    title:"بلاش تضيّع وقت",
-    type: "مقسوم شعبي",
-    audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776499405/La7n_Balash_Teday3_Wa2t_v2g8he.mp3" ],
-    coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002445/%D8%A8%D9%84%D8%A7%D8%B4_%D8%AA%D8%B6%D9%8A%D8%B9_%D9%88%D9%82%D8%AA_c025nn.png",
-    views: "0 K",
-    credits: "كلمات وألحان : محمد رمزي",
-    lyrics: [
-      { text: "قال يعني بقى فارق لك بعدي.. وبقيت مهتم", red: false },
-      { text: "وفاكرني هفوت وهعدي.. وجرحي دا هيلم", red: false },
-      { text: "وانا اللي جابرني ارجع تاني.. بدل ما حرقت دم", red: false },
-      { text: "مبقاش في حاجة ما بينا.. خلاص وكفاية بقا غم", red: false },
-      { text: "\u00A0", red: false },
-    
-      { text: "فبلاش يعني تضيع وقت.. في كلام مالوش عازة", red: true },
-      { text: "بصراحة كدا انا مصدقت.. من الهم اخد اجازة", red: true },
-      { text: "لو انا عندك كنت فرقت.. مكنش القلب قاسي", red: true },
-      { text: "معرفش ايه بس الذنب.. اللي عليه بتجازة", red: true },
-      { text: "\u00A0", red: false },
-    
-      { text: "العيب عندك لا مش عندي.. انا مش غلطان", red: false },
-      { text: "انتي اللي وافقت انك تدخل.. في سباق خسران", red: false },
-      { text: "انا مرتاح من يوم ما فارقتك.. لا مش زعلان", red: false },
-      { text: "مدخلش عليا خالص.. موضوع انك ندمان", red: false },
-      { text: "\u00A0", red: false },
-    
-      { text: "فبلاش يعني تضيع وقت.. في كلام مالوش عازة", red: true },
-      { text: "بصراحة كدا انا مصدقت.. من الهم اخد اجازة", red: true },
-      { text: "لو انا عندك كنت فرقت.. مكنش القلب قاسي", red: true },
-      { text: "معرفش ايه بس الذنب.. اللي عليه بتجازة", red: true },
-    ],
-    critics: ["كلمات خفيفة وبسيطة","الاغنية مناسبة لصوت حمزه نميره "]
-  },
-  {
-    id: 3,
-    title: "لو سمحتي",
-    duet: false,
-    type: "رومانسي ",
-    audioUrls: [ "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776497771/La7n_Law_Sama7ty_e2v44y.mp3"],
-    coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002460/%D9%84%D9%88_%D8%B3%D9%85%D8%AD%D8%AA%D9%8A_le90qa.png",
-    views: "0 K",
-    credits: "كلمات وألحان : محمد رمزي",
-    lyrics: [
-      { text: "لو سمحتي فيه سؤال", red: false },
-      { text: "نفسي اني اسأله ليكي", red: false },
-      { text: "ليه تملي ببقا حابب", red: false },
-      { text: "اني اطمن عليكي", red: false },
-      { text: "ليه دخلتي جوا قلبي", red: false },
-      { text: "وخلتيني اتعلق بيكي", red: false },
-      { text: "\u00A0", red: false },
-    
-      { text: "هو ليه كل اما اشوفك", red: false },
-      { text: "ببقا نفسي المس ايديكي", red: false },
-      { text: "طب ليه بقا بيبان كسوفك", red: false},
-      { text: "لما عيني تشوف عيناكي", red: false },
-      { text: "\u00A0", red: false },
-    
-      { text: "جوبيني ارجوكي جوبيني", red: true },
-      { text: "رسيني علي بر رسيني", red: true},
-      { text: "يا احلي ما رأت عيني", red: true},
-      { text: "اه يا فرحة عمري وسنيني", red: true },
-      { text: "\u00A0", red: false },
-    
-      { text: "وريني الحب وريني", red: true },
-      { text: "علي بحر العشق عديني", red: true },
-      { text: "نسيني الحزن نسيني", red: true },
-      { text: "وبلاش ولا لحظه نسيبيني", red: true },
-      { text: "\u00A0", red: false },
-    
-      { text: "البرئه والجرائه", red: false },
-      { text: "من الحاجات الحلوه فيكي", red: false },
-      { text: "عوزه رأيي وبصراحه", red: false },
-      { text: "بالغالي انا مشتريكي", red: false },
-      { text: "\u00A0", red: false },
-    
-      { text: "خدتي قلبي وبجداره", red: false },
-      { text: "ايوه انا لازم اهنيكي", red: false},
-      { text: "ياللي كل لما اشوفك", red: false },
-      { text: "بدعي ربي انه يخليكي", red: false },
-    ],
-    critics: ["كلمات مُبهجة", "مناسبة لصوت رامي صبري "]
-  },
-  {
-    id: 4,
-    title: "كاريزما",
-    duet: false,
-    type: "رمانسي  بوب",
-    audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776497772/La7n_Karisma_xy6kom.mp3"],
-    coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002492/%D9%83%D8%A7%D8%B1%D9%8A%D8%B2%D9%85%D8%A7_naciz8.png",
-    views: "0 K",
-    credits: "كلمات وألحان : محمد رمزي",
-    lyrics: [
-      { text: "دي كاريزما.. وعليها كام لازمة؟", red: false },
-      { text: "احلاهم.. بصراحة الغمزة.. اللي تملي تسحرني", red: false },
-      { text: "\u00A0", red: false },
-    
-      { text: "اه يا عيني.. عيني على الضحكة", red: false },
-      { text: "عسولة اوي ومفيش منها", red: false },
-      { text: " طب دا انا كل ما ابص لها.. على طول بتدخل قلبي", red: false },
-      { text: "\u00A0", red: false },
-    
-      { text: "انا بعترف.. اني حبيتها", red: false },
-      { text: "وخلاص روحي بقت بيتها.. شغلاني ولا لحظة نسيتها", red: false },
-      { text: " ازاي هنساها انا يعني؟", red: false },
-      { text: "\u00A0", red: false },
-      
-      { text: "انا نفسي طويل ومستني", red: true },
-      { text: "حبيبي الغالي يسمح لي", red: true },
-      { text: "اكون في حياته", red: true },
-      { text: " واعيش باقي وقتي معاه", red: true },
-      { text: "\u00A0", red: false },
-      { text: "بشتاق له ونفسي يشتاق لي", red: true },
-      { text: "واشغل باله زي ما شغلني", red: true },
-      { text: "ياما سنين فاتوا من قبله", red: true },
-      { text: "كان فيهم ماساه", red: true },
-      { text: "\u00A0", red: false },
-    
-      { text: "براحتها.. تتقل براحتها", red: false },
-      { text: "اصل انتو مشفتوش براءتها.. ولا لون شعرها ولا قصتها", red: false },
-      { text: " كل المقاييس دي قفلتها", red: false },
-      { text: "\u00A0", red: false },
-    
-      { text: "كعبها.. عليه رنت خلخال", red: false },
-      { text: "وملفوف في الايد انسيال.. لا مفيش بعد دا جمال!", red: false },
-      { text: " كدا فل وعال", red: false },
-      { text: "\u00A0", red: false },
-    
-      { text: "دي شخصية.. مش طبيعية", red: false },
-      { text: "عفوية وكمان حنية.. معدية وردة مصرية", red: false },
-      { text: " وبنسبة 100x100", red: false },
-    ],
-    critics: ["كلمات مُعبرة", "مناسبة لصوت محمد حماقي "]
-  },
-  {
-    id: 5,
-    title: "حبيبي الغالي",
-    type: "سلو رومانسي",
-    audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776984263/%D8%AD%D8%A8%D9%8A%D8%A8%D9%8A_%D8%A7%D9%84%D8%BA%D8%A7%D9%84%D9%8A_fxttez.mp3"],
-    coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002417/%D8%AD%D8%A8%D9%8A%D8%A8%D9%8A_%D8%A7%D9%84%D8%BA%D8%A7%D9%84%D9%8A_rygq4p.png",
-    views: "0 K",
-    credits: "كلمات وألحان : محمد رمزي",
-    lyrics: [
-      { text: "علي طول جوايا كلام", red: false },
-      { text: "معرفش ازاي اداريه", red: false },
-      { text: "\u00A0", red: false },
-      { text: "انا عمري في يوم ما انساه", red: false },
-      { text: "لو حتي هيحصل ايه", red: false },
-      { text: "\u00A0", red: false },
-      { text: "ومعذب فكري", red: false },
-      { text: "الخوف من اني مبقاش ليه", red: false },
-      { text: "\u00A0", red: false },
-      { text: "وانا مهما يعيد ويقول", red: false },
-      { text: "هفضل برضه ابقي عليه", red: false },
-      { text: "\u00A0", red: false },
-      
-      { text: "دا حبيبي", red: true },
-      { text: "وغالي عندي وكل يوم بحبه اكثر", red: true },
-      { text: "\u00A0", red: false },
-      { text: "لو ليله بعد عني", red: true },
-      { text: "مقدرش اني في غيره افكر", red: true },
-      { text: "\u00A0", red: false },
-      { text: "بيزيد وصفي وكلامي عنه", red: true },
-      { text: "وبيزيد اكير في تفاصيله", red: true },
-      { text: "\u00A0", red: false },
-      { text: "دا انا قلبي بيطمن يادوب لما", red: true },
-      { text: "لما بس بشوف عينه", red: true },
-      { text: "\u00A0", red: false },
-    
-      { text: "دا حبيبي الغالي", red: true },
-      { text: "حبيبي الغالي حبيبي وروحي كمان", red: true },
-      { text: "دا في كل دقيقه", red: true },
-      { text: "في كل ثواني بشوفه في كل مكان", red: true},
-      { text: "\u00A0", red: false }, 
-      
-      { text: "وبحس اني", red: false },
-      { text: "بطير واسرح بخيالي في وسط سماه", red: false},
-      { text: "\u00A0", red: false }, 
-      { text: "سحرتني عيناه", red: false},
-      { text: "وارتاحت انا لي وكأن وجوده حياه", red: false },
-      { text: "\u00A0", red: false }, 
-      { text: "سلمت اليه", red: false },
-      { text: "روحي دابت فيه ضحكت لي الدنيا معاه", red: false },
-      { text: "\u00A0", red: false }, 
-      { text: "والايام بيه", red: false },
-      { text: "بقت تحلي والعين عشقاه وبقيت مغرم بهواه", red: false},
-    ],
-    critics: ["الكلمات مُعبرة","اللحن مختلف ","مناسبة لصوت تامر عاشور"]
-  },
+  // ─── 7: كلاسيك ────────────────────────────────────────────────────────────
   {
     id: 6,
-    title: "وعدّي الليل ",
-    type: "رومانسي كلاسي",
+    title: "وعدّي الليل",
+    type: "كلاسيك",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776984263/%D8%B1%D9%88%D8%AD%D9%8A_%D9%85%D8%B4%D8%AA%D8%A7%D9%82%D9%87_umhqr8.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002997/%D9%88%D8%B9%D8%AF%D9%8A_%D8%A7%D9%84%D9%84%D9%8A%D9%84_uxgnfs.png",
     views: "0 K",
-    credits: "كلمات وألحان : محمد رمزي",
     lyrics: [
-      { text: "مقطع من أغنية و عدّي الليل", red: true},
+      { text: "مقطع من أغنية وعدّي الليل", red: true },
       { text: "\u00A0", red: false },
       { text: "دا روحي مشتاقه له", red: false },
       { text: "وهوا مش في باله", red: false },
@@ -299,7 +89,207 @@ export const allSongs = [
       { text: "الاقي الناس يقولوه", red: true },
       { text: "حبيبك له مقامه", red: true },
     ],
-    critics: ["الكلمات دقيقة في التعبير"]
+  },
+  // ─── 9: سلو ───────────────────────────────────────────────────────────────
+  {
+    id: 5,
+    title: "حبيبي الغالي",
+    type: "سلو",
+    audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776984263/%D8%AD%D8%A8%D9%8A%D8%A8%D9%8A_%D8%A7%D9%84%D8%BA%D8%A7%D9%84%D9%8A_fxttez.mp3"],
+    coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002417/%D8%AD%D8%A8%D9%8A%D8%A8%D9%8A_%D8%A7%D9%84%D8%BA%D8%A7%D9%84%D9%8A_rygq4p.png",
+    views: "0 K",
+    lyrics: [
+      { text: "علي طول جوايا كلام", red: false },
+      { text: "معرفش ازاي اداريه", red: false },
+      { text: "\u00A0", red: false },
+      { text: "انا عمري في يوم ما انساه", red: false },
+      { text: "لو حتي هيحصل ايه", red: false },
+      { text: "\u00A0", red: false },
+      { text: "ومعذب فكري", red: false },
+      { text: "الخوف من اني مبقاش ليه", red: false },
+      { text: "\u00A0", red: false },
+      { text: "وانا مهما يعيد ويقول", red: false },
+      { text: "هفضل برضه ابقي عليه", red: false },
+      { text: "\u00A0", red: false },
+      { text: "دا حبيبي", red: true },
+      { text: "وغالي عندي وكل يوم بحبه اكثر", red: true },
+      { text: "\u00A0", red: false },
+      { text: "لو ليله بعد عني", red: true },
+      { text: "مقدرش اني في غيره افكر", red: true },
+      { text: "\u00A0", red: false },
+      { text: "بيزيد وصفي وكلامي عنه", red: true },
+      { text: "وبيزيد اكير في تفاصيله", red: true },
+      { text: "\u00A0", red: false },
+      { text: "دا انا قلبي بيطمن يادوب لما", red: true },
+      { text: "لما بس بشوف عينه", red: true },
+      { text: "\u00A0", red: false },
+      { text: "دا حبيبي الغالي", red: true },
+      { text: "حبيبي الغالي حبيبي وروحي كمان", red: true },
+      { text: "دا في كل دقيقه", red: true },
+      { text: "في كل ثواني بشوفه في كل مكان", red: true },
+      { text: "\u00A0", red: false },
+      { text: "وبحس اني", red: false },
+      { text: "بطير واسرح بخيالي في وسط سماه", red: false },
+      { text: "\u00A0", red: false },
+      { text: "سحرتني عيناه", red: false },
+      { text: "وارتاحت انا لي وكأن وجوده حياه", red: false },
+      { text: "\u00A0", red: false },
+      { text: "سلمت اليه", red: false },
+      { text: "روحي دابت فيه ضحكت لي الدنيا معاه", red: false },
+      { text: "\u00A0", red: false },
+      { text: "والايام بيه", red: false },
+      { text: "بقت تحلي والعين عشقاه وبقيت مغرم بهواه", red: false },
+    ],
+  },
+  // ─── 10: رومانسي ──────────────────────────────────────────────────────────
+  {
+    id: 3,
+    title: "لو سمحتي",
+    duet: false,
+    type: "رومانسي",
+    audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776497771/La7n_Law_Sama7ty_e2v44y.mp3"],
+    coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002460/%D9%84%D9%88_%D8%B3%D9%85%D8%AD%D8%AA%D9%8A_le90qa.png",
+    views: "0 K",
+    lyrics: [
+      { text: "لو سمحتي فيه سؤال", red: false },
+      { text: "نفسي اني اسأله ليكي", red: false },
+      { text: "ليه تملي ببقا حابب", red: false },
+      { text: "اني اطمن عليكي", red: false },
+      { text: "ليه دخلتي جوا قلبي", red: false },
+      { text: "وخلتيني اتعلق بيكي", red: false },
+      { text: "\u00A0", red: false },
+      { text: "هو ليه كل اما اشوفك", red: false },
+      { text: "ببقا نفسي المس ايديكي", red: false },
+      { text: "طب ليه بقا بيبان كسوفك", red: false },
+      { text: "لما عيني تشوف عيناكي", red: false },
+      { text: "\u00A0", red: false },
+      { text: "جوبيني ارجوكي جوبيني", red: true },
+      { text: "رسيني علي بر رسيني", red: true },
+      { text: "يا احلي ما رأت عيني", red: true },
+      { text: "اه يا فرحة عمري وسنيني", red: true },
+      { text: "\u00A0", red: false },
+      { text: "وريني الحب وريني", red: true },
+      { text: "علي بحر العشق عديني", red: true },
+      { text: "نسيني الحزن نسيني", red: true },
+      { text: "وبلاش ولا لحظه نسيبيني", red: true },
+      { text: "\u00A0", red: false },
+      { text: "البرئه والجرائه", red: false },
+      { text: "من الحاجات الحلوه فيكي", red: false },
+      { text: "عوزه رأيي وبصراحه", red: false },
+      { text: "بالغالي انا مشتريكي", red: false },
+      { text: "\u00A0", red: false },
+      { text: "خدتي قلبي وبجداره", red: false },
+      { text: "ايوه انا لازم اهنيكي", red: false },
+      { text: "ياللي كل لما اشوفك", red: false },
+      { text: "بدعي ربي انه يخليكي", red: false },
+    ],
+  },
+  // ─── 11: رومانسي مقسوم ────────────────────────────────────────────────────
+  {
+    id: 4,
+    title: "كاريزما",
+    duet: false,
+    type: "رومانسي مقسوم",
+    audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776497772/La7n_Karisma_xy6kom.mp3"],
+    coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002492/%D9%83%D8%A7%D8%B1%D9%8A%D8%B2%D9%85%D8%A7_naciz8.png",
+    views: "0 K",
+    lyrics: [
+      { text: "دي كاريزما.. وعليها كام لازمة؟", red: false },
+      { text: "احلاهم.. بصراحة الغمزة.. اللي تملي تسحرني", red: false },
+      { text: "\u00A0", red: false },
+      { text: "اه يا عيني.. عيني على الضحكة", red: false },
+      { text: "عسولة اوي ومفيش منها", red: false },
+      { text: " طب دا انا كل ما ابص لها.. على طول بتدخل قلبي", red: false },
+      { text: "\u00A0", red: false },
+      { text: "انا بعترف.. اني حبيتها", red: false },
+      { text: "وخلاص روحي بقت بيتها.. شغلاني ولا لحظة نسيتها", red: false },
+      { text: " ازاي هنساها انا يعني?", red: false },
+      { text: "\u00A0", red: false },
+      { text: "انا نفسي طويل ومستني", red: true },
+      { text: "حبيبي الغالي يسمح لي", red: true },
+      { text: "اكون في حياته", red: true },
+      { text: " واعيش باقي وقتي معاه", red: true },
+      { text: "\u00A0", red: false },
+      { text: "بشتاق له ونفسي يشتاق لي", red: true },
+      { text: "واشغل باله زي ما شغلني", red: true },
+      { text: "ياما سنين فاتوا من قبله", red: true },
+      { text: "كان فيهم ماساه", red: true },
+      { text: "\u00A0", red: false },
+      { text: "براحتها.. تتقل براحتها", red: false },
+      { text: "اصل انتو مشفتوش براءتها.. ولا لون شعرها ولا قصتها", red: false },
+      { text: " كل المقاييس دي قفلتها", red: false },
+      { text: "\u00A0", red: false },
+      { text: "كعبها.. عليه رنت خلخال", red: false },
+      { text: "وملفوف في الايد انسيال.. لا مفيش بعد دا جمال!", red: false },
+      { text: " كدا فل وعال", red: false },
+      { text: "\u00A0", red: false },
+      { text: "دي شخصية.. مش طبيعية", red: false },
+      { text: "عفوية وكمان حنية.. معدية وردة مصرية", red: false },
+      { text: " وبنسبة 100x100", red: false },
+    ],
+  },
+  // ─── 15: طرب ─────────────────────────────────────────────────────────────
+  {
+    id: 1,
+    title: "حلّ إيجابي",
+    type: "طرب",
+    audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776497771/La7n_7all_Egaby_tedj3g.mp3"],
+    coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002508/%D8%AD%D9%84_%D8%A7%D9%8اي%D8%AC%D8%A7%D8%A8%D9%8A_avn3ul.png",
+    views: "0 ",
+    lyrics: [
+      { text: "وعاوزني أنساك ومفكّر .. أن النسيان سهل وعادي", red: false },
+      { text: "طب دا أنت كمان شايف أن .. بُعدنا هيكون حل إيجابي", red: false },
+      { text: "\u00A0", red: false },
+      { text: "وكأنك ولا مره هويت .. ولا قلبك دق وحبيت", red: false },
+      { text: "و كأن اللي ما بينا دا كان .. حبت كلام وحواديت", red: false },
+      { text: "\u00A0", red: false },
+      { text: "وهتيجي مين بقا رحتي", red: true },
+      { text: "طول ما أنت سايبني لوحدي", red: true },
+      { text: "والعمر علينا بيعدي ", red: true },
+      { text: " وأحنا لسه متفارقين", red: true },
+      { text: "\u00A0", red: false },
+      { text: "نفسي أعرف أيه سبب بُعدك", red: true },
+      { text: "وإن كنت أنا اللي زعلتك", red: true },
+      { text: "أرجع يا حبيبي وأنا أصالحك", red: true },
+      { text: "وإعتب علي قلبي براحتك ", red: true },
+      { text: " لكن متسبنيش بين البنين", red: true },
+      { text: "\u00A0", red: false },
+      { text: "رغم المسافات بفتكرك .. دا أحنا ما بينا أحلي ليالي", red: false },
+      { text: "أعمل أيه عشان أثبتلك .. أن أنت دائماً علي بالي", red: false },
+      { text: "\u00A0", red: false },
+      { text: "علي بالي ولا مره بتغيب .. ولُقانا كان أحلي نصيب", red: false },
+      { text: "مكنتش بحس بأمان .. غير وأنا واياك بالتحديد", red: false },
+    ],
+  },
+  // ─── 16: شعبي ─────────────────────────────────────────────────────────────
+  {
+    id: 2,
+    title: "بلاش تضيّع وقت",
+    type: "شعبي",
+    audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776499405/La7n_Balash_Teday3_Wa2t_v2g8he.mp3"],
+    coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002445/%D8%A8%D9%84%D8%A7%D8%B4_%D8%AA%D8%B6%D9%8A%D8%B9_%D9%88%D9%82%D8%AA_c025nn.png",
+    views: "0 K",
+    lyrics: [
+      { text: "قال يعني بقى فارق لك بعدي.. وبقيت مهتم", red: false },
+      { text: "وفاكرني هفوت وهعدي.. وجرحي دا هيلم", red: false },
+      { text: "وانا اللي جابرني ارجع تاني.. بدل ما حرقت دم", red: false },
+      { text: "مبقاش في حاجة ما بينا.. خلاص وكفاية بقا غم", red: false },
+      { text: "\u00A0", red: false },
+      { text: "فبلاش يعني تضيع وقت.. في كلام مالوش عازة", red: true },
+      { text: "بصراحة كدا انا مصدقت.. من الهم اخد اجازة", red: true },
+      { text: "لو انا عندك كنت فرقت.. مكنش القلب قاسي", red: true },
+      { text: "معرفش ايه بس الذنب.. اللي عليه بتجازة", red: true },
+      { text: "\u00A0", red: false },
+      { text: "العيب عندك لا مش عندي.. انا مش غلطان", red: false },
+      { text: "انتي اللي وافقت انك تدخل.. في سباق خسران", red: false },
+      { text: "انا مرتاح من يوم ما فارقتك.. لا مش زعلان", red: false },
+      { text: "مدخلش عليا خالص.. موضوع انك ندمان", red: false },
+      { text: "\u00A0", red: false },
+      { text: "فبلاش يعني تضيع وقت.. في كلام مالوش عازة", red: true },
+      { text: "بصراحة كدا انا مصدقت.. من الهم اخد اجازة", red: true },
+      { text: "لو انا عندك كنت فرقت.. مكنش القلب قاسي", red: true },
+      { text: "معرفش ايه بس الذنب.. اللي عليه بتجازة", red: true },
+    ],
   },
   {
     id: 7,
@@ -309,7 +299,6 @@ export const allSongs = [
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776497772/La7n_3ard_Khas_abovr4.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002531/%D8%B9%D8%B1%D8%B6_%D8%AE%D8%A7%D8%B5_g1a33j.png",
     views: "0 K",
-    credits: "كلمات وألحان : محمد رمزي",
     lyrics: [
       { text: "مش دا اللي كان عامل بيحبنا", red: false },
       { text: "وبدون مبرر راح وفارق قلبنا", red: false },
@@ -323,31 +312,26 @@ export const allSongs = [
       { text: "بيقول اعذار مش مقنعين ولا ينفعه", red: false },
       { text: "انا قلبي كان معاه واختار يضيعه", red: false },
       { text: "\u00A0", red: false },
-    
       { text: "بطلنا خلاص نشتري في الرخاص", red: true },
       { text: "قررنا نبيعهم وعملنا عرض خاص", red: true },
       { text: "اشتري بياع ووحيد مالوش عزاز", red: true },
       { text: "هتاخد عليهم واحد معدوم الاحساس", red: true },
       { text: "\u00A0", red: false },
-    
       { text: "كان بيقول حاجة وبيعمل عكسها", red: false },
       { text: "كان فيه شروط ماعملهاش كلها", red: false },
       { text: "\u00A0", red: false },
-      { text: "كان عامل طيب وفاكرني هصدقه", red: false }, 
+      { text: "كان عامل طيب وفاكرني هصدقه", red: false },
       { text: " واهو برضه طمعه كشفه وغرقه", red: false },
       { text: "\u00A0", red: false },
       { text: "رغم انه عارف اني بعشقه", red: false },
       { text: "دلوقتي اسمه مبقتش بنطقه", red: false },
       { text: "\u00A0", red: false },
-    
       { text: "لا مستحيل قلبنا يضعف ويميل", red: true },
       { text: "عدينا كتير واهو مطلعش اصيل", red: true },
       { text: "من اجل جنابه ياما داخل في مواويل", red: true },
       { text: "بقا دي اخرها بقا دا رد الجميل", red: true },
     ],
-    critics: ["الكلمات سهلة الحفظ","مناسبة لصوت حوده بندق"]
   },
-    
 ];
 
 
@@ -385,7 +369,7 @@ const MelodiesPage = () => {
     return {};
   });
   const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
-  
+
   const [comments, setComments] = useState<Record<number, { id: number; text: string }[]>>(() => {
     const saved = localStorage.getItem('melodies_comments');
     if (saved) {
@@ -405,24 +389,45 @@ const MelodiesPage = () => {
     localStorage.setItem('melodies_comments', JSON.stringify(comments));
   }, [comments]);
 
-  const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
   const [playingKey, setPlayingKey] = useState<string | null>(null);
   const [audioTimes, setAudioTimes] = useState<Record<string, { current: number; duration: number }>>({});
   const audioRefs = useRef<Record<string, HTMLAudioElement | null>>({});
   const [volume, setVolume] = useState(0.8);
   const [activeCat, setActiveCat] = useState('all');
 
+  const presentCategoryKeys = useMemo(() => {
+    const keys = new Set<string>();
+    allSongs.forEach((s) => {
+      const match = MEL_CATEGORIES.find((c) => c.key !== 'all' && c.match(s.type || ''));
+      if (match) keys.add(match.key);
+    });
+    return keys;
+  }, []);
+
+    const visibleCategories = useMemo(
+    () => MEL_CATEGORIES.filter((c) => c.key === 'all' || presentCategoryKeys.has(c.key)),
+    [presentCategoryKeys]
+  );
+
   const filteredSongs = useMemo(() => {
     const q = normalizeArabic(search);
     const cat = MEL_CATEGORIES.find((c) => c.key === activeCat) || MEL_CATEGORIES[0];
-    return allSongs.filter((s) => {
-      if (!cat.match(s.type || '')) return false;
-      if (!q) return true;
-      const hay = [s.title, s.type, ...(s.lyrics?.map((l) => l.text) || [])].join(' ');
-      return normalizeArabic(hay).includes(q);
-    });
+    return allSongs
+      .filter((s) => {
+        if (!cat.match(s.type || '')) return false;
+        if (!q) return true;
+        const hay = [s.title, s.type, ...(s.lyrics?.map((l) => l.text) || [])].join(' ');
+        return normalizeArabic(hay).includes(q);
+      })
+      .slice()
+      .sort((a, b) => getCategoryOrder(a.type) - getCategoryOrder(b.type));
   }, [search, activeCat]);
 
+  const getCategoryLabel = (type: string) => {
+    const matched = MEL_CATEGORIES.find((c) => c.key !== 'all' && c.match(type || ''));
+    if (matched) return lang === 'ar' ? matched.ar : matched.en;
+    return type || (lang === 'ar' ? 'عام' : 'General');
+  };
 
   const normalizeAudioUrls = (audioUrls: string[] | string | undefined): string[] => {
     if (Array.isArray(audioUrls)) return audioUrls.filter((url) => typeof url === 'string' && url.trim() !== '');
@@ -472,7 +477,7 @@ const MelodiesPage = () => {
     }));
     setNewCommentText(prev => ({ ...prev, [songId]: '' }));
     setActiveInputSongId(null);
-    
+
     setTimeout(() => {
       const el = commentsEndRefs.current[songId];
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -853,14 +858,14 @@ const MelodiesPage = () => {
           className="mb-5"
         />
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
-          {MEL_CATEGORIES.map((c) => (
+          {visibleCategories.map((c) => (
             <button
               key={c.key}
               type="button"
               className={`filter-chip ${activeCat === c.key ? 'active' : ''}`}
               onClick={() => setActiveCat(c.key)}
             >
-              {c.label}
+              {lang === 'ar' ? c.ar : c.en}
             </button>
           ))}
         </div>
@@ -871,7 +876,7 @@ const MelodiesPage = () => {
 
       {filteredSongs.map((song) => (
         <div key={song.id} id={`card-${song.id}`} className="main-card relative group">
-          
+
           {isAdmin && (
             <div className="absolute top-4 left-4 z-50 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <button
@@ -888,11 +893,11 @@ const MelodiesPage = () => {
               <button
                 onClick={async (e) => {
                   e.stopPropagation();
-                  if(window.confirm('هل أنت متأكد من حذف هذا اللحن؟')) {
-                     const evt = new CustomEvent('admin-delete-item', { detail: { id: song.id, section: 'melodies' } });
-                     window.dispatchEvent(evt);
-                     const card = document.getElementById(`card-${song.id}`);
-                     if(card) card.style.display = 'none';
+                  if (window.confirm('هل أنت متأكد من حذف هذا اللحن؟')) {
+                    const evt = new CustomEvent('admin-delete-item', { detail: { id: song.id, section: 'melodies' } });
+                    window.dispatchEvent(evt);
+                    const card = document.getElementById(`card-${song.id}`);
+                    if (card) card.style.display = 'none';
                   }
                 }}
                 className="p-2 bg-red-500/20 text-red-400 rounded-lg backdrop-blur-md border border-red-500/30 hover:bg-red-500/40 transition-colors shadow-lg"
@@ -904,11 +909,11 @@ const MelodiesPage = () => {
           )}
 
           <div className="player-side">
-            <div className="song-tag">{song.type}</div>
+            <div className="song-tag">{getCategoryLabel(song.type)}</div>
             <div className="cover-box" style={{ backgroundImage: `url(${toDriveDirectDownloadUrl(song.coverImg)})` }} />
 
             <div className="views-stars-row">
-            <div className="views-badge">
+              <div className="views-badge">
                 <Eye className="w-4 h-4 shrink-0" />
                 <span>{lang === 'ar' ? `مشاهدة ${song.views ?? '0'}` : `Views ${song.views ?? '0'}`}</span>
               </div>
@@ -1101,7 +1106,7 @@ const MelodiesPage = () => {
                         </button>
                         <button
                           onClick={() => {
-                            if(window.confirm(lang === 'ar' ? 'حذف التعليق؟' : 'Delete comment?')) {
+                            if (window.confirm(lang === 'ar' ? 'حذف التعليق؟' : 'Delete comment?')) {
                               setComments(prev => ({
                                 ...prev,
                                 [song.id]: prev[song.id].filter(c => c.id !== comment.id)

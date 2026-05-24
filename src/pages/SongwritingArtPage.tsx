@@ -571,27 +571,11 @@ const SongwritingArtPage = () => {
           transition: 0.4s;
           position: relative;
           border-radius: 6px;
+          --flame-radius: 6px;
           color: var(--swa-card-text);
           overflow: visible;
         }
 
-        /* Subtle grain texture overlay inside card */
-        .swa-card::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: repeating-linear-gradient(
-            45deg,
-            rgba(255,255,255,0.01) 0px,
-            rgba(255,255,255,0.01) 1px,
-            transparent 1px,
-            transparent 8px
-          );
-          opacity: 0.5;
-          pointer-events: none;
-          z-index: 0;
-          border-radius: 6px;
-        }
         .swa-card > * { position: relative; z-index: 1; }
 
         .swa-card:hover { border-color: var(--swa-card-gold); transform: translateY(-5px); }

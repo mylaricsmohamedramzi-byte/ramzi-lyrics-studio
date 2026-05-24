@@ -268,12 +268,12 @@ const LoginPage = () => {
           style={{
             ['--flame-radius' as any]: '2rem',
             animationDelay: '200ms',
-            background: isDark ? 'rgba(10, 10, 10, 0.95)' : 'rgba(255, 255, 255, 0.85)',
+            background: isDark ? '#0d0d0d' : '#fefefe',
             backdropFilter: 'blur(40px)',
             WebkitBackdropFilter: 'blur(40px)',
-            borderTop: isDark ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(255, 255, 255, 0.85)',
+            borderTop: isDark ? '1px solid rgba(255, 255, 255, 0.05)' : '1px solid rgba(255, 255, 255, 0.85)',
             boxShadow: isDark
-              ? '0 30px 60px -15px rgba(0,0,0,0.85), inset 0 0 30px rgba(255,255,255,0.02)'
+              ? '0 30px 60px -15px rgba(0,0,0,0.95), inset 0 0 30px rgba(255,255,255,0.01)'
               : '0 20px 40px -10px rgba(0,0,0,0.06)',
           }}
         >

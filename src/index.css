@@ -363,7 +363,10 @@
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox/* ==========================================================
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* ==========================================================
    UNIFIED FIERY IDENTITY — Global Design System
    GPU-composited only: transform, opacity, filter
    ========================================================== */

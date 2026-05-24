@@ -149,7 +149,7 @@ const StatDashboard: React.FC<StatDashboardProps> = ({ isDark, lang, t, universa
     const entryX = cx < wMid ? bLeft : bRight;
 
     // L-shape: straight down, then 90° horizontal to box
-    return `M ${cx},${cy} L ${cx},${bMidY} L ${entryX},${bMidY}`;
+    return `M ${cx},${cy} V ${bMidY} H ${entryX}`;
   };
 
   const updateLines = () => {
@@ -261,84 +261,30 @@ const StatDashboard: React.FC<StatDashboardProps> = ({ isDark, lang, t, universa
       </div>
 
       {/* ── Central Dashboard Box ── */}
-      <div ref={boxRef} className="relative flex justify-center mt-12 sm:mt-20" style={{ zIndex: 10 }}>
+      <div className="relative flex justify-center mt-12 sm:mt-20" style={{ zIndex: 10 }}>
         <TiltContainer maxRotate={IS_TOUCH ? 0 : 8} scale={IS_TOUCH ? 1 : 1.05}>
-          <div className="relative p-[2px] rounded-[2rem] overflow-hidden">
-
-            {/* ── Realistic Flame Underlay 1: Flickering Giant Glow ── */}
-            <motion.div
-              className="absolute inset-[-12px] rounded-[2.2rem] pointer-events-none"
+          {/* Main Box Wrapper with flame-border */}
+          <div
+            ref={boxRef}
+            className="relative rounded-[2rem] p-8 sm:p-12 min-w-[240px] sm:min-w-[300px] flex flex-col items-center justify-center transition-all duration-500 flame-border ember-card"
+            style={{
+              ['--flame-radius' as any]: '2rem',
+              background: isDark ? 'rgba(10,10,10,0.97)' : 'rgba(255,251,240,0.97)',
+              backdropFilter: 'blur(30px)',
+              WebkitBackdropFilter: 'blur(30px)',
+              boxShadow: isDark
+                ? '0 20px 60px rgba(255,40,0,0.25), inset 0 0 40px rgba(255,40,0,0.06)'
+                : '0 20px 60px rgba(201,132,10,0.2), inset 0 0 40px rgba(201,132,10,0.05)',
+            }}
+          >
+            {/* Subtle inner glow */}
+            <div className="absolute inset-0 rounded-[2rem] pointer-events-none"
               style={{
                 background: isDark
-                  ? 'conic-gradient(from 0deg, #ff0000, #ff8c00, #ff4500, #ff8c00, #ff0000)'
-                  : 'conic-gradient(from 0deg, #c9840a, #f5c842, #d4a017, #b8720a, #c9840a)',
-                filter: 'blur(16px)',
-                opacity: isDark ? 0.75 : 0.5,
-              }}
-              animate={IS_TOUCH ? { rotate: 360 } : {
-                rotate: 360,
-                scale: [1, 1.05, 0.95, 1.02, 1],
-                y: [0, -4, 2, -2, 0]
-              }}
-              transition={{
-                rotate: { duration: 10, repeat: Infinity, ease: 'linear' },
-                scale: { duration: 3, repeat: Infinity, ease: 'easeInOut' },
-                y: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' }
+                  ? 'radial-gradient(ellipse at 50% 100%, rgba(255,40,0,0.12) 0%, transparent 70%)'
+                  : 'radial-gradient(ellipse at 50% 100%, rgba(201,132,10,0.1) 0%, transparent 70%)',
               }}
             />
-
-            {/* ── Realistic Flame Underlay 2: Medium Heat Wave ── */}
-            <motion.div
-              className="absolute inset-[-4px] rounded-[2.1rem] pointer-events-none"
-              style={{
-                background: isDark
-                  ? 'conic-gradient(from 180deg, #ff4500, #ff0000, #ff8c00, #ff4500)'
-                  : 'conic-gradient(from 180deg, #d4a017, #c9840a, #f5c842, #d4a017)',
-                filter: 'blur(6px)',
-                opacity: isDark ? 0.9 : 0.7,
-              }}
-              animate={IS_TOUCH ? { rotate: -360 } : {
-                rotate: -360,
-                scale: [1, 0.98, 1.03, 0.97, 1],
-                y: [0, 2, -3, 1, 0]
-              }}
-              transition={{
-                rotate: { duration: 7, repeat: Infinity, ease: 'linear' },
-                scale: { duration: 2.4, repeat: Infinity, ease: 'easeInOut' },
-                y: { duration: 1.8, repeat: Infinity, ease: 'easeInOut' }
-              }}
-            />
-
-            {/* ── Realistic Flame Underlay 3: Sharp High-Intensity Flame Rim ── */}
-            <motion.div
-              className="absolute inset-0 rounded-[2rem] pointer-events-none"
-              style={{
-                background: isDark
-                  ? 'conic-gradient(from 90deg, #ff0000, #ff8c00, #ff4500, #ff0000)'
-                  : 'conic-gradient(from 90deg, #c9840a, #f5c842, #d4a017, #c9840a)',
-                opacity: 0.95,
-              }}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
-            />
-
-            {/* Charcoal / Ivory Core */}
-            <div
-              className="relative backdrop-blur-2xl rounded-[2rem] px-10 sm:px-14 py-8 flex flex-col items-center justify-center min-w-[240px] sm:min-w-[300px]"
-              style={{
-                background: isDark ? 'rgba(10,10,10,0.97)' : 'rgba(255,251,240,0.97)',
-                boxShadow: isDark
-                  ? '0 20px 60px rgba(255,40,0,0.25), inset 0 0 40px rgba(255,40,0,0.06)'
-                  : '0 20px 60px rgba(201,132,10,0.2), inset 0 0 40px rgba(201,132,10,0.05)',
-              }}
-            >
-              {/* Subtle inner glow */}
-              <div className="absolute inset-0 rounded-[2rem] pointer-events-none"
-                style={{
-                  background: isDark
-                    ? 'radial-gradient(ellipse at 50% 100%, rgba(255,40,0,0.12) 0%, transparent 70%)'
-                    : 'radial-gradient(ellipse at 50% 100%, rgba(201,132,10,0.1) 0%, transparent 70%)',
-                }} />
 
               {/* Label */}
               <motion.span
@@ -369,7 +315,6 @@ const StatDashboard: React.FC<StatDashboardProps> = ({ isDark, lang, t, universa
               >
                 {universalTotal}
               </span>
-            </div>
           </div>
         </TiltContainer>
       </div>

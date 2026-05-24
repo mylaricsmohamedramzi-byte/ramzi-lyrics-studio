@@ -199,17 +199,6 @@ const CopyrightPage = () => {
 
         {/* Bottom stamp + CTA */}
         <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-          <img
-            src={lang === 'ar' ? copyrightArabic : copyrightEnglish}
-            alt="MR Stamp"
-            className="w-36 h-36 mx-auto mb-4 object-contain"
-            style={{
-              filter: isDark
-                ? 'drop-shadow(0 0 20px rgba(192,39,45,0.4)) saturate(1.5) hue-rotate(-5deg)'
-                : 'sepia(1) saturate(3) hue-rotate(310deg) brightness(0.7)',
-              transform: 'rotate(-8deg)',
-            }}
-          />
           <p className="text-lg font-bold text-primary tracking-wide uppercase mb-6">
             {t('© Mohamed Ramzi — All Rights Reserved', '© محمد رمزي — جميع الحقوق محفوظة')}
           </p>

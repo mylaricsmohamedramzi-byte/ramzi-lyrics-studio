@@ -4002,7 +4002,7 @@ export const allSongs: any[] = [
     ]
   },
   {
-    "id": 35,
+    "id": 48,
     "title": "قمر هادئ",
     "type": "روك",
     "lyrics": [
@@ -6345,7 +6345,7 @@ export const allSongs: any[] = [
     ]
   },
   {
-    "id": 48,
+    "id": 35,
     "title": "أخر فرصة",
     "type": "دراما",
     "lyrics": [
@@ -10832,5 +10832,11 @@ export const allSongs: any[] = [
         "red": false
       }
     ]
+  },
+  {
+    "id": 91,
+    "title": "أدينا عايشين",
+    "type": "دراما",
+    "lyrics": []
   }
 ];

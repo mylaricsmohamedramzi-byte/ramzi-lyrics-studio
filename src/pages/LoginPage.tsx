@@ -203,9 +203,7 @@ const LoginPage = () => {
     <div
       className="min-h-screen relative overflow-hidden flex items-center justify-center transition-colors duration-500 selection:bg-rose-500/30 selection:text-rose-200"
       style={{
-        background: isDark
-          ? 'radial-gradient(ellipse at 50% 50%, #3d0a12 0%, #1a0509 40%, #0a0205 100%)'
-          : 'radial-gradient(ellipse at 50% 50%, #fdfbf7 0%, #f7f3eb 100%)',
+        background: 'transparent',
       }}
     >
 
@@ -215,24 +213,7 @@ const LoginPage = () => {
         <div className="login-orb-2 absolute bottom-1/4 right-1/4 w-[45vw] h-[45vw] rounded-full blur-[120px] mix-blend-screen" style={{ background: isDark ? 'rgba(140, 20, 30, 0.06)' : 'rgba(245, 158, 11, 0.03)', animationDelay: '2s' }} />
       </div>
 
-      {/* Floating music notes */}
-      <div aria-hidden="true" className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-20">
-        {MUSIC_NOTES.map((note, i) => (
-          <span
-            key={i}
-            className="absolute text-white/10 select-none animate-float-login-note"
-            style={{
-              fontSize: `${18 + (i * 4) % 16}px`,
-              left: `${8 + i * 9.5}%`,
-              animationDuration: `${12 + (i * 3) % 8}s`,
-              animationDelay: `${i * 0.9}s`,
-              top: '110%',
-            }}
-          >
-            {note}
-          </span>
-        ))}
-      </div>
+      {/* Floating music notes - now handled globally by Layout for maximum performance and consistency */}
 
       {/* ── Single Column Layout ── */}
       <div className="relative z-10 w-full max-w-[440px] px-6 py-12 flex flex-col items-center">
@@ -283,23 +264,37 @@ const LoginPage = () => {
 
         {/* ── Premium Glass Form Card ── */}
         <div
-          className="w-full rounded-[2rem] p-8 sm:p-10 relative overflow-hidden transition-all duration-500 animate-fade-in-up shadow-2xl"
+          className="w-full rounded-[2rem] p-8 sm:p-10 relative overflow-hidden transition-all duration-500 animate-fade-in-up shadow-2xl login-card ember-card"
           style={{
             animationDelay: '200ms',
-            background: isDark ? 'rgba(255, 255, 255, 0.025)' : 'rgba(255, 255, 255, 0.7)',
+            background: isDark ? 'rgba(10, 10, 10, 0.95)' : 'rgba(255, 255, 255, 0.85)',
             backdropFilter: 'blur(40px)',
             WebkitBackdropFilter: 'blur(40px)',
-            border: isDark ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(255, 255, 255, 0.4)',
-            borderTop: isDark ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(255, 255, 255, 0.8)',
+            border: isDark ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(201, 132, 10, 0.25)',
+            borderTop: isDark ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(255, 255, 255, 0.85)',
             boxShadow: isDark
-              ? '0 30px 60px -15px rgba(0,0,0,0.8), inset 0 0 30px rgba(255,255,255,0.01)'
-              : '0 20px 40px -10px rgba(0,0,0,0.08)',
+              ? '0 30px 60px -15px rgba(0,0,0,0.85), inset 0 0 30px rgba(255,255,255,0.02)'
+              : '0 20px 40px -10px rgba(0,0,0,0.06)',
           }}
         >
+          {/* Animated Realistic Conic Flame Border Overlay */}
+          <div className="absolute inset-0 rounded-[2rem] p-[1.5px] pointer-events-none z-0 overflow-hidden">
+            <motion.div
+              className="absolute inset-[-6px] rounded-[2.1rem] opacity-30 blur-[6px]"
+              style={{
+                background: isDark
+                  ? 'conic-gradient(from 0deg, #ff0000, #ff8c00, #ff4500, #ff8c00, #ff0000)'
+                  : 'conic-gradient(from 0deg, #c9840a, #f5c842, #d4a017, #b8720a, #c9840a)',
+              }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+            />
+          </div>
+
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
           <div className="text-center mb-8 relative z-10">
-            <div className="inline-flex p-3 rounded-2xl bg-white/5 border border-white/10 mb-5 text-rose-400">
+            <div className="inline-flex p-3 rounded-2xl bg-white/5 border border-white/10 mb-5 text-[hsl(var(--primary))] dark:text-[hsl(var(--primary))] text-amber-500">
               <LogIn className="w-6 h-6" />
             </div>
             <h1
@@ -316,7 +311,7 @@ const LoginPage = () => {
             </p>
           </div>
 
-          <div className="relative min-h-[220px]">
+          <div className="relative min-h-[220px] z-10">
             <AnimatePresence mode="wait">
               
               {/* Step 1: Initial */}
@@ -334,7 +329,14 @@ const LoginPage = () => {
                     <button
                       onClick={() => setStep('email')}
                       className="w-full group flex items-center justify-center gap-3 px-6 py-4 rounded-2xl font-bold text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg text-white"
-                      style={{ background: 'linear-gradient(135deg, #e11d48 0%, #be123c 100%)' }}
+                      style={{
+                        background: isDark
+                          ? 'linear-gradient(135deg, hsl(var(--primary)) 0%, #990e22 100%)'
+                          : 'linear-gradient(135deg, hsl(var(--accent)) 0%, #855303 100%)',
+                        boxShadow: isDark
+                          ? '0 10px 25px -5px rgba(225,29,72,0.35)'
+                          : '0 10px 25px -5px rgba(201,132,10,0.25)',
+                      }}
                     >
                       <LogIn className="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity" />
                       <span style={{ fontFamily: "'Omnes Arabic', sans-serif" }}>{t('Log In', 'تسجيل الدخول')}</span>
@@ -364,7 +366,7 @@ const LoginPage = () => {
                 >
                   <form onSubmit={handleEmailSubmit} className="space-y-5">
                     <div className="relative group">
-                      <Mail className={`absolute ${lang === 'ar' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-foreground/40 group-focus-within:text-rose-400 transition-colors`} />
+                      <Mail className={`absolute ${lang === 'ar' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-foreground/40 group-focus-within:${isDark ? 'text-[hsl(var(--primary))]' : 'text-[hsl(var(--accent))]'} transition-colors`} />
                       <input
                         type="email"
                         required
@@ -372,7 +374,11 @@ const LoginPage = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder={t('Enter your email', 'أدخل بريدك الإلكتروني')}
                         dir={lang === 'ar' ? 'rtl' : 'ltr'}
-                        className={`w-full ${lang === 'ar' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-4 rounded-2xl bg-black/20 border border-white/10 text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-1 focus:ring-rose-500/50 focus:border-rose-500/50 transition-all text-sm shadow-inner`}
+                        className={`w-full ${lang === 'ar' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-4 rounded-2xl bg-black/20 border border-white/10 text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-offset-0 transition-all text-sm shadow-inner ${
+                          isDark 
+                            ? 'focus:ring-[hsl(var(--primary))]/40 focus:border-[hsl(var(--primary))]' 
+                            : 'focus:ring-[hsl(var(--accent))]/40 focus:border-[hsl(var(--accent))]'
+                        }`}
                         style={{ fontFamily: "'Omnes Arabic', sans-serif" }}
                       />
                     </div>
@@ -386,7 +392,14 @@ const LoginPage = () => {
                     <button
                       type="submit"
                       className="w-full px-6 py-4 rounded-2xl font-bold text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg text-white"
-                      style={{ background: 'linear-gradient(135deg, #e11d48 0%, #be123c 100%)' }}
+                      style={{
+                        background: isDark
+                          ? 'linear-gradient(135deg, hsl(var(--primary)) 0%, #990e22 100%)'
+                          : 'linear-gradient(135deg, hsl(var(--accent)) 0%, #855303 100%)',
+                        boxShadow: isDark
+                          ? '0 10px 25px -5px rgba(225,29,72,0.35)'
+                          : '0 10px 25px -5px rgba(201,132,10,0.25)',
+                      }}
                     >
                       <span style={{ fontFamily: "'Omnes Arabic', sans-serif" }}>{t('Continue', 'متابعة')}</span>
                     </button>
@@ -418,7 +431,7 @@ const LoginPage = () => {
                   <form onSubmit={handleLogin} className="space-y-5">
                     <div className="flex flex-col items-center justify-center mb-4">
                       <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
-                        <UserCircle className="w-5 h-5 text-rose-400" />
+                        <UserCircle className="w-5 h-5 text-[hsl(var(--primary))]" />
                       </div>
                       <p className="text-xs text-foreground/70 font-semibold truncate max-w-full px-4" style={{ fontFamily: "'Omnes Arabic', sans-serif" }}>
                         {email}
@@ -426,7 +439,7 @@ const LoginPage = () => {
                     </div>
 
                     <div className="relative group">
-                      <Lock className={`absolute ${lang === 'ar' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-foreground/40 group-focus-within:text-rose-400 transition-colors`} />
+                      <Lock className={`absolute ${lang === 'ar' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-foreground/40 group-focus-within:${isDark ? 'text-[hsl(var(--primary))]' : 'text-[hsl(var(--accent))]'} transition-colors`} />
                       <input
                         type="password"
                         required
@@ -434,7 +447,11 @@ const LoginPage = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder={t('Enter password', 'أدخل كلمة المرور')}
                         dir={lang === 'ar' ? 'rtl' : 'ltr'}
-                        className={`w-full ${lang === 'ar' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-4 rounded-2xl bg-black/20 border border-white/10 text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-1 focus:ring-rose-500/50 focus:border-rose-500/50 transition-all text-sm shadow-inner`}
+                        className={`w-full ${lang === 'ar' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-4 rounded-2xl bg-black/20 border border-white/10 text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-offset-0 transition-all text-sm shadow-inner ${
+                          isDark 
+                            ? 'focus:ring-[hsl(var(--primary))]/40 focus:border-[hsl(var(--primary))]' 
+                            : 'focus:ring-[hsl(var(--accent))]/40 focus:border-[hsl(var(--accent))]'
+                        }`}
                         style={{ fontFamily: "'Omnes Arabic', sans-serif" }}
                       />
                     </div>
@@ -449,7 +466,14 @@ const LoginPage = () => {
                       type="submit"
                       disabled={isLoading}
                       className="w-full px-6 py-4 rounded-2xl font-bold text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg text-white disabled:opacity-50"
-                      style={{ background: 'linear-gradient(135deg, #e11d48 0%, #be123c 100%)' }}
+                      style={{
+                        background: isDark
+                          ? 'linear-gradient(135deg, hsl(var(--primary)) 0%, #990e22 100%)'
+                          : 'linear-gradient(135deg, hsl(var(--accent)) 0%, #855303 100%)',
+                        boxShadow: isDark
+                          ? '0 10px 25px -5px rgba(225,29,72,0.35)'
+                          : '0 10px 25px -5px rgba(201,132,10,0.25)',
+                      }}
                     >
                       <span style={{ fontFamily: "'Omnes Arabic', sans-serif" }}>
                         {isLoading ? t('Processing...', 'جاري التحقق...') : t('Log In', 'تسجيل الدخول')}
@@ -499,7 +523,11 @@ const LoginPage = () => {
                         onChange={(e) => setOtp(e.target.value)}
                         placeholder={t('Enter OTP code', 'أدخل رمز التحقق')}
                         dir="ltr"
-                        className={`w-full ${lang === 'ar' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-4 rounded-2xl bg-black/20 border border-white/10 text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-1 focus:ring-amber-500/50 focus:border-amber-500/50 transition-all text-center tracking-widest text-xl shadow-inner font-mono`}
+                        className={`w-full ${lang === 'ar' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-4 rounded-2xl bg-black/20 border border-white/10 text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-offset-0 transition-all text-center tracking-widest text-xl shadow-inner font-mono ${
+                          isDark 
+                            ? 'focus:ring-[hsl(var(--primary))]/40 focus:border-[hsl(var(--primary))]' 
+                            : 'focus:ring-[hsl(var(--accent))]/40 focus:border-[hsl(var(--accent))]'
+                        }`}
                       />
                     </div>
 
@@ -512,7 +540,10 @@ const LoginPage = () => {
                     <button
                       type="submit"
                       className="w-full px-6 py-4 rounded-2xl font-bold text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg text-black"
-                      style={{ background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)' }}
+                      style={{
+                        background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+                        boxShadow: '0 10px 25px -5px rgba(245,158,11,0.4)',
+                      }}
                     >
                       <span style={{ fontFamily: "'Omnes Arabic', sans-serif" }}>{t('Verify', 'تأكيد')}</span>
                     </button>
@@ -554,16 +585,6 @@ const LoginPage = () => {
           100% { transform: translate(-10px, 10px) scale(0.98); }
         }
 
-        @keyframes floatLoginNote {
-          0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-          10% { opacity: 1; }
-          90% { opacity: 1; }
-          100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
-        }
-        .animate-float-login-note {
-          animation: floatLoginNote 15s linear infinite;
-        }
-
         @keyframes fade-in-up {
           0% { opacity: 0; transform: translateY(20px) scale(0.98); filter: blur(5px); }
           100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
@@ -577,3 +598,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+

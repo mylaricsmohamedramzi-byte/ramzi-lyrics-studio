@@ -373,25 +373,27 @@
    ========================================================== */
 
 /* ── Islamic/Arabic Geometric Corner Ornaments ───────────────
-   Applied to all song cards, stat cards, and content panels.
+   Applied to all song cards, stat cards, and login card.
    Uses CSS pseudo-elements with SVG data-URI pattern.
    Max 32×32px, max 13% opacity dark / 8% light — never clutters.
    ──────────────────────────────────────────────────────────── */
 .lyrics-card,
 .main-card,
 .stat-card,
-.ember-card {
+.ember-card,
+.login-card {
   position: relative;
 }
 
 /* Top-left corner ornament */
 .lyrics-card::before,
 .main-card::before,
-.stat-card::before {
+.stat-card::before,
+.login-card::before {
   content: '';
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 12px;
+  left: 12px;
   width: 28px;
   height: 28px;
   pointer-events: none;
@@ -407,11 +409,12 @@
 /* Bottom-right corner ornament (rotated 180°) */
 .lyrics-card::after,
 .main-card::after,
-.stat-card::after {
+.stat-card::after,
+.login-card::after {
   content: '';
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 12px;
+  right: 12px;
   width: 22px;
   height: 22px;
   pointer-events: none;
@@ -428,12 +431,14 @@
 /* Increase ornament visibility on hover */
 .lyrics-card:hover::before,
 .main-card:hover::before,
-.stat-card:hover::before {
+.stat-card:hover::before,
+.login-card:hover::before {
   opacity: 0.22;
 }
 .lyrics-card:hover::after,
 .main-card:hover::after,
-.stat-card:hover::after {
+.stat-card:hover::after,
+.login-card:hover::after {
   opacity: 0.16;
 }
 
@@ -441,21 +446,25 @@
 .dark .lyrics-card::before,
 .dark .main-card::before,
 .dark .stat-card::before,
+.dark .login-card::before,
 .dark .lyrics-card::after,
 .dark .main-card::after,
-.dark .stat-card::after {
+.dark .stat-card::after,
+.dark .login-card::after {
   filter: hue-rotate(0deg) brightness(1.4); /* keeps gold tone */
 }
 
 /* Light mode: ornament slightly darker for contrast on ivory */
 :root:not(.dark) .lyrics-card::before,
 :root:not(.dark) .main-card::before,
-:root:not(.dark) .stat-card::before {
+:root:not(.dark) .stat-card::before,
+:root:not(.dark) .login-card::before {
   opacity: 0.08;
 }
 :root:not(.dark) .lyrics-card::after,
 :root:not(.dark) .main-card::after,
-:root:not(.dark) .stat-card::after {
+:root:not(.dark) .stat-card::after,
+:root:not(.dark) .login-card::after {
   opacity: 0.05;
 }
 
@@ -464,28 +473,30 @@
    matte black surface. Pure CSS data-URI trick, no images.
    ──────────────────────────────────────────────────────────── */
 .dark .lyrics-card,
-.dark .main-card {
+.dark .main-card,
+.dark .login-card {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23t)' opacity='0.04'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 200px 200px;
 }
 
 /* ── Ember Glow — CSS-only, GPU-composited ──────────────────
-   Uses ::after on .ember-card (separate from ornament pseudo).
-   Glow only on hover. will-change: filter — no layout cost.
+   Uses ::after on .ember-card. Glow only on hover.
    Dark: neon red. Light: amber/gold.
    ──────────────────────────────────────────────────────────── */
 .ember-card {
-  transition: filter 0.4s ease, box-shadow 0.4s ease;
+  transition: filter 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   will-change: filter;
 }
 .dark .ember-card:hover {
-  filter: drop-shadow(0 0 12px rgba(255,40,0,0.5)) drop-shadow(0 0 28px rgba(255,40,0,0.2));
-  box-shadow: 0 0 0 1px rgba(255,40,0,0.3), 0 12px 40px rgba(255,40,0,0.2);
+  filter: drop-shadow(0 0 12px hsl(var(--primary) / 0.5)) drop-shadow(0 0 28px hsl(var(--primary) / 0.2));
+  box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3), 0 12px 40px rgba(0,0,0,0.6);
+  border-color: hsl(var(--primary) / 0.3) !important;
 }
 :root:not(.dark) .ember-card:hover {
-  filter: drop-shadow(0 0 10px rgba(201,132,10,0.45)) drop-shadow(0 0 22px rgba(201,132,10,0.18));
-  box-shadow: 0 0 0 1px rgba(201,132,10,0.3), 0 12px 40px rgba(201,132,10,0.15);
+  filter: drop-shadow(0 0 10px hsl(var(--accent) / 0.45)) drop-shadow(0 0 22px hsl(var(--accent) / 0.18));
+  box-shadow: 0 0 0 1px hsl(var(--accent) / 0.3), 0 12px 40px rgba(0,0,0,0.06);
+  border-color: hsl(var(--accent) / 0.3) !important;
 }
 
 /* Mobile: disable heavy glow filter on touch screens */
@@ -494,11 +505,11 @@
     filter: none;
   }
   .dark .ember-card:hover {
-    box-shadow: 0 0 0 1px rgba(255,40,0,0.2);
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.2);
     filter: none;
   }
   :root:not(.dark) .ember-card:hover {
-    box-shadow: 0 0 0 1px rgba(201,132,10,0.2);
+    box-shadow: 0 0 0 1px hsl(var(--accent) / 0.2);
     filter: none;
   }
 }
@@ -513,21 +524,21 @@
    Red is reserved for interactive states (hover, active chip).
    ──────────────────────────────────────────────────────────── */
 :root:not(.dark) .glow-red {
-  box-shadow: 0 0 30px rgba(201,132,10,0.3), 0 0 60px rgba(201,132,10,0.1);
+  box-shadow: 0 0 30px hsl(var(--accent) / 0.3), 0 0 60px hsl(var(--accent) / 0.1);
 }
 :root:not(.dark) .filter-chip {
-  border-color: rgba(201,132,10,0.4);
-  color: #7a4a00;
+  border-color: hsl(var(--accent) / 0.4);
+  color: hsl(var(--accent) / 0.9);
 }
 :root:not(.dark) .filter-chip:hover {
-  border-color: #c9840a;
-  color: #5a3300;
-  background: rgba(201,132,10,0.08);
+  border-color: hsl(var(--accent));
+  color: hsl(var(--accent) / 1);
+  background: hsl(var(--accent) / 0.08);
 }
 :root:not(.dark) .filter-chip.active {
-  background: #c9840a;
+  background: hsl(var(--accent));
   color: #fff;
-  border-color: #c9840a;
+  border-color: hsl(var(--accent));
 }
 
 /* ── Disable heavy animated spin-slow on mobile ─────────────
@@ -538,4 +549,15 @@
     animation: none !important;
   }
 }
+
+/* ── SVG Pulsing Energy Connector Flow Animation ──────────── */
+@keyframes energy-pulse-flow {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 

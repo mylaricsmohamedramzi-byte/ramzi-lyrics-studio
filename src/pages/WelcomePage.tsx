@@ -207,16 +207,17 @@ const StatDashboard: React.FC<StatDashboardProps> = ({ isDark, lang, t, universa
 
         {/* Animated energy pulses on top of rails — desktop only */}
         {!IS_TOUCH && [0, 1, 2, 3].map(i => (
-          <motion.path key={`pulse-${i}`}
-            fill="none" stroke={lineColor} strokeWidth="2.5"
-            strokeLinecap="round" filter="url(#cline-glow)"
-            style={{ filter: `drop-shadow(0 0 6px ${glowColor})` }}
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: [0, 1], opacity: [0, 1, 0] }}
-            transition={{ duration: durations[i], repeat: Infinity, ease: 'easeInOut', delay: delays[i] }}
-            // Path attribute managed by imperative ref — motion only animates pathLength
+          <path key={`pulse-${i}`}
+            fill="none" stroke={lineColor} strokeWidth="3.2"
+            strokeLinecap="round"
+            style={{
+              filter: `drop-shadow(0 0 6px ${glowColor})`,
+              strokeDasharray: '30, 90',
+              animation: `energy-pulse-flow ${durations[i]}s linear infinite`,
+              animationDelay: `${delays[i]}s`
+            }}
             d="" ref={(el) => {
-              // Mirror the measured path into the motion element
+              // Mirror the measured path
               if (el && pathRefs[i].current) {
                 const d = pathRefs[i].current!.getAttribute('d') || '';
                 el.setAttribute('d', d);
@@ -263,30 +264,61 @@ const StatDashboard: React.FC<StatDashboardProps> = ({ isDark, lang, t, universa
         <TiltContainer maxRotate={IS_TOUCH ? 0 : 8} scale={IS_TOUCH ? 1 : 1.05}>
           <div className="relative p-[2px] rounded-[2rem] overflow-hidden">
 
-            {/* Animated conic border — dark: red fire / light: amber shimmer */}
+            {/* ── Realistic Flame Underlay 1: Flickering Giant Glow ── */}
             <motion.div
-              className="absolute inset-0 rounded-[2rem]"
+              className="absolute inset-[-12px] rounded-[2.2rem] pointer-events-none"
               style={{
                 background: isDark
-                  ? 'conic-gradient(from 0deg, #ff2200, #ff6600, #ff0000, #cc0000, #ff2200)'
+                  ? 'conic-gradient(from 0deg, #ff0000, #ff8c00, #ff4500, #ff8c00, #ff0000)'
                   : 'conic-gradient(from 0deg, #c9840a, #f5c842, #d4a017, #b8720a, #c9840a)',
-                filter: 'blur(8px)',
-                opacity: isDark ? 0.85 : 0.7,
+                filter: 'blur(16px)',
+                opacity: isDark ? 0.75 : 0.5,
               }}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+              animate={IS_TOUCH ? { rotate: 360 } : {
+                rotate: 360,
+                scale: [1, 1.05, 0.95, 1.02, 1],
+                y: [0, -4, 2, -2, 0]
+              }}
+              transition={{
+                rotate: { duration: 10, repeat: Infinity, ease: 'linear' },
+                scale: { duration: 3, repeat: Infinity, ease: 'easeInOut' },
+                y: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' }
+              }}
             />
-            {/* Sharp border ring on top of blur */}
+
+            {/* ── Realistic Flame Underlay 2: Medium Heat Wave ── */}
             <motion.div
-              className="absolute inset-0 rounded-[2rem]"
+              className="absolute inset-[-4px] rounded-[2.1rem] pointer-events-none"
               style={{
                 background: isDark
-                  ? 'conic-gradient(from 0deg, #ff2200, #ff6600, #ff0000, #cc0000, #ff2200)'
-                  : 'conic-gradient(from 0deg, #c9840a, #f5c842, #d4a017, #b8720a, #c9840a)',
-                opacity: isDark ? 0.9 : 0.8,
+                  ? 'conic-gradient(from 180deg, #ff4500, #ff0000, #ff8c00, #ff4500)'
+                  : 'conic-gradient(from 180deg, #d4a017, #c9840a, #f5c842, #d4a017)',
+                filter: 'blur(6px)',
+                opacity: isDark ? 0.9 : 0.7,
+              }}
+              animate={IS_TOUCH ? { rotate: -360 } : {
+                rotate: -360,
+                scale: [1, 0.98, 1.03, 0.97, 1],
+                y: [0, 2, -3, 1, 0]
+              }}
+              transition={{
+                rotate: { duration: 7, repeat: Infinity, ease: 'linear' },
+                scale: { duration: 2.4, repeat: Infinity, ease: 'easeInOut' },
+                y: { duration: 1.8, repeat: Infinity, ease: 'easeInOut' }
+              }}
+            />
+
+            {/* ── Realistic Flame Underlay 3: Sharp High-Intensity Flame Rim ── */}
+            <motion.div
+              className="absolute inset-0 rounded-[2rem] pointer-events-none"
+              style={{
+                background: isDark
+                  ? 'conic-gradient(from 90deg, #ff0000, #ff8c00, #ff4500, #ff0000)'
+                  : 'conic-gradient(from 90deg, #c9840a, #f5c842, #d4a017, #c9840a)',
+                opacity: 0.95,
               }}
               animate={{ rotate: 360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
             />
 
             {/* Charcoal / Ivory Core */}
@@ -377,9 +409,7 @@ const WelcomePage = () => {
     <div
       className="min-h-screen relative overflow-hidden pb-24 selection:bg-rose-500/30 selection:text-rose-200"
       style={{
-        background: isDark
-          ? 'radial-gradient(ellipse at 50% 50%, #3d0a12 0%, #1a0509 40%, #0a0205 100%)'
-          : 'radial-gradient(ellipse at 50% 50%, #fdfbf7 0%, #f7f3eb 100%)',
+        background: 'transparent',
       }}
     >
       <NoiseOverlay opacity={isDark ? 0.04 : 0.03} />

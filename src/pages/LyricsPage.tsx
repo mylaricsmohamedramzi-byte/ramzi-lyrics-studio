@@ -32,25 +32,7 @@ const FloatingNotes = () => {
   );
 };
 
-const CardFloatingNotes = ({ seed }: { seed: number }) => {
-  const items = Array.from({ length: 12 }, (_, i) => ({
-    note: NOTES[(i + seed) % NOTES.length],
-    left: (i * 17 + seed * 9) % 96,
-    size: 20 + ((i * 5 + seed) % 20),
-    duration: 7 + ((i * 2 + seed) % 7),
-    delay: (i * 0.9 + seed * 0.3) % 6,
-  }));
-  return (
-    <div aria-hidden="true" className="card-floating-notes">
-      {items.map(({ note, left, size, duration, delay }, i) => (
-        <span key={`${seed}-${i}`} className="card-floating-note"
-          style={{ left: `${left}%`, top: '112%', fontSize: `${size}px`, animationDuration: `${duration}s`, animationDelay: `${delay}s` }}>
-          {note}
-        </span>
-      ))}
-    </div>
-  );
-};
+
 
 const SONG_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean; order: number }[] = [
   { key: 'all',             ar: 'الكل',             en: 'All',             match: () => true,                                                        order: 0  },
@@ -708,7 +690,7 @@ const LyricsPage = () => {
           {filteredSongs.length > 0 ? (
             filteredSongs.map((song) => (
               <div key={song.id} id={`card-${song.id}`} className="lyrics-card relative group">
-                <CardFloatingNotes seed={song.id} />
+
                 {isAdmin && (
                   <div className="absolute top-6 left-1/2 -translate-x-1/2 z-50 flex gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/60 p-2 rounded-2xl backdrop-blur-md border border-white/10 shadow-2xl scale-95 group-hover:scale-100">
                     <button

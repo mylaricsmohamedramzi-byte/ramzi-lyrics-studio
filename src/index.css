@@ -365,3 +365,177 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* ==========================================================
+   UNIFIED FIERY IDENTITY — Global Design System Extension
+   Follows NEXTGEN_VISUAL_ENGINE_BLUEPRINT.md standards:
+   GPU-composited props only (transform, opacity, filter)
+   ========================================================== */
+
+/* ── Islamic/Arabic Geometric Corner Ornaments ───────────────
+   Applied to all song cards, stat cards, and content panels.
+   Uses CSS pseudo-elements with SVG data-URI pattern.
+   Max 32×32px, max 13% opacity dark / 8% light — never clutters.
+   ──────────────────────────────────────────────────────────── */
+.lyrics-card,
+.main-card,
+.stat-card,
+.ember-card {
+  position: relative;
+}
+
+/* Top-left corner ornament */
+.lyrics-card::before,
+.main-card::before,
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.13;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cg fill='none' stroke='%23c9840a' stroke-width='1.2' stroke-linecap='round'%3E%3Cpath d='M14 1 L14 27 M1 14 L27 14'/%3E%3Ccircle cx='14' cy='14' r='4'/%3E%3Cpath d='M14 1 L17 7 L14 5 L11 7 Z M14 27 L17 21 L14 23 L11 21 Z M1 14 L7 11 L5 14 L7 17 Z M27 14 L21 11 L23 14 L21 17 Z'/%3E%3Crect x='10' y='10' width='8' height='8' rx='1' stroke-opacity='0.5'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 0.3s ease;
+  will-change: opacity;
+}
+
+/* Bottom-right corner ornament (rotated 180°) */
+.lyrics-card::after,
+.main-card::after,
+.stat-card::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cg fill='none' stroke='%23c9840a' stroke-width='1.2' stroke-linecap='round'%3E%3Cpath d='M14 1 L14 27 M1 14 L27 14'/%3E%3Ccircle cx='14' cy='14' r='4'/%3E%3Crect x='10' y='10' width='8' height='8' rx='1' stroke-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+  transition: opacity 0.3s ease;
+  will-change: opacity;
+}
+
+/* Increase ornament visibility on hover */
+.lyrics-card:hover::before,
+.main-card:hover::before,
+.stat-card:hover::before {
+  opacity: 0.22;
+}
+.lyrics-card:hover::after,
+.main-card:hover::after,
+.stat-card:hover::after {
+  opacity: 0.16;
+}
+
+/* Dark mode: ornament in amber/gold */
+.dark .lyrics-card::before,
+.dark .main-card::before,
+.dark .stat-card::before,
+.dark .lyrics-card::after,
+.dark .main-card::after,
+.dark .stat-card::after {
+  filter: hue-rotate(0deg) brightness(1.4); /* keeps gold tone */
+}
+
+/* Light mode: ornament slightly darker for contrast on ivory */
+:root:not(.dark) .lyrics-card::before,
+:root:not(.dark) .main-card::before,
+:root:not(.dark) .stat-card::before {
+  opacity: 0.08;
+}
+:root:not(.dark) .lyrics-card::after,
+:root:not(.dark) .main-card::after,
+:root:not(.dark) .stat-card::after {
+  opacity: 0.05;
+}
+
+/* ── Charcoal / Matte Black Card Texture ────────────────────
+   Applied via a subtle feTurbulence noise — simulates brushed
+   matte black surface. Pure CSS data-URI trick, no images.
+   ──────────────────────────────────────────────────────────── */
+.dark .lyrics-card,
+.dark .main-card {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23t)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ── Ember Glow — CSS-only, GPU-composited ──────────────────
+   Uses ::after on .ember-card (separate from ornament pseudo).
+   Glow only on hover. will-change: filter — no layout cost.
+   Dark: neon red. Light: amber/gold.
+   ──────────────────────────────────────────────────────────── */
+.ember-card {
+  transition: filter 0.4s ease, box-shadow 0.4s ease;
+  will-change: filter;
+}
+.dark .ember-card:hover {
+  filter: drop-shadow(0 0 12px rgba(255,40,0,0.5)) drop-shadow(0 0 28px rgba(255,40,0,0.2));
+  box-shadow: 0 0 0 1px rgba(255,40,0,0.3), 0 12px 40px rgba(255,40,0,0.2);
+}
+:root:not(.dark) .ember-card:hover {
+  filter: drop-shadow(0 0 10px rgba(201,132,10,0.45)) drop-shadow(0 0 22px rgba(201,132,10,0.18));
+  box-shadow: 0 0 0 1px rgba(201,132,10,0.3), 0 12px 40px rgba(201,132,10,0.15);
+}
+
+/* Mobile: disable heavy glow filter on touch screens */
+@media (pointer: coarse) {
+  .ember-card:hover {
+    filter: none;
+  }
+  .dark .ember-card:hover {
+    box-shadow: 0 0 0 1px rgba(255,40,0,0.2);
+    filter: none;
+  }
+  :root:not(.dark) .ember-card:hover {
+    box-shadow: 0 0 0 1px rgba(201,132,10,0.2);
+    filter: none;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ember-card { transition: none; will-change: auto; }
+}
+
+/* ── Golden Dawn — Light Mode Adaptation ────────────────────
+   All fire/red atmospheric elements shift to amber/saffron.
+   Red is reserved for interactive states (hover, active chip).
+   ──────────────────────────────────────────────────────────── */
+:root:not(.dark) .glow-red {
+  box-shadow: 0 0 30px rgba(201,132,10,0.3), 0 0 60px rgba(201,132,10,0.1);
+}
+:root:not(.dark) .filter-chip {
+  border-color: rgba(201,132,10,0.4);
+  color: #7a4a00;
+}
+:root:not(.dark) .filter-chip:hover {
+  border-color: #c9840a;
+  color: #5a3300;
+  background: rgba(201,132,10,0.08);
+}
+:root:not(.dark) .filter-chip.active {
+  background: #c9840a;
+  color: #fff;
+  border-color: #c9840a;
+}
+
+/* ── Disable heavy animated spin-slow on mobile ─────────────
+   The conic border on the dashboard box rotates — skip on touch.
+   ──────────────────────────────────────────────────────────── */
+@media (pointer: coarse) {
+  .animate-spin-slow {
+    animation: none !important;
+  }
+}
+

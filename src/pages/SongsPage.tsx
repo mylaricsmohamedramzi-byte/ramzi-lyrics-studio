@@ -30,25 +30,7 @@ const FloatingNotes = () => {
   );
 };
 
-const CardFloatingNotes = ({ seed }: { seed: number }) => {
-  const items = Array.from({ length: 12 }, (_, i) => ({
-    note: NOTES[(i + seed) % NOTES.length],
-    left: (i * 17 + seed * 9) % 96,
-    size: 20 + ((i * 5 + seed) % 20),
-    duration: 7 + ((i * 2 + seed) % 7),
-    delay: (i * 0.9 + seed * 0.3) % 6,
-  }));
-  return (
-    <div aria-hidden="true" className="card-floating-notes">
-      {items.map(({ note, left, size, duration, delay }, i) => (
-        <span key={`${seed}-${i}`} className="card-floating-note"
-          style={{ left: `${left}%`, top: '112%', fontSize: `${size}px`, animationDuration: `${duration}s`, animationDelay: `${delay}s` }}>
-          {note}
-        </span>
-      ))}
-    </div>
-  );
-};
+
 
 const SONG_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean; order: number }[] = [
   { key: 'all',             ar: 'الكل',             en: 'All',             match: () => true,                                                        order: 0  },
@@ -1852,7 +1834,7 @@ export default function SongsPage() {
         {/* ─── الكاردات ─── */}
         {filteredSongs.map((song) => (
           <div key={song.id} id={`card-${song.id}`} className="main-card relative group">
-            <CardFloatingNotes seed={song.id} />
+
 
             {isAdmin && (
               <div className="absolute top-4 left-4 z-50 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

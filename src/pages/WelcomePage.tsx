@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Play, Music, FileText, Layers, ArrowUpRight, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 import darkPhoto from '@/assets/dark-photo.png';
 import whitePhoto from '@/assets/white-photo.png';
 import homeLogoDark from '@/assets/home-logo-dark.png';
@@ -15,6 +16,9 @@ import { allSongs as songsList } from '@/pages/SongsPage';
 import { allSongs as melodiesList } from '@/pages/MelodiesPage';
 import { allVideos as videosList } from '@/data/videosData';
 
+// --- Mobile touch guard: disable RAF on touch-only devices ---
+const IS_TOUCH = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
+
 // --- 3D Depth Tilt Container ---
 interface TiltContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   maxRotate?: number;
@@ -26,6 +30,7 @@ interface TiltContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const TiltContainer: React.FC<TiltContainerProps> = ({
   maxRotate = 8,
+
   perspective = 1200,
   scale = 1.02,
   easing = 0.08,
@@ -42,6 +47,7 @@ const TiltContainer: React.FC<TiltContainerProps> = ({
   const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
   useEffect(() => {
+    if (IS_TOUCH) return; // Skip all RAF on mobile — saves battery
     const el = ref.current;
     if (!el) return;
 
@@ -63,16 +69,10 @@ const TiltContainer: React.FC<TiltContainerProps> = ({
       target.current.ry = nx * maxRotate;
     };
 
-    const handleMouseEnter = () => {
-      rafId.current = requestAnimationFrame(animate);
-    };
-
+    const handleMouseEnter = () => { rafId.current = requestAnimationFrame(animate); };
     const handleMouseLeave = () => {
       target.current = { rx: 0, ry: 0 };
-      if (rafId.current) {
-        cancelAnimationFrame(rafId.current);
-        rafId.current = 0;
-      }
+      if (rafId.current) { cancelAnimationFrame(rafId.current); rafId.current = 0; }
       el.style.transform = `perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)`;
     };
 
@@ -94,7 +94,7 @@ const TiltContainer: React.FC<TiltContainerProps> = ({
       className={className}
       style={{
         transformStyle: 'preserve-3d',
-        willChange: 'transform',
+        willChange: IS_TOUCH ? 'auto' : 'transform',
         transition: 'transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease',
         ...style
       }}
@@ -104,6 +104,247 @@ const TiltContainer: React.FC<TiltContainerProps> = ({
     </div>
   );
 };
+
+// ─── StatDashboard — Pixel-perfect L-shaped SVG connector lines ─────────────
+interface StatItem { count: number; label: string; icon: React.ReactNode; glow: string; }
+interface StatDashboardProps {
+  isDark: boolean; lang: string;
+  t: (en: string, ar: string) => string;
+  universalTotal: number; stats: StatItem[];
+}
+
+const StatDashboard: React.FC<StatDashboardProps> = ({ isDark, lang, t, universalTotal, stats }) => {
+  // One ref per card + one for the dashboard box
+  const cardRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
+  const boxRef   = useRef<HTMLDivElement>(null);
+  const svgRef   = useRef<SVGSVGElement>(null);
+  const wrapRef  = useRef<HTMLDivElement>(null);
+  const pathRefs = [useRef<SVGPathElement>(null), useRef<SVGPathElement>(null), useRef<SVGPathElement>(null), useRef<SVGPathElement>(null)];
+
+  // Ember color: neon red dark / amber gold light
+  const lineColor  = isDark ? '#ff2800' : '#c9840a';
+  const baseStroke = isDark ? 'rgba(255,40,0,0.18)' : 'rgba(201,132,10,0.25)';
+  const glowColor  = isDark ? 'rgba(255,40,0,0.7)' : 'rgba(201,132,10,0.6)';
+
+  const buildPath = (cardEl: HTMLDivElement, boxEl: HTMLDivElement, wrapEl: HTMLDivElement) => {
+    const wRect = wrapEl.getBoundingClientRect();
+    const cRect = cardEl.getBoundingClientRect();
+    const bRect = boxEl.getBoundingClientRect();
+
+    // Card bottom-center in wrapper-local coords
+    const cx = cRect.left - wRect.left + cRect.width / 2;
+    const cy = cRect.bottom - wRect.top;
+
+    // Box left/right midpoint in wrapper-local coords
+    const bMidY = bRect.top - wRect.top + bRect.height / 2;
+    const bLeft  = bRect.left - wRect.left;
+    const bRight = bRect.right - wRect.left;
+
+    // Choose entry side: cards 0,1 enter left; cards 2,3 enter right
+    // Actually: cards left of center → go to box left; right of center → box right
+    const wMid = wRect.width / 2;
+    const entryX = cx < wMid ? bLeft : bRight;
+
+    // L-shape: straight down, then 90° horizontal to box
+    return `M ${cx},${cy} L ${cx},${bMidY} L ${entryX},${bMidY}`;
+  };
+
+  const updateLines = () => {
+    const wrapEl = wrapRef.current;
+    const boxEl  = boxRef.current;
+    if (!wrapEl || !boxEl) return;
+    cardRefs.forEach((cr, i) => {
+      if (!cr.current || !pathRefs[i].current) return;
+      const d = buildPath(cr.current, boxEl, wrapEl);
+      pathRefs[i].current!.setAttribute('d', d);
+    });
+  };
+
+  useEffect(() => {
+    updateLines();
+    const ro = new ResizeObserver(updateLines);
+    if (wrapRef.current) ro.observe(wrapRef.current);
+    window.addEventListener('resize', updateLines);
+    return () => { ro.disconnect(); window.removeEventListener('resize', updateLines); };
+  }, [isDark]);
+
+  // Framer Motion animation params per card (staggered)
+  const delays = [0, 0.5, 0.2, 0.7];
+  const durations = [2.2, 1.8, 1.8, 2.2];
+
+  return (
+    <div
+      ref={wrapRef}
+      className="relative max-w-4xl mx-auto mb-24 animate-fade-in-up"
+      style={{ animationDelay: '500ms' }}
+    >
+      {/* ── Pixel-perfect SVG Connector Lines ── */}
+      <svg
+        ref={svgRef}
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{ width: '100%', height: '100%', overflow: 'visible', zIndex: 1 }}
+      >
+        <defs>
+          {/* Dark: neon red gradient; Light: amber gold gradient */}
+          <linearGradient id="cline-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor={lineColor} stopOpacity="0.1" />
+            <stop offset="50%" stopColor={lineColor} stopOpacity="1" />
+            <stop offset="100%" stopColor={lineColor} stopOpacity="0.1" />
+          </linearGradient>
+          <filter id="cline-glow" x="-20%" y="-200%" width="140%" height="500%">
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+          </filter>
+        </defs>
+
+        {/* Static base rails — always visible */}
+        {[0, 1, 2, 3].map(i => (
+          <path key={`base-${i}`} ref={pathRefs[i] as React.RefObject<SVGPathElement & SVGElement>}
+            fill="none" stroke={baseStroke} strokeWidth="1.5"
+            strokeDasharray="4 6" strokeLinecap="round" />
+        ))}
+
+        {/* Animated energy pulses on top of rails — desktop only */}
+        {!IS_TOUCH && [0, 1, 2, 3].map(i => (
+          <motion.path key={`pulse-${i}`}
+            fill="none" stroke={lineColor} strokeWidth="2.5"
+            strokeLinecap="round" filter="url(#cline-glow)"
+            style={{ filter: `drop-shadow(0 0 6px ${glowColor})` }}
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: [0, 1], opacity: [0, 1, 0] }}
+            transition={{ duration: durations[i], repeat: Infinity, ease: 'easeInOut', delay: delays[i] }}
+            // Path attribute managed by imperative ref — motion only animates pathLength
+            d="" ref={(el) => {
+              // Mirror the measured path into the motion element
+              if (el && pathRefs[i].current) {
+                const d = pathRefs[i].current!.getAttribute('d') || '';
+                el.setAttribute('d', d);
+              }
+            }}
+          />
+        ))}
+      </svg>
+
+      {/* ── Stat Cards grid ── */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 relative" style={{ zIndex: 10 }}>
+        {stats.map((stat, idx) => (
+          <div key={idx} ref={cardRefs[idx]}>
+            <TiltContainer
+              maxRotate={15} scale={1.06}
+              className={`group stat-card ember-card flex flex-col items-center justify-center p-6 sm:p-8 rounded-[2rem] transition-all duration-500 cursor-default ${stat.glow}`}
+              style={{
+                background: isDark ? 'rgba(14,14,14,0.85)' : 'rgba(255,255,255,0.72)',
+                backdropFilter: 'blur(30px)', WebkitBackdropFilter: 'blur(30px)',
+                border: isDark ? '1px solid rgba(255,255,255,0.06)' : '1px solid rgba(201,132,10,0.2)',
+                borderTop: isDark ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(255,255,255,0.8)',
+                boxShadow: isDark
+                  ? '0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05)'
+                  : '0 8px 28px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.7)',
+              }}
+            >
+              <div className="mb-4 p-3 rounded-2xl bg-white/5 border border-white/10 group-hover:bg-white/10 transition-colors">
+                {stat.icon}
+              </div>
+              <span className="text-4xl sm:text-5xl font-bold text-foreground drop-shadow-lg"
+                style={{ fontFamily: lang === 'ar' ? 'VLAX, Cinzel, serif' : 'Cinzel, serif' }}>
+                {stat.count}
+              </span>
+              <span className="text-sm text-foreground/60 mt-2 font-medium tracking-wide uppercase">
+                {stat.label}
+              </span>
+            </TiltContainer>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Central Dashboard Box ── */}
+      <div ref={boxRef} className="relative flex justify-center mt-12 sm:mt-20" style={{ zIndex: 10 }}>
+        <TiltContainer maxRotate={IS_TOUCH ? 0 : 8} scale={IS_TOUCH ? 1 : 1.05}>
+          <div className="relative p-[2px] rounded-[2rem] overflow-hidden">
+
+            {/* Animated conic border — dark: red fire / light: amber shimmer */}
+            <motion.div
+              className="absolute inset-0 rounded-[2rem]"
+              style={{
+                background: isDark
+                  ? 'conic-gradient(from 0deg, #ff2200, #ff6600, #ff0000, #cc0000, #ff2200)'
+                  : 'conic-gradient(from 0deg, #c9840a, #f5c842, #d4a017, #b8720a, #c9840a)',
+                filter: 'blur(8px)',
+                opacity: isDark ? 0.85 : 0.7,
+              }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+            />
+            {/* Sharp border ring on top of blur */}
+            <motion.div
+              className="absolute inset-0 rounded-[2rem]"
+              style={{
+                background: isDark
+                  ? 'conic-gradient(from 0deg, #ff2200, #ff6600, #ff0000, #cc0000, #ff2200)'
+                  : 'conic-gradient(from 0deg, #c9840a, #f5c842, #d4a017, #b8720a, #c9840a)',
+                opacity: isDark ? 0.9 : 0.8,
+              }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+            />
+
+            {/* Charcoal / Ivory Core */}
+            <div
+              className="relative backdrop-blur-2xl rounded-[2rem] px-10 sm:px-14 py-8 flex flex-col items-center justify-center min-w-[240px] sm:min-w-[300px]"
+              style={{
+                background: isDark ? 'rgba(10,10,10,0.97)' : 'rgba(255,251,240,0.97)',
+                boxShadow: isDark
+                  ? '0 20px 60px rgba(255,40,0,0.25), inset 0 0 40px rgba(255,40,0,0.06)'
+                  : '0 20px 60px rgba(201,132,10,0.2), inset 0 0 40px rgba(201,132,10,0.05)',
+              }}
+            >
+              {/* Subtle inner glow */}
+              <div className="absolute inset-0 rounded-[2rem] pointer-events-none"
+                style={{
+                  background: isDark
+                    ? 'radial-gradient(ellipse at 50% 100%, rgba(255,40,0,0.12) 0%, transparent 70%)'
+                    : 'radial-gradient(ellipse at 50% 100%, rgba(201,132,10,0.1) 0%, transparent 70%)',
+                }} />
+
+              {/* Label */}
+              <motion.span
+                className="font-bold tracking-widest uppercase text-xs sm:text-sm mb-3 relative z-10"
+                style={{
+                  fontFamily: "'Omnes Arabic', sans-serif",
+                  color: isDark ? '#ff5533' : '#b87010',
+                  textShadow: isDark
+                    ? '0 0 12px rgba(255,60,0,0.7)'
+                    : '0 0 10px rgba(201,132,10,0.5)',
+                }}
+                animate={{ opacity: [0.8, 1, 0.8] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                {t('Universal Total', 'الإجمالي الشامل')}
+              </motion.span>
+
+              {/* Number */}
+              <span
+                className="text-6xl sm:text-7xl font-extrabold relative z-10"
+                style={{
+                  fontFamily: lang === 'ar' ? 'VLAX, Cinzel, serif' : 'Cinzel, serif',
+                  color: isDark ? '#ffffff' : '#1a0a00',
+                  textShadow: isDark
+                    ? '0 0 30px rgba(255,255,255,0.6), 0 0 60px rgba(255,40,0,0.3)'
+                    : '0 2px 12px rgba(0,0,0,0.15)',
+                }}
+              >
+                {universalTotal}
+              </span>
+            </div>
+          </div>
+        </TiltContainer>
+      </div>
+    </div>
+  );
+};
+
+
 
 // --- SVG Film Grain Overlay ---
 const NoiseOverlay = ({ opacity = 0.04 }: { opacity?: number }) => (
@@ -129,6 +370,8 @@ const WelcomePage = () => {
   const { t, lang } = useLang();
   const { isDark } = useTheme();
   const navigate = useNavigate();
+
+  const universalTotal = videosList.length + songsList.length + melodiesList.length + lyricsList.length;
 
   return (
     <div
@@ -256,39 +499,25 @@ const WelcomePage = () => {
           </TiltContainer>
         </div>
 
-        {/* ── Stat Cards ── */}
-        <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-24 animate-fade-in-up" style={{ animationDelay: '500ms' }}>
-          {[
-            { count: videosList.length, label: t('Videos', 'فيديوهات'), icon: <Play className="w-6 h-6 text-rose-400" />, glow: 'group-hover:shadow-[0_0_30px_rgba(244,63,94,0.3)] group-hover:border-rose-500/30' },
-            { count: songsList.length, label: t('Songs', 'أغاني'), icon: <Music className="w-6 h-6 text-amber-400" />, glow: 'group-hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] group-hover:border-amber-500/30' },
-            { count: melodiesList.length, label: t('Melodies', 'ألحان'), icon: <Layers className="w-6 h-6 text-orange-400" />, glow: 'group-hover:shadow-[0_0_30px_rgba(251,146,60,0.3)] group-hover:border-orange-500/30' },
-            { count: lyricsList.length, label: t('Lyrics', 'كلمات أغاني'), icon: <FileText className="w-6 h-6 text-teal-400" />, glow: 'group-hover:shadow-[0_0_30px_rgba(20,184,166,0.3)] group-hover:border-teal-500/30' },
-          ].map((stat, idx) => (
-            <TiltContainer
-              key={idx}
-              maxRotate={15}
-              scale={1.06}
-              className={`group flex flex-col items-center justify-center p-6 sm:p-8 rounded-[2rem] transition-all duration-500 cursor-default ${stat.glow}`}
-              style={{
-                background: isDark ? 'rgba(255, 255, 255, 0.02)' : 'rgba(255, 255, 255, 0.6)',
-                backdropFilter: 'blur(30px)',
-                WebkitBackdropFilter: 'blur(30px)',
-                border: isDark ? '1px solid rgba(255, 255, 255, 0.05)' : '1px solid rgba(255, 255, 255, 0.3)',
-                borderTop: isDark ? '1px solid rgba(255, 255, 255, 0.12)' : '1px solid rgba(255, 255, 255, 0.6)',
-              }}
-            >
-              <div className="mb-4 p-3 rounded-2xl bg-white/5 border border-white/10 group-hover:bg-white/10 transition-colors">
-                {stat.icon}
-              </div>
-              <span className="text-4xl sm:text-5xl font-bold text-foreground drop-shadow-lg" style={{ fontFamily: lang === 'ar' ? 'VLAX, Cinzel, serif' : 'Cinzel, serif' }}>
-                {stat.count}
-              </span>
-              <span className="text-sm text-foreground/60 mt-2 font-medium tracking-wide uppercase">
-                {stat.label}
-              </span>
-            </TiltContainer>
-          ))}
-        </div>
+        {/* ── Stat Cards & Universal Dashboard Section ── */}
+        {(() => {
+          // ── Pixel-perfect L-shape connector lines via useRef ──────────────
+          // We use a render-prop IIFE so refs live inside the component scope.
+          // This block is self-contained and does not affect other sections.
+          return <StatDashboard
+            isDark={isDark}
+            lang={lang}
+            t={t}
+            universalTotal={universalTotal}
+            stats={[
+              { count: videosList.length, label: t('Videos', 'فيديوهات'), icon: <Play className="w-6 h-6 text-rose-400" />, glow: 'group-hover:shadow-[0_0_30px_rgba(244,63,94,0.3)] group-hover:border-rose-500/30' },
+              { count: songsList.length, label: t('Songs', 'أغاني'), icon: <Music className="w-6 h-6 text-amber-400" />, glow: 'group-hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] group-hover:border-amber-500/30' },
+              { count: melodiesList.length, label: t('Melodies', 'ألحان'), icon: <Layers className="w-6 h-6 text-orange-400" />, glow: 'group-hover:shadow-[0_0_30px_rgba(251,146,60,0.3)] group-hover:border-orange-500/30' },
+              { count: lyricsList.length, label: t('Lyrics', 'كلمات أغاني'), icon: <FileText className="w-6 h-6 text-teal-400" />, glow: 'group-hover:shadow-[0_0_30px_rgba(20,184,166,0.3)] group-hover:border-teal-500/30' },
+            ]}
+          />;
+        })()}
+
 
         {/* ── Featured Works — Cinema Poster Cards ── */}
         <div className="max-w-5xl mx-auto animate-fade-in-up" style={{ animationDelay: '600ms' }}>

@@ -563,27 +563,34 @@ const SongwritingArtPage = () => {
         }
 
         .swa-card {
-          background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, var(--leather-black) 100%);
-          border: 1px solid var(--swa-card-border);
+          /* Deep charcoal interior — flame lives OUTSIDE via ::before/::after */
+          background: #0d0d0d;
+          border: 1px solid rgba(255,60,0,0.5);
           padding: 35px;
           cursor: pointer;
           transition: 0.4s;
           position: relative;
           border-radius: 6px;
           color: var(--swa-card-text);
-          overflow: hidden;
+          overflow: visible;
         }
 
-        /* Card-scoped grain overlay (always visible, fixed dark card) */
+        /* Subtle grain texture overlay inside card */
         .swa-card::before {
           content: '';
           position: absolute;
           inset: 0;
-          background-image: url('https://www.transparenttextures.com/patterns/leather.png');
-          opacity: var(--swa-grain-opacity);
+          background: repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,0.01) 0px,
+            rgba(255,255,255,0.01) 1px,
+            transparent 1px,
+            transparent 8px
+          );
+          opacity: 0.5;
           pointer-events: none;
-          mix-blend-mode: overlay;
           z-index: 0;
+          border-radius: 6px;
         }
         .swa-card > * { position: relative; z-index: 1; }
 

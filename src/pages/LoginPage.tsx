@@ -264,32 +264,20 @@ const LoginPage = () => {
 
         {/* ── Premium Glass Form Card ── */}
         <div
-          className="w-full rounded-[2rem] p-8 sm:p-10 relative overflow-hidden transition-all duration-500 animate-fade-in-up shadow-2xl login-card ember-card"
+          className="w-full rounded-[2rem] p-8 sm:p-10 relative transition-all duration-500 animate-fade-in-up shadow-2xl login-card ember-card flame-border"
           style={{
+            ['--flame-radius' as any]: '2rem',
             animationDelay: '200ms',
             background: isDark ? 'rgba(10, 10, 10, 0.95)' : 'rgba(255, 255, 255, 0.85)',
             backdropFilter: 'blur(40px)',
             WebkitBackdropFilter: 'blur(40px)',
-            border: isDark ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(201, 132, 10, 0.25)',
             borderTop: isDark ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(255, 255, 255, 0.85)',
             boxShadow: isDark
               ? '0 30px 60px -15px rgba(0,0,0,0.85), inset 0 0 30px rgba(255,255,255,0.02)'
               : '0 20px 40px -10px rgba(0,0,0,0.06)',
           }}
         >
-          {/* Animated Realistic Conic Flame Border Overlay */}
-          <div className="absolute inset-0 rounded-[2rem] p-[1.5px] pointer-events-none z-0 overflow-hidden">
-            <motion.div
-              className="absolute inset-[-6px] rounded-[2.1rem] opacity-30 blur-[6px]"
-              style={{
-                background: isDark
-                  ? 'conic-gradient(from 0deg, #ff0000, #ff8c00, #ff4500, #ff8c00, #ff0000)'
-                  : 'conic-gradient(from 0deg, #c9840a, #f5c842, #d4a017, #b8720a, #c9840a)',
-              }}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-            />
-          </div>
+
 
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 

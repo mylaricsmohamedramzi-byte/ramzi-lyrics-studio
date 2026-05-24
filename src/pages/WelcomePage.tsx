@@ -121,10 +121,13 @@ const StatDashboard: React.FC<StatDashboardProps> = ({ isDark, lang, t, universa
   const wrapRef  = useRef<HTMLDivElement>(null);
   const pathRefs = [useRef<SVGPathElement>(null), useRef<SVGPathElement>(null), useRef<SVGPathElement>(null), useRef<SVGPathElement>(null)];
 
-  // Ember color: neon red dark / amber gold light
-  const lineColor  = isDark ? '#ff2800' : '#c9840a';
-  const baseStroke = isDark ? 'rgba(255,40,0,0.18)' : 'rgba(201,132,10,0.25)';
-  const glowColor  = isDark ? 'rgba(255,40,0,0.7)' : 'rgba(201,132,10,0.6)';
+  // Pulse path refs — updated alongside base rails in updateLines()
+  const pulseRefs = [useRef<SVGPathElement>(null), useRef<SVGPathElement>(null), useRef<SVGPathElement>(null), useRef<SVGPathElement>(null)];
+
+  // Ember color: neon red dark / carbonized red light
+  const lineColor  = isDark ? '#ff2800' : '#cc0000';
+  const baseStroke = isDark ? 'rgba(255,40,0,0.18)' : 'rgba(200,0,0,0.2)';
+  const glowColor  = isDark ? 'rgba(255,40,0,0.7)' : 'rgba(200,0,0,0.6)';
 
   const buildPath = (cardEl: HTMLDivElement, boxEl: HTMLDivElement, wrapEl: HTMLDivElement) => {
     const wRect = wrapEl.getBoundingClientRect();
@@ -157,6 +160,10 @@ const StatDashboard: React.FC<StatDashboardProps> = ({ isDark, lang, t, universa
       if (!cr.current || !pathRefs[i].current) return;
       const d = buildPath(cr.current, boxEl, wrapEl);
       pathRefs[i].current!.setAttribute('d', d);
+      // Also mirror to pulse paths immediately after measurement
+      if (pulseRefs[i].current) {
+        pulseRefs[i].current!.setAttribute('d', d);
+      }
     });
   };
 
@@ -208,20 +215,14 @@ const StatDashboard: React.FC<StatDashboardProps> = ({ isDark, lang, t, universa
         {/* Animated energy pulses on top of rails — desktop only */}
         {!IS_TOUCH && [0, 1, 2, 3].map(i => (
           <path key={`pulse-${i}`}
-            fill="none" stroke={lineColor} strokeWidth="3.2"
+            ref={pulseRefs[i] as React.RefObject<SVGPathElement & SVGElement>}
+            fill="none" stroke={lineColor} strokeWidth="3"
             strokeLinecap="round"
+            className="animate-pulse-flow"
             style={{
               filter: `drop-shadow(0 0 6px ${glowColor})`,
-              strokeDasharray: '30, 90',
-              animation: `energy-pulse-flow ${durations[i]}s linear infinite`,
-              animationDelay: `${delays[i]}s`
-            }}
-            d="" ref={(el) => {
-              // Mirror the measured path
-              if (el && pathRefs[i].current) {
-                const d = pathRefs[i].current!.getAttribute('d') || '';
-                el.setAttribute('d', d);
-              }
+              animationDelay: `${delays[i]}s`,
+              animationDuration: `${durations[i]}s`,
             }}
           />
         ))}
@@ -426,8 +427,11 @@ const WelcomePage = () => {
         {/* ── Photo Container ── */}
         <div className="flex justify-center mb-10 animate-fade-in-up">
           <TiltContainer maxRotate={12} scale={1.03} className="relative group">
-            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-rose-500 to-amber-500 blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-700 animate-spin-slow" />
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+            {/* CSS-only 3-layer rotating flame ring */}
+            <div className="photo-flame-outer" />
+            <div className="photo-flame-mid" />
+            <div className="photo-flame-rim" />
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] bg-black" style={{ zIndex: 2 }}>
               <img
                 src={isDark ? darkPhoto : whitePhoto}
                 alt="Mohamed Ramzi"

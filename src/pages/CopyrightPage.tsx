@@ -58,13 +58,50 @@ const CopyrightPage = () => {
         {/* Stamp */}
         <div className="flex justify-center mb-8 animate-fade-in-up">
           <div
-            className="animate-stamp-pulse"
+            className="animate-stamp-pulse relative p-[4px] rounded-full overflow-hidden"
             style={{ transform: 'rotate(-5deg)' }}
           >
+            {/* 3-layer flame border for the Copyright Stamp */}
+            {/* Layer 1: Flickering Giant Blur */}
+            <div
+              className="absolute inset-[-12px] rounded-full pointer-events-none"
+              style={{
+                background: isDark
+                  ? 'conic-gradient(from 0deg, #ff0000, #ff8c00, #ff4500, #ff8c00, #ff0000)'
+                  : 'conic-gradient(from 0deg, #ff0000, #000000, #ff4500, #000000, #ff0000)',
+                filter: 'blur(16px)',
+                opacity: 0.65,
+                animation: 'flame-rotate-1 12s linear infinite, flame-flicker-1 3.5s ease-in-out infinite alternate',
+              }}
+            />
+            {/* Layer 2: Medium Heat Wave */}
+            <div
+              className="absolute inset-[-4px] rounded-full pointer-events-none"
+              style={{
+                background: isDark
+                  ? 'conic-gradient(from 180deg, #ff4500, #ff0000, #ff8c00, #ff4500)'
+                  : 'conic-gradient(from 180deg, #ff0000, #000000, #ff4500, #ff0000)',
+                filter: 'blur(6px)',
+                opacity: 0.8,
+                animation: 'flame-rotate-2 8s linear infinite, flame-flicker-2 2.8s ease-in-out infinite alternate',
+              }}
+            />
+            {/* Layer 3: Sharp High-Intensity Rim */}
+            <div
+              className="absolute inset-0 rounded-full pointer-events-none"
+              style={{
+                background: isDark
+                  ? 'conic-gradient(from 90deg, #ff0000, #ff8c00, #ff4500, #ff0000)'
+                  : 'conic-gradient(from 90deg, #ff0000, #000000, #ff4500, #ff0000)',
+                opacity: 0.9,
+                animation: 'flame-rotate-1 6s linear infinite',
+              }}
+            />
+
             <img
               src={lang === 'ar' ? copyrightArabic : copyrightEnglish}
               alt={t('Copyright Owner - Mohamed Ramzi', 'حقوق ملكية - محمد رمزي')}
-              className="w-52 h-52 sm:w-64 sm:h-64 object-contain"
+              className="w-52 h-52 sm:w-64 sm:h-64 object-contain relative z-10 rounded-full bg-black/40 backdrop-blur-sm"
               style={{
                 filter: isDark
                   ? 'drop-shadow(0 0 24px rgba(192,39,45,0.5)) saturate(1.3)'

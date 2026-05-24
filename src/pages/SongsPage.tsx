@@ -1474,7 +1474,7 @@ export default function SongsPage() {
         .main-card {
           position: relative;
           max-width: 1100px; margin: 0 auto 60px;
-          border: 2px solid #c9a84c; border-radius: 40px;
+          border: 1px solid var(--primary); border-radius: 40px;
           display: flex; flex-direction: row-reverse; overflow: hidden;
           box-shadow: 0 20px 60px rgba(0,0,0,0.8);
           background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, var(--leather-black) 100%);

@@ -502,7 +502,7 @@ const MelodiesPage = () => {
         
         :root { --leather-black: #0a0205; }
         .page-wrapper { min-height: 100vh; padding: 40px 20px; font-family: 'Outfit', 'Almarai', sans-serif; position: relative; overflow: hidden; }
-        .main-card { max-width: 1100px; margin: 0 auto 60px; background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, var(--leather-black) 100%); border: 1px solid rgba(201, 168, 76, 0.4); border-radius: 40px; display: flex; flex-direction: ${lang === 'ar' ? 'row-reverse' : 'row'}; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8); position: relative; }
+        .main-card { max-width: 1100px; margin: 0 auto 60px; background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, var(--leather-black) 100%); border: 1px solid var(--primary); border-radius: 40px; display: flex; flex-direction: ${lang === 'ar' ? 'row-reverse' : 'row'}; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8); position: relative; }
         
         /* Unified Header Box */
         .unified-header-box {

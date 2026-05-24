@@ -554,7 +554,7 @@ const WelcomePage = () => {
           <div className="text-center mb-12">
             <h3
               className="text-2xl sm:text-3xl font-extrabold text-foreground flex items-center justify-center gap-3 drop-shadow-lg"
-              style={{ fontFamily: "'Omnes Arabic', sans-serif" }}
+              style={{ fontFamily: "'VLAX', 'Cinzel', serif" }}
             >
               <span>{t('Most Popular Works', 'الأكثر شهرة')}</span>
             </h3>
@@ -607,11 +607,12 @@ const WelcomePage = () => {
                 maxRotate={10}
                 scale={1.04}
                 onClick={() => navigate(item.path)}
-                className="group cursor-pointer rounded-[1.5rem] overflow-hidden transition-all duration-500 relative"
+                className="group cursor-pointer rounded-[1.5rem] overflow-hidden transition-all duration-500 relative flame-border"
                 style={{
                   boxShadow: isDark
                     ? '0 20px 50px -10px rgba(0,0,0,0.7)'
                     : '0 15px 40px -10px rgba(0,0,0,0.15)',
+                  ['--flame-radius' as any]: '1.5rem'
                 }}
               >
                 {/* Cover Image */}

@@ -328,7 +328,7 @@ const LyricsPage = () => {
           position: relative;
           max-width: 900px;
           margin: 0 auto 50px;
-          border: 2px solid #c9a84c;
+          border: 1px solid var(--primary);
           border-radius: 40px;
           overflow: hidden;
           box-shadow: 0 30px 60px rgba(0,0,0,0.7);

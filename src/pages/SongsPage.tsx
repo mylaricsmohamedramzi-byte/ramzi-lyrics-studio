@@ -2049,13 +2049,15 @@ export default function SongsPage() {
                     {isAdmin && (
                       <div className="absolute left-2 top-1/2 -translate-y-1/2 flex gap-1 opacity-0 group-hover/comment:opacity-100 transition-opacity bg-black/75 p-1 rounded backdrop-blur-sm border border-white/10">
                         <button
+                          type="button"
                           onMouseDown={(e) => {
                             e.stopPropagation();
+                            e.preventDefault();
                             const newText = window.prompt(lang === 'ar' ? 'تعديل التعليق' : 'Edit comment', comment.text);
                             if (newText && newText.trim() !== '') {
                               setComments(prev => ({
                                 ...prev,
-                                [song.id]: prev[song.id].map(c => c.id === comment.id ? { ...c, text: newText.trim() } : c)
+                                [song.id]: (prev[song.id] || []).map(c => String(c.id) === String(comment.id) ? { ...c, text: newText.trim() } : c)
                               }));
                             }
                           }}
@@ -2065,12 +2067,14 @@ export default function SongsPage() {
                           <Edit className="w-3.5 h-3.5" />
                         </button>
                         <button
+                          type="button"
                           onMouseDown={(e) => {
                             e.stopPropagation();
+                            e.preventDefault();
                             if (window.confirm(lang === 'ar' ? 'حذف التعليق؟' : 'Delete comment?')) {
                               setComments(prev => ({
                                 ...prev,
-                                [song.id]: prev[song.id].filter(c => c.id !== comment.id)
+                                [song.id]: (prev[song.id] || []).filter(c => String(c.id) !== String(comment.id))
                               }));
                             }
                           }}

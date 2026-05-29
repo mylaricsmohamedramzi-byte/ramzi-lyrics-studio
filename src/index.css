@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Aref+Ruqaa+Ink:wght@400;700&family=Almarai:wght@400;700;800&family=Tajawal:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap');
+
+@font-face {
+  font-family: 'DG Forsha';
+  src: local('DG Forsha'), local('DG-Forsha'), url('/fonts/DG-Forsha.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VLAX';
+  src: url('/fonts/VLAX.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Omnes Arabic';
+  src: url('/fonts/OmnesArabic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+    --popover: 30 30% 97%;
+    --popover-foreground: 350 40% 8%;
+    --primary: 355 72% 45%;
+    --primary-foreground: 30 20% 95%;
+    --secondary: 30 20% 90%;
+    --secondary-foreground: 350 40% 15%;
+    --muted: 30 15% 88%;
+    --muted-foreground: 15 20% 40%;
+    --accent: 40 70% 35%;
+    --accent-foreground: 30 20% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 355 30% 85%;
+    --input: 355 20% 88%;
+    --ring: 355 72% 45%;
+    --radius: 0.5rem;
+    --gold: 43 70% 35%;
+    --gold-foreground: 30 20% 95%;
+    --sidebar-background: 30 15% 96%;
+    --sidebar-foreground: 350 20% 20%;
+    --sidebar-primary: 350 30% 10%;
+    --sidebar-primary-foreground: 30 20% 96%;
+    --sidebar-accent: 30 15% 93%;
+    --sidebar-accent-foreground: 350 30% 10%;
+    --sidebar-border: 30 15% 88%;
+    --sidebar-ring: 355 72% 45%;
+
+    --font-heading: 'Cinzel', serif;
+    --font-subheading: 'Cinzel', serif;
+    --font-body: 'Cinzel', serif;
+  }
+
+  .dark {
+    --background: 345 50% 5%;
+    --foreground: 25 30% 92%;
+    --card: 340 25% 6%;
+    --card-foreground: 25 30% 92%;
+    --popover: 340 25% 6%;
+    --popover-foreground: 25 30% 92%;
+    --primary: 357 73% 46%;
+    --primary-foreground: 25 30% 92%;
+    --secondary: 340 20% 10%;
+    --secondary-foreground: 25 30% 92%;
+    --muted: 340 15% 12%;
+    --muted-foreground: 20 15% 45%;
+    --accent: 43 50% 53%;
+    --accent-foreground: 340 30% 3%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 25 30% 92%;
+    --border: 355 30% 15%;
+    --input: 355 20% 15%;
+    --ring: 357 73% 46%;
+    --gold: 43 50% 53%;
+    --gold-foreground: 340 30% 3%;
+    --sidebar-background: 340 30% 4%;
+    --sidebar-foreground: 25 20% 90%;
+    --sidebar-primary: 357 73% 46%;
+    --sidebar-primary-foreground: 25 30% 92%;
+    --sidebar-accent: 340 15% 10%;
+    --sidebar-accent-foreground: 25 20% 90%;
+    --sidebar-border: 340 15% 12%;
+    --sidebar-ring: 357 73% 46%;
+  }
+
+  /* Body text default — Omnes Arabic across the site (both languages) */
+  body, p, span, li, a, button, input, textarea, label, div {
+    font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif;
+  }
+
+  /* Arabic mode keeps Aref Ruqaa Ink for headings/titles, Omnes for body */
+  [data-lang="ar"] body,
+  [data-lang="ar"] p,
+  [data-lang="ar"] span,
+  [data-lang="ar"] li,
+  [data-lang="ar"] a,
+  [data-lang="ar"] button,
+  [data-lang="ar"] input,
+  [data-lang="ar"] textarea,
+  [data-lang="ar"] label,
+  [data-lang="ar"] div {
+    font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif;
+  }
+
+  [data-lang="ar"] {
+    direction: rtl;
+  }
+}
+
+@layer utilities {
+  /* Navbar font */
+  .font-nav {
+    font-family: 'VLAX', 'Cinzel', serif !important;
+    color: rgb(149, 139, 137);
+  }
+
+  /* Main page heading frame: bordered box, bg rgb(187,174,172) dark / black light */
+  .heading-frame {
+    font-family: 'Aref Ruqaa Ink', serif !important;
+    display: inline-block;
+    padding: 0.5rem 1.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #000000;
+    color: #ffffff;
+  }
+  .dark .heading-frame {
+    background: rgb(187, 174, 172);
+    color: #000000;
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+
+  /* Subtitle line under headings */
+  .heading-subtitle {
+    color: #000000;
+    font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif;
+  }
+  .dark .heading-subtitle {
+    color: #ffffff;
+  }
+
+  /* Song titles across all pages */
+  .song-title {
+    font-family: 'Aref Ruqaa Ink', serif !important;
+  }
+
+  /* Song lyric line — DG Forsha, white by default */
+  .lyric-line {
+    font-family: 'DG Forsha', 'Aref Ruqaa Ink', serif !important;
+    color: #ffffff;
+  }
+  .lyric-line.lyric-red {
+    color: #e63946;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    background: radial-gradient(ellipse at 50% 50%, #fdfbf7 0%, #f7f3eb 100%);
+    font-family: var(--font-body);
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  .dark body {
+    background: radial-gradient(ellipse at 50% 50%, #3d0a12 0%, #1a0509 40%, #0a0205 100%);
+  }
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .font-subheading {
+    font-family: var(--font-subheading);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .text-gold-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--accent)), hsl(43 80% 65%), hsl(var(--accent)));
+  }
+  .noise-overlay {
+    position: relative;
+  }
+  .noise-overlay::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .noise-overlay::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(ellipse at 50% 50%, transparent 50%, rgba(0,0,0,0.4) 100%);
+  }
+  .dark .noise-overlay::after {
+    background: radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(0,0,0,0.6) 100%);
+  }
+  .glow-red {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.3), 0 0 60px hsl(var(--primary) / 0.1);
+  }
+  .glow-gold {
+    box-shadow: 0 0 30px hsl(var(--accent) / 0.3), 0 0 60px hsl(var(--accent) / 0.1);
+  }
+  .watermark-bg {
+    position: relative;
+  }
+  .watermark-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--watermark-url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 300px;
+    opacity: 0.035;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes floatNote {
+  0%   { transform: translateY(0) rotate(0deg);   opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.8; }
+  100% { transform: translateY(-115vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 8px hsl(var(--primary) / 0.4)); }
+  50% { filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.7)); }
+}
+
+@keyframes stamp-pulse {
+  0%, 100% { transform: rotate(-5deg) scale(1); }
+  50% { transform: rotate(-5deg) scale(1.02); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-1 { animation-delay: 0.1s; }
+.animate-fade-in-up-2 { animation-delay: 0.2s; }
+.animate-fade-in-up-3 { animation-delay: 0.3s; }
+.animate-fade-in-up-4 { animation-delay: 0.4s; }
+.animate-fade-in-up-5 { animation-delay: 0.5s; }
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-stamp-pulse {
+  animation: stamp-pulse 4s ease-in-out infinite;
+}
+
+/* ==========================================================
+   Global overrides for Songs / Melodies / Videos pages
+   (pages use inline <style> blocks; these win via specificity)
+   ========================================================== */
+
+/* Song / video titles → Aref Ruqaa Ink (color preserved per page) */
+.song-title-red,
+.video-title,
+.song-title {
+  font-family: 'Aref Ruqaa Ink', serif !important;
+}
+
+/* Lyric lines → DG Forsha, white default */
+.line {
+  font-family: 'DG Forsha', 'Aref Ruqaa Ink', serif !important;
+  color: #ffffff !important;
+}
+/* Red lines stay red */
+.line.red {
+  color: #ff4d4d !important;
+}
+
+/* All body / paragraph text on these pages → Omnes Arabic */
+.page-wrapper,
+.page-wrapper p,
+.page-wrapper span:not(.song-title-red):not(.video-title),
+.page-wrapper button,
+.page-wrapper input,
+.page-wrapper label,
+.page-wrapper a {
+  font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif !important;
+}
+/* Light mode body text: black */
+:root:not(.dark) .page-wrapper {
+  color: #000000;
+}
+/* Page wrapper background should respect site theme (kept dark per page design) */
+
+
+/* Unified search bar: red border on hover/focus */
+.unified-search:hover,
+.unified-search:focus {
+  border-color: #c0272d !important;
+  box-shadow: 0 0 0 3px rgba(192, 39, 45, 0.15);
+}
+
+/* Unified filter chips */
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  background: rgba(0,0,0,0.25);
+  color: #f3d98a;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.filter-chip:hover { border-color: #c0272d; color: #fff; }
+.filter-chip.active { background: #c9a84c; color: #000; border-color: #c9a84c; }
+:root:not(.dark) .filter-chip { background: rgba(0,0,0,0.05); color: #1a0509; }
+:root:not(.dark) .filter-chip.active { background: #c0272d; color: #fff; border-color: #c0272d; }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* ==========================================================
+   UNIFIED FIERY IDENTITY — Global Design System
+   GPU-composited only: transform, opacity, filter
+   ========================================================== */
+
+/* ── Position context for all card types ──────────────────── */
+.flame-border,
+.lyrics-card,
+.song-card,
+.video-card,
+.main-card,
+.swa-card,
+.stat-card,
+.ember-card,
+.login-card {
+  position: relative;
+}
+
+/* ── Ember Glow (hover only) ────────────────────────────────
+   Only on .ember-card — the stat cards / category cards.     */
+.ember-card {
+  transition: filter 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  will-change: filter;
+}
+.dark .ember-card:hover {
+  filter: drop-shadow(0 0 12px hsl(var(--primary) / 0.5))
+          drop-shadow(0 0 28px hsl(var(--primary) / 0.2));
+  box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3), 0 12px 40px rgba(0,0,0,0.6);
+}
+:root:not(.dark) .ember-card:hover {
+  filter: drop-shadow(0 0 10px rgba(200,0,0,0.45))
+          drop-shadow(0 0 22px rgba(200,0,0,0.18));
+  box-shadow: 0 0 0 1px rgba(200,0,0,0.3), 0 12px 40px rgba(0,0,0,0.06);
+}
+@media (pointer: coarse) {
+  .ember-card:hover { filter: none; }
+  .dark .ember-card:hover {
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.2); filter: none;
+  }
+  :root:not(.dark) .ember-card:hover {
+    box-shadow: 0 0 0 1px rgba(200,0,0,0.2); filter: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ember-card { transition: none; will-change: auto; }
+}
+
+/* ── Light-mode Carbonized overrides for filter chips ──────── */
+:root:not(.dark) .filter-chip {
+  border-color: rgba(200,0,0,0.35);
+  color: #990000;
+}
+:root:not(.dark) .filter-chip:hover {
+  border-color: #cc0000;
+  background: rgba(200,0,0,0.06);
+  color: #cc0000;
+}
+:root:not(.dark) .filter-chip.active {
+  background: #cc0000;
+  color: #fff;
+  border-color: #cc0000;
+}
+
+/* ── Disable spin-slow on touch devices ────────────────────── */
+@media (pointer: coarse) {
+  .animate-spin-slow { animation: none !important; }
+}
+
+/* ── SVG Connector Pulse ─────────────────────────────────────
+   Negative dashoffset → dashes travel from top (cards) downward
+   to the total box. Each path is re-measured via useRef.       */
+@keyframes energy-pulse-flow {
+  0%   { stroke-dashoffset: -200; }
+  100% { stroke-dashoffset: 0; }
+}
+.animate-pulse-flow {
+  stroke-dasharray: 16, 52;
+  animation: energy-pulse-flow 1.8s linear infinite;
+}
+
+/* ==========================================================
+   LASER BORDER — SHARP, CLEAN, HIGH-TECH LINE-CHASING
+   Uses CSS Masking to strictly confine the animated conic-gradient
+   to a 2px border perimeter, creating a precise border-chasing spark.
+   ========================================================== */
+
+/* The card boundary */
+.laser-border {
+  z-index: 0;
+  position: relative;
+  background: #0d0d0d !important;
+}
+
+/* Dark mode laser colors */
+.dark .laser-border,
+.dark .flame-border,
+.dark .lyrics-card,
+.dark .song-card,
+.dark .video-card,
+.dark .main-card,
+.dark .swa-card {
+  --laser-pulse: #ff0000;
+  --laser-core: #ff8c00;
+}
+
+/* Light Mode Carbonized (Deep Charcoal & Solid Black) */
+:root:not(.dark) .laser-border,
+:root:not(.dark) .flame-border,
+:root:not(.dark) .lyrics-card,
+:root:not(.dark) .song-card,
+:root:not(.dark) .video-card,
+:root:not(.dark) .main-card,
+:root:not(.dark) .swa-card {
+  --laser-pulse: #0d0d0d;
+  --laser-core: #000000;
+}
+
+/* ── Precise SVG Stroke Tracing ───────────────────────────── */
+.laser-svg-rect {
+  fill: none;
+  stroke: var(--laser-pulse);
+  stroke-width: 2px;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 15 85;
+  animation: laser-svg-trace 1.8s linear infinite;
+  filter: drop-shadow(0 0 3px var(--laser-pulse));
+}
+
+@keyframes laser-svg-trace {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ── Mobile performance guard ──────────────────────────────── */
+@media (pointer: coarse) {
+  .laser-svg-rect {
+    animation-duration: 4.5s !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .laser-svg-rect,
+  .animate-pulse-flow {
+    animation: none !important;
+  }
+}

@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo, useEffect } from 'react';
+import { useState, useRef, useMemo, useEffect, type MouseEvent } from 'react';
 import { useLocation } from 'react-router-dom';
 import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';

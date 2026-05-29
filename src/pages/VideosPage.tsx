@@ -194,7 +194,7 @@ const VideosPage = () => {
   };
 
   const handleEditComment = (
-    e: React.MouseEvent<HTMLButtonElement>,
+    e: MouseEvent<HTMLButtonElement>,
     videoId: number,
     commentId: string
   ) => {
@@ -212,7 +212,7 @@ const VideosPage = () => {
   };
 
   const handleDeleteComment = (
-    e: React.MouseEvent<HTMLButtonElement>,
+    e: MouseEvent<HTMLButtonElement>,
     videoId: number,
     commentId: string
   ) => {

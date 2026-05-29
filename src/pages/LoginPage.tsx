@@ -109,7 +109,7 @@ const TiltContainer: React.FC<TiltContainerProps> = ({
   );
 };
 
-const springTransition = { type: 'spring', stiffness: 300, damping: 25 };
+const springTransition = { type: 'spring' as const, stiffness: 300, damping: 25 };
 const variants = {
   initial: { opacity: 0, x: 20 },
   animate: { opacity: 1, x: 0 },

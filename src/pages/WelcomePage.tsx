@@ -1,163 +1,846 @@
+import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import homeLogoDark from '@/assets/home-logo-dark.png';
-import homeLogoLight from '@/assets/home-logo-light.png';
+import { Play, Music, FileText, Layers, ArrowUpRight, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 import darkPhoto from '@/assets/dark-photo.png';
 import whitePhoto from '@/assets/white-photo.png';
-import nameArabic from '@/assets/name-arabic.png';
+import homeLogoDark from '@/assets/home-logo-dark.png';
+import homeLogoLight from '@/assets/home-logo-light.png';
 import nameEnglish from '@/assets/name-english.png';
+import nameArabic from '@/assets/name-arabic.png';
 
-const WelcomePage = () => {
-  const { lang, t } = useLang();
-  const { isDark } = useTheme();
+import { allSongs as lyricsList } from '@/data/lyricsSongs';
+import { allSongs as songsList } from '@/pages/SongsPage';
+import { allSongs as melodiesList } from '@/pages/MelodiesPage';
+import { allVideos as videosList } from '@/data/videosData';
 
-  const ownerPhoto = isDark ? darkPhoto : whitePhoto;
-  const homeLogo = isDark ? homeLogoDark : homeLogoLight;
-  const nameImage = lang === 'ar' ? nameArabic : nameEnglish;
+// --- Mobile touch guard: disable RAF on touch-only devices ---
+const IS_TOUCH = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
+
+// --- 3D Depth Tilt Container ---
+interface TiltContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+  maxRotate?: number;
+  perspective?: number;
+  scale?: number;
+  easing?: number;
+  children: React.ReactNode;
+}
+
+const TiltContainer: React.FC<TiltContainerProps> = ({
+  maxRotate = 8,
+
+  perspective = 1200,
+  scale = 1.02,
+  easing = 0.08,
+  children,
+  className,
+  style,
+  ...props
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const current = useRef({ rx: 0, ry: 0 });
+  const target = useRef({ rx: 0, ry: 0 });
+  const rafId = useRef<number>(0);
+
+  const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+
+  useEffect(() => {
+    if (IS_TOUCH) return; // Skip all RAF on mobile — saves battery
+    const el = ref.current;
+    if (!el) return;
+
+    const animate = () => {
+      current.current.rx = lerp(current.current.rx, target.current.rx, easing);
+      current.current.ry = lerp(current.current.ry, target.current.ry, easing);
+      const { rx, ry } = current.current;
+      el.style.transform = `perspective(${perspective}px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(${scale},${scale},${scale})`;
+      rafId.current = requestAnimationFrame(animate);
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = el.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const nx = (e.clientX - cx) / (rect.width / 2);
+      const ny = (e.clientY - cy) / (rect.height / 2);
+      target.current.rx = -ny * maxRotate;
+      target.current.ry = nx * maxRotate;
+    };
+
+    const handleMouseEnter = () => { rafId.current = requestAnimationFrame(animate); };
+    const handleMouseLeave = () => {
+      target.current = { rx: 0, ry: 0 };
+      if (rafId.current) { cancelAnimationFrame(rafId.current); rafId.current = 0; }
+      el.style.transform = `perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)`;
+    };
+
+    el.addEventListener('mousemove', handleMouseMove);
+    el.addEventListener('mouseenter', handleMouseEnter);
+    el.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      el.removeEventListener('mousemove', handleMouseMove);
+      el.removeEventListener('mouseenter', handleMouseEnter);
+      el.removeEventListener('mouseleave', handleMouseLeave);
+      if (rafId.current) cancelAnimationFrame(rafId.current);
+    };
+  }, [maxRotate, perspective, scale, easing]);
 
   return (
     <div
-      dir={lang === 'ar' ? 'rtl' : 'ltr'}
-      className="welcome-wrapper content-layer"
+      ref={ref}
+      className={className}
+      style={{
+        transformStyle: 'preserve-3d',
+        willChange: IS_TOUCH ? 'auto' : 'transform',
+        transition: 'transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease',
+        ...style
+      }}
+      {...props}
     >
+      {children}
+    </div>
+  );
+};
+
+// ─── StatDashboard — Pixel-perfect L-shaped SVG connector lines ─────────────
+interface StatItem { count: number; label: string; icon: React.ReactNode; glow: string; }
+interface StatDashboardProps {
+  isDark: boolean; lang: string;
+  t: (en: string, ar: string) => string;
+  universalTotal: number; stats: StatItem[];
+}
+
+const StatDashboard: React.FC<StatDashboardProps> = ({ isDark, lang, t, universalTotal, stats }) => {
+  const navigate = useNavigate();
+  // One ref per card + one for the dashboard box
+  const cardRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
+  const boxRef = useRef<HTMLDivElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const pathRefs = [useRef<SVGPathElement>(null), useRef<SVGPathElement>(null), useRef<SVGPathElement>(null), useRef<SVGPathElement>(null)];
+
+  // Pulse path refs — updated alongside base rails in updateLines()
+  const pulseRefs = [useRef<SVGPathElement>(null), useRef<SVGPathElement>(null), useRef<SVGPathElement>(null), useRef<SVGPathElement>(null)];
+
+  // Ember color: neon red dark / carbonized red light
+  const lineColor = isDark ? '#ff2800' : '#cc0000';
+  const baseStroke = isDark ? 'rgba(255,40,0,0.18)' : 'rgba(200,0,0,0.2)';
+  const glowColor = isDark ? 'rgba(255,40,0,0.7)' : 'rgba(200,0,0,0.6)';
+
+  const buildPath = (cardEl: HTMLDivElement, boxEl: HTMLDivElement, wrapEl: HTMLDivElement) => {
+    const wRect = wrapEl.getBoundingClientRect();
+    const cRect = cardEl.getBoundingClientRect();
+    const bRect = boxEl.getBoundingClientRect();
+
+    // Card bottom-center in wrapper-local coords
+    const cx = cRect.left - wRect.left + cRect.width / 2;
+    const cy = cRect.bottom - wRect.top;
+
+    // Box left/right midpoint in wrapper-local coords
+    const bMidY = bRect.top - wRect.top + bRect.height / 2;
+    const bLeft = bRect.left - wRect.left;
+    const bRight = bRect.right - wRect.left;
+
+    // Choose entry side: cards 0,1 enter left; cards 2,3 enter right
+    // Actually: cards left of center → go to box left; right of center → box right
+    const wMid = wRect.width / 2;
+    const entryX = cx < wMid ? bLeft : bRight;
+
+    // L-shape: straight down, then 90° horizontal to box
+    return `M ${cx},${cy} V ${bMidY} H ${entryX}`;
+  };
+
+  const updateLines = () => {
+    const wrapEl = wrapRef.current;
+    const boxEl = boxRef.current;
+    if (!wrapEl || !boxEl) return;
+    cardRefs.forEach((cr, i) => {
+      if (!cr.current || !pathRefs[i].current) return;
+      const d = buildPath(cr.current, boxEl, wrapEl);
+      pathRefs[i].current!.setAttribute('d', d);
+      // Also mirror to pulse paths immediately after measurement
+      if (pulseRefs[i].current) {
+        pulseRefs[i].current!.setAttribute('d', d);
+      }
+    });
+  };
+
+  useEffect(() => {
+    updateLines();
+    const ro = new ResizeObserver(updateLines);
+    if (wrapRef.current) ro.observe(wrapRef.current);
+    window.addEventListener('resize', updateLines);
+    return () => { ro.disconnect(); window.removeEventListener('resize', updateLines); };
+  }, [isDark]);
+
+  // Framer Motion animation params per card (staggered)
+  const delays = [0, 0.5, 0.2, 0.7];
+  const durations = [2.2, 1.8, 1.8, 2.2];
+
+  return (
+    <div
+      ref={wrapRef}
+      className="relative max-w-4xl mx-auto mb-24 animate-fade-in-up"
+      style={{ animationDelay: '500ms' }}
+    >
+      {/* ── Pixel-perfect SVG Connector Lines ── */}
+      <svg
+        ref={svgRef}
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{ width: '100%', height: '100%', overflow: 'visible', zIndex: 1 }}
+      >
+        <defs>
+          {/* Dark: neon red gradient; Light: amber gold gradient */}
+          <linearGradient id="cline-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor={lineColor} stopOpacity="0.1" />
+            <stop offset="50%" stopColor={lineColor} stopOpacity="1" />
+            <stop offset="100%" stopColor={lineColor} stopOpacity="0.1" />
+          </linearGradient>
+          <filter id="cline-glow" x="-20%" y="-200%" width="140%" height="500%">
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+          </filter>
+        </defs>
+
+        {/* Static base rails — always visible */}
+        {[0, 1, 2, 3].map(i => (
+          <path key={`base-${i}`} ref={pathRefs[i] as React.RefObject<SVGPathElement & SVGElement>}
+            fill="none" stroke={baseStroke} strokeWidth="1.5"
+            strokeDasharray="4 6" strokeLinecap="round" />
+        ))}
+
+        {/* Animated energy pulses on top of rails — desktop only */}
+        {!IS_TOUCH && [0, 1, 2, 3].map(i => (
+          <path key={`pulse-${i}`}
+            ref={pulseRefs[i] as React.RefObject<SVGPathElement & SVGElement>}
+            fill="none" stroke={lineColor} strokeWidth="3"
+            strokeLinecap="round"
+            className="animate-pulse-flow"
+            style={{
+              filter: `drop-shadow(0 0 6px ${glowColor})`,
+              animationDelay: `${delays[i]}s`,
+              animationDuration: `${durations[i]}s`,
+            }}
+          />
+        ))}
+      </svg>
+
+      {/* ── Stat Cards grid ── */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 relative" style={{ zIndex: 10 }}>
+        {stats.map((stat, idx) => (
+          <div key={idx} ref={cardRefs[idx]}>
+            <TiltContainer
+              maxRotate={15} scale={1.06}
+              onClick={() => navigate(idx === 0 ? '/videos' : idx === 1 ? '/songs' : idx === 2 ? '/melodies' : '/lyrics')}
+              className={`group stat-card ember-card flex flex-col items-center justify-center p-6 sm:p-8 rounded-[2rem] transition-all duration-500 cursor-pointer laser-border ${stat.glow}`}
+              style={{
+                background: isDark ? '#0d0d0d' : '#cc0000',
+                backdropFilter: 'blur(30px)', WebkitBackdropFilter: 'blur(30px)',
+                border: isDark ? '1px solid rgba(255,255,255,0.06)' : '1px solid rgba(0,0,0,0.12)',
+                color: '#ffffff',
+                boxShadow: isDark
+                  ? '0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05)'
+                  : '0 8px 28px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.7)',
+              }}
+            >
+              {/* SVG Laser Border Trace */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none select-none rounded-[2rem]" style={{ zIndex: 1 }}>
+                <rect x="0" y="0" width="100%" height="100%" rx="2rem" ry="2rem" pathLength="100" className="laser-svg-rect" />
+              </svg>
+              <div className="mb-4 p-3 rounded-2xl bg-white/5 border border-white/10 group-hover:bg-white/10 transition-colors" style={{ zIndex: 2 }}>
+                {stat.icon}
+              </div>
+              <span className="text-4xl sm:text-5xl font-bold text-white drop-shadow-lg"
+                style={{ fontFamily: lang === 'ar' ? 'VLAX, Cinzel, serif' : 'Cinzel, serif', zIndex: 2 }}>
+                {stat.count}
+              </span>
+              <span className="text-sm text-white/80 mt-2 font-medium tracking-wide uppercase" style={{ zIndex: 2 }}>
+                {stat.label}
+              </span>
+            </TiltContainer>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Central Dashboard Box ── */}
+      <div className="relative flex justify-center mt-12 sm:mt-20" style={{ zIndex: 10 }}>
+        <TiltContainer maxRotate={IS_TOUCH ? 0 : 8} scale={IS_TOUCH ? 1 : 1.05}>
+          {/* Main Box Wrapper with laser-border */}
+          <div
+            ref={boxRef}
+            className="relative rounded-[2rem] p-8 sm:p-12 min-w-[240px] sm:min-w-[300px] flex flex-col items-center justify-center transition-all duration-500 laser-border ember-card"
+            style={{
+              background: isDark ? 'rgba(10,10,10,0.97)' : 'rgba(255,251,240,0.97)',
+              backdropFilter: 'blur(30px)',
+              WebkitBackdropFilter: 'blur(30px)',
+              boxShadow: isDark
+                ? '0 20px 60px rgba(255,40,0,0.25), inset 0 0 40px rgba(255,40,0,0.06)'
+                : '0 20px 60px rgba(201,132,10,0.2), inset 0 0 40px rgba(201,132,10,0.05)',
+            }}
+          >
+            {/* SVG Laser Border Trace */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none select-none rounded-[2rem]" style={{ zIndex: 10 }}>
+              <rect x="0" y="0" width="100%" height="100%" rx="2rem" ry="2rem" pathLength="100" className="laser-svg-rect" />
+            </svg>
+            {/* Subtle inner glow */}
+            <div className="absolute inset-0 rounded-[2rem] pointer-events-none"
+              style={{
+                background: isDark
+                  ? 'radial-gradient(ellipse at 50% 100%, rgba(255,40,0,0.12) 0%, transparent 70%)'
+                  : 'radial-gradient(ellipse at 50% 100%, rgba(201,132,10,0.1) 0%, transparent 70%)',
+              }}
+            />
+
+            {/* Label */}
+            <motion.span
+              className="font-bold tracking-widest uppercase text-xs sm:text-sm mb-3 relative z-10"
+              style={{
+                fontFamily: "'Omnes Arabic', sans-serif",
+                color: isDark ? '#ff5533' : '#b87010',
+                textShadow: isDark
+                  ? '0 0 12px rgba(255,60,0,0.7)'
+                  : '0 0 10px rgba(201,132,10,0.5)',
+              }}
+              animate={{ opacity: [0.8, 1, 0.8] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              {t(' Total', 'الاجمالي')}
+            </motion.span>
+
+            {/* Number */}
+            <span
+              className="text-6xl sm:text-7xl font-extrabold relative z-10"
+              style={{
+                fontFamily: lang === 'ar' ? 'VLAX, Cinzel, serif' : 'Cinzel, serif',
+                color: isDark ? '#ffffff' : '#1a0a00',
+                textShadow: isDark
+                  ? '0 0 30px rgba(255,255,255,0.6), 0 0 60px rgba(255,40,0,0.3)'
+                  : '0 2px 12px rgba(0,0,0,0.15)',
+              }}
+            >
+              {universalTotal}
+            </span>
+          </div>
+        </TiltContainer>
+      </div>
+    </div>
+  );
+};
+
+
+
+// --- SVG Film Grain Overlay ---
+const NoiseOverlay = ({ opacity = 0.04 }: { opacity?: number }) => (
+  <div
+    aria-hidden="true"
+    className="fixed inset-0 pointer-events-none z-50 mix-blend-overlay"
+    style={{
+      opacity,
+      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+      backgroundRepeat: 'repeat',
+    }}
+  />
+);
+
+// --- Cover Images ---
+const COVER_IMAGES = {
+  sultana: 'https://res.cloudinary.com/dq3orhpdj/image/upload/v1777268589/%D8%AA%D9%84%D9%83_%D8%A7%D9%84%D8%B3%D9%8F%D9%84%D8%B7%D8%A7%D9%86%D9%87_cnzxvg_poster.jpg',
+  sirr: 'https://res.cloudinary.com/dq3orhpdj/image/upload/v1776510465/%D8%B3%D8%B1_%D9%91%D8%A5%D8%AE%D8%AA%D9%84%D8%A7%D9%81%D9%8A_otkvhz.png',
+  layl: 'https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002997/%D9%88%D8%B9%D8%AF%D9%8A_%D8%A7%D9%84%D9%84%D9%8A%D9%84_uxgnfs.png',
+};
+
+const WelcomePage = () => {
+  const { t, lang } = useLang();
+  const { isDark } = useTheme();
+  const navigate = useNavigate();
+
+  const universalTotal = videosList.length + songsList.length + melodiesList.length + lyricsList.length;
+
+  return (
+    <div
+      className="min-h-screen relative overflow-hidden pb-24 selection:bg-rose-500/30 selection:text-rose-200"
+      style={{
+        background: 'transparent',
+      }}
+    >
+      <NoiseOverlay opacity={isDark ? 0.04 : 0.03} />
+
+      {/* Subtle warm orbs for depth */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full blur-[120px] mix-blend-screen welcome-orb-1" style={{ background: isDark ? 'rgba(180, 30, 40, 0.1)' : 'rgba(225, 29, 72, 0.04)' }} />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[55vw] h-[55vw] rounded-full blur-[140px] mix-blend-screen welcome-orb-2" style={{ background: isDark ? 'rgba(140, 20, 30, 0.08)' : 'rgba(245, 158, 11, 0.03)', animationDelay: '2s' }} />
+        <div className="absolute top-[50%] left-[30%] w-[25vw] h-[25vw] rounded-full blur-[100px] mix-blend-screen welcome-orb-3" style={{ background: isDark ? 'rgba(160, 30, 25, 0.06)' : 'rgba(220, 38, 38, 0.03)', animationDelay: '4s' }} />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 py-16 relative z-10">
+
+        {/* ── Photo Container ── */}
+        <div className="flex justify-center mb-10 animate-fade-in-up">
+          <TiltContainer maxRotate={12} scale={1.03} className="relative group">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] bg-black laser-border" style={{ zIndex: 2 }}>
+              <img
+                src={isDark ? darkPhoto : whitePhoto}
+                alt="Mohamed Ramzi"
+                className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700"
+              />
+              {/* Crisp laser border orbiting the circular photo */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none select-none rounded-full" style={{ zIndex: 10 }}>
+                <circle cx="50%" cy="50%" r="49%" pathLength="100" className="laser-svg-rect" />
+              </svg>
+            </div>
+          </TiltContainer>
+        </div>
+
+        {/* ── Brand Name & Title ── */}
+        <div className="text-center mb-10 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+          <div className="flex justify-center mb-4">
+            <img
+              src={lang === 'ar' ? nameArabic : nameEnglish}
+              alt={t('Mohamed Ramzi', 'محمد رمزي')}
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain drop-shadow-2xl"
+            />
+          </div>
+          <p
+            className="text-sm sm:text-base text-foreground/60 tracking-[0.4em] uppercase font-bold"
+            style={{ fontFamily: "'Omnes Arabic', sans-serif" }}
+          >
+            {t('Song Writer & Composer', 'كاتب وملحن أغاني')}
+          </p>
+        </div>
+
+        {/* ── Central Logo ── */}
+        <div className="flex justify-center my-16 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+          <div className="animate-float">
+            <img
+              src={isDark ? homeLogoDark : homeLogoLight}
+              alt="MR Logo"
+              className="w-48 h-auto sm:w-56 object-contain"
+              style={{
+                filter: isDark
+                  ? 'drop-shadow(0 20px 40px rgba(0,0,0,0.8)) drop-shadow(0 0 20px rgba(225,29,72,0.3))'
+                  : 'drop-shadow(0 10px 30px rgba(0,0,0,0.15))'
+              }}
+            />
+          </div>
+        </div>
+
+        {/* ── Welcome Tag ── */}
+        <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+          <div className="inline-flex flex-col items-center justify-center gap-4 px-8 py-6 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl shadow-xl">
+            <div className="flex items-center justify-center gap-3">
+              <Sparkles className="w-5 h-5 text-rose-400 animate-pulse" />
+              <p
+                className="text-2xl sm:text-3xl text-foreground font-bold leading-relaxed"
+                style={{
+                  fontFamily: "'Graphic School', 'Cairo', 'Tajawal', sans-serif",
+                  fontWeight: 'bold'
+                }}
+              >
+                {t(
+                  "Welcome to the official digital gallery of ",
+                  "مرحباً بكم في"
+                )}
+              </p>
+              <Sparkles className="w-5 h-5 text-amber-400 animate-pulse" />
+            </div>
+
+            <p
+              className="text-2xl sm:text-3xl text-foreground font-bold leading-relaxed"
+              style={{
+                fontFamily: "'Graphic School', 'Cairo', 'Tajawal', sans-serif",
+                fontWeight: 'bold'
+              }}
+            >
+              {t(
+                " ",
+                "المعرض الرقمي الرسمي لأعمال"
+              )}
+            </p>
+
+            <div
+              className="mt-2 font-extrabold text-xl sm:text-2xl font-subheading flex items-center justify-center gap-3"
+              style={{
+                fontFamily: "'Graphic School', 'Cairo', 'Tajawal', sans-serif",
+                color: '#901522'
+              }}
+            >
+              <div className="w-12 h-px bg-gradient-to-r from-transparent to-rose-400/50" />
+              {t("Mohamed Ramzi 's works.", "محمد رمزي")}
+              <div className="w-12 h-px bg-gradient-to-l from-transparent to-amber-400/50" />
+            </div>
+          </div>
+        </div>
+
+        {/* ── Premium Liquid Glass Quote Card ── */}
+        <div className="max-w-4xl mx-auto mb-20 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+          <TiltContainer
+            maxRotate={5}
+            scale={1.01}
+            className="group relative rounded-[2rem] p-8 sm:p-14 text-center overflow-hidden"
+            style={{
+              background: isDark ? 'rgba(255, 255, 255, 0.02)' : 'rgba(255, 255, 255, 0.6)',
+              backdropFilter: 'blur(40px)',
+              WebkitBackdropFilter: 'blur(40px)',
+              border: isDark ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(255, 255, 255, 0.4)',
+              borderTop: isDark ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(255, 255, 255, 0.8)',
+              boxShadow: isDark
+                ? '0 30px 60px -15px rgba(0,0,0,0.8), inset 0 0 40px rgba(255,255,255,0.02)'
+                : '0 20px 50px -10px rgba(0,0,0,0.1), inset 0 0 40px rgba(255,255,255,0.3)',
+            }}
+          >
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+
+            {/* السطر الأول */}
+            <p
+              className="text-xl sm:text-2xl lg:text-3xl leading-[1.8] text-foreground font-bold relative z-10 max-w-3xl mx-auto"
+              style={{
+                fontFamily: "'Medad Pronz', 'DG Forsha', 'Omnes Arabic', sans-serif",
+                textShadow: isDark ? '0 4px 12px rgba(0,0,0,0.9)' : 'none'
+              }}
+            >
+              {t(
+                "The difference between the talented and the exceptional",
+                "الفرق بين الموهوب والمُميز"
+              )}
+            </p>
+
+            {/* السطر الثاني */}
+            <p
+              className="text-lg sm:text-xl lg:text-2xl leading-[1.8] text-foreground/90 font-medium relative z-10 max-w-3xl mx-auto mt-4"
+              style={{
+                fontFamily: "'Medad Pronz', 'DG Forsha', 'Omnes Arabic', sans-serif",
+                textShadow: isDark ? '0 2px 8px rgba(0,0,0,0.5)' : 'none'
+              }}
+            >
+              {t(
+                "The talented person is content with their talent and does not make the extra effort to significantly improve upon it",
+                "الموهوب يكتفي بموهبته ولا يبذل جهد أكثر في عمل تغيير ملحوظ على الموهبة"
+              )}
+            </p>
+
+            {/* السطر الثالث */}
+            <p
+              className="text-lg sm:text-xl lg:text-2xl leading-[1.8] text-foreground/90 font-medium relative z-10 max-w-3xl mx-auto mt-4"
+              style={{
+                fontFamily: "'Medad Pronz', 'DG Forsha', 'Omnes Arabic', sans-serif",
+                textShadow: isDark ? '0 2px 8px rgba(0,0,0,0.5)' : 'none'
+              }}
+            >
+              {t(
+                "The exceptional person is the one who combines talent with study, self-improvement, and the ability to keep up with the times",
+                "بينما المُميز هوا من يجمع الموهبة مع الدراسة والتطوير من المستوى والقدرة على المواكبة"
+              )}
+            </p>
+
+            {/* السطر الرابع */}
+            <p
+              className="text-lg sm:text-xl lg:text-2xl leading-[1.8] text-foreground/90 font-medium relative z-10 max-w-3xl mx-auto mt-4"
+              style={{
+                fontFamily: "'Medad Pronz', 'DG Forsha', 'Omnes Arabic', sans-serif",
+                textShadow: isDark ? '0 2px 8px rgba(0,0,0,0.5)' : 'none'
+              }}
+            >
+              {t(
+                "Which results in an exceptional person",
+                "مما ينتج شخص مُتميز"
+              )}
+            </p>
+
+            {/* السطر الخامس - ينتج */}
+            <p
+              className="text-xl sm:text-2xl lg:text-3xl leading-[1.8] text-foreground font-bold relative z-10 max-w-3xl mx-auto mt-6"
+              style={{
+                fontFamily: "'Medad Pronz', 'DG Forsha', 'Omnes Arabic', sans-serif",
+                textShadow: isDark ? '0 4px 12px rgba(0,0,0,0.9)' : 'none'
+              }}
+            >
+              {t(
+                "Results in",
+                "ينتج"
+              )}
+            </p>
+
+            {/* السهم المتحرك (قبل الاسم) */}
+            <div className="flex justify-center mt-8 animate-bounce">
+              <svg
+                className="w-8 h-8 text-rose-400/80 drop-shadow-lg"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
+              </svg>
+            </div>
+
+            {/* اسم محمد رمزي مع التدرج اللوني */}
+            <div
+              className="mt-4 text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-amber-400 font-extrabold text-xl sm:text-2xl font-subheading flex items-center justify-center gap-3"
+              style={{ fontFamily: "'Medad Pronz', 'Omnes Arabic', sans-serif" }}
+            >
+              <div className="w-12 h-px bg-gradient-to-r from-transparent to-rose-400/50" />
+              {t("Mohamed Ramzi", "محمد رمزي")}
+              <div className="w-12 h-px bg-gradient-to-l from-transparent to-amber-400/50" />
+            </div>
+          </TiltContainer>
+        </div>
+
+        {/* ── Stat Cards & Universal Dashboard Section ── */}
+        {(() => {
+          // ── Pixel-perfect L-shape connector lines via useRef ──────────────
+          // We use a render-prop IIFE so refs live inside the component scope.
+          // This block is self-contained and does not affect other sections.
+          return <StatDashboard
+            isDark={isDark}
+            lang={lang}
+            t={t}
+            universalTotal={universalTotal}
+            stats={[
+              { count: videosList.length, label: t('Videos', 'فيديوهات'), icon: <Play className="w-6 h-6 text-rose-400" />, glow: 'group-hover:shadow-[0_0_30px_rgba(244,63,94,0.3)] group-hover:border-rose-500/30' },
+              { count: songsList.length, label: t('Songs', 'أغاني'), icon: <Music className="w-6 h-6 text-amber-400" />, glow: 'group-hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] group-hover:border-amber-500/30' },
+              { count: melodiesList.length, label: t('Melodies', 'ألحان'), icon: <Layers className="w-6 h-6 text-orange-400" />, glow: 'group-hover:shadow-[0_0_30px_rgba(251,146,60,0.3)] group-hover:border-orange-500/30' },
+              { count: lyricsList.length, label: t('Lyrics', 'كلمات أغاني'), icon: <FileText className="w-6 h-6 text-teal-400" />, glow: 'group-hover:shadow-[0_0_30px_rgba(20,184,166,0.3)] group-hover:border-teal-500/30' },
+            ]}
+          />;
+        })()}
+
+
+        {/* ── Featured Works — Cinema Poster Cards ── */}
+        <div className="max-w-5xl mx-auto animate-fade-in-up" style={{ animationDelay: '600ms' }}>
+          <div className="text-center mb-12">
+            <h3
+              className="text-2xl sm:text-3xl font-extrabold text-foreground flex items-center justify-center gap-3 drop-shadow-lg"
+              style={{ fontFamily: "'VLAX', 'Cinzel', serif" }}
+            >
+              <span>{t('Most Popular Works', 'الأكثر شهرة')}</span>
+            </h3>
+            <p className="text-foreground/50 mt-3 text-sm tracking-wide uppercase font-bold" style={{ fontFamily: "'Omnes Arabic', sans-serif" }}>
+              {t('Explore the top creations', 'استكشف أهم إبداعات محمد رمزي')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {[
+              {
+                id: 5,
+                title: { ar: 'تِلْكَ السُّلطَانَهْ', en: 'Tilka Al-Sultana' },
+                category: { ar: 'فيديو', en: 'Video' },
+                path: '/videos?id=5',
+                coverImg: COVER_IMAGES.sultana,
+                accentColor: 'rgba(225, 29, 72, 0.5)',
+                iconOverlay: <Play className="w-10 h-10 text-white drop-shadow-lg" />,
+              },
+              {
+                id: 3,
+                title: { ar: 'سرّ إختلافي', en: 'Ser ekhtelafy' },
+                category: { ar: 'أغنية', en: 'Song' },
+                path: '/songs?id=3',
+                coverImg: COVER_IMAGES.sirr,
+                accentColor: 'rgba(245, 158, 11, 0.5)',
+                iconOverlay: <Music className="w-10 h-10 text-white drop-shadow-lg" />,
+              },
+              {
+                id: 1,
+                title: { ar: 'مليش غيرِك', en: 'Malish ghirak' },
+                category: { ar: 'أغنية', en: 'Song' },
+                path: '/songs?id=1',
+                coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776510464/%D9%85%D9%84%D9%8A%D8%B4_%D8%BA%D9%8A%D8%B1%D9%83_weld7x.png",
+                accentColor: 'rgba(245, 158, 11, 0.5)',
+                iconOverlay: <Music className="w-10 h-10 text-white drop-shadow-lg" />,
+              },
+              {
+                id: 6,
+                title: { ar: 'وعدّي الليل', en: "Wa'addi Al-Layl" },
+                category: { ar: 'لحن', en: 'Melody' },
+                path: '/melodies?id=6',
+                coverImg: COVER_IMAGES.layl,
+                accentColor: 'rgba(251, 146, 60, 0.5)',
+                iconOverlay: <Layers className="w-10 h-10 text-white drop-shadow-lg" />,
+              },
+              {
+                id: 93,
+                title: { ar: 'إفترقنا', en: 'Eftaraqna' },
+                category: { ar: 'كلمات', en: 'Lyrics' },
+                path: '/lyrics?id=93',
+                coverImg: 'https://res.cloudinary.com/dq3orhpdj/image/upload/v1779877738/%D8%A5%D9%81%D8%AA%D8%B1%D9%82%D9%86%D8%A7_fm3oz1.png',
+                accentColor: 'rgba(20, 184, 166, 0.5)',
+                iconOverlay: <FileText className="w-10 h-10 text-white drop-shadow-lg" />,
+              },
+              {
+                id: 52,
+                title: { ar: 'حالة نادرة', en: '7ala nadra' },
+                category: { ar: 'كلمات', en: 'Lyrics' },
+                path: '/lyrics?id=52',
+                coverImg: 'https://res.cloudinary.com/dq3orhpdj/image/upload/v1779878342/%D8%AD%D8%A7%D9%84%D9%87_%D9%86%D8%A7%D8%AF%D8%B1%D8%A9_axwt50.png',
+                accentColor: 'rgba(20, 184, 166, 0.5)',
+                iconOverlay: <FileText className="w-10 h-10 text-white drop-shadow-lg" />,
+              },
+              {
+                id: 18,
+                title: { ar: 'بُرج الميزان', en: 'Borg el mizan' },
+                category: { ar: 'كلمات', en: 'Lyrics' },
+                path: '/lyrics?id=18',
+                coverImg: 'https://res.cloudinary.com/dq3orhpdj/image/upload/v1779879411/%D8%A8%D8%B1%D8%AC_%D8%A7%D9%84%D9%85%D9%8A%D8%B2%D8%A7%D9%86_hp5tbl.png',
+                accentColor: 'rgba(20, 184, 166, 0.5)',
+                iconOverlay: <FileText className="w-10 h-10 text-white drop-shadow-lg" />,
+              },
+              {
+                id: 25,
+                title: { ar: 'عندي مناعة', en: '3andy mana3a' },
+                category: { ar: 'كلمات', en: 'Lyrics' },
+                path: '/lyrics?id=25',
+                coverImg: 'https://res.cloudinary.com/dq3orhpdj/image/upload/v1779197645/%D8%B9%D9%86%D8%AF%D9%8A_%D9%85%D9%86%D8%A7%D8%B9%D9%87_vze40i.png',
+                accentColor: 'rgba(20, 184, 166, 0.5)',
+                iconOverlay: <FileText className="w-10 h-10 text-white drop-shadow-lg" />,
+              },
+              {
+                id: 43,
+                title: { ar: 'دور بطولي', en: 'Dor botoly' },
+                category: { ar: 'كلمات', en: 'Lyrics' },
+                path: '/lyrics?id=43',
+                coverImg: 'https://res.cloudinary.com/dq3orhpdj/image/upload/v1779880948/%D8%AF%D9%88%D8%B1_%D8%A8%D8%B7%D9%88%D9%84%D9%8A_tkqtxk.png',
+                accentColor: 'rgba(20, 184, 166, 0.5)',
+                iconOverlay: <FileText className="w-10 h-10 text-white drop-shadow-lg" />,
+              },
+              {
+                id: 39,
+                title: { ar: 'الحال العام', en: 'El 7al el 3am' },
+                category: { ar: 'كلمات', en: 'Lyrics' },
+                path: '/lyrics?id=39',
+                coverImg: 'https://res.cloudinary.com/dq3orhpdj/image/upload/v1779880945/%D8%A7%D9%84%D8%AD%D8%A7%D9%84_%D8%A7%D9%84%D8%B9%D8%A7%D9%85_zvgh4k.png',
+                accentColor: 'rgba(20, 184, 166, 0.5)',
+                iconOverlay: <FileText className="w-10 h-10 text-white drop-shadow-lg" />,
+              },
+              {
+                id: 92,
+                title: { ar: 'حظي مخاصمني', en: '7azy mokhasemny' },
+                category: { ar: 'كلمات', en: 'Lyrics' },
+                path: '/lyrics?id=92',
+                coverImg: 'https://res.cloudinary.com/dq3orhpdj/image/upload/v1779882220/%D8%AD%D8%B8%D9%8A_%D9%85%D8%AE%D8%A7%D8%B5%D9%85%D9%86%D9%8A_l6q5wg.png',
+                accentColor: 'rgba(20, 184, 166, 0.5)',
+                iconOverlay: <FileText className="w-10 h-10 text-white drop-shadow-lg" />,
+              },
+              {
+                id: 37,
+                title: { ar: 'إبن النيل', en: 'Ebn el neel' },
+                category: { ar: 'كلمات', en: 'Lyrics' },
+                path: '/lyrics?id=37',
+                coverImg: 'https://res.cloudinary.com/dq3orhpdj/image/upload/v1779882442/%D8%A5%D8%A8%D9%86_%D8%A7%D9%84%D9%86%D9%8A%D9%84_uoenn3.png',
+                accentColor: 'rgba(20, 184, 166, 0.5)',
+                iconOverlay: <FileText className="w-10 h-10 text-white drop-shadow-lg" />,
+              },
+            ].map((item) => (
+              <TiltContainer
+                key={item.id}
+                maxRotate={10}
+                scale={1.04}
+                onClick={() => navigate(item.path)}
+                className="group cursor-pointer rounded-[1.5rem] overflow-hidden transition-all duration-500 relative laser-border"
+                style={{
+                  boxShadow: isDark
+                    ? '0 20px 50px -10px rgba(0,0,0,0.7)'
+                    : '0 15px 40px -10px rgba(0,0,0,0.15)',
+                }}
+              >
+                {/* SVG Laser Border Trace */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none select-none rounded-[1.5rem]" style={{ zIndex: 10 }}>
+                  <rect x="0" y="0" width="100%" height="100%" rx="1.5rem" ry="1.5rem" pathLength="100" className="laser-svg-rect" />
+                </svg>
+                {/* Cover Image */}
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  {item.coverImg ? (
+                    <img
+                      src={item.coverImg}
+                      alt={lang === 'ar' ? item.title.ar : item.title.en}
+                      className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center" style={{ background: isDark ? 'rgba(15, 8, 10, 0.95)' : 'rgba(240, 235, 230, 0.95)' }}>
+                      <div className="transform group-hover:scale-110 transition-transform duration-500 opacity-30">
+                        <FileText className="w-24 h-24 text-teal-400" />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Cinematic gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+
+                  {/* Top accent glow on hover */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                    style={{ background: `radial-gradient(ellipse at 50% 0%, ${item.accentColor}, transparent 70%)` }}
+                  />
+
+                  {/* Play/Icon overlay center */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-500">
+                      {item.iconOverlay}
+                    </div>
+                  </div>
+
+                  {/* Bottom content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <span className="block text-[10px] sm:text-xs font-bold uppercase tracking-[0.25em] text-rose-300/80 mb-2">
+                      {lang === 'ar' ? item.category.ar : item.category.en}
+                    </span>
+                    <h4
+                      className="font-bold text-xl sm:text-2xl text-white drop-shadow-lg"
+                      style={{ fontFamily: "'Omnes Arabic', sans-serif" }}
+                    >
+                      {lang === 'ar' ? item.title.ar : item.title.en}
+                    </h4>
+
+                    <div className="mt-3 flex items-center gap-2 text-xs text-white/60 opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500 font-bold">
+                      <span style={{ fontFamily: "'Omnes Arabic', sans-serif" }}>
+                        {lang === 'ar' ? 'استكشاف' : 'Explore'}
+                      </span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </div>
+                  </div>
+                </div>
+              </TiltContainer>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&family=Cairo:wght@400;700;900&family=Cinzel:wght@600;800&display=swap');
-
-        .welcome-wrapper {
-          min-height: 100vh;
-          padding: 60px 20px 100px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 36px;
-          position: relative;
-          overflow: hidden;
+        .animate-spin-slow {
+          animation: spin 15s linear infinite;
         }
 
-        /* Centralized 3D metal shield logo medallion */
-        .welcome-logo-shield {
-          width: clamp(120px, 22vw, 180px);
-          filter: drop-shadow(0 12px 30px rgba(0,0,0,0.6));
-          animation: shieldFloat 6s ease-in-out infinite;
+        .welcome-orb-1,
+        .welcome-orb-2,
+        .welcome-orb-3 {
+          animation: welcome-orb-drift 10s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
         }
-        @keyframes shieldFloat {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-12px); }
+        .welcome-orb-2 { animation-delay: 3s; animation-duration: 14s; }
+        .welcome-orb-3 { animation-delay: 6s; animation-duration: 12s; }
+
+        @keyframes welcome-orb-drift {
+          0% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(30px, -20px) scale(1.05); }
+          100% { transform: translate(-15px, 15px) scale(0.97); }
         }
 
-        /* Double metallic gold-beveled glowing medallion frame */
-        .owner-medallion {
-          width: clamp(200px, 42vw, 320px);
-          aspect-ratio: 1;
-          border-radius: 50%;
-          padding: 8px;
-          background: linear-gradient(145deg, #f3d98a, #c9a84c 40%, #8a6d2f 60%, #f3d98a);
-          box-shadow: 0 0 40px rgba(201, 168, 76, 0.45), inset 0 0 18px rgba(0,0,0,0.4);
-          position: relative;
+        @keyframes fade-in-up {
+          0% { opacity: 0; transform: translateY(30px) scale(0.98); filter: blur(10px); }
+          100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
         }
-        .owner-medallion::after {
-          content: '';
-          position: absolute;
-          inset: -10px;
-          border-radius: 50%;
-          border: 2px solid rgba(201, 168, 76, 0.35);
-          pointer-events: none;
-          animation: medallionGlow 4s ease-in-out infinite;
-        }
-        @keyframes medallionGlow {
-          0%, 100% { opacity: 0.4; transform: scale(1); }
-          50% { opacity: 0.9; transform: scale(1.02); }
-        }
-        .owner-medallion-inner {
-          width: 100%;
-          height: 100%;
-          border-radius: 50%;
-          overflow: hidden;
-          border: 4px solid #0a0205;
-          background: ${isDark ? '#1a0508' : '#fff5f5'};
-        }
-        .owner-medallion-inner img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .welcome-name-image {
-          width: clamp(220px, 48vw, 420px);
-          filter: drop-shadow(0 6px 18px rgba(0,0,0,0.5));
-        }
-
-        /* AI clarification — styled like sheet-music parchment */
-        .sheet-card {
-          max-width: 820px;
-          width: 100%;
-          margin: 10px auto 0;
-          border-radius: 22px;
-          padding: 34px 38px;
-          position: relative;
-          color: ${isDark ? '#f3e9d2' : '#3a2410'};
-          background-color: ${isDark ? '#241008' : '#fbf3e2'};
-          background-image: repeating-linear-gradient(
-            ${isDark ? 'rgba(201,168,76,0.16)' : 'rgba(120,80,30,0.18)'} 0px,
-            ${isDark ? 'rgba(201,168,76,0.16)' : 'rgba(120,80,30,0.18)'} 1px,
-            transparent 1px,
-            transparent 16px
-          );
-          border: 1px solid rgba(201, 168, 76, 0.4);
-          box-shadow: 0 18px 50px rgba(0,0,0,0.45), inset 0 0 30px rgba(201,168,76,0.08);
-        }
-        .sheet-card .clef {
-          position: absolute;
-          font-size: 60px;
-          color: rgba(201, 168, 76, 0.35);
-          font-family: 'Aref Ruqaa Ink', serif;
-          line-height: 1;
-        }
-        .sheet-card .clef.treble { top: 10px; ${lang === 'ar' ? 'left' : 'right'}: 18px; }
-        .sheet-card .clef.bass { bottom: 8px; ${lang === 'ar' ? 'right' : 'left'}: 18px; }
-
-        .sheet-title {
-          font-family: 'Aref Ruqaa Ink', 'Cinzel', serif;
-          color: #c9a84c;
-          font-size: clamp(20px, 4vw, 28px);
-          font-weight: 800;
-          margin-bottom: 16px;
-          text-align: center;
-          text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-        }
-        .sheet-text {
-          font-family: ${lang === 'ar' ? "'Cairo', 'Almarai', sans-serif" : "'Outfit', 'Almarai', sans-serif"};
-          font-size: clamp(15px, 2.6vw, 18px);
-          line-height: 2;
-          text-align: ${lang === 'ar' ? 'right' : 'left'};
-          position: relative;
-          z-index: 2;
+        .animate-fade-in-up {
+          animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
       `}</style>
-
-      <img src={homeLogo} alt={t('Mohamed Ramzi shield logo', 'شعار درع محمد رمزي')} className="welcome-logo-shield" />
-
-      <div className="owner-medallion">
-        <div className="owner-medallion-inner">
-          <img src={ownerPhoto} alt={t('Mohamed Ramzi portrait', 'صورة محمد رمزي')} />
-        </div>
-      </div>
-
-      <img src={nameImage} alt={t('Mohamed Ramzi', 'محمد رمزي')} className="welcome-name-image" />
-
-      <div className="sheet-card">
-        <span className="clef treble" aria-hidden="true">𝄞</span>
-        <span className="clef bass" aria-hidden="true">𝄢</span>
-        <h2 className="sheet-title">
-          {t('Important clarification', 'توضيح هام')}
-        </h2>
-        <p className="sheet-text">
-          {t(
-            'I have used artificial intelligence tools to help me connect the closest musical form to the ideas and melodies I have created. Therefore, you will find in some songs that there are parts of the words that are not pronounced completely correctly. As for the videos, they are my effort to help in understanding the meaning of the words.',
-            'لقد استعنت بأدوات الذكاء الاصطناعي لتساعدني في توصيل أقرب شكل موسيقي للأفكار والألحان التي قمت بتأليفها ولذلك ستجد في بعض الأغاني أجزاء من الكلمات لا تنطق بشكل صحيح تماماً أما الفيديوهات فهي اجتهاد مني للمساعدة في فهم معنى الكلمات.'
-          )}
-        </p>
-      </div>
     </div>
   );
 };

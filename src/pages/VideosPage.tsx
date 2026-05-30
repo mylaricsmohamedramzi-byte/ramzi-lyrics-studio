@@ -1,557 +1,530 @@
-import { useState, useRef, useMemo, useEffect, type MouseEvent } from 'react';
-import { useLocation } from 'react-router-dom';
-import SearchBar from '@/components/SearchBar';
-import { normalizeArabic } from '@/lib/arabic';
-import { useLang } from '@/contexts/LangContext';
-import { useTheme } from '@/contexts/ThemeContext';
-import { Eye, Edit, Trash2 } from 'lucide-react';
-import { translateTitle } from '@/utils/songTranslations';
-import { allVideos } from '@/data/videosData';
+import { useState, useRef } from 'react';
 
-interface CommentItem {
-  id: string;
-  text: string;
+// دالة استخراج ID اليوتيوب
+function getYouTubeVideoId(url: string): string | null {
+  try {
+    const trimmed = url.trim();
+    if (trimmed.includes('youtu.be/')) {
+      const match = trimmed.match(/youtu\.be\/([a-zA-Z0-9_-]+)/);
+      return match ? match[1] : null;
+    }
+    if (trimmed.includes('youtube.com')) {
+      const u = new URL(trimmed);
+      return u.searchParams.get('v');
+    }
+    if (trimmed.length === 11 && /^[a-zA-Z0-9_-]+$/.test(trimmed)) {
+      return trimmed;
+    }
+  } catch {
+    return null;
+  }
+  return null;
 }
 
-const VID_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean; order: number }[] = [
-  { key: 'all', ar: 'الكل', en: 'All', match: () => true, order: 0 },
-  { key: 'islamic', ar: 'إسلامي', en: 'Islamic', match: (c) => /islamic|إسلامي/i.test(c), order: 1 },
-  { key: 'patriotic', ar: 'وطني', en: 'Patriotic', match: (c) => /patriotic|وطني/i.test(c), order: 2 },
-  { key: 'social', ar: 'اجتماعي وعائلي', en: 'Social & Family', match: (c) => /social|family|اجتماعي|عائلي/i.test(c), order: 3 },
-  { key: 'occasion', ar: 'مناسبات و أعياد', en: 'Occasion & Holiday', match: (c) => /occasion|holiday|مناسبات|أعياد/i.test(c), order: 4 },
-  { key: 'motivational', ar: 'تحفيزية', en: 'Motivational', match: (c) => /motivational|تحفيزية|تحفيز/i.test(c), order: 5 },
-  { key: 'poems', ar: 'قصائد', en: 'Poems', match: (c) => /poems|قصائد|قصيدة/i.test(c), order: 6 },
-  { key: 'classic', ar: 'كلاسيك', en: 'Classic', match: (c) => /classic|كلاسيك/i.test(c), order: 7 },
-  { key: 'drama', ar: 'دراما', en: 'Drama', match: (c) => /drama|دراما/i.test(c), order: 8 },
-  { key: 'slow', ar: 'سلو', en: 'Slow', match: (c) => /slow|سلو/i.test(c), order: 9 },
-  { key: 'romantic', ar: 'رومانسي', en: 'Romantic', match: (c) => /romantic|رومانسي/i.test(c) && !/maqsum|مقسوم/i.test(c), order: 10 },
-  { key: 'romantic_maqsum', ar: 'رومانسي & مقسوم', en: 'Romantic & Maqsum', match: (c) => /رومانسي\s*&\s*مقسوم/i.test(c) || (/romantic/i.test(c) && /maqsum/i.test(c)), order: 11 },
-  { key: 'pop', ar: 'بوب', en: 'Pop', match: (c) => /pop|بوب/i.test(c), order: 12 },
-  { key: 'rock', ar: 'روك', en: 'Rock', match: (c) => /rock|روك/i.test(c), order: 13 },
-  { key: 'maqsum', ar: 'مقسوم', en: 'Maqsum', match: (c) => /maqsum|مقسوم/i.test(c) && !/romantic|رومانسي/i.test(c), order: 14 },
-  { key: 'tarab', ar: 'طرب', en: 'Tarab', match: (c) => /tarab|طرب/i.test(c), order: 15 },
-  { key: 'shaabi', ar: 'شعبي', en: 'Shaabi', match: (c) => /shaabi|شعبي/i.test(c), order: 16 },
-  { key: 'saidi', ar: 'صعيدي', en: "Sa'idi", match: (c) => /sa'idi|saidi|صعيدي/i.test(c), order: 17 },
-  { key: 'rap', ar: 'راب', en: 'Rap', match: (c) => /rap|راب/i.test(c) && !/trap|تراب/i.test(c), order: 18 },
-  { key: 'trap', ar: 'تراب', en: 'Trap', match: (c) => /trap|تراب/i.test(c), order: 19 },
+function getVideoSourceType(url: string): 'youtube' | 'cloudinary' | 'gdrive' | 'direct' {
+  const lower = url.toLowerCase();
+  if (lower.includes('youtube.com') || lower.includes('youtu.be')) return 'youtube';
+  if (lower.includes('cloudinary.com')) return 'cloudinary';
+  if (lower.includes('drive.google.com')) return 'gdrive';
+  return 'direct';
+}
+
+const allVideos = [
+  {
+    id: 1,
+    title: "عداد الرقان ",
+    category: "Romantic maqsum",
+    videoUrls: ["https://youtu.be/kEgSPLkl0oQ?si=ITml38SiSzPgmF2T"],
+    views: "88",
+    critics: ["كلمات مُبتكره ","لحن مميز", "أداء قوي", "توزيع ضعيف "], 
+    lyrics: [
+      { text: "أنا هبعت كلمة مهمة", red: false },
+      { text: " من قلبي لقلب حبيبي", red: false },
+      { text: "وهقوله بعادك غُمّة", red: false },
+      { text: " وبجد مطلع عيني", red: false },
+      { text: "\u00A0", red: false },
+      { text: "طب ده أنا بطمن لما ", red: false },
+      { text: " بلاقيك مش ناسيني", red: false },
+      { text: "وبقولها لكُل العامه ", red: false },
+      { text: " إنَك حَليتلي سنيني", red: false },
+    
+      { text: "\u00A0", red: false },
+      { text: "«تكرار»", red: false },
+      { text: "أنا هبعت كلمة مهمة", red: false },
+      { text: " من قلبي لقلب حبيبي", red: false },
+      { text: "وهقوله بعادك غُمّة", red: false },
+      { text: " وبجد مطلع عيني", red: false },
+      { text: "\u00A0", red: false },
+      { text: "طب ده أنا بطمن لما ", red: false },
+      { text: " بلاقيك مش ناسيني", red: false },
+      { text: "وبقولها لكُل العامه ", red: false },
+      { text: " إنَك حَليتلي سنيني", red: false },
+    
+      { text: "\u00A0", red: false },
+      { text: "يـ مـقَـفِل عداد الروقان", red: true },
+      { text: "اه ي واخد أوسكار فالجمدان", red: true },
+      { text: "ده انتَ أما بتدخُل أي مكان", red: true },
+      { text: "بتغطي على الناس إللي فيه", red: true },
+      { text: "\u00A0", red: false },
+      { text: "وبراحتّك خَطي وماتسميش", red: true },
+      { text: "ياللي انت جمالك مِنُه مَفيش", red: true },
+      { text: "طول ما انت معايا مايشغلنيش", red: true },
+      { text: "الدُنيَّا بيحصل فيـهـا إيـه", red: true },
+    
+      { text: "\u00A0", red: false },
+      { text: "كان فينّك بقىّ مِن بَدري؟", red: false },
+      { text: "بدل الـهَـم إللي أنا شفتُه..", red: false },
+      { text: "أحسّن حاجة إنك قدري", red: false },
+      { text: "إللي فرحت أمّا عرِفتُه..", red: false },
+      { text: "\u00A0", red: false },
+      { text: "ده أنا كُـل م بسأل عنك", red: false },
+      { text: "بيقولوا رد بيعجبني", red: false },
+      { text: "بيقولوا إن مَفيش مِنّك..", red: false },
+      { text: "وإنـك فِعلاً مناسِبلي", red: false },
+    
+      { text: "\u00A0", red: false },
+      { text: "«تكرار»", red: false },
+      { text: "كان فينّك بقىّ مِن بَدري؟", red: false },
+      { text: "بدل الـهَـم إللي أنا شفتُه..", red: false },
+      { text: "أحسّن حاجة إنك قدري", red: false },
+      { text: "إللي فرحت أمّا عرِفتُه..", red: false },
+      { text: "\u00A0", red: false },
+      { text: "ده أنا كُـل م بسأل عنك", red: false },
+      { text: "بيقولوا رد بيعجبني", red: false },
+      { text: "بيقولوا إن مَفيش مِنّك..", red: false },
+      { text: "وإنـك فِعلاً مناسِبلي", red: false },
+      
+      { text: "\u00A0", red: false },
+      { text: "يـ مـقَـفِل عداد الروقان", red: true },
+      { text: "اه ي واخد أوسكار فالجمدان", red: true },
+      { text: "ده انتَ أما بتدخُل أي مكان", red: true },
+      { text: "بتغطي على الناس إللي فيه", red: true },
+      { text: "\u00A0", red: false },
+      { text: "وبراحتّك خَطي وماتسميش", red: true },
+      { text: "ياللي انت جمالك مِنُه مَفيش", red: true },
+      { text: "طول ما انت معايا مايشغلنيش", red: true },
+      { text: "الدُنيَّا بيحصل فيـهـا إيـه", red: true },
+    ],
+  },
+  {
+    id: 2,
+    title: "كَيْفَ حَالُكِ؟",
+    category: "Behind the Scenes",
+    videoUrls: ["https://youtu.be/tb7sTXQKBwI"],
+    views: "156",
+    critics: ["الكلمات عميقه وقويه ","اللحن أفضل من اللحن 1 و اللحن 2","الفيديو ممتاز وبه مجهود و تفاصيل ","مناسبة لصوت كاظم الساهر"],
+    lyrics: [
+      { text: "حَبِيبَتِي قَدْ أَتَتْنِي اَلْرِّيِحُ بِمَا لَا أَشْتَهِي", red: false },
+      { text: "وَلَقَدْ صَبَرْتُ حَتَّى صَارَ الصَّبْرُ مِنِّي يَشْتَكِي", red: false },
+      { text: "مَا مِنْ كَلَامٍ مُنْصِفٍ يَوصِفُ شَوْقِي لَكِ", red: false },
+      { text: "فَلِمَاذَا لَا تُطَمْئِنِيّ قَلْبِي الَّذِي أَحَبَّكِي؟", red: false },
+      { text: "\u00A0", red: false },
+      { text: "قَدْ سَأَلْتُ نُجُومَ اَلْلَيلِ عنكِي", red: true  },
+      { text: "فقَاَلُوُ لي أَنّهُمْ إذا رَأَوكِي سَيُخبِرونِي", red: true  },
+      { text: "\u00A0", red: false },
+      { text: "وَ اسْتَشَرْتُ البحرَ حينَ نَاجَيِتُهُ", red: true },
+      { text: "فَنَصَحَنِي بالتَأنّي مُؤَكِّداً أَنَّكِي سَتعُودِي", red: true  },
+      { text: "\u00A0", red: false },
+      { text: "يا هل ترى حُبي لَكِي مُتَبَادِلً", red: false },
+      { text: "أّم أَنَّهُ كلاماً عابراً لا أسَاسَ لهُ من الوجودٍِ", red: false },
+      { text: "\u00A0", red: false },
+      { text: "هَلْ مِنْ سَبِيلٍ لِلتَّلَاقِي بَعْدَ فِرَاقِنَا الطَّوِيلِ", red: false },
+      { text: "كَيْفَ حَالُكِ؟ أَخْبِرِينِي يَا ذَاتَ الْوَجْهِ الْجَمِيلِ", red: false },
+      { text: "هَلْ مَا زِلْتِي تَذْكُرِينِي وَقَلْبُكِ لِي يَمِيلُ؟", red: false },
+      { text: "آهِ مِنْ عَيْنَيْكِ الْحَسْنَاوَيْنِ اللَّتَيْيِنِ تَشْفِيَاَنِ الْعَلِيلَ!", red: false },
+      { text: "\u00A0", red: false },
+      { text: "قَدْ سَأَلْتُ نُجُومَ اَلْلَيلِ عنكِي", red: true  },
+      { text: "فقَاَلُوُ لي أَنّهُمْ إذا رَأَوكِي سَيُخبِرونِي", red: true  },
+      { text: "\u00A0", red: false },
+      { text: "وَ اسْتَشَرْتُ البحرَ حينَ نَاجَيِتُهُ", red: true },
+      { text: "فَنَصَحَنِي بالتَأنّي مُؤَكِّداً أَنَّكِي سَتعُودِي", red: true  },
+      { text: "\u00A0", red: false },
+      { text: "مَهْمَا جَارَ عَلَيَّ الزَّمَانُ فَإِنَّنِي إِنَّنِي لَنْ أَجُورَ عَلَيْكِ", red: false },
+      { text: "وَاللهِ إِنَّ جُرْحِي يَطِيبُ حِينَ أَرَى عَيْنَيْكِ", red: false },
+      { text: "\u00A0", red: false },
+    ],
+  },  {
+    id: 3,
+    title: "نبره حزينه",
+    category: "Drama",
+    videoUrls: [
+      "https://youtu.be/kerALDxqYnE",
+    ],
+    views: "0",
+    critics: [
+      "الكلمات دقيقة وتروي قصة",
+      "اللحن متناغم مع الكلمات",
+      "مناسبة لصوت تامر عاشور",
+      "مناسبة لصوت رامي جمال",
+    ],
+    lyrics: [
+      { text: "نبره حزينه", red: false },
+      { text: "\u00A0", red: false },
+
+      { text: "جمعتنا صُدفة ف مكان .. وحصل م بينا كلام", red: false },
+      { text: "عيني جائت ف عينها وأوام .. إفتكرت زكرياتنا", red: false },
+      { text: "نزلت دموع من عنيها .. ولمحت رعشة ف إيداها", red: false },
+      { text: "فجأة التعب بان عليها .. بسبب سيرة بُعدنا", red: false },
+
+      { text: "\u00A0", red: false },
+      { text: "وقالت لي بنبرة حزينة .. إنها ندمانه", red: true },
+      { text: "مكنتش حاسه بقيمتي .. وكانت غلطانه", red: true },
+      { text: "من يوم م بعدنا وهيا .. في أسوأ حالة", red: true },
+      { text: "وقالت لي إنها بصراحة .. حنَّت لهوانا", red: true },
+
+      { text: "\u00A0", red: false },
+      { text: "ولقيت دموعها بتزيد .. صعبت عليّا أكيد", red: false },
+      { text: "خدتها وقعدنا بعيد .. عشان محدش يلاحظ", red: false },
+      { text: "هديتها أنا بالكلام .. حست ساعتها بأمان", red: false },
+      { text: "محستوش من زمان .. وكانت مرتاحة خالص", red: false },
+
+      { text: "\u00A0", red: false },
+      { text: "وقالت لي بنظرة بريئة .. إنها مبسوطة", red: true },
+      { text: "كل همومها خلاص راحت .. ومش موجودة", red: true },
+      { text: "وأن أنا رديت روحها اللي .. كانت مفقودة", red: true },
+      { text: "ووجودي نوّر دنيتها .. بعد ما كانت سوداء", red: true },
+    ],
+  },  {
+    id: 4,
+    title: "كلامي واضح",
+    category: "راب حماسي",
+    videoUrls: [
+      "https://drive.google.com/file/d/1LmDxEar_OOyBdgNOfoW23q6l8kvwrKmK/view?usp=sharing",
+    ],
+    views: "0",
+    critics: [
+      "كلمات قوية",
+      "إيقاع مناسب للراب الحماسي",
+      "أداء واضح",
+      "مناسب للفيديو",
+    ],
+    lyrics: [
+      
+      
+      { text: "ودي مسا على مسا", red: false },
+      { text: "جينا ريحنا العدا", red: false },
+      { text: "سمعنا كل الندا ايه.", red: false },
+      { text: "متعنا كل الحِمل ايه.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "جينا قعدنا شنيبه", red: false },
+      { text: "وجودنا كان مشكلة.", red: false },
+      { text: "بقوا يسمعوا اسمنا", red: false },
+      { text: "يعملوا فيها مش من هنا.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "كانت أشكال وحشة ومُقرفة.", red: false },
+      { text: "لا مش مسترجلة.", red: false },
+      { text: "فالحين بس يزيطو ف الزيطه.", red: false },
+      { text: "وقت الجد يسلمو نمر.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "الكلمة سيف وكلامي واضح.", red: true  },
+      { text: "أنا عندي طلاقه", red: true  },
+      { text: "ف اللسان ايه.", red: true },
+      { text: "\u00A0", red: false },
+      { text: "كلامكو زيف مالوش ملامح.", red: true },
+      { text: "تمامكم معروف من زمان.", red: true  },
+      { text: "\u00A0", red: false },
+      { text: "لو حتي الوضع مش سامح.", red: true },
+      { text: "انا هوصل لهدفي مهما كان.", red: true },
+      { text: "\u00A0", red: false },
+      { text: "انا من يومي fiter ومكافح.", red:true  },
+      { text: "الايد مش بطالة شقيييان.", red: true },
+      { text: "\u00A0", red: false },
+      { text: "دي عيال مُخها تعبان.", red: false },
+      { text: "ودماغهم فعلاً فاضي ايه.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "بيقدوها story haat.", red: false },
+      { text: "بيموتوا يابا", red: false },
+      { text: "\u00A0", red: false },
+      { text: "على ال money ايه.", red: false },
+      { text: "دا بيسعو لأجل trand aat.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "عايزين العيشه", red: false },
+      { text: "دي soo honey.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "اخرتهم يا زميلي black.", red: false },
+      { text: "وقضايا كبيرة فعل فاضح.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "مرمطه وسين وجيم.", red: false },
+      { text: "وكلها في أقسام.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "قضيني بقا أو حلني.", red: false },
+      { text: "لما يخرجوا إخلاء فعلاً.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "ف بلاش تعيشوا دور مش دوركو.", red: false },
+      { text: "بطلوا اشتغلات يابا.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "كان القرد نفع نفسه", red: false },
+      { text: "وأختلفت الاحوال.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "مش اي حد يشيل كام Bar.", red: false },
+      { text: "يعمل فيها Van-Damm ايه.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "واظن كله عارف حجمه.", red: false },
+      { text: "وبالنسبة لي أنتو عيال.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "شوف أنتو فين وأنا فين.", red: false },
+      { text: "هتلاقي الفرق بينا سنين.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "مقامكم تحت الرجلين.", red: false },
+      { text: "مكانا Top El Scene.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "أحنا واصلين علشان جامدين.", red: true  },
+      { text: "وأنتو واقعين علشان فاشلين.", red: true  },
+      { text: "\u00A0", red: false },
+      { text: "السمعة ك ال Vitamin.", red: false },
+      { text: "وانتو ك ال Ketamine ايه.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "الحلو جاي بيهز ف طوله.", red: false },
+      { text: "طب ما تفضوا السكة.", red: false },
+      { text: "وسّعولُه ايه.", red: false },
+      { text: "\u00A0", red: false },
+      { text: "سيبوه كده يقول اللي يقوله.", red: false },
+      { text: "هنا Tutto sotto.", red: false },
+      { text: "controllo", red: false },
+    ],
+  },  
+  {
+    id: 5,
+    title: "تِلْكَ السُّلطَانَهْ",
+    category: "Romantic Rock",
+    videoUrls: [
+      "https://drive.google.com/file/d/1xqrGDUuImcTSg1P7hIYym-aVRVxz1GM3/view?usp=sharing",
+    ],
+    views: "0",
+    critics: [
+      "مزج رومانسي وروك مناسب للنص",
+      "كلمات فصحى بليغة وقافية واضحة",
+      "هيكل مقاطع واضح (بيت، لازمة، تطوير)",
+      "مناسب لعرض فيديو عالي الطاقة",
+    ],
+    lyrics: [
+      
+      { text: "_ يَوْماً مَ", red: false },
+      { text: "_ سَنَكُونُ مَعاً", red: false },
+      { text: "_ سَأَسْأَلُكِ", red: false },
+      { text: "_ وَ بِكُلِّ أَمَلْ", red: false },
+      { text: "_ أَتُحِبِّيني؟", red: false },
+      { text: "_ فَتَقُولِي نَعَمْ", red: false },
+      { text: "_ هلْ تَقْبَلِي بِي؟", red: false },
+      { text: "_ فَتَقُولِي أَجَلْ", red: false },
+      { text: "\u00A0", red: false },
+      
+      { text: "\u00A0", red: false },
+      { text: "_ وَأَطْلُبُ يَدَكِ", red: false },
+      { text: "_ مِنْ وَالِدَكِ", red: false },
+      { text: "_ وَأُقِيمُ زِفَافاً", red: false },
+      { text: "_ لِجَلالَتِكِ", red: false },
+      { text: "_ وَأَقُولُ لِلنَّاسْ", red: false },
+      { text: "_ وَبِكُلِّ أَمَانَة", red: false },
+      { text: "_ تِلْكَ السُّلطَانَهْ", red: false },
+      { text: "_ صَارَتْ حَرَمِي", red: false },
+      { text: "\u00A0", red: false },
+      
+      { text: "\u00A0", red: false },
+      { text: "_ تِلْكَ الَّتِي شَغَلَتْ أَفْكَارِي", red: true },
+      { text: "_ طِيلَةَ لَيْلِي وَنَهاري", red: true },
+      { text: "_ بِجَمَالِهَا لَفَتَتْ أَنْظَارِي", red: true },
+      { text: "_ مِنْ أَجْلِهَا زَادَ إِصْرَارِي", red: true },
+      { text: "_ أَنْ تَسْكُنَ قَلْبِي وَدِيَارِي", red: true },
+      { text: "_ هِيَ رُوحِي وَأَجْمَلُ أَقْدَارِي", red: true },
+      { text: "\u00A0", red: false },
+     
+      
+      { text: "\u00A0", red: false },
+      { text: "_ وَتَمْضِي الأَيَّامْ", red: false },
+      { text: "_ بِنَا فِي سَلامْ", red: false },
+      { text: "_ بَيْنَ مَشَاعِرِ", red: false },
+      { text: "_ حُبٍّ وَغَرَامْ", red: false },
+      { text: "_ نُنْجِبُ طِفْلاً", red: false },
+      { text: "_ يُصْبِحُ عَوْناً", red: false },
+      { text: "_ نَجْماً سَاطِعْ", red: false },
+      { text: "_ وَلَهُ أَحْلامْ", red: false },
+      { text: "\u00A0", red: false },
+      
+      { text: "_ وَنَغْرِسُ فِيهِ", red: false },
+      { text: "_ حُسْنَ الأَخْلاقِ", red: false },
+      { text: "_ مِثْلَ العَدْلِ", red: false },
+      { text: "_ وَالإِحْسَانِ", red: false },
+      { text: "_ وَنُزَوِّجُهُ", red: false },
+      { text: "_ بِنْتَ الذَّوَاتِ", red: false },
+      { text: "_ لِتُسَانِدَهُ", red: false },
+      { text: "_ وَقْتَ الأَزَمَاتِ", red: false },
+      { text: "_ وَالأَحْزَانِ", red: false },
+      { text: "\u00A0", red: false },
+      { text: "\u00A0", red: false },
+      
+      { text: "_ وَنُكَوِّنُ نَسْلاً يَجْمَعُنَا", red: true },
+      { text: "_ يَسْتَمْتِعُ بِالكَوْنِ مَعَنَا", red: true },
+      { text: "_ لا نَتْرُكُ هَمّاً يَمْنَعُنَا", red: true },
+      { text: "_ كَيْ نَجْعَلَ لِحَيَاتِنَا مَعْنَى", red: true },
+      { text: "\u00A0", red: false },
+     
+      { text: "_تِلْكَ الَّتِي شَغَلَتْ أَفْكَارِي", red: true },
+      { text: "_ طِيلَةَ لَيْلِي وَنَهاري", red: true },
+      { text: "_ بِجَمَالِهَا لَفَتَتْ أَنْظَارِي", red: true },
+      { text: "_ مِنْ أَجْلِهَا زَادَ إِصْرَارِي", red: true },
+      { text: "_ أَنْ تَسْكُنَ قَلْبِي وَدِيَارِي", red: true },
+      { text: "_ هِيَ رُوحِي وَأَجْمَلُ أَقْدَارِي", red: true },
+    ],
+  },
+
 ];
 
-function getCategoryOrder(category: string): number {
-  const match = VID_CATEGORIES.find((c) => c.key !== 'all' && c.match(category || ''));
-  return match ? match.order : 99;
-}
-
-/** Resolves any video URL (YouTube, Google Drive, direct mp4) into a playable embed descriptor. */
-function resolveVideoSource(url: string): { type: 'iframe' | 'video'; src: string } {
-  const trimmed = (url || '').trim();
-  if (!trimmed) return { type: 'iframe', src: '' };
-
-  // YouTube
-  const ytMatch =
-    trimmed.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/) ||
-    trimmed.match(/youtube\.com\/(?:watch\?v=|embed\/)([A-Za-z0-9_-]{6,})/);
-  if (ytMatch) {
-    return { type: 'iframe', src: `https://www.youtube.com/embed/${ytMatch[1]}` };
-  }
-
-  // Google Drive
-  const driveMatch = trimmed.match(/drive\.google\.com\/file\/d\/([^/]+)/);
-  if (driveMatch) {
-    return { type: 'iframe', src: `https://drive.google.com/file/d/${driveMatch[1]}/preview` };
-  }
-
-  // Direct video files (mp4, webm, mov) or Cloudinary video delivery
-  if (/\.(mp4|webm|mov)(\?|$)/i.test(trimmed) || /\/video\/upload\//.test(trimmed)) {
-    return { type: 'video', src: trimmed };
-  }
-
-  return { type: 'iframe', src: trimmed };
-}
-
 const VideosPage = () => {
-  const { lang, t } = useLang();
-  const { isDark } = useTheme();
-  const location = useLocation();
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [search, setSearch] = useState('');
-  const [activeCat, setActiveCat] = useState('all');
+  const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
+  const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
 
-  useEffect(() => {
-    setIsAdmin(localStorage.getItem('isAdmin') === 'true');
-    const params = new URLSearchParams(location.search);
-    const id = params.get('id');
-    if (id) {
-      setTimeout(() => {
-        const element = document.getElementById(`card-${id}`);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          element.style.outline = '2px solid #c9a84c';
-          element.style.borderRadius = '16px';
-          setTimeout(() => {
-            element.style.outline = 'none';
-          }, 3000);
-        }
-      }, 500);
-    }
-  }, [location.search]);
-
-  const [starRatings, setStarRatings] = useState<Record<number, number>>(() => {
-    const saved = localStorage.getItem('videos_star_ratings');
-    if (saved) {
-      try { return JSON.parse(saved); } catch (e) { console.error(e); }
-    }
-    return {};
-  });
-  const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
-
-  const [comments, setComments] = useState<Record<number, CommentItem[]>>(() => {
-    const saved = localStorage.getItem('videos_comments');
-    if (saved) {
-      try { return JSON.parse(saved); } catch (e) { console.error(e); }
-    }
-    return {};
-  });
-  const [newCommentText, setNewCommentText] = useState<Record<number, string>>({});
-  const [activeInputSongId, setActiveInputSongId] = useState<number | null>(null);
-  const commentsEndRefs = useRef<Record<number, HTMLDivElement | null>>({});
-
-  useEffect(() => {
-    localStorage.setItem('videos_star_ratings', JSON.stringify(starRatings));
-  }, [starRatings]);
-
-  useEffect(() => {
-    localStorage.setItem('videos_comments', JSON.stringify(comments));
-  }, [comments]);
-
-  const presentCategoryKeys = useMemo(() => {
-    const keys = new Set<string>();
-    allVideos.forEach((v) => {
-      const match = VID_CATEGORIES.find((c) => c.key !== 'all' && c.match(v.category || ''));
-      if (match) keys.add(match.key);
-    });
-    return keys;
-  }, []);
-
-  const visibleCategories = useMemo(
-    () => VID_CATEGORIES.filter((c) => c.key === 'all' || presentCategoryKeys.has(c.key)),
-    [presentCategoryKeys]
-  );
-
-  const filteredVideos = useMemo(() => {
-    const q = normalizeArabic(search);
-    const cat = VID_CATEGORIES.find((c) => c.key === activeCat) || VID_CATEGORIES[0];
-    return allVideos
-      .filter((v) => {
-        if (!cat.match(v.category || '')) return false;
-        if (!q) return true;
-        const hay = [v.title, v.category].join(' ');
-        return normalizeArabic(hay).includes(q);
-      })
-      .slice()
-      .sort((a, b) => getCategoryOrder(a.category) - getCategoryOrder(b.category));
-  }, [search, activeCat]);
-
-  const getCategoryLabel = (category: string) => {
-    const matched = VID_CATEGORIES.find((c) => c.key !== 'all' && c.match(category || ''));
-    if (matched) return lang === 'ar' ? matched.ar : matched.en;
-    return category || (lang === 'ar' ? 'عام' : 'General');
-  };
-
-  const handleAddComment = (videoId: number) => {
-    setActiveInputSongId(videoId);
-  };
-
-  const handleCancelComment = (videoId: number) => {
-    setActiveInputSongId(null);
-    setNewCommentText(prev => ({ ...prev, [videoId]: '' }));
-  };
-
-  const handleSubmitComment = (videoId: number) => {
-    const txt = newCommentText[videoId]?.trim();
-    if (!txt) {
-      setActiveInputSongId(null);
-      return;
-    }
-    const newComment: CommentItem = { id: `comment-${videoId}-${Date.now()}`, text: txt };
-    setComments(prev => ({
-      ...prev,
-      [videoId]: [...(prev[videoId] || []), newComment]
-    }));
-    setNewCommentText(prev => ({ ...prev, [videoId]: '' }));
-    setActiveInputSongId(null);
-
-    setTimeout(() => {
-      const el = commentsEndRefs.current[videoId];
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 100);
-  };
-
-  const handleEmojiClick = (videoId: number, emoji: string) => {
-    setNewCommentText(prev => ({
-      ...prev,
-      [videoId]: (prev[videoId] || '') + emoji
-    }));
-  };
-
-  const handleEditComment = (
-    e: MouseEvent<HTMLButtonElement>,
-    videoId: number,
-    commentId: string
-  ) => {
-    e.stopPropagation();
-    e.preventDefault();
-    const newText = window.prompt(lang === 'ar' ? 'تعديل التعليق' : 'Edit comment');
-    if (newText && newText.trim() !== '') {
-      setComments(prev => ({
-        ...prev,
-        [videoId]: (prev[videoId] || []).map(c =>
-          String(c.id) === String(commentId) ? { ...c, text: newText.trim() } : c
-        )
-      }));
+  const handleCriticClick = (videoId: number, idx: number) => {
+    const key = `${videoId}-${idx}`;
+    if (!selectedCritics[key]) {
+      setSelectedCritics(prev => ({ ...prev, [key]: Math.floor(Math.random() * 31) + 65 }));
     }
   };
 
-  const handleDeleteComment = (
-    e: MouseEvent<HTMLButtonElement>,
-    videoId: number,
-    commentId: string
-  ) => {
-    e.stopPropagation();
-    e.preventDefault();
-    if (window.confirm(lang === 'ar' ? 'حذف التعليق؟' : 'Delete comment?')) {
-      setComments(prev => ({
-        ...prev,
-        [videoId]: (prev[videoId] || []).filter(c => String(c.id) !== String(commentId))
-      }));
-    }
-  };
+  const renderVideo = (url: string, idx: number, videoId: number) => {
+    const sourceType = getVideoSourceType(url);
+    const key = `${videoId}-${idx}`;
 
-  const saveRating = (videoId: number, val: number) => {
-    setStarRatings(prev => ({ ...prev, [videoId]: val }));
+    if (sourceType === 'youtube') {
+      const vid = getYouTubeVideoId(url);
+      if (!vid) return null;
+      return (
+        <div key={idx} className="video-wrapper">
+          <iframe
+            className="video-frame"
+            src={`https://www.youtube.com/embed/${vid}`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      );
+    }
+
+    if (sourceType === 'gdrive') {
+      return (
+        <div key={idx} className="video-wrapper">
+          <iframe
+            className="video-frame"
+            src={url.replace('/open', '/preview').replace('/view', '/preview')}
+            allowFullScreen
+          />
+        </div>
+      );
+    }
+
+    return (
+      <video
+        key={idx}
+        ref={(el) => { videoRefs.current[key] = el; }}
+        className="video-player"
+        controls
+      >
+        <source src={url} type="video/mp4" />
+      </video>
+    );
   };
 
   return (
-    <div dir={lang === 'ar' ? 'rtl' : 'ltr'} className="page-wrapper content-layer">
+    <div dir="rtl" className="page-container">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&display=swap');
-
-        :root { --leather-black: #0a0205; }
-        .page-wrapper { min-height: 100vh; padding: 40px 20px; font-family: 'Outfit', 'Almarai', sans-serif; position: relative; overflow: hidden; }
-        .main-card { max-width: 1100px; margin: 0 auto 60px; background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, var(--leather-black) 100%); border: 1px solid var(--primary); border-radius: 40px; display: flex; flex-direction: ${lang === 'ar' ? 'row-reverse' : 'row'}; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8); position: relative; }
-
-        .unified-header-box {
-          background: #000000;
-          border: 1px solid rgba(201, 168, 76, 0.35);
-          border-radius: 20px;
-          padding: 30px 40px;
-          max-width: 800px;
-          margin: 40px auto 30px;
-          text-align: center;
-          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(201, 168, 76, 0.08);
-          position: relative;
-          z-index: 10;
-        }
-        .unified-header-title {
-          font-family: 'Aref Ruqaa Ink', 'Cinzel', serif !important;
-          font-size: clamp(28px, 5vw, 42px) !important;
-          font-weight: 800;
-          color: #c9a84c;
-          margin-bottom: 12px;
-          text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
-        }
-        .unified-header-subtitle {
-          font-family: 'Tajawal', 'Almarai', 'Outfit', sans-serif !important;
-          font-size: clamp(14px, 3vw, 17px) !important;
-          color: #e8d5b0;
-          opacity: 0.9;
-          line-height: 1.6;
+        
+        /* تعريف خط DG Forsha - تأكد من مسار الملف */
+        @font-face {
+          font-family: 'DG Forsha';
+          src: url('/fonts/DG-Forsha.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
         }
 
-        .comments-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .label-gold { color: #c9a84c; font-size: 14px; font-weight: bold; }
-        .add-comment-btn { background: rgba(201, 168, 76, 0.15); color: #c9a84c; border: 1px solid rgba(201, 168, 76, 0.3); padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s; }
-        .add-comment-btn:hover { background: rgba(201, 168, 76, 0.3); }
-        .comment-input-area { display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 15px; border: 1px solid rgba(201, 168, 76, 0.15); }
-        .comment-textarea { width: 100%; min-height: 80px; border-radius: 10px; padding: 10px; font-size: 14px; resize: none; outline: none; direction: rtl; }
-        .emoji-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-start; }
-        .emoji-btn { background: none; border: none; font-size: 20px; cursor: pointer; transition: transform 0.1s; }
-        .emoji-btn:hover { transform: scale(1.2); }
-        .action-buttons { display: flex; gap: 10px; justify-content: flex-end; }
-        .btn-done { background: #c9a84c; color: #0a0205; border: none; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 13px; cursor: pointer; transition: background 0.2s; }
-        .btn-done:hover { background: #d4b563; }
-        .btn-cancel { border: none; padding: 6px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; transition: background 0.2s; }
-        .comments-scroll-list { max-height: 180px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding-right: 5px; scrollbar-width: thin; scrollbar-color: #c9a84c transparent; }
-        .comments-scroll-list::-webkit-scrollbar { width: 4px; }
-        .comments-scroll-list::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
-        .comment-bubble { border-radius: 15px; padding: 10px 14px; font-size: 13px; animation: slideUpFade 0.3s ease-out forwards; }
-        @keyframes slideUpFade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+        .page-container { background: #010416; min-height: 100vh; padding: 40px 20px; font-family: 'Almarai', sans-serif; }
+        
+        .main-card { max-width: 1100px; margin: 0 auto 80px; background: #050a24; border: 1.5px solid #1a2245; border-radius: 40px; overflow: hidden; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+        
+        .card-header { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .song-label { color: #5a6491; font-size: 14px; }
+        .category-badge { background: #c9a84c; color: #000; padding: 6px 25px; border-radius: 20px; font-weight: bold; font-size: 14px; }
+        
+        .video-container { padding: 0 40px; margin-bottom: 30px; }
+        .video-wrapper { position: relative; padding-bottom: 50.25%; height: 0; border-radius: 60px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+        .video-frame { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .video-player { width: 100%; border-radius: 60px; background: #000; }
 
-        .player-side { flex: 1; padding: 30px; background: rgba(0,0,0,0.3); display: flex; flex-direction: column; align-items: center; }
-        .song-tag { background: #c9a84c; color: #000; padding: 4px 20px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-bottom: 15px; }
-        .video-frame-box { width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; border: 1px solid rgba(201, 168, 76, 0.3); background: #000; }
-        .video-frame-box iframe, .video-frame-box video { width: 100%; height: 100%; border: 0; display: block; }
-        .multi-video-stack { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+        .card-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; padding: 0 40px 40px; }
+        
+        .lyrics-section { display: flex; flex-direction: column; }
+        .video-title { color: #ff4d4d; font-family: 'Aref Ruqaa Ink', serif; font-size: 2.5rem; margin: 10px 0; }
+        
+        /* تعديل حاوية الكلمات لتكون Scroll */
+        .lyrics-scroll-container { 
+          margin-top: 20px; 
+          border-right: 3px solid #c9a84c; 
+          padding-right: 20px;
+          max-height: 300px; /* طول الـ Scroll */
+          overflow-y: auto;
+          scrollbar-width: thin;
+          scrollbar-color: #c9a84c transparent;
+        }
 
-        .views-stars-row { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 15px; gap: 10px; }
-        .views-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(201, 168, 76, 0.12); border: 1px solid rgba(201, 168, 76, 0.35); color: #c9a84c; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 13px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.3); flex-shrink: 0; font-family: 'Almarai', 'Outfit', sans-serif; }
-        .views-badge:hover { background: rgba(201, 168, 76, 0.25); border-color: #c9a84c; transform: translateY(-1px); }
+        /* تنسيق الـ Scrollbar لمتصفحات Chrome/Safari */
+        .lyrics-scroll-container::-webkit-scrollbar { width: 5px; }
+        .lyrics-scroll-container::-webkit-scrollbar-track { background: transparent; }
+        .lyrics-scroll-container::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
 
-        .star-rating { display: flex; justify-content: center; gap: 4px; margin: 10px 0; }
-        .star { font-size: 24px; cursor: pointer; color: rgba(201,168,76,0.25); transition: color 0.2s, text-shadow 0.2s; user-select: none; }
-        .star.active { color: #c9a84c; text-shadow: 0 0 8px rgba(201,168,76,0.7); }
+        .line { 
+          font-family: 'DG Forsha', 'Almarai', sans-serif; /* تطبيق الخط المطلوب */
+          font-size: 1.3rem; 
+          color: #fff; 
+          margin-bottom: 12px; 
+          line-height: 1.8; 
+          opacity: 0.9; 
+        }
+        .line.red { color: #ff4d4d; font-weight: bold; }
 
-        .lyrics-side { flex: 1.3; padding: 40px; background: rgba(20, 5, 8, 0.82); border-left: 1px solid rgba(201,168,76,0.2); position: relative; z-index: 1; }
-        .title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
-        .song-title-red { color: #ff4d4d; font-family: 'Aref Ruqaa Ink', serif; font-size: 2.8rem; margin-bottom: 0; }
-        .lyrics-scroll { height: 250px; overflow-y: auto; margin-bottom: 30px; }
-        .lyrics-scroll::-webkit-scrollbar { width: 6px; }
-        .lyrics-scroll::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
-        .line { font-size: 1.2rem; margin-bottom: 10px; border-right: 3px solid #c9a84c; padding-right: 15px; }
-        .line.red { color: #ff4d4d; border-right-color: #ff4d4d; font-weight: bold; }
+        .rating-section { background: rgba(255,255,255,0.02); border-radius: 20px; padding: 25px; border: 1px solid rgba(255,255,255,0.05); height: fit-content; }
+        .rating-title { color: #5a6491; font-size: 14px; margin-bottom: 15px; display: block; text-align: center; }
+        
+        .critic-item { background: #0c1233; padding: 12px 20px; border-radius: 10px; margin-bottom: 10px; border: 1px solid #1e2650; display: flex; justify-content: space-between; cursor: pointer; color: #ffffff !important; }
+        .critic-percent { color: #c9a84c; font-weight: bold; }
+        
+        .ok-badge { background: #f0fdf4; color: #1a2e44; padding: 8px 30px; border-radius: 30px; font-weight: bold; float: left; margin-top: 20px; }
 
-        .critic-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; margin-bottom: 8px; display: flex; gap: 8px; border: 1px solid rgba(201,168,76,0.1); color: #fff; font-size: 0.95rem; }
-        .critic-dot { color: #c9a84c; flex-shrink: 0; }
+        @media (max-width: 900px) { .card-content { grid-template-columns: 1fr; } .video-container { padding: 0 15px; } .main-card { border-radius: 20px; } }
       `}</style>
 
-      <div className="unified-header-box animate-fade-in-up">
-        <h1 className="unified-header-title">{t('VIDEOS', 'الفيديوهات')}</h1>
-        <p className="unified-header-subtitle">
-          {t(
-            'Visual interpretations crafted to bring the meaning of the lyrics to life',
-            'رؤى بصرية صُممت لإيصال معنى الكلمات وإحيائها'
-          )}
-        </p>
-      </div>
-
-      <div style={{ maxWidth: 1100, margin: '0 auto 30px' }}>
-        <SearchBar
-          value={search}
-          onChange={setSearch}
-          placeholder={lang === 'ar' ? 'ابحث عن فيديو...' : 'Search for a video...'}
-          className="mb-5"
-        />
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
-          {visibleCategories.map((c) => (
-            <button
-              key={c.key}
-              type="button"
-              className={`filter-chip ${activeCat === c.key ? 'active' : ''}`}
-              onClick={() => setActiveCat(c.key)}
-            >
-              {lang === 'ar' ? c.ar : c.en}
-            </button>
-          ))}
-        </div>
-        <div style={{ textAlign: 'center', marginTop: 12, color: '#c9a84c', fontSize: 13 }}>
-          {filteredVideos.length} / {allVideos.length}
-        </div>
-      </div>
-
-      {filteredVideos.map((video) => (
-        <div key={video.id} id={`card-${video.id}`} className="main-card relative group">
-
-          {isAdmin && (
-            <div className="absolute top-4 left-4 z-50 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  const evt = new CustomEvent('open-admin-edit', { detail: video });
-                  window.dispatchEvent(evt);
-                }}
-                className="p-2 bg-blue-500/20 text-blue-400 rounded-lg backdrop-blur-md border border-blue-500/30 hover:bg-blue-500/40 transition-colors shadow-lg"
-                title="تعديل"
-              >
-                <Edit className="w-5 h-5" />
-              </button>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (window.confirm('هل أنت متأكد من حذف هذا الفيديو؟')) {
-                    const evt = new CustomEvent('admin-delete-item', { detail: { id: video.id, section: 'videos' } });
-                    window.dispatchEvent(evt);
-                    const card = document.getElementById(`card-${video.id}`);
-                    if (card) card.style.display = 'none';
-                  }
-                }}
-                className="p-2 bg-red-500/20 text-red-400 rounded-lg backdrop-blur-md border border-red-500/30 hover:bg-red-500/40 transition-colors shadow-lg"
-                title="حذف"
-              >
-                <Trash2 className="w-5 h-5" />
-              </button>
-            </div>
-          )}
-
-          <div className="player-side">
-            <div className="song-tag">{getCategoryLabel(video.category)}</div>
-
-            <div className="multi-video-stack">
-              {(video.videoUrls || []).map((url, idx) => {
-                const resolved = resolveVideoSource(url);
-                return (
-                  <div key={idx} className="video-frame-box">
-                    {resolved.type === 'video' ? (
-                      <video src={resolved.src} controls preload="metadata" />
-                    ) : (
-                      <iframe
-                        src={resolved.src}
-                        title={`${video.title} - ${idx + 1}`}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="views-stars-row">
-              <div className="views-badge">
-                <Eye className="w-4 h-4 shrink-0" />
-                <span>{lang === 'ar' ? `مشاهدة ${video.views ?? '0'}` : `Views ${video.views ?? '0'}`}</span>
-              </div>
-              <div className="star-rating">
-                {[1, 2, 3, 4, 5].map((num) => (
-                  <span key={num}
-                    className={`star ${num <= (hoverStar[video.id] ?? starRatings[video.id] ?? 0) ? 'active' : ''}`}
-                    onClick={() => saveRating(video.id, num)}
-                    onMouseEnter={() => setHoverStar((prev) => ({ ...prev, [video.id]: num }))}
-                    onMouseLeave={() => setHoverStar((prev) => { const n = { ...prev }; delete n[video.id]; return n; })}
-                  >★</span>
-                ))}
-              </div>
-            </div>
-
-            {Array.isArray(video.critics) && video.critics.length > 0 && (
-              <div style={{ width: '100%', marginTop: 18 }}>
-                <span className="label-gold">{lang === 'ar' ? 'ملاحظات نقدية' : 'Critique notes'}</span>
-                <div style={{ marginTop: 10 }}>
-                  {video.critics.map((c, i) => (
-                    <div key={i} className="critic-item">
-                      <span className="critic-dot">◆</span>
-                      <span>{c}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+      {allVideos.map((video) => (
+        <div key={video.id} className="main-card">
+          <div className="card-header">
+            <span className="song-label">Song lyrics</span>
+            <div className="category-badge">{video.category || "General"}</div>
           </div>
 
-          <div className="lyrics-side">
-            <span className="label-gold">{lang === 'ar' ? 'كلمات الأغنية' : 'Lyrics'}</span>
-            <div className="title-row">
-              <h2 className="song-title-red">{translateTitle(video.title, lang)}</h2>
-            </div>
-            <div className="lyrics-scroll">
-              {(video.lyrics || []).map((l, i) => (
-                <div key={i} className={`line ${l.red ? 'red' : ''}`}>{l.text}</div>
-              ))}
-            </div>
+          <div className="video-container">
+            {video.videoUrls?.map((url, idx) => renderVideo(url, idx, video.id))}
+          </div>
 
-            {/* Comments block */}
-            <div style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid rgba(201, 168, 76, 0.2)' }}>
-              <div className="comments-header" style={{ marginTop: '15px' }}>
-                <span className="label-gold">{lang === 'ar' ? 'التعليقات' : 'Comments'}</span>
-                {isAdmin && activeInputSongId !== video.id && (
-                  <button
-                    className="add-comment-btn"
-                    onClick={() => handleAddComment(video.id)}
-                  >
-                    {lang === 'ar' ? 'أضف تعليق +' : '+ Add comment'}
-                  </button>
-                )}
-              </div>
-
-              {/* Comment Input Area (admin only) */}
-              {isAdmin && activeInputSongId === video.id && (
-                <div className="comment-input-area">
-                  <textarea
-                    className="comment-textarea"
-                    style={{
-                      background: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
-                      color: isDark ? '#ffffff' : '#000000',
-                      borderColor: isDark ? 'rgba(201, 168, 76, 0.2)' : 'rgba(201, 168, 76, 0.4)',
-                    }}
-                    value={newCommentText[video.id] || ''}
-                    onChange={(e) => setNewCommentText(prev => ({ ...prev, [video.id]: e.target.value }))}
-                    placeholder={lang === 'ar' ? 'اكتب تعليقك...' : 'Write your comment...'}
-                    autoFocus
-                  />
-
-                  <div className="emoji-row">
-                    {['😍', '🔥', '❤️', '👏', '🎵', '💯', '😢'].map((emoji) => (
-                      <button
-                        key={emoji}
-                        type="button"
-                        className="emoji-btn"
-                        onClick={() => handleEmojiClick(video.id, emoji)}
-                      >
-                        {emoji}
-                      </button>
-                    ))}
-                  </div>
-
-                  <div className="action-buttons">
-                    <button
-                      type="button"
-                      className="btn-cancel"
-                      style={{
-                        color: isDark ? '#ffffff' : '#000000',
-                        background: isDark ? 'rgba(255, 255, 255, 0.1)' : '#f3f3f3',
-                      }}
-                      onClick={() => handleCancelComment(video.id)}
-                    >
-                      {lang === 'ar' ? 'إلغاء' : 'Cancel'}
-                    </button>
-                    <button
-                      type="button"
-                      className="btn-done"
-                      onClick={() => handleSubmitComment(video.id)}
-                    >
-                      {lang === 'ar' ? 'تم ✓' : 'Done ✓'}
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {/* Comments Scroll List */}
-              <div className="comments-scroll-list" style={{ maxHeight: '140px' }}>
-                {(comments[video.id] || []).map((comment) => (
-                  <div
-                    key={comment.id}
-                    className="comment-bubble group/comment relative"
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.07)',
-                      color: '#ffffff',
-                      borderColor: isDark ? 'rgba(201, 168, 76, 0.15)' : 'rgba(201, 168, 76, 0.3)',
-                      borderWidth: '1px',
-                      borderStyle: 'solid'
-                    }}
-                  >
-                    {comment.text}
-                    {isAdmin && (
-                      <div className="absolute left-2 top-1/2 -translate-y-1/2 flex gap-1 opacity-0 group-hover/comment:opacity-100 transition-opacity bg-black/75 p-1 rounded backdrop-blur-sm border border-white/10">
-                        <button
-                          type="button"
-                          onClick={(e) => handleEditComment(e, video.id, comment.id)}
-                          className="text-blue-400 hover:text-blue-300 p-1"
-                          title={lang === 'ar' ? 'تعديل' : 'Edit'}
-                        >
-                          <Edit className="w-3.5 h-3.5" />
-                        </button>
-                        <button
-                          type="button"
-                          onClick={(e) => handleDeleteComment(e, video.id, comment.id)}
-                          className="text-red-400 hover:text-red-300 p-1"
-                          title={lang === 'ar' ? 'حذف' : 'Delete'}
-                        >
-                          <Trash2 className="w-3.5 h-3.5" />
-                        </button>
-                      </div>
-                    )}
-                  </div>
+          <div className="card-content">
+            <div className="lyrics-section">
+              <span className="song-label">Song lyrics</span>
+              <h2 className="video-title">{video.title}</h2>
+              <div className="lyrics-scroll-container">
+                {video.lyrics?.map((lyric, i) => (
+                  <div key={i} className={`line ${lyric.red ? 'red' : ''}`}>{lyric.text}</div>
                 ))}
-                <div ref={(el) => { commentsEndRefs.current[video.id] = el; }} />
               </div>
+            </div>
+
+            <div className="rating-section">
+              <span className="rating-title">Critic reviews (click to rate)</span>
+              {video.critics?.map((critic, idx) => (
+                <div key={idx} className="critic-item" onClick={() => handleCriticClick(video.id, idx)}>
+                  <span>{critic}</span>
+                  {selectedCritics[`${video.id}-${idx}`] && (
+                    <span className="critic-percent">{selectedCritics[`${video.id}-${idx}`]}%</span>
+                  )}
+                </div>
+              ))}
+              <div className="ok-badge">{video.views} K</div>
             </div>
           </div>
         </div>

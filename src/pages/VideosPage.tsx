@@ -185,10 +185,9 @@ const VideosPage = () => {
     }, 100);
   };
 
-  const GUEST_BLOCK_MSG = 'عفواً، يجب تسجيل الدخول كمشرف لتتمكن من إضافة تعليقات';
+  
 
   const handleEmojiClick = (songId: number, emoji: string) => {
-    if (!isAdmin) { window.alert(GUEST_BLOCK_MSG); return; }
     setNewCommentText(prev => ({
       ...prev,
       [songId]: (prev[songId] || '') + emoji
@@ -196,7 +195,6 @@ const VideosPage = () => {
   };
 
   const handleAddComment = (songId: number) => {
-    if (!isAdmin) { window.alert(GUEST_BLOCK_MSG); return; }
     setActiveInputSongId(songId);
     scrollToBottom(songId);
   };
@@ -207,7 +205,6 @@ const VideosPage = () => {
   };
 
   const handleSubmitComment = (songId: number) => {
-    if (!isAdmin) { window.alert(GUEST_BLOCK_MSG); return; }
     const text = newCommentText[songId]?.trim();
     if (!text) return;
 

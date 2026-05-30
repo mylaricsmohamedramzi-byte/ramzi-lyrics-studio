@@ -456,7 +456,10 @@ const MelodiesPage = () => {
     }
   };
 
+  const GUEST_BLOCK_MSG = 'عفواً، يجب تسجيل الدخول كمشرف لتتمكن من إضافة تعليقات';
+
   const handleAddComment = (songId: number) => {
+    if (!isAdmin) { window.alert(GUEST_BLOCK_MSG); return; }
     setActiveInputSongId(songId);
   };
 
@@ -466,6 +469,7 @@ const MelodiesPage = () => {
   };
 
   const handleSubmitComment = (songId: number) => {
+    if (!isAdmin) { window.alert(GUEST_BLOCK_MSG); return; }
     const txt = newCommentText[songId]?.trim();
     if (!txt) {
       setActiveInputSongId(null);
@@ -486,6 +490,7 @@ const MelodiesPage = () => {
   };
 
   const handleEmojiClick = (songId: number, emoji: string) => {
+    if (!isAdmin) { window.alert(GUEST_BLOCK_MSG); return; }
     setNewCommentText(prev => ({
       ...prev,
       [songId]: (prev[songId] || '') + emoji
@@ -1057,7 +1062,7 @@ const MelodiesPage = () => {
             <div style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid rgba(201, 168, 76, 0.2)' }}>
               <div className="comments-header" style={{ marginTop: '15px' }}>
                 <span className="label-gold">{lang === 'ar' ? 'التعليقات' : 'Comments'}</span>
-                {isAdmin && activeInputSongId !== song.id && (
+                {activeInputSongId !== song.id && (
                   <button
                     className="add-comment-btn"
                     onClick={() => handleAddComment(song.id)}

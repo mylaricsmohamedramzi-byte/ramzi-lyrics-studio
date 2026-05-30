@@ -456,7 +456,7 @@ const MelodiesPage = () => {
     }
   };
 
-  const GUEST_BLOCK_MSG = 'عفواً، يجب تسجيل الدخول كمشرف لتتمكن من إضافة تعليقات';
+  
 
   const handleAddComment = (songId: number) => {
     setActiveInputSongId(songId);

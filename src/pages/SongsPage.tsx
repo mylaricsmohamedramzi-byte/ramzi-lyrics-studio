@@ -1155,7 +1155,7 @@ export default function SongsPage() {
     }, 100);
   };
 
-  const GUEST_BLOCK_MSG = 'عفواً، يجب تسجيل الدخول كمشرف لتتمكن من إضافة تعليقات';
+  
 
   const handleEmojiClick = (songId: number, emoji: string) => {
     setNewCommentText(prev => ({

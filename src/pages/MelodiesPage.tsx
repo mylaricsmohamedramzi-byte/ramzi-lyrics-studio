@@ -235,7 +235,7 @@ export const allSongs = [
     title: "حلّ إيجابي",
     type: "طرب",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776497771/La7n_7all_Egaby_tedj3g.mp3"],
-    coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002508/%D8%AD%D9%84_%D8%A7%D9%8اي%D8%AC%D8%A7%D8%A8%D9%8A_avn3ul.png",
+    coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1777002508/%D8%AD%D9%84_%D8%A7%D9%8A%D8%AC%D8%A7%D8%A8%D9%8A_avn3ul.png",
     views: "0 ",
     lyrics: [
       { text: "وعاوزني أنساك ومفكّر .. أن النسيان سهل وعادي", red: false },

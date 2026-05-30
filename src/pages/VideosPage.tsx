@@ -846,7 +846,7 @@ const VideosPage = () => {
                   <div>
                     <div className="comments-header">
                       <span className="label-gold">{lang === 'ar' ? 'التعليقات' : 'Comments'}</span>
-                      {isAdmin && activeInputSongId !== video.id && (
+                      {activeInputSongId !== video.id && (
                         <button
                           className="add-comment-btn"
                           onClick={() => handleAddComment(video.id)}
@@ -926,12 +926,14 @@ const VideosPage = () => {
                           {isAdmin && (
                             <div className="absolute left-2 top-1/2 -translate-y-1/2 flex gap-1 opacity-0 group-hover/comment:opacity-100 transition-opacity bg-black/75 p-1 rounded backdrop-blur-sm border border-white/10">
                               <button
-                                onClick={() => {
+                                onMouseDown={(e) => {
+                                  e.stopPropagation();
+                                  e.preventDefault();
                                   const newText = window.prompt(lang === 'ar' ? 'تعديل التعليق' : 'Edit comment', comment.text);
                                   if (newText && newText.trim() !== '') {
                                     setComments(prev => ({
                                       ...prev,
-                                      [video.id]: prev[video.id].map(c => c.id === comment.id ? { ...c, text: newText.trim() } : c)
+                                      [video.id]: prev[video.id].map(c => String(c.id) === String(comment.id) ? { ...c, text: newText.trim() } : c)
                                     }));
                                   }
                                 }}
@@ -941,11 +943,13 @@ const VideosPage = () => {
                                 <Edit className="w-3.5 h-3.5" />
                               </button>
                               <button
-                                onClick={() => {
+                                onMouseDown={(e) => {
+                                  e.stopPropagation();
+                                  e.preventDefault();
                                   if (window.confirm(lang === 'ar' ? 'حذف التعليق؟' : 'Delete comment?')) {
                                     setComments(prev => ({
                                       ...prev,
-                                      [video.id]: prev[video.id].filter(c => c.id !== comment.id)
+                                      [video.id]: prev[video.id].filter(c => String(c.id) !== String(comment.id))
                                     }));
                                   }
                                 }}

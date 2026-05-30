@@ -751,7 +751,7 @@ const LyricsPage = () => {
                     <div className="right-col">
                       <div className="comments-header">
                         <span className="label-gold">{t('Comments', 'التعليقات')}</span>
-                        {isAdmin && activeInputSongId !== song.id && (
+                        {activeInputSongId !== song.id && (
                           <button
                             className="add-comment-btn"
                             onClick={() => handleAddComment(song.id)}

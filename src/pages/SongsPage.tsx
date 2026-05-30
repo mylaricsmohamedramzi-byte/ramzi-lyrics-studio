@@ -1974,7 +1974,7 @@ export default function SongsPage() {
               </div>
               <div className="comments-header" style={{ marginTop: '15px' }}>
                 <span className="label-gold">{lang === 'ar' ? 'التعليقات' : 'Comments'}</span>
-                {isAdmin && activeInputSongId !== song.id && (
+                {activeInputSongId !== song.id && (
                   <button
                     className="add-comment-btn"
                     onClick={() => handleAddComment(song.id)}

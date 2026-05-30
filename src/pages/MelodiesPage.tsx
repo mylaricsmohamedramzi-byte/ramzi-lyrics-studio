@@ -1062,7 +1062,7 @@ const MelodiesPage = () => {
             <div style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid rgba(201, 168, 76, 0.2)' }}>
               <div className="comments-header" style={{ marginTop: '15px' }}>
                 <span className="label-gold">{lang === 'ar' ? 'التعليقات' : 'Comments'}</span>
-                {isAdmin && activeInputSongId !== song.id && (
+                {activeInputSongId !== song.id && (
                   <button
                     className="add-comment-btn"
                     onClick={() => handleAddComment(song.id)}

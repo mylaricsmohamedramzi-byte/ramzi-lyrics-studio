@@ -2588,7 +2588,7 @@ export const allSongs: any[] = [
           { "text": " ", "red": false },
           { "text": "أناLEVEL UP فين مستواك", "red": true },
           { "text": " ", "red": false },
-          { "text": "لسانيسم ملوش علاج أنا لمهم وقت العراك", "red": true },
+          { "text": "لساني سم ملوش علاج أنا المهم وقت العراك", "red": true },
           { "text": " ", "red": false },
           { "text": "حديث في الأمس وفي المساء", "red": true },
           { "text": " ", "red": false },

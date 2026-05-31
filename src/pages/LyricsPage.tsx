@@ -9,6 +9,8 @@ import { allSongs } from '@/data/lyricsSongs';
 import nameArabic from '@/assets/name-arabic.png';
 import nameEnglish from '@/assets/name-english.png';
 import { translateTitle } from '@/utils/songTranslations';
+import { useItemStats } from '@/hooks/useItemStats';
+import { mergeMockItems } from '@/utils/mockMerge';
 
 // ─── Floating Notes (Background) ─────────────────────────────────────────────
 const NOTES = ['♩', '♪', '♫', '♬', '𝄞', '𝄢', '♭', '♮', '♯', '𝄡', '♬', '♪', '♫', '♩'];
@@ -108,13 +110,8 @@ const LyricsPage = () => {
     return {};
   });
 
-  const [ratings, setRatings] = useState<Record<number, number>>(() => {
-    const saved = localStorage.getItem('lyrics_ratings');
-    if (saved) {
-      try { return JSON.parse(saved); } catch (e) { console.error(e); }
-    }
-    return {};
-  });
+  // Global multi-user views + ratings engine (Cloud, with LocalStorage fallback)
+  const { views, avgRatings, ratings, saveRating, registerViews } = useItemStats('lyrics');
 
   const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
   
@@ -126,11 +123,7 @@ const LyricsPage = () => {
     localStorage.setItem('lyrics_comments', JSON.stringify(comments));
   }, [comments]);
 
-  const saveRating = (songId: number, rating: number) => {
-    const updated = { ...ratings, [songId]: rating };
-    setRatings(updated);
-    localStorage.setItem('lyrics_ratings', JSON.stringify(updated));
-  };
+
 
   const commentsEndRefs = useRef<Record<number, HTMLDivElement | null>>({});
 
@@ -158,7 +151,7 @@ const LyricsPage = () => {
   const filteredSongs = useMemo(() => {
     const q = normalizeArabic(search);
     const cat = SONG_CATEGORIES.find((c) => c.key === activeCat) || SONG_CATEGORIES[0];
-    return allSongs
+    return mergeMockItems('lyrics', allSongs)
       .filter((s) => {
         if (!cat.match(s.type || '')) return false;
         if (!q) return true;
@@ -168,6 +161,13 @@ const LyricsPage = () => {
       .slice()
       .sort((a, b) => getCategoryOrder(a.type) - getCategoryOrder(b.type));
   }, [search, activeCat]);
+
+  // Register a view for every visible item (once per session) — global counter
+  useEffect(() => {
+    if (filteredSongs.length) registerViews(filteredSongs.map((s) => s.id));
+  }, [filteredSongs, registerViews]);
+
+
 
   const getCategoryLabel = (type: string) => {
     const matched = SONG_CATEGORIES.find((c) => c.key !== 'all' && c.match(type || ''));
@@ -872,7 +872,10 @@ const LyricsPage = () => {
 
                     {/* LEFT COLUMN — Stars + Views */}
                     <div className="left-col">
-                      <span className="rating-title">{t('Your Rating', 'تقييمك')}</span>
+                      <span className="rating-title">
+                        {t('Your Rating', 'تقييمك')}
+                        {avgRatings[song.id] ? ` · ${avgRatings[song.id]}★` : ''}
+                      </span>
                       <div className="star-rating">
                         {[1, 2, 3, 4, 5].map((num) => (
                           <span
@@ -889,7 +892,7 @@ const LyricsPage = () => {
 
                       <div className="views-badge">
                         <Eye className="w-4 h-4 shrink-0" />
-                        <span>{lang === 'ar' ? `مشاهدة ${song.views ?? '0'}` : `Views ${song.views ?? '0'}`}</span>
+                        <span>{lang === 'ar' ? `مشاهدة ${views[song.id] ?? song.views ?? 0}` : `Views ${views[song.id] ?? song.views ?? 0}`}</span>
                       </div>
                     </div>
                   </div>

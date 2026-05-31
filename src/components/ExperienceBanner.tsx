@@ -34,7 +34,7 @@ export default function ExperienceBanner() {
           style={{ color: 'hsl(var(--gold))' }}
         />
         <p
-          className="text-center text-xs sm:text-sm font-bold font-cairo tracking-wide"
+          className="text-center text-xs sm:text-sm font-bold font-cairo tracking-wide animate-gold-pulse"
           style={{
             color: 'hsl(var(--gold))',
             textShadow: '0 0 8px hsl(var(--gold) / 0.5)',

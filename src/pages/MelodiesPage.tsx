@@ -6,6 +6,8 @@ import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Eye, Edit, Trash2 } from 'lucide-react';
 import { translateTitle } from '@/utils/songTranslations';
+import { useItemStats } from '@/hooks/useItemStats';
+import { mergeMockItems } from '@/utils/mockMerge';
 
 const MEL_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean; order: number }[] = [
   { key: 'all', ar: 'الكل', en: 'All', match: () => true, order: 0 },
@@ -362,13 +364,8 @@ const MelodiesPage = () => {
     }
   }, [location.search]);
 
-  const [starRatings, setStarRatings] = useState<Record<number, number>>(() => {
-    const saved = localStorage.getItem('melodies_star_ratings');
-    if (saved) {
-      try { return JSON.parse(saved); } catch (e) { console.error(e); }
-    }
-    return {};
-  });
+  // Global multi-user views + ratings engine (Cloud, with LocalStorage fallback)
+  const { views, avgRatings, ratings: starRatings, saveRating, registerViews } = useItemStats('melodies');
   const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
 
   const [comments, setComments] = useState<Record<number, { id: number; text: string }[]>>(() => {
@@ -382,9 +379,6 @@ const MelodiesPage = () => {
   const [activeInputSongId, setActiveInputSongId] = useState<number | null>(null);
   const commentsEndRefs = useRef<Record<number, HTMLDivElement | null>>({});
 
-  useEffect(() => {
-    localStorage.setItem('melodies_star_ratings', JSON.stringify(starRatings));
-  }, [starRatings]);
 
   useEffect(() => {
     localStorage.setItem('melodies_comments', JSON.stringify(comments));
@@ -413,7 +407,7 @@ const MelodiesPage = () => {
   const filteredSongs = useMemo(() => {
     const q = normalizeArabic(search);
     const cat = MEL_CATEGORIES.find((c) => c.key === activeCat) || MEL_CATEGORIES[0];
-    return allSongs
+    return mergeMockItems('melodies', allSongs)
       .filter((s) => {
         if (!cat.match(s.type || '')) return false;
         if (!q) return true;
@@ -422,7 +416,12 @@ const MelodiesPage = () => {
       })
       .slice()
       .sort((a, b) => getCategoryOrder(a.type) - getCategoryOrder(b.type));
-  }, [search, activeCat]);
+   }, [search, activeCat]);
+
+  // Register a view for every visible item (once per session) — global counter
+  useEffect(() => {
+    if (filteredSongs.length) registerViews(filteredSongs.map((s) => s.id));
+  }, [filteredSongs, registerViews]);
 
   const getCategoryLabel = (type: string) => {
     const matched = MEL_CATEGORIES.find((c) => c.key !== 'all' && c.match(type || ''));
@@ -494,9 +493,6 @@ const MelodiesPage = () => {
     }));
   };
 
-  const saveRating = (songId: number, val: number) => {
-    setStarRatings(prev => ({ ...prev, [songId]: val }));
-  };
 
   return (
     <div dir={lang === 'ar' ? 'rtl' : 'ltr'} className="page-wrapper content-layer">
@@ -964,7 +960,7 @@ const MelodiesPage = () => {
             <div className="views-stars-row">
               <div className="views-badge">
                 <Eye className="w-4 h-4 shrink-0" />
-                <span>{lang === 'ar' ? `مشاهدة ${song.views ?? '0'}` : `Views ${song.views ?? '0'}`}</span>
+                <span>{lang === 'ar' ? `مشاهدة ${views[song.id] ?? song.views ?? 0}` : `Views ${views[song.id] ?? song.views ?? 0}`}{avgRatings[song.id] ? ` · ${avgRatings[song.id]}★` : ''}</span>
               </div>
               <div className="star-rating">
                 {[1, 2, 3, 4, 5].map((num) => (

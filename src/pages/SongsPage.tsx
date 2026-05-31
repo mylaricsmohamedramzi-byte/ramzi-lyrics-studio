@@ -7,6 +7,8 @@ import { useTheme } from '@/contexts/ThemeContext';
 import nameArabic from '@/assets/name-arabic.png';
 import nameEnglish from '@/assets/name-english.png';
 import { translateTitle } from '@/utils/songTranslations';
+import { useItemStats } from '@/hooks/useItemStats';
+import { mergeMockItems } from '@/utils/mockMerge';
 // ─── ملاحظات موسيقية عائمة ────────────────────────────────────────────────────
 const NOTES = ['♩', '♪', '♫', '♬', '𝄞', '𝄢', '♭', '♮', '♯', '𝄡', '♬', '♪', '♫', '♩'];
 
@@ -1115,19 +1117,8 @@ export default function SongsPage() {
       }, 500);
     }
   }, [location.search]);
-  const [starRatings, setStarRatings] = useState<Record<number, number>>(() => {
-    const saved = localStorage.getItem('songs_ratings');
-    if (saved) {
-      try { return JSON.parse(saved); } catch (e) { console.error(e); }
-    }
-    return {};
-  });
-
-  const saveRating = (songId: number, rating: number) => {
-    const updated = { ...starRatings, [songId]: rating };
-    setStarRatings(updated);
-    localStorage.setItem('songs_ratings', JSON.stringify(updated));
-  };
+  // Global multi-user views + ratings engine (Cloud, with LocalStorage fallback)
+  const { views, avgRatings, ratings: starRatings, saveRating, registerViews } = useItemStats('songs');
 
   const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
   const [selectedCritics, setSelectedCritics] = useState<Record<string, number>>({});
@@ -1225,7 +1216,7 @@ export default function SongsPage() {
   const filteredSongs = useMemo(() => {
     const q = normalizeArabic(search);
     const cat = SONG_CATEGORIES.find((c) => c.key === activeCat) || SONG_CATEGORIES[0];
-    return allSongs
+    return mergeMockItems('songs', allSongs)
       .filter((s) => {
         if (!cat.match(s.type || '')) return false;
         if (!q) return true;
@@ -1235,6 +1226,11 @@ export default function SongsPage() {
       .slice()
       .sort((a, b) => getCategoryOrder(a.type) - getCategoryOrder(b.type));
   }, [search, activeCat]);
+
+  // Register a view for every visible item (once per session) — global counter
+  useEffect(() => {
+    if (filteredSongs.length) registerViews(filteredSongs.map((s) => s.id));
+  }, [filteredSongs, registerViews]);
 
   const normalizeAudioUrls = (urls: string[] | string | undefined): string[] => {
     if (Array.isArray(urls)) return urls.filter((u) => typeof u === 'string' && u.trim() !== '');
@@ -1860,7 +1856,7 @@ export default function SongsPage() {
               <div className="views-stars-row">
                 <div className="views-badge">
                   <Eye className="w-4 h-4 shrink-0" />
-                  <span>{lang === 'ar' ? `مشاهدة ${song.views ?? "0"}` : `Views ${song.views ?? "0"}`}</span>
+                  <span>{lang === 'ar' ? `مشاهدة ${views[song.id] ?? song.views ?? 0}` : `Views ${views[song.id] ?? song.views ?? 0}`}{avgRatings[song.id] ? ` · ${avgRatings[song.id]}★` : ''}</span>
                 </div>
                 <div className="star-rating">
                   {[1, 2, 3, 4, 5].map((num) => (

@@ -7,6 +7,8 @@ import { useTheme } from '@/contexts/ThemeContext';
 import nameArabic from '@/assets/name-arabic.png';
 import nameEnglish from '@/assets/name-english.png';
 import { translateTitle } from '@/utils/songTranslations';
+import { useItemStats } from '@/hooks/useItemStats';
+import { mergeMockItems } from '@/utils/mockMerge';
 
 // ─── ملاحظات موسيقية عائمة (خلفية الصفحة) ───────────────────────────────────
 const NOTES = ['♩', '♪', '♫', '♬', '𝄞', '𝄢', '♭', '♮', '♯', '𝄡', '♬', '♪', '♫', '♩'];
@@ -146,19 +148,8 @@ const VideosPage = () => {
     }
   }, [location.search]);
 
-  const [starRatings, setStarRatings] = useState<Record<number, number>>(() => {
-    const saved = localStorage.getItem('videos_ratings');
-    if (saved) {
-      try { return JSON.parse(saved); } catch (e) { console.error(e); }
-    }
-    return {};
-  });
-
-  const saveRating = (songId: number, rating: number) => {
-    const updated = { ...starRatings, [songId]: rating };
-    setStarRatings(updated);
-    localStorage.setItem('videos_ratings', JSON.stringify(updated));
-  };
+  // Global multi-user views + ratings engine (Cloud, with LocalStorage fallback)
+  const { views, avgRatings, ratings: starRatings, saveRating, registerViews } = useItemStats('videos');
 
   const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
 
@@ -248,7 +239,7 @@ const VideosPage = () => {
   const filteredVideos = useMemo(() => {
     const q = normalizeArabic(search);
     const cat = VIDEO_CATEGORIES.find((c) => c.key === activeCat) || VIDEO_CATEGORIES[0];
-    return allVideos
+    return mergeMockItems('videos', allVideos)
       .filter((v) => {
         if (!cat.match(v.category || '')) return false;
         if (!q) return true;
@@ -257,7 +248,12 @@ const VideosPage = () => {
       })
       .slice()
       .sort((a, b) => getCategoryOrder(a.category) - getCategoryOrder(b.category));
-  }, [search, activeCat]);
+   }, [search, activeCat]);
+
+  // Register a view for every visible item (once per session) — global counter
+  useEffect(() => {
+    if (filteredVideos.length) registerViews(filteredVideos.map((v) => v.id));
+  }, [filteredVideos, registerViews]);
 
   const handleCriticClick = (videoId: number, idx: number) => {
     const key = `${videoId}-${idx}`;
@@ -966,7 +962,7 @@ const VideosPage = () => {
                   <div className="views-stars-row" style={{ marginTop: '20px' }}>
                     <div className="views-badge">
                       <Eye className="w-4 h-4 shrink-0" />
-                      <span>{lang === 'ar' ? `مشاهدة ${video.views ?? "0"}` : `Views ${video.views ?? "0"}`}</span>
+                      <span>{lang === 'ar' ? `مشاهدة ${views[video.id] ?? video.views ?? 0}` : `Views ${views[video.id] ?? video.views ?? 0}`}{avgRatings[video.id] ? ` · ${avgRatings[video.id]}★` : ''}</span>
                     </div>
                     <div className="star-rating">
                       {[1, 2, 3, 4, 5].map((num) => (

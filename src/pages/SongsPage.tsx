@@ -1855,7 +1855,7 @@ export default function SongsPage() {
               <div className="views-stars-row">
                 <div className="views-badge">
                   <Eye className="w-4 h-4 shrink-0" />
-                  <span>{lang === 'ar' ? `مشاهدة ${song.views ?? "0"}` : `Views ${song.views ?? "0"}`}</span>
+                  <span>{lang === 'ar' ? `مشاهدة ${views[song.id] ?? song.views ?? 0}` : `Views ${views[song.id] ?? song.views ?? 0}`}{avgRatings[song.id] ? ` · ${avgRatings[song.id]}★` : ''}</span>
                 </div>
                 <div className="star-rating">
                   {[1, 2, 3, 4, 5].map((num) => (

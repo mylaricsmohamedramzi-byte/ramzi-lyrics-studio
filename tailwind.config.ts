@@ -50,10 +50,26 @@ export default {
       keyframes: {
         "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
         "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
+        "rotate-phone": {
+          "0%, 20%": { transform: "rotate(0deg)" },
+          "50%, 70%": { transform: "rotate(-90deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
+        "gold-pulse": {
+          "0%, 100%": { filter: "drop-shadow(0 0 4px hsl(var(--gold)))", opacity: "0.85" },
+          "50%": { filter: "drop-shadow(0 0 12px hsl(var(--gold)))", opacity: "1" },
+        },
+        "banner-shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "rotate-phone": "rotate-phone 3s ease-in-out infinite",
+        "gold-pulse": "gold-pulse 2s ease-in-out infinite",
+        "banner-shimmer": "banner-shimmer 6s linear infinite",
       },
     },
   },

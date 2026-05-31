@@ -871,7 +871,10 @@ const LyricsPage = () => {
 
                     {/* LEFT COLUMN — Stars + Views */}
                     <div className="left-col">
-                      <span className="rating-title">{t('Your Rating', 'تقييمك')}</span>
+                      <span className="rating-title">
+                        {t('Your Rating', 'تقييمك')}
+                        {avgRatings[song.id] ? ` · ${avgRatings[song.id]}★` : ''}
+                      </span>
                       <div className="star-rating">
                         {[1, 2, 3, 4, 5].map((num) => (
                           <span

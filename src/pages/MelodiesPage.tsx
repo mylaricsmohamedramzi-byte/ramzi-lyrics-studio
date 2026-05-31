@@ -486,9 +486,6 @@ const MelodiesPage = () => {
     }));
   };
 
-  const saveRating = (songId: number, val: number) => {
-    setStarRatings(prev => ({ ...prev, [songId]: val }));
-  };
 
   return (
     <div dir={lang === 'ar' ? 'rtl' : 'ltr'} className="page-wrapper content-layer">

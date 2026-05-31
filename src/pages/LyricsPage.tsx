@@ -160,6 +160,13 @@ const LyricsPage = () => {
       .sort((a, b) => getCategoryOrder(a.type) - getCategoryOrder(b.type));
   }, [search, activeCat]);
 
+  // Register a view for every visible item (once per session) — global counter
+  useEffect(() => {
+    if (filteredSongs.length) registerViews(filteredSongs.map((s) => s.id));
+  }, [filteredSongs, registerViews]);
+
+
+
   const getCategoryLabel = (type: string) => {
     const matched = SONG_CATEGORIES.find((c) => c.key !== 'all' && c.match(type || ''));
     if (matched) return lang === 'ar' ? matched.ar : matched.en;

@@ -414,7 +414,12 @@ const MelodiesPage = () => {
       })
       .slice()
       .sort((a, b) => getCategoryOrder(a.type) - getCategoryOrder(b.type));
-  }, [search, activeCat]);
+   }, [search, activeCat]);
+
+  // Register a view for every visible item (once per session) — global counter
+  useEffect(() => {
+    if (filteredSongs.length) registerViews(filteredSongs.map((s) => s.id));
+  }, [filteredSongs, registerViews]);
 
   const getCategoryLabel = (type: string) => {
     const matched = MEL_CATEGORIES.find((c) => c.key !== 'all' && c.match(type || ''));

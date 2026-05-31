@@ -146,19 +146,8 @@ const VideosPage = () => {
     }
   }, [location.search]);
 
-  const [starRatings, setStarRatings] = useState<Record<number, number>>(() => {
-    const saved = localStorage.getItem('videos_ratings');
-    if (saved) {
-      try { return JSON.parse(saved); } catch (e) { console.error(e); }
-    }
-    return {};
-  });
-
-  const saveRating = (songId: number, rating: number) => {
-    const updated = { ...starRatings, [songId]: rating };
-    setStarRatings(updated);
-    localStorage.setItem('videos_ratings', JSON.stringify(updated));
-  };
+  // Global multi-user views + ratings engine (Cloud, with LocalStorage fallback)
+  const { views, avgRatings, ratings: starRatings, saveRating, registerViews } = useItemStats('videos');
 
   const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
 

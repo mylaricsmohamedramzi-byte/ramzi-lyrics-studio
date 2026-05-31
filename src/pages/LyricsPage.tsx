@@ -108,13 +108,8 @@ const LyricsPage = () => {
     return {};
   });
 
-  const [ratings, setRatings] = useState<Record<number, number>>(() => {
-    const saved = localStorage.getItem('lyrics_ratings');
-    if (saved) {
-      try { return JSON.parse(saved); } catch (e) { console.error(e); }
-    }
-    return {};
-  });
+  // Global multi-user views + ratings engine (Cloud, with LocalStorage fallback)
+  const { views, avgRatings, ratings, saveRating, registerViews } = useItemStats('lyrics');
 
   const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
   

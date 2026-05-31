@@ -7,6 +7,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { Eye, Edit, Trash2 } from 'lucide-react';
 import { translateTitle } from '@/utils/songTranslations';
 import { useItemStats } from '@/hooks/useItemStats';
+import { mergeMockItems } from '@/utils/mockMerge';
 
 const MEL_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean; order: number }[] = [
   { key: 'all', ar: 'الكل', en: 'All', match: () => true, order: 0 },

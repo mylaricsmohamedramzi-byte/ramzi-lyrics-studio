@@ -12,10 +12,11 @@ export default function ExperienceBanner() {
   return (
     <div
       dir={dir}
-      className="w-full z-40 relative overflow-hidden border-b"
+      className="fixed bottom-0 left-0 right-0 w-full z-[45] overflow-hidden border-t"
       style={{
         borderColor: 'hsl(var(--gold) / 0.35)',
         background: 'linear-gradient(90deg, rgba(20,5,8,0.96), rgba(40,12,16,0.96), rgba(20,5,8,0.96))',
+        backdropFilter: 'blur(8px)',
       }}
     >
       {/* Shimmer overlay */}

@@ -150,7 +150,7 @@ const LyricsPage = () => {
   const filteredSongs = useMemo(() => {
     const q = normalizeArabic(search);
     const cat = SONG_CATEGORIES.find((c) => c.key === activeCat) || SONG_CATEGORIES[0];
-    return allSongs
+    return mergeMockItems('lyrics', allSongs)
       .filter((s) => {
         if (!cat.match(s.type || '')) return false;
         if (!q) return true;

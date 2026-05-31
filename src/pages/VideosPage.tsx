@@ -961,7 +961,7 @@ const VideosPage = () => {
                   <div className="views-stars-row" style={{ marginTop: '20px' }}>
                     <div className="views-badge">
                       <Eye className="w-4 h-4 shrink-0" />
-                      <span>{lang === 'ar' ? `مشاهدة ${video.views ?? "0"}` : `Views ${video.views ?? "0"}`}</span>
+                      <span>{lang === 'ar' ? `مشاهدة ${views[video.id] ?? video.views ?? 0}` : `Views ${views[video.id] ?? video.views ?? 0}`}{avgRatings[video.id] ? ` · ${avgRatings[video.id]}★` : ''}</span>
                     </div>
                     <div className="star-rating">
                       {[1, 2, 3, 4, 5].map((num) => (

@@ -1225,6 +1225,11 @@ export default function SongsPage() {
       .sort((a, b) => getCategoryOrder(a.type) - getCategoryOrder(b.type));
   }, [search, activeCat]);
 
+  // Register a view for every visible item (once per session) — global counter
+  useEffect(() => {
+    if (filteredSongs.length) registerViews(filteredSongs.map((s) => s.id));
+  }, [filteredSongs, registerViews]);
+
   const normalizeAudioUrls = (urls: string[] | string | undefined): string[] => {
     if (Array.isArray(urls)) return urls.filter((u) => typeof u === 'string' && u.trim() !== '');
     if (typeof urls === 'string' && urls.trim() !== '') return [urls];

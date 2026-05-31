@@ -246,7 +246,12 @@ const VideosPage = () => {
       })
       .slice()
       .sort((a, b) => getCategoryOrder(a.category) - getCategoryOrder(b.category));
-  }, [search, activeCat]);
+   }, [search, activeCat]);
+
+  // Register a view for every visible item (once per session) — global counter
+  useEffect(() => {
+    if (filteredVideos.length) registerViews(filteredVideos.map((v) => v.id));
+  }, [filteredVideos, registerViews]);
 
   const handleCriticClick = (videoId: number, idx: number) => {
     const key = `${videoId}-${idx}`;

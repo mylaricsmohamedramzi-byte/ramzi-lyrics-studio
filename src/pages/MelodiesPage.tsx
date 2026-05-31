@@ -377,9 +377,6 @@ const MelodiesPage = () => {
   const [activeInputSongId, setActiveInputSongId] = useState<number | null>(null);
   const commentsEndRefs = useRef<Record<number, HTMLDivElement | null>>({});
 
-  useEffect(() => {
-    localStorage.setItem('melodies_star_ratings', JSON.stringify(starRatings));
-  }, [starRatings]);
 
   useEffect(() => {
     localStorage.setItem('melodies_comments', JSON.stringify(comments));

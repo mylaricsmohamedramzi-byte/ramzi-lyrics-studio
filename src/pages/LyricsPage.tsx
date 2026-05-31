@@ -121,11 +121,10 @@ const LyricsPage = () => {
     localStorage.setItem('lyrics_comments', JSON.stringify(comments));
   }, [comments]);
 
-  const saveRating = (songId: number, rating: number) => {
-    const updated = { ...ratings, [songId]: rating };
-    setRatings(updated);
-    localStorage.setItem('lyrics_ratings', JSON.stringify(updated));
-  };
+  // Register a view for every visible item (once per session) — global counter
+  useEffect(() => {
+    if (filteredSongs.length) registerViews(filteredSongs.map((s) => s.id));
+  }, [filteredSongs, registerViews]);
 
   const commentsEndRefs = useRef<Record<number, HTMLDivElement | null>>({});
 

@@ -406,7 +406,7 @@ const MelodiesPage = () => {
   const filteredSongs = useMemo(() => {
     const q = normalizeArabic(search);
     const cat = MEL_CATEGORIES.find((c) => c.key === activeCat) || MEL_CATEGORIES[0];
-    return allSongs
+    return mergeMockItems('melodies', allSongs)
       .filter((s) => {
         if (!cat.match(s.type || '')) return false;
         if (!q) return true;

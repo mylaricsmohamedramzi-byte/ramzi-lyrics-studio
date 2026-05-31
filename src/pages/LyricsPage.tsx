@@ -9,6 +9,7 @@ import { allSongs } from '@/data/lyricsSongs';
 import nameArabic from '@/assets/name-arabic.png';
 import nameEnglish from '@/assets/name-english.png';
 import { translateTitle } from '@/utils/songTranslations';
+import { useItemStats } from '@/hooks/useItemStats';
 
 // ─── Floating Notes (Background) ─────────────────────────────────────────────
 const NOTES = ['♩', '♪', '♫', '♬', '𝄞', '𝄢', '♭', '♮', '♯', '𝄡', '♬', '♪', '♫', '♩'];

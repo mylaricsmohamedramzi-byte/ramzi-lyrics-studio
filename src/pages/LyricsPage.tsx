@@ -891,7 +891,7 @@ const LyricsPage = () => {
 
                       <div className="views-badge">
                         <Eye className="w-4 h-4 shrink-0" />
-                        <span>{lang === 'ar' ? `مشاهدة ${song.views ?? '0'}` : `Views ${song.views ?? '0'}`}</span>
+                        <span>{lang === 'ar' ? `مشاهدة ${views[song.id] ?? song.views ?? 0}` : `Views ${views[song.id] ?? song.views ?? 0}`}</span>
                       </div>
                     </div>
                   </div>

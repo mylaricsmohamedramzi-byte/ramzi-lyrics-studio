@@ -362,13 +362,8 @@ const MelodiesPage = () => {
     }
   }, [location.search]);
 
-  const [starRatings, setStarRatings] = useState<Record<number, number>>(() => {
-    const saved = localStorage.getItem('melodies_star_ratings');
-    if (saved) {
-      try { return JSON.parse(saved); } catch (e) { console.error(e); }
-    }
-    return {};
-  });
+  // Global multi-user views + ratings engine (Cloud, with LocalStorage fallback)
+  const { views, avgRatings, ratings: starRatings, saveRating, registerViews } = useItemStats('melodies');
   const [hoverStar, setHoverStar] = useState<Record<number, number>>({});
 
   const [comments, setComments] = useState<Record<number, { id: number; text: string }[]>>(() => {

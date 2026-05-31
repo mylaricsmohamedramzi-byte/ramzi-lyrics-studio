@@ -238,7 +238,7 @@ const VideosPage = () => {
   const filteredVideos = useMemo(() => {
     const q = normalizeArabic(search);
     const cat = VIDEO_CATEGORIES.find((c) => c.key === activeCat) || VIDEO_CATEGORIES[0];
-    return allVideos
+    return mergeMockItems('videos', allVideos)
       .filter((v) => {
         if (!cat.match(v.category || '')) return false;
         if (!q) return true;

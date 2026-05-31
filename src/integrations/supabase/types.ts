@@ -14,13 +14,80 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      item_ratings: {
+        Row: {
+          created_at: string
+          id: string
+          item_id: string
+          rater: string
+          rating: number
+          section: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          item_id: string
+          rater: string
+          rating: number
+          section: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          item_id?: string
+          rater?: string
+          rating?: number
+          section?: string
+        }
+        Relationships: []
+      }
+      item_views: {
+        Row: {
+          item_id: string
+          section: string
+          updated_at: string
+          views_count: number
+        }
+        Insert: {
+          item_id: string
+          section: string
+          updated_at?: string
+          views_count?: number
+        }
+        Update: {
+          item_id?: string
+          section?: string
+          updated_at?: string
+          views_count?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
-      [_ in never]: never
+      item_rating_avg: {
+        Row: {
+          avg_rating: number | null
+          item_id: string | null
+          rating_count: number | null
+          section: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
-      [_ in never]: never
+      increment_item_view: {
+        Args: { p_item_id: string; p_section: string }
+        Returns: number
+      }
+      set_item_rating: {
+        Args: {
+          p_item_id: string
+          p_rater: string
+          p_rating: number
+          p_section: string
+        }
+        Returns: number
+      }
     }
     Enums: {
       [_ in never]: never

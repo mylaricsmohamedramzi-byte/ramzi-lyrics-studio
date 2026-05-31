@@ -6,6 +6,7 @@ import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Eye, Edit, Trash2 } from 'lucide-react';
 import { translateTitle } from '@/utils/songTranslations';
+import { useItemStats } from '@/hooks/useItemStats';
 
 const MEL_CATEGORIES: { key: string; ar: string; en: string; match: (c: string) => boolean; order: number }[] = [
   { key: 'all', ar: 'الكل', en: 'All', match: () => true, order: 0 },

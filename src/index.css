@@ -131,6 +131,11 @@
 }
 
 @layer utilities {
+  /* ArabicModern font stack with safe system fallbacks */
+  .font-arabic-modern {
+    font-family: 'ArabicModern', 'Simplified Arabic', 'Cairo', 'Segoe UI', sans-serif;
+  }
+
   /* Navbar font */
   .font-nav {
     font-family: 'VLAX', 'Cinzel', serif !important;

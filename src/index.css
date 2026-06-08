@@ -22,15 +22,13 @@
 /* ArabicModern — resolves to a bundled/system Arabic face, with safe fallbacks.
    If no matching font is installed, the browser degrades gracefully through
    Simplified Arabic → Cairo → Segoe UI → generic sans-serif. */
-@font-face {
-  font-family: 'ArabicModern';
-  src: local('ArabicModern'),
-       local('Simplified Arabic'),
-       local('Cairo'),
-       local('Segoe UI'),
-       url('/fonts/OmnesArabic-Regular.ttf') format('truetype');
-  font-display: swap;
-}
+ @font-face {
+   font-family: 'ArabicModern';
+   src: local('ArabicModern'),
+        local('Simplified Arabic'),
+        local('Cairo');
+   font-display: swap;
+ }
 
 @tailwind base;
 @tailwind components;

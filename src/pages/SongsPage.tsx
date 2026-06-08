@@ -1662,7 +1662,7 @@ export default function SongsPage() {
         .lyrics-scroll::-webkit-scrollbar { width: 6px; }
         .lyrics-scroll::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
 
-        .line { font-size: 1.2rem; color: #e8d5b0; margin-bottom: 10px; border-right: 3px solid #c9a84c; padding-right: 15px; }
+        .line { font-family: 'ArabicModern', 'Cairo', 'Almarai', sans-serif !important; font-weight: 700; font-size: 1.45rem; color: #ffffff; line-height: 2.1; margin-bottom: 10px; border-right: 3px solid #c9a84c; padding-right: 15px; }
         .line.red { color: #ff4d4d; border-right-color: #ff4d4d; font-weight: bold; }
 
         .critic-item {

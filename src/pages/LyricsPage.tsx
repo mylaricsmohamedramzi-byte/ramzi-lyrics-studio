@@ -417,11 +417,12 @@ const LyricsPage = () => {
         .lyrics-scroll-area::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
 
         .line {
-          font-size: 1.3rem;
-          color: #e8d5b0;
+          font-family: 'ArabicModern', 'Cairo', 'Almarai', sans-serif !important;
+          font-weight: 700;
+          font-size: 1.45rem;
+          color: #ffffff;
           margin-bottom: 10px;
-          line-height: 1.8;
-          opacity: 0.9;
+          line-height: 2.1;
         }
         .line.red { color: #ff4d4d; font-weight: bold; }
 

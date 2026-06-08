@@ -173,10 +173,10 @@
   }
 
   /* Song lyric line — ArabicModern, white by default.
-     Lighter weight + extra line-height so tashkeel/shadda/fatha stay clear. */
+     Bold weight + extra line-height so tashkeel/shadda/fatha stay clear. */
   .lyric-line {
     font-family: 'ArabicModern', 'Simplified Arabic', 'Cairo', 'Segoe UI', sans-serif !important;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 2.1;
     letter-spacing: 0;
     color: #ffffff;
@@ -326,10 +326,10 @@
 }
 
 /* Lyric lines → ArabicModern, white default.
-   Lighter weight + roomy line-height so diacritics don't overlap. */
+   Bold weight + roomy line-height so diacritics don't overlap. */
 .line {
   font-family: 'ArabicModern', 'Simplified Arabic', 'Cairo', 'Segoe UI', sans-serif !important;
-  font-weight: 400 !important;
+  font-weight: 700 !important;
   line-height: 2.1 !important;
   letter-spacing: 0 !important;
   color: #ffffff !important;

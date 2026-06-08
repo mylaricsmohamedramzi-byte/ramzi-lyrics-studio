@@ -2235,9 +2235,9 @@ export const allSongs: any[] = [
           { "text": "يا وطن الفخر والعزة", "red": false },
           { "text": "يا وطني أنا وأجدادي", "red": false },
           { "text": " ..............................", "red": false },
-          { "text": "فداكي روحي وعنيا", "red": false },
-          { "text": "فداكي كل ما فيا", "red": false },
-          { "text": "بلادي غالية أوي عليا", "red": false },
+          { "text": "فداكي روحي وعنيّه", "red": false },
+          { "text": "فداكي كل ما فيّه", "red": false },
+          { "text": "بلادي غالية أوي عليّا", "red": false },
           { "text": "لأجل بلادي أموت عادي", "red": false }
         ]
       },

@@ -19,16 +19,20 @@
   font-display: swap;
 }
 
-/* ArabicModern — resolves to a bundled/system Arabic face, with safe fallbacks.
-   If no matching font is installed, the browser degrades gracefully through
-   Simplified Arabic → Cairo → Segoe UI → generic sans-serif. */
- @font-face {
-   font-family: 'ArabicModern';
-   src: local('ArabicModern'),
-        local('Simplified Arabic'),
-        local('Cairo');
-   font-display: swap;
- }
+/* ArabicModernTrue — the real uploaded Simplified Arabic Bold file.
+   Points strictly to the bundled local asset. No external/Omnes fallbacks. */
+@font-face {
+  font-family: 'ArabicModernTrue';
+  src: url('/fonts/SimplifiedArabic-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ArabicModernTrue';
+  src: url('/fonts/SimplifiedArabic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;

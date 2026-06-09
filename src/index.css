@@ -19,18 +19,21 @@
   font-display: swap;
 }
 
-/* ArabicModernTrue — the real uploaded Simplified Arabic Bold file.
-   Points strictly to the bundled local asset. No external/Omnes fallbacks. */
+/* ArabicModernTrue — the real uploaded Simplified Arabic Bold file (simpbdo.ttf).
+   Bold maps to the genuine bold weight. Cache-busting query forces browsers to
+   re-fetch and stop using the previously-cached geometric face. */
 @font-face {
   font-family: 'ArabicModernTrue';
-  src: url('/fonts/SimplifiedArabic-Bold.ttf') format('truetype');
+  src: url('/fonts/SimplifiedArabic-Bold.ttf?v=3') format('truetype');
   font-weight: 700;
+  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ArabicModernTrue';
-  src: url('/fonts/SimplifiedArabic-Regular.ttf') format('truetype');
+  src: url('/fonts/SimplifiedArabic-Regular.ttf?v=3') format('truetype');
   font-weight: 400;
+  font-style: normal;
   font-display: swap;
 }
 

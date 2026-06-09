@@ -324,9 +324,16 @@
 }
 
 /* Lyric lines → ArabicModern, white default.
-   Bold weight + roomy line-height so diacritics don't overlap. */
-.line {
-  font-family: 'ArabicModernTrue', 'Simplified Arabic', sans-serif !important;
+   Bold weight + roomy line-height so diacritics don't overlap.
+   Includes scroll containers + their direct text children. */
+.line,
+.lyrics-scroll .line,
+.lyrics-scroll-area .line,
+.lyrics-scroll-container .line,
+.lyrics-scroll,
+.lyrics-scroll-area,
+.lyrics-scroll-container {
+  font-family: 'ArabicModernTrue', sans-serif !important;
   font-weight: 700 !important;
   line-height: 2.1 !important;
   letter-spacing: 0 !important;

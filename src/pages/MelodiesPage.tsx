@@ -716,7 +716,7 @@ const MelodiesPage = () => {
         .lyrics-scroll { height: 250px; overflow-y: auto; margin-bottom: 30px; }
         .lyrics-scroll::-webkit-scrollbar { width: 6px; }
         .lyrics-scroll::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
-        .line { font-family: 'ArabicModernTrue', 'Simplified Arabic', sans-serif !important; font-weight: 700; font-size: 1.45rem; color: #ffffff; line-height: 2.1; margin-bottom: 10px; border-right: 3px solid #c9a84c; padding-right: 15px; }
+        .line { font-family: 'ArabicModernTrue', sans-serif !important; font-weight: 700; font-size: 1.45rem; color: #ffffff; line-height: 2.1; margin-bottom: 10px; border-right: 3px solid #c9a84c; padding-right: 15px; }
         .line.red { color: #ff4d4d; border-right-color: #ff4d4d; font-weight: bold; }
 
         .critic-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; margin-bottom: 8px; cursor: pointer; display: flex; justify-content: space-between; border: 1px solid rgba(201,168,76,0.1); color: #fff; }

@@ -694,12 +694,15 @@ const SongwritingArtPage = () => {
         }
 
         .swa-lyric-line {
+          font-family: 'ArabicModernTrue', sans-serif !important;
+          font-weight: 700;
           font-size: 24px;
           margin-bottom: 12px;
           padding-right: 15px;
           border-right: 4px solid var(--swa-card-gold);
           direction: rtl;
           text-align: right;
+          line-height: 2.1;
           color: var(--swa-card-text);
         }
 

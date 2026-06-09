@@ -173,7 +173,7 @@
   /* Song lyric line — ArabicModern, white by default.
      Bold weight + extra line-height so tashkeel/shadda/fatha stay clear. */
   .lyric-line {
-    font-family: 'ArabicModernTrue', 'Simplified Arabic', sans-serif !important;
+    font-family: 'ArabicModernTrue', sans-serif !important;
     font-weight: 700;
     line-height: 2.1;
     letter-spacing: 0;

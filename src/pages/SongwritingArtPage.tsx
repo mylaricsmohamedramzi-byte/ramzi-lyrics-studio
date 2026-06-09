@@ -528,7 +528,9 @@ const SongwritingArtPage = () => {
           font-family: 'Aref Ruqaa Ink', serif !important;
         }
         [data-lang="ar"] .swa-lyric-line {
-          font-family: 'DG Forsha', 'Aref Ruqaa Ink', serif !important;
+          font-family: 'ArabicModernTrue', sans-serif !important;
+          font-weight: 700;
+          line-height: 2.1;
         }
 
         .swa-container {

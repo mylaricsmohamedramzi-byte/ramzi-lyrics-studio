@@ -19,16 +19,20 @@
   font-display: swap;
 }
 
-/* ArabicModern — resolves to a bundled/system Arabic face, with safe fallbacks.
-   If no matching font is installed, the browser degrades gracefully through
-   Simplified Arabic → Cairo → Segoe UI → generic sans-serif. */
- @font-face {
-   font-family: 'ArabicModern';
-   src: local('ArabicModern'),
-        local('Simplified Arabic'),
-        local('Cairo');
-   font-display: swap;
- }
+/* ArabicModernTrue — the real uploaded Simplified Arabic Bold file.
+   Points strictly to the bundled local asset. No external/Omnes fallbacks. */
+@font-face {
+  font-family: 'ArabicModernTrue';
+  src: url('/fonts/SimplifiedArabic-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ArabicModernTrue';
+  src: url('/fonts/SimplifiedArabic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -131,7 +135,7 @@
 @layer utilities {
   /* ArabicModern font stack with safe system fallbacks */
   .font-arabic-modern {
-    font-family: 'ArabicModern', 'Simplified Arabic', 'Cairo', 'Segoe UI', sans-serif;
+    font-family: 'ArabicModernTrue', 'Simplified Arabic', sans-serif;
   }
 
   /* Navbar font */
@@ -173,7 +177,7 @@
   /* Song lyric line — ArabicModern, white by default.
      Bold weight + extra line-height so tashkeel/shadda/fatha stay clear. */
   .lyric-line {
-    font-family: 'ArabicModern', 'Simplified Arabic', 'Cairo', 'Segoe UI', sans-serif !important;
+    font-family: 'ArabicModernTrue', 'Simplified Arabic', sans-serif !important;
     font-weight: 700;
     line-height: 2.1;
     letter-spacing: 0;
@@ -326,7 +330,7 @@
 /* Lyric lines → ArabicModern, white default.
    Bold weight + roomy line-height so diacritics don't overlap. */
 .line {
-  font-family: 'ArabicModern', 'Simplified Arabic', 'Cairo', 'Segoe UI', sans-serif !important;
+  font-family: 'ArabicModernTrue', 'Simplified Arabic', sans-serif !important;
   font-weight: 700 !important;
   line-height: 2.1 !important;
   letter-spacing: 0 !important;

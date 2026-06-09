@@ -417,7 +417,7 @@ const LyricsPage = () => {
         .lyrics-scroll-area::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
 
         .line {
-          font-family: 'ArabicModern', 'Cairo', 'Almarai', sans-serif !important;
+          font-family: 'ArabicModernTrue', 'Simplified Arabic', sans-serif !important;
           font-weight: 700;
           font-size: 1.45rem;
           color: #ffffff;

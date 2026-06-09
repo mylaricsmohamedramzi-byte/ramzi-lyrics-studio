@@ -19,20 +19,13 @@
   font-display: swap;
 }
 
-/* ArabicModernTrue — the real uploaded Simplified Arabic Bold file (simpbdo.ttf).
-   Bold maps to the genuine bold weight. Cache-busting query forces browsers to
-   re-fetch and stop using the previously-cached geometric face. */
+/* ArabicModernTrue — hardcoded to the uploaded local ArabicModern Bold file.
+   Served from /fonts/ (public/ is served at the site root; /public/fonts would 404).
+   Cache-busting query (?v=4) forces browsers to re-fetch the real bold face. */
 @font-face {
   font-family: 'ArabicModernTrue';
-  src: url('/fonts/SimplifiedArabic-Bold.ttf?v=3') format('truetype');
+  src: url('/fonts/ArabicModern-Bold.ttf?v=4') format('truetype');
   font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'ArabicModernTrue';
-  src: url('/fonts/SimplifiedArabic-Regular.ttf?v=3') format('truetype');
-  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -180,7 +173,7 @@
   /* Song lyric line — ArabicModern, white by default.
      Bold weight + extra line-height so tashkeel/shadda/fatha stay clear. */
   .lyric-line {
-    font-family: 'ArabicModernTrue', 'Simplified Arabic', sans-serif !important;
+    font-family: 'ArabicModernTrue', sans-serif !important;
     font-weight: 700;
     line-height: 2.1;
     letter-spacing: 0;
@@ -331,9 +324,16 @@
 }
 
 /* Lyric lines → ArabicModern, white default.
-   Bold weight + roomy line-height so diacritics don't overlap. */
-.line {
-  font-family: 'ArabicModernTrue', 'Simplified Arabic', sans-serif !important;
+   Bold weight + roomy line-height so diacritics don't overlap.
+   Includes scroll containers + their direct text children. */
+.line,
+.lyrics-scroll .line,
+.lyrics-scroll-area .line,
+.lyrics-scroll-container .line,
+.lyrics-scroll,
+.lyrics-scroll-area,
+.lyrics-scroll-container {
+  font-family: 'ArabicModernTrue', sans-serif !important;
   font-weight: 700 !important;
   line-height: 2.1 !important;
   letter-spacing: 0 !important;

@@ -5983,7 +5983,7 @@ export const allSongs: any[] = [
 },
 {
     "id": 113,
-    "title": "R9'yna Balw9'3",
+    "title": "رضينا بالوضع",
     "type": "دراما",
     "lyrics": [
             { "text": "بما  إن  مشوارنا  دا  أخره فراق", "red": false },

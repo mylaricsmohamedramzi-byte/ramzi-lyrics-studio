@@ -522,7 +522,7 @@ const SongwritingArtPage = () => {
         [data-lang="ar"] .swa-bg-number,
         [data-lang="ar"] .method-text,
         [data-lang="ar"] .method-text * {
-          font-family: 'Omnes Arabic', sans-serif !important;
+          font-family: 'DG Rafah', sans-serif !important;
         }
         [data-lang="ar"] .swa-song-header {
           font-family: 'Aref Ruqaa Ink', serif !important;

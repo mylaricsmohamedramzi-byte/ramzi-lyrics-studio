@@ -303,7 +303,7 @@ const LyricsPage = () => {
           background: transparent;
           min-height: 100vh;
           color: inherit;
-          font-family: 'Almarai', sans-serif;
+          font-family: 'DG Rafah', sans-serif;
         }
 
         .floating-notes-layer {
@@ -572,7 +572,7 @@ const LyricsPage = () => {
         .filter-chip {
           background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
           color: #c9a84c; padding: 6px 18px; border-radius: 20px;
-          cursor: pointer; font-family: 'Almarai', sans-serif; font-size: 13px;
+          cursor: pointer; font-family: 'DG Rafah', sans-serif; font-size: 13px;
           transition: all 0.2s;
         }
         .filter-chip:hover { background: rgba(201,168,76,0.2); }

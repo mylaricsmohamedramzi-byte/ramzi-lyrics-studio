@@ -445,7 +445,7 @@ const VideosPage = () => {
           min-height: 100vh;
           padding: 40px 20px;
           color: inherit;
-          font-family: 'Almarai', sans-serif;
+          font-family: 'DG Rafah', sans-serif;
         }
 
         /* ─── طبقة الملاحظات العائمة ─── */
@@ -673,7 +673,7 @@ const VideosPage = () => {
         .filter-chip {
           background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
           color: #c9a84c; padding: 6px 18px; border-radius: 20px;
-          cursor: pointer; font-family: 'Almarai', sans-serif; font-size: 13px;
+          cursor: pointer; font-family: 'DG Rafah', sans-serif; font-size: 13px;
           transition: all 0.2s;
         }
         .filter-chip:hover { background: rgba(201,168,76,0.2); }
@@ -741,7 +741,7 @@ const VideosPage = () => {
                 color: isDark ? 'rgba(232, 213, 176, 0.78)' : '#1a1a1a',
                 lineHeight: '1.85',
                 textAlign: 'center',
-                fontFamily: "'Almarai', sans-serif",
+                fontFamily: "'DG Rafah', sans-serif",
                 fontSize: '0.95rem',
                 margin: 0,
                 whiteSpace: 'pre-line'

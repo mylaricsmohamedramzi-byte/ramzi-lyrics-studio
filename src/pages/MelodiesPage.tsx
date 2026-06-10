@@ -500,7 +500,7 @@ const MelodiesPage = () => {
         @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&display=swap');
         
         :root { --leather-black: #0a0205; }
-        .page-wrapper { min-height: 100vh; padding: 40px 20px; font-family: 'Outfit', 'Almarai', sans-serif; position: relative; overflow: hidden; }
+        .page-wrapper { min-height: 100vh; padding: 40px 20px; font-family: 'Outfit', 'DG Rafah', sans-serif; position: relative; overflow: hidden; }
         .main-card { max-width: 1100px; margin: 0 auto 60px; background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, var(--leather-black) 100%); border: 1px solid var(--primary); border-radius: 40px; display: flex; flex-direction: ${lang === 'ar' ? 'row-reverse' : 'row'}; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8); position: relative; }
         
         /* Unified Header Box */
@@ -881,7 +881,7 @@ const MelodiesPage = () => {
             color: isDark ? 'rgba(232, 213, 176, 0.78)' : '#1a1a1a',
             lineHeight: '1.85',
             textAlign: 'center',
-            fontFamily: "'Almarai', sans-serif",
+            fontFamily: "'DG Rafah', sans-serif",
             fontSize: '0.95rem',
             margin: 0,
             whiteSpace: 'pre-line'

@@ -169,6 +169,19 @@ export const TITLE_TRANSLATIONS: Record<string, string> = {
   'طوق نجاه': 'Tawk Nagah',
   'ست الكل': 'Set El Kol',
   'أبويا الغالي': 'Aboya El Ghaly',
+  'يا فاتنه': 'Ya Fatnh',
+  'أشربه الاحمر': 'Ashrbh Ala7mr',
+  'نوعيّه': 'Nw3yّh',
+  'مرايتَك': 'Mraytَk',
+  'رضينا بالوضع': 'Radeyna Balwd'3',
+  'من غير داعي': 'Mn 4yr Da3y',
+  'صاحبك علي عيبه': 'Sa7bk 3ly 3ybh',
+  'في عين الناس': 'Fy 3yn Alnas',
+  'قلبي عليه رماني': 'Alby 3lyh Rmany',
+  'لحظة سزاجه': 'L7zet Szagh',
+  'حلقة وصل':'halqat wasal',
+  'يستاهل سقفه': 'yestahal saf2a',
+  
 };
 
 // Normalize and translate song title based on lang

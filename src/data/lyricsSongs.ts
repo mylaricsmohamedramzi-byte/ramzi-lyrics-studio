@@ -6145,7 +6145,7 @@ export const allSongs: any[] = [
             { "text": "وثانيا سرحان لساعات", "red": false },
             { "text": "وأخرها مقابله وخروجات", "red": false },
             { "text": "", "red": false },
-            { "text": "َ و دا كله أحنا عملناه", "red": false },
+            { "text": "و دا كله أحنا عملنا", "red": false },
             { "text": "وأكيد عُمري ما هنساه", "red": false },
             { "text": "", "red": false },
             { "text": "حققت أحلامي معاه", "red": false },

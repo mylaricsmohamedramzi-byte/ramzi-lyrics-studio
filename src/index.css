@@ -19,6 +19,16 @@
   font-display: swap;
 }
 
+/* DG Rafah Regular — primary Arabic font for titles, subtitles, body,
+   card names, categories and descriptive text across the site. */
+@font-face {
+  font-family: 'DG Rafah';
+  src: url('/fonts/DG-Rafah-Regular.ttf?v=1') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Lyric body fonts — uploaded DG Heaven family (Regular primary), with
    DG Heaven Bold and DG Modal3at Medium as the requested fallbacks.
    Served from /fonts/ (public/ is served at the site root). */

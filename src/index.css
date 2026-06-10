@@ -153,9 +153,9 @@
 }
 
 @layer utilities {
-  /* ArabicModern font stack with safe system fallbacks */
+  /* DG Heaven lyric font stack (Regular → Bold → Modal3at fallbacks) */
   .font-arabic-modern {
-    font-family: 'ArabicModernTrue', 'Simplified Arabic', sans-serif;
+    font-family: 'DG Heaven', 'DG Heaven Bold', 'DG Modal3at', sans-serif;
   }
 
   /* Navbar font */
@@ -194,11 +194,11 @@
     font-family: 'Aref Ruqaa Ink', serif !important;
   }
 
-  /* Song lyric line — ArabicModern, white by default.
-     Bold weight + extra line-height so tashkeel/shadda/fatha stay clear. */
+  /* Song lyric line — DG Heaven Regular, white by default.
+     Regular weight + roomy line-height so tashkeel/shadda/fatha stay clear. */
   .lyric-line {
-    font-family: 'ArabicModernTrue', sans-serif !important;
-    font-weight: 700;
+    font-family: 'DG Heaven', 'DG Heaven Bold', 'DG Modal3at', sans-serif !important;
+    font-weight: 400;
     line-height: 2.1;
     letter-spacing: 0;
     color: #ffffff;
@@ -347,8 +347,8 @@
   font-family: 'Aref Ruqaa Ink', serif !important;
 }
 
-/* Lyric lines → ArabicModern, white default.
-   Bold weight + roomy line-height so diacritics don't overlap.
+/* Lyric lines → DG Heaven Regular, white default.
+   Regular weight + roomy line-height so diacritics don't overlap.
    Includes scroll containers + their direct text children. */
 .line,
 .lyrics-scroll .line,
@@ -357,8 +357,8 @@
 .lyrics-scroll,
 .lyrics-scroll-area,
 .lyrics-scroll-container {
-  font-family: 'ArabicModernTrue', sans-serif !important;
-  font-weight: 700 !important;
+  font-family: 'DG Heaven', 'DG Heaven Bold', 'DG Modal3at', sans-serif !important;
+  font-weight: 400 !important;
   line-height: 2.1 !important;
   letter-spacing: 0 !important;
   color: #ffffff !important;

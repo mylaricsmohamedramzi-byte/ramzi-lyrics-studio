@@ -593,7 +593,7 @@ const VideosPage = () => {
         .lyrics-scroll-container::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
 
         .line {
-          font-family: 'ArabicModernTrue', sans-serif !important;
+          font-family: 'DG Heaven', 'DG Heaven Bold', 'DG Modal3at', sans-serif !important;
           font-weight: 700;
           font-size: 1.45rem; color: #ffffff;
           margin-bottom: 12px; line-height: 2.1;

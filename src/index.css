@@ -140,7 +140,7 @@
 
   /* Body text default — Omnes Arabic across the site (both languages) */
   body, p, span, li, a, button, input, textarea, label, div {
-    font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif;
+    font-family: 'DG Rafah', 'Omnes Arabic', serif;
   }
 
   /* Arabic mode keeps Aref Ruqaa Ink for headings/titles, Omnes for body */
@@ -154,7 +154,7 @@
   [data-lang="ar"] textarea,
   [data-lang="ar"] label,
   [data-lang="ar"] div {
-    font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif;
+    font-family: 'DG Rafah', 'Omnes Arabic', serif;
   }
 
   [data-lang="ar"] {
@@ -193,7 +193,7 @@
   /* Subtitle line under headings */
   .heading-subtitle {
     color: #000000;
-    font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif;
+    font-family: 'DG Rafah', 'Omnes Arabic', serif;
   }
   .dark .heading-subtitle {
     color: #ffffff;
@@ -201,7 +201,7 @@
 
   /* Song titles across all pages */
   .song-title {
-    font-family: 'Aref Ruqaa Ink', serif !important;
+    font-family: 'DG Rafah', 'Aref Ruqaa Ink', serif !important;
   }
 
   /* Song lyric line — DG Heaven Regular, white by default.

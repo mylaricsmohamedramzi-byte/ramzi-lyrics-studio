@@ -619,7 +619,7 @@ const WelcomePage = () => {
           <div className="text-center mb-12">
             <h3
               className="text-2xl sm:text-3xl font-extrabold text-foreground flex items-center justify-center gap-3 drop-shadow-lg"
-              style={{ fontFamily: "'VLAX', 'Cinzel', serif" }}
+              style={{ fontFamily: "'DG Rafah', 'VLAX', serif" }}
             >
               <span>{t('Most Popular Works', 'الأكثر شهرة')}</span>
             </h3>

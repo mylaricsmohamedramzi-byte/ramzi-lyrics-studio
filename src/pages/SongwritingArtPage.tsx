@@ -561,7 +561,7 @@ const SongwritingArtPage = () => {
           text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
         }
         .unified-header-subtitle {
-          font-family: 'Tajawal', 'Almarai', 'Outfit', sans-serif !important;
+          font-family: 'DG Rafah', sans-serif !important;
           font-size: clamp(14px, 3vw, 17px) !important;
           color: #e8d5b0;
           opacity: 0.9;

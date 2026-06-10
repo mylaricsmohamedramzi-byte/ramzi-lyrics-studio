@@ -1298,7 +1298,7 @@ export default function SongsPage() {
           text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
         }
         .unified-header-subtitle {
-          font-family: 'Tajawal', 'Almarai', 'Outfit', sans-serif !important;
+          font-family: 'DG Rafah', sans-serif !important;
           font-size: clamp(14px, 3vw, 17px) !important;
           color: #e8d5b0;
           opacity: 0.9;
@@ -1508,7 +1508,7 @@ export default function SongsPage() {
           transition: all 0.3s ease;
           box-shadow: 0 4px 12px rgba(0,0,0,0.3);
           flex-shrink: 0;
-          font-family: 'Almarai', 'Outfit', sans-serif;
+          font-family: 'DG Rafah', sans-serif;
         }
         .views-badge:hover {
           background: rgba(201, 168, 76, 0.25);

@@ -229,7 +229,7 @@ const LoginPage = () => {
 
           <h2
             className="text-2xl sm:text-3xl font-extrabold mb-3 tracking-wide text-foreground drop-shadow-lg"
-            style={{ fontFamily: "'Omnes Arabic', 'DG Forsha', sans-serif" }}
+            style={{ fontFamily: "'DG Rafah', sans-serif" }}
           >
             {t('Mohamed Ramzi', 'محمد رمزي')}
           </h2>

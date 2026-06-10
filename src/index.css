@@ -19,13 +19,37 @@
   font-display: swap;
 }
 
-/* ArabicModernTrue — hardcoded to the uploaded local ArabicModern Bold file.
-   Served from /fonts/ (public/ is served at the site root; /public/fonts would 404).
-   Cache-busting query (?v=4) forces browsers to re-fetch the real bold face. */
+/* Lyric body fonts — uploaded DG Heaven family (Regular primary), with
+   DG Heaven Bold and DG Modal3at Medium as the requested fallbacks.
+   Served from /fonts/ (public/ is served at the site root). */
+@font-face {
+  font-family: 'DG Heaven';
+  src: url('/fonts/DG-Heaven-Regular.ttf?v=5') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DG Heaven Bold';
+  src: url('/fonts/DG-Heaven-Bold.ttf?v=5') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DG Modal3at';
+  src: url('/fonts/DG-Modal3at-Med.ttf?v=5') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Alias kept so existing lyric references resolve to DG Heaven Regular,
+   falling back to DG Heaven Bold then DG Modal3at Medium. */
 @font-face {
   font-family: 'ArabicModernTrue';
-  src: url('/fonts/ArabicModern-Bold.ttf?v=4') format('truetype');
-  font-weight: 700;
+  src: url('/fonts/DG-Heaven-Regular.ttf?v=5') format('truetype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }

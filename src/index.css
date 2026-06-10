@@ -245,6 +245,11 @@
   .font-body {
     font-family: var(--font-body);
   }
+  /* Arabic descriptive/body utility text → DG Rafah (e.g. copyright cards) */
+  [data-lang="ar"] .font-body,
+  [data-lang="ar"] .font-subheading {
+    font-family: 'DG Rafah', 'Omnes Arabic', serif;
+  }
   .text-gold-gradient {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(135deg, hsl(var(--accent)), hsl(43 80% 65%), hsl(var(--accent)));

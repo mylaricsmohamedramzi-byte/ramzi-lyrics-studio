@@ -19,13 +19,37 @@
   font-display: swap;
 }
 
-/* ArabicModernTrue — hardcoded to the uploaded local ArabicModern Bold file.
-   Served from /fonts/ (public/ is served at the site root; /public/fonts would 404).
-   Cache-busting query (?v=4) forces browsers to re-fetch the real bold face. */
+/* Lyric body fonts — uploaded DG Heaven family (Regular primary), with
+   DG Heaven Bold and DG Modal3at Medium as the requested fallbacks.
+   Served from /fonts/ (public/ is served at the site root). */
+@font-face {
+  font-family: 'DG Heaven';
+  src: url('/fonts/DG-Heaven-Regular.ttf?v=5') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DG Heaven Bold';
+  src: url('/fonts/DG-Heaven-Bold.ttf?v=5') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DG Modal3at';
+  src: url('/fonts/DG-Modal3at-Med.ttf?v=5') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Alias kept so existing lyric references resolve to DG Heaven Regular,
+   falling back to DG Heaven Bold then DG Modal3at Medium. */
 @font-face {
   font-family: 'ArabicModernTrue';
-  src: url('/fonts/ArabicModern-Bold.ttf?v=4') format('truetype');
-  font-weight: 700;
+  src: url('/fonts/DG-Heaven-Regular.ttf?v=5') format('truetype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -129,9 +153,9 @@
 }
 
 @layer utilities {
-  /* ArabicModern font stack with safe system fallbacks */
+  /* DG Heaven lyric font stack (Regular → Bold → Modal3at fallbacks) */
   .font-arabic-modern {
-    font-family: 'ArabicModernTrue', 'Simplified Arabic', sans-serif;
+    font-family: 'DG Heaven', 'DG Heaven Bold', 'DG Modal3at', sans-serif;
   }
 
   /* Navbar font */
@@ -170,11 +194,11 @@
     font-family: 'Aref Ruqaa Ink', serif !important;
   }
 
-  /* Song lyric line — ArabicModern, white by default.
-     Bold weight + extra line-height so tashkeel/shadda/fatha stay clear. */
+  /* Song lyric line — DG Heaven Regular, white by default.
+     Regular weight + roomy line-height so tashkeel/shadda/fatha stay clear. */
   .lyric-line {
-    font-family: 'ArabicModernTrue', sans-serif !important;
-    font-weight: 700;
+    font-family: 'DG Heaven', 'DG Heaven Bold', 'DG Modal3at', sans-serif !important;
+    font-weight: 400;
     line-height: 2.1;
     letter-spacing: 0;
     color: #ffffff;
@@ -323,8 +347,8 @@
   font-family: 'Aref Ruqaa Ink', serif !important;
 }
 
-/* Lyric lines → ArabicModern, white default.
-   Bold weight + roomy line-height so diacritics don't overlap.
+/* Lyric lines → DG Heaven Regular, white default.
+   Regular weight + roomy line-height so diacritics don't overlap.
    Includes scroll containers + their direct text children. */
 .line,
 .lyrics-scroll .line,
@@ -333,8 +357,8 @@
 .lyrics-scroll,
 .lyrics-scroll-area,
 .lyrics-scroll-container {
-  font-family: 'ArabicModernTrue', sans-serif !important;
-  font-weight: 700 !important;
+  font-family: 'DG Heaven', 'DG Heaven Bold', 'DG Modal3at', sans-serif !important;
+  font-weight: 400 !important;
   line-height: 2.1 !important;
   letter-spacing: 0 !important;
   color: #ffffff !important;

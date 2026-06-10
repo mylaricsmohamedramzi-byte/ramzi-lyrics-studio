@@ -528,8 +528,8 @@ const SongwritingArtPage = () => {
           font-family: 'Aref Ruqaa Ink', serif !important;
         }
         [data-lang="ar"] .swa-lyric-line {
-          font-family: 'ArabicModernTrue', sans-serif !important;
-          font-weight: 700;
+          font-family: 'DG Heaven', 'DG Heaven Bold', 'DG Modal3at', sans-serif !important;
+          font-weight: 400;
           line-height: 2.1;
         }
 
@@ -694,8 +694,8 @@ const SongwritingArtPage = () => {
         }
 
         .swa-lyric-line {
-          font-family: 'ArabicModernTrue', sans-serif !important;
-          font-weight: 700;
+          font-family: 'DG Heaven', 'DG Heaven Bold', 'DG Modal3at', sans-serif !important;
+          font-weight: 400;
           font-size: 24px;
           margin-bottom: 12px;
           padding-right: 15px;

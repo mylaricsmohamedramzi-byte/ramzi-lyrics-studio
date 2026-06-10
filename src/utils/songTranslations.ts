@@ -173,7 +173,7 @@ export const TITLE_TRANSLATIONS: Record<string, string> = {
   'أشربه الاحمر': 'Ashrbh Ala7mr',
   'نوعيّه': 'Nw3yّh',
   'مرايتَك': 'Mraytَk',
-  'رضينا بالوضع': 'Radeyna Balwd'3',
+  'رضينا بالوضع': 'Radeyna Balwd3',
   'من غير داعي': 'Mn 4yr Da3y',
   'صاحبك علي عيبه': 'Sa7bk 3ly 3ybh',
   'في عين الناس': 'Fy 3yn Alnas',

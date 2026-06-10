@@ -19,6 +19,16 @@
   font-display: swap;
 }
 
+/* DG Rafah Regular — primary Arabic font for titles, subtitles, body,
+   card names, categories and descriptive text across the site. */
+@font-face {
+  font-family: 'DG Rafah';
+  src: url('/fonts/DG-Rafah-Regular.ttf?v=1') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Lyric body fonts — uploaded DG Heaven family (Regular primary), with
    DG Heaven Bold and DG Modal3at Medium as the requested fallbacks.
    Served from /fonts/ (public/ is served at the site root). */
@@ -130,7 +140,7 @@
 
   /* Body text default — Omnes Arabic across the site (both languages) */
   body, p, span, li, a, button, input, textarea, label, div {
-    font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif;
+    font-family: 'DG Rafah', 'Omnes Arabic', serif;
   }
 
   /* Arabic mode keeps Aref Ruqaa Ink for headings/titles, Omnes for body */
@@ -144,7 +154,7 @@
   [data-lang="ar"] textarea,
   [data-lang="ar"] label,
   [data-lang="ar"] div {
-    font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif;
+    font-family: 'DG Rafah', 'Omnes Arabic', serif;
   }
 
   [data-lang="ar"] {
@@ -183,7 +193,7 @@
   /* Subtitle line under headings */
   .heading-subtitle {
     color: #000000;
-    font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif;
+    font-family: 'DG Rafah', 'Omnes Arabic', serif;
   }
   .dark .heading-subtitle {
     color: #ffffff;
@@ -191,7 +201,7 @@
 
   /* Song titles across all pages */
   .song-title {
-    font-family: 'Aref Ruqaa Ink', serif !important;
+    font-family: 'DG Rafah', 'Aref Ruqaa Ink', serif !important;
   }
 
   /* Song lyric line — DG Heaven Regular, white by default.
@@ -234,6 +244,11 @@
   }
   .font-body {
     font-family: var(--font-body);
+  }
+  /* Arabic descriptive/body utility text → DG Rafah (e.g. copyright cards) */
+  [data-lang="ar"] .font-body,
+  [data-lang="ar"] .font-subheading {
+    font-family: 'DG Rafah', 'Omnes Arabic', serif;
   }
   .text-gold-gradient {
     @apply bg-clip-text text-transparent;
@@ -340,11 +355,11 @@
    (pages use inline <style> blocks; these win via specificity)
    ========================================================== */
 
-/* Song / video titles → Aref Ruqaa Ink (color preserved per page) */
+/* Song / video titles → DG Rafah (card names), color preserved per page */
 .song-title-red,
 .video-title,
 .song-title {
-  font-family: 'Aref Ruqaa Ink', serif !important;
+  font-family: 'DG Rafah', 'Aref Ruqaa Ink', serif !important;
 }
 
 /* Lyric lines → DG Heaven Regular, white default.
@@ -368,7 +383,7 @@
   color: #ff4d4d !important;
 }
 
-/* All body / paragraph text on these pages → Omnes Arabic */
+/* All body / paragraph text on these pages → DG Rafah */
 .page-wrapper,
 .page-wrapper p,
 .page-wrapper span:not(.song-title-red):not(.video-title),
@@ -376,7 +391,7 @@
 .page-wrapper input,
 .page-wrapper label,
 .page-wrapper a {
-  font-family: 'Omnes Arabic', 'Aref Ruqaa Ink', serif !important;
+  font-family: 'DG Rafah', 'Omnes Arabic', serif !important;
 }
 /* Light mode body text: black */
 :root:not(.dark) .page-wrapper {

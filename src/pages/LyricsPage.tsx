@@ -291,7 +291,7 @@ const LyricsPage = () => {
           text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
         }
         .unified-header-subtitle {
-          font-family: 'Tajawal', 'Almarai', 'Outfit', sans-serif !important;
+          font-family: 'DG Rafah', sans-serif !important;
           font-size: clamp(14px, 3vw, 17px) !important;
           color: #e8d5b0;
           opacity: 0.9;
@@ -303,7 +303,7 @@ const LyricsPage = () => {
           background: transparent;
           min-height: 100vh;
           color: inherit;
-          font-family: 'Almarai', sans-serif;
+          font-family: 'DG Rafah', sans-serif;
         }
 
         .floating-notes-layer {
@@ -572,7 +572,7 @@ const LyricsPage = () => {
         .filter-chip {
           background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
           color: #c9a84c; padding: 6px 18px; border-radius: 20px;
-          cursor: pointer; font-family: 'Almarai', sans-serif; font-size: 13px;
+          cursor: pointer; font-family: 'DG Rafah', sans-serif; font-size: 13px;
           transition: all 0.2s;
         }
         .filter-chip:hover { background: rgba(201,168,76,0.2); }
@@ -618,7 +618,7 @@ const LyricsPage = () => {
           transition: all 0.3s ease;
           box-shadow: 0 4px 12px rgba(0,0,0,0.3);
           flex-shrink: 0;
-          font-family: 'Almarai', 'Outfit', sans-serif;
+          font-family: 'DG Rafah', sans-serif;
         }
         .views-badge:hover {
           background: rgba(201, 168, 76, 0.25);

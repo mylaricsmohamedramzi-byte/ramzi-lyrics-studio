@@ -299,7 +299,7 @@ const StatDashboard: React.FC<StatDashboardProps> = ({ isDark, lang, t, universa
             <motion.span
               className="font-bold tracking-widest uppercase text-xs sm:text-sm mb-3 relative z-10"
               style={{
-                fontFamily: "'Omnes Arabic', sans-serif",
+                fontFamily: "'DG Rafah', sans-serif",
                 color: isDark ? '#ff5533' : '#b87010',
                 textShadow: isDark
                   ? '0 0 12px rgba(255,60,0,0.7)'
@@ -406,7 +406,7 @@ const WelcomePage = () => {
           </div>
           <p
             className="text-sm sm:text-base text-foreground/60 tracking-[0.4em] uppercase font-bold"
-            style={{ fontFamily: "'Omnes Arabic', sans-serif" }}
+            style={{ fontFamily: "'DG Rafah', sans-serif" }}
           >
             {t('Song Writer & Composer', 'كاتب وملحن أغاني')}
           </p>
@@ -436,7 +436,7 @@ const WelcomePage = () => {
               <p
                 className="text-2xl sm:text-3xl text-foreground font-bold leading-relaxed"
                 style={{
-                  fontFamily: "'Graphic School', 'Cairo', 'Tajawal', sans-serif",
+                  fontFamily: "'DG Rafah', 'Cairo', sans-serif",
                   fontWeight: 'bold'
                 }}
               >
@@ -451,7 +451,7 @@ const WelcomePage = () => {
             <p
               className="text-2xl sm:text-3xl text-foreground font-bold leading-relaxed"
               style={{
-                fontFamily: "'Graphic School', 'Cairo', 'Tajawal', sans-serif",
+                fontFamily: "'DG Rafah', 'Cairo', sans-serif",
                 fontWeight: 'bold'
               }}
             >
@@ -464,7 +464,7 @@ const WelcomePage = () => {
             <div
               className="mt-2 font-extrabold text-xl sm:text-2xl font-subheading flex items-center justify-center gap-3"
               style={{
-                fontFamily: "'Graphic School', 'Cairo', 'Tajawal', sans-serif",
+                fontFamily: "'DG Rafah', 'Cairo', sans-serif",
                 color: '#901522'
               }}
             >
@@ -498,7 +498,7 @@ const WelcomePage = () => {
             <p
               className="text-xl sm:text-2xl lg:text-3xl leading-[1.8] text-foreground font-bold relative z-10 max-w-3xl mx-auto"
               style={{
-                fontFamily: "'Medad Pronz', 'DG Forsha', 'Omnes Arabic', sans-serif",
+                fontFamily: "'DG Rafah', sans-serif",
                 textShadow: isDark ? '0 4px 12px rgba(0,0,0,0.9)' : 'none'
               }}
             >
@@ -512,7 +512,7 @@ const WelcomePage = () => {
             <p
               className="text-lg sm:text-xl lg:text-2xl leading-[1.8] text-foreground/90 font-medium relative z-10 max-w-3xl mx-auto mt-4"
               style={{
-                fontFamily: "'Medad Pronz', 'DG Forsha', 'Omnes Arabic', sans-serif",
+                fontFamily: "'DG Rafah', sans-serif",
                 textShadow: isDark ? '0 2px 8px rgba(0,0,0,0.5)' : 'none'
               }}
             >
@@ -526,7 +526,7 @@ const WelcomePage = () => {
             <p
               className="text-lg sm:text-xl lg:text-2xl leading-[1.8] text-foreground/90 font-medium relative z-10 max-w-3xl mx-auto mt-4"
               style={{
-                fontFamily: "'Medad Pronz', 'DG Forsha', 'Omnes Arabic', sans-serif",
+                fontFamily: "'DG Rafah', sans-serif",
                 textShadow: isDark ? '0 2px 8px rgba(0,0,0,0.5)' : 'none'
               }}
             >
@@ -540,7 +540,7 @@ const WelcomePage = () => {
             <p
               className="text-lg sm:text-xl lg:text-2xl leading-[1.8] text-foreground/90 font-medium relative z-10 max-w-3xl mx-auto mt-4"
               style={{
-                fontFamily: "'Medad Pronz', 'DG Forsha', 'Omnes Arabic', sans-serif",
+                fontFamily: "'DG Rafah', sans-serif",
                 textShadow: isDark ? '0 2px 8px rgba(0,0,0,0.5)' : 'none'
               }}
             >
@@ -554,7 +554,7 @@ const WelcomePage = () => {
             <p
               className="text-xl sm:text-2xl lg:text-3xl leading-[1.8] text-foreground font-bold relative z-10 max-w-3xl mx-auto mt-6"
               style={{
-                fontFamily: "'Medad Pronz', 'DG Forsha', 'Omnes Arabic', sans-serif",
+                fontFamily: "'DG Rafah', sans-serif",
                 textShadow: isDark ? '0 4px 12px rgba(0,0,0,0.9)' : 'none'
               }}
             >
@@ -585,7 +585,7 @@ const WelcomePage = () => {
             {/* اسم محمد رمزي مع التدرج اللوني */}
             <div
               className="mt-4 text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-amber-400 font-extrabold text-xl sm:text-2xl font-subheading flex items-center justify-center gap-3"
-              style={{ fontFamily: "'Medad Pronz', 'Omnes Arabic', sans-serif" }}
+              style={{ fontFamily: "'DG Rafah', sans-serif" }}
             >
               <div className="w-12 h-px bg-gradient-to-r from-transparent to-rose-400/50" />
               {t("Mohamed Ramzi", "محمد رمزي")}
@@ -619,11 +619,11 @@ const WelcomePage = () => {
           <div className="text-center mb-12">
             <h3
               className="text-2xl sm:text-3xl font-extrabold text-foreground flex items-center justify-center gap-3 drop-shadow-lg"
-              style={{ fontFamily: "'VLAX', 'Cinzel', serif" }}
+              style={{ fontFamily: "'DG Rafah', 'VLAX', serif" }}
             >
               <span>{t('Most Popular Works', 'الأكثر شهرة')}</span>
             </h3>
-            <p className="text-foreground/50 mt-3 text-sm tracking-wide uppercase font-bold" style={{ fontFamily: "'Omnes Arabic', sans-serif" }}>
+            <p className="text-foreground/50 mt-3 text-sm tracking-wide uppercase font-bold" style={{ fontFamily: "'DG Rafah', sans-serif" }}>
               {t('Explore the top creations', 'استكشف أهم إبداعات محمد رمزي')}
             </p>
           </div>
@@ -794,13 +794,13 @@ const WelcomePage = () => {
                     </span>
                     <h4
                       className="font-bold text-xl sm:text-2xl text-white drop-shadow-lg"
-                      style={{ fontFamily: "'Omnes Arabic', sans-serif" }}
+                      style={{ fontFamily: "'DG Rafah', sans-serif" }}
                     >
                       {lang === 'ar' ? item.title.ar : item.title.en}
                     </h4>
 
                     <div className="mt-3 flex items-center gap-2 text-xs text-white/60 opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500 font-bold">
-                      <span style={{ fontFamily: "'Omnes Arabic', sans-serif" }}>
+                      <span style={{ fontFamily: "'DG Rafah', sans-serif" }}>
                         {lang === 'ar' ? 'استكشاف' : 'Explore'}
                       </span>
                       <ArrowUpRight className="w-4 h-4" />

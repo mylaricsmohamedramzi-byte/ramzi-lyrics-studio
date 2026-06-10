@@ -244,7 +244,7 @@ const AboutContentPage = () => {
           text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
         }
         .unified-header-subtitle {
-          font-family: 'Tajawal', 'Almarai', 'Outfit', sans-serif !important;
+          font-family: 'DG Rafah', sans-serif !important;
           font-size: clamp(14px, 3vw, 17px) !important;
           color: #e8d5b0;
           opacity: 0.9;
@@ -375,7 +375,7 @@ const AboutContentPage = () => {
           font-size: 1.25rem;
           font-weight: bold;
           color: ${isDark ? '#c9a84c' : '#c0272d'};
-          font-family: 'Almarai', 'Outfit', sans-serif;
+          font-family: 'DG Rafah', sans-serif;
           display: flex;
           align-items: center;
           gap: 8px;

@@ -500,7 +500,7 @@ const MelodiesPage = () => {
         @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Aref+Ruqaa+Ink:wght@700&display=swap');
         
         :root { --leather-black: #0a0205; }
-        .page-wrapper { min-height: 100vh; padding: 40px 20px; font-family: 'Outfit', 'Almarai', sans-serif; position: relative; overflow: hidden; }
+        .page-wrapper { min-height: 100vh; padding: 40px 20px; font-family: 'Outfit', 'DG Rafah', sans-serif; position: relative; overflow: hidden; }
         .main-card { max-width: 1100px; margin: 0 auto 60px; background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, var(--leather-black) 100%); border: 1px solid var(--primary); border-radius: 40px; display: flex; flex-direction: ${lang === 'ar' ? 'row-reverse' : 'row'}; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8); position: relative; }
         
         /* Unified Header Box */
@@ -525,7 +525,7 @@ const MelodiesPage = () => {
           text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
         }
         .unified-header-subtitle {
-          font-family: 'Tajawal', 'Almarai', 'Outfit', sans-serif !important;
+          font-family: 'DG Rafah', sans-serif !important;
           font-size: clamp(14px, 3vw, 17px) !important;
           color: #e8d5b0;
           opacity: 0.9;
@@ -675,7 +675,7 @@ const MelodiesPage = () => {
           transition: all 0.3s ease;
           box-shadow: 0 4px 12px rgba(0,0,0,0.3);
           flex-shrink: 0;
-          font-family: 'Almarai', 'Outfit', sans-serif;
+          font-family: 'DG Rafah', sans-serif;
         }
         .views-badge:hover {
           background: rgba(201, 168, 76, 0.25);
@@ -881,7 +881,7 @@ const MelodiesPage = () => {
             color: isDark ? 'rgba(232, 213, 176, 0.78)' : '#1a1a1a',
             lineHeight: '1.85',
             textAlign: 'center',
-            fontFamily: "'Almarai', sans-serif",
+            fontFamily: "'DG Rafah', sans-serif",
             fontSize: '0.95rem',
             margin: 0,
             whiteSpace: 'pre-line'

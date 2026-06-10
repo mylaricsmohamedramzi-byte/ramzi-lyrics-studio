@@ -925,7 +925,7 @@ export const allSongs: any[] = [
       { "text": "ولا في كلام يوصف .. جمال عينك", "red": false },
       { "text": " ", "red": false },
       { "text": "ولا في غرام زي اللي .. بيني وبينك", "red": false },
-      { "text": "أبعث سلام لعيوني .. لو وحشينك", "red": false },
+      { "text": "أبعت سلام لعيوني .. لو وحشينك", "red": false },
       { "text": " ", "red": false },
       { "text": " ", "red": false },
       { "text": " ", "red": false },

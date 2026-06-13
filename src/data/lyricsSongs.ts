@@ -5928,7 +5928,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 112,
-    "title": "Mraytَk",
+    "title": "مرايتَك",
     "type": "بوب",
     "lyrics": [
             { "text": "أجمل ليالي", "red": false },
@@ -6354,7 +6354,38 @@ export const allSongs: any[] = [
         { "text": "", "red": false },
         { "text": "و أيامي بتضحك لي", "red": false }
     ]
+},
+  {
+    "id": 123,
+    "title": "عن حالي",
+    "type": "روك",
+    "lyrics": [
+        { "text": "أنا ونَفسي أعزّ صحاب وثالثنا نجوم الليل", "red": false },
+        { "text": "", "red": false },
+        { "text": "مفيش بنا زعل و عتاب ولو في هيبقا قليل", "red": false },
+        { "text": "", "red": false },
+        { "text": "مبنخبيش  أي أسرار ولا في حاجه نداريها", "red": false },
+        { "text": "", "red": false },
+        { "text": "بتجمعنا ليالي كُتار بنحكي فيها حكاوينا", "red": false },
+        { "text": "...............", "red": true },
+        { "text": "أنا بحكي عن حالي مابيني وبين حبيبي الغالي", "red": true },
+        { "text": "", "red": false },
+        { "text": "يوم عن يوم يزيد شوقي ليه لكنه لسه مش داري", "red": true },
+        { "text": "", "red": false },
+        { "text": "وانا معرفش فين أراضيه و لا إمتي هيجي تاني", "red": true },
+        { "text": "", "red": false },
+        { "text": "و مين هيدلني عليه أو حتى يوصّله سلامي", "red": true },
+        { "text": "...............", "red": true },
+        { "text": "وعن نفسي جواها كلام بتستني تقولهوله", "red": false },
+        { "text": "", "red": false },
+        { "text": "كلام يعني عن الايام اللي علينا عدو من دونه", "red": false },
+        { "text": "", "red": false },
+        { "text": "ونجوم الليل بتسألني هوا أساساً سابك ليه", "red": false },
+        { "text": "", "red": false },
+        { "text": "سؤالها و جعني وكان ردي بأنه شيء مش بأديه", "red": false }
+    ]
 }
+  
     
 
   

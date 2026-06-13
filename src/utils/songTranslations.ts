@@ -181,6 +181,9 @@ export const TITLE_TRANSLATIONS: Record<string, string> = {
   'لحظة سزاجه': 'L7zet Szagh',
   'حلقة وصل':'halqat wasal',
   'يستاهل سقفه': 'yestahal saf2a',
+  'شايل أسمي ': 'Shayel esmy',
+  'معاكي مبسوط': 'Ma3aky mabsoot',
+  
   
 };
 

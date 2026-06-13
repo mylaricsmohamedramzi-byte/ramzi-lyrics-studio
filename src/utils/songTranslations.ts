@@ -183,6 +183,7 @@ export const TITLE_TRANSLATIONS: Record<string, string> = {
   'يستاهل سقفه': 'yestahal saf2a',
   'شايل أسمي ': 'Shayel esmy',
   'معاكي مبسوط': 'Ma3aky mabsoot',
+  'عن حالي': '3an 7aly',
   
   
 };

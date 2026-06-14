@@ -72,7 +72,7 @@ export const allVideos = [
   },
   {
     id: 2,
-    title: "كيف حالك",
+    title: "هل من سبيل",
     category: "قصائد",
     videoUrls: ["https://drive.google.com/file/d/1t3l9R8m8oWxm4C31MZQbZKn-iv_F06y2/view?usp=sharing"],
     views: "0",

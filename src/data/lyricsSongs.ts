@@ -5349,7 +5349,7 @@ export const allSongs: any[] = [
       },
       {
         "id": 98,
-        "title": "وينك",
+        "title": "ما بردت جروحي",
         "type": "دراما",
         "lyrics": [
           { text: 'هذه الكلمات باللهجة السعوديه', "red": true },

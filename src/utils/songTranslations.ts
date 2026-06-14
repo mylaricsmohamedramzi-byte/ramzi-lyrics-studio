@@ -52,6 +52,7 @@ export const TITLE_TRANSLATIONS: Record<string, string> = {
   'نفسي أشوفه': 'Nefsy Ashoufo',
   'يبدأ رمضان': 'Yebda2 Ramadan',
   'مليش غيرك': 'Malesh Gherak',
+  'هل من سبيل': 'Hal men sabeel',
 
   // MelodiesPage
   'حلّ إيجابي': 'Hal Egaby',

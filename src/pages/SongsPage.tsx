@@ -601,7 +601,7 @@ export const allSongs = [
   },
   {
     id: 11,
-    title: "وحشاني يا مصر",
+    title: "مُشتاق للمصريين",
     type: "وطني",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509732/%D9%88%D8%AD%D8%B4%D8%A7%D9%86%D9%8A_%D9%8A%D8%A7_%D9%85%D8%B5%D8%B1_zs1fuw.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776526375/%D9%88%D8%AD%D8%B4%D8%A7%D9%86%D9%8A_%D9%8A%D8%A7_%D9%85%D8%B5%D8%B1_ovf9vr.png",

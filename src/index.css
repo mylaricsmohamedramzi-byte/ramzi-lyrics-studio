@@ -355,11 +355,11 @@
    (pages use inline <style> blocks; these win via specificity)
    ========================================================== */
 
-/* Song / video titles → DG Rafah (card names), color preserved per page */
+/* Song / video titles → DG Forsha (card names), color preserved per page */
 .song-title-red,
 .video-title,
 .song-title {
-  font-family: 'DG Rafah', 'Aref Ruqaa Ink', serif !important;
+  font-family: 'DG Forsha', 'Aref Ruqaa Ink', serif !important;
 }
 
 /* Lyric lines → DG Heaven Regular, white default.

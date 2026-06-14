@@ -163,7 +163,7 @@ export const TITLE_TRANSLATIONS: Record<string, string> = {
   'نيّتي خير': 'Niyety Kheir',
   'حائر القلب': 'Haer El Qalb',
   'إبن النيل': 'Ebn El Neel',
-  'كُلّنَا بَشَر': 'Kolena bashar',
+  'كٌلنا بشر': 'Kolena bashar',
   'مش هوقّف': 'Mesh Hawakkaff',
   'سوبر هيرو': 'Super Hero',
   'طوق نجاه': 'Tawk Nagah',

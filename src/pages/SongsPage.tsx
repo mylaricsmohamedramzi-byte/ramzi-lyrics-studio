@@ -437,7 +437,7 @@ export const allSongs = [
   },
   {
     id: 7,
-    title: "كيف حالك",
+    title: "هل من سبيل",
     duet: true,
     type: "قصائد",
     audioUrls: [

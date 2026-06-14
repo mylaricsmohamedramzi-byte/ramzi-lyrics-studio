@@ -668,7 +668,7 @@ const WelcomePage = () => {
               },
               {
                 id: 93,
-                title: { ar: 'إفترقنا', en: 'Eftaraqna' },
+                title: { ar: 'مُجبرين', en: 'Mogbareen' },
                 category: { ar: 'كلمات', en: 'Lyrics' },
                 path: '/lyrics?id=93',
                 coverImg: 'https://res.cloudinary.com/dq3orhpdj/image/upload/v1779877738/%D8%A5%D9%81%D8%AA%D8%B1%D9%82%D9%86%D8%A7_fm3oz1.png',

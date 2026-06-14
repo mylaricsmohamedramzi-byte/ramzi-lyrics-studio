@@ -46,7 +46,7 @@ export const TITLE_TRANSLATIONS: Record<string, string> = {
   'جمالك ماركة': 'Gamalak Marka',
   'نفد صبري': 'Nafad Sabry',
   'حيّ علي الجهاد': 'Hayya Alal Jihad',
-  'وحشاني يا مصر': 'Wahshany Ya Masr',
+  'مُشتاق للمصريين': 'moshtaq lel masryeen',
   'عطشان غرام': 'Atshan Gharam',
   'من العجائب': 'Men El Agaeib',
   'نفسي أشوفه': 'Nefsy Ashoufo',

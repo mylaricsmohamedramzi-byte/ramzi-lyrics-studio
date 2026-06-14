@@ -50,7 +50,7 @@ export const TITLE_TRANSLATIONS: Record<string, string> = {
   'عطشان غرام': 'Atshan Gharam',
   'من العجائب': 'Men El Agaeib',
   'نفسي أشوفه': 'Nefsy Ashoufo',
-  'أيام رمضان': 'Ayam Ramadan',
+  'يبدأ رمضان': 'Yebda2 Ramadan',
   'مليش غيرك': 'Malesh Gherak',
 
   // MelodiesPage

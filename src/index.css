@@ -199,9 +199,13 @@
     color: #ffffff;
   }
 
-  /* Song titles across all pages */
+  /* Song titles across all pages — match About page (Aref Ruqaa Ink, red) */
   .song-title {
-    font-family: 'DG Forsha', 'Aref Ruqaa Ink', serif !important;
+    font-family: 'Aref Ruqaa Ink', 'Cinzel', serif !important;
+    color: #ff4d4d;
+  }
+  :root:not(.dark) .song-title {
+    color: #c0272d;
   }
 
   /* Song lyric line — DG Heaven Regular, white by default.

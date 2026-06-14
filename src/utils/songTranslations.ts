@@ -145,7 +145,7 @@ export const TITLE_TRANSLATIONS: Record<string, string> = {
   'أكتر حد فاهمني': 'Aktar Had Fahmny',
   'زي ضلي': 'Zay Dally',
   'فاكرني لعبة': 'Fakerny Leba',
-  'وينك': 'Weenak',
+  'ما بردت جروحي': 'Ma bardat gro7y',
   'مُجبرين': 'Mogbareen',
   'بيت مهجور': 'Beit Mahgoor',
   'فيك الخير': 'Feek El Kheir',

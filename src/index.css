@@ -359,11 +359,17 @@
    (pages use inline <style> blocks; these win via specificity)
    ========================================================== */
 
-/* Song / video titles → DG Forsha (card names), color preserved per page */
+/* Song / video titles → Aref Ruqaa Ink (match About page), red color */
 .song-title-red,
 .video-title,
 .song-title {
-  font-family: 'DG Forsha', 'Aref Ruqaa Ink', serif !important;
+  font-family: 'Aref Ruqaa Ink', 'Cinzel', serif !important;
+  color: #ff4d4d !important;
+}
+:root:not(.dark) .song-title-red,
+:root:not(.dark) .video-title,
+:root:not(.dark) .song-title {
+  color: #c0272d !important;
 }
 
 /* Lyric lines → DG Heaven Regular, white default.

@@ -257,7 +257,7 @@ const AboutContentPage = () => {
         }
 
         .song-title-cell {
-          font-family: 'Aref Ruqaa Ink', 'Cinzel', serif !important;
+          font-family: 'DG Heaven', 'DG Heaven Bold', 'DG Modal3at', sans-serif !important;
           font-weight: bold !important;
           color: ${isDark ? '#ff4d4d' : '#c0272d'} !important;
           font-size: 1.7rem;

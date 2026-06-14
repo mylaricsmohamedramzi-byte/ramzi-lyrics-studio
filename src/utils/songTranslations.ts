@@ -184,6 +184,7 @@ export const TITLE_TRANSLATIONS: Record<string, string> = {
   'شايل أسمي ': 'Shayel esmy',
   'معاكي مبسوط': 'Ma3aky mabsoot',
   'عن حالي': '3an 7aly',
+  'مين في جمالنا': 'Myn Fy Gmalna',
   
   
 };

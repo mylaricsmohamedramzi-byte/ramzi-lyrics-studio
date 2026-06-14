@@ -260,7 +260,7 @@ const AboutContentPage = () => {
           font-family: 'Aref Ruqaa Ink', 'Cinzel', serif !important;
           font-weight: bold !important;
           color: ${isDark ? '#ff4d4d' : '#c0272d'} !important;
-          font-size: 1.35rem;
+          font-size: 1.7rem;
         }
 
         .table-card {
@@ -372,7 +372,7 @@ const AboutContentPage = () => {
         }
 
         .genre-title {
-          font-size: 1.25rem;
+          font-size: 1.6rem;
           font-weight: bold;
           color: ${isDark ? '#c9a84c' : '#c0272d'};
           font-family: 'DG Rafah', sans-serif;

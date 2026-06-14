@@ -657,7 +657,7 @@ export const allSongs = [
       { text: "لو محتاجهم يشلوك فالعيين ", red: false },
       { text: "\u00A0", red: false },
       { text: "مصر بلادي و مفيش غيرها", red: false },
-      { text: "فتحه أبوابها للي يجيلها", red: false },
+      { text: "فاتحه أبوابها للي يجيلها", red: false },
       { text: "دا أحنا ياما شربنا من نيلها", red: false },
       { text: "وعشنا سنين حلوه في خيرها", red: false },
       { text: "ولا عٌمر دَخِيل راح يدخلها ", red: false },

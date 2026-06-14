@@ -6432,6 +6432,7 @@ export const allSongs: any[] = [
         { "text": "دا أحنا ولله الحمد", "red": true },
         { "text": "خشابه وبابنا  مخلع", "red": true },
         { "text": "", "red": false },
+        { "text": "", "red": false },
         { "text": "خبّط علي بابنا ياحظ", "red": true },
         { "text": "ورينا شويت عّز", "red": true },
         { "text": "و ياريت تفارقنا يا نحس", "red": true },
@@ -6442,7 +6443,7 @@ export const allSongs: any[] = [
         { "text": "", "red": false },
         { "text": "بعد م فضا جبنا .. بيقول الفقر عيبنا", "red": false },
         { "text": "", "red": false },
-        { "text": "للي ياما فيه فرّحنا .. أكتر حد جرحنا", "red": false },
+        { "text": "اللي ياما فيه فرّحنا .. أكتر حد جرحنا", "red": false },
         { "text": "", "red": false },
         { "text": "ولا يوم سيبناه في مِحنه .. و أهو في الاخر سوّحنا", "red": false }
     ]

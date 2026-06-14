@@ -27,7 +27,7 @@ export const GENRE_TRANSLATIONS: Record<string, string> = {
 export const TITLE_TRANSLATIONS: Record<string, string> = {
   // VideosPage
   'عداد الروقان': 'Adad El Rowan',
-  'كيف حالك': 'Kayfa Haluka',
+  'هل من سبيل': 'Hal men sabeel',
   'نبرة حزينة': 'Nabra Hazeena',
   'كلامي و اضح': 'Kalamy Wadeh',
   'تلك السلطانه': 'Tilka El Sultana',

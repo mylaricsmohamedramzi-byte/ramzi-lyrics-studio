@@ -650,7 +650,7 @@ const WelcomePage = () => {
               },
               {
                 id: 1,
-                title: { ar: 'مليش غيرِك', en: 'Malish ghirak' },
+                title: { ar: 'تعبت من التفكير', en: 'Ta3abt men el tafkeer' },
                 category: { ar: 'أغنية', en: 'Song' },
                 path: '/songs?id=1',
                 coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776510464/%D9%85%D9%84%D9%8A%D8%B4_%D8%BA%D9%8A%D8%B1%D9%83_weld7x.png",

@@ -35,7 +35,7 @@ export const TITLE_TRANSLATIONS: Record<string, string> = {
   // SongsPage
   'أسأل مجرّب': 'Esal Mojarab',
   'كام دقيقه': 'Kam Dekika',
-  'عامل ناسيني': 'Amel Naseeny',
+  'محيّرني معاه': 'Mo7ayarny ma3ah',
   'مش عيب': 'Mesh Eib',
   'زارع الخير': 'Zare El Kheir',
   'الكون إحتفي': 'El Kawn Ehtafa',

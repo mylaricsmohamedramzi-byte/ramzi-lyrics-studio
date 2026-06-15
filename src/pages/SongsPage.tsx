@@ -389,7 +389,7 @@ export const allSongs = [
   },
   {
     id: 6,
-    title: "عامل ناسيني",
+    title: "محيّرني معاه",
     type: "رومانسي & مقسوم",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509748/%D8%B9%D9%8E%D8%A7%D9%85%D9%90%D9%84%D9%92_%D9%86%D9%8E%D8%A7%D8%B3%D9%90%D9%8A%D9%86%D9%90%D9%8A_1_b5cueb.mp3"],
     coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776514519/%D8%B9%D8%A7%D9%85%D9%84_%D9%86%D8%A7%D8%B3%D9%8A%D9%86%D9%8A_h0iwop.png",

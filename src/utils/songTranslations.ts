@@ -51,7 +51,7 @@ export const TITLE_TRANSLATIONS: Record<string, string> = {
   'من العجائب': 'Men El Agaeib',
   'نفسي أشوفه': 'Nefsy Ashoufo',
   'يبدأ رمضان': 'Yebda2 Ramadan',
-  'مليش غيرك': 'Malesh Gherak',
+  'تعبت من التفكير': 'Ta3abt men el tafkeer',
   'هل من سبيل': 'Hal men sabeel',
 
   // MelodiesPage

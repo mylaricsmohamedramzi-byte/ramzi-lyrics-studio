@@ -6,51 +6,182 @@ export const allSongs: any[] = [
     "title": "علي بحر غرامك",
     "type": "طرب",
     "lyrics": [
-      { "text": "عالي بالي أقول لعيونك دول أن أنا بهواك", "red": false },
-      { "text": "", "red": false },
-      { "text": "وأن أنا بالي دائما مشغول مشغول بهواك", "red": false },
-      { "text": "", "red": false },
-      { "text": "وأن أنا هفضل فاكرك على طول مش هنساك", "red": false },
-      { "text": "", "red": false },
-      { "text": "أصل أنت جمالك مش معقول بحلم بلقاك", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "يا حبيب القلب يا روح الروح ياساكن في عنيه", "red": false },
-      { "text": "", "red": false },
-      { "text": "أنت وبس العشق المسموح في الدنيا الفانية", "red": false },
-      { "text": "", "red": false },
-      { "text": "عُمرك متغيب أو تروح روحي مرافقاك بالثانية", "red": false },
-      { "text": "", "red": false },
-      { "text": "ما هو وأنت معايا حياتي بجد بتكون حياة ثانية", "red": false },
-      { "text": "", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "على بحر غرامك خدني الموج", "red": true },
-      { "text": "وموجك خداع", "red": true },
-      { "text": "", "red": false },
-      { "text": "وسحبني عليك وعرفت ساعتها... انك مناع", "red": true },
-      { "text": "", "red": false },
-      { "text": "وأن مفيش غيري قدر يخطف قلبك ...ويقول وداع", "red": true },
-      { "text": "", "red": false },
-      { "text": "ربنا يحميك يا معوضني عمري...وشبابي اللي ضاع", "red": true },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "يا مالك قلبي ودكتور حبي...وطبيب الأوجاع", "red": true },
-      { "text": "", "red": false },
-      { "text": "أكتب لي علاج أنسى بيه حزني وقلبي... اللي إتباع", "red": true },
-      { "text": "", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "يا صباح الورد على الياسمين أنا قلبي ارتاح لك", "red": false },
-      { "text": "", "red": false },
-      { "text": "خليني في ثانية أتشد إليك وإلى رائحة وردك", "red": false },
-      { "text": "", "red": false },
-      { "text": "عرفني بجد أن أنا عمري ما أستحمل بعدك", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "", "red": false },
-      { "text": "وأن خوفي عليك علشان أنا قلبي مواعدك", "red": false },
-      { "text": "", "red": false },
-      { "text": "ومن الآخر كدا وبكل وضوح لازم أصرح لك", "red": false },
-      { "text": "", "red": false },
-      { "text": "من أول مرة قابلت عيناك وأنا دبت في حبك", "red": false }
-
+      {
+        "text": "عالي بالي أقول لعيونك دول أن أنا بهواك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأن أنا بالي دائما مشغول مشغول بهواك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأن أنا هفضل فاكرك على طول مش هنساك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أصل أنت جمالك مش معقول بحلم بلقاك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "يا حبيب القلب يا روح الروح ياساكن في عنيه",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أنت وبس العشق المسموح في الدنيا الفانية",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "عُمرك متغيب أو تروح روحي مرافقاك بالثانية",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ما هو وأنت معايا حياتي بجد بتكون حياة ثانية",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "على بحر غرامك خدني الموج",
+        "red": true
+      },
+      {
+        "text": "وموجك خداع",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وسحبني عليك وعرفت ساعتها... انك مناع",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأن مفيش غيري قدر يخطف قلبك ...ويقول وداع",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ربنا يحميك يا معوضني عمري...وشبابي اللي ضاع",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "يا مالك قلبي ودكتور حبي...وطبيب الأوجاع",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أكتب لي علاج أنسى بيه حزني وقلبي... اللي إتباع",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "يا صباح الورد على الياسمين أنا قلبي ارتاح لك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "خليني في ثانية أتشد إليك وإلى رائحة وردك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "عرفني بجد أن أنا عمري ما أستحمل بعدك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأن خوفي عليك علشان أنا قلبي مواعدك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ومن الآخر كدا وبكل وضوح لازم أصرح لك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "من أول مرة قابلت عيناك وأنا دبت في حبك",
+        "red": false
+      }
     ]
   },
   {
@@ -58,63 +189,234 @@ export const allSongs: any[] = [
     "title": "كل ما أقرّب",
     "type": "طرب",
     "lyrics": [
-      { "text": "أجمل وردة تشوفها", "red": false },
-      { "text": "عنية بين ورد البستان", "red": false },
-      { "text": "", "red": false },
-      { "text": "نجمة جميلة في السماء عالية", "red": false },
-      { "text": "نورها في كل مكان", "red": false },
-      { "text": "", "red": false },
-      { "text": "أول ما أسمع صوت ضحكته", "red": false },
-      { "text": "أنا بيجي لي جنان", "red": false },
-      { "text": "", "red": false },
-      { "text": "ولا أما أشوف ابتسامتها", "red": false },
-      { "text": "ببقى حاسس بأمان", "red": false },
-      { "text": "", "red": false },
-      { "text": "آه يا ويلي يا أبا من شفايفها", "red": false },
-      { "text": "مرسومة بالألوان", "red": false },
-      { "text": "", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "وكل ما أقرب منه بيبعد ويسيب قلبي وحيد", "red": true },
-      { "text": "", "red": false },
-      { "text": "ولو بكاني ورجع اتأسف بقبل أسفه أكيد", "red": true },
-      { "text": "", "red": false },
-      { "text": "أصل مفيش غيره وبس بيجري في كل وريد", "red": true },
-      { "text": "", "red": false },
-      { "text": "دا أنا بمجرد ما بشوف عينه بفرح وأبقى سعيد", "red": true },
-      { "text": "", "red": false },
-      { "text": "مهما يعمل و يسوي هيفضل شوقي يزيد", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "آه يا عروسة البحر يا طلة", "red": false },
-      { "text": "وفي إيديها المرجانة", "red": false },
-      { "text": "", "red": false },
-      { "text": "أمتى تحني علينا يا قمرة", "red": false },
-      { "text": "وتيجي يوم على هوانا", "red": false },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "يا جنية في وسط الغابة", "red": false },
-      { "text": "قربنا من قلبك قوانا", "red": false },
-      { "text": "", "red": false },
-      { "text": "قلبنا حبك وأحنا غلابة", "red": false },
-      { "text": "حلمنا يكمل وأنتي معانا", "red": false },
-      { "text": "", "red": false },
-      { "text": "تبقي غرامنا وتبقي منانا", "red": false },
-      { "text": "وتبقى حياتنا نعيم", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "لو تزعل طب مين بقى يفرح ... دا خدودك زهرة بتتفتح", "red": false },
-      { "text": "", "red": false },
-      { "text": "غمزة رمشك دي بتسحرني", "red": false },
-      { "text": "بتخليني أتأمل وأسرح", "red": false },
-      { "text": "", "red": false },
-      { "text": "نظرة عيناك بتطمني إني", "red": false },
-      { "text": "وأنا معاك عمري ما هجرح", "red": false },
-      { "text": "", "red": false },
-      { "text": "وأن أحنا هنعيش أيامنا", "red": false },
-      { "text": "ونقول للحزن مفيش مطرح", "red": false },
-      { "text": "", "red": false },
-      { "text": "ياما شفنا الويل والمر", "red": false },
-      { "text": "وقلنا لهمنا يمشي يروح", "red": false }
+      {
+        "text": "أجمل وردة تشوفها",
+        "red": false
+      },
+      {
+        "text": "عنية بين ورد البستان",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "نجمة جميلة في السماء عالية",
+        "red": false
+      },
+      {
+        "text": "نورها في كل مكان",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أول ما أسمع صوت ضحكته",
+        "red": false
+      },
+      {
+        "text": "أنا بيجي لي جنان",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ولا أما أشوف ابتسامتها",
+        "red": false
+      },
+      {
+        "text": "ببقى حاسس بأمان",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "آه يا ويلي يا أبا من شفايفها",
+        "red": false
+      },
+      {
+        "text": "مرسومة بالألوان",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وكل ما أقرب منه بيبعد ويسيب قلبي وحيد",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ولو بكاني ورجع اتأسف بقبل أسفه أكيد",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أصل مفيش غيره وبس بيجري في كل وريد",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "دا أنا بمجرد ما بشوف عينه بفرح وأبقى سعيد",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "مهما يعمل و يسوي هيفضل شوقي يزيد",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "آه يا عروسة البحر يا طلة",
+        "red": false
+      },
+      {
+        "text": "وفي إيديها المرجانة",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أمتى تحني علينا يا قمرة",
+        "red": false
+      },
+      {
+        "text": "وتيجي يوم على هوانا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "يا جنية في وسط الغابة",
+        "red": false
+      },
+      {
+        "text": "قربنا من قلبك قوانا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "قلبنا حبك وأحنا غلابة",
+        "red": false
+      },
+      {
+        "text": "حلمنا يكمل وأنتي معانا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "تبقي غرامنا وتبقي منانا",
+        "red": false
+      },
+      {
+        "text": "وتبقى حياتنا نعيم",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لو تزعل طب مين بقى يفرح ... دا خدودك زهرة بتتفتح",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "غمزة رمشك دي بتسحرني",
+        "red": false
+      },
+      {
+        "text": "بتخليني أتأمل وأسرح",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "نظرة عيناك بتطمني إني",
+        "red": false
+      },
+      {
+        "text": "وأنا معاك عمري ما هجرح",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأن أحنا هنعيش أيامنا",
+        "red": false
+      },
+      {
+        "text": "ونقول للحزن مفيش مطرح",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ياما شفنا الويل والمر",
+        "red": false
+      },
+      {
+        "text": "وقلنا لهمنا يمشي يروح",
+        "red": false
+      }
     ]
   },
   {
@@ -122,37 +424,130 @@ export const allSongs: any[] = [
     "title": "كلام جد",
     "type": "طرب",
     "lyrics": [
-      { "text": "هو حبيبي ولا غيره في القلب", "red": false },
-      { "text": "هو اللي شطب لي على الغلب", "red": false },
-      { "text": "", "red": false },
-      { "text": "خلي عيوني تتمنى القرب", "red": false },
-      { "text": "كل ما أشوفه بثبت في مكاني", "red": false },
-      { "text": "", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "ومش مبالغة دا كلام جد", "red": false },
-      { "text": "دا اللي أنا شفته مشفوهوش حد", "red": false },
-      { "text": "", "red": false },
-      { "text": "دا ملوش غير نسخة واحدة", "red": false },
-      { "text": "خد قلبي واحدة واحدة", "red": false },
-      { "text": "", "red": false },
-      { "text": "وخلاص كدا بقى شاغل بالي", "red": false },
-      { "text": "", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "دا اللي عشانه الليل يطول ...دا اللي معاه يحلي السهر", "red": true },
-      { "text": "", "red": false },
-      { "text": "ومهما الناس عليه تقول ...برضه هيفضل زي القمر", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "تفاصيلك ملهاش كتالوج", "red": false },
-      { "text": "كل الناس عليها حسدوك", "red": false },
-      { "text": "", "red": false },
-      { "text": "دا عيوني من يوم ما شافوك", "red": false },
-      { "text": "وهي فرحانة ومبسوطة", "red": false },
-      { "text": "", "red": false },
-      { "text": "خلصت فيك كل العبارات", "red": false },
-      { "text": "حبك ملى لي كل الفراغات", "red": false },
-      { "text": "", "red": false },
-      { "text": "تكسب أكيد أي مقارنات", "red": false },
-      { "text": "بين أي ناس حواليك موجودة", "red": false }
+      {
+        "text": "هو حبيبي ولا غيره في القلب",
+        "red": false
+      },
+      {
+        "text": "هو اللي شطب لي على الغلب",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "خلي عيوني تتمنى القرب",
+        "red": false
+      },
+      {
+        "text": "كل ما أشوفه بثبت في مكاني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ومش مبالغة دا كلام جد",
+        "red": false
+      },
+      {
+        "text": "دا اللي أنا شفته مشفوهوش حد",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "دا ملوش غير نسخة واحدة",
+        "red": false
+      },
+      {
+        "text": "خد قلبي واحدة واحدة",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وخلاص كدا بقى شاغل بالي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا اللي عشانه الليل يطول ...دا اللي معاه يحلي السهر",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ومهما الناس عليه تقول ...برضه هيفضل زي القمر",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "تفاصيلك ملهاش كتالوج",
+        "red": false
+      },
+      {
+        "text": "كل الناس عليها حسدوك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "دا عيوني من يوم ما شافوك",
+        "red": false
+      },
+      {
+        "text": "وهي فرحانة ومبسوطة",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "خلصت فيك كل العبارات",
+        "red": false
+      },
+      {
+        "text": "حبك ملى لي كل الفراغات",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "تكسب أكيد أي مقارنات",
+        "red": false
+      },
+      {
+        "text": "بين أي ناس حواليك موجودة",
+        "red": false
+      }
     ]
   },
   {
@@ -160,60 +555,222 @@ export const allSongs: any[] = [
     "title": "لو نسيتني",
     "type": "كلاسيك",
     "lyrics": [
-      { "text": "بتداري ليه كدا وتخبي", "red": false },
-      { "text": "يا حبيبي قولها وريحني", "red": false },
-      { "text": "", "red": false },
-      { "text": "متسبنيش كدا للأيام", "red": false },
-      { "text": "دا أنا من الحيرة مش بعرف أنام", "red": false },
-      { "text": "وأوعي في يوم تنسى الكلام", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "اللي كتبته من قلبي", "red": false },
-      { "text": "وعرفت بيه غلاوتك عندي", "red": false },
-      { "text": "", "red": false },
-      { "text": "وخلي قلبك يشتاق لي", "red": false },
-      { "text": "وخلي عينك تنده لي", "red": false },
-      { "text": "وخليك مشغول زيي", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "طمني عليك قولي مالك", "red": false },
-      { "text": "عرفني إيه اللي حصل لك", "red": false },
-      { "text": "دا أنا بنشغل بانشغالك", "red": false },
-      { "text": "وبزعل جدا على زعلك", "red": false },
-      { "text": "", "red": false },
-      { "text": "طب قولي مين اللي مضايقك", "red": false },
-      { "text": "طب قولي إيه بس تعبك", "red": false },
-      { "text": "عرفني إيه اللي واجع قلبك", "red": false },
-      { "text": "قولي وحياتي عندك", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "يا حبيبي حبي ليك", "red": true },
-      { "text": "جوا قلبي", "red": true },
-      { "text": "كل يوم بيزيد غلاوة", "red": true },
-      { "text": "والنجوم تشهد عليّا", "red": true },
-      { "text": "", "red": false },
-      { "text": "عارف أنك مش ناسيني", "red": true },
-      { "text": "ولو نسيتني", "red": true },
-      { "text": "برضه مش هتهون عليّا", "red": true },
-      { "text": "", "red": false },
-      { "text": "دا أنت روحي ونفسي بس ", "red": true },
-      { "text": "أشوف عيونك", "red": true },
-      { "text": "نفسي أملّي بيك عينيه", "red": true },
-      { "text": "", "red": false },
-      { "text": "نفسي تبقى أنت ليلي", "red": true },
-      { "text": "اللي بسهر فيه وأغني ", "red": true },
-      { "text": " وأحكي له الهم اللي فيّه", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "نفسي أرسم في وشك ضحكة", "red": false },
-      { "text": "وأجيب لك من السماء نجمة", "red": false },
-      { "text": "", "red": false },
-      { "text": "وأكتب لك عليها إزيك", "red": false },
-      { "text": "وأكتب لك عليها بحبك", "red": false },
-      { "text": "يا اللي عمري ما هويت قدك", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "في دنيتي أنت الحاجة الحلوة", "red": false },
-      { "text": "ومفيش حاجة غيرها مهمة", "red": false },
-      { "text": "", "red": false },
-      { "text": "ياما نفسي أسكن جوا قلبك", "red": false },
-      { "text": "ونفسي أفضل جوا حضنك", "red": false },
-      { "text": "ونفسي أتهنى بقربك", "red": false }
+      {
+        "text": "بتداري ليه كدا وتخبي",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي قولها وريحني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "متسبنيش كدا للأيام",
+        "red": false
+      },
+      {
+        "text": "دا أنا من الحيرة مش بعرف أنام",
+        "red": false
+      },
+      {
+        "text": "وأوعي في يوم تنسى الكلام",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "اللي كتبته من قلبي",
+        "red": false
+      },
+      {
+        "text": "وعرفت بيه غلاوتك عندي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وخلي قلبك يشتاق لي",
+        "red": false
+      },
+      {
+        "text": "وخلي عينك تنده لي",
+        "red": false
+      },
+      {
+        "text": "وخليك مشغول زيي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "طمني عليك قولي مالك",
+        "red": false
+      },
+      {
+        "text": "عرفني إيه اللي حصل لك",
+        "red": false
+      },
+      {
+        "text": "دا أنا بنشغل بانشغالك",
+        "red": false
+      },
+      {
+        "text": "وبزعل جدا على زعلك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "طب قولي مين اللي مضايقك",
+        "red": false
+      },
+      {
+        "text": "طب قولي إيه بس تعبك",
+        "red": false
+      },
+      {
+        "text": "عرفني إيه اللي واجع قلبك",
+        "red": false
+      },
+      {
+        "text": "قولي وحياتي عندك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي حبي ليك",
+        "red": true
+      },
+      {
+        "text": "جوا قلبي",
+        "red": true
+      },
+      {
+        "text": "كل يوم بيزيد غلاوة",
+        "red": true
+      },
+      {
+        "text": "والنجوم تشهد عليّا",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "عارف أنك مش ناسيني",
+        "red": true
+      },
+      {
+        "text": "ولو نسيتني",
+        "red": true
+      },
+      {
+        "text": "برضه مش هتهون عليّا",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "دا أنت روحي ونفسي بس ",
+        "red": true
+      },
+      {
+        "text": "أشوف عيونك",
+        "red": true
+      },
+      {
+        "text": "نفسي أملّي بيك عينيه",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "نفسي تبقى أنت ليلي",
+        "red": true
+      },
+      {
+        "text": "اللي بسهر فيه وأغني ",
+        "red": true
+      },
+      {
+        "text": " وأحكي له الهم اللي فيّه",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "نفسي أرسم في وشك ضحكة",
+        "red": false
+      },
+      {
+        "text": "وأجيب لك من السماء نجمة",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأكتب لك عليها إزيك",
+        "red": false
+      },
+      {
+        "text": "وأكتب لك عليها بحبك",
+        "red": false
+      },
+      {
+        "text": "يا اللي عمري ما هويت قدك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "في دنيتي أنت الحاجة الحلوة",
+        "red": false
+      },
+      {
+        "text": "ومفيش حاجة غيرها مهمة",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ياما نفسي أسكن جوا قلبك",
+        "red": false
+      },
+      {
+        "text": "ونفسي أفضل جوا حضنك",
+        "red": false
+      },
+      {
+        "text": "ونفسي أتهنى بقربك",
+        "red": false
+      }
     ]
   },
   {
@@ -221,71 +778,266 @@ export const allSongs: any[] = [
     "title": "مرسال",
     "type": "كلاسيك",
     "lyrics": [
-      { "text": "يا اللي مسافر لبعيد", "red": false },
-      { "text": "خد لحبيبي المرسال", "red": false },
-      { "text": "قول له أنه عليه عزيز", "red": false },
-      { "text": "وكفاية بقى ترحال", "red": false },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "ولو سألك جاي له منين", "red": false },
-      { "text": "قول له أنه من الأحباب", "red": false },
-      { "text": "قوله أنه إليه حبيب", "red": false },
-      { "text": "وفي بعده القلب داب", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "أهلا أهلا يا حبيبي", "red": true },
-      { "text": "طمن بقى قلبي عليك", "red": true },
-      { "text": "آه يا واخد وياك روحي", "red": true },
-      { "text": "وسايب ليّه عينيك", "red": true },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "رد عليه بمرسال", "red": true },
-      { "text": "متكونش طويل البال", "red": true },
-      { "text": "دا أنا مراسيلي ليك كترت", "red": true },
-      { "text": "وأنت على نفس الحال", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "حيرني لهيب الشوق", "red": false },
-      { "text": "مقدرتش على البُعاد", "red": false },
-      { "text": "معرفتش أكون مبسوط", "red": false },
-      { "text": "ولا أكمل في العناد", "red": false },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "قلتها وتملي بقول", "red": false },
-      { "text": "يا حبيبي ما بينا معاد", "red": false },
-      { "text": "ولمّا قلبك يتوه", "red": false },
-      { "text": "هيكون إلى قلبي عاد", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "يا ترى زيي ملهوف", "red": false },
-      { "text": "ولا من غيري مخطوف", "red": false },
-      { "text": "ولا محتار من غيري", "red": false },
-      { "text": "وعامل فيها مكسوف", "red": false },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "أصل أنت بطبع غريب", "red": false },
-      { "text": "يا أبو العود الملفوف", "red": false },
-      { "text": "أمتى في حضنك هرتاح", "red": false },
-      { "text": "وأفرح بحلاوة الشوف", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "أدي وعد من عيوني", "red": false },
-      { "text": "لما تقابل عيناك", "red": false },
-      { "text": "هتقول ما بشوفش غيرك", "red": false },
-      { "text": "وأن بجد بموت فيك", "red": false },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "مهما بقى تغيب عليّا", "red": false },
-      { "text": "مليش غيرك شريك", "red": false },
-      { "text": "أنت وبس اللي ليّه", "red": false },
-      { "text": "وبعمري أنا مشتريك", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "مرسال بيجيب مرسال", "red": true },
-      { "text": "وأنت عليه تقلان", "red": true },
-      { "text": "يا مخوف قلبي عليك", "red": true },
-      { "text": "دا أنا قلبي عليك قلقان", "red": true },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "ليه كدا تطول في غيابك", "red": true },
-      { "text": "وتسبني مع الأحزان", "red": true },
-      { "text": "دا أنا مستحملش فراقك", "red": true },
-      { "text": "دا أنا قلبي إليك ولهان", "red": true },
+      {
+        "text": "يا اللي مسافر لبعيد",
+        "red": false
+      },
+      {
+        "text": "خد لحبيبي المرسال",
+        "red": false
+      },
+      {
+        "text": "قول له أنه عليه عزيز",
+        "red": false
+      },
+      {
+        "text": "وكفاية بقى ترحال",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ولو سألك جاي له منين",
+        "red": false
+      },
+      {
+        "text": "قول له أنه من الأحباب",
+        "red": false
+      },
+      {
+        "text": "قوله أنه إليه حبيب",
+        "red": false
+      },
+      {
+        "text": "وفي بعده القلب داب",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أهلاً أهلاً يا حبيبي",
+        "red": true
+      },
+      {
+        "text": "طمن بقى قلبي عليك",
+        "red": true
+      },
+      {
+        "text": "آه يا واخد وياك روحي",
+        "red": true
+      },
+      {
+        "text": "وسايب ليّه عينيك",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "رد عليه بمرسال",
+        "red": true
+      },
+      {
+        "text": "متكونش طويل البال",
+        "red": true
+      },
+      {
+        "text": "دا أنا مراسيلي ليك كترت",
+        "red": true
+      },
+      {
+        "text": "وأنت على نفس الحال",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "حيرني لهيب الشوق",
+        "red": false
+      },
+      {
+        "text": "مقدرتش على البُعاد",
+        "red": false
+      },
+      {
+        "text": "معرفتش أكون مبسوط",
+        "red": false
+      },
+      {
+        "text": "ولا أكمل في العناد",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "قلتها وتملي بقول",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي ما بينا معاد",
+        "red": false
+      },
+      {
+        "text": "ولمّا قلبك يتوه",
+        "red": false
+      },
+      {
+        "text": "هيكون إلى قلبي عاد",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "يا ترى زيي ملهوف",
+        "red": false
+      },
+      {
+        "text": "ولا من غيري مخطوف",
+        "red": false
+      },
+      {
+        "text": "ولا محتار من غيري",
+        "red": false
+      },
+      {
+        "text": "وعامل فيها مكسوف",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أصل أنت بطبع غريب",
+        "red": false
+      },
+      {
+        "text": "يا أبو العود الملفوف",
+        "red": false
+      },
+      {
+        "text": "أمتى في حضنك هرتاح",
+        "red": false
+      },
+      {
+        "text": "وأفرح بحلاوة الشوف",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أدي وعد من عيوني",
+        "red": false
+      },
+      {
+        "text": "لما تقابل عيناك",
+        "red": false
+      },
+      {
+        "text": "هتقول ما بشوفش غيرك",
+        "red": false
+      },
+      {
+        "text": "وأن بجد بموت فيك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "مهما بقى تغيب عليّا",
+        "red": false
+      },
+      {
+        "text": "مليش غيرك شريك",
+        "red": false
+      },
+      {
+        "text": "أنت وبس اللي ليّه",
+        "red": false
+      },
+      {
+        "text": "وبعمري أنا مشتريك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مرسال بيجيب مرسال",
+        "red": true
+      },
+      {
+        "text": "وأنت عليه تقلان",
+        "red": true
+      },
+      {
+        "text": "يا مخوف قلبي عليك",
+        "red": true
+      },
+      {
+        "text": "دا أنا قلبي عليك قلقان",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ليه كدا تطول في غيابك",
+        "red": true
+      },
+      {
+        "text": "وتسبني مع الأحزان",
+        "red": true
+      },
+      {
+        "text": "دا أنا مستحملش فراقك",
+        "red": true
+      },
+      {
+        "text": "دا أنا قلبي إليك ولهان",
+        "red": true
+      }
     ]
   },
   {
@@ -293,41 +1045,146 @@ export const allSongs: any[] = [
     "title": "معرفش ليه",
     "type": "كلاسيك",
     "lyrics": [
-      { "text": "طال إنشغالي بيك يا غالي", "red": false },
-      { "text": "وأنت ولا داري باللي بيجري فيّه", "red": false },
-      { "text": "وبقول في بالي يا ليالي", "red": false },
-      { "text": "أمتى يرؤف بحالي أمتى يحس بيّه", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "أمتى يحس بحبي ليه", "red": false },
-      { "text": "أمتى يبان الشوق عليه", "red": false },
-      { "text": "دا أنا طول ليلي بفكر فيه", "red": false },
-      { "text": "معرفش عمل فيا إيه ", "red": false },
-      { "text": "من يوم ما عيني جت في عينيه", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "يا أهل الغرام دلوني", "red": true },
-      { "text": "يا أهل الهوى رسوني", "red": true },
-      { "text": "", "red": false },
-      { "text": "أعمل إيه ؟", "red": true },
-      { "text": "", "red": false },
-      { "text": "عشان أدخل في قلبه", "red": true },
-      { "text": "و أعرفه أني بحبه", "red": true },
-      { "text": "", "red": false },
-      { "text": "وأني في لحظة قربه", "red": true },
-      { "text": "بنسى الدنيا بحالها", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "دا وأنا وياه بيوحشني", "red": false },
-      { "text": "زي وهو بعيد عني", "red": false },
-      { "text": "", "red": false },
-      { "text": "كأنه سيطر على قلبي", "red": false },
-      { "text": "وعلى وجداني ومشاعري", "red": false },
-      { "text": "", "red": false },
-      { "text": "دا لو عليه حد سألني", "red": false },
-      { "text": "تملي بقول دا حظي وبختي", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "وأنا طال انشغالي بيك يا غالي", "red": false },
-      { "text": "وأنت ولا داري باللي بيجري فيّه", "red": false },
-      { "text": "وبقول في بالي يا ليالي", "red": false },
-      { "text": "أمتى يرؤف بحالي أمتى يحس بيّه", "red": false }
+      {
+        "text": "طال إنشغالي بيك يا غالي",
+        "red": false
+      },
+      {
+        "text": "وأنت ولا داري باللي بيجري فيّه",
+        "red": false
+      },
+      {
+        "text": "وبقول في بالي يا ليالي",
+        "red": false
+      },
+      {
+        "text": "أمتى يرؤف بحالي أمتى يحس بيّه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أمتى يحس بحبي ليه",
+        "red": false
+      },
+      {
+        "text": "أمتى يبان الشوق عليه",
+        "red": false
+      },
+      {
+        "text": "دا أنا طول ليلي بفكر فيه",
+        "red": false
+      },
+      {
+        "text": "معرفش عمل فيا إيه ",
+        "red": false
+      },
+      {
+        "text": "من يوم ما عيني جت في عينيه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "يا أهل الغرام دلوني",
+        "red": true
+      },
+      {
+        "text": "يا أهل الهوى رسوني",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أعمل إيه ؟",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "عشان أدخل في قلبه",
+        "red": true
+      },
+      {
+        "text": "و أعرفه أني بحبه",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأني في لحظة قربه",
+        "red": true
+      },
+      {
+        "text": "بنسى الدنيا بحالها",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا وأنا وياه بيوحشني",
+        "red": false
+      },
+      {
+        "text": "زي وهو بعيد عني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "كأنه سيطر على قلبي",
+        "red": false
+      },
+      {
+        "text": "وعلى وجداني ومشاعري",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "دا لو عليه حد سألني",
+        "red": false
+      },
+      {
+        "text": "تملي بقول دا حظي وبختي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وأنا طال انشغالي بيك يا غالي",
+        "red": false
+      },
+      {
+        "text": "وأنت ولا داري باللي بيجري فيّه",
+        "red": false
+      },
+      {
+        "text": "وبقول في بالي يا ليالي",
+        "red": false
+      },
+      {
+        "text": "أمتى يرؤف بحالي أمتى يحس بيّه",
+        "red": false
+      }
     ]
   },
   {
@@ -335,62 +1192,230 @@ export const allSongs: any[] = [
     "title": "وعدّي الليل",
     "type": "كلاسيك",
     "lyrics": [
-      { "text": "يا أعجب من العجايب يا أجمل من القمر ", "red": false },
-      { "text": " يا سايب قلبي دايب مع الليل و السهر", "red": false },
-      { "text": "", "red": false },
-      { "text": "روحي وروحك حبايب زي أغصان الشجر ", "red": false },
-      { "text": " عيني وعينك قرايب ودموعهم كالمطر", "red": false },
-      { "text": "", "red": false },
-      { "text": "يا أحسن من النسيم يا روح قلبي أنا ", "red": false },
-      { "text": " قلبك حلو وسليم وحبه كان مُنى", "red": false },
-      { "text": ". . . . . . . . . . . .", "red": false },
-      { "text": "وعدّى الليل", "red": true },
-      { "text": "وشفت الويل", "red": true },
-      { "text": "ولسه بميل", "red": true },
-      { "text": "", "red": false },
-      { "text": "وعدّي", "red": true },
-      { "text": "", "red": false },
-      { "text": "وأهو لسه", "red": true },
-      { "text": "مكلمنيش", "red": true },
-      { "text": "مطمنيش", "red": true },
-      { "text": "", "red": false },
-      { "text": "وسايب ناري قايدة", "red": true },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "ولسه حاله مش معروف", "red": true },
-      { "text": "ولسه قلبي جواه خوف", "red": true },
-      { "text": "", "red": false },
-      { "text": "وحتى دموعي شاردة", "red": true },
-      { "text": "", "red": false },
-      { "text": "ومهما يكون في عندي ظروف", "red": true },
-      { "text": "", "red": false },
-      { "text": "أنا هفضل عليه ملهوف", "red": true },
-      { "text": "عشان حبه أولى", "red": true },
-      { "text": "", "red": false },
-      { "text": ". . . . . . . . . . . .", "red": false },
-      { "text": "دا رُوحي مُشتاقة لُه.. وهُوّا مش في بالُه", "red": false },
-      { "text": "وبستلهف وُصُولُه.. وبيقلّل وصالُه", "red": false },
-      { "text": "و واحشاني عُيُونُه.. وبتغنّي بجمالُه", "red": false },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "وغيّرني بجُنُونُه.. وحيّرني بدلالُه", "red": false },
-      { "text": "وكُلّ أمّا بشُوفُه.. وأيدي تنُول سلامُه", "red": false },
-      { "text": "ألاقي النّاس يقُولُوا.. حبيبك لُه مقامُه", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "دا حُبُّه في قلبي متزيّن... وحشتُه ومش راضي يبيّن", "red": false },
-      { "text": "بحبُّه ودمعُه مش هيّن... مدوّبني وشاغلني", "red": false },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "دا مهما يغيب بيرجع لي... ولو كلّمتُه يسمعني", "red": false },
-      { "text": "ولو زعّلني أي يعني... هيفضل جُوّا قلبي", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "ومهما تبيع أنا شاري... يا داري بكُلّ أحوالي", "red": false },
-      { "text": "يا ساكن قلبي وخيالي... مُصمّم ليه تغيب عنّي", "red": false },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "يا فايتني في شوق وحنين... جمالك غطّى على الحلوين", "red": false },
-      { "text": "ومهما يفُوت علينا سنين... هتفضل غالي عندي", "red": false }
+      {
+        "text": "يا أعجب من العجايب يا أجمل من القمر ",
+        "red": false
+      },
+      {
+        "text": " يا سايب قلبي دايب مع الليل و السهر",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "روحي وروحك حبايب زي أغصان الشجر ",
+        "red": false
+      },
+      {
+        "text": " عيني وعينك قرايب ودموعهم كالمطر",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "يا أحسن من النسيم يا روح قلبي أنا ",
+        "red": false
+      },
+      {
+        "text": " قلبك حلو وسليم وحبه كان مُنى",
+        "red": false
+      },
+      {
+        "text": ". . . . . . . . . . . .",
+        "red": false
+      },
+      {
+        "text": "وعدّى الليل",
+        "red": true
+      },
+      {
+        "text": "وشفت الويل",
+        "red": true
+      },
+      {
+        "text": "ولسه بميل",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وعدّي",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأهو لسه",
+        "red": true
+      },
+      {
+        "text": "مكلمنيش",
+        "red": true
+      },
+      {
+        "text": "مطمنيش",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وسايب ناري قايدة",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ولسه حاله مش معروف",
+        "red": true
+      },
+      {
+        "text": "ولسه قلبي جواه خوف",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وحتى دموعي شاردة",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ومهما يكون في عندي ظروف",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أنا هفضل عليه ملهوف",
+        "red": true
+      },
+      {
+        "text": "عشان حبه أولى",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": ". . . . . . . . . . . .",
+        "red": false
+      },
+      {
+        "text": "دا رُوحي مُشتاقة لُه.. وهُوّا مش في بالُه",
+        "red": false
+      },
+      {
+        "text": "وبستلهف وُصُولُه.. وبيقلّل وصالُه",
+        "red": false
+      },
+      {
+        "text": "و واحشاني عُيُونُه.. وبتغنّي بجمالُه",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وغيّرني بجُنُونُه.. وحيّرني بدلالُه",
+        "red": false
+      },
+      {
+        "text": "وكُلّ أمّا بشُوفُه.. وأيدي تنُول سلامُه",
+        "red": false
+      },
+      {
+        "text": "ألاقي النّاس يقُولُوا.. حبيبك لُه مقامُه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا حُبُّه في قلبي متزيّن... وحشتُه ومش راضي يبيّن",
+        "red": false
+      },
+      {
+        "text": "بحبُّه ودمعُه مش هيّن... مدوّبني وشاغلني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "دا مهما يغيب بيرجع لي... ولو كلّمتُه يسمعني",
+        "red": false
+      },
+      {
+        "text": "ولو زعّلني أي يعني... هيفضل جُوّا قلبي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ومهما تبيع أنا شاري... يا داري بكُلّ أحوالي",
+        "red": false
+      },
+      {
+        "text": "يا ساكن قلبي وخيالي... مُصمّم ليه تغيب عنّي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "يا فايتني في شوق وحنين... جمالك غطّى على الحلوين",
+        "red": false
+      },
+      {
+        "text": "ومهما يفُوت علينا سنين... هتفضل غالي عندي",
+        "red": false
+      }
     ]
   },
   {
@@ -398,50 +1423,182 @@ export const allSongs: any[] = [
     "title": "أبات اقول",
     "type": "كلاسيك",
     "lyrics": [
-      { "text": "ياللي في حبك قلبي داب", "red": false },
-      { "text": "وفي حضنك بنسى العذاب", "red": false },
-      { "text": "أنت يا أعز الأحباب", "red": false },
-      { "text": "يا مالي قلبي شوق وغرام", "red": false },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "مهما حبيبي أقول عليك", "red": false },
-      { "text": "ومهما برضه هوصف فيك", "red": false },
-      { "text": "لسه في قلبي أكثر ليك", "red": false },
-      { "text": "وكفاية أني بشوف في عيناك ", "red": false },
-      { "text": "حلاوة الدنيا والأيام", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "وبغمض عيني على صورتك", "red": false },
-      { "text": "وبتصبح على صوتك", "red": false },
-      { "text": "", "red": false },
-      { "text": "وبيزيد شوقي طول بعدك", "red": false },
-      { "text": "وبيكمل فرحي بوجودك", "red": false },
-      { "text": "", "red": false },
-      { "text": "بيمشي الحزن مع قربك", "red": false },
-      { "text": "وعمري ما بقدر أنساك", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "و أبات أقول هنا وهنا", "red": true },
-      { "text": "حبيت أنا حبيت أنا", "red": true },
-      { "text": "", "red": false },
-      { "text": "ونفسي أشوف نظرة حلوة", "red": true },
-      { "text": "نظرة حنين نظرة غرام نظرة هنا", "red": true },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "أملى بيها عيوني", "red": true },
-      { "text": "و أعدي بيها همومي", "red": true },
-      { "text": "وأنسى بيها اللي أذوني", "red": true },
-      { "text": "ولا أفتكر غيرك يا روحي", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "وأسرح بخيالي في الملكوت", "red": false },
-      { "text": "قبل ما عمري مني يفوت", "red": false },
-      { "text": "", "red": false },
-      { "text": "وأكتب اسمي في العاشقين", "red": false },
-      { "text": "و أقول حبيت بعلو الصوت", "red": false },
-      { "text": "", "red": false },
-      { "text": "و أقول أن الهوى فضفاض", "red": false },
-      { "text": "ملوش ترتيب ولا حسابات", "red": false },
-      { "text": "", "red": false },
-      { "text": "ميعرفش غني وفقير", "red": false },
-      { "text": "وبيسيب في القلوب علامات", "red": false }
+      {
+        "text": "ياللي في حبك قلبي داب",
+        "red": false
+      },
+      {
+        "text": "وفي حضنك بنسى العذاب",
+        "red": false
+      },
+      {
+        "text": "أنت يا أعز الأحباب",
+        "red": false
+      },
+      {
+        "text": "يا مالي قلبي شوق وغرام",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "مهما حبيبي أقول عليك",
+        "red": false
+      },
+      {
+        "text": "ومهما برضه هوصف فيك",
+        "red": false
+      },
+      {
+        "text": "لسه في قلبي أكثر ليك",
+        "red": false
+      },
+      {
+        "text": "وكفاية أني بشوف في عيناك ",
+        "red": false
+      },
+      {
+        "text": "حلاوة الدنيا والأيام",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وبغمض عيني على صورتك",
+        "red": false
+      },
+      {
+        "text": "وبتصبح على صوتك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وبيزيد شوقي طول بعدك",
+        "red": false
+      },
+      {
+        "text": "وبيكمل فرحي بوجودك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بيمشي الحزن مع قربك",
+        "red": false
+      },
+      {
+        "text": "وعمري ما بقدر أنساك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "و أبات أقول هِنا وهِنا",
+        "red": true
+      },
+      {
+        "text": "حبيت أنا حبيت أنا",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ونفسي أشوف نظرة حلوة",
+        "red": true
+      },
+      {
+        "text": "نظرة حنين نظرة غرام نظرة هَنا",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أملى بيها عيوني",
+        "red": true
+      },
+      {
+        "text": "و أعدي بيها همومي",
+        "red": true
+      },
+      {
+        "text": "وأنسى بيها اللي أذوني",
+        "red": true
+      },
+      {
+        "text": "ولا أفتكر غيرك يا روحي",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وأسرح بخيالي في الملكوت",
+        "red": false
+      },
+      {
+        "text": "قبل ما عمري مني يفوت",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأكتب اسمي في العاشقين",
+        "red": false
+      },
+      {
+        "text": "و أقول حبيت بعلو الصوت",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و أقول أن الهوى فضفاض",
+        "red": false
+      },
+      {
+        "text": "ملوش ترتيب ولا حسابات",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ميعرفش غني وفقير",
+        "red": false
+      },
+      {
+        "text": "وبيسيب في القلوب علامات",
+        "red": false
+      }
     ]
   },
   {
@@ -449,29 +1606,94 @@ export const allSongs: any[] = [
     "title": "حائر القلب",
     "type": "قصائد",
     "lyrics": [
-      { "text": "قَدْ أَخْبَرُونَا أَنَّ الحَبِيبَ يَظْهَرُ فِي المِحَنِ", "red": false },
-      { "text": "أَمَّا شَمْسِي فَغَابَتْ وَلَمْ تُوَدِّعْنِي", "red": false },
-      { "text": "فَبَقِيتُ بِالأَعْوَامِ أَنْتَظِرُ أَنْ تَطْلُعْ", "red": false },
-      { "text": "حَتَّى أَدْرَكْتُ أَنَّهَا ذَهَبَتْ وَلَنْ تَرْجِعْ", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "فَسَأَلْتُ اللهَ الصَّبْرَ وَأَنْ يُذْهِبَ البَأْسَ", "red": false },
-      { "text": "حَتَّى تُخْمَدَ نَارُ فُؤَادِي فَأَنْسَى", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "وَتَرَكْتُ نَفْسِي لِلْحَيَاةِ لَعَلَّهَا", "red": true },
-      { "text": "تَأْتِينِي يَوْمٍ بِشَمْسٍ غَيْرِهَا", "red": true },
-      { "text": "وَذَاتَ يَوْمٍ فَتَحْتُ عَيْنِي عَلَى شَمْسٍ تُشْرِقُ", "red": true },
-      { "text": "فَوَجَدْتُ شَمْسِي الَّتِي ظَنَنْتُ أَنِّي نَسِيتُهَا", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "ثُمَّ نَظَرْتُ إِلَيْهَا حَائِرَ القَلْبِ", "red": false },
-      { "text": "وَعَوَاطِفِي بَيْنَ العِتَابِ وَالحُبِّ", "red": false },
-      { "text": "فَعِتَابِي لِأَنَّهَا هَجَرَتْنِي بِلَا سَبَبٍ", "red": false },
-      { "text": "وَاسْتَكْبَرَتْ أَنْ تُعْفِيَنِي مِنَ العَتَبِ", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "أَمَّا اشْتِيَاقِي فَلِقَلْبِهَا الَّذِي", "red": false },
-      { "text": "كَانَ جَلِيسِي فِي لَيَالِي وِحْدَتِي", "red": false },
-      { "text": "لِلَحْظَةٍ كَانَتْ تُهَوِّنُ شِدَّتِي", "red": false },
-      { "text": "لِنَظْرَةٍ كَانَتْ تُجَدِّدُ ضِحْكَتِي", "red": false }
-
+      {
+        "text": "قَدْ أَخْبَرُونَا أَنَّ الحَبِيبَ يَظْهَرُ فِي المِحَنِ",
+        "red": false
+      },
+      {
+        "text": "أَمَّا شَمْسِي فَغَابَتْ وَلَمْ تُوَدِّعْنِي",
+        "red": false
+      },
+      {
+        "text": "فَبَقِيتُ بِالأَعْوَامِ أَنْتَظِرُ أَنْ تَطْلُعْ",
+        "red": false
+      },
+      {
+        "text": "حَتَّى أَدْرَكْتُ أَنَّهَا ذَهَبَتْ وَلَنْ تَرْجِعْ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "فَسَأَلْتُ اللهَ الصَّبْرَ وَأَنْ يُذْهِبَ البَأْسَ",
+        "red": false
+      },
+      {
+        "text": "حَتَّى تُخْمَدَ نَارُ فُؤَادِي فَأَنْسَى",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وَتَرَكْتُ نَفْسِي لِلْحَيَاةِ لَعَلَّهَا",
+        "red": true
+      },
+      {
+        "text": "تَأْتِينِي يَوْمٍ بِشَمْسٍ غَيْرِهَا",
+        "red": true
+      },
+      {
+        "text": "وَذَاتَ يَوْمٍ فَتَحْتُ عَيْنِي عَلَى شَمْسٍ تُشْرِقُ",
+        "red": true
+      },
+      {
+        "text": "فَوَجَدْتُ شَمْسِي الَّتِي ظَنَنْتُ أَنِّي نَسِيتُهَا",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ثُمَّ نَظَرْتُ إِلَيْهَا حَائِرَ القَلْبِ",
+        "red": false
+      },
+      {
+        "text": "وَعَوَاطِفِي بَيْنَ العِتَابِ وَالحُبِّ",
+        "red": false
+      },
+      {
+        "text": "فَعِتَابِي لِأَنَّهَا هَجَرَتْنِي بِلَا سَبَبٍ",
+        "red": false
+      },
+      {
+        "text": "وَاسْتَكْبَرَتْ أَنْ تُعْفِيَنِي مِنَ العَتَبِ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أَمَّا اشْتِيَاقِي فَلِقَلْبِهَا الَّذِي",
+        "red": false
+      },
+      {
+        "text": "كَانَ جَلِيسِي فِي لَيَالِي وِحْدَتِي",
+        "red": false
+      },
+      {
+        "text": "لِلَحْظَةٍ كَانَتْ تُهَوِّنُ شِدَّتِي",
+        "red": false
+      },
+      {
+        "text": "لِنَظْرَةٍ كَانَتْ تُجَدِّدُ ضِحْكَتِي",
+        "red": false
+      }
     ]
   },
   {
@@ -479,53 +1701,194 @@ export const allSongs: any[] = [
     "title": "من الساعة دي",
     "type": "طرب",
     "lyrics": [
-      { "text": "عارف أني غايب عنّك وبقول لك أنا أسف", "red": false },
-      { "text": " ", "red": false },
-      { "text": "مقدرش أستغنى عنّك ولا حتى بحُبي أجازف", "red": false },
-      { "text": " ", "red": false },
-      { "text": "أنت اللي قلبي حبك وغيرك أنا لأ مش شايف", "red": false },
-      { "text": " ", "red": false },
-      { "text": "وتملّي وأنا جنبك عُمري ما ببقى خايف", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "ولو أغيب راح أجيلك أنا ...  مقدرش أسيبك أنا", "red": true },
-      { "text": "قلبي بقى أسيرك أنا", "red": true },
-      { "text": "إسيرني براحتك", "red": true },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "معرفش أخونك لا لا", "red": true },
-      { "text": "بس أعرف أصونك أنا", "red": true },
-      { "text": "والله مجنونك أنا", "red": true },
-      { "text": "عاوز مصلحتك", "red": true },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "يا حبيبي أتدلع عادي", "red": true },
-      { "text": "يا اللي أنت بطبعك هادي", "red": true },
-      { "text": "وخلاص أنا من الساعة دي", "red": true },
-      { "text": "أنا هفضل جنبك", "red": true },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "وبراحتك ميل وأتمايل", "red": true },
-      { "text": "يا اللي مغرقني جمايل", "red": true },
-      { "text": "مهما يكون قلبي شايل", "red": true },
-      { "text": "دا بيرتاح عندك", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "يا حبيبي أنا قلبي اشتاق وخلاص مش هقدر أداري", "red": false },
-      { "text": "والله تاعبني الفراق ومسهرني الليالي", "red": false },
-      { "text": "يا فايتني لوحدي في حيرة تعالى لي شوفني مالي", "red": false },
-      { "text": "دا أنت أما بتيجي على السيرة والله بيروق بالي", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "بسأل عليك فينك", "red": true },
-      { "text": "دا أنا مليش غيرك", "red": true },
-      { "text": "بتمنى أشوف عينك", "red": true },
-      { "text": "ولو يومين", "red": true },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "يا أبو القوام قائم", "red": true },
-      { "text": "خلتني بيك هايم", "red": true },
-      { "text": "دا أنا حُبي ليك دائم", "red": true },
-      { "text": " حب السنيين", "red": true },
+      {
+        "text": "عارف أني غايب عنّك وبقول لك أنا أسف",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مقدرش أستغنى عنّك ولا حتى بحُبي أجازف",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنت اللي قلبي حبك وغيرك أنا لأ مش شايف",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وتملّي وأنا جنبك عُمري ما ببقى خايف",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ولو أغيب راح أجيلك أنا ...  مقدرش أسيبك أنا",
+        "red": true
+      },
+      {
+        "text": "قلبي بقى أسيرك أنا",
+        "red": true
+      },
+      {
+        "text": "إسيرني براحتك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "معرفش أخونك لا لا",
+        "red": true
+      },
+      {
+        "text": "بس أعرف أصونك أنا",
+        "red": true
+      },
+      {
+        "text": "والله مجنونك أنا",
+        "red": true
+      },
+      {
+        "text": "عاوز مصلحتك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي أتدلع عادي",
+        "red": true
+      },
+      {
+        "text": "يا اللي أنت بطبعك هادي",
+        "red": true
+      },
+      {
+        "text": "وخلاص أنا من الساعة دي",
+        "red": true
+      },
+      {
+        "text": "أنا هفضل جنبك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وبراحتك ميل وأتمايل",
+        "red": true
+      },
+      {
+        "text": "يا اللي مغرقني جمايل",
+        "red": true
+      },
+      {
+        "text": "مهما يكون قلبي شايل",
+        "red": true
+      },
+      {
+        "text": "دا بيرتاح عندك",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي أنا قلبي اشتاق وخلاص مش هقدر أداري",
+        "red": false
+      },
+      {
+        "text": "والله تاعبني الفراق ومسهرني الليالي",
+        "red": false
+      },
+      {
+        "text": "يا فايتني لوحدي في حيرة تعالى لي شوفني مالي",
+        "red": false
+      },
+      {
+        "text": "دا أنت أما بتيجي على السيرة والله بيروق بالي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "بسأل عليك فينك",
+        "red": true
+      },
+      {
+        "text": "دا أنا مليش غيرك",
+        "red": true
+      },
+      {
+        "text": "بتمنى أشوف عينك",
+        "red": true
+      },
+      {
+        "text": "ولو يومين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا أبو القوام قائم",
+        "red": true
+      },
+      {
+        "text": "خلتني بيك هايم",
+        "red": true
+      },
+      {
+        "text": "دا أنا حُبي ليك دائم",
+        "red": true
+      },
+      {
+        "text": " حب السنيين",
+        "red": true
+      }
     ]
   },
   {
@@ -533,70 +1896,262 @@ export const allSongs: any[] = [
     "title": "وملكنا الحب",
     "type": "كلاسيك",
     "lyrics": [
-      { "text": "أنت وبس حبيبي", "red": false },
-      { "text": "ومفيش غيرك .. غالي عليّا ", "red": false },
-      { "text": "غالي عليّا", "red": false },
-      { "text": "", "red": false },
-      { "text": "ياما جمعتنا", "red": false },
-      { "text": "أيام جميلة .. و كانوا شويه", "red": false },
-      { "text": "كانوا شويه", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "وكانت الفرحة", "red": false },
-      { "text": "ساكنة عينينا ..و مالية الدنيا", "red": false },
-      { "text": "مالية الدنيا", "red": false },
-      { "text": "", "red": false },
-      { "text": "وكانت البسمة ملك أيدينا", "red": false },
-      { "text": "ومرافقانا .. ثانية بثانية", "red": false },
-      { "text": "ثانية بثانية", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "وملكنا الحب وخلانا", "red": true },
-      { "text": "نقدر ننسى اللي بينسينا", "red": true },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "وعيّشنا دنيتنا على هوانا", "red": true },
-      { "text": "ورمينا كل همومنا ورانا", "red": true },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "ونسّانا حزننا وبكّانا", "red": true },
-      { "text": "وفرحنا بقُربنا ولُقانا", "red": true },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "وشفنا نجوم السما فرحانة", "red": true },
-      { "text": "ورسمنا في سحابها صبانا", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "كل اللي يشوفوني", "red": false },
-      { "text": "بيوقفوني . وبيسألوني", "red": false },
-      { "text": "بيسألوني ", "red": false },
-      { "text": "عليك يا غالي", "red": false },
-      { "text": "", "red": false },
-      { "text": "بيقولوا هوا فين حبيبك", "red": false },
-      { "text": " اللي ياما سهر معاك", "red": false },
-      { "text": "سهر معاك", "red": false },
-      { "text": " كتير ليالي", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "", "red": false },
-      { "text": "وأرُد أقول", "red": false },
-      { "text": "هيغيب عليّا .. يا دوب شوية ... ", "red": false },
-      { "text": "يا دوب شويه", "red": false },
-      { "text": "وهييجي تاني", "red": false },
-      { "text": "", "red": false },
-      { "text": "", "red": false },
-      { "text": "يقولوا أوعى", "red": false },
-      { "text": "تكون ناسيه .. وأسأل عليه ", "red": false },
-      { "text": "مش عارفين أنك", "red": false },
-      { "text": "دائما في بالي", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "في ناس في الحب سابوا علامات", "red": true },
-      { "text": "وناس في الحب قالوا روايات", "red": true },
-      { "text": "", "red": false },
-      { "text": "وناس حبّت ساعات وساعات", "red": true },
-      { "text": "وناس عاش حُبها سنوات", "red": true },
-      { "text": "", "red": false },
-      { "text": "وناس بعدتهم المسافات", "red": true },
-      { "text": "وناس العُمر عليها فات", "red": true },
-      { "text": "", "red": false },
-      { "text": "وأنا عايش أحلى الأوقات", "red": true },
-      { "text": "عشان عايشها معاك بالذات", "red": true }
+      {
+        "text": "أنت وبس حبيبي",
+        "red": false
+      },
+      {
+        "text": "ومفيش غيرك .. غالي عليّا ",
+        "red": false
+      },
+      {
+        "text": "غالي عليّا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ياما جمعتنا",
+        "red": false
+      },
+      {
+        "text": "أيام جميلة .. و كانوا شويه",
+        "red": false
+      },
+      {
+        "text": "كانوا شويه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وكانت الفرحة",
+        "red": false
+      },
+      {
+        "text": "ساكنة عينينا ..و مالية الدنيا",
+        "red": false
+      },
+      {
+        "text": "مالية الدنيا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وكانت البسمة ملك أيدينا",
+        "red": false
+      },
+      {
+        "text": "ومرافقانا .. ثانية بثانية",
+        "red": false
+      },
+      {
+        "text": "ثانية بثانية",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وملكنا الحب وخلانا",
+        "red": true
+      },
+      {
+        "text": "نقدر ننسى اللي بينسينا",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وعيّشنا دنيتنا على هوانا",
+        "red": true
+      },
+      {
+        "text": "ورمينا كل همومنا ورانا",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ونسّانا حزننا وبكّانا",
+        "red": true
+      },
+      {
+        "text": "وفرحنا بقُربنا ولُقانا",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وشفنا نجوم السما فرحانة",
+        "red": true
+      },
+      {
+        "text": "ورسمنا في سحابها صبانا",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كل اللي يشوفوني",
+        "red": false
+      },
+      {
+        "text": "بيوقفوني . وبيسألوني",
+        "red": false
+      },
+      {
+        "text": "بيسألوني ",
+        "red": false
+      },
+      {
+        "text": "عليك يا غالي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بيقولوا هوا فين حبيبك",
+        "red": false
+      },
+      {
+        "text": " اللي ياما سهر معاك",
+        "red": false
+      },
+      {
+        "text": "سهر معاك",
+        "red": false
+      },
+      {
+        "text": " كتير ليالي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأرُد أقول",
+        "red": false
+      },
+      {
+        "text": "هيغيب عليّا .. يا دوب شوية ... ",
+        "red": false
+      },
+      {
+        "text": "يا دوب شويه",
+        "red": false
+      },
+      {
+        "text": "وهييجي تاني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "يقولوا أوعى",
+        "red": false
+      },
+      {
+        "text": "تكون ناسيه .. وأسأل عليه ",
+        "red": false
+      },
+      {
+        "text": "مش عارفين أنك",
+        "red": false
+      },
+      {
+        "text": "دائماً في بالي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "في ناس في الحب سابوا علامات",
+        "red": true
+      },
+      {
+        "text": "وناس في الحب قالوا روايات",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وناس حبّت ساعات وساعات",
+        "red": true
+      },
+      {
+        "text": "وناس عاش حُبها سنوات",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وناس بعدتهم المسافات",
+        "red": true
+      },
+      {
+        "text": "وناس العُمر عليها فات",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأنا عايش أحلى الأوقات",
+        "red": true
+      },
+      {
+        "text": "عشان عايشها معاك بالذات",
+        "red": true
+      }
     ]
   },
   {
@@ -604,33 +2159,114 @@ export const allSongs: any[] = [
     "title": "كان كابوس",
     "type": "مقسوم",
     "lyrics": [
-      { "text": "معرفش أنا إيه رماني.. في سكة الارتباط", "red": false },
-      { "text": " ", "red": false },
-      { "text": "ما أنا كنت سينجل لكن.. عايشها في انبساط", "red": false },
-      { "text": " ", "red": false },
-      { "text": "بتأخر مهما أتأخر.. ولا حد بيسأل ليه", "red": false },
-      { "text": " ", "red": false },
-      { "text": "ولا كان في أي نكد.. بصحى وبنام عليه", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "ودا كان كابوس وخلاص أهو راح", "red": true },
-      { "text": "والهم من على قلبي انزاح", "red": true },
-      { "text": "دلوقتي أنا عايش مرتاح", "red": true },
-      { "text": "لا هقول أسف تاني ولا سماح", "red": true },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "وخلاص كدة خلاص أنا سبت دائرة الجواز", "red": true },
-      { "text": "والبال بقى حلو وعال متظبط ومش محتاس", "red": true },
-      { "text": "وبكيفي أنا هعيش ويا ريت يا نحس متجيش", "red": true },
-      { "text": "وإن جئت لي يوم متلقينيش", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "أنا كدا الفل الفل.. وتمام أوي وبخير", "red": false },
-      { "text": " ", "red": false },
-      { "text": "ومعدش في دوشة تاني.. ولا حتى زن كتير", "red": false },
-      { "text": " ", "red": false },
-      { "text": "من قبل لما أقابلها.. أنا كنت ملياردير", "red": false },
-      { "text": " ", "red": false },
-      { "text": "وللأسف على إيدها.. نزلت لمليونير", "red": false }
+      {
+        "text": "معرفش أنا إيه رماني.. في سكة الارتباط",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ما أنا كنت سينجل لكن.. عايشها في انبساط",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بتأخر مهما أتأخر.. ولا حد بيسأل ليه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولا كان في أي نكد.. بصحى وبنام عليه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ودا كان كابوس وخلاص أهو راح",
+        "red": true
+      },
+      {
+        "text": "والهم من على قلبي انزاح",
+        "red": true
+      },
+      {
+        "text": "دلوقتي أنا عايش مرتاح",
+        "red": true
+      },
+      {
+        "text": "لا هقول أسف تاني ولا سماح",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وخلاص كدة خلاص أنا سبت دائرة الجواز",
+        "red": true
+      },
+      {
+        "text": "والبال بقى حلو وعال متظبط ومش محتاس",
+        "red": true
+      },
+      {
+        "text": "وبكيفي أنا هعيش ويا ريت يا نحس متجيش",
+        "red": true
+      },
+      {
+        "text": "وإن جئت لي يوم متلقينيش",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنا كدا الفل الفل.. وتمام أوي وبخير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومعدش في دوشة تاني.. ولا حتى زن كتير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "من قبل لما أقابلها.. أنا كنت ملياردير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وللأسف على إيدها.. نزلت لمليونير",
+        "red": false
+      }
     ]
   },
   {
@@ -638,60 +2274,222 @@ export const allSongs: any[] = [
     "title": "لو خطّي",
     "type": "بوب",
     "lyrics": [
-      { "text": "حبيبي شفته أنا مرة.. ودبت في هواه والله", "red": false },
-      { "text": "وأما قابلته تاني مرة.. خد مني روحي وويله", "red": false },
-      { "text": " ", "red": false },
-      { "text": "فاتني كدا بنظرة.. وشكله عاوزه في وسطه", "red": false },
-      { "text": "دا على الأرض لو خطّى.. بلاقي كله ليه وطّى", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "دا خد قلبي مستأذنش", "red": true },
-      { "text": "ولو سابني متطمنش", "red": true },
-      { "text": " ", "red": false },
-      { "text": "محتاجه جنبي وميبعدش", "red": true },
-      { "text": "كلامي جد أنا مبكذبش", "red": true },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "في غيره لا مبفكرش", "red": true },
-      { "text": "ونفسي بقى ميتغيرش", "red": true },
-      { "text": " ", "red": false },
-      { "text": "وأنا معاه مبتهورش", "red": true },
-      { "text": "دا على زعلُه أنا مبقدرش", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "حبيبي كله حنيه.. طبيعي مية مية", "red": false },
-      { "text": "عشانه قلبي بقى غية.. إمتى هيجي تاني ليه؟", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "دا حلو وسيد الحلوين.. دا غالي وسيد الغاليين", "red": false },
-      { "text": "دا لو يعرف إني حزين.. بيجي لي حتى لو كان فين", "red": false },
-      { "text": " ", "red": false },
-      { "text": "دا لون عينه حيرني.. وبجنونه غيّرني", "red": false },
-      { "text": "وعلى صوته سهّرني.. مينفعش يهجرني", "red": false },
-      { "text": " ", "red": false },
-      { "text": "وفي التقل دا معدّي.. لكن عندي بيهدّي", "red": false },
-      { "text": "مين بيحبه بقى قدّي.. غالي وسعره مش مادي", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "آه فيه بسمة بتخلي", "red": true },
-      { "text": "نجوم ليلي تضحك لي", "red": true },
-      { "text": " ", "red": false },
-      { "text": "هواه خلاص سكن عقلي", "red": true },
-      { "text": "ولو أغيب بيشتاق لي", "red": true },
-      { "text": " ", "red": false },
-      { "text": "دا نوره غطى على شمسي", "red": true },
-      { "text": "بقى شاغل يومي وأمسي", "red": true },
-      { "text": " ", "red": false },
-      { "text": "صوته يا ناس بقى همسي", "red": true },
-      { "text": "وجوده بنسى بيه يأسي", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "دا يأمرني وأنا أنفذ.. عليه ضحكة بتحفز", "red": false },
-      { "text": "معاه أيوه أنا مركز.. حبّه في قلبي متبروز", "red": false },
-      { "text": " ", "red": false },
-      { "text": "ومن حقه يتدلع.. جماله حلو ومسمّع", "red": false },
-      { "text": "بغيب أغيب وليه برجع.. ما دا الأصل والمنبع", "red": false },
+      {
+        "text": "حبيبي شفته أنا مرة.. ودبت في هواه والله",
+        "red": false
+      },
+      {
+        "text": "وأما قابلته تاني مرة.. خد مني روحي وويله",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فاتني كدا بنظرة.. وشكله عاوزه في وسطه",
+        "red": false
+      },
+      {
+        "text": "دا على الأرض لو خطّى.. بلاقي كله ليه وطّى",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا خد قلبي مستأذنش",
+        "red": true
+      },
+      {
+        "text": "ولو سابني متطمنش",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "محتاجه جنبي وميبعدش",
+        "red": true
+      },
+      {
+        "text": "كلامي جد أنا مبكذبش",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "في غيره لا مبفكرش",
+        "red": true
+      },
+      {
+        "text": "ونفسي بقى ميتغيرش",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأنا معاه مبتهورش",
+        "red": true
+      },
+      {
+        "text": "دا على زعلُه أنا مبقدرش",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حبيبي كله حنيه.. طبيعي مية مية",
+        "red": false
+      },
+      {
+        "text": "عشانه قلبي بقى غية.. إمتى هيجي تاني ليه؟",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا حلو وسيد الحلوين.. دا غالي وسيد الغاليين",
+        "red": false
+      },
+      {
+        "text": "دا لو يعرف إني حزين.. بيجي لي حتى لو كان فين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا لون عينه حيرني.. وبجنونه غيّرني",
+        "red": false
+      },
+      {
+        "text": "وعلى صوته سهّرني.. مينفعش يهجرني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وفي التقل دا معدّي.. لكن عندي بيهدّي",
+        "red": false
+      },
+      {
+        "text": "مين بيحبه بقى قدّي.. غالي وسعره مش مادي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "آه فيه بسمة بتخلي",
+        "red": true
+      },
+      {
+        "text": "نجوم ليلي تضحك لي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هواه خلاص سكن عقلي",
+        "red": true
+      },
+      {
+        "text": "ولو أغيب بيشتاق لي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا نوره غطى على شمسي",
+        "red": true
+      },
+      {
+        "text": "بقى شاغل يومي وأمسي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "صوته يا ناس بقى همسي",
+        "red": true
+      },
+      {
+        "text": "وجوده بنسى بيه يأسي",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا يأمرني وأنا أنفذ.. عليه ضحكة بتحفز",
+        "red": false
+      },
+      {
+        "text": "معاه أيوه أنا مركز.. حبّه في قلبي متبروز",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومن حقه يتدلع.. جماله حلو ومسمّع",
+        "red": false
+      },
+      {
+        "text": "بغيب أغيب وليه برجع.. ما دا الأصل والمنبع",
+        "red": false
+      }
     ]
   },
   {
@@ -699,72 +2497,266 @@ export const allSongs: any[] = [
     "title": "متوتر",
     "type": "روك",
     "lyrics": [
-      { "text": "صحيت من نومي متعصب .. وكل دقيقة متوتر", "red": false },
-      { "text": "فقلت للهواء أطلع .. عشان حالي يكون أفضل", "red": false },
-      { "text": "وفجأة لقيت قمر نور..  صراحة أُعجبت بالمنظر", "red": false },
-      { "text": "  ...............", "red": false },
-      { "text": "جماله يا ناس مزغلل عيني.. وعوده شديد ومتأصل", "red": false },
-      { "text": " ", "red": false },
-      { "text": "لابس JEANS و JACKET أحمر ..ربكني فضلت متحيّر", "red": false },
-      { "text": " ", "red": false },
-      { "text": "جريت عليه قلت له استنى .. ولو تسمح لي نتعرف", "red": false },
-      { "text": " ", "red": false },
-      { "text": "فقال لي أنت مش مؤدب ..ضربني قلم يا ناس طرقع", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "مشي وسابني وفضلت وراه.. لحد ما جبت سكة معاه", "red": false },
-      { "text": " ", "red": false },
-      { "text": "طلبت أن أحنا نتمشى.. وعرفت منها عنوانها", "red": false },
-      { "text": " ", "red": false },
-      { "text": "وعزمتها على أحلى أكلة .. هنتكلم و نتعشى ما تهدى يا قمر حبة", "red": false },
-      { "text": " ", "red": false },
-      { "text": "هاجي بالليل أروح بيكي.. قالت لي خلاص أنا موافقة", "red": false },
-      { "text": " ", "red": false },
-      { "text": "ورحت أجهز للمقابلة.. وبعد الوقت بالثانية", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "أنا مشتاق وبستني ندهت عليكي 100 ندها", "red": true },
-      { "text": "أجيبيني", "red": true },
-      { "text": " ", "red": false },
-      { "text": "أجيبي عليه لو برنه أنا يا جنتي", "red": true },
-      { "text": "بدوب فيكي", "red": true },
-      { "text": " ", "red": false },
-      { "text": "يا ورده ومن عيوني شرده أنا البستان", "red": true },
-      { "text": "تعالي لي", "red": true },
-      { "text": " ", "red": false },
-      { "text": "يا كوكتيل قلبي يا منجه أنا والله ولهان", "red": true },
-      { "text": "أنا ليكي", "red": true },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "خطفتيني", "red": true },
-      { "text": "سحرتي لقلبي أخذتي عقلي ما سبتيني", "red": true },
-      { "text": " ", "red": false },
-      { "text": "يا نور عيني", "red": true },
-      { "text": "يا نور عيني يا روح قلبي اه يا حنيني", "red": true },
-      { "text": " ", "red": false },
-      { "text": "خطفتيني أجيبيني وحبيني", "red": true },
-      { "text": " ", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "أنا قلبي إليك ميّال.. يا شعر حرير وعين غزلان", "red": false },
-      { "text": " ", "red": false },
-      { "text": "أموت أنا في رمشك القتال.. وكمان مكياجك الألوان", "red": false },
-      { "text": " ", "red": false },
-      { "text": "د أنا لمّا بلمس إيديكي.. بدوخ وبحس بالتوهان", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "So fantastic دا وسطك أستك ..أنتي الأصل هما بلاستك", "red": false },
-      { "text": " ", "red": false },
-      { "text": "أنا بتعب لو أبعد عنك.. وبرتاح جدا وأنا جمبك", "red": false },
-      { "text": " ", "red": false },
-      { "text": "قولي لي أي بس نفسك فيه.. وحالا هتلقيه عندك", "red": false },
-      { "text": "............... ", "red": false },
-      { "text": "أميرتي يا أحلى Virginia  ..معاكي بحس بالدنيا", "red": false },
-      { "text": " ", "red": false },
-      { "text": "جمالها شرقي على أبوه... دي من مصر مش ألمانيا", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "عاوز أقول لك أني بهواكي.. وأنك فعلا غيرتيني", "red": false },
-      { "text": " ", "red": false },
-      { "text": "وأني بلقى قلبي معاكي.. وشكلي هكمل نص ديني", "red": false },
-    
+      {
+        "text": "صحيت من نومي متعصب .. وكل دقيقة متوتر",
+        "red": false
+      },
+      {
+        "text": "فقلت للهواء أطلع .. عشان حالي يكون أفضل",
+        "red": false
+      },
+      {
+        "text": "وفجأة لقيت قمر نور..  صراحة أُعجبت بالمنظر",
+        "red": false
+      },
+      {
+        "text": "  ...............",
+        "red": false
+      },
+      {
+        "text": "جماله يا ناس مزغلل عيني.. وعوده شديد ومتأصل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لابس JEANS و JACKET أحمر ..ربكني فضلت متحيّر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "جريت عليه قلت له استنى .. ولو تسمح لي نتعرف",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فقال لي أنت مش مؤدب ..ضربني قلم يا ناس طرقع",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مشي وسابني وفضلت وراه.. لحد ما جبت سكة معاه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طلبت أن أحنا نتمشى.. وعرفت منها عنوانها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وعزمتها على أحلى أكلة .. هنتكلم و نتعشى ما تهدى يا قمر حبة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هاجي بالليل أروح بيكي.. قالت لي خلاص أنا موافقة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ورحت أجهز للمقابلة.. وبعد الوقت بالثانية",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنا مشتاق وبستني ندهت عليكي 100 ندها",
+        "red": true
+      },
+      {
+        "text": "أجيبيني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أجيبي عليه لو برنه أنا يا جنتي",
+        "red": true
+      },
+      {
+        "text": "بدوب فيكي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا ورده ومن عيوني شرده أنا البستان",
+        "red": true
+      },
+      {
+        "text": "تعالي لي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا كوكتيل قلبي يا منجه أنا والله ولهان",
+        "red": true
+      },
+      {
+        "text": "أنا ليكي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "خطفتيني",
+        "red": true
+      },
+      {
+        "text": "سحرتي لقلبي أخذتي عقلي ما سبتيني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا نور عيني",
+        "red": true
+      },
+      {
+        "text": "يا نور عيني يا روح قلبي اه يا حنيني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "خطفتيني أجيبيني وحبيني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنا قلبي إليك ميّال.. يا شعر حرير وعين غزلان",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أموت أنا في رمشك القتال.. وكمان مكياجك الألوان",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "د أنا لمّا بلمس إيديكي.. بدوخ وبحس بالتوهان",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "So fantastic دا وسطك أستك ..أنتي الأصل هما بلاستك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا بتعب لو أبعد عنك.. وبرتاح جداً وأنا جمبك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قولي لي أي بس نفسك فيه.. وحالاً هتلقيه عندك",
+        "red": false
+      },
+      {
+        "text": "............... ",
+        "red": false
+      },
+      {
+        "text": "أميرتي يا أحلى Virginia  ..معاكي بحس بالدنيا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "جمالها شرقي على أبوه... دي من مصر مش ألمانيا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عاوز أقول لك أني بهواكي.. وأنك فعلاً غيرتيني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأني بلقى قلبي معاكي.. وشكلي هكمل نص ديني",
+        "red": false
+      }
     ]
   },
   {
@@ -772,45 +2764,162 @@ export const allSongs: any[] = [
     "title": "مش طبيعي",
     "type": "رومانسي & مقسوم",
     "lyrics": [
-      { "text": "دا أكيد مش طبيعي .. دا أكيد مش بجد", "red": false },
-      { "text": " ", "red": false },
-      { "text": "دا باين أنه شيء خيالي .. دا مفيش زيه حد", "red": false },
-      { "text": " ", "red": false },
-      { "text": "دا شاغل لي نن عيني .. دا اللي شد قلبي شد", "red": false },
-      { "text": " ", "red": false },
-      { "text": "دا جماله شغل عالي .. قصاد الحلوين يسد", "red": false },
-      { "text": "...............", "red": false },
-      { "text": "دا خطير يا ناس خطورة .. وصل لأبعد حدود", "red": false },
-      { "text": " ", "red": false },
-      { "text": "سحره جابني وبسهولة .. دا عليه حبة ردود", "red": false },
-      { "text": " ", "red": false },
-      { "text": "دبت فيه من نظرة أولى .. أبو عيون زي الورود", "red": false },
-      { "text": "أحلى من دولا ودوله .. دا مفيش زيه في الوجود", "red": false },
-      { "text": "...............", "red": false },
-      { "text": "دا ملوش مثيل عيني ع التفاصيل", "red": true },
-      { "text": "لمّا بيمشي ويتدنجل قلبي بيقع أسير", "red": true },
-      { "text": " ", "red": true },
-      { "text": "دا ملوش ملكه أنا نفسي ألاقي له سكه", "red": true },
-      { "text": "أنا مش حمل الكلام دا والله الموضوع كبير", "red": true },
-      { "text": " ", "red": true },
-      { "text": "دا حلو ومسكّر مشّى الطعم الممرّ", "red": true },
-      { "text": "نسخه ولن تتكرّر نجم وليه جماهير", "red": true },
-      { "text": "...............", "red": false },
-      { "text": "آه يا ويلي من دلاله .. خلاني أعشق السهر", "red": false },
-      { "text": " ", "red": false },
-      { "text": "ولا رقته وحنانه .. داوى قلبي اللي انكسر", "red": false },
-      { "text": " ", "red": false },
-      { "text": "دا جوا قلبي خد مكانه .. ودا المفيد المختصر", "red": false },
-      { "text": " ", "red": false },
-      { "text": "أيوه مغرم أنا بجنابه .. دا اللي ضحكته قمر", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "دي الحقيقة مش بهزر .. أيوه فيه بقيت بفكر", "red": false },
-      { "text": " ", "red": false },
-      { "text": "دا اللي حبه فيه سيطر .. لا فعلا لازم يتقدر", "red": false },
-      { "text": " ", "red": false },
-      { "text": "أنا شايف قمر منور .. غمزته بتخليني أتوتر", "red": false },
-      { "text": " ", "red": false },
-      { "text": "حلو أوي وكمان مسكر .. على بعده عمري ما أقدر", "red": false }
+      {
+        "text": "دا أكيد مش طبيعي .. دا أكيد مش بجد",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا باين أنه شيء خيالي .. دا مفيش زيه حد",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا شاغل لي نن عيني .. دا اللي شد قلبي شد",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا جماله شغل عالي .. قصاد الحلوين يسد",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "دا خطير يا ناس خطورة .. وصل لأبعد حدود",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "سحره جابني وبسهولة .. دا عليه حبة ردود",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دبت فيه من نظرة أولى .. أبو عيون زي الورود",
+        "red": false
+      },
+      {
+        "text": "أحلى من دولا ودوله .. دا مفيش زيه في الوجود",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "دا ملوش مثيل عيني ع التفاصيل",
+        "red": true
+      },
+      {
+        "text": "لمَّا بيمشي ويتدنجل قلبي بيقع أسير",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": true
+      },
+      {
+        "text": "دا ملوش ملكه أنا نفسي ألاقي له سكه",
+        "red": true
+      },
+      {
+        "text": "أنا مش حمل الكلام دا والله الموضوع كبير",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": true
+      },
+      {
+        "text": "دا حلو ومسكَّر مشَّى الطعم المِمَرّ",
+        "red": true
+      },
+      {
+        "text": "نسخه ولن تتكرَّر نجم وليه جماهير",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "آه يا ويلي من دلاله .. خلاني أعشق السهر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولا رقته وحنانه .. داوى قلبي اللي انكسر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا جوا قلبي خد مكانه .. ودا المفيد المختصر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أيوه مغرم أنا بجنابه .. دا اللي ضحكته قمر",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دي الحقيقة مش بهزر .. أيوه فيه بقيت بفكر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا اللي حبه فيه سيطر .. لا فعلا لازم يتقدر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا شايف قمر منور .. غمزته بتخليني أتوتر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حلو أوي وكمان مسكر .. على بعده عمري ما أقدر",
+        "red": false
+      }
     ]
   },
   {
@@ -818,33 +2927,114 @@ export const allSongs: any[] = [
     "title": "عايش عشانك",
     "type": "رومانسي",
     "lyrics": [
-      { "text": "تسمح لي أكون ف حياتك ... وأشغل معظم أوقاتك", "red": false },
-      { "text": "وأتكلم وقت سُكاتك  ... و أفضفض وأحكي معاك", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "تسمح لي أقول لجنابك ... أنا قلبي واقف على بابك", "red": false },
-      { "text": "دايب ولهان في غرامك ... نفسه أنه يقرب ليك", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "قولها لي ", "red": true },
-      { "text": "يا حبيبي متخبيش .. ريحني متسبنيش", "red": true },
-      { "text": " قلقان كدا و محتار", "red": true },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "يا ليالي", "red": true },
-      { "text": "خليكي شاهده عليّا .. قمرك خلاص بقا ليّه", "red": true },
-      { "text": "ومعايا ليل و نهار ", "red": true },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "دا بقا لي", "red": true },
-      { "text": "روحي و حبيبي الغالي .. والدنيا بالنسبه لي", "red": true },
-      { "text": "وأجمل إختيار", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "بصراحة عيناك شغلوني ... وببرائتهم شدوني", "red": false },
-      { "text": "وأهو من يومها خلوني  ... مش بقدر لحظه أنساك", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "مش عوزك تشغل بالك ... أنا عايش بس عشانك", "red": false },
-      { "text": "أيوه أنا سندك و أمانك ... أنا كُلّي ملك أيديك", "red": false }
+      {
+        "text": "تسمح لي أكون ف حياتك ... وأشغل معظم أوقاتك",
+        "red": false
+      },
+      {
+        "text": "وأتكلم وقت سُكاتك  ... و أفضفض وأحكي معاك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "تسمح لي أقول لجنابك ... أنا قلبي واقف على بابك",
+        "red": false
+      },
+      {
+        "text": "دايب ولهان في غرامك ... نفسه أنه يقرب ليك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "قولها لي ",
+        "red": true
+      },
+      {
+        "text": "يا حبيبي متخبيش .. ريحني متسبنيش",
+        "red": true
+      },
+      {
+        "text": " قلقان كدا و محتار",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا ليالي",
+        "red": true
+      },
+      {
+        "text": "خليكي شاهده عليّا .. قمرك خلاص بقا ليّه",
+        "red": true
+      },
+      {
+        "text": "ومعايا ليل و نهار ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا بقا لي",
+        "red": true
+      },
+      {
+        "text": "روحي و حبيبي الغالي .. والدنيا بالنسبه لي",
+        "red": true
+      },
+      {
+        "text": "وأجمل إختيار",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "بصراحة عيناك شغلوني ... وببرائتهم شدوني",
+        "red": false
+      },
+      {
+        "text": "وأهو من يومها خلوني  ... مش بقدر لحظه أنساك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مش عوزك تشغل بالك ... أنا عايش بس عشانك",
+        "red": false
+      },
+      {
+        "text": "أيوه أنا سندك و أمانك ... أنا كُلّي ملك أيديك",
+        "red": false
+      }
     ]
   },
   {
@@ -852,57 +3042,210 @@ export const allSongs: any[] = [
     "title": "معايا ما يُثبت",
     "type": "بوب",
     "lyrics": [
-      { "text": "يا ليالي الشوق الحلوة", "red": false },
-      { "text": "دا حبيبي على قلبي استولى", "red": false },
-      { "text": "هو الأول والأولى", "red": false },
-      { "text": "مهما الناس منه يغيروا", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "يا نجوم الليل القائدة", "red": false },
-      { "text": "أنا درجة حُبي أهي زايدة", "red": false },
-      { "text": "ومفيش من الإنكار فايدة", "red": false },
-      { "text": "ولا في مقاومة لتأثيره", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "على كيفك ميل وأتهنى", "red": false },
-      { "text": "ياما قلبي دا فيك أتمنى", "red": false },
-      { "text": "وبحُبك عاش يتغنى", "red": false },
-      { "text": "ويهتم بتقديره", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "ياما نفسي تقرب مني..", "red": false },
-      { "text": "على تقلك الله يعيني", "red": false },
-      { "text": "دا وجودك بيطمني..", "red": false },
-      { "text": "ومن الفرحة عيوني بيطيروا", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "من حقك تسأل عني", "red": true },
-      { "text": "وأنت هتكتشف إني", "red": true },
-      { "text": "مفيش غيرك شاغلني", "red": true },
-      { "text": "ولا غيرك غير حالي", "red": true },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "دا أنا جاي وفاتح لك قلبي", "red": true },
-      { "text": "يا ملاك على عيني معدي", "red": true },
-      { "text": "طول ما أنت معايا أنا مرضي", "red": true },
-      { "text": "قولي بحبك قولها لي", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "قالوا الفرصة بتيجي مرة", "red": false },
-      { "text": "وأنا لفيت كل القارة", "red": false },
-      { "text": " ", "red": false },
-      { "text": "بس أنت قمر ما شاء الله", "red": false },
-      { "text": "قلبي ماسك فيك ومثبّت", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "في كتير جاي وكتير عدى", "red": false },
-      { "text": "بس مفيش منك أهدى", "red": false },
-      { "text": " ", "red": false },
-      { "text": "قلبك يا حبيبي فيه بركة", "red": false },
-      { "text": "حبيت ومعايا ما يثبت", "red": false }
+      {
+        "text": "يا ليالي الشوق الحلوة",
+        "red": false
+      },
+      {
+        "text": "دا حبيبي على قلبي استولى",
+        "red": false
+      },
+      {
+        "text": "هو الأول والأولى",
+        "red": false
+      },
+      {
+        "text": "مهما الناس منه يغيروا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا نجوم الليل القائدة",
+        "red": false
+      },
+      {
+        "text": "أنا درجة حُبي أهي زايدة",
+        "red": false
+      },
+      {
+        "text": "ومفيش من الإنكار فايدة",
+        "red": false
+      },
+      {
+        "text": "ولا في مقاومة لتأثيره",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "على كيفك ميل وأتهنى",
+        "red": false
+      },
+      {
+        "text": "ياما قلبي دا فيك أتمنى",
+        "red": false
+      },
+      {
+        "text": "وبحُبك عاش يتغنى",
+        "red": false
+      },
+      {
+        "text": "ويهتم بتقديره",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ياما نفسي تقرب مني..",
+        "red": false
+      },
+      {
+        "text": "على تقلك الله يعيني",
+        "red": false
+      },
+      {
+        "text": "دا وجودك بيطمني..",
+        "red": false
+      },
+      {
+        "text": "ومن الفرحة عيوني بيطيروا",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "من حقك تسأل عني",
+        "red": true
+      },
+      {
+        "text": "وأنت هتكتشف إني",
+        "red": true
+      },
+      {
+        "text": "مفيش غيرك شاغلني",
+        "red": true
+      },
+      {
+        "text": "ولا غيرك غير حالي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا أنا جاي وفاتح لك قلبي",
+        "red": true
+      },
+      {
+        "text": "يا ملاك على عيني معدي",
+        "red": true
+      },
+      {
+        "text": "طول ما أنت معايا أنا مرضي",
+        "red": true
+      },
+      {
+        "text": "قولي بحبك قولها لي",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "قالوا الفرصة بتيجي مرة",
+        "red": false
+      },
+      {
+        "text": "وأنا لفيت كل القارة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بس أنت قمر ما شاء الله",
+        "red": false
+      },
+      {
+        "text": "قلبي ماسك فيك ومثبّت",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "في كتير جاي وكتير عدى",
+        "red": false
+      },
+      {
+        "text": "بس مفيش منك أهدى",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلبك يا حبيبي فيه بركة",
+        "red": false
+      },
+      {
+        "text": "حبيت ومعايا ما يثبت",
+        "red": false
+      }
     ]
   },
   {
@@ -910,55 +3253,202 @@ export const allSongs: any[] = [
     "title": "بُرج الميزان",
     "type": "بوب",
     "lyrics": [
-      { "text": "أنت حبيبي ومفيش .. حبيب غيرك", "red": false },
-      { "text": "ولا في كلام يوصف .. جمال عينك", "red": false },
-      { "text": " ", "red": false },
-      { "text": "ولا في غرام زي اللي .. بيني وبينك", "red": false },
-      { "text": "أبعت سلام لعيوني .. لو وحشينك", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "برج الميزان على قلبي .. أهو سيطر", "red": false },
-      { "text": "دا الدنجوان بضعف معاه .. مش بقدر", "red": false },
-      { "text": " ", "red": false },
-      { "text": "وفي أي مكان على كيفه .. يتمخطر", "red": false },
-      { "text": "مجنون جنان وإديني .. أهو بحذر", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "دا ميتلقارنش بحد .. عشان مفيش منه", "red": true },
-      { "text": " ", "red": false },
-      { "text": "وإن جئتم بقى للجد .. أدمنت أنا حبه", "red": true },
-      { "text": " ", "red": false },
-      { "text": "لو وصفه دا بيتعد .. هتملوا من عده", "red": true },
-      { "text": " ", "red": false },
-      { "text": "أبو خده زي الورد .. هو اللي أنا اخترته", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "دا قمر في وسط الليل سهرني..", "red": false },
-      { "text": "وكل لما يميل يحيرني", "red": false },
-      { "text": " ", "red": false },
-      { "text": "بس أنا نفسي طويل ومستني..", "red": false },
-      { "text": "لحد ما يسلم روحه لقلبي", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "ويا حضرة المعشوق يا أسرني..", "red": false },
-      { "text": "أنا برضه ليا حقوق تمكنني؟", "red": false },
-      { "text": " ", "red": false },
-      { "text": "بالاحترام والذوق أشوف يعني..", "red": false },
-      { "text": "هل في طريق الشوق جبت آخري؟", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "دا ملاك ونزل الأرض.. دوبنا بهدوءه", "red": true },
-      { "text": " ", "red": false },
-      { "text": "وأنا عليه أشرت.. لما بعيني شفته", "red": true },
-      { "text": " ", "red": false },
-      { "text": "دا أنا والله اتشرفت.. فعلا بمعرفته", "red": true },
-      { "text": " ", "red": false },
-      { "text": "كل اللي كان جوايا.. من ناحيته قلته", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "قالوا الجمال في الروح يا روح قلبي..", "red": false },
-      { "text": "ولأنه مش مسموح تغيب عني", "red": false },
-      { "text": " ", "red": false },
-      { "text": "في كل مرة تروح وتفارقني..", "red": false },
-      { "text": "بحس إن الكون مخاصمني", "red": false },
+      {
+        "text": "أنت حبيبي ومفيش .. حبيب غيرك",
+        "red": false
+      },
+      {
+        "text": "ولا في كلام يوصف .. جمال عينك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولا في غرام زي اللي .. بيني وبينك",
+        "red": false
+      },
+      {
+        "text": "أبعت سلام لعيوني .. لو وحشينك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "برج الميزان على قلبي .. أهو سيطر",
+        "red": false
+      },
+      {
+        "text": "دا الدنجوان بضعف معاه .. مش بقدر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وفي أي مكان على كيفه .. يتمخطر",
+        "red": false
+      },
+      {
+        "text": "مجنون جنان وإديني .. أهو بحذر",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا ميتلقارنش بحد .. عشان مفيش منه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وإن جئتم بقى للجد .. أدمنت أنا حبه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لو وصفه دا بيتعد .. هتملوا من عده",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أبو خده زي الورد .. هو اللي أنا اخترته",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا قمر في وسط الليل سهرني..",
+        "red": false
+      },
+      {
+        "text": "وكل لما يميل يحيرني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بس أنا نفسي طويل ومستني..",
+        "red": false
+      },
+      {
+        "text": "لحد ما يسلم روحه لقلبي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ويا حضرة المعشوق يا أسرني..",
+        "red": false
+      },
+      {
+        "text": "أنا برضه ليا حقوق تمكنني؟",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بالاحترام والذوق أشوف يعني..",
+        "red": false
+      },
+      {
+        "text": "هل في طريق الشوق جبت آخري؟",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا ملاك ونزل الأرض.. دوبنا بهدوءه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأنا عليه أشرت.. لما بعيني شفته",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا أنا والله اتشرفت.. فعلاً بمعرفته",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كل اللي كان جوايا.. من ناحيته قلته",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "قالوا الجمال في الروح يا روح قلبي..",
+        "red": false
+      },
+      {
+        "text": "ولأنه مش مسموح تغيب عني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "في كل مرة تروح وتفارقني..",
+        "red": false
+      },
+      {
+        "text": "بحس إن الكون مخاصمني",
+        "red": false
+      }
     ]
   },
   {
@@ -966,66 +3456,246 @@ export const allSongs: any[] = [
     "title": "سنّه سنّه",
     "type": "بوب",
     "lyrics": [
-      { "text": "لو جه جنبي ", "red": false },
-      { "text": "مبصدقشي .. وبخاف يمشي", "red": false },
-      { "text": "يبعد عني", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "أصله شاغلني", "red": false },
-      { "text": "و بعنيه ساحرني.. و تُقله تاعبني", "red": false },
-      { "text": "و محيرني ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "أنا مستني", "red": false },
-      { "text": "يوم يسمعني.. عيشان أحكي له  ", "red": false },
-      { "text": "اللي في قلبي", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "وبحبك آه بحبك", "red": true },
-      { "text": "ومخبي ونفسي أن أبين", "red": true },
-      { "text": " ", "red": false },
-      { "text": "استنى بس واسمع ", "red": true },
-      { "text": " خليك راسي بقا ولين", "red": true },
-      { "text": " ", "red": false },
-      { "text": "دي كلمة بس كلمة", "red": true },
-      { "text": "هتخلي طريقي كله هين", "red": true },
-      { "text": " ", "red": false },
-      { "text": "تعالى لي سنة سنة ", "red": true },
-      { "text": "عرفني قد أي حنين", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "آه من أدبك", "red": false },
-      { "text": " آه من خجلك .. مين بقا زيّك", "red": false },
-      { "text": " مين بقا قدك", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "أيوه أنا عاشقك", "red": false },
-      { "text": "وكمان شاريك .. لكن برضه ", "red": false },
-      { "text": "منشف عقلك", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "عارف أنّك", "red": false },
-      { "text": "سابق سنّك ..عارف طبعك", "red": false },
-      { "text": "وعارف حيرتك", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "جوا في قلبي", "red": false },
-      { "text": " كاتب أسمك .. والله بحبك", "red": false },
-      { "text": "ياللي مفيش منك", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "وبحبك آه بحبك", "red": true },
-      { "text": "ومخبي ونفسي أن أبين", "red": true },
-      { "text": " ", "red": false },
-      { "text": "استنى بس واسمع ", "red": true },
-      { "text": " خليك راسي بقا ولين", "red": true },
-      { "text": " ", "red": false },
-      { "text": "دي كلمة بس كلمة", "red": true },
-      { "text": "هتخلي طريقي كله هين", "red": true },
-      { "text": " ", "red": false },
-      { "text": "تعالى لي سنة سنة ", "red": true },
-      { "text": "عرفني قد أي حنين", "red": true }
+      {
+        "text": "لو جه جنبي ",
+        "red": false
+      },
+      {
+        "text": "مبصدقشي .. وبخاف يمشي",
+        "red": false
+      },
+      {
+        "text": "يبعد عني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أصله شاغلني",
+        "red": false
+      },
+      {
+        "text": "و بعنيه ساحرني.. و تُقله تاعبني",
+        "red": false
+      },
+      {
+        "text": "و محيرني ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا مستني",
+        "red": false
+      },
+      {
+        "text": "يوم يسمعني.. عيشان أحكي له  ",
+        "red": false
+      },
+      {
+        "text": "اللي في قلبي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وبحبك آه بحبك",
+        "red": true
+      },
+      {
+        "text": "ومخبي ونفسي أن أبين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "استنى بس واسمع ",
+        "red": true
+      },
+      {
+        "text": " خليك راسي بقا ولين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دي كلمة بس كلمة",
+        "red": true
+      },
+      {
+        "text": "هتخلي طريقي كله هين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "تعالى لي سنة سنة ",
+        "red": true
+      },
+      {
+        "text": "عرفني قد أي حنين",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "آه من أدبك",
+        "red": false
+      },
+      {
+        "text": " آه من خجلك .. مين بقا زيّك",
+        "red": false
+      },
+      {
+        "text": " مين بقا قدك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أيوه أنا عاشقك",
+        "red": false
+      },
+      {
+        "text": "وكمان شاريك .. لكن برضه ",
+        "red": false
+      },
+      {
+        "text": "منشف عقلك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عارف أنّك",
+        "red": false
+      },
+      {
+        "text": "سابق سنّك ..عارف طبعك",
+        "red": false
+      },
+      {
+        "text": "وعارف حيرتك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "جوا في قلبي",
+        "red": false
+      },
+      {
+        "text": " كاتب أسمك .. والله بحبك",
+        "red": false
+      },
+      {
+        "text": "ياللي مفيش منك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وبحبك آه بحبك",
+        "red": true
+      },
+      {
+        "text": "ومخبي ونفسي أن أبين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "استنى بس واسمع ",
+        "red": true
+      },
+      {
+        "text": " خليك راسي بقا ولين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دي كلمة بس كلمة",
+        "red": true
+      },
+      {
+        "text": "هتخلي طريقي كله هين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "تعالى لي سنة سنة ",
+        "red": true
+      },
+      {
+        "text": "عرفني قد أي حنين",
+        "red": true
+      }
     ]
   },
   {
@@ -1033,37 +3703,121 @@ export const allSongs: any[] = [
     "title": "دُنيا عتمه",
     "type": "روك",
     "lyrics": [
-      { "text": " ", "red": false },
-      { "text": "دنيا عتمه .. جو ّ  كتمه .. روحي يأسه ", "red": false },
-      { "text": "لستُ علي ما يُرام", "red": false },
-      { "text": " ", "red": false },
-      { "text": "أيامي ماشيه لكن بالعافيه  ومشاعري جافه", "red": false },
-      { "text": "قلبي فاقد الغرام", "red": false },
-      { "text": " ", "red": false },
-      { "text": "نفسي أنسي .. اللي عدّي .. لو لمُدّه", "red": false },
-      { "text": " وأهرب حبّه من  الألم", "red": false },
-      { "text": " ", "red": false },
-      { "text": "نفسي مرّه  .. تسلم الجرّه  .. ومطلعش برّه ", "red": false },
-      { "text": "نفسي أحس أني تمام", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ...............", "red": false },
-      { "text": "دنيا بتلعبني .. ولعبها غشيم", "red": true },
-      { "text": "بحاول أمشي فيها  .. والطريق طويل", "red": true },
-      { "text": "نفسي تخف عليّا  .. أو تنساني شويه", "red": true },
-      { "text": "أو تاخد فاصل قصير", "red": true },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": " ", "red": false },
-      { "text": "نفسي أخد لي راحه .. و أعدل المزاج", "red": true },
-      { "text": "علي أخري بصراحه .. وعايش علي العلاج", "red": true },
-      { "text": "دا أنا بطلع من حفره .. بدخل تاني ف حفره", "red": true },
-      { "text": "لاء دا أنا موضوعي كبير", "red": true },
-      { "text": " ...............", "red": false },
-      { "text": "عيني عليّا..من الأسية..ماسكة فيّه", "red": false },
-      { "text": "مش عاوز", "red": false }
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دنيا عتمه .. جَو ّ  كتمه .. روحي يأسه ",
+        "red": false
+      },
+      {
+        "text": "لستُ علي ما يُرام",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أيامي ماشيه لكن بالعافيه  ومشاعري جافه",
+        "red": false
+      },
+      {
+        "text": "قلبي فاقد الغرام",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نفسي أنسي .. اللي عدّي .. لو لمُدّه",
+        "red": false
+      },
+      {
+        "text": " وأهرب حبّه من  الألم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نفسي مرّه  .. تسلم الجرّه  .. ومطلعش برّه ",
+        "red": false
+      },
+      {
+        "text": "نفسي أحس أني تمام",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دنيا بتلعبني .. ولعبها غشيم",
+        "red": true
+      },
+      {
+        "text": "بحاول أمشي فيها  .. والطريق طويل",
+        "red": true
+      },
+      {
+        "text": "نفسي تخف عليّا  .. أو تنساني شويه",
+        "red": true
+      },
+      {
+        "text": "أو تاخد فاصل قصير",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نفسي أخد لي راحه .. و أعدل المزاج",
+        "red": true
+      },
+      {
+        "text": "علي أخري بصراحه .. وعايش علي العلاج",
+        "red": true
+      },
+      {
+        "text": "دا أنا بطلع من حفره .. بدخل تاني ف حفره",
+        "red": true
+      },
+      {
+        "text": "لاء دا أنا موضوعي كبير",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "عيني عليّا..من الأسية..ماسكة فيّه",
+        "red": false
+      },
+      {
+        "text": "مش عاوز",
+        "red": false
+      }
     ]
   },
-    {
+  {
     "id": 21,
     "title": "أخر صبري",
     "type": "مقسوم",
@@ -1591,4865 +4345,16774 @@ export const allSongs: any[] = [
       }
     ]
   },
-{
-        "id": 25,
-        "title": "عندي مناعه",
-        "type": "مقسوم",
-        "lyrics": [
-          { "text": "أنا اللي لو دنياته تعباه ... بيعيش حياته في اللامبالاة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لا برُد ب ( لاء) ولا أرد ب ( اه) ... بسايس كله و باخده علي هواه ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " مش بسيب حدّ يعصبني ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لا بزعل يوم ولا بتضايق ... و لأيّ صُداع أنا مش فايق", "red": false },
-          { "text": " ", "red": false },
-          { "text": " مهما حصل برضه مزاجي رايق... وبحب الانبساط ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مبحبش أشغل بالي ... وأراء الناس مش فارقه لي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بحمد ربّي في كل حالتي ... و دائما راضي في كل الاوقات", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أنا عُمري ما أبيع الشاري ", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ولا أحب أرجع في قراري ", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ومليش في اللبس الغالي ", "red": true },
-          { "text": " ", "red": false },
-          { "text": "علشان شيء مش إجباري", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أخترت أعيش مع حالي ", "red": true },
-          { "text": " ", "red": false },
-          { "text": "و عاجبني أوي إختياري", "red": true },
-          { "text": " ", "red": false },
-          { "text": "و لو أيامي مش ضّحكه لي ", "red": true },
-          { "text": " ", "red": false },
-          { "text": "أنا بضحك علي اللي بيجري لي", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بقرّب  للّي يقرب مني ... و بطنش اللي بيبعد عني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "و مش بتأثر لو زاد همّي ... أنا عندي مناعه من الاحباط", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بغيّر في طريقي لوأتسد ... عاشق الهزار أكتر الجد", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ومش أيّ حدّ بيدخل قلبي ... م أنا قلبي مش ناقص صدامات", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "م أنا اللي لو دنياته تعباه ... بيعيش حياته في اللامبالاة", "red": false },
-          { "text": "لا برُد ب ( لاء) ولا أرد ب ( اه) ... بسايس كله و باخده علي هواه ", "red": false },
-          { "text": " مش بسيب حدّ يعصبني ", "red": false }
-        ]
-      },
-      {
-        "id": 26,
-        "title": "قمر الليل",
-        "type": "مقسوم",
-        "lyrics": [
-          { "text": "أيه يا أبو ضحكه جنان ... ليه في التُقل بقيت بتزيد", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا أنا أدمنتك إدمان ... حُبك دا بقا في كل وريد", "red": false },
-          { "text": " ", "red": false },
-          { "text": "حقك تفضل كدا تقلان ... و تسيبني و نار شوقي تأيد", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا أنت خطر علي الحلوين ... هما قدام أما أنت جديد", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ومسيرك يوم هتميل ... صدقني يا قمر الليل", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لو تيجي يا أبو رمش كحيل ... قلبي دا هيشيلك شيل", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لا مش محتاج تعديل ... أصل أنت بجد جميل", "red": true },
-          { "text": " ", "red": false },
-          { "text": "بصراحه مليان تفاصيل ... ومفيش منها إلا قليل", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أيه يا أبو أحلي ضفيره ... دا أنا من أفعالك بستغرب", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ليه هتسبني كدا في حيره ... ليه بس تملئ بتتهرب", "red": false },
-          { "text": " ", "red": false },
-          { "text": "خد قلبي أعمل فيه جميله ... متسبهوش يفضل متغرب", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا مفيش غير سيرتك سيره ... قلقان من أيه ماتقرب", "red": false }
-        ]
-      },
-      {
-        "id": 27,
-        "title": "كٌلنا بشر",
-        "type": "تحفيزية",
-        "lyrics": [
-          { "text": "منتش وحيد ف الدنيا دي ... في زيك بين الملايين", "red": false },
-          { "text": "مش فارقه اللون أو حتى الدين ... علشان كلنا بشر", "red": false },
-          { "text": "خلقنا رب العالمين ... وخلي لكل واحد قدر", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "في اللي عايش بيدور عليه ... واللي عايش حياته في ملل", "red": false },
-          { "text": "مع أن مفتاح الحياة ... هو كلمة أسمها الأمل", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "لازم يكون عندك طموح... وترفع رأسك في السما", "red": false },
-          { "text": "سيبك من اللي بيحبطوك... دا كل واحد جواه أسد", "red": false },
-          { "text": "بيداوي بيه كل الجروح... وبينسى بيه الألم", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "حب الحياة وعيشها ... بكل تفاصيلها", "red": true },
-          { "text": "دا الفرصة بتيجي مرة ...أوعى تفوتها", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "تلقى الحياة أحلى ... لما إنت تفهمها", "red": true },
-          { "text": "وتنشر البهجة ... وترضى بالمكتوب", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "هتعدي عليك أزمات كثير … ومواقف أكثر", "red": false },
-          { "text": "بس لازم تلغي المستحيل … لازم تفكر", "red": false },
-          { "text": "وتجيب لها الحل الأكيد … أوعى تتهرب", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مفيش حدّ  بينجح في شيء…مش حابُه أصلا", "red": false },
-          { "text": "دا كُل شخص في الحياة… لهُ عمل مُخصص", "red": false },
-          { "text": "دورك بقا تدور عليه… وفي تطور", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أوعى تقول يوم أنا ضعيف … أنا مش هقدر", "red": false },
-          { "text": "حاول تعمل اللي عليك … والباقي على ربك", "red": false },
-          { "text": "وشوف أنت هتوصل لإيه… وبعدها قرر", "red": false },
-          { "text": "أنت هتكمل الطريق… ولا هتغير", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وحاول لو وقعت في… أوعى تتأثر", "red": false },
-          { "text": "علشان تعرف تاني تقوم… وتبقى أقوى", "red": false },
-          { "text": "مع نهاية كُل غُروب… تبدأ حياة أصعب", "red": false },
-          { "text": "لازم تتواجه بالهدوء… علشان تتبسط", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "حب الحياة وعيشها ... بكل تفاصيلها", "red": true },
-          { "text": "دا الفرصة بتيجي مرة ...أوعى تفوتها", "red": true },
-          { "text": "تلقى الحياة أحلى ... لما إنت تفهمها", "red": true },
-          { "text": "وتنشر البهجة ... وترضى بالمكتوب", "red": true }
-        ]
-      },
-      {
-        "id": 28,
-        "title": "مش هوقّف",
-        "type": "تحفيزية",
-        "lyrics": [
-          { "text": "بيقولو إن الحلم طريق لازم تمشيه ... وأكيد همشيه ... أنا مش هفضل واقف في مكاني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لو في 100 حاجز قدامي أنا هقوي عليه ... لازم أعديه ... لازم أجازف و أرجع تاني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لو حتي قابلني في طريقي أي مطبات ... هنسي الاحباط ... هتعب وهطور في كياني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مش هتأثر ما أنا قلبي دا واخد علي الصدمات ... هشوف الخطوات ... اللي توصلني لنجاحي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أنا مش هوقّف أنا هكمل ... ومهما تعبت هستحمل", "red": true },
-          { "text": "عشان اوصل ل حلمي ... و أبقي اقوي من زمان", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ومهما فشلت مش هزعل ... و مش هاخد طريق أسهل", "red": true },
-          { "text": "أنا علي الصعب دا هقدر ... ومش هستسلم مهما كان", "red": true },
-          { "text": " ", "red": false },
-          { "text": "أكيد هيجيلي يوم و أنجح ... و باللي عملته أنا هفرح", "red": true },
-          { "text": "و شجرة حلمي دي هتطرح ... أمل و محبه و أمان", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "أوقات بيكون في قدمنا إختيارات ... وكثر أوقات ... بنلاقي حاجات مفروضه علينا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وساعات بيجي لنا أذي م الناس ... بلا أي أساس... وكأن هدفها تبكي عنينا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مش عيب إن احنا نقع ونقوم ... قبل ما يجي يوم ... و يكون اليأس إتحكم فينا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "إحساس الضغف ملوش لزوم ... ومينفعش يدوم ... علشان نقف علي رجلينا", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أنا مش هوقّف أنا هكمل ... ومهما تعبت هستحمل", "red": true },
-          { "text": "عشان اوصل ل حلمي ... و أبقي اقوي من زمان", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ومهما فشلت مش هزعل ... و مش هاخد طريق أسهل", "red": true },
-          { "text": "أنا علي الصعب دا هقدر ... ومش هستسلم مهما كان", "red": true },
-        ]
-      },
-      {
-        "id": 29,
-        "title": "سوبر هيرو",
-        "type": "تحفيزية",
-        "lyrics": [
-          { "text": "كمل وأجمد ومتيأسش... مهما هيحصل بكره هتوصل", "red": false },
-          { "text": "أوعي تقول كلمة مقدرش... مهما تلاقي الحمل بيتقل", "red": false },
-          { "text": "أعرف أن أنت ليك رب... دائما فاكرك عُمره م ينسي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "كل واحد جواه سوبر هيرو... محتاج بس اللي ياخد أيده", "red": true },
-          { "text": "ويخليه يكمل طريقه... ويدوس علي الصعب اللي فيه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "كل قمر ليل بعده في شمس... بتيجي تنور ومبتوقفش", "red": true },
-          { "text": "لو وقتك ضاع مبيرجعش... أحسن لك حافظ عليه", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "العُمر يجري  ومبيقفشي...  للشخص اللي مبيحلمش", "red": false },
-          { "text": "دا الاحلام مش بفلوس يعني... ومفيش حاجه مبتتحققش", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "كل واحد مكتوب له طريقه ... حتي لو كان فيه مطبات", "red": false },
-          { "text": "في اللي بيستسلم ل خوفه ... واللي بيوصل للنهايات", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "طول م أنت جواك في عزيمه ... هتقف تاني بعد الوقعات", "red": false },
-          { "text": "في معارك أخرتها عزيمه ... ومعارك فيها انتصارات", "red": false }
-        ]
-      },
-      {
-        "id": 30,
-        "title": "طوق نجاه",
-        "type": "تحفيزية",
-        "lyrics": [
-          { "text": "أفتح شباك الحياة... خبط على كل الببان", "red": false },
-          { "text": "إرسم الضحكة الطيبة...انشر البهجة في المكان", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "دا اللمة الحلوة بتبقى بينا... لما نلقى اللي يحتوينا", "red": false },
-          { "text": "واللي بنحس بحبه لينا... لما بس يبص في عينينا", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "تتحرك جوانا المشاعر... والقلب يقول إنه عاشق", "red": false },
-          { "text": " والعشق يزيد فتره بفتره ... ونلاقي النور من بعد ضلمه", "red": false },
-          { "text": "آه صحيح الدنيا بجد صعبة... بس مع بعض بتبقى أهون", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "دا الوحدة شيء زي الوباء... يفضل يزيد ومالوش علاج", "red": false },
-          { "text": "أما اللمة دي طوق نجاة... ف بلاش تستغني عنها لحظة", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أوقات كتير .. بنحب ناس... وبنخفي عنهم حبنا", "red": true },
-          { "text": "نرفض نبين .. الشعور... ليروحو خلاص منا", "red": true },
-          { "text": " ", "red": false },
-          { "text": "مع إنها .. بتحس بينا... وهي كمان بتحبنا", "red": true },
-          { "text": "وبتستني منا .. إننا... نيجي نصارحها بحبنا", "red": true },
-          { "text": "يعني الحاجة .. بتبقي بسيطة... لما تكون من قلبنا", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "دايما تلقي المهمومين... عايشين في حزن وفي ملل", "red": false },
-          { "text": "والفرح عندهم قليل... عشان مفيش ذرة أمل", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مع إنهم ممكن يخلوا... كل الهموم تبقي هنا", "red": false },
-          { "text": "م الدنيا دي لوحة جميلة... بس مش ملوانة", "red": false },
-          { "text": "وإحنا بقا الرسامين... وبنرسم فيها حلمنا", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أصل النجاح دا بيت كبير... لكن ببانُه متقفله", "red": false },
-          { "text": "لما بنلغي المستحيل... مفتاحها بيبقا في إيدينا", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "لازم يكون قلبك جرئ... وبشخصية متمكنة", "red": false },
-          { "text": "م أنت لو عشت يوم ضعيف... الدنيا بجد هتتعبك", "red": false }
-        ]
-      },
-      {
-        "id": 31,
-        "title": "كلو بيمثّل",
-        "type": "دراما",
-        "lyrics": [
-          { "text": " ", "red": false },
-          { "text": "هذه الكلمات باللهجة اللبنانية ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ما في حُب في هالدنيا.. كله أوهام", "red": false },
-          { "text": " ", "red": false },
-          { "text": "صرنا بنعيش الثانية.. مثل الأيام", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وكُل ما نرجع للماضي.. نلقى مقفول وفاضي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ما في غير النهار اللي.. راحوا في الأحباب", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وكُل مرّة تحب يا قلبي.. تطلع مجروح", "red": false },
-          { "text": "وكأن الفرح عندي.. ما بقى مسموح", "red": false },
-          { "text": "ما بقى في طاقة تكفي.. ما بقى في روح", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "كُل مرّة بفوت و بعدّي ... بيزيد أكتر وأكتر همي", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ليش الراحة ما بتلبألي؟... موجوع قلبي وزايد وجعي", "red": true },
-          { "text": " ", "red": false },
-          { "text": "جوايا نار..", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كُل ما ب شخص أحنا نتعلق ...فجأة يمشي ويبعد عنا", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وإحنا أصلا ما صدقنا... نلقى ياللي يكمل معانا", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لآخر المشوار", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "كلّه بيمثل على بعضه .. كلّه كذاب", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ما في حُب في هالدنيا.. كُل شي له حساب", "red": false },
-          { "text": " ", "red": false },
-          { "text": "حتى الغاليين عليّا.. ما بقوا يسألوا فيّه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "صار جُواهم أسيّه.. وكُره ونفاق", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وكُل مرّة يجي الليل.. عيوني ما بتنام", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بتضل دموعي تنزل.. ليش ضاع الأحلام", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ما بلاقي حدا يُواسيني.. وكأن العالم ناسيني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "والدنيا مُصرّة تخليني.. عايش في آلام", "red": false }
-        ]
-      },
-      {
-        "id": 32,
-        "title": "مجنني",
-        "type": "روك",
-        "lyrics": [
-          { "text": "حبيبي دا.. مش حبيب عادي.. حبيبي دا... هو كل حاجة", "red": false },
-          { "text": "وحبي ليه.. مش على الفاضي.. دا حبي ليه... يبقي أحلى حاجة", "red": false },
-          { "text": "وعاوزة أشوفه.. بس مش راضي.. وهو أصلا... مصدر السعادة", "red": false },
-          { "text": "ولو ظهر.. طيفه دا قصادي.. أكيد هتبقى... حالتي دي حالة", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "رمش عينه.. آه مجنوني.. رمش عينه... والله يحير", "red": false },
-          { "text": "هو فانه.. أصله سايبني.. هو فانه... آه عليه بدور", "red": false },
-          { "text": "اللي بينه.. شيء يبسطني.. اللي بينه... مش هيتغير", "red": false },
-          { "text": "عنده ضحكة.. آه بتسعدني.. عنده ضحكة... عليها مش بقدر", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "نفسي أحبه.. وحبه يزود... في قلبي حنين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وأفضل أسأل.. وأسأل... ألاقي زي دا فين؟", "red": true },
-          { "text": " ", "red": false },
-          { "text": "نفسي أفضل.. أدور وأعرف أكثر... عن عيونه الاثنين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "اللي رسمتهم.. وغمزتهم.. في ثانية... بيسحروا العين", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "فوق الخيال.. وصفه دا.. فوق الخيال... زي النجوم", "red": false },
-          { "text": "عليه جمال.. غريب يا ناس.. عليه جمال... بينسى الهموم", "red": false },
-          { "text": "مفيهوش جدال.هموت عليه.مفيهوش جدال... ودا في العموم", "red": false },
-          { "text": "حبل الوصال.. بيني وبينه.. حبل الوصال... لازم يدوم", "red": false }
-        ]
-      },
-      {
-        "id": 33,
-        "title": "بيني و بينك",
-        "type": "روك",
-        "lyrics": [
-          { "text": "بيني وبينك طريق , معرفش أخره أيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قلبك بحره غريق , وكثير غرقو فيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "و مهما الحال يضيق , لن أستسلم إليه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قلبي صحيح جرئ , لكن بخاف عليه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "على مر الزمان , والدهر والعُصور", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بات قلبك مكان , يصعُب له الوصول", "red": false },
-          { "text": " ", "red": false },
-          { "text": "صار وصفه خيال , لأنه جميل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "هو منجم السعادة , والشوق والحنين", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "فيه بلسم الجراح , والألم والوجع", "red": false },
-          { "text": " ", "red": false },
-          { "text": "هو مصدر النجاح , والحُب والأمل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فيه موطن الغرام , والعشق والعجب", "red": false },
-          { "text": " ", "red": false },
-          { "text": "هو جنة الكرام , وينبوع الغزل", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "قد طال ليل الحبيب , يا حبيبي ما الذي", "red": true },
-          { "text": " ", "red": false },
-          { "text": "يشغل بالك دائما , يجعلُك تبقا حائرا", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ولم الفؤاد ساهرا , هل يستفيض ماضيا", "red": true },
-          { "text": " ", "red": false },
-          { "text": "أم يستعد ساعيا , حتى يُشاركني الشعُور", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ويقول قولا واحدا , هو أنه عاشقا", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وعشقُه ظاهرا , في عينه وقد يطُول", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "أهلا ومرحبا , بقُرة العيون", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أصبحت مسمعا , يصل إلى الجنون", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قلبي أحبك , يا ذا القلب الحنون", "red": false },
-          { "text": " ", "red": false },
-          { "text": "والله قلبك عليه لن يهون", "red": false }
-        ]
-      },
-      {
-        "id": 34,
-        "title": "حقك تستغرب",
-        "type": "طرب",
-        "lyrics": [
-          { "text": "الجميل دا حد شافه .. حد شافه رُدو قولو", "red": false },
-          { "text": "حد لاحظ إختلافه .. حد لاحظ لون عيونه", "red": false },
-          { "text": "يطلع أسمه أيه جنابُه .. اللي غرنا بطوله", "red": false },
-          { "text": "عادي يعمل ما بداله .. وضعه ومساحته يسمحو له", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "لما جاء علينا نوّر .. نوره جوا عيني زغلل", "red": false },
-          { "text": "لا بجد مش بحور .. شكله حلو , شكله يهبل", "red": false },
-          { "text": "لاء دا فعلا لا يُقدر .. غمزتُه يا ناس تبرجل", "red": false },
-          { "text": "دا اللي أنا علي بدور .. دا اللي في دماغي بيشغل", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا مشتتني مخليني .. مبفكرش إلا فيه", "red": true },
-          { "text": "مش شايف غيره بعيني .. مش مشغول غير بعيناه", "red": true },
-          { "text": "بتمني في مره يجيني .. وأعرّفه حُبي ليه", "red": true },
-          { "text": "أمتي يلين أو يلاغيني .. خلاص هموت عليه", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنت تقلان ليه م تهداء .. وحده وحده كدا يا عم", "red": false },
-          { "text": "ماشي ليه بس و سايبنا .. دا أنت دلوقتي الاهم", "red": false },
-          { "text": "ولاه يعني عشان شاغلنا .. هتعيش في دور المُهم", "red": false },
-          { "text": "دا أنت طول م قاعد مبنا .. مش هيبقا في أي هم", "red": false },
-          { "text": "لا إكتئاب ولا نرفزه .. ولا حتي حرق دم", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "اه سحرت كثير وتقدر .. تسحر أكثر منهم", "red": false },
-          { "text": "م أنت أول لما تظهر .. جمالك بيشدهم", "red": false },
-          { "text": "ناس كثير غيرانه منك .. م انت فارق عنهم", "red": false },
-          { "text": "كله عاوز يبقا زيك .. م أنت أصلا عمهم", "red": false }
-        ]
-      },
-      {
-        "id": 35,
-        "title": "قمر هادئ",
-        "type": "روك",
-        "lyrics": [
-          { "text": "مره ليلة من الليالي أتعزمة في سهره عادي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قلت اروح مع صحابي قلت أرجّع زكرياتي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وسط الزحمة  ماشي خبط فيّه قمر هادئ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "خلني واقف مكاني من جمالو راح كلامي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قلبي فط من ضلوعي راح أوام عليه يا ناس", "red": false },
-          { "text": " ", "red": false },
-          { "text": " قالي أنه أتشد للون عينيه اللي زي الماس", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لما كنت واقف مكاني كنت متلغبط وحاسس", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أني عايش حلم جامد كنت عارف كنت فاهم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أن في سحر في عيونه خلني مكنتش قادر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أبطّل أبص في وشه لحظه فعلا القمر خلني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أسرح فيه كثير لحالي وأفضل ليل نهار أفكر", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "هوا دا فعلا بشر وله دا من كوكب تاني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قلبي من العشق أنفجر وأنا خلاص تعبت ياني", "red": false },
-          { "text": "", "red": false },
-          { "text": "اه يا ويلي اه يا ناري والله طار انتظاري", "red": false },
-          { "text": "", "red": false },
-          { "text": "أمتي يا غالي تقول شعورك علشان أخد قراري", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وقت نومي كنت بحلم أني بتكلم معاكي", "red": false },
-          { "text": "", "red": false },
-          { "text": " ولما بصحي كنت أفكر أزاي بقا هتقوليها لي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "لحظة سكوت العقل لحظة الخجل", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لحظة سقوط الدم لحظة الوجع", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لحظة وقوف القلب لحظة الالم", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لحظة ضياع النفس لحظة التعب", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لحظة سواد الدنيا لحظة الملل", "red": true },
-          { "text": " ", "red": false },
-          { "text": "فجأه أشوف القمر ويرجع الامل", "red": true },
-          { "text": " ", "red": false },
-          { "text": "فجأه تيجي السعادة ويجي القدر", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "قلبي دق 1000 دقه كل دقه ليها معني", "red": false },
-          { "text": " ", "red": false },
-          { "text": " زي نور وزي عتمه زي نار وزي جنه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "زي  نجوم في سما عاليه زي سُفن في بحر عايمه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "زي البُعد اللي تعبنا زي الحب اللي جمعنا", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " ياما حولت أعبّر كتير عن حبي ليكي ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بس  كلامي  كله كان كلام  بسيط وعادي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ولقيت رد فعلك كان ثبات إنفعالي ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بس رجعت تاني أفكر ولقيت حل بديل", "red": false },
-          { "text": " ", "red": false },
-          { "text": " قلت أنا هقول بحب بس بالغزل الاصيل", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مرحبا أميرتي ..أنني عبد مطيع ...جئتو كي أنفذ.. كل ما ستطلبيه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "أنت ملكة الملوك ..أنت وردة الشعوب ...أنت فردوس الحياة ..أنت القمر والنجوم", "red": true },
-          { "text": " ", "red": false },
-          { "text": "أنت شمس سا طعه ..في الشروق والغروب... أنت التي صوتها ..يجعل القلب يذوب", "red": true },
-          { "text": " ", "red": false },
-          { "text": "أنت من أحببتها.. وبسري لن أبُوح ...أنت التي قُربُها ..يطفئ لي الجُروح", "red": true },
-          { "text": " ", "red": false },
-          { "text": "منذو أن رأيتكي لم تغمض لي عيون", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "إن قلبي يرتجف ..عندما ينظر إلي... شعرُك المنغمر ..والعيون الحسنوات", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أرجو أن تأتي معي ..يا زينت البنات ...علي البُساط الاحمدي ..كي نطيرا في السماء", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قد علمتُ أنكي ..تسكنينا علي السحاب ...فقلت لماذا قد هبطي.. إلي اليابس والماء", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قد عجز اللسانُ أن ..يوصف هذا الجمال ...وأحتارت عيوني حقا.. أنت حقيقه أم خيال", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أنت زهرة الربيع تحملي لنا النسيم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنت تُبهري الجميع أنت ذو وجه وسيم", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "لحظة سكوت العقل لحظة الخجل", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لحظة سقوط الدم لحظة الوجع", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لحظة وقوف القلب لحظة الالم", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لحظة ضياع النفس لحظة التعب", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لحظة سواد الدنيا لحظة الملل", "red": true },
-          { "text": " ", "red": false },
-          { "text": "فجأه أشوف القمر ويرجع الامل", "red": true },
-          { "text": " ", "red": false },
-          { "text": "فجأه تيجي السعادة ويجي القدر", "red": true }
-        ]
-      },
-      {
-        "id": 36,
-        "title": "هوا فيه أيه",
-        "type": "روك",
-        "lyrics": [
-          { "text": "هوا في أيه.. فارق عنهم ... هوا فيه أيه مهُش فيهم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "هوا في أيه ..مجننهم ... هوا فيه أيه مخليهُم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يقولو عليه ..كلام جامد ..ملوش أول ولا أخر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كأنه شئ كدا نادر .. مشفناش زيه ولا مر`ه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "كأنه ورد متفتح .. لا بيشوك ولا يجرّح", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كأنه نجم علي مسرح .. عليه كام كلمه بتفرّح", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كأنه شمس كانت طلعه تنوّر دنيا كانت ضلمه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كأن عيونه فيها لمعه .. كأنه للأمل بسمه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "دا قالو عليه ..أن جمال الكون بحاله ... قصاد جماله دا ميسواش", "red": true },
-          { "text": "و قالو كمان .. أن الدنيا من غيره ... مش حلوه ولا تتعاش", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "هحبه أكيد .. حُب حقيقي محصلش ... ولا هيحصل له من بعدي", "red": true },
-          { "text": "هقول له كمان .. أنا مقدرش ومينفعش  ... أسيب غيره ياخد قلبي", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "دا خلني .. أدوب في عيونه في ثواني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "و اه ياني .. سحرني معاه وسهاني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا خلني .. أسيب له قلبي و لساني", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "دا دوخني و لففني .. عشان أقابله و يشوفني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ولمّا عرفته وقابلته قلت له أنا أتحكي لي عنّك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "سمعت كلام كثير جدا واديه طلع صحيح فعلا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "جميل حرفا جميل أسما.. مفيش منّك", "red": false }
-        ]
-      },
-      {
-        "id": 37,
-        "title": "إبن النيل",
-        "type": "وطني",
-        "lyrics": [
-          { "text": "أنا اللي عندي 100 مليون", "red": false },
-          { "text": "بيفرحوا لما تيجي سيرتي", "red": false },
-          { "text": "", "red": false },
-          { "text": "وقعت لكن عشانهم أقوم", "red": false },
-          { "text": "معايا تملي في مسيرتي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنا المصري أنا الفرعون", "red": false },
-          { "text": "أنا إبن النيل ودا أسمي", "red": false },
-          { "text": "", "red": false },
-          { "text": "عظيمة يا موطني المأمون", "red": false },
-          { "text": "وكل ما توعدي بتوفي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أنا جندي في إيدو سلاح", "red": false },
-          { "text": "أنا الدكتور أنا الفلاح", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنا بذرة أمل ونجاح", "red": false },
-          { "text": "أنا رحلة صعود وكفاح", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ومهما العُمر عدى و راح", "red": false },
-          { "text": "مش بيمل ولا يرتاح", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "بإيدي هكون وأهد الكون", "red": true },
-          { "text": "بإيدي هبين الضحكة", "red": true },
-          { "text": " ", "red": false },
-          { "text": "بإيدي أبقى أنا المضمون", "red": true },
-          { "text": "وأسيب جوا القلوب ذكرى", "red": true },
-          { "text": "", "red": false },
-          { "text": "أنا حلم ولا يمكن أموت", "red": true },
-          { "text": "أنا الخطة أنا الفكرة", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "أنا واحد من الملايين", "red": true },
-          { "text": "حالف يكمل السكة", "red": true },
-          { "text": " ", "red": false },
-          { "text": "بأخذ تشجيعكم دا فيتامين", "red": true },
-          { "text": "مبتهزش ولو سنّة", "red": true },
-          { "text": " ", "red": false },
-          { "text": "أنا النار جنبها البنزين", "red": true },
-          { "text": "مبتهدش كدا بكلمة", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "أنا الصوت العالي المسموع", "red": true },
-          { "text": "أنا الحلم اللي مش ممنوع", "red": true },
-          { "text": " ", "red": false },
-          { "text": "أنا اللي مهما كان موجوع", "red": true },
-          { "text": "مبينزلش أي دموع", "red": true },
-          { "text": " ", "red": false },
-          { "text": "مفيش في قاموسي أي رجوع", "red": true },
-          { "text": "غير و راسي عالي و مرفوع", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "سلام لبلادي تاج الشرق", "red": false },
-          { "text": "سلام للنهر والبحرين", "red": false },
-          { "text": "حماكي الله يا أم الدنيا", "red": false },
-          { "text": "يا وطن العذراء و الحُسين", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "بلادي يا حلوة يا حُرة", "red": false },
-          { "text": "يا أرض الزرع والضلة", "red": false },
-          { "text": "يا وطن الفخر والعزة", "red": false },
-          { "text": "يا وطني أنا وأجدادي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "فداكي روحي وعنيّه", "red": false },
-          { "text": "فداكي كل ما فيّه", "red": false },
-          { "text": "بلادي غالية أوي عليّا", "red": false },
-          { "text": "لأجل بلادي أموت عادي", "red": false }
-        ]
-      },
-      {
-        "id": 38,
-        "title": "كبير بالفعل",
-        "type": "تراب",
-        "lyrics": [
-          { "text": "معايا ملايين لو هتعد", "red": false },
-          { "text": " ", "red": false },
-          { "text": "متبرطمش ومتزطش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أسترجل كدا متجلونش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قلت هتيجي وليه مجتش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بطّل هري متكدبش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "هتكتر هديك بالرجل", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "الفرق بخبرة وبالسن", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنا باجي بالفكرة وبالسنس", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بتيجي بالهيطة وبالكاش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فعيني هتفضلو أوباش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "سعركو بيكيا ميسواش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بأخذ الخطوة مبرجعهاش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ودماغي رايقة مبشغلهاش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لو VIP مستناش", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "عملة لي استثناء على الحالة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عيشالي الدور وبتتعالى", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فكرة أن عيوني مشتاق", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فكرة أنها طالعة كسبانة", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عملت كام غلطة وعدتها", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بتقول أنا عمري م حبتها", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كدابة ومصدقة كدبتها", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يلا بقا في داهية أنا نسيتها", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "إخواتي 20 و 30", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وحضورهم زي الخماسيين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ومازلو على الأعداء حاطين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ومازلو على المبدأ ثابتين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ومازال كاريزما وجامدين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "مفيش شغل شمال كله يمين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وتملي في ضهري حاضرين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ونضاف من جوانا سالكين", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "إخواتي في الشدة وفي الدلع", "red": false },
-          { "text": "مسا مني لكل راجل جدع", "red": false },
-          { "text": "مبخفش الاسم ولا العدد", "red": false },
-          { "text": "علشان ربك هو السند", "red": false },
-          { "text": "معروف بالأخلاق والأدب", "red": false },
-          { "text": "وفي حقي مبقبلش الأسف", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "تضايقني أمسح أهلك تما", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنا كبير بالفعل وكبير سنّا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ف سوق الرجالة سعرك نكلة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بنحط عليك ياما وأنت بتنسى", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "شغل المرازية مليش فيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ف لو جيت ترازيني هربيك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنا Level up يعني معديك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كدا كدا مش هشغل بالي بيك", "red": false }
-        ]
-      },
-      {
-        "id": 39,
-        "title": "الحال العام",
-        "type": "راب",
-        "lyrics": [
-          { "text": "أنا مؤمن بكلام بيقول", "red": false },
-          { "text": " ", "red": false },
-          { "text": "إرضاء الناس شيء معدوم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "في ناس شايفة أن أنا مغرور", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وناس بتقول أنا كلي غموض", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأنا من جوايا شخص كتوم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مبحبش أعاتب ولا ألوم", "red": false },
-          { "text": "وبداري ف قلبي الموجوع", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وببين أن أنا مبسوط", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وإن زاد حزني بزيد في سكوت", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "متكون من كذا شخصية", "red": true },
-          { "text": " ", "red": false },
-          { "text": "شخصية طموحة وعندية", "red": true },
-          { "text": " ", "red": false },
-          { "text": "شخصية لذيذة وسطحية", "red": true },
-          { "text": " ", "red": false },
-          { "text": "شخصية ودودة وعشرية", "red": true },
-          { "text": " ", "red": false },
-          { "text": "شخصية تعيسة ومنسية", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "ف أنا بسأل نفسي بشوف مالها", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عاوز أعرف أيه غيّر حالها", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ردت بس الرد صدمني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وقالت لي أن خلاص نسيتها", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وإني تملي باجي عليها", "red": false },
-          { "text": " ", "red": false },
-          { "text": "حبيت الغير ولا حبيتها", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ولحد اللحظة دي بأذيها", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ف أنا بتأسف ليكي يا نفسي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنا فعلا غلطان ومقصّر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ولأن مفيش حاجة بيدّي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كل م أصلح شيء يتكسّر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "متغطي بعالم متعري", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأهو طيبت قلبي دي بتخسّر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كل م أقول أزمة وهتعدي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ألاقيها عمالة تزيد أكثر", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "في دوامة شغالة في عقلي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بين ذاتي وأهلي وبين أملي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وصراع بين موهبتي وعملي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وطيبت قلبي وعزة نفسي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أحداث مُتتالية ومختلفة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وكأني بقيت داخل دائرة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بتزيد للضعفين في الثانية", "red": false },
-          { "text": " ", "red": false },
-          { "text": "جسمي ساكن فكري دا متحرك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "والإحساس بقا شيء مُتحجر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "والحال العام بقا مُتدهور", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ف مبرضاش أعلق ناس بي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عشان أما أبعد مظلمهاش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قواعد حطاها دنيتي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "علشان من غيرها مبعيشهاش", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مثلا لو كان قُربي لحد... ممكن يتسسب في أذيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لازم أتجنبه و أخد حد ...عشان متجيش ناس تعاتب فيّه", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأما وجودي يكون مش فارق ...أبعد عادي بكل هدوء", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أفعالنا ساعات بتكون تافها... وساعت بتحتاج لردود", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "في طباع عُمرها م بتتغير ...و طبع بيتغير كل يوم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وفي ناس بتتقرر تخسرنا... بس مفيش أحوال بدوم", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وأنا من جوايا شخص كتوم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مبحبش أعاتب ولا ألوم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وبداري ف قلبي الموجوع", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وببين أن أنا مبسوط", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وإن زاد حزني بزيد في سكوت", "red": false }
-        ]
-      },
+  {
+    "id": 25,
+    "title": "عندي مناعه",
+    "type": "مقسوم",
+    "lyrics": [
       {
-        "id": 40,
-        "title": "بالتراضي",
-        "type": "تراب",
-        "lyrics": [
-          { "text": "سلاما لكل اللي سبنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "في غيابنا هيعرف مقامنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وبُكرة هيجي يصالحنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وهنكون قفلنا بابنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لاء مش هنبكي ونزعل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "الوضع معدش بيسمح", "red": false },
-          { "text": " ", "red": false },
-          { "text": "هنفضل نرسم الضحكة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "حتى لو أي هيحصل", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عالمنا بشر مادية", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وبشر مش صفية النية", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وبشر بوش وبـ 100", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وبشر كثير متربية", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ومهما دارت الأيام هتسهر عيني ما تنام", "red": true },
-          { "text": " ", "red": false },
-          { "text": "غير أما أحقق الأحلام وأتقدم خطوة لقدّام", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ومهما ناس تقول كلام مش هديهم اهتمام", "red": true },
-          { "text": " ", "red": false },
-          { "text": " معرفش إلاستسلام عندي الطموح زي الوسام", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "بحاول أوسع نشاطي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بوصل رسالتي في باراتي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مش بحرق في وقت على الفاضي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بمشي المجال بالتراضي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عشان مفيش حد يتضايق ويزعل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عشان ميقولوش دا بيتكبر ويطمع", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وعدت أنا نفسي أن اسمي هيلمع", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأنا وعدي حر وعمره ما يرجع", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأي اللي يمنع م لسه في سكة وربك يعينا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وربي لنبقى أوائل في القمة", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "كتير بكانا ومبكاش علينا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كتير أذانا ومسألش فينا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وكمان بيسأل ليه عليه قسينا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "في الواقع أحنا منه اكتفينا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "الدنيا دي بتدي اللي بيشقي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "اللي عاوز أيامه تحلى", "red": false },
-          { "text": " ", "red": false },
-          { "text": "اللي بيمشي لآخر السكة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "اللي بيجتهد وبيسعى", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأنا عارف أني مش ملاك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بس أنا مش شيطان رجيم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "معرفش أزوق في الكلام", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا طبعي من زمن قديم", "red": false }
-        ]
+        "text": "أنا اللي لو دنياته تعباه ... بيعيش حياته في اللامبالاة",
+        "red": false
       },
       {
-        "id": 41,
-        "title": "Master",
-        "type": "تراب",
-        "lyrics": [
-          { "text": "بفتنا وصلة حاطين عليكو في لحظة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "إحنا تعبنا وشقينا وأنتو بتحتاجوا واسطة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يا عيال بناطيلها سقطة عاملين عليكو لقطة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "الشغلة معانا خلصة وأنتو تطلعوا برة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنشف كدا يسطا عظمك طري زي الباستا", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أخرك تلبس نظارة أخرك تمسك لي الشنطة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "إحنا بنلبس من ZARA وأنت بتلبس من العتبة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "NUMBER 1 في الإثارة أما أنتو دماغكو فاصلة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دائما ماسك الطارة حراق عليكو شطة", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "شغلنا واصل MASTER تكسير مفاصل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فنكو هابط وثلاثة أرباعكو عاطل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ماشيين في الحق وأنتو ماشيين في الباطل", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنتو عايشين على الحك وأنا عمال أناضل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنا عندي ناب مش فك خطير وسلاحي قاتل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ناجح وبلا شك مسبتش فيكو راجل", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "COLOR BLACK  عالي المزاج", "red": true },
-          { "text": " ", "red": false },
-          { "text": "أناLEVEL UP فين مستواك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لساني سم ملوش علاج أنا المهم وقت العراك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "حديث في الأمس وفي المساء", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لوحدي لكن قائد مجال مبدأنا ثابت زي الجبال", "red": true },
-          { "text": " ", "red": false },
-          { "text": "طريقنا واحد أنتم شمال عندي إجابة لأي سؤال", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "صحبتنا لمّه صحبتكو زايفة ...إحنا استبينا هيئتنا رايقة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لو كنتو ستة أو حتى سبعة  ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "PARDON  مبينا مفيش منافسة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عدتنا جاهزة سابقين زمنا ...أنتم تلامذة وإحنا الأساتذة", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "كفتنا طابة وفي أي حتة ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لو غبنا حبة نيجي بهيبتنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "إحنا نجوم ليلنا إحنا صحاب كلمة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "الشغلة في أيدينا أسود في الشلة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "متجبش سيرتنا أبطال دفعتنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بتيجي بالفيزبة إحنا معانا TESLA", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "معروف أن أنا KING OF SINS", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بطل الأكشن والـ SUSPENSE", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بإشارة واحدة أنا بيبقى TREND", "red": false },
-          { "text": " ", "red": false },
-          { "text": "Hit my shoot in your head", "red": false },
-          { "text": " ", "red": false },
-          { "text": "على أمثالك هعمل {X}", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فارق عنك أصلي PRINCE", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "هنكسر فيكو واحد واحد", "red": false },
-          { "text": " ", "red": false },
-          { "text": "منخفش عشان قلبنا جامد", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مجموعكم مش صفر دا سالب", "red": false },
-          { "text": " ", "red": false },
-          { "text": "طلقنا يجي عليك متعامد", "red": false },
-          { "text": " ", "red": false },
-          { "text": "متبرطمش كثير وتعاند", "red": false },
-          { "text": " ", "red": false },
-          { "text": "خفوا هزار دا هزاركم بارد", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "زميلي متسقش علينا العوج", "red": false },
-          { "text": " ", "red": false },
-          { "text": "إحنا نقش أما أنتم همج", "red": false },
-          { "text": " ", "red": false },
-          { "text": "إحنا طموحنا ملوش مستوى", "red": false },
-          { "text": " ", "red": false },
-          { "text": "نصطاد فيكم زي السمك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كل كلامكم مفيهوش أمل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنتو أساسا برج الحمل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "معروف أننا برج الأسد", "red": false },
-          { "text": " ", "red": false },
-          { "text": "إحنا دكاترة في علم الفلك", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "Hey Hey I am on fire", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فنان راكب على البساط طاير", "red": false },
-          { "text": " ", "red": false },
-          { "text": "راكن الأعداء in side", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ممشيش Wrong أنا بمشي right", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دنيا سوداء but I am fine", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دايما بكسب أنا أي fight", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "بدوس بنزين ومش فرامل ...خمسة وتسعين ومش يفاصل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بمشي تملي على الرابع ...ببني في كيان نجم ساطع", "red": false },
-          { "text": " ", "red": false },
-          { "text": "هحط عليك وعلى اللي جابك ... لو هتكتر هقطع لسانك", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لو هتحور هسحب لجامك ... لو هتأفور هكسر دماغك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنا كابوسك اللي جالك ... أنا سيبك تسرح بخيالك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مش شايف منك غير كلامك ... هحط عليك أنت وعيالك", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مهما هتغلط مش هنرد", "red": false },
-          { "text": " ", "red": false },
-          { "text": "BLOCK لو كترت هنرمي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بس مترجعش تاني تحُك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عشان هنيجي عليك ونحط", "red": false },
-          { "text": " ", "red": false },
-          { "text": " كلبنا HUSKY شرس بيعض", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أكبركم بالنسبه له قط", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يعني بلاش تعمل فيها خُض", "red": false },
-          { "text": " ", "red": false },
-          { "text": "هنشوت فيك ومش هتصد", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " مش بنشفكم غير بالZOOM", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ياما تعبنا وشلنا هموم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لو علي الاموال عندنا كوم", "red": false },
-          { "text": " ", "red": false },
-          { "text": " شغلنا DIRECT مفيش نوم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "NO EFFECT ON ANY TONE", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "موطني عربي أنا الفرعون", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يعني أجدع واحد في الكون", "red": false },
-          { "text": " ", "red": false },
-          { "text": "حارتي مُؤمنه فيها حصون", "red": false },
-          { "text": " ", "red": false },
-          { "text": "جوا اللعبه لازم أجيب جون", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وقتي دا ملكي ومش مرهون", "red": false },
-          { "text": " ", "red": false },
-          { "text": " سبقاني سرتي كأنها ZONE", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مهيبر اه بس مش مجنون", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مسيطر لكن عمري ما أخون", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 42,
-        "title": "حُبك مش ذنبي",
-        "type": "روك",
-        "lyrics": [
-          { "text": "أنا طول ليلي كلامي عليكي", "red": false },
-          { "text": "وبسأل نفسي... أمتى يا روحي أنتي تكوني", "red": false },
-          { "text": "ملك لقلبي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "نفسي أبقى معاكي.. دايب في هواكي", "red": false },
-          { "text": "بس مخبي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "خايف أقولهالك تسبيني أو تجرحي قلبي", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وأنا نفسي تكوني بتحبيني وبتسهري زيي", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ومفيش حد إلا نجوم ليلي بشكلهم همي", "red": true },
-          { "text": " ", "red": false },
-          { "text": "حبك مش ذنبي والله ما ذنبي", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "أنا يكفيني تشوفك عيني", "red": false },
-          { "text": "وأنتي لوحدك ...ودا على عيني أني أشوف غيري", "red": false },
-          { "text": "قاعد جنبك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "إن كان عيبي .. في قلة جيبي", "red": false },
-          { "text": "أنا أكيد عذرك", "red": false },
-          { "text": "نفسي تجيني .. فرصة تخليني... أقرب منك", "red": false }
-        ]
+        "text": "لا برُد ب ( لاء) ولا أرد ب ( اه) ... بسايس كله و باخده علي هواه ",
+        "red": false
       },
       {
-        "id": 43,
-        "title": "دور بطولي",
-        "type": "روك",
-        "lyrics": [
-          { "text": "مش عارف أعمل أي؟... في قلبي اللي هاويكي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مش قادر يعرف غيرك؟... ولسه مش ناسيكي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنتي الوحيدة اللي فاهماني... ومفاتيحي في أيديكي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ببقى طبيعي معاكي... مبشوفش الفرحة إلا في عيناكي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وبرغم أننا لسه متفارقين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "سبب فراقنا أيه؟ مش عارفين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وكان في دماغي هتغيب يوم أو يومين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وهنرجع تاني زي ما متعودين", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "بس اليوم بقى شهر والشهر جاب سنين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "طال الغياب علينا وأحنا مش مرتاحين", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأنا بكابر.. ولسه برضه بقول", "red": true },
-          { "text": " ", "red": false },
-          { "text": "فراقه عادي.. وهلاقيله حلول", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وأهو عارف أني.. طول بُعده عني ... قلبي دا مقفول", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "راح فين بقى الكلام... اللي أنتي قلتيهولي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أن مهما تعدي الأيام... عيونك دول مش هيسبوني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ولو قلبي بقى مليان آلام... أنتي اللي هتداويهولي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أتاريه كان مشهد في الأفلام ... ودورك فيه كان دور بطولي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مبقاش فارق لي الاهتمام... أنا لسه أهو عايش بطولي", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 44,
-        "title": "لو بايدي",
-        "type": "روك",
-        "lyrics": [
-          { "text": "سحر عيونك جابني الأرض", "red": false },
-          { "text": "لما قابلتك أتوترت", "red": false },
-          { "text": "أتغير حالي وأتلخبط", "red": false },
-          { "text": "وأتبسطت فاستغربت", "red": false },
-          { "text": "بس رجعت تاني أفتكرت", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أن مفيش بينا مجال ...وأن أنا قلبي دا رحّال", "red": false },
-          { "text": "ومهما يكون ما بينا أميال ...ومهما أختلفت الأحوال", "red": false },
-          { "text": "هتفضلي برضه جوا البال ...وهيفضل قلبي ليكي ميال", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ولو بأيدي هخلي كل شيء يكون تمام", "red": false },
-          { "text": "ولو تجيني هحاول أنسيكي كل الألم", "red": false },
-          { "text": "وشيء طبيعي أفضل في بحر حبك عوام", "red": false },
-          { "text": "أحلامي كتير بس أنتي أجمل الأحلام", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ومكنتش أعرف أنك لو بعدتي هضعف", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مبقتش بقدر أن أبطل فيكي أفكر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أيوه مستغرب أن أنا حالي بيكي أتغير", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ومش بهزر ولو مرجعتيش أنا هدمر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ولسه بسهر والحنين بيبقى أكثر", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وكل ما ليل وليل يعدي", "red": true },
-          { "text": "بتفضلي برضه جوا عقلي", "red": true },
-          { "text": "مقدرش أنساكي ومش ذنبي", "red": true },
-          { "text": "أن أنا حبيتك من قلبي", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وليه بس ناوية تغيبي عني", "red": true },
-          { "text": "وليه تسيبي روحك توحشني", "red": true },
-          { "text": "وليه تسيبي قلبك يشتاق لي", "red": true },
-          { "text": "وأنا معرفش أعيش وحدي", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "وليه تسيبيني وكل يوم يجيب أخوه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دمع عينك عيوني دول بيكرهوه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وجوا عيني شايفك أجمل النجوم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "حبك ليكي شيء مريح ومحتوم", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ومش متعود علي الفراق ...ومش مرتاح أنا في البُعد", "red": false },
-          { "text": "واللي مصبرني الاشواق... بس أنا محتاج القُرب", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ومش فاهم ليه بس غويه... تشيلي كل الهم وحدك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "المفروض تكوني مليكه... وتخليني أخد بيدك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "طول م رموش عنيكي عاشقة... هفضل سامع نبض قلبك", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ومكنتش أعرف أنك لو بعدتي هضعف", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مبقتش بقدر أن أبطل فيكي أفكر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أيوه مستغرب أن أنا حالي بيكي أتغير", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ومش بهزر ولو مرجعتيش أنا هدمر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ولسه بسهر والحنين بيبقى أكثر", "red": false }
-        ]
+        "text": " مش بسيب حدّ يعصبني ",
+        "red": false
       },
       {
-        "id": 45,
-        "title": "صفحة جديده",
-        "type": "سلو",
-        "lyrics": [
-          { "text": "متسألنيش عن الماضي .. يا حبيبي بلاش", "red": false },
-          { "text": "وخلينا نفرح برجوعنا .. متفكرناش", "red": false },
-          { "text": "بأيام شفنا فيها وجع .. ومرتحناش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "تعالى نفتح صفحة جديدة .. وننسى اللي فات", "red": false },
-          { "text": "كفاية عتاب كفاية حيرة .. وفراق ساعات", "red": false },
-          { "text": " ياما عاتبنا و ياما لُمنا .. وآخرتها مين استفاد؟", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "والله وبقيت معاك ... من تاني ياحبيبي .. صدقني يا حبيبي ... أنا ياما أشتقت ليك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لا مستحيل أنساك ... أنت تملي علي بالي .. طول ليلي و نهاري ... عمال بفكر فيك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لو ألف حاجه ناقصاك ... أئمرني أجيبهالك ..قولي اللي في خيالك ... و أنا تحت أمر عنيك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "كل العيون حاسداك ... و أنا بدعي ربنا يحميك .. و ليّه أنا يخليك ... ويكمل عُمري بيك", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "ميفرقليش حاجة غير.. أن أنا أرضيك", "red": false },
-          { "text": "مينفعنيش حبيب غيرك.. وعيني عليك", "red": false },
-          { "text": "حياتي الجاية وكل ما فيا .. ملك أيديك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "حظوظي في الدنيا دي قليلة .. إلا معاك", "red": false },
-          { "text": "مجرد ما بتيجي السيرة .. روحي بتهواك", "red": false },
-          { "text": "وأنت قدامي بحس بطعم أيامي .. وأنا وياك", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 46,
-        "title": "القلب داعي",
-        "type": "طرب",
-        "lyrics": [
-          { "text": "اسأل قلبك يقولك .. مين فينا مش تمام!", "red": false },
-          { "text": "ليه فاكر إن بعدك  .. أنا عايشة في الألم؟", "red": false },
-          { "text": "منكرش إن ما بينا  .. كان في حُب وغرام", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بس حبك ده كذبة ..  كان مجرد كلام", "red": false },
-          { "text": "ومصنتش أي عشرة .. ولا بينت اهتمام", "red": false },
-          { "text": "دا أنا سبت قلبي ليك .. قولي بعته بكام؟", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "بعد ما اتكشفت حقيقتك ... جاي عاوز تفارقني فجأة", "red": true },
-          { "text": "الحكاية دي فيها إنّ ... أيه اللي جرى مبقتش عارفة", "red": true },
-          { "text": "مش عشان ياما عديت لك ...  يبقى معناه إني خايفة", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قلت لك إني بحبك ... وأنت معرفتش تراعي", "red": true },
-          { "text": "يا حبيبي وفر كلامك ... دا الكلام مبقاش له داعي", "red": true },
-          { "text": "من حياتي اتفضل امشي  ... بالسلامة والقلب داعي", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "كنت بتحس بيه .. وكنت برضه أناني", "red": false },
-          { "text": "مش بقدر أنسى قلبك .. لكن قلبك نساني", "red": false },
-          { "text": "كنت بتضحك عليّا . وتقول إن أنت شاري", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بكّاش وعاملي طيب .. فاكر حبك عماني", "red": false },
-          { "text": "وأنا قلت الصبر طيب .. أتاريك مع حد تاني", "red": false },
-          { "text": "كنت برتاح في قربك .. مبقتش أطيقك ثواني", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 47,
-        "title": "أعذارك قدمت",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "مش عاوز ترجع لي براحتك ... لكن متقلش إني جرحتك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "متجبش المشكلة دي عندي ... عشان أنت اللي واجع قلبي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ومفكرتش تتأسف لي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "بطل بقى تتبلى عليّا ... شكلك ناسي عمايلك فيا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا ياما اديتك حنية  ... وأنت اديتني عذاب وأسية", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وتملي كنت بتتعبني", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "دا لو حطيت نفسك مكاني ... هتعرف إن أنا مش أناني", "red": true },
-          { "text": " ", "red": false },
-          { "text": "تفهم ليه .. مش عاوز أكمل معاك", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مش مرتاح ومش عارف  ... أعدي الوقت وأنا شايف", "red": true },
-          { "text": " ", "red": false },
-          { "text": "دموع عيني .. اللي كانت عشقاك", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنا اتحملت كتير وجايز  ... كنت مفكر هبقى فايز", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وهنسى همومي .. بمجرد لقاك", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "خلاص كدا صفحتك اتقفلت ... حكايتنا دي ماتت واتدفنت", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أعذارك قدمت واتحرقت  ... دا غلاوتي عندك لو فرقت", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كنت هتحاول تكسبني", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مش ناقصة بقى عند وحيرة ... دا عمايله مكنتش قليلة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنا كان لازم أفضها سيرة ... كان بينا كام ذكرى جميلة", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بس أنت اللي اخترت تسيبني", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 48,
-        "title": "أخر فرصة",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "خلاص يعني راحت عليّا؟ ... وبقى في غيري في حياتك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "نسيت كل ذكرى ليّه؟ ... دا أنا عايش على ذكرياتك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا إحنا اللي بينا مش شوية! ... طب قولي أيه آخرة عنادك؟", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أثرت فيا بشكل كبير .. ومكنتش أتصور", "red": true },
-          { "text": "بين يوم وليلة وفجأة هلاقي .. كل دا اتبخر", "red": true },
-          { "text": "وسألت هو دا كله ليه  .. وإزاي عليه هقدر", "red": true },
-          { "text": "ملقتش أي إجابة أنا .. ومن يومها متحير", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "مرت سنين وسنين علينا... وكنت تملي على بالي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ونصيبنا خلانا إلتقينا ... وأنا نفسي ترجع لو ثواني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يظهر دي آخر فرصة لينا... فبلاش بقى نضيعها تاني", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أثرت فيا بشكل كبير .. ومكنتش أتصور", "red": true },
-          { "text": "بين يوم وليلة وفجأة هلاقي .. كل دا اتبخر", "red": true },
-          { "text": "وسألت هو دا كله ليه  .. وإزاي عليه هقدر", "red": true },
-          { "text": "ملقتش أي إجابة أنا .. ومن يومها متحير", "red": true }
-        ]
+        "text": "لا بزعل يوم ولا بتضايق ... و لأيّ صُداع أنا مش فايق",
+        "red": false
       },
       {
-        "id": 49,
-        "title": "أصح قرار",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "من غير ما أبالغ ولا أكتر ... أنا بالنسبة لي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "من يوم بُعدك مش متأثر ... وعايش عادي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مش زعلان ولا فرحان .. مش مرتاح ولا تعبان", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وصحيح بقى قلبي متحجر ... بس أنا لا أبالي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مش أول ولا آخر واحد  .. اتصدم بيه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ياما قلبي دا مر بتجارب  .. ومعلمة فيه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "في تجارب أنا نفسي أنساها  ...وفي اللي بعيش على ذكراها", "red": true },
-          { "text": " ", "red": false },
-          { "text": "من الآخر يعني غيابك أنا .. اتعودت عليه", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "أنا أيه اللي هيجبرني أفضل ... مع حد أذيني؟", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بعد اللي عملته عشانه ... استكبر يرضيني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ده فراقه أصح قرار  .. مليت أنا من الأعذار", "red": false },
-          { "text": " ", "red": false },
-          { "text": "زي ما أنا لقيته هلاقي ... اللي يهنيني", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مبقاش لازم أسأل عنُه .. ولا أعرف عامل أيه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "مش هتجنن وأرجع تاني .. أصالح فيه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "دلوقتي بقت أحلى وأهدى ... مبقتش خلاص حمل مناداة", "red": true },
-          { "text": " ", "red": false },
-          { "text": "أنا حتى طالع كسبان .. هتضايق ليه؟", "red": true }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 50,
-        "title": "أكتر حد فاهمني",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "حبك موجود في قلبي .. صدقني مخلصش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لسه حكايتنا باقية .. يا حبيبي منتهتش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "رغم خلافنا وفراقنا .. أنا فاكرك منستش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "حتى غلاوتك عندي .. زادت أوي مقلتش", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "دا أنا غيرك يا حبيبي مليش ... ما أنت أكتر حد فاهمني", "red": true },
-          { "text": " ", "red": false },
-          { "text": "أعرف ناس ياما بس مفيش ... غيرك اللي بجد شاغلني", "red": true },
-          { "text": " ", "red": false },
-          { "text": "قربك بيخليني أعيش ... وبيفرحني وبيطمني", "red": true },
-          { "text": " ", "red": false },
-          { "text": " بتمنى الوقت ميمشيش  ...كل ما أحس إنك هتسبني", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "من يوم ما زعلت مني  .. وأنا بالي مرتاحش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "طبعا زعلك فارقلي  .. وعليه مقدرش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وحاولت ألاقي حاجة .. تشفعلي ملقتش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "والله بعدك تاعبني  .. وأتمنى ميزيدش", "red": false }
-        ]
+        "text": " مهما حصل برضه مزاجي رايق... وبحب الانبساط ",
+        "red": false
       },
       {
-        "id": 51,
-        "title": "تجربه عديتها",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "قالت لي لو كل الظروف ضدك ... صدقني هبقى جنبك", "red": false },
-          { "text": "مع أول ظرف ليّه .. ليه ملقتهاش معايا؟", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قالت لي اطمن أنا عمري مرة ... ما هقدر أجرح قلبك", "red": false },
-          { "text": "قالت كلام كتير .. وباعت في النهاية!", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "كانت درس اتعلمت أنا منه ... مش كل اللي أعرفه آمن له", "red": true },
-          { "text": "ولا كل اللي ارتاح له وأحبه ... هو كمان هيحبني", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وعموما ربنا يجازيها  ... كانت غلطة وأنا ندمت عليها", "red": true },
-          { "text": "كنت أكيد متعلق بيها... لكن مبقتش تهمني", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "أن أنا أنسى حد حاجة صعبة... بس أنا برضه نسيتها", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عشان عملت كتير.. لكن مطمرش فيها", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وإن كان عليّا اعتبرتها فترة ... وتجربة مملة عدتها", "red": false },
-          { "text": "عادي زي أي فترة.. بمر بيها", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 52,
-        "title": "حالة نادرة",
-        "type": "طرب",
-        "lyrics": [
-          { "text": "كملي في كذبك وكلامك ... روحي قولي في كل مكان", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ألفي قصة في خيالك ... وطلعيني فيها غلطان", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مش هبرر شيء ولا أدافع ... حتى مش هرد كمان", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأما يسألوا أيه الدافع قولي ... أن أنا كنت شيطان", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وأنتي كنتي ملاك وبريئة ... مش بتجرح ولا بتبيع", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كذبتي كذبة وصدقتيها ... قلتي من غيرك هضيع", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وأديني مضعتش ولا حتى ... عيوني نزلت دمعة", "red": true },
-          { "text": " ", "red": false },
-          { "text": "بجد بعدك مش أزمة ... وحياتي كمان بقت أهدى", "red": true },
-          { "text": " ", "red": false },
-          { "text": "أنتي اللي زيك حالة نادرة ... بالنسبة لي ماضي وعدى", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لساكي موهومة وفاكرة... موضوعنا دا فيه رجعة", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "في جرح عادي أنه يتداوى ... بالكثير ياخد يومين", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وجرح من كتر الغلاوة ... ميتدواش لو بعد سنين", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا اللي قلبه في قساوة ... هيفضل عايش حزين", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عمره يوم ما هيتساوى ... بالقلوب الطيبين", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 53,
-        "title": "زي ضلي",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "وبقابل ناس كتير بعده  ... وبقول مش عاوزة أنا غيره", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مش قادر قلبي على بُعده  ...وعيوني والله ما ناسينه", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأديني بفتكره بالخير ... لو جيه في بالي ذكرى معاه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "سايب في حياتي تأثير ... على وعدنا هفضل أستناه", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وأنا هعمل أيه يعني؟ ... بشتاق له وقدري مانعني", "red": true },
-          { "text": "أشوفه لو صدفة .. وأعرف أخباره", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "البُعد حاجة مش سهلة ... بالذات لو جالنا كدا فجأة", "red": true },
-          { "text": "بياخد منا أحلامنا .. وبيسيب ناره", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كام ليل فات ويوم عدى  ... وأنا لسه بستنى", "red": true },
-          { "text": "مفيش حل قدامي .. قدرنا ومش بنختاره", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "أكتر حد بيفهمني ... حبيبي وغيره واله مليش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "في أي محنة بيكون جنبي ... زيّ ضلي مبيسبنيش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "غيابه كسرني و تاعبني  ... كأن الوقت مبيمشيش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "شعور الوحده ملازمني ... خلاص مبقتش قادر أعيش", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 54,
-        "title": "فاكرني لعبة",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "أنا مش هعاتبك ...ولا حتى هرمي اللوم عليك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنا هتجاهلك ...مش هسمعك ولا هسأل فيك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "هتفضل وحدك ...والأيام كفيلة أوي إنها تربيك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وقسوة قلبك ...هتعيشها لمّا الحزن يملى عينيك", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "دوق شوية من اللي دقته ...هي دي الحياة وكما تُدين تُدان", "red": true },
-          { "text": " ", "red": false },
-          { "text": "كل جرح فيها سبته ...هتنجرح زي وبالأضعاف كمان", "red": true },
-          { "text": " ", "red": false },
-          { "text": "بُعدي هتحس بقيمته ...بعد ما يبقى خلاص فات الأوان", "red": true },
-          { "text": " ", "red": false },
-          { "text": "كلامك اللي عليّا قلته ...كان دليل إن أنت من جواك جبان", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "فاكرني لعبة ...هتعيش حياتها زي ما أنت تقولها", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كذبت كذبة ...من كتر ما أنت كذبتها صدقتها", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أرجع أيه انسى ...أنا أي حاجة ربطاني بيك قطعتها", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ولا أي كلمة ...أحسن لك أبعد إحنا موضوعنا انتهى", "red": false }
-        ]
+        "text": "مبحبش أشغل بالي ... وأراء الناس مش فارقه لي",
+        "red": false
       },
       {
-        "id": 55,
-        "title": "طلعنا كدابيين",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "فرصة رجوعنا أنا أملي فيها كبير", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ضاعت وعودنا بعد حب جميل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مش هنكر إن البعد عنه ساب تأثير", "red": false },
-          { "text": " ", "red": false },
-          { "text": "نفس المعاني، الفرق في التفاصيل", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وأدينا يا قلبي عايشين .. بين البينين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وتعدي علينا أيامنا ..في بُعده سنين", "red": true },
-          { "text": "", "red": false },
-          { "text": "حاولنا كتير نبين .. إننا مرتاحين", "red": true },
-          { "text": "", "red": false },
-          { "text": "وقلنا هننسى لكن  ..طلعنا كدابين", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وليه ظلمتنا الدنيا ..والأيام!", "red": true },
-          { "text": " ", "red": true },
-          { "text": "ورفضوا يسيبوا قلوبنا تبقى.. سلام", "red": true },
-          { "text": " ", "red": false },
-          { "text": "طب ده اللي بينا كان حقيقي .. مش أوهام", "red": true },
-          { "text": "", "red": false },
-          { "text": "سنين ضاعوا ومش عارفين .. الباقي كام؟", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "الحب حلو لكن حالاته مختلفين", "red": false },
-          { "text": "", "red": false },
-          { "text": "أول حالتنا حب و آخرها متفارقين", "red": false },
-          { "text": "", "red": false },
-          { "text": "ودّعنا بعض والدمع مالي العين", "red": false },
-          { "text": "", "red": false },
-          { "text": "علشان مكنش في بالنا وكنا مضطرين", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 56,
-        "title": "الدنيا بتعلم",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "زعلت بجد على نفسي عشان أديتها", "red": false },
-          { "text": "", "red": false },
-          { "text": "لحد أزاها وتعبها وطلّع عينها", "red": false },
-          { "text": "", "red": false },
-          { "text": "وبعد دا كله سابها و راح لحد غيرها", "red": false },
-          { "text": "", "red": false },
-          { "text": "طلع كداب في كل حاجة كان قايلها", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وملعون الحُب اللي يخليني", "red": true },
-          { "text": "أعيش موجوعة طول سنيني", "red": true },
-          { "text": "بغمض عين و أفتح عين", "red": true },
-          { "text": "ونار الفراق تكويني", "red": true },
-          { "text": "", "red": false },
-          { "text": "", "red": false },
-          { "text": "هنكون كأننا أغراب كل م أشوفه", "red": true },
-          { "text": "مفيش بيننا أي كلام عشان أقوله", "red": true },
-          { "text": "بقيت نسياه ومش عاوزاه", "red": true },
-          { "text": "ومش هضعف ولا لحظه قدام دموعه", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "صحيح الدنيا بتعلّم وأهي علمتني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أخبي مشاعري جوايا وأقلل طيبتي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ومهما تعبت أستحمل وأقف على رجلي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "و أخلّي الصبر دا دوايا و أعيش بطريقتي", "red": false }
-        ]
+        "text": "بحمد ربّي في كل حالتي ... و دائماً راضي في كل الاوقات",
+        "red": false
       },
       {
-        "id": 57,
-        "title": "والله هويته",
-        "type": "صعيدي",
-        "lyrics": [
-          { "text": "حبيبي يا ناس زين الرجال", "red": false },
-          { "text": "تملي يضربوا بيه الأمثال", "red": false },
-          { "text": "لا يهاب مطاريد ولا نشال", "red": false },
-          { "text": "أصله صعيدي و ولد حلال", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "حبيبي يا ناس كامل العلام", "red": false },
-          { "text": "فصيح اللسان جميل الكلام", "red": false },
-          { "text": "سيطه واصل عالي المقام", "red": false },
-          { "text": "له كثير معارف وناس أعلام", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "والله هويته لمّا رأيته قصاد عيني", "red": true },
-          { "text": "صالب طوله كيف الفرسان", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "آه يا زماني لو ويهواني دا مخليني", "red": true },
-          { "text": "شايفه خياله في كل مكان", "red": true },
-          { "text": " ", "red": false },
-          { "text": "آه يا نهاري بتزيد ناري لو يواسيني", "red": true },
-          { "text": "بنظرة عين مليانة أمان", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "أحبابي قالوا لي أتقل عليه", "red": false },
-          { "text": "وأنا قدامه بضعف طب أعمل أيه؟", "red": false },
-          { "text": "غرامه بحر وغرقت فيه", "red": false },
-          { "text": "لو هو قدري ف أنا راضية بيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "نقشت صورته على كرداني", "red": false },
-          { "text": "و أسمه صار حلق في وداني", "red": false },
-          { "text": "في عتمة الليل لو طيفه جاني", "red": false },
-          { "text": "بيرد النور في دنيتي تاني", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 58,
-        "title": "وأما قابلتك",
-        "type": "كلاسيك",
-        "lyrics": [
-          { "text": "ياما عدّى عليّا أيام وليالي", "red": false },
-          { "text": "لا كان حوليه عزيز ولا غالي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لا حد يسأل عني ولا حد عارف مالي", "red": false },
-          { "text": "ولا حد يكتم جرحي ولا يملئ قلبي الخالي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وأمّا قابلتك يا حبيبي  معرفش جرى لي أيه؟", "red": false },
-          { "text": " ", "red": false },
-          { "text": "نسيتني الماضي بحاله مبقتش أفكر فيه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ودخلت في حياتي مليتها... عرفتني طعم حلاوتها", "red": true },
-          { "text": " ", "red": false },
-          { "text": "صحيت جوايا حاجات ...سنين و سنين داريتها", "red": true },
-          { "text": " ", "red": false },
-          { "text": "خلتني حابة أني أعيش ...وبقول لبكرة دا ميجيش", "red": true },
-          { "text": " ", "red": false },
-          { "text": "عشان أقضي معاك أوقات... أوقات حلوة مبتنتهيش", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أوقات مفيش فيها خوف ولا فراق ولا زعل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مفيش بس إلا شوق وسعادة وكمان أمل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أمل بيملئ فؤادي ويرُد لي روحي تاني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بيخليني مفكرش ولا حاجة تشغل بالي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "يا فرح دُق على بابنا  خليك ويانا ليه تسيبنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ويا حزن أمشي وفارقنا بلاش تزورنا ولا تيجي لنا", "red": false },
-          { "text": "", "red": false },
-          { "text": "", "red": false },
-          { "text": "يا هاوي حد وروحك فيه قول  بحبك خايف ليه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بين شوقك ليه تداريه يمكن تنول رضا معاليه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وتقول له يا حبيبي دا أنت  ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "دخلت في حياتي مليتها... عرفتني طعم حلاوتها", "red": true },
-          { "text": " ", "red": false },
-          { "text": "صحيت جوايا حاجات ...سنين و سنين داريتها", "red": true },
-          { "text": " ", "red": false },
-          { "text": "خلتني حابة أني أعيش ...وبقول لبكرة دا ميجيش", "red": true },
-          { "text": " ", "red": false },
-          { "text": "عشان أقضي معاك أوقات... أوقات حلوة مبتنتهيش", "red": true }
-
-        ]
+        "text": " ...............",
+        "red": false
       },
       {
-        "id": 59,
-        "title": "قلبي عندك",
-        "type": "مقسوم",
-        "lyrics": [
-          { "text": "يا حبيبي أنا قلبي عندك أرجوك حافظ عليه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "علشان قبل ما أقابلك أنا كنت بداوي فيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كان فيه كام صدمة جامدة من ناس قريبين", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ناس باعوا العشرة فجأة مخدتش ثانيتين", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يا حبيبي دلعني على آخرك", "red": true },
-          { "text": "أنا جاي ومسلم لقلبك", "red": true },
-          { "text": "نسيني الأحزان في حضنك", "red": true },
-          { "text": "خليني أفرح شوية", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "صحي لي مشاعري اللي نايمة", "red": true },
-          { "text": "اللي كانت في الهم عايمة", "red": true },
-          { "text": "أنا عارف أن مفيش حاجة دائمة", "red": true },
-          { "text": "بس متقطعش بيه", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "في كتير من عمري عدّى من غير ما أحس بيه", "red": false },
-          { "text": "خلينا نعيش حياتنا نستني تاني أيه", "red": false },
-          { "text": "أيامنا الحلوة جاية نتعب نفسنا ليه", "red": false },
-          { "text": "لو طولت شوية ف أنا شوقي مش هداريه", "red": false }
-        ]
+        "text": "أنا عُمري ما أبيع الشاري ",
+        "red": true
       },
       {
-        "id": 60,
-        "title": "من قلبي حبيته",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "هموت و أقول له على اللي في قلبي ", "red": false },
-          { "text": " وخايفة أبان ضعيفة في عينه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وعارفة أنه أكيد محتاج لي ", "red": false },
-          { "text": " و خوفي عامل حواجز بينه", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لأمتى هداري وأفضل أخبي ", "red": false },
-          { "text": " و أنا عارفة أني مليش غيره", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وليه تعبني ضميري يا قلبي ", "red": false },
-          { "text": " و بيقول بطلي تحني له", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ما ياما غلط وسامحني ", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ليه بقا مش عارفة أنا أسامحه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "كأن في شيء بيمنعني ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " لمّا بحاول أسمع له", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ونفس الشيء دا مش عاوزني ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " أقرب له وأكون جنبه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "جايز علشان أنا غلطي ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " مكنش بنفس تفاصيل غلطه", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "لا مرة خدعني ولا يوم خانني ", "red": false },
-          { "text": " ف لازم يعني أخد بإيده", "red": false },
-          { "text": " ", "red": false },
-          { "text": "في عز وجعي كان جنبي ", "red": false },
-          { "text": " مينفعش أن أنا أسيبه", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا حتى عمره ما كسرني ", "red": false },
-          { "text": " ليه أكسر قلبه وأبقا أذيته", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قالوا اللي يحب بيسامح ", "red": false },
-          { "text": " وأنا من قلبي حبيته", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 61,
-        "title": "موضوع وخلص",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "أنا حذّرتُك مئة مرّة ... ولا مرّة رضيت تسمعني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ونفسيتي بقي حُرّة ... وإهيّ مت عاوزاك ترجع لي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وعُيُوني دي مش مُضطرّة ... تشوف اللي بدمعني", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "حُبنا بقا قصّة مُملّة ... دوري فيها مبقاش ينفعني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قلبك أسي مالُوش ملّة ... عايش عشان بخدعني", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " قلبي دا من سجاجة ..والمسألة مت مُحتاجة", "red": true },
-          { "text": " ", "red": false },
-          { "text": "موضُوع وخلّص .. والغالي رخّص ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " وشبعت أنا خيانة", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ياما كثير نبّهتُك .. وكثير أوي وجّهتُك", "red": true },
-          { "text": "", "red": false },
-          { "text": "على حل أمان ..وأهُو قلبك خان ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ما كفاية بقا إهانهُ", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "متلُمنيش على حاجة هعملها... عشان أنت اللّي اخترت", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللّي يختار حاجة بيكملها... بيُواجه مبيهربش", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وخلاص كدا خلّصت حكايتنا... وعلى قراري مبندمش", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كان لازم نبعد فبعدنا... وعلى بُعدنا مبزعلش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وبسببك دي بقت نهايتها... مكتُوب لنا ما نكملش", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وبتسأل ليه بسيبك.. مع أنّك عارف عيبك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "طمّاع غدّار.. خلّتني أحتار... واحتار قلبي معايا", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنا مُرتاح من غيرك.. ويا قلبي كتّر خيرك", "red": true },
-          { "text": "عدّيت لُه كتير.. مطلعش أصيل... ممشيش على هوانا", "red": true },
-
-        ]
+        "text": "ولا أحب أرجع في قراري ",
+        "red": true
       },
       {
-        "id": 62,
-        "title": "حظي الحلو",
-        "type": "سلو",
-        "lyrics": [
-          { "text": "يا أجمل حاجة حصلت لي ", "red": false },
-          { "text": " معاك الدُّنيا ضحكت لي", "red": false },
-          { "text": "وكُنت فاكرها نسيتني ", "red": false },
-          { "text": " أتريها هتجمّعني بيك", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "من أوّل م أنا قابلتك ", "red": false },
-          { "text": " دخلت القلبُ وعشقتك", "red": false },
-          { "text": "وكُنتُ بقُولُ مفيش منك ", "red": false },
-          { "text": " وقدّري خلّني ألقيك", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أنا مهما أقُولُ يا حبيبي ", "red": true },
-          { "text": " وأحكي اللي في قلبي", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لا كلّمي هيخلص ", "red": true },
-          { "text": " ولا حتّى هتكفي", "red": true },
-          { "text": " ", "red": false },
-          { "text": "يا اللي جمالك مالُوش زيّ ", "red": true },
-          { "text": " وقلبي بيه مُستكفي", "red": true },
-          { "text": " ", "red": false },
-          { "text": "نفسي أفضل جُوا حياتك ", "red": true },
-          { "text": " لو تسمح لي", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يا حظي الحلو من الأيّامُ ", "red": false },
-          { "text": " معاك برتاح وببقى تمام", "red": false },
-          { "text": "حبيبي صدقُني دا مت كلامُ ", "red": false },
-          { "text": " دأ إحساس حلو حسيت", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 63,
-        "title": "وش الخير",
-        "type": "سلو",
-        "lyrics": [
-          { "text": "أنت سر قُوّتي... أنت عيدي وفرحتي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أيوه مصدر ضحكتي... أحلى حاجة ف دُنيتي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنت ساكن جُوا قلبي... أنت أغلى حاجة عندي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "طُب دا أنا ببقل همّي... لمّا بس بتبقى جنبي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أنت اللي روحي دابت فيه.. بدُون تفكير", "red": true },
-          { "text": " ", "red": false },
-          { "text": "أنت اللي زيك ف الزّمن دا.. مش كثير", "red": true },
-          { "text": " ", "red": false },
-          { "text": "نسيتني كُل الماضي.. آه يا وُش الخير", "red": true },
-          { "text": " ", "red": false },
-          { "text": "حلّيت حياتي.. وسيّبت فيها تأثير", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "أنت أحسن فُرصة جات لي... مين غيرك مصدر سعادتي؟", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ياما قبلك عشت وحدي... بس دلُوقتي أنت سندي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " مهما أقُول يا حبيبي... وأحكي برضه كلامي مش هيكفي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " مهما أداري ومهما أخبي... برضه ليك مكان في قلبي", "red": false }
-        ]
+        "text": "ومليش في اللبس الغالي ",
+        "red": true
       },
       {
-        "id": 64,
-        "title": "أتفضل",
-        "type": "رومانسي & مقسوم",
-        "lyrics": [
-          { "text": "م تُهدّي اللعب شوية ", "red": false },
-          { "text": " حبيبي بلاش بقى تُقلّ عليّا", "red": false },
-          { "text": "يا شاغلني في الرايحة وفي الجاية ", "red": false },
-          { "text": " مش شايف غيرك بعينيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أهدي متمشيش وتسيبني ", "red": false },
-          { "text": " أعمل معروف ده وهواك غلبني", "red": false },
-          { "text": "من الجمال ده بلاش تحرمني ", "red": false },
-          { "text": " أنا قلبي شاريك يا حبيبي افهمني", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "آه يا نُسخة ولن تتكرّر", "red": true },
-          { "text": "أنا عيني مبهورة من المنظر", "red": true },
-          { "text": "أنا كده هضعف مش هقدر ", "red": true },
-          { "text": "تعالى اُدخُل قلبي اتفضّل ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "آه يا واصل للعالمية", "red": true },
-          { "text": "رقة وأخلاق مثاليّة", "red": true },
-          { "text": "وكاريزما غير طبيعيّة", "red": true },
-          { "text": "مش هسيبك مهما يحصل", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عنده قبول لا مش عادي..", "red": false },
-          { "text": "ده هو في وادي والباقي في وادي", "red": false },
-          { "text": "والله لو يطلب عيني أنا راضي ", "red": false },
-          { "text": " أهم حاجة أشُوفُه قُصادي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يا جماعة حد يشوف صرفُه ", "red": false },
-          { "text": " من يوم ما قابلته أنا بالصُّدفة", "red": false },
-          { "text": "بصراحة خطفني كده خطفة ", "red": false },
-          { "text": " علشان مفيهوش ولا غلطة", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 65,
-        "title": "مهما أستجدع",
-        "type": "مقسوم",
-        "lyrics": [
-          { "text": "بعد اللّي كان مابينا .. فجأة وبسُهُولة هونا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وجاء غيرُنا خد مكانا .. وعلى الرّف اتركنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بعد ما إتهدّ حيلنا .. مبقاش يُتردّ خيرنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قدّمنا كثير عشاتُه .. وفي عزّ نومه سهرنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بعد ما راح وسابنا.. وخلي الكل عابنا", "red": false },
-          { "text": "وغيابه دا تعبنا.. راجع يدق بابنا", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "م خلاص حكايتك فضيناها ... وارتحنا منها ومن أزاها", "red": true },
-          { "text": " ", "red": false },
-          { "text": "في ناس مهما استجدع معاها ... بيقُولُوا عليّا مت أصيل", "red": true },
-          { "text": " ", "red": false },
-          { "text": "بعد ما كُنت نُور عيننا ... عاوز تجيب اللُّوم علينا", "red": true },
-          { "text": " ", "red": false },
-          { "text": "قال يعني إحنا اللّي ابتدينا ... بالقسوة ونُكران الجميل", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "لو عاوزين الصراحة.. البعد عنه راحة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "خدت منه استراحة.. مبقاش فيه له مساحة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كان بيقول مش ناسينا.. وإنه باقي علينا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " يعني إحنا كدا اشترينا.. والله دا كلامه كله زينة", "red": false },
-
-        ]
+        "text": "علشان شَيْء مش إجباري",
+        "red": true
       },
       {
-        "id": 66,
-        "title": "سمّعني",
-        "type": "رومانسي & مقسوم",
-        "lyrics": [
-          { "text": "تسمح من فضلك.. إني أتهوّر وأتجرّأ؟", "red": false },
-          { "text": "وآخد من وقتك حبة.. وأسأل فيهم سؤالين", "red": false },
-          { "text": " ", "red": false },
-          { "text": "إزاي متصور.. إن أنا مهما هلف وأدور", "red": false },
-          { "text": "هلاقي قمر زيك ومنور؟.. وأنت مفيش منك اتنين!", "red": false },
-          { "text": " ", "red": false },
-          { "text": "اعقلها وفكر.. هتلاقي إن أنا عمري ما هقدر", "red": false },
-          { "text": "وإني أصلا مش هعرف.. أبعد عنك لو ساعتين", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مالك متحير؟!.. يظهر إن سؤالي يوتر", "red": false },
-          { "text": "لو مش عاجبك عادي يتغير.. أو مُمكن أسأل بعدين", "red": false },
-          { "text": "...............", "red": false },
-          { "text": "أنا لو مش هسأل عنك.. أمال هسأل على مين يعني؟", "red": true },
-          { "text": " ", "red": false },
-          { "text": "قولي إزاي أزعل منك.. وأنت اللي مدلّعني؟", "red": true },
-          { "text": " ", "red": false },
-          { "text": "دا أنا حفظتك صم وفهمك.. أصل مفيش غيرك ينفعني", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ليه بس مخبي في قلبك؟.. قولها بصوت عالي سمّعني!", "red": true },
-          { "text": "...............", "red": false },
-          { "text": "لأ لأ فعلا متمكن.. دا الجرح في إيدك يتسكن", "red": false },
-          { "text": "مش معقول خالص مش ممكن.. للدرجة دي عيونك حلوين!", "red": false },
-          { "text": " ", "red": false },
-          { "text": "اضحك بقى يلا وهزر.. كل ما تضحك هفرح أكتر", "red": false },
-          { "text": "دا جمالك على قلبي مأثّر.. وبالذات الغمازتين!", "red": false },
-          { "text": " ", "red": false },
-          { "text": "شوف مهما هيحصل.. أنا منك عمري ما هفصل", "red": false },
-          { "text": "قدامك مقدرش أتقل.. أكتر من ثانيتين", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أحلف وأبصم بالعشرة.. والله أعلم وأدراه", "red": false },
-          { "text": "إنك من فترة لفترة.. حلاوتك بتزيد ضعفين!", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 67,
-        "title": "براحته يتشرط",
-        "type": "مقسوم",
-        "lyrics": [
-          { "text": "دا كدا عظمة على عظمة ", "red": false },
-          { "text": " مفيش بعد دا جمال", "red": false },
-          { "text": " ", "red": false },
-          { "text": "آه يا سلام على البسمة ", "red": false },
-          { "text": " دا حلو وعالي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ودا غيابه في أزمة ", "red": false },
-          { "text": " عمله في قلبي زلزال", "red": false },
-          { "text": " ", "red": false },
-          { "text": "معاه الدنيا لها لازمة ", "red": false },
-          { "text": " أنا بقيت ليه ميال", "red": false },
-          { "text": " ", "red": false },
-          { "text": "...............", "red": false },
-          { "text": "دا والله محتاج يتقدر دا لازم يتشال على الرأس", "red": true },
-          { "text": " ", "red": false },
-          { "text": " حقيقة أنا مش بتمنظر بجد دا ملك الإحساس", "red": true },
-          { "text": " ", "red": false },
-          { "text": "قبله كان قلبي مسيطر بس معاه احتاس", "red": true },
-          { "text": "...............", "red": false },
-          { "text": "عادي براحته براحته يشترط ", "red": false },
-          { "text": " ما هو خطير مالهوش حل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قلبي قفل عليه وقرط ", "red": false },
-          { "text": " زي الورد على الفل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "خطف روحي واتورط ", "red": false },
-          { "text": " بعد ما غطى على الكل", "red": false },
-          { "text": "...............", "red": false },
-          { "text": "حبيبي تفكيري ليه اتسلم.. بعد ما خلي العقل احتار", "red": true },
-          { "text": " ", "red": false },
-          { "text": "حتى أما بيمشي وبيسلم.. بيشدني من غير إنذار", "red": true },
-          { "text": " ", "red": false },
-          { "text": "قلبي بيعترف إنه استسلم.. مش هيفيد تاني إنكار", "red": true }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 68,
-        "title": "ما يُقع إلا الشاطر",
-        "type": "رومانسي & مقسوم",
-        "lyrics": [
-          { "text": "يا اللي موقع قلبي في حبك..", "red": false },
-          { "text": "بيقولوا ما يوقع إلا الشاطر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأكيد يعني أنا أشطر منك..", "red": false },
-          { "text": "ولكن برضه عليك مش قادر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يظهر كده فيه سر في قلبك..", "red": false },
-          { "text": "باين السر ده كله مخاطر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عرفني يا حبيبي أحسن لك..", "red": false },
-          { "text": "لو كان لي عندك خاطر", "red": false },
-          { "text": "...............", "red": false },
-          { "text": "تعرف أن محدش قبلك..", "red": true },
-          { "text": "كان بيخليني أشتاق ليه؟", "red": true },
-          { "text": " ", "red": false },
-          { "text": "طب تعرف بقى أن بُعدك..", "red": true },
-          { "text": "أكتر وقت أنا بتعب فيه!", "red": true },
-          { "text": " ", "red": false },
-          { "text": "تعرف أن أما أكون جنبك..", "red": true },
-          { "text": "تعرف أنا محسود على إيه؟", "red": true },
-          { "text": " ", "red": false },
-          { "text": "طب تعرف بقى أن قُربك..", "red": true },
-          { "text": "هو الشيء اللي بعيش بيه!", "red": true },
-          { "text": "...............", "red": false },
-          { "text": "دايما لما بيسألوا عنك..", "red": false },
-          { "text": "أنا مش بعرف أقول لهم إيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "طول الوقت أنا بشغل عقلك..", "red": false },
-          { "text": "والشوق ليك أنا فرحان بيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "صدقني أنا والله بحبك..", "red": false },
-          { "text": "ومفيش غيرك عايش ليه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "آه يا حلو أنت يا سابق سنك..", "red": false },
-          { "text": "لو قلبي ده عندك خليه!", "red": false },
-          { "text": "...............", "red": false },
-          { "text": "عيش واتدلع ودا من حقك..", "red": true },
-          { "text": "قلبي بيشتاق لك بزيادة", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ليل ونهار عمال أنده لك..", "red": true },
-          { "text": "مغرم بيك يا حبيبي كالعادة", "red": true },
-          { "text": " ", "red": false },
-          { "text": "دا أنت سكنت في روحي بقول لك..", "red": true },
-          { "text": "يا اللي عيونك فيها بحر سعادة", "red": true },
-          { "text": " ", "red": false },
-          { "text": "يا حبيبي دا أنا حبيتك كلك..", "red": true },
-          { "text": "مغرم أنا وعمال أتمادى!", "red": true }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 69,
-        "title": "قلبي إتورّط",
-        "type": "بوب",
-        "lyrics": [
-          { "text": "الله على عيناك الحلوة ", "red": false },
-          { "text": " ويا سلام على الضحكة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "متعلقنيش وتسيبني ", "red": false },
-          { "text": " يا حبيبي ما تهدي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا أنا جوايا لسه كلام ", "red": false },
-          { "text": " وكلام عاوز أقوله لك", "red": false },
-          { "text": "...............", "red": false },
-          { "text": "أنا قلبي إليك أتسلم ", "red": false },
-          { "text": " آمر وأتشطر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أول ما قابلني وسلم ", "red": false },
-          { "text": " أنا قلبي اتورط", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فيك عمري ما أفرط ", "red": false },
-          { "text": " ومع الأيام مسيري هنولك", "red": false },
-          { "text": "...............", "red": false },
-          { "text": "كام منك؟ كام زيك؟ ", "red": true },
-          { "text": " والله مفيش", "red": true },
-          { "text": " وأنا مهما حكيت عنك دا ما بيكفيش ", "red": true },
-          { "text": "يا حبيبي في وصفك", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فارق طبعا ومعدي ", "red": true },
-          { "text": " ودا بالتأكيد ", "red": true },
-          { "text": " على عيني كل أما يعدي الشوق بيزيد", "red": true },
-          { "text": " مش عارف ليه ؟ بتثبت منّك", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قالوا الحلوين في الدنيا", "red": true },
-          { "text": "أشكال وألوان", "red": true },
-          { "text": "بس أنت بجد مميز.. والفرق أهو بان", "red": true },
-          { "text": "من يوم ما قابلتك", "red": true },
-          { "text": "...............", "red": false },
-          { "text": "اتقل عادي وعلى كيفك", "red": false },
-          { "text": "يا معذب قلبي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وليوم ما تميل يا تعبني.. هفضل مستني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ما تقرب مني ياللي.. منايا قربك", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "من كتر التفكير فيك", "red": false },
-          { "text": "حبك خلاني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "شايفك في عيون الناس.. مش شايف تاني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "العشق غواني.. أنا دبت بقولك!", "red": false }
-
-        ]
+        "text": "أخترت أعيش مع حالي ",
+        "red": true
       },
       {
-        "id": 70,
-        "title": "يا سيدي",
-        "type": "مقسوم",
-        "lyrics": [
-          { "text": "يا رب منك متحرمش ", "red": false },
-          { "text": " يا أبو العيون متتوصفش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وغمزات متتقارنش ", "red": false },
-          { "text": " حن بقا ومنترسمش", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "شغلت عيني رمش رمش ", "red": false },
-          { "text": " وضحكتك مبتتخاصمش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وفي الزعل مبتتفاهمش ", "red": false },
-          { "text": " صدقني غيرك مستاهلش", "red": false },
-          { "text": "...............", "red": false },
-          { "text": "تديني وردة أديك بوكيه ", "red": false },
-          { "text": " وكل شيء مقدور عليه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "متسألنيش إزاي وليه ", "red": false },
-          { "text": " وقعت قلبك يا اسمك إيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قلبي تعبني من اللي فيه ", "red": false },
-          { "text": " ومن الناس اللي بترازيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مفيش غيرك مهتم بيه ", "red": false },
-          { "text": " أنا قلبي خدامك يا بيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "...............", "red": false },
-          { "text": "قلبي دا خدامك ", "red": true },
-          { "text": " وأديني بخبط على بابك", "red": true },
-          { "text": "لا بتفتح ولا حتى ترد ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "  بستني جنابك", "red": true },
-          { "text": "عمالة بتعب نفسي عشانك ", "red": true },
-          { "text": " شكلي هقف على الباب للصبح", "red": true },
-          { "text": "...............", "red": false },
-          { "text": "طب وحدة وحدة وبهدوء ", "red": false },
-          { "text": " يا مكس فيه احترام و ذوق", "red": false },
-          { "text": " ", "red": false },
-          { "text": "تديني خوخ أديك برقوق ", "red": false },
-          { "text": " زي العسل من غير ما أدوق", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "متركز حبة معايا فوق ", "red": false },
-          { "text": " دا الكل تحت وأنت فوق", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فرفش شوية حاول تروق ", "red": false },
-          { "text": " متعملش خريج حقوق", "red": false },
-          { "text": "...............", "red": false },
-          { "text": "قرب وهات إيدك في إيدي ", "red": false },
-          { "text": " عشان حبك يدخل وريدي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يا أشجار المحبة زيدي ", "red": false },
-          { "text": " يا شمعة الحنية قيدي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ترقص لي شعبي أرقص صعيدي ", "red": false },
-          { "text": " حتى لو عارف جديدي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وكل ما تبعت لي في بريدي ", "red": false },
-          { "text": " أنا هستلم الجواب يا سيدي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "...............", "red": false },
-          { "text": "نور عيني يا سيدي... اه ياللي ملغبط مواعيدي", "red": true },
-          { "text": "مبقاش عندي معاد مظبوط", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "من الشوق أسقيني... دلعني حبه وخلّي لي", "red": true },
-          { "text": "قلبي علي طول كدا مبسوط", "red": true }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 71,
-        "title": "رقصوا كل الناس",
-        "type": "شعبي",
-        "lyrics": [
-          { "text": "ليلتنا ليلة ولا ألف ليلة", "red": false },
-          { "text": "عريسنا زين وعروسته جميلة", "red": false },
-          { "text": "دا سيد الرجالة ودي قمر العيلة", "red": false },
-          { "text": "نسب يشرف وناس ثقيلة", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عريسنا هو الخير والبركة", "red": false },
-          { "text": "وعروستنا حلوة ومفيهاش غلطة", "red": false },
-          { "text": "لايقين على بعض ما شاء الله", "red": false },
-          { "text": "وعقبال الذرية الصالحة", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "علوا الزغروطة بقا والسقفة ", "red": true },
-          { "text": " رقصوا كل الناس الواقفة", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واعملوا صفين شمال ويمين ", "red": true },
-          { "text": " خلوا العرسان يفرحوا حبة", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "العروسة ترقص مع أهلها ", "red": true },
-          { "text": " والعريس يهيص مع أهله", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كل الناس تفرح من قلبها ", "red": true },
-          { "text": " مش عاوزين حد قاعد لوحده", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "يارب تم لهم على خير ", "red": false },
-          { "text": " عروسة حلوة وعريس أصيل", "red": false },
-          { "text": "هيمونها ويدلعها كتير ", "red": false },
-          { "text": " دا جدع وفاهم في التقدير", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يارب ديم الفرحة علينا ", "red": false },
-          { "text": " وعلى كل اللي بارك لينا", "red": false },
-          { "text": "دا إحنا ياما والله استنينا ", "red": false },
-          { "text": " وفرحنا خلاص واتهنينا", "red": false }
-        ]
+        "text": "و عاجبني أوي إختياري",
+        "red": true
       },
       {
-        "id": 72,
-        "title": "حصل خير",
-        "type": "رومانسي",
-        "lyrics": [
-          { "text": "بشتاق له وأبص في عيونه ", "red": false },
-          { "text": "بيداري لهفته ليّه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وفاكرني لسه مش عارف ", "red": false },
-          { "text": " أنه بيثقل عليّا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا أنا فاهمه أكثر من نفسه ", "red": false },
-          { "text": " ويمكن زيادة شوية", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وبسيبه يثقل براحته ", "red": false },
-          { "text": " ويداري أي أهمية", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ورغم أنه مغلبني ", "red": false },
-          { "text": " بالذات لمّا بيغير", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ورغم عمايله دي عاجبيني ", "red": false },
-          { "text": " ما أنا شفت منها كتير", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لمّا أتعب فيه ويتعبني ", "red": false },
-          { "text": " كأن ناقر ونقير", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وعشان شاريني وحاببني ", "red": false },
-          { "text": " بيقول لي عادي حصل خير", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "دا اللي معاه ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " أعيش عمري اللي جاي معاه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لو أنسى الدنيا مش بنساه ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " حبيب قلبي يحميه الله", "red": true },
-          { "text": " ", "red": false },
-          { "text": "الله على جماله الله ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " الله على جماله الله", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا جوا العين ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " دا جوا العين أكيد متشال", "red": true },
-          { "text": " ", "red": false },
-          { "text": "ودائما قلبي ليه مايل ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " دا حقيقة يا ناس لأ مش خيال", "red": true },
-          { "text": " ", "red": false },
-          { "text": "الله على جماله الله ", "red": true },
-          { "text": " ", "red": false },
-          { "text": " الله على جماله الله", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "بيبص بنظرة عفوية ", "red": false },
-          { "text": " يضعف قدامها وأعمل إيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ضحكته فيها طاقة إيجابية ", "red": false },
-          { "text": " تستاهل العالم باللي فيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فعلا مش حاجة طبيعية ", "red": false },
-          { "text": " لا فيه زيه ولا هيكون فيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يحبه مليون في الـ 100 ", "red": false },
-          { "text": " وبدعي ربنا يحميه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "لما بيغلط يزعق له ", "red": false },
-          { "text": " وبيبقى من ورا قلبي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لما بيغلط بزعق له..", "red": false },
-          { "text": "وبيبقى من ورا قلبي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أصلي مبقدرش على زعله..", "red": false },
-          { "text": "عشان يعني غالي عندي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مبحبش أشوف دمعه..", "red": false },
-          { "text": "ولا برتاح لو مش جنبي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عشان كده لما بيسيبني..", "red": false },
-          { "text": "بفضل قاعد ومستني", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 73,
-        "title": "إتجوزت رسمي",
-        "type": "مقسوم",
-        "lyrics": [
-          { "text": "أنا ودعت العزوبية ", "red": false },
-          { "text": " ودخلت في عش الزوجية ", "red": false },
-          { "text": " وبقيت أقول حاضر وعينية", "red": false },
-          { "text": "يعني إتجوزت رسمي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "سبت الخروجات والسهر ", "red": false },
-          { "text": " عشان أفضل جنب القمر ", "red": false },
-          { "text": " اللي بقى شاغل بالي ", "red": false },
-          { "text": " وساكن جوا قلبي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أنا كنت عايشها أمير ", "red": false },
-          { "text": " ليلي نهار ونهاري ليل ", "red": false },
-          { "text": " معروف عني التأخير وقليل لما أجي بدري", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أيوه أنا كنت مقضيها ", "red": false },
-          { "text": " ومفيش حاجة باقي عليها ", "red": false },
-          { "text": " ببسط روحي وأخليها عايشة الدنيا بحلاوتها", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "دا حلاوة الدنيا بتكمل... لمّا بكون ويا الغاليين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "زيك يا حبيبي تملي... دائما أملي بيك العين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لو عنك حد سألني ...بمليه جمالك دا في دواوين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وبدعي وأقول ربي يخلي ...ويحميك من عين الحاسدين", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "أنا مش سهل أتي أجي سكة ", "red": false },
-          { "text": " بس أنت عملت لي ربكة ", "red": false },
-          { "text": " فكرتني باللي عدّى خليت عقلي كدا يون", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كان قلبي في سابع نومة ", "red": false },
-          { "text": " ومكنش باين ليه قومة ", "red": false },
-          { "text": " وكانت روحي  مهمومة وتعبانة من كثر الزن", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بس معاك كل أتظبط ", "red": false },
-          { "text": " والفرح على بابي جه وخبط ", "red": false },
-          { "text": " وبقيت مبسوط مش متلغبط ", "red": false },
-          { "text": "ولأجل عيناك أقلب جن ", "red": false },
-        ]
+        "text": "و لو أيامي مش ضّحكه لي ",
+        "red": true
       },
       {
-        "id": 74,
-        "title": "يعمل ما بداله",
-        "type": "رومانسي & مقسوم",
-        "lyrics": [
-          { "text": "حبيبي دا مدلع لوحده ", "red": false },
-          { "text": " ومش محتاج حد يدلعه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يزعق ويتنرفز براحته ", "red": false },
-          { "text": " أنا عمري ما هقدر أمنعه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ودائما يكسفني بصراحته ", "red": false },
-          { "text": " أبو عيون حلوة وبتلمعه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وفي القلب خلاص أخد مساحته ", "red": false },
-          { "text": " دا اللي عيوني بيه اتمتعه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "منور ومسيطر عليه ", "red": false },
-          { "text": " ومذوب قلبي بجماله", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مفيش غيره بيشغل عينيه ", "red": false },
-          { "text": " ولا في غيري شاغل باله", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا وقعني بطلعته البهية ", "red": false },
-          { "text": " وبنظرات عينه وبكلامه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ولو بس يسيب نفسه ليه ", "red": false },
-          { "text": " محقق له أنا كل أحلامه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "حبيبي دا يعمل ما بداله ", "red": true },
-          { "text": " ومفيش حد يزعله", "red": true },
-          { "text": " ", "red": false },
-          { "text": "حبيبي مش هتلاقيه بداله ", "red": true },
-          { "text": " لا هتعرفه ولا تقدره", "red": true },
-          { "text": " ", "red": false },
-          { "text": "دا اللي نجوم السما داعية له ", "red": true },
-          { "text": " لما بيظهر بينوره", "red": true },
-          { "text": " ", "red": false },
-          { "text": "دا حتى القمر غنى له ", "red": true },
-          { "text": " عليه كام كلمة يسخره", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ودا اللي مفيش منه ولا زيه..", "red": false },
-          { "text": "أول مرة أذوب بالشكل دا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قلبي بيرتاح أول ما أقابله ", "red": false },
-          { "text": " ياما نفسي أنول منه الرضا", "red": false },
-          { "text": "ومقدرش أستغني يوم عنه ", "red": false },
-          { "text": " دا روحي عليه بقت متعودة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "جماله مفيش بعده ولا قبله ", "red": false },
-          { "text": " أنا عمري ما شفت جمال كدة", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "حبيبي دا له وضعه وسلطته ", "red": true },
-          { "text": " بين الحلوين واخد مركزه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "دائما بضعف قدام ضحكته ", "red": true },
-          { "text": " بتخلي عيوني معاه يركزه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "دا اللي الروح بتعشق رقته..", "red": true },
-          { "text": "أصله عليه رقة بتميزه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "آه منه دا فتنّي بنظرته..", "red": true },
-          { "text": "عيونه فيها كام نظرة يحفزوا", "red": true }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 75,
-        "title": "من غير تفكير",
-        "type": "رومانسي & مقسوم",
-        "lyrics": [
-          { "text": "اسمح لي أقول ", "red": false },
-          { "text": " أنا قلبي في بعدك مقفول", "red": false },
-          { "text": "وتملي بالي دا مشغول ", "red": false },
-          { "text": " نفسي أطمئن عليك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ورغم المسافات ", "red": false },
-          { "text": " أنا فاكرك طول الأوقات", "red": false },
-          { "text": "وأحلى وأسعد اللحظات ", "red": false },
-          { "text": " اللي بتجمعني بيك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وعن نفسي خلاص ", "red": false },
-          { "text": " استغنيت عن باقي الناس", "red": false },
-          { "text": "مش هتعب تاني ولا أحتاس ", "red": false },
-          { "text": " طول ما أنا قدام معاليك", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "تعرف يا حبيبي قلبي ", "red": true },
-          { "text": " إنك حليت أيامي", "red": true },
-          { "text": " ", "red": false },
-          { "text": "شفت إن الدنيا وأنا وياك ", "red": true },
-          { "text": " ليها إحساس تاني", "red": true },
-          { "text": " ", "red": false },
-          { "text": "الفرحة اللي بشوقها في عينك ", "red": true },
-          { "text": " بتخليني مش شايف غيرك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "الله على جمال تفاصيلك ", "red": true },
-          { "text": " دي مجنناني", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "من غير تفكير", "red": false },
-          { "text": "أنا ياما استنيت كتير", "red": false },
-          { "text": "قولها وخد قرار أخير", "red": false },
-          { "text": "قول إن أنت بتهواني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "قلقان من إيه؟", "red": false },
-          { "text": "قلبك عمري ما هقسى عليه", "red": false },
-          { "text": "لو شفت الهنا اللي أنا فيه", "red": false },
-          { "text": "والله هتصدق كلامي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "إنت عليك شخصية", "red": false },
-          { "text": "محترمة وكمان طبيعية", "red": false },
-          { "text": "والضحكة كلها عفوية", "red": false },
-          { "text": "على طول لفتت انتباهي", "red": false }
-        ]
+        "text": "أنا بضحك علي اللي بيجري لي",
+        "red": true
       },
       {
-        "id": 76,
-        "title": "جماله عربي",
-        "type": "مقسوم",
-        "lyrics": [
-          { "text": "جمالُه عربي أساسي ومتأصل", "red": false },
-          { "text": "كأنه علي مقاسي دا متفصل", "red": false },
-          { "text": " ", "red": false },
-          { "text": "صاحب اسم وهيبة ومتقدر", "red": false },
-          { "text": "راجل ملو هدومه أوي مسيطر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وجوده جوا حياتي دا هيأثر", "red": false },
-          { "text": "دخل قلبي خلاص", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ملوش حل بيرقص علي الوحدة", "red": false },
-          { "text": "عيناه مبتروحش خالص علي واحدة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ومش سهل يسيب قلبه لوحده", "red": false },
-          { "text": "وأنا معاه هنسي أكيد الوحدة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بدأت أتشد له وحدة بوحدة", "red": false },
-          { "text": "دا أغلي من الماس", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أغلى من الماس غالي عندي... وأُقرّ يا ناس أنا بنفسي", "red": true },
-          { "text": "أني بقيت حرمه وفي قُربه.. أنا ببقى سعيدة", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا حبيبي الخير والبركة... القلب أبيض والنية دي سالكة", "red": true },
-          { "text": "ودنياتي من يوم ما عرفته.. بقت دنيا جديدة", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "يا ويلي من سُلاطاته وعلاقاته", "red": false },
-          { "text": "ومن منظر جسمه وعضلاته", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ولا شياكته بقا وستايلاته", "red": false },
-          { "text": "فتني بنظراته وغمزاته", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بيقولي أن أنا حلّيت له حياته", "red": false },
-          { "text": "دا يتشال علي الرأس", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مسموح له يكنسل لما أنا أرن", "red": false },
-          { "text": "عادي براحته يا ناس أصلُه مهم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عليه ضحكة تشيل كل الهم", "red": false },
-          { "text": "دا هو عسل والباقي دول سم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا في وجوده الروقان بيعُم", "red": false },
-          { "text": "دا king الإحساس", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "دا صياد وشبك قلبي في طُعمه", "red": false },
-          { "text": "دا زي السكر في لونه وطعمه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وخفة دمه وأدبه دا طبعه", "red": false },
-          { "text": "ودائما كدا ثابت علي وضعه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بسمع لكلامه مبحبش أقاطعه", "red": false },
-          { "text": "دا من غيره أحتاس", "red": false }
-        ]
+        "text": " ...............",
+        "red": false
       },
       {
-        "id": 77,
-        "title": "ست الكل",
-        "type": "إجتماعي & عائلي",
-        "lyrics": [
-          { "text": " من حق أمي عليّا", "red": false },
-          { "text": "وقت تعبها إني أبقا معاها", "red": false },
-          { "text": "", "red": false },
-          { "text": "ولما تسبني ثانية", "red": false },
-          { "text": "أسأل عنها وأستناها", "red": false },
-          { "text": "", "red": false },
-          { "text": "بطيبتها ورقتها", "red": false },
-          { "text": "خلت كل الناس حباها", "red": false },
-          { "text": "", "red": false },
-          { "text": "دي بضحكتها بتحلي الدنيا", "red": false },
-          { "text": "ضحكتها يا محلها", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أمي يا أمي يا أم الدنيا", "red": true },
-          { "text": "أنتي يا وتر العالم", "red": true },
-          { "text": "", "red": false },
-          { "text": "أمي يا قلبي وعيني الثانية", "red": true },
-          { "text": "أنتي لوحدك عالم", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "أنتي الدفا وأنتي الإحساس", "red": true },
-          { "text": "من حقك تتشالي علي الرأس", "red": true },
-          { "text": "", "red": false },
-          { "text": "أمي يا أمي يا أغلي الناس", "red": true },
-          { "text": "يا أغلي من حياتي", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "بتعب ما بتغفل لك عين", "red": false },
-          { "text": "غير لما تحسي أني تمام", "red": false },
-          { "text": "", "red": false },
-          { "text": "حقك تسكُني نن العين", "red": false },
-          { "text": "أنتي مُسكن أي آلام", "red": false },
-          { "text": "", "red": false },
-          { "text": "من غير أمي هروح أنا فين", "red": false },
-          { "text": "دا حنانها مفيش بعده حنان", "red": false },
-          { "text": "", "red": false },
-          { "text": "عشت معاها شهور وسنين", "red": false },
-          { "text": "نفسي أعشها كمان وكمان", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "كل فلوس الدنيا بحالها", "red": false },
-          { "text": "مش هتعوضني عن الأم", "red": false },
-          { "text": "", "red": false },
-          { "text": "لما أزعل من حاجة وأشكي لها", "red": false },
-          { "text": "بتصبرني يا ناس علي الهم", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مهما أتكلم عنها وأقول", "red": false },
-          { "text": "برضه كلامي هيزيد ويطول", "red": false },
-          { "text": "", "red": false },
-          { "text": "بصراحة كدا مش معقول", "red": false },
-          { "text": "أنسي جمايل ست الكل", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أمي يا أمي يا أم الدنيا", "red": true },
-          { "text": "أنتي يا وتر العالم", "red": true },
-          { "text": "", "red": false },
-          { "text": "أمي يا قلبي وعيني الثانية", "red": true },
-          { "text": "أنتي لوحدك عالم", "red": true },
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 78,
-        "title": "عمّ الجنيني",
-        "type": "مقسوم",
-        "lyrics": [
-          { "text": "عم الجنيني عم الجنيني بيسقي الزرعة", "red": false },
-          { "text": "وخايفة أقول له يجيب لي وردة", "red": false },
-          { "text": "ليفكر أني بحن له", "red": false },
-          { "text": "", "red": false },
-          { "text": "", "red": false },
-          { "text": "أصله يا عيني مجنون بيه", "red": false },
-          { "text": "ومبيشلش عينه من عليه", "red": false },
-          { "text": "كل لما ببُص له", "red": false },
-          { "text": "", "red": false },
-          { "text": "", "red": false },
-          { "text": "طب أعمل إيه في المشكلة ديه", "red": false },
-          { "text": "أقوله ولا أستني شوية", "red": false },
-          { "text": "بيني وبينكم أنا أشتقت له", "red": false },
-          { "text": "", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أشتقت له ومش عارفة أداري", "red": true },
-          { "text": "ولا عارفة حتي أشيله من بالي", "red": true },
-          { "text": "أصله مُهم بالنسبة لي", "red": true },
-          { "text": "مُهم أوي كله أهمية", "red": true },
-          { "text": "قلبه دا فيه نهر الحنية", "red": true },
-          { "text": "بس أنا بقا علشان عنادية", "red": true },
-          { "text": "مش هبُص له لو ندالي", "red": true },
-          { "text": "", "red": false },
-          { "text": "", "red": false },
-          { "text": "", "red": false },
-          { "text": "هو عشان عارف أني بحبه", "red": true },
-          { "text": "ومبقدرش أبعد عنه", "red": true },
-          { "text": "وأني تملي بقرّب منه", "red": true },
-          { "text": "يقوم يقلقني عليه ليالي", "red": true },
-          { "text": "", "red": false },
-          { "text": "", "red": false },
-          { "text": "", "red": false },
-          { "text": "أيوه هسيبه يعمل ما بداله", "red": true },
-          { "text": "بس أنا برضه مش راجعة له", "red": true },
-          { "text": "غير لمّا يغير أحواله", "red": true },
-          { "text": "ويعرف أنه عليه غالي", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "ليه بقا مُصمم يوجع قلبي", "red": false },
-          { "text": "مع أنه عارف أنه حبيب قلبي", "red": false },
-          { "text": "وأن أنا عنه مش بستغني", "red": false },
-          { "text": "", "red": false },
-          { "text": "", "red": false },
-          { "text": "لما أسأله كان فين بيخبي", "red": false },
-          { "text": "دائما مش بيقدّر حُبي", "red": false },
-          { "text": "دا أنا عشانه عرفت المغني", "red": false },
-          { "text": "", "red": false },
-          { "text": "حتي معدش بيقعد جنبي", "red": false },
-          { "text": "مع أن دا ذنبه ومش ذنبي", "red": false },
-          { "text": "دائما يا قلبي شاغل دماغني", "red": false }
-        ]
+        "text": "بقرّب  للّي يقرب مني ... و بطنش اللي بيبعد عني",
+        "red": false
       },
       {
-        "id": 79,
-        "title": "عجبي عليك يا زمن",
-        "type": "شعبي",
-        "lyrics": [
-          { "text": "يا دنيا شفت فيكي البشر علي كل شكل ولون", "red": false },
-          { "text": "في اللي بامانه يصون واللي في ثواني يخون", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي عليك باقي وعُمرك عليه م تهون", "red": false },
-          { "text": "وابن الاصول والعاقل بيطلعوه مجنون", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي للقرش ساعي في زمانا دا مطحون", "red": false },
-          { "text": "واللي معاه المال بيعيش في دور فرعون", "red": false },
-          { "text": "حتى ولو مشبوه ومصدره مش مضمون", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مبقاش في خير في الدنيا خلاص", "red": true },
-          { "text": "ولا عارفيني سكته", "red": true },
-          { "text": " ", "red": false },
-          { "text": "دا اللي يشوف بلاوي الناس", "red": true },
-          { "text": " تهون عليه بلوته", "red": true },
-          { "text": " ", "red": false },
-          { "text": "بشر حقودة وعيونها رصاص", "red": true },
-          { "text": "وليل نهار يحسده", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وابن الحلال مأذي ومنداس", "red": true },
-          { "text": "والفقر هيموته", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "عجبي عليك يا زمن فيك اللي ربه معاه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عشان بيطيع ربه واللي شيطانه غواه غضب عليه ربه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي معاه القرش ومستخصره في نفسه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي معهوش جنيه وبيجري على اهله", "red": false },
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 80,
-        "title": "قولو ا اميين",
-        "type": "شعبي",
-        "lyrics": [
-          { "text": "الليلة ليلتي هرقص براحتي", "red": false },
-          { "text": "انا وعريسي وصاحبي واهلي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "نرقص صعيدي ونرقص بلدي", "red": false },
-          { "text": "ايوة محدش له حاجة عندي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "طول ما عريسي موجود معايا", "red": false },
-          { "text": "هرمي هموم الدنيا ورايا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "هيكون ضهري وسندي وحمايا", "red": false },
-          { "text": "دا قمر ومنور في سمايا", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ارقصوا زغرطوا سقفو يلا", "red": true },
-          { "text": " ", "red": false },
-          { "text": " كنا في جرة طلعنا لبرة", "red": true },
-          { "text": " ", "red": false },
-          { "text": "الليلة ليلتي ومش مضطرة", "red": true },
-          { "text": " ", "red": false },
-          { "text": " اني اوصيكو بقى عليّا", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ربنا يحرسنا من العين", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ونفضل مع بعض قولوا آمين", "red": true },
-          { "text": " ", "red": false },
-          { "text": "دا اللي انا استنيته سنين", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": " هيشيلني في عينه وهشيله في عينايا", "red": false },
-          { "text": "بكرة هجيب له انا بنت جميلة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وتكون هي قمر العيلة", "red": false },
-          { "text": "في سبوعها هنعمل هوليلة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وتملى كدا الشقة علينا", "red": false },
-          { "text": "او اجيب له ولد ويشيل اسمه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ويعيش يتدلع على حسّه", "red": false },
-          { "text": "وكل البنات عليه يترسموا", "red": false },
-          { "text": "يتشاقى ويطلع عينينi", "red": false }
-        ]
+        "text": "و مش بتأثر لو زاد همّي ... أنا عندي مناعه من الاحباط",
+        "red": false
       },
       {
-        "id": 81,
-        "title": "كله هيتحاسب",
-        "type": "شعبي",
-        "lyrics": [
-          { "text": "اللي راح اهو راح وسابنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " احنا مش هنحنّ ليه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي حب في يوم تعبنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " بكرة يجي ونتعب فيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي غاوي انه يعذبنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " احنا مش هنسمي عليه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي مقبلناش على عيبنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " احب اقوله العيب عليه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "واللي عامل فيها حبيبنا", "red": false },
-          { "text": " احنا عارفين اخره ايه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "اخره غيرة وحبه دا كذبة", "red": false },
-          { "text": " بس ادينا بنجاريه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي عاش بثمن دمعتنا", "red": false },
-          { "text": " على اللي عمله دا هنبكّيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي كان همه أذيتنا", "red": false },
-          { "text": "احنا برضه لازم نأذيه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "كله دلوقتي هيتحاسب", "red": true },
-          { "text": " والحساب هيكون عسير", "red": true },
-          { "text": " ", "red": false },
-          { "text": "السماح مع المسالم", "red": true },
-          { "text": " مش مع عديم الضمير", "red": true },
-          { "text": " ", "red": false },
-          { "text": "كل اول جاي له آخر", "red": true },
-          { "text": " آخره دا هيكون كبير", "red": true },
-          { "text": " ", "red": false },
-          { "text": "يا اللي دُسته عليا جامد", "red": true },
-          { "text": " مني مش هتشوفوا خير", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "إحنا حبّينا وإتّئزينا... هُنّا على اللّي مهنّش علينا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عُمرنا مبيعنا اللي شارينا... وهوّ باعنا وضحّى بينا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "راح لغيرنا عمل ناسينا... بس عادي ولا إتهزّينا", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "اللي راح اهو راح وسابنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " احنا مش هنحنّ ليه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي حب في يوم تعبنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " بكرة يجي ونتعب فيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي غاوي انه يعذبنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " احنا مش هنسمي عليه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي مقبلناش على عيبنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " احب اقوله العيب عليه", "red": false },
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 82,
-        "title": "محدش له جِميله علينا",
-        "type": "شعبي",
-        "lyrics": [
-          { "text": "لا كدا كفاية وخلاص خلصنا", "red": false },
-          { "text": " واللي راح يجي بكرة غيره", "red": false },
-          { "text": " ", "red": false },
-          { "text": "احنا بطلنا اللي يعطلنا", "red": false },
-          { "text": " واللي يشد علينا حيله", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي ميصوناش ويقدرنا", "red": false },
-          { "text": " بلاها منه ومش عاوزينه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "اللي دايما غاوي يعصبنا", "red": false },
-          { "text": " الله الغني عنه وعن خيره", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ليل نهار يضايقنا ويتعبنا", "red": false },
-          { "text": " لاء نفضها سيرة بنا وبينه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "امشي مع الف سلامة روح", "red": true },
-          { "text": " ", "red": false },
-          { "text": " سبنا لك الباب مفتوح", "red": true },
-          { "text": " ", "red": false },
-          { "text": "والرجوع تاني مش مسموح", "red": true },
-          { "text": " ", "red": false },
-          { "text": " دا احنا بنطلع في الروح", "red": true },
-          { "text": " ", "red": false },
-          { "text": "واللي يجي على كرامتنا", "red": true },
-          { "text": " ", "red": false },
-          { "text": " يبقى يا روح ما بعدك روح", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "دا احنا مدينا ايدينا ليك", "red": false },
-          { "text": " قلنا نساعدك ونعليلك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واخرتها مطمرش فيك", "red": false },
-          { "text": " بعتها وقبضت الشيك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بس عادي ولا يشغلنا", "red": false },
-          { "text": " عُمرها ما هتقف عليك", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "احنا محدش له جميلة علينا", "red": false },
-          { "text": " دا احنا لينا جمايل ياما", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وطول ما واقفين على رجلينا", "red": false },
-          { "text": " عيونا دي هتفضل مليانة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "شفنا كتير من الدنيا وعدينا", "red": false },
-          { "text": " دايمان راضين بكل حاجة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "عايشينها بالحلال وبأيدينا", "red": false },
-          { "text": " والايد الشقيانة كسبانة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا ربنا لوحده اللي عالم بينا", "red": false },
-          { "text": " لحد ما تقوم القيامة", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 83,
-        "title": "أضحك يا عمّ",
-        "type": "شعبي",
-        "lyrics": [
-          { "text": "انا بس جاي امسي على الناس الجميلة", "red": false },
-          { "text": " ", "red": false },
-          { "text": " اللي دخلت في قلبي ومن اول دقيقة", "red": false },
-          { "text": " ", "red": false },
-          { "text": "اللي تملي جنبي ومعايا في اي ضيقة", "red": false },
-          { "text": " ", "red": false },
-          { "text": " اللي بتقف في ظهري .. اللي قلوبها جريئة", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "انا الذي استوى والدنيا جائت عليه", "red": true },
-          { "text": " ", "red": false },
-          { "text": " وخدت منه الدواء وسابت جرح فيه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وحس بعكننة وبهم بيناديه", "red": true },
-          { "text": " ", "red": false },
-          { "text": " قرر ينسى الزهق .. قرر يفرح يومين", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "إضحك يا عمّ فرفش وهتتعدل اكيد", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا الجرح لو ملمش مسيره يوم يطيب", "red": false },
-          { "text": " ", "red": false },
-          { "text": "متكشرش وتقفش ومتعملش حويط", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دنيا وبنعيشها مرة.. فنعيشها مبسوطين", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وبلاش تشغل دماغك.. وتفكّر في اللّي جاي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "اهدي ورُوق مزاجك.. وقُول للحُزن باي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ربُّك عالم بحالك.. ارتاح وريح بالك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دلّع نفسك بمالك.. وإتمتع بالسّنين", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "واللّي مترتاحلهوش سيبُوه ومتكلّمُوش", "red": false },
-          { "text": "ولو كلامُه دايقك إمشي ومتسمعُوش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مهما يقُولك بحبّك كذّاب متصدّقُوش", "red": false },
-          { "text": "دا النّقص حاجة وحشة بتبان على الوشُوش", "red": false },
-          { "text": " ", "red": false },
-          { "text": "اللّي يحبّني أحبُّه وأشيلُه فوق دماغي", "red": false },
-          { "text": "ومهما بقى خاصمتُه برجع أصالحُه تاني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ماهو لو زعله فرقلي وفضّل شاغلي وقتي", "red": false },
-          { "text": "يبقى دا عندي غالي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "سألت أثنين صُحاب.. أزاي أختار لي صاحب", "red": true },
-          { "text": " ", "red": false },
-          { "text": "قالُو لي إختار الصّاحب.. اللّي معاك يبقى راجل", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لو عُزّت منهُ حاجة.. ميقُلش لأه خالص", "red": true },
-          { "text": " ", "red": false },
-          { "text": "يكُون صاحب بجدّ.. ميكُنش خسيس وناقص", "red": true }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 84,
-        "title": "المركب مشيت",
-        "type": "شعبي",
-        "lyrics": [
-          { "text": "بخرج من جرح لجرح ... مش بلحق حتى اتهني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا الموضوع محتاج شرح ...وانا هشرح فيه وأتأني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا انا كل ما احب في حد... بتعب جدا وأتأذي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ليه حبيت خلق رخاص ...غزو القلب مائتين غزّة", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دنيا بقت عكس عكاس... الطيب جاية عليه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "واللي بيظلم في الناس ...يتقال له سعادة البيه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كل اللي عايش بدراعه... في سابع سماء بتعليه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "اما اللي بيمشي يمين ...بتفضي همومها فيه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وانا عندي هم ما يتلم... ومفيش حاجة غير راحتي اهم", "red": true },
-          { "text": " ", "red": false },
-          { "text": "اديت ناس حب ادوني غم... سبناهم المركب اهي مشيت", "red": true },
-          { "text": " ", "red": false },
-          { "text": "قدمت الخير ومن ثمّ ...اترد لي من تعابين سامة", "red": true },
-          { "text": " ", "red": false },
-          { "text": "والله دول اسم على مسمّى ...العيبها بانت واتهرشت", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "خلق صاحبتها على عيبها ...والعيب كانت انانية", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لما فلوسي خلصت مني... فجأة بقت تشمت فيا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "آه من الدنيا وألاعبها... عمالة بتلعب بيا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ليل ونهار بتغلبني ...مبتهداش غير شوية", "red": false }
-        ]
+        "text": "بغيّر في طريقي لوأتسد ... عاشق الهزار أكتر الجد",
+        "red": false
       },
       {
-        "id": 85,
-        "title": "تلميذ بليد",
-        "type": "شعبي",
-        "lyrics": [
-          { "text": "شفتوا اللي عامل جدع كنا نلاقيه وقت الدلع", "red": false },
-          { "text": " ", "red": false },
-          { "text": "سابنا في الازمة وخلع باعنا كاش بدون مرتجع", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ومسابش غير هم ووجع", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " كان عامل فيها بيحبنا و بيتعب لو غاب عنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " واهو بعد ما قرب منا خد خيرنا وسابنا لوحدنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "طلع قليل الاصل غدار وملوش امان", "red": false },
-          { "text": "تلميذ بليد في الفصل وسقط في الامتحان", "red": false },
-          { "text": "طلع معندوش دم ولا عنده ذمة كمان", "red": false },
-          { "text": "عاوز يعمل مهم وقصادنا مش بيبان", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مفيش عتاب على الناقص علشان ملوش عازة", "red": true },
-          { "text": " ", "red": false },
-          { "text": "مبقاش يشغلنا خالص وخدنا منه اجازة", "red": true },
-          { "text": " ", "red": false },
-          { "text": "متضايق من نجاحنا حاطّين عليّه وحارقينُه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "لسّه أحنا زيّ ما أحنا وهُوّا مش شايفينُه", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "دا كان عامل جدع وعامل بيحبّنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "كان يجّي وقت الدّلع و يقرّب منّا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "في الضّيقه لقيناه خلع وسابنا لوحدنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "باعنا بدون مرتجع لكن ولا هزّنا", "red": false },
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 86,
-        "title": "نيّتي خير",
-        "type": "طرب",
-        "lyrics": [
-          { "text": "هوا أنت لسه فاكرني ... وفاكر أسمي أيه  !", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مبقالك عُمر هاجرني  ... راجع دلوقتي ليه ؟", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مين قال أنك واحشني  ...  دا كلام راحت عليه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "هوا اللي يحيب حد  ...  بيضيعه من أيديه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "كان لازم يومها أمشي و أسيبك  ... و أحاول أنساك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "بقا عاوز تيجي على كرامتي ...  و أفضل وياك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "كنت فاكر نفسك ضامني  ... و همشي على هواك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "متوقعتش أبدا مني ...  اللي عملته معاك", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "كان كل همّي سعادتك  ... و كانت نيتي خير", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ومنبنيش من سعادتك  ... غير جرح أثره كبير", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا أنا لما كنت بعاتبك  ... كان من خوفي عليك", "red": false },
-          { "text": " ", "red": false },
-          { "text": "مطلعتش غالي عندك  ... و لا حتى فارق ليك", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "كان لازم يومها أمشي و أسيبك  ... و أحاول أنساك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "بقا عاوز تيجي على كرامتي ...  و أفضل وياك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "كنت فاكر نفسك ضامني  ... و همشي على هواك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "متوقعتش أبدا مني ...  اللي عملته معاك", "red": true }
-        ]
+        "text": "ومش أيّ حدّ بيدخل قلبي ... م أنا قلبي مش ناقص صدامات",
+        "red": false
       },
       {
-        "id": 87,
-        "title": "سحرتني و الله",
-        "type": "طرب",
-        "lyrics": [
-          { "text": "صعبان عليه بُعدك شويه", "red": false },
-          { "text": " مليان أسيه ومفيش حنان", "red": false },
-          { "text": " ", "red": false },
-          { "text": "نظرة عيناك حاجه مش عاديه", "red": false },
-          { "text": " مشتاقه ليه ودا من زمان", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أنا دبت فيك ما تحس بيه", "red": false },
-          { "text": " دا أنت اللي ليه اه يا عود ريحان", "red": false },
-          { "text": " ", "red": false },
-          { "text": "من كتر تقلك غفلت عنيا", "red": false },
-          { "text": " وأنت اللي قربك ليه أمان", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "سهرني ويا روحك شويه", "red": true },
-          { "text": " وبلاش بقا تتقل عليه بالشكل دا", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يا أبو غمزه حلوه وبسمه بهيه", "red": true },
-          { "text": " أمتي كدا ها تحن ليه وتميل بقا", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا عيونه سمره أبو ضحكه قمره", "red": true },
-          { "text": " عليه أحلي طله سحرتني والله", "red": true },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا جماله خلي العشق وله", "red": true },
-          { "text": " و وجوده حلي الكون في عينانه", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "يا جميل يا سكر يا قمر منور", "red": false },
-          { "text": " سنين بدور أنا عليك", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "دا أنا عُمري ما أقدر ولا يوم أفكر", "red": false },
-          { "text": " أن أزور فحبي ليك", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "إئمرني أمرك أنا مش بجاملك", "red": false },
-          { "text": " واللي طلبته يجي بين أدياك", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "طمعان في كرمك طمعان في قلبك", "red": false },
-          { "text": " دا أنا روحي فيك", "red": false },
-
-
-
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 88,
-        "title": "دنيا مظاهر",
-        "type": "شعبي",
-        "lyrics": [
-          { "text": "الدنيا دي فيها ياما ناس ماضيها خسيس", "red": false },
-          { "text": " من برا هالله هالله ومن جوا في إبليس", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وفي اللي يبينو لك أنك في نن عينهم", "red": false },
-          { "text": " في الوش يطبلو لك من أجل مصلحتهم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأما تخلص فلوسك بيغيرو معاملتهم", "red": false },
-          { "text": " أندال وبدرجه أوله لازم تحرص منهم", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "يا طبيب العيون فصلي ...نظاره تبين الخينين", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أشوف مين عاوز مصلحتي ...ومين اللي عاوز القرشين", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ومين بجد عاوز راحتي ...ومين عاوز يشوفني حزين", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فوضت فيهم أمري لربي ...قوينا يا رب يا مُعين", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "علي اللي بيكره لينا الخير ...علي اللي معندوش أي ضمير", "red": true },
-          { "text": "علي اللي ملهش في التقدير ...ولا يعرف حاجه عن الاصول", "red": true },
-          { "text": " ", "red": false },
-          { "text": "علي اللي ميعرفش الجدعنه ...علي ملوش غير في النفسنه", "red": true },
-          { "text": "علي اللي عايش دنياته عكننه... وبياكل الحق زي الغول", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "دنيا وكل ما فيها مظاهر... فيها المتداري فيها الظاهر", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بحر ملوش أول من أخر ...وكلنا علي الدنيا ضيوف", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ناس بتحب تقف في المحنه ... ناس نفسها لو يوم تفضحنا", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ناس لما بنغلط تسامحنا ...ناس مطمرش فيها المعروف", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "خيرا تعمل شرا تلقي ...ناس غداره ولا عندها ذمه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وقت المصلحه بتلاقي لمه ...وقت الشده الكل بيمشي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فيه اللي يصون العيش والملح ...فيه اللي يخلي في قلبك جرح", "red": false },
-          { "text": " ", "red": false },
-          { "text": "فيه اللي بيكره ليك الفرح...في اللي بيتمنا أنك تمشي", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 89,
-        "title": "نفسي أسمع كلامك",
-        "type": "طرب",
-        "lyrics": [
-          { "text": "أنت اللي ليه أنا بقيت بعيش يا غالي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " شدتني ليك وأهو كل الجمال غواني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "شاغلني بيك وكمان مسهرني ليالي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " بسئل هوايا هوا أنا أي اللي جرالي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أحترت فيك وحتي الشوق عليك رماني", "red": false },
-          { "text": " ", "red": false },
-          { "text": " يا نجوم سمايا أنت ويا قمر زماني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يا ملغبط لي حياتي كلها وقالب كياني", "red": false },
-          { "text": " ", "red": false },
-          { "text": " بقيت ساكن ياحبيبي في قلبي وفي خيالي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أشتقت لك والشوق بيزود الغلاوه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "يا معلمني الهدوء ومنسيني الكئابه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "وبجد أنا بدوب ما أنت حلو حلاوه", "red": true },
-          { "text": " ", "red": false },
-          { "text": "شغلت كثير قلوب وأخترت قلبي أنا", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "لو غبت عني يوم واحد أكيد هعاني", "red": false },
-          { "text": " ", "red": false },
-          { "text": " أنت اللي معاه فرحت ونسيت عذابي", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأنت اللي شلت همي أنا وداويت ألامي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " أنت سبب سعادتي و أنت وجواب سؤالي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "سحرتني عيناك يدوب في أقل من ثواني", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ياللي خدودك الحلوه دي دائما ملوعني", "red": false },
-          { "text": " ", "red": false },
-          { "text": "بعشق جنونك دا يا أبو كعب عالي", "red": false },
-          { "text": " ", "red": false },
-          { "text": " أنا حبيتك خلاص و مش هحب تاني", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "أنت الهواء وأنت الدواء قلبي إرتوي بحنانك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "تعظيم سلام  ل عالي المقام جنابك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "عليك كلام كدا في الغرام خلاك سابق أوانك", "red": true },
-          { "text": " ", "red": false },
-          { "text": "بتقوله قول يأخذ شُهُور نفسي أسمع كلام", "red": true }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 90,
-        "title": "حُبّ ومودة",
-        "type": "كلاسيك",
-        "lyrics": [
-          { "text": "أنا وحبيبي ما لينا غير بعض", "red": false },
-          { "text": " دايما جمّعنا الهوا مع بعض", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لا يوم قدّرنا نغيب عن بعض", "red": false },
-          { "text": " ولا كان في بيننا عتاب ولا بُعد", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "ولا كان في بيننا غير المحبّه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "لوّ أحنّ لُيّه الشّوق بيزيد", "red": false },
-          { "text": " ألقى هواهُ لهوايا نسيم", "red": false },
-          { "text": " ", "red": false },
-          { "text": "شغّلني بيه من غير مواعيد", "red": false },
-          { "text": " جميل ومُتقسّم تقسيم", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "تملي أروحلُه وفي إيدي ورده", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ما يغبش عليّ القلب ولا العين", "red": false },
-          { "text": " وإن غاب عليهم هيرُوح فين", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأكيد هيجي لو بعد سنين", "red": false },
-          { "text": " أبُو نظره بتدُوب ملايين", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أبُو نظره فيها حُبّ وموادّه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "يتقرّب.. ويقرُب... كُلّ الأحبّاب إلُيّه تاني", "red": true },
-          { "text": " ", "red": false },
-          { "text": "بستغرب .. وأستغرب... من النّاس اللي علُيّه حسداني", "red": true },
-          { "text": " ", "red": false },
-          { "text": "آه بهرّب.. وأتهرّب... لو قالُوا حاجه مش عاجباني", "red": true },
-          { "text": " ", "red": false },
-          { "text": "بتجرّب.. وتجرّب... ناس ياما تبعُد بنا ثواني", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وأكيد برتاح وأنا ويّاه", "red": false },
-          { "text": " لا بينساني ولا بنساه", "red": false },
-          { "text": " ", "red": false },
-          { "text": "وداه الغالي وداه حُبّه حياه", "red": false },
-          { "text": " بعيش فيها وبعشّها معاه", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "معاه الصّعب أهو عدّي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "حبيبي وحُبّه غير موصُوف", "red": false },
-          { "text": " وملُوش زيّ مش مألُوف", "red": false },
-          { "text": " ", "red": false },
-          { "text": "داه قمر اللّيل في وقت خُسُوف", "red": false },
-          { "text": " وسندي في كُلّ لحظة خوف", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "داه كُوكتيل الجمال واللّهفه", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "حنانُه ما تلاقي بعدُه حنان", "red": false },
-          { "text": " وضحكتُه تمُوت الأحزان", "red": false },
-          { "text": " ", "red": false },
-          { "text": "لا يوم زعل منّي ولا هان", "red": false },
-          { "text": " علُيّه مهما جري أو كان", "red": false },
-          { "text": " ", "red": false },
-          { "text": " ", "red": false },
-          { "text": "أو كان في بيننا لحظة قسوه", "red": false }
-        ]
+        "text": "م أنا اللي لو دنياته تعباه ... بيعيش حياته في اللامبالاة",
+        "red": false
       },
       {
-        "id": 91,
-        "title": "علي نور",
-        "type": "دراما",
-        "lyrics": [
-          { text: 'خلينا نكون واضحين .. إحنا معدناش قادرين' },
-          { text: '' },
-          { text: 'نستحمل بعض .. و نوفي بوعد ... حافظنا عليه لسنين' },
-          { text: '' },
-          { text: 'خلينا نكون على نور .. وضعنا مبقاش مقبول' },
-          { text: '' },
-          { text: 'فرقنا الهم .. كأنه سم ... بيجري في الشرايين' },
-          { text: '' },
-          { "text": " ...............", "red": false },
-          { text: 'بقينا عايشين .. و روحنا في دوامه كبيره', red: true },
-          { text: '' },
-          { text: 'عنينا سهرانين بيناموا في الأسبوع ليله', red: true },
-          { text: '' },
-          { text: 'دا حتى الحنين .. مبقاش يقرب لينا', red: true },
-          { text: '' },
-          { text: 'كأن الحياه .. معدتش باقيه علينا', red: true },
-          { text: '' },
-          { "text": " ...............", "red": false },
-          { text: 'مشاعرنا خلاص بتموت والشوق مبقاش موجود' },
-          { text: 'ومعدش في ود .. ولا فينا حد ... دموعه مش ماليه العين' },
-          { text: '' },
-          { text: 'صممنا على النسيان .. وفشلنا فيه هوا كمان' },
-          { text: 'عمرنا م نسينا .. و أهو بان علينا ... و إحنا لسه مكابرين' },
-          { text: '' },
-          { text: 'مين فينا هيحاسب مين؟.. غلطتنا إحنا الاتنين' },
-          { text: 'سيبنا نفسنا تهرب منا ..وبقينا إتنين تانين' },
-        ]
+        "text": "لا برُد ب ( لاء) ولا أرد ب ( اه) ... بسايس كله و باخده علي هواه ",
+        "red": false
       },
       {
-
-        "id": 92,
-        "title": "حظي مخاصمني",
-        "type": "شعبي",
-        "lyrics": [
-          { "text": "نفسي بس أفرح شويه... واللي هي جت عليّا", "red": false },
-          { text: '' },
-          { "text": "الهموم ليه ماسكه فيّه...والزعل مش بيفارقني", "red": false },
-          { text: '' },
-          { "text": "كل ورطه وراها ورطه...وإمبارح زي النهارده", "red": false },
-          { text: '' },
-          { "text": "ضحكتي بتيجي كل فتره...حتى حظي بقا مخاصمني", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "إيه يا دنيا شوفينا حبّه...نفسي ألقى الكفة طبّه", "red": true },
-          { text: '' },
-          { "text": "قلبي ياما شال كتير و عبّه ... لسه من الحزن بستخبي", "red": true },
-          { text: '' },
-          { "text": "عاوز أنول من الحب جانب... جبت آخري من التجارب", "red": true },
-          { text: '' },
-          { "text": "والله أنا من المر شارب ...الواحد على التعب اتربي", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "خبطتين في الراس بتوجع ...حتى نجمي مش بيلمع؟", "red": false },
-          { text: '' },
-          { "text": "شغفي راح وأنا عاوزه يرجع... لو يومين ويبقى يمشي", "red": false },
-          { text: '' },
-          { "text": "إمتى أشوف أخبار سعيدة ...كله ليه بيشوفني صيدة؟", "red": false },
-          { text: '' },
-          { "text": "إنتي ليه يا دنيا عنيدة ...أعمل إيه عشان ترضى عني؟", "red": false }
-        ]
+        "text": " مش بسيب حدّ يعصبني ",
+        "red": false
       }
-      , {
-
-        "id": 93,
-        "title": "مُجبرين",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "أفترقنا وقلنا يومها كل شيء قسمه ونصيب", "red": false },
-          { text: '' },
-          { "text": "كل لمّا تيجي سيرته بقول دا كان أغلى حبيب", "red": false },
-          { text: '' },
-          { "text": "مش عشان إحنا بعدنا يبقى هغلط فيه وأعيب", "red": false },
-          { text: '' },
-          { "text": "الحياة دي علمتنا في جراح ممكن تطيب", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "يوم ودعنا كان في جملة قلتها بصوت حزين", "red": false },
-          { text: '' },
-          { "text": "قلت هفضل جوا قلبك مهما عدت السنين", "red": false },
-          { text: '' },
-          { "text": "ألف معنى كان في بالنا والدموع في كل عين", "red": false },
-          { text: '' },
-          { "text": "طب وعمرنا اللي عدى هنجيبه تاني منين", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مجبرين نبقى عايشين بين نارين", "red": true },
-          { text: '' },
-          { "text": "محتارين ومن اللي حوالينا قلقانين", "red": true },
-          { text: '' },
-          { "text": "مستنين في حبال أمل متعلقين", "red": true },
-          { text: '' },
-          { "text": "عشمانين في فرصة تيجي نبقى فيها قريبين", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "مش باقيلنا من اللي بينا حاجة غير ماضي أليم", "red": false },
-          { text: '' },
-          { "text": "إحنا حالنا زي صورة حلوة لكن جوا برواز قديم", "red": false },
-          { text: '' },
-          { "text": "حتى حظنا زي واحد طبعه مش سهل ولئيم", "red": false },
-          { text: '' },
-          { "text": "آه صبرنا زي صبر مريض عشان يرجع سليم", "red": false }
-        ]
+    ]
+  },
+  {
+    "id": 26,
+    "title": "قمر الليل",
+    "type": "مقسوم",
+    "lyrics": [
+      {
+        "text": "أيه يا أبو ضحكه جنان ... ليه في التُقل بقيت بتزيد",
+        "red": false
       },
       {
-
-        "id": 94,
-        "title": "أبويا الغالي ",
-        "type": "إجتماعي & عائلي",
-        "lyrics": [
-          { "text": "أول ما وعيت على الدنيا فتحت عنيه عليك", "red": false },
-          { text: '' },
-          { "text": "كبّرت في ودني وأنت شايلني بين أيديك", "red": false },
-          { text: '' },
-          { "text": "بوستني من خدي وكانت الفرحه ماليه عينيك", "red": false },
-          { "text": "قلت أن أنا أول رزقك وأني عوض ربنا ليك", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وأن أنا رديت لك روحك من تاني", "red": true },
-          { text: '' },
-          { "text": "وياما استنتني سنين وشهور وليالي", "red": true },
-          { text: '' },
-          { "text": "ربيتني ولا لحظه نسيتني لو حتى ثواني", "red": true },
-          { text: '' },
-          { "text": "أنا متسيط على حسك اسمي بيجي بعده اسمك", "red": true },
-          { text: '' },
-          { "text": "يا أعز ما ليه يا صاحبي وأبويا الغالي", "red": true },
-          { text: '' },
-          { "text": " ...............", "red": false },
-          { "text": "لو مره وقعت في أزمه بتبقا معايا متسبنيش", "red": false },
-          { text: '' },
-          { "text": "والدنيا دي ملهاش لازمه لو مبتكلمنيش", "red": false },
-          { text: '' },
-          { "text": "دا اللي يضايقك يضايقني طبعا وميبسطنيش", "red": false },
-          { text: '' },
-          { "text": "يا شايلني في تعبي وفرحي غيرك يا أبويا مليش", "red": false },
-          { "text": " ...............", "red": false },
-          { text: '' },
-          { "text": "أنا متسيط على حسك اسمي بيجي بعده اسمك", "red": true },
-          { text: '' },
-          { "text": "لو يوم بعدت عنك أكيد بقلق عليك", "red": true },
-          { text: '' },
-          { "text": "من صغري وأنت ساندني وموقفني على رجلي", "red": true },
-          { text: '' },
-          { "text": "عمرك ما أتخليت عني دا أنا أبوس رأسك وأيديك", "red": true }
-
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 95,
-        "title": "هتتبسطي معايا",
-        "type": "بوب",
-        "lyrics": [
-          { "text": "أول ما لمحت عينيكي", "red": false },
-          { "text": "أنا قلبي اتشد أوام ونسيت أي كلام", "red": false },
-          { "text": "كنت هقوله ليكي", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "بصراحة جمال معاليكي", "red": false },
-          { "text": "خلاني أضعف وأحتاس دا ملوش حل دا إعجاز", "red": false },
-          { "text": "ربنا يحميكي", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "اعتبريني ملك إيديكي", "red": false },
-          { "text": "والله أنا نيتي خير وبفهم قوي في التقدير", "red": false },
-          { "text": "ومن قلبي شاريكي", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "أنا عمري ما أفرط فيكي", "red": false },
-          { "text": "فعلا أنا بجد قتيل دي حقيقة ومش تمثيل", "red": false },
-          { "text": "هتجن عليكي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "ويا ناس في قمر كدا لا مفيش", "red": true },
-          { text: '' },
-          { "text": "أنا كل ما أدور ملاقيش", "red": true },
-          { text: '' },
-          { "text": "يا حبيبي استنى  متمشيش", "red": true },
-          { text: '' },
-          { "text": "أديني فرصة متظلمنيش", "red": true },
-          { text: '' },
-          { text: '' },
-          { text: '' },
-          { text: '' },
-          { "text": "دي فرصة  هيخسر يعني إيه؟", "red": true },
-          { text: '' },
-          { "text": "لو يسيبني أتعرّف عليه", "red": true },
-          { text: '' },
-          { "text": "نتكلم وأفتح قلبي ليه", "red": true },
-          { text: '' },
-          { "text": "وأنسى همومي بنظرة عينيه", "red": true },
-          { text: '' },
-          { "text": " ...............", "red": false },
-          { "text": "تعالي نسهر سهراية", "red": false },
-          { "text": "نسمع كدا فيلم جميل أو نتمشى على النيل", "red": false },
-          { "text": "هتتبسطي معايا", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "تعالي أقولك إيه جوايا", "red": false },
-          { "text": "وهتعرفي بالتفصيل إيه خلاني ليكي أميل", "red": false },
-          { "text": "وأحب على عماية", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "أولها جمالك آية", "red": false },
-          { "text": "وتانيها أنك طبيعية والضحكة فيها عفوية", "red": false },
-          { "text": "يا نسمة في هوايا", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "شايفك نجمة في سمايا", "red": false },
-          { "text": "بسرح أنا فيها كتير وعليها بجد بغير", "red": false },
-          { "text": "حكايتها حكاية", "red": false }
-
-        ]
-
+        "text": "دا أنا أدمنتك إدمان ... حُبك دا بقا في كل وريد",
+        "red": false
       },
       {
-        "id": 96,
-        "title": "مش ناقصاك",
-        "type": "مقسوم",
-        "lyrics": [
-          { "text": "كل الحلو عملناه معاك", "red": false },
-          { text: '' },
-          { "text": "ومخدناش حاجة إلا أذاك", "red": false },
-          { text: '' },
-          { "text": "أبعد ورينا عرض أفاك", "red": false },
-          { text: '' },
-          { "text": "أنت مريض محتاج لعلاج", "red": false },
-          { text: '' },
-          { "text": "ماشية حياتي ومش ناقصاك", "red": false },
-          { text: '' },
-          { "text": "والله ماشية ومش ناقصاك", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "وفر كدبك ودموع عينك", "red": false },
-          { text: '' },
-          { "text": "إحنا خلاص بقينا فاهمينك", "red": false },
-          { text: '' },
-          { "text": "مين قال هنضيع من غيرك", "red": false },
-          { text: '' },
-          { "text": "دا إحنا أساسا مش طايقينك", "red": false },
-          { text: '' },
-          { "text": "اخترنا أننا نتقي شرك", "red": false },
-          { text: '' },
-          { "text": "اخترنا نستغني عن خيرك", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "قررنا نهدي النفسية", "red": true },
-          { text: '' },
-          { "text": "ونبعد عن الناس المؤذية", "red": true },
-          { text: '' },
-          { "text": "حياتها دي عبارة عن نفاق", "red": true },
-          { text: '' },
-          { "text": "وقلب أسود وصفار نية", "red": true },
-          { text: '' },
-          { "text": "ياما دقة على رأسنا طبول", "red": true },
-          { text: '' },
-          { "text": "وعيشنا حياتنا عرض وطول", "red": true },
-          { text: '' },
-          { "text": "عاشرنا ناس قربها كان داء", "red": true },
-          { text: '' },
-          { "text": "وناس عاملتنا بالأصول", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "قررنا نصون اللي يصون", "red": false },
-          { text: '' },
-          { "text": "ونعامل بس المضمون", "red": false },
-          { text: '' },
-          { "text": "واللي لسه في العند سايق", "red": false },
-          { text: '' },
-          { "text": "على الرف هيفضل مركون", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "واللي هنا عليه هيهون", "red": false },
-          { text: '' },
-          { "text": "واللي أمناه ورضي يخون", "red": false },
-          { text: '' },
-          { "text": "فكرناه ملاك وطلع فرعون", "red": false },
-          { text: '' },
-          { "text": "هنعرفه معنى الجنون", "red": false }
-
-        ]
-
+        "text": " ",
+        "red": false
       },
       {
-        "id": 97,
-        "title": "مجوهرات",
-        "type": "رومانسي",
-        "lyrics": [
-          { "text": "دي حلوة في كل الأماكن", "red": false },
-          { "text": "دي حلوة في الحالات", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "دي حركت الساكن", "red": false },
-          { "text": "خلته ينسى اللي فات", "red": false },
-          { text: '' },
-          { "text": "دا بيقولوا الناس معادن", "red": false },
-          { "text": "وأنا بقول دي مجوهرات", "red": false },
-          { text: '' },
-          { "text": "أيوه أنا شفت كتير لكن", "red": false },
-          { "text": "مشفتش زيها بالذات", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "دي قمر قمر هلّ علينا", "red": true },
-          { text: '' },
-          { "text": "و أوام أوام شغل عنينا", "red": true },
-          { text: '' },
-          { "text": "من نظرة وسلام جابت رجلينا", "red": true },
-          { text: '' },
-          { "text": "جابت رجلينا ودبنا خلاص", "red": true },
-          { text: '' },
-          { text: '' },
-          { text: '' },
-          { "text": "لا مفيش خلاف عليها أساسا", "red": true },
-          { text: '' },
-          { "text": "عندها قبول حقيقي مش مجازا", "red": true },
-          { text: '' },
-          { "text": "ملكة روحي زودتها حماسا", "red": true },
-          { text: '' },
-          { "text": "بعيش معاها أجمل إحساس", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "دا حبها شيء لا إرادي", "red": false },
-          { "text": "دي نجمة في كل العيون", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "في جمال بنشوفه عادي", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "جمال بيجيب جنون", "red": false },
-          { "text": "أنا مبسوط بيها وراضي", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "حاسس أني ملكت الكون", "red": false },
-          { "text": "لو كل الناس في وادي", "red": false },
-          { "text": "في الوادي بتاعها هكون", "red": false }
-
-        ]
-
+        "text": "حقك تفضل كدا تقلان ... و تسيبني و نار شوقي تأيد",
+        "red": false
       },
       {
-        "id": 98,
-        "title": "ما بردت جروحي",
-        "type": "دراما",
-        "lyrics": [
-          { text: 'هذه الكلمات باللهجة السعوديه', "red": true },
-          { text: '' },
-          { text: '' },
-          { "text": "يا دوا روحي يا جفن عيني", "red": false },
-          { text: '' },
-          { "text": "وربي زاد شوقي متى راح تجيني؟", "red": false },
-          { text: '' },
-          { "text": "ترى ما بردت جروحي والفرح ناسيني", "red": false },
-          { text: '' },
-          { "text": "صار منطفئ طموحي من يوم ما فارقتيني", "red": false },
-          { text: '' },
-          { "text": " ...............", "red": false },
-          { "text": "وبينك، وينك يا غايب ...وينك يا أغلى الحبايب", "red": true },
-          { text: '' },
-          { "text": "تدري؟ أن بدونك مرة دنيايا", "red": true },
-          { text: '' },
-          { text: '' },
-          { "text": "ومتي متي أشوفك ...متي أمسك كفوفك", "red": true },
-          { text: '' },
-          { "text": "وايلي من كسوفك وأنت معايا", "red": true },
-          { text: '' },
-          { text: '' },
-          { "text": "وطال  طال الفراق ...و راح قلبي معاك", "red": true },
-          { text: '' },
-          { "text": "وأخاف، تخلف عهودك وتنسى الوصايا", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "في نار موقودة جوايا ومكتومة", "red": false },
-          { text: '' },
-          { "text": "أحس حالي بضيقة وما في لي قائمة", "red": false },
-          { text: '' },
-          { "text": "وحتى الضحكة مفقودة والله البعد أنا ألومه", "red": false },
-          { text: '' },
-          { "text": "أيامنا بقلبي موجودة كأنها بالحبر مكتوبة", "red": false },
-
-        ]
-
+        "text": " ",
+        "red": false
       },
       {
-        "id": 99,
-        "title": "ضحكة بالتقسيط",
-        "type": "مقسوم",
-        "lyrics": [
-          { "text": "آخرتها إيه يعني يا دنيا", "red": false },
-          { "text": "علشان بس نكون عارفين", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "بقول هتتعدل بكره", "red": false },
-          { "text": "وبكره مجاش بقاله سنين", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "في كل طريق واخد خطوة", "red": false },
-          { "text": "لكن خطواتي مش ثابتين", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "دا قلبي لو فرح مرة", "red": false },
-          { "text": "بيفضل ألف مرة حزين", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "تعبانا معاكي وخدانا يمين وشمال", "red": true },
-          { text: '' },
-          { "text": "لا رسيتي على بر ولا غيرتي الأحوال", "red": true },
-          { text: '' },
-          { "text": "ياما صبرنا عليكي مهما رميتينا في النار", "red": true },
-          { text: '' },
-          { "text": "نفسنا نرتاح فيكي أو نعرف إيه آخر المشوار", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "قلنا هنمشي جنب الحيط", "red": false },
-          { "text": "قالوا علينا غلطانين", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "وسبنا البحر قلنا غويط", "red": false },
-          { "text": "لقينا البر فيه تعابين", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "طلبنا الضحكة بالتقسيط", "red": false },
-          { "text": "لقينا فوايدها بالملايين", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "برغم أن طموحنا بسيط", "red": false },
-          { "text": "ونفسنا نعيش مرتاحين", "red": false }
-
-        ]
-
+        "text": "دا أنت خطر علي الحلوين ... هما قدام أما أنت جديد",
+        "red": false
       },
       {
-        "id": 100,
-        "title": "بيت مهجور",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "من بعد اللي حصلي أنا روحي بقت بور", "red": false },
-          { text: '' },
-          { "text": "وإن كان على قلبي بقى بيت مهجور", "red": false },
-          { text: '' },
-          { "text": "بابه دا متخلع وإزاز شباكه مكسور", "red": false },
-          { text: '' },
-          { "text": "مبقاش تاني ينفع بقى مقطوع فيه النور", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "لا حبيب يسأل عليه ولا حد يقرب له", "red": true },
-          { text: '' },
-          { "text": "كله خلاص ناسيه بقت مقطوعة سيرته", "red": true },
-          { text: '' },
-          { "text": "والكام ذكرى القدام دلوقتي بقوا حطام", "red": true },
-          { text: '' },
-          { "text": "وحالي بوجه عام أسوأ من اللي قبله", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "بسأل نفسي كتير هل كان سوء اختيار", "red": false },
-          { text: '' },
-          { "text": "يتعبني التفكير لما بتوه وأحتار", "red": false },
-          { text: '' },
-          { "text": "للماضي كل ما برجع ألقى عيوني تدمع", "red": false },
-          { text: '' },
-          { "text": "لكن بعدها بفهم أنه كان أفضل قرار", "red": false }
-
-        ]
-
+        "text": " ...............",
+        "red": false
       },
       {
-        "id": 101,
-        "title": "فيك الخير",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "مكدبش عليك", "red": false },
-          { "text": "من بعد فراقنا أنا ياما كتير حنيت", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "متقولش نسيت", "red": false },
-          { "text": "متجبهاش فيا واعترف أن أنت اللي قسيت", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "فضاحة عينيك", "red": false },
-          { "text": "كان باين فيها غرورك لما سبتني ومشيت", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "أيوه استغنيت", "red": false },
-          { "text": "وأكرم لي أموت ولا إني أكون ليك انذليت", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "الله يجازيه بقا قلبي علقني بحد وجعني", "red": true },
-          { text: '' },
-          { "text": "سلمت له روحي وباعني من غير تفكير", "red": true },
-          { text: '' },
-          { "text": "قلت دي فترة وهتعدي ومن بعدها هتريحني", "red": true },
-          { text: '' },
-          { "text": "متصورتش تجرحني لا فيك الخير", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "أرجعلك إيه؟", "red": false },
-          { "text": "روح شوف لك حد يكون شبهك حد يليق بيك", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "مبقتش شاريك", "red": false },
-          { "text": "واللي بتعمله دا ملوش لازمة ومش هيفيد", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "مستغرب ليه؟", "red": false },
-          { "text": "كنت مفكر بعد عمايلك لما أشوفك هجري عليك", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "ربنا يشفيك", "red": false },
-          { "text": "الوهم دا جالك من كتر العيشة وحيد", "red": false }
-        ]
-
+        "text": "ومسيرك يوم هتميل ... صدقني يا قمر الليل",
+        "red": true
       },
       {
-        "id": 102,
-        "title": "بلاش تتقل",
-        "type": "رومانسي & مقسوم",
-        "lyrics": [
-          { "text": "جرى إيه يا حبيبي ...ليه مطنشنى وليه ناسيني", "red": false },
-          { text: '' },
-          { "text": "بعدك عني مخليني ...مش بتلم على أعصابي", "red": false },
-          { text: '' },
-          { "text": "جرى إيه يا نور عيني ...إيه الموضوع ما ترسيني", "red": false },
-          { text: '' },
-          { "text": "فهمني بقى أو احكي لي ...الحال دا بجد أذاني", "red": false },
-          { text: '' },
-          { "text": "أرجوك رُدعلى سؤالي... يا جميل ما تريح بالي", "red": false },
-          { text: '' },
-          { "text": "نار الشوق دي قتلاني ...وسكوتك مش حل إيجابي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "لا بلاش تتقل ونبي علشان على تقلك... أنا مش هقدر", "red": true },
-          { text: '' },
-          { "text": "أنا فاض بيّه وكل شوية بشتاق لك ...أكتر وأكتر", "red": true },
-          { text: '' },
-          { "text": "وتعدي عليّا ليالي ...والوحدة دي مش سايباني", "red": true },
-          { text: '' },
-          { "text": "واقفة الأيام مش بتعدي ...وفي غيرك مش بفكر", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "هل في شيء مانعك؟ ...ولا أنا قلت كلام ضايقك", "red": false },
-          { text: '' },
-          { "text": "والله ما أقدر على زعلك ...لا دقيقة ولا حتى ثواني", "red": false },
-          { text: '' },
-          { "text": "أرجوك طمني عليك... يا حبيبي الله يخليك", "red": false },
-          { text: '' },
-          { "text": "دا أنا عايش دنيتي ليك ...نظرة عينك واحشاني", "red": false },
-          { text: '' },
-          { "text": "أرجوك على سؤالي... يا جميل ما تريح بالي", "red": false },
-          { text: '' },
-          { "text": "نار الشوق دي قتلاني ...وسكوتك مش حل إيجابي", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 103,
-        "title": "هُدنه",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "هو إحنا ليه قل الكلام بينا", "red": false },
-          { text: '' },
-          { "text": "وبقت ردودنا يادوب على قد السؤال", "red": false },
-          { text: '' },
-          { "text": "وكأننا بنداري مشاعرنا", "red": false },
-          { text: '' },
-          { "text": "وكمان بنختار الكلام اللي هيتقال", "red": false },
-          { text: '' },
-          { "text": "يمكن عشان الدنيا سرقتنا", "red": false },
-          { text: '' },
-          { "text": "وبقينا عايشين كل يوم بنفس الحال", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "طب ناخد هدنة، نقعد مدة... ونعيد تاني تفكيرنا", "red": true },
-          { text: '' },
-          { "text": "يمكن نرتاح، ويزيد شوقنا...والمسافات تقربنا", "red": true },
-          { text: '' },
-          { "text": "ولو في غلطة، غلطناها مرة... هنحاول يعني نصلحها", "red": true },
-          { text: '' },
-          { "text": "ونرجع تاني، نكمل عادي... وكل حاجة ترجع مطرحها", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "هو إحنا ليه بقينا نتهرب", "red": false },
-          { text: '' },
-          { "text": "وكل واحد فينا بيداري اللي فيه", "red": false },
-          { text: '' },
-          { "text": "دا بدل ما نبعد لازم بقا نقرب", "red": false },
-          { text: '' },
-          { "text": "وهو يعني فراقنا دا هيفيد بإيه؟", "red": false },
-          { text: '' },
-          { "text": "طب قولي امتى ترجع يا متغرب", "red": false },
-          { text: '' },
-          { "text": "عن قلبي دا اللي أنت مش هاين عليه", "red": false }
-        ]
+        "text": "لو تيجي يا أبو رمش كحيل ... قلبي دا هيشيلك شيل",
+        "red": true
       },
       {
-        "id": 104,
-        "title": "دخلت قلبي",
-        "type": "بوب",
-        "lyrics": [
-          { "text": "آه منها اللي مفيش منها", "red": false },
-          { text: '' },
-          { "text": "دا يادوب من نظرة عينها", "red": false },
-          { text: '' },
-          { "text": "بتوقعني وتثبتني وبتكسبني بكام كلمة", "red": false },
-          { text: '' },
-          { text: '' },
-          { text: '' },
-          { "text": "آه منها اللي مفيش منها", "red": false },
-          { text: '' },
-          { "text": "عارفة أني خلاص بدمنها", "red": false },
-          { text: '' },
-          { "text": "بضعف قدام حلاوتها لا مقدرش أزعل منها", "red": false },
-          { text: '' },
-          { text: '' },
-          { text: '' },
-          { "text": "أول ما تقرب مني الحزن بيبعد عني ...والهم بيتجنبني وبيهربوا من سكتها", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "معاليها دخلت قلبي بيمينها ... حلت أيامي", "red": true },
-          { text: '' },
-          { "text": "الفرحة لقيتها أنا في عينها ... ومشفتش تاني", "red": true },
-          { text: '' },
-          { "text": "دا أنا أهد الدنيا دي عشانها ... مادام عشقاني", "red": true },
-          { text: '' },
-          { "text": "ربنا يسعدها و يحميها ... ويخليها لي", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "ياما أنا عرفت كتير غيرها", "red": false },
-          { text: '' },
-          { "text": "لكن مكنوش في جمالها", "red": false },
-          { text: '' },
-          { "text": "دا جمال شرقي وقّع قلبي في ساعتها", "red": false },
-          { "text": "حاجة غريبة كدا حسيتها", "red": false },
-          { text: '' },
-          { text: '' },
-          { "text": "أول ما عيوني شافتها", "red": false },
-          { "text": "حسيت بأمان وبراحة كمان عمري ما حسيتها", "red": false },
-          { text: '' },
-          { text: '' },
-          { text: '' },
-          { "text": "أول ما تقرب مني الحزن بيبعد عني والهم بيتجنبني وبيهربوا من سكتها", "red": false }
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 105,
-        "title": "إشاعات",
-        "type": "مقسوم",
-        "lyrics": [
-          { "text": "بما أنك مش باقي عليّا ...وموفتش وعودك ليّه", "red": false },
-          { text: '' },
-          { "text": "ف أنت كدا حكايتك منتهية ...وأسمح لي أقولك سلامات", "red": false },
-          { text: '' },
-          { "text": "اتفضل بقا من غير مطرود ...في حبيب غيرك بقى موجود", "red": false },
-          { text: '' },
-          { "text": "حبني من غير أي شروط ...ومعايا في كل الأوقات", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "لو على الطبطبة طبطبنا", "red": true },
-          { text: '' },
-          { "text": "دلوقتي إحنا خلاص شطبنا", "red": true },
-          { text: '' },
-          { "text": "جبنا أخرنا بجد تعبنا", "red": true },
-          { text: '' },
-          { text: '' },
-          { text: '' },
-          { "text": "كفاية خنقة وحرقة دم", "red": true },
-          { text: '' },
-          { "text": "ياما عدينا وياما فوتنا", "red": true },
-          { text: '' },
-          { "text": "حذرنا كتير ياما نبهنا", "red": true },
-          { text: '' },
-          { "text": "عشان كدا استغنينا وبعدنا", "red": true },
-          { text: '' },
-          { "text": "خلاص وجودك مش مهم", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "روح يلا الله الغني عنّك ...مبقتش أنا حمل سواد قلبك", "red": false },
-          { text: '' },
-          { "text": "لو معتقد أن مفيش منك ...ف المعلومة دي إشاعات", "red": false },
-          { text: '' },
-          { "text": "في ناس حلوة وصافية النية... مش زيك وحشة ومؤذية", "red": false },
-          { text: '' },
-          { "text": "ناس حباني وباقية عليّا ...ناس ملهاش في الحوارات", "red": false }
-        ]
+        "text": "لا مش محتاج تعديل ... أصل أنت بجد جميل",
+        "red": true
       },
       {
-        "id": 106,
-        "title": "عيونك فضحاكي",
-        "type": "رومانسي",
-        "lyrics": [
-          { text: '' }, { text: '' },
-          { text: 'متحوليش تكرهيني فيكي' },
-          { text: '' },
-          { text: 'عشان أنا من قلبي دا شاريكي' },
-          { text: '' },
-          { text: 'ومن زمان وأنا مغرم بيكي' },
-          { text: '' },
-          { text: ' بس إنتي مش حاسه' },
-          { text: '' },
-          { text: '' },
-          { text: '' },
-          { text: 'متحوليش توضحي لي حاجه' },
-          { text: '' },
-          { text: 'أنا مش هبعد عنك إستحاله' },
-          { text: '' },
-          { text: 'كل سؤال أنا عندي ليه إجابه' },
-          { text: '' },
-          { text: ' بس إنتي أديني فرصه' },
-          { text: '' },
-          { "text": " ...............", "red": false },
-          { text: 'متقفليش كل البيبان قدامي', red: true },
-          { text: '' },
-          { text: 'مترفضيش روحي اللي عاوزاكي', red: true },
-          { text: '' },
-          { text: ' و متخليش الفرح ينساكي', red: true },
-          { text: '' },
-          { text: 'مهما تداري عيونك برضه فضحاكي', red: true },
-          { "text": " ...............", "red": false },
-          { text: 'محتاره ليه أطمني أنا معاكي' },
-          { text: '' },
-          { text: ' يا أحلي نجمة عيوني شايفاكي' },
-          { text: '' },
-          { text: 'وعد مني هيبقا كل همي رضاكي' },
-          { text: '' },
-          { text: ' لا هزعلك ولا هقسي  مرَّه عليكي' },
-          { text: '' },
-          { text: '' },
-          { text: '' },
-          { text: 'دا اللي ما بينا عباره عن أجمل حكايه' },
-          { text: '' },
-          { text: 'ومش ناقصها حاجه غير فصل النهايه' },
-          { text: '' },
-          { text: 'دورك فيها  أنك تحْلي دُنيايا' },
-          { text: '' },
-          { text: ' و دوري فيها أخليكي مرتاحه  معايا' },
-        ]
+        "text": " ",
+        "red": false
       },
       {
-        "id": 107,
-        "title": "مش ملاحظة",
-        "type": "بوب",
-        "lyrics": [
-          { text: 'عيني عليكي برده أيه الجمال دا' },
-          { text: '' },
-          { text: 'حلوه مفيش غلطة أه يا فلته' },
-          { text: '' },
-          { text: 'شايفين الطلة يا ماشاء الله' },
-          { text: '' },
-          { text: 'قلبي سبني وله إليها والله' },
-          { text: '' },
-          { text: '' },
-          { text: '' },
-          { text: 'في البستان أنتي أحلي وردة' },
-          { text: '' },
-          { text: ' حالة بتفاصيلها منفريدة' },
-          { text: '' },
-          { text: 'عقلي كان قتيل النهارده' },
-          { text: '' },
-          { text: 'بس لما شفتك راق وهدي' },
-          { "text": " ...............", "red": false },
-          { text: 'أنتي نجمة مش بنلقي منها كتير', red: true },
-          { text: '' },
-          { text: 'نجمة واحده بس سايبه 100 تأثير', red: true },
-          { text: '' },
-          { text: 'الكلام ده كله جد مش تحوير', red: true },
-          { text: '' },
-          { text: 'اللي يزعل القمر ده يبقا مش أصيل', red: true },
-          { "text": " ...............", "red": false },
-          { text: 'نظرة واحده منها بدمنها' },
-          { text: '' },
-          { text: 'نفسي أكون نصيبها وأعجبها' },
-          { text: '' },
-          { text: 'كل لحظة بتزيد حلاوتها' },
-          { text: '' },
-          { text: ' لسه مش ملاحظة أني حاببها' },
-          { text: '' },
-          { text: '' },
-          { text: '' },
-          { text: 'مش هسيبها واقف علي بابها' },
-          { text: '' },
-          { text: 'عمري يوم م هقدر أتعبها' },
-          { text: '' },
-          { text: 'لو ف أيه تفكر هيجلها' },
-          { text: '' },
-          { text: 'هل باجي في بالها بسألها ؟' },
-        ]
+        "text": "بصراحه مليان تفاصيل ... ومفيش منها إلا قليل",
+        "red": true
       },
       {
-        "id": 108,
-        "title": " مين  ساب مين ؟",
-        "type": "دراما",
-        "lyrics": [
-          { "text": "وأديني بقالي ليالي .... بحاول أن أنا أداري", "red": false },
-          { text: '' },
-          { "text": "لا عارف أشيله من بالي .... ولا أرجع تاني", "red": false },
-          { text: '' },
-          { "text": "بصبر نفسي وبقول .... مسيره في مرة هيفوق", "red": false },
-          { text: '' },
-          { "text": "وهيجرب نار الشوق .... ولو لثواني", "red": false },
-          { text: '' },
-          { "text": "ويمكن قلبه دا يدوب .... ويجي لوحده بهدوء ونكمل عادي", "red": false },
-          { "text": " ...............", "red": false },
-          { "text": "مين فينا ساب مين ؟ .... دا سؤال مش فارقة معايا إجابته", "red": true },
-          { text: '' },
-          { "text": "وادينا عايشين .... كل واحد بيداري في وجعه", "red": true },
-          { text: '' },
-          { "text": "دا أنا قلت يومين .... والأمر هيرجع تاني لوضعه", "red": true },
-          { "text": "وأهو عدى سنين .... ومشفتوش ولا بسمع عنه", "red": true },
-          { "text": " ...............", "red": false },
-          { "text": "دا لو كان عندي مش فارق .... مكنتش هفضل أنا فاكر", "red": false },
-          { text: '' },
-          { "text": "غرامنا اللي ملوش آخر .... وكنت نسيته", "red": false },
-          { text: '' },
-          { "text": "لكن على العشرة أنا باقي .... سألت عليه ومش لاقي", "red": false },
-          { text: '' },
-          { "text": "حاجة تخليني أقوله .... إني محبتش غيره", "red": false }
-        ]
+        "text": " ...............",
+        "red": false
       },
       {
-        "id": 109,
-        "title": "يا فاتنه ",
-        "type": "صعيدي",
-        "lyrics": [
-            { "text": "ويلي يا ويلي من شهاب.. هّل علينا من السحاب", "red": false },
-            { "text": "", "red": false },
-            { "text": "ظهر القمر و الجوّ طاب  .. جلبي الحديد قدامه داب", "red": false },
-            { "text": "", "red": false },
-            { "text": "أنا شوجي كان مقفول بباب .. خلاه  يلين كيف التُراب", "red": false },
-            { "text": "...............", "red": false},
-            { "text": "نفسي أوصفك  وصف  جميل .. فسألت أنا  أهل الغرام", "red": false },
-            { "text": "", "red": false },
-            { "text": "قالو كلام ماله مثيل  ..فعلا يليق بالمقام", "red": false },
-            { "text": "...............", "red": false },
-            { "text": "قالوا", "red": false },
-            { "text": "...............", "red": false },
-            { "text": "دي ست كل المحبوبين .. دي عشق كل المغرمين", "red": false },
-            { "text": "", "red": false },
-            { "text": "هيا دواء القلب الحزين .. حلاوتها بتزيد كل حين", "red": false },
-            { "text": "", "red": false },
-            { "text": "دي رسمه  حلوه في كل عين .. الكلمة منها تشفي الانين", "red": false },
-            { "text": "", "red": false },
-            { "text": "ودي في جمالها بس مين   .. لسه أحنا فيها  حيرانين", "red": false },
-            { "text": "...............", "red": true },
-            { "text": "و يا حلوه  يا فاتنه .. اه يا غريبه عن نسلنا", "red": true },
-            { "text": "", "red": false },
-            { "text": "يا هدية جت من ربنا .. وجه معاها  الخير و الهنا", "red": true },
-            { "text": "", "red": false },
-            { "text": "يا ورده زينه متلونه .. عطرك مغطي جوّنا", "red": true },
-            { "text": "", "red": false },
-            { "text": "من يوم ما  خطت  أرضنا ..  صارت  في قلبي متسكّنه", "red": true },
-            { "text": "...............", "red": false },
-            { "text": "أنا والله رايدك بالحلال .. و أتمني ما تخيب الأمال", "red": false },
-            { "text": "", "red": false },
-            { "text": "رميت أنا حبل الوصال .. قولي موافقه و أجي ف الحال", "red": false },
-            { "text": "", "red": false },
-            { "text": "و أوفيكي من  دهب ومال .. قولي موافقه أنا صبري طال", "red": false }
-        ]
-    },
+        "text": " ",
+        "red": false
+      },
       {
-        "id": 110,
-        "title": "أشربه الاحمر",
-        "type": "صعيدي",
-        "lyrics": [
-            { "text": "عيون اللي شاغل عيوني .. راحو وسابو قلبي و نسوني", "red": false },
-            { "text": "", "red": false },
-            { "text": "طب و ازاي بقا يا عيوني .. علي اللي أنتي حبّاه تهوني", "red": false },
-            { "text": "", "red": false },
-            { "text": "و لو يرجعو لي  و يجو لي .. هجيب له جواهر و لولي", "red": false },
-            { "text": "", "red": false },
-            { "text": "هجيب له و صادق في قولي .. و هقول لهم وحشتوني", "red": false },
-            { "text": "...............", "red": false },
-            { "text": "خدود اللي طالب يسامحني .. بيهربو مني ما سمحين لي", "red": false },
-            { "text": "", "red": false },
-            { "text": "اروح له عشان أقول له سامحني .. سامح قلبي سامحه و ريحني", "red": false },
-            { "text": "", "red": false },
-            { "text": "قولي يا قلبي ليه بيهربو مني .. قول لي يا قلبي ليه بيتعبوني", "red": false },
-            { "text": "", "red": true },
-            { "text": "قلب حبيبي عليه دقات", "red": true },
-            { "text": "صوتها جميل زي النغمات", "red": true },
-            { "text": "بتنسيني أهات و أهات", "red": true },
-            { "text": "", "red": false },
-            { "text": "أهات الجراح و الوجع", "red": true },
-            { "text": "أهات البُكاء و الندم", "red": true },
-            { "text": "أهات الفرح و الدلع", "red": true },
-            { "text": "أهات الحنين و الشجن", "red": true },
-            { "text": "", "red": false },
-            { "text": "و اه و اه من قلب حبيبي", "red": true },
-            { "text": "", "red": true },
-            { "text": "رائحة حبيبي  مسك  من  عنبر .. لسه في يميني أشربه الاحمر", "red": false },
-            { "text": "", "red": false },
-            { "text": "لو أحن ليه بمسكه و اتذكر .. جمال حبيبي اللي فيه متحير", "red": false },
-            { "text": "", "red": false },
-            { "text": "واللي  ولايوم  بيتغير .. و اللي بشتاق له أكثر وأكثر", "red": false },
-            { "text": "...............", "red": false },
-            { "text": "مالك روحي يا أجمل ملك .. تسلم أيديه اللي كحلك", "red": false },
-            { "text": "", "red": false },
-            { "text": "ياللي  قلبي ليك إتملك .. بصراحه أنا نفسي أسألك", "red": false },
-            { "text": "", "red": false },
-            { "text": "هل باجي لو مرّه في بالك..  ياريت سؤالي ما يكون  زعلك", "red": false },
-            { "text": "...............", "red": false },
-            { "text": "حبيبي حُبه أد فيا نار .. دا اللي بوجوده بنسي المرار", "red": false },
-            { "text": "", "red": false },
-            { "text": "و دا القُرب منه إنتصار  .. و دا البُعد عنه إنتحار", "red": false },
-            { "text": "", "red": false },
-            { "text": "أعلنت علي قلبه الحصار .. و أهو شغلني و صار اللي صار", "red": false }
-        ]
-    },
-    {
+        "text": "أيه يا أبو أحلي ضفيره ... دا أنا من أفعالك بستغرب",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ليه هتسبني كدا في حيره ... ليه بس تملئ بتتهرب",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "خد قلبي أعمل فيه جِميله ... متسبهوش يفضل متغرب",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا مفيش غير سيرتك سيره ... قلقان من أيه ماتقرب",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "مفتاح الحياة",
+    "type": "تحفيزية",
+    "lyrics": [
+      {
+        "text": "منتش وحيد ف الدنيا دي ... في زيك بين الملايين",
+        "red": false
+      },
+      {
+        "text": "مش فارقه اللون أو حتى الدين ... علشان كلنا بشر",
+        "red": false
+      },
+      {
+        "text": "خلقنا رب العالمين ... وخلي لكل واحد قدر",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "في اللي عايش بيدور عليه ... واللي عايش حياته في ملل",
+        "red": false
+      },
+      {
+        "text": "مع أن مفتاح الحياة ... هو كلمة أسمها الأمل",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لازم يكون عندك طموح... وترفع رأسك في السما",
+        "red": false
+      },
+      {
+        "text": "سيبك من اللي بيحبطوك... دا كل واحد جواه أسد",
+        "red": false
+      },
+      {
+        "text": "بيداوي بيه كل الجروح... وبينسى بيه الألم",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "حب الحياة وعيشها ... بكل تفاصيلها",
+        "red": true
+      },
+      {
+        "text": "دا الفرصة بتيجي مرة ...أوعى تفوتها",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "تلقى الحياة أحلى ... لما إنت تفهمها",
+        "red": true
+      },
+      {
+        "text": "وتنشر البهجة ... وترضى بالمكتوب",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "هَتعدي عَليك أزمات كَثير … وَمواقف أكثر",
+        "red": false
+      },
+      {
+        "text": "بَس لازم تِلغي المَستحيل … لازم تِفكر",
+        "red": false
+      },
+      {
+        "text": "وَتجيب لَها الحَل الأكيد … أوعى تِتهرب",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مفيش حدّ  بينجح في شيء…مش حابُه أصلاً",
+        "red": false
+      },
+      {
+        "text": "دا كُل شَخص في الحَياة… لَهُ عَمَل مُخصص",
+        "red": false
+      },
+      {
+        "text": "دورك بَقا تِدور عَليه… وَفي تَطور",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أوعى تِقول يوم أنا ضَعيف … أنا مش هقدر",
+        "red": false
+      },
+      {
+        "text": "حاول تِعمل اللي عَليك … وَالباقي عَلى رَبك",
+        "red": false
+      },
+      {
+        "text": "وشوف أنت هتوصل لإيه… وَبعدها قرر",
+        "red": false
+      },
+      {
+        "text": "أنت هَتكمل الطريق… وَلا هتغير",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وحاول لَو وَقعت في… أوعى تِتأثر",
+        "red": false
+      },
+      {
+        "text": "علشان تِعرف تاني تِقوم… وَتبقى أقوى",
+        "red": false
+      },
+      {
+        "text": "مَع نهاية كُل غُروب… تِبدأ حَياة أصعَب",
+        "red": false
+      },
+      {
+        "text": "لازم تِتواجَه بِالهدوء… علشان تِتبسط",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "حب الحياة وعيشها ... بكل تفاصيلها",
+        "red": true
+      },
+      {
+        "text": "دا الفرصة بتيجي مرة ...أوعى تفوتها",
+        "red": true
+      },
+      {
+        "text": "تلقى الحياة أحلى ... لما إنت تفهمها",
+        "red": true
+      },
+      {
+        "text": "وتنشر البهجة ... وترضى بالمكتوب",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "title": "مش هوقّف",
+    "type": "تحفيزية",
+    "lyrics": [
+      {
+        "text": "بيقولو إن الحلم طريق لازم تمشيه ... وأكيد همشيه ... أنا مش هفضل واقف في مكاني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لو في 100 حاجز قدامي أنا هقوي عليه ... لازم أعديه ... لازم أجازف و أرجع تاني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لو حتي قابلني في طريقي أي مطبات ... هنسي الاحباط ... هتعب وهطور في كياني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مش هتأثر ما أنا قلبي دا واخد علي الصدمات ... هشوف الخطوات ... اللي توصلني لنجاحي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنا مش هوقّف أنا هكمل ... ومهما تعبت هستحمل",
+        "red": true
+      },
+      {
+        "text": "عشان اوصل ل حلمي ... و أبقي اقوي من زمان",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومهما فشلت مش هزعل ... و مش هاخد طريق أسهل",
+        "red": true
+      },
+      {
+        "text": "أنا علي الصعب دا هقدر ... ومش هستسلم مهما كان",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أكيد هيجيلي يوم و أنجح ... و باللي عملته أنا هفرح",
+        "red": true
+      },
+      {
+        "text": "و شجرة حلمي دي هتطرح ... أمل و محبه و أمان",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أوقات بيكون في قدمنا إختيارات ... وكثر أوقات ... بنلاقي حاجات مفروضه علينا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وساعات بيجي لنا أذي م الناس ... بِلا أي أساس... وكأن هدفها تبكي عنينا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مش عيب إن احنا نقع ونقوم ... قبل ما يجي يوم ... و يكون اليأس إتحكم فينا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "إحساس الضغف ملوش لزوم ... ومينفعش يدوم ... علشان نقف علي رجلينا",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنا مش هوقّف أنا هكمل ... ومهما تعبت هستحمل",
+        "red": true
+      },
+      {
+        "text": "عشان اوصل ل حلمي ... و أبقي اقوي من زمان",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومهما فشلت مش هزعل ... و مش هاخد طريق أسهل",
+        "red": true
+      },
+      {
+        "text": "أنا علي الصعب دا هقدر ... ومش هستسلم مهما كان",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "سوبر هيرو",
+    "type": "تحفيزية",
+    "lyrics": [
+      {
+        "text": "كمل وأجمد ومتيأسش... مهما هيحصل بكره هتوصل",
+        "red": false
+      },
+      {
+        "text": "أوعي تقول كلمة مقدرش... مهما تلاقي الحمل بيتقل",
+        "red": false
+      },
+      {
+        "text": "أعرف أن أنت ليك رب... دائما فاكرك عُمره م ينسي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كل واحد جواه سوبر هيرو... محتاج بس اللي ياخد أيده",
+        "red": true
+      },
+      {
+        "text": "ويخليه يكمل طريقه... ويدوس علي الصعب اللي فيه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كل قمر ليل بعده في شمس... بتيجي تنور ومبتوقفش",
+        "red": true
+      },
+      {
+        "text": "لو وقتك ضاع مبيرجعش... أحسن لك حافظ عليه",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "العُمر يجري  ومبيقفشي...  للشخص اللي مبيحلمش",
+        "red": false
+      },
+      {
+        "text": "دا الاحلام مش بفلوس يعني... ومفيش حاجه مبتتحققش",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كل واحد مكتوب له طريقه ... حتي لو كان فيه مطبات",
+        "red": false
+      },
+      {
+        "text": "في اللي بيستسلم ل خوفه ... واللي بيوصل للنهايات",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "طول م أنت جواك في عزيمه ... هتقف تاني بعد الوقعات",
+        "red": false
+      },
+      {
+        "text": "في معارك أخرتها عزيمه ... ومعارك فيها انتصارات",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "طوق نجاه",
+    "type": "تحفيزية",
+    "lyrics": [
+      {
+        "text": "أفتح شباك الحياة... خبط على كل الببان",
+        "red": false
+      },
+      {
+        "text": "إرسم الضحكة الطيبة...انشر البهجة في المكان",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا اللمة الحلوة بتبقى بينا... لما نلقى اللي يحتوينا",
+        "red": false
+      },
+      {
+        "text": "واللي بنحس بحبه لينا... لما بس يبص في عينينا",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "تتحرك جوانا المشاعر... والقلب يقول إنه عاشق",
+        "red": false
+      },
+      {
+        "text": " والعشق يزيد فتره بفتره ... ونلاقي النور من بعد ضلمه",
+        "red": false
+      },
+      {
+        "text": "آه صحيح الدنيا بجد صعبة... بس مع بعض بتبقى أهون",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا الوحدة شيء زي الوباء... يفضل يزيد ومالوش علاج",
+        "red": false
+      },
+      {
+        "text": "أما اللمة دي طوق نجاة... ف بلاش تستغني عنها لحظة",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أوقات كتير .. بنحب ناس... وبنخفي عنهم حبنا",
+        "red": true
+      },
+      {
+        "text": "نرفض نبين .. الشعور... ليروحو خلاص منا",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مع إنها .. بتحس بينا... وهي كمان بتحبنا",
+        "red": true
+      },
+      {
+        "text": "وبتستني منا .. إننا... نيجي نصارحها بحبنا",
+        "red": true
+      },
+      {
+        "text": "يعني الحاجة .. بتبقي بسيطة... لما تكون من قلبنا",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دايماً تلقي المهمومين... عايشين في حزن وفي ملل",
+        "red": false
+      },
+      {
+        "text": "والفرح عندهم قليل... عشان مفيش ذرة أمل",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مع إنهم ممكن يخلوا... كل الهموم تبقي هَنا",
+        "red": false
+      },
+      {
+        "text": "م الدنيا دي لوحة جميلة... بس مش ملوانة",
+        "red": false
+      },
+      {
+        "text": "وإحنا بقا الرسامين... وبنرسم فيها حلمنا",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أصل النجاح دا بيت كبير... لكن ببانُه مِتقفله",
+        "red": false
+      },
+      {
+        "text": "لما بنلغي المستحيل... مفتاحها بيبقا في إيدينا",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لازم يكون قلبك جرئ... وبشخصية متمكنة",
+        "red": false
+      },
+      {
+        "text": "م أنت لو عشت يوم ضعيف... الدنيا بجد هتتعبك",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "title": "كلو بيمثّل",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هذه الكلمات باللهجة اللبنانية ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مَا في حُب في هَالدنيا.. كِله أوهام",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "صرنا بنعيش الثانية.. مِثل الأيام",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وكُل ما نرجع للماضي.. نِلقى مقفول وفاضي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مَا في غير النهار اللي.. راحوا في الأحباب",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وكُل مَرّة تِحِب يا قلبي.. تِطلع مجروح",
+        "red": false
+      },
+      {
+        "text": "وكأن الفرح عندي.. مَا بقى مسموح",
+        "red": false
+      },
+      {
+        "text": "مَا بقى في طاقة تِكفي.. مَا بقى في روح",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كُل مَرّة بفوت و بعدّي ... بيزيد أكتر وأكتر همي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ليش الراحة مَا بتلبألي؟... موجوع قلبي وزايد وجعي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "جوايا نار..",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كُل ما ب شخص أحنا نِتعلق ...فجأة يمشي ويبعد عنا",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وإحنا أصلاً مَا صدقنا... نِلقى ياللي يِكمل معانا",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لآخر المشوار",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كِلّه بِيِمثل عَلى بَعضه .. كِلّه كذاب",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مَا في حُب في هَالدنيا.. كُل شي له حِساب",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حتى الغاليين عَليّا.. مَا بَقوا يِسألوا فيّه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "صار جُواهم أسيّه.. وكُره ونفاق",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وكُل مَرّة يِجي الليل.. عيوني مَا بتنام",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بِتضل دموعي تِنزل.. ليش ضاع الأحلام",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مَا بِلاقي حَدا يُواسيني.. وكأن العالم ناسيني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "والدنيا مُصرّة تِخليني.. عايش في آلام",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "title": "مجنني",
+    "type": "روك",
+    "lyrics": [
+      {
+        "text": "حبيبي دا.. مش حبيب عادي.. حبيبي دا... هو كل حاجة",
+        "red": false
+      },
+      {
+        "text": "وحبي ليه.. مش على الفاضي.. دا حبي ليه... يبقي أحلى حاجة",
+        "red": false
+      },
+      {
+        "text": "وعاوزة أشوفه.. بس مش راضي.. وهو أصلاً... مصدر السعادة",
+        "red": false
+      },
+      {
+        "text": "ولو ظهر.. طيفه دا قصادي.. أكيد هتبقى... حالتي دي حالة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "رمش عينه.. آه مجنوني.. رمش عينه... والله يحير",
+        "red": false
+      },
+      {
+        "text": "هو فانه.. أصله سايبني.. هو فانه... آه عليه بدور",
+        "red": false
+      },
+      {
+        "text": "اللي بينه.. شيء يبسطني.. اللي بينه... مش هيتغير",
+        "red": false
+      },
+      {
+        "text": "عنده ضحكة.. آه بتسعدني.. عنده ضحكة... عليها مش بقدر",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "نفسي أحبه.. وحبه يزود... في قلبي حنين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأفضل أسأل.. وأسأل... ألاقي زي دا فين؟",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نفسي أفضل.. أدور وأعرف أكثر... عن عيونه الاثنين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اللي رسمتهم.. وغمزتهم.. في ثانية... بيسحروا العين",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "فوق الخيال.. وصفه دا.. فوق الخيال... زي النجوم",
+        "red": false
+      },
+      {
+        "text": "عليه جمال.. غريب يا ناس.. عليه جمال... بينسى الهموم",
+        "red": false
+      },
+      {
+        "text": "مفيهوش جدال.هموت عليه.مفيهوش جدال... ودا في العموم",
+        "red": false
+      },
+      {
+        "text": "حبل الوصال.. بيني وبينه.. حبل الوصال... لازم يدوم",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "title": "بيني و بينك",
+    "type": "روك",
+    "lyrics": [
+      {
+        "text": "بيني وبينك طريق , معرفش أخره أيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلبك بحره غريق , وكثير غرقو فيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "و مهما الحال يضيق , لن أستسلم إليه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلبي صحيح جرئ , لكن بخاف عليه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "على مر الزمان , والدهر والعُصور",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بات قلبك مكان , يصعُب له الوصول",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "صار وصفه خيال , لأنه جميل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هو منجم السعادة , والشوق والحنين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "فيه بلسم الجِراح , والألم والوجع",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هو مصدر النجاح , والحُب والأمل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فيه موطِن الغرام , والعشق والعجب",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هو جنة الكِرام , وينبوع الغزل",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "قد طال ليل الحبيب , يا حبيبي ما الذي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يشغل بالك دائماً , يجعلُك تبقا حائراً",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولِمَ الفؤاد ساهراً , هل يستفيض ماضياً",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أَم يستعد ساعياً , حتى يُشاركني الشعُور",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ويقول قولاً واحداً , هو أنه عاشقاً",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وعشقُه ظاهراً , في عينِه وقد يطُول",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أهلاً ومرحباً , بقُرة العيون",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أصبحت مسمعاً , يصل إلى الجنون",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلبي أحبك , يا ذا القلب الحنون",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "والله قلبك عليه لن يهون",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "title": "حقك تستغرب",
+    "type": "طرب",
+    "lyrics": [
+      {
+        "text": "الجميل دا حد شافه .. حد شافه رُدو قولو",
+        "red": false
+      },
+      {
+        "text": "حد لاحظ إختلافه .. حد لاحظ لون عيونه",
+        "red": false
+      },
+      {
+        "text": "يطلع أسمه أيه جنابُه .. اللي غرنا بطوله",
+        "red": false
+      },
+      {
+        "text": "عادي يعمل ما بداله .. وضعه ومساحته يسمحو له",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لما جاء علينا نوّر .. نوره جوا عيني زغلل",
+        "red": false
+      },
+      {
+        "text": "لا بجد مش بحور .. شكله حلو , شكله يهبل",
+        "red": false
+      },
+      {
+        "text": "لاء دا فعلاً لا يُقدر .. غمزتُه يا ناس تبرجل",
+        "red": false
+      },
+      {
+        "text": "دا اللي أنا علي بدور .. دا اللي في دماغي بيشغل",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا مشتتني مخليني .. مبفكرش إلا فيه",
+        "red": true
+      },
+      {
+        "text": "مش شايف غيره بعيني .. مش مشغول غير بعيناه",
+        "red": true
+      },
+      {
+        "text": "بتمني في مره يجيني .. وأعرّفه حُبي ليه",
+        "red": true
+      },
+      {
+        "text": "أمتي يلين أو يلاغيني .. خلاص هموت عليه",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنت تقلان ليه م تهداء .. وحده وحده كدا يا عم",
+        "red": false
+      },
+      {
+        "text": "ماشي ليه بس و سايبنا .. دا أنت دلوقتي الاهم",
+        "red": false
+      },
+      {
+        "text": "ولاه يعني عشان شاغلنا .. هتعيش في دور المُهم",
+        "red": false
+      },
+      {
+        "text": "دا أنت طول م قاعد مبنا .. مش هيبقا في أي هم",
+        "red": false
+      },
+      {
+        "text": "لا إكتئاب ولا نرفزه .. ولا حتي حرق دم",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اه سحرت كثير وتقدر .. تسحر أكثر منهم",
+        "red": false
+      },
+      {
+        "text": "م أنت أول لما تظهر .. جمالك بيشدهم",
+        "red": false
+      },
+      {
+        "text": "ناس كثير غيرانه منك .. م انت فارق عنهم",
+        "red": false
+      },
+      {
+        "text": "كله عاوز يبقا زيك .. م أنت أصلاً عمهم",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "title": "قمر هادئ",
+    "type": "روك",
+    "lyrics": [
+      {
+        "text": "مره ليلة من الليالي أتعزمة في سهره عادي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلت اروح مع صحابي قلت أرجّع زكرياتي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وسط الزحمة  ماشي خبط فيّه قمر هادئ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "خلني واقف مكاني من جمالو راح كلامي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلبي فط من ضلوعي راح أوام عليه يا ناس",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " قالي أنه أتشد للون عينيه اللي زي الماس",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لما كنت واقف مكاني كنت متلغبط وحاسس",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أني عايش حلم جامد كنت عارف كنت فاهم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أن في سحر في عيونه خلني مكنتش قادر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أبطّل أبص في وشه لحظه فعلاً القمر خلني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أسرح فيه كثير لحالي وأفضل ليل نهار أفكر",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "هوا دا فعلاً بشر وله دا من كوكب تاني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلبي من العشق أنفجر وأنا خلاص تعبت ياني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "اه يا ويلي اه يا ناري والله طار انتظاري",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أمتي يا غالي تقول شعورك علشان أخد قراري",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وقت نومي كنت بحلم أني بتكلم معاكي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": " ولما بصحي كنت أفكر أزاي بقا هتقوليها لي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لحظة سكوت العقل لحظة الخجل",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لحظة سقوط الدم لحظة الوجع",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لحظة وقوف القلب لحظة الالم",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لحظة ضياع النفس لحظة التعب",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لحظة سواد الدنيا لحظة الملل",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فجأه أشوف القمر ويرجع الامل",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فجأه تيجي السعادة ويجي القدر",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "قلبي دق 1000 دقه كل دقه ليها معني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " زي نور وزي عتمه زي نار وزي جنه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "زي  نجوم في سما عاليه زي سُفن في بحر عايمه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "زي البُعد اللي تعبنا زي الحب اللي جمعنا",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ياما حولت أعبّر كتير عن حبي ليكي ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بس  كلامي  كله كان كلام  بسيط وعادي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولقيت رد فعلك كان ثبات إنفعالي ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بس رجعت تاني أفكر ولقيت حل بديل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " قلت أنا هقول بحب بس بالغزل الاصيل",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مرحباً أميرتي ..أنني عبدٌ مطيع ...جئتو كي أنفذ.. كل ما ستطلبيه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنتِ ملكة الملوك ..أنتِ وردة الشعوب ...أنتِ فردوس الحياة ..أنتِ القمر والنجوم",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنتِ شمسٌ سا طعه ..في الشروقِ والغروب... أنتِ التي صوتها ..يجعل القلب يذوب",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنتِ منْ أحببتها.. وبسري لن أبُوح ...أنتِ التي قُربُها ..يطفئ لِي الجُروح",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "منذو أن رأيتكي لم تغمض لِي عيون",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "إن قلبي يرتجف ..عندما ينظر إلي... شعرُكِ المنغمر ..والعيون الحسنوات",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أرجو أن تأتي معي ..يا زينت البناتِ ...علي البُساطِ الاحمدي ..كي نطيرا في السماء",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قد علمتُ أنكي ..تسكنينا علي السحاب ...فقلت لماذا قد هبطي.. إلي اليابس والماء",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قد عجز اللسانُ أن ..يوصف هذا الجمال ...وأحتارت عيوني حقاً.. أنتِ حقيقه أم خيال",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنتِ زهرة الربيع تحملي لنا النسيم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنتِ تُبهري الجميع أنتِ ذو وجه وسيم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لحظة سكوت العقل لحظة الخجل",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لحظة سقوط الدم لحظة الوجع",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لحظة وقوف القلب لحظة الالم",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لحظة ضياع النفس لحظة التعب",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لحظة سواد الدنيا لحظة الملل",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فجأه أشوف القمر ويرجع الامل",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فجأه تيجي السعادة ويجي القدر",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "title": "هوا فيه أيه",
+    "type": "روك",
+    "lyrics": [
+      {
+        "text": "هوا في أيه.. فارق عنهم ... هوا فيه أيه مهُش فيهم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هوا في أيه ..مجننهم ... هوا فيه أيه مخليهُم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يقولو عليه ..كلام جامد ..ملوش أول ولا أخر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كأنه شئ كدا نادر .. مشفناش زيه ولا مر`ه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كأنه ورد متفتح .. لا بيشوك ولا يجرّح",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كأنه نجم علي مسرح .. عليه كام كلمه بتفرّح",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كأنه شمس كانت طلعه تنوّر دنيا كانت ضلمه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كأن عيونه فيها لمعه .. كأنه للأمل بسمه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا قالو عليه ..أن جمال الكون بحاله ... قصاد جماله دا ميسواش",
+        "red": true
+      },
+      {
+        "text": "و قالو كمان .. أن الدنيا من غيره ... مش حلوه ولا تتعاش",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هحبه أكيد .. حُب حقيقي محصلش ... ولا هيحصل له من بعدي",
+        "red": true
+      },
+      {
+        "text": "هقول له كمان .. أنا مقدرش ومينفعش  ... أسيب غيره ياخد قلبي",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا خلني .. أدوب في عيونه في ثواني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "و اه ياني .. سحرني معاه وسهاني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا خلني .. أسيب له قلبي و لساني",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا دوخني و لففني .. عشان أقابله و يشوفني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولمّا عرفته وقابلته قلت له أنا أتحكي لي عنّك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "سمعت كلام كثير جداً واديه طلع صحيح فعلاً",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "جميل حرفاً جميل أسماً.. مفيش منّك",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "title": "إبن النيل",
+    "type": "وطني",
+    "lyrics": [
+      {
+        "text": "أنا اللي عندي 100 مليون",
+        "red": false
+      },
+      {
+        "text": "بيفرحوا لما تيجي سيرتي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وقعت لكن عشانهم أقوم",
+        "red": false
+      },
+      {
+        "text": "معايا تملي في مسيرتي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا المصري أنا الفرعون",
+        "red": false
+      },
+      {
+        "text": "أنا إبن النيل ودا أسمي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "عظيمة يا موطني المأمون",
+        "red": false
+      },
+      {
+        "text": "وكل ما توعدي بتوفي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنا جندي في إيدو سلاح",
+        "red": false
+      },
+      {
+        "text": "أنا الدكتور أنا الفلاح",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا بذرة أمل ونجاح",
+        "red": false
+      },
+      {
+        "text": "أنا رحلة صعود وكفاح",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومهما العُمر عدى و راح",
+        "red": false
+      },
+      {
+        "text": "مش بيمل ولا يرتاح",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "بإيدي هكون وأهد الكون",
+        "red": true
+      },
+      {
+        "text": "بإيدي هبين الضحكة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بإيدي أبقى أنا المضمون",
+        "red": true
+      },
+      {
+        "text": "وأسيب جوا القلوب ذكرى",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أنا حلم ولا يمكن أموت",
+        "red": true
+      },
+      {
+        "text": "أنا الخطة أنا الفكرة",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنا واحد من الملايين",
+        "red": true
+      },
+      {
+        "text": "حالف يكمل السكة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بأخذ تشجيعكم دا فيتامين",
+        "red": true
+      },
+      {
+        "text": "مبتهزش ولو سنّة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا النار جنبها البنزين",
+        "red": true
+      },
+      {
+        "text": "مبتهدش كدا بكلمة",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنا الصوت العالي المسموع",
+        "red": true
+      },
+      {
+        "text": "أنا الحلم اللي مش ممنوع",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا اللي مهما كان موجوع",
+        "red": true
+      },
+      {
+        "text": "مبينزلش أي دموع",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مفيش في قاموسي أي رجوع",
+        "red": true
+      },
+      {
+        "text": "غير و راسي عالي و مرفوع",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "سلام لبلادي تاج الشرق",
+        "red": false
+      },
+      {
+        "text": "سلام للنهر والبحرين",
+        "red": false
+      },
+      {
+        "text": "حماكي الله يا أم الدنيا",
+        "red": false
+      },
+      {
+        "text": "يا وطن العذراء و الحُسين",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "بلادي يا حلوة يا حُرة",
+        "red": false
+      },
+      {
+        "text": "يا أرض الزرع والضلة",
+        "red": false
+      },
+      {
+        "text": "يا وطن الفخر والعزة",
+        "red": false
+      },
+      {
+        "text": "يا وطني أنا وأجدادي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "فداكي روحي وعنيّه",
+        "red": false
+      },
+      {
+        "text": "فداكي كل ما فيّه",
+        "red": false
+      },
+      {
+        "text": "بلادي غالية أوي عليّا",
+        "red": false
+      },
+      {
+        "text": "لأجل بلادي أموت عادي",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "title": "كبير بالفعل",
+    "type": "تراب",
+    "lyrics": [
+      {
+        "text": "معايا ملايين لو هتعد",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "متبرطمش ومتزطش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أسترجل كدا متجلونش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلت هتيجي وليه مجتش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بطّل هري متكدبش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هتكتر هديك بالرجل",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "الفرق بخبرة وبالسن",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا باجي بالفكرة وبالسنس",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بتيجي بالهيطة وبالكاش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فعيني هتفضلو أوباش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "سعركو بيكيا ميسواش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بأخذ الخطوة مبرجعهاش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ودماغي رايقة مبشغلهاش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لو VIP مستناش",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "عملة لي استثناء على الحالة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عيشالي الدور وبتتعالى",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فكرة أن عيوني مشتاق",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فكرة أنها طالعة كسبانة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عملت كام غلطة وعدتها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بتقول أنا عمري م حبتها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كدابة ومصدقة كدبتها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يلا بقا في داهية أنا نسيتها",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "إخواتي 20 و 30",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وحضورهم زي الخماسيين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومازلو على الأعداء حاطين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومازلو على المبدأ ثابتين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومازال كاريزما وجامدين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مفيش شغل شمال كله يمين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وتملي في ضهري حاضرين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ونضاف من جوانا سالكين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "إخواتي في الشدة وفي الدلع",
+        "red": false
+      },
+      {
+        "text": "مسا مني لكل راجل جدع",
+        "red": false
+      },
+      {
+        "text": "مبخفش الاسم ولا العدد",
+        "red": false
+      },
+      {
+        "text": "علشان ربك هو السند",
+        "red": false
+      },
+      {
+        "text": "معروف بالأخلاق والأدب",
+        "red": false
+      },
+      {
+        "text": "وفي حقي مبقبلش الأسف",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "تضايقني أمسح أهلك تِماً",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا كبير بالفعل وكبير سِنّاً",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ف سوق الرجالة سعرك نكلة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بنحط عليك ياما وأنت بتنسى",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شغل المرازية مليش فيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ف لو جيت ترازيني هربيك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا Level up يعني معديك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كدا كدا مش هشغل بالي بيك",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "title": "الحال العام",
+    "type": "راب",
+    "lyrics": [
+      {
+        "text": "أنا مؤمن بكلام بيقول",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "إرضاء الناس شيء معدوم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "في ناس شايفة أن أنا مغرور",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وناس بتقول أنا كلي غموض",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأنا من جوايا شخص كتوم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مبحبش أعاتب ولا ألوم",
+        "red": false
+      },
+      {
+        "text": "وبداري ف قلبي الموجوع",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وببين أن أنا مبسوط",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وإن زاد حزني بزيد في سكوت",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "متكون من كذا شخصية",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شخصية طموحة وعِندية",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شخصية لذيذة وسطحية",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شخصية ودودة وعِشرية",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شخصية تعيسة ومنسية",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ف أنا بسأل نفسي بشوف مالها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عاوز أعرف أيه غيّر حالها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ردت بس الرد صدمني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وقالت لي أن خلاص نسيتها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وإني تملي باجي عليها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حبيت الغير ولا حبيتها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولحد اللحظة دي بأذيها",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ف أنا بتأسف ليكي يا نفسي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا فعلاً غلطان ومقصّر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولأن مفيش حاجة بيدّي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كل م أصلح شيء يتكسّر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "متغطي بعالم متعري",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأهو طِيبت قلبي دي بتخسّر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كل م أقول أزمة وهتعدي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ألاقيها عمالة تزيد أكثر",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "في دوامة شغالة في عقلي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بين ذاتي وأهلي وبين أملي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وصراع بين موهبتي وعملي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وطِيبت قلبي وعزة نفسي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أحداث مُتتالية ومختلفة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وكأني بقيت داخل دائرة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بتزيد للضعفين في الثانية",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "جسمي ساكن فكري دا متحرك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "والإحساس بقا شيء مُتحجر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "والحال العام بقا مُتدهور",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ف مبرضاش أعلق ناس بي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عشان أما أبعد مظلمهاش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قواعد حطاها دنيتي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "علشان من غيرها مبعيشهاش",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مثلا لو كان قُربي لحد... ممكن يتسسب في أذيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لازم أتجنبه و أخد حد ...عشان متجيش ناس تعاتب فيّه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأما وجودي يكون مش فارق ...أبعد عادي بكل هدوء",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أفعالنا ساعات بتكون تافها... وساعت بتحتاج لردود",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "في طباع عُمرها م بتتغير ...و طبع بيتغير كل يوم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وفي ناس بتتقرر تخسرنا... بس مفيش أحوال بدوم",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وأنا من جوايا شخص كتوم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مبحبش أعاتب ولا ألوم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وبداري ف قلبي الموجوع",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وببين أن أنا مبسوط",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وإن زاد حزني بزيد في سكوت",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "title": "بالتراضي",
+    "type": "تراب",
+    "lyrics": [
+      {
+        "text": "سلاماً لكل اللي سبنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "في غيابنا هيعرف مقامنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وبُكرة هيجي يصالحنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وهنكون قفلنا بابنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لاء مش هنبكي ونزعل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "الوضع معدش بيسمح",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هنفضل نرسم الضحكة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حتى لو أي هيحصل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عالمنا بشر مادية",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وبشر مش صفية النية",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وبشر بوش وبـ 100",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وبشر كثير متربية",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ومهما دارت الأيام هتسهر عيني ما تنام",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "غير أما أحقق الأحلام وأتقدم خطوة لقدّام",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومهما ناس تقول كلام مش هديهم اهتمام",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " معرفش إلاستسلام عندي الطموح زي الوسام",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "بحاول أوسع نشاطي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بوصل رسالتي في باراتي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مش بحرق في وقت على الفاضي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بمشي المجال بالتراضي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عشان مفيش حد يتضايق ويزعل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عشان ميقولوش دا بيتكبر ويطمع",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وعدت أنا نفسي أن اسمي هيلمع",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأنا وعدي حر وعمره ما يرجع",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأي اللي يمنع م لسه في سكة وربك يعينا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وربي لنبقى أوائل في القمة",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كتير بكانا ومبكاش علينا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كتير أذانا ومسألش فينا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وكمان بيسأل ليه عليه قسينا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "في الواقع أحنا منه اكتفينا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "الدنيا دي بتدي اللي بيشقي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اللي عاوز أيامه تحلى",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اللي بيمشي لآخر السكة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اللي بيجتهد وبيسعى",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأنا عارف أني مش ملاك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بس أنا مش شيطان رجيم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "معرفش أزوق في الكلام",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا طبعي من زمن قديم",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "title": "Master",
+    "type": "تراب",
+    "lyrics": [
+      {
+        "text": "بفتنا وصلة حاطين عليكو في لحظة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "إحنا تعبنا وشقينا وأنتو بتحتاجوا واسطة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا عيال بناطيلها سقطة عاملين عليكو لقطة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "الشغلة معانا خلصة وأنتو تطلعوا برة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنشف كدا يسطا عظمك طري زي الباستا",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أخرك تلبس نظارة أخرك تمسك لي الشنطة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "إحنا بنلبس من ZARA وأنت بتلبس من العتبة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "NUMBER 1 في الإثارة أما أنتو دماغكو فاصلة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دائماً ماسك الطارة حراق عليكو شطة",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "شغلنا واصل MASTER تكسير مفاصل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فنكو هابط وثلاثة أرباعكو عاطل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ماشيين في الحق وأنتو ماشيين في الباطل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنتو عايشين على الحك وأنا عمال أناضل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا عندي ناب مش فك خطير وسلاحي قاتل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ناجح وبلا شك مسبتش فيكو راجل",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "COLOR BLACK  عالي المزاج",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أناLEVEL UP فين مستواك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لساني سم ملوش علاج أنا المهم وقت العراك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حديث في الأمس وفي المساء",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لوحدي لكن قائد مجال مبدأنا ثابت زي الجبال",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طريقنا واحد أنتم شمال عندي إجابة لأي سؤال",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "صحبتنا لمّه صحبتكو زايفة ...إحنا استبينا هيئتنا رايقة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لو كنتو ستة أو حتى سبعة  ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "PARDON  مبينا مفيش منافسة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عدتنا جاهزة سابقين زمنا ...أنتم تلامذة وإحنا الأساتذة",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كفتنا طابة وفي أي حتة ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لو غبنا حبة نيجي بهيبتنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "إحنا نجوم ليلنا إحنا صحاب كلمة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "الشغلة في أيدينا أسود في الشلة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "متجبش سيرتنا أبطال دفعتنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بتيجي بالفيزبة إحنا معانا TESLA",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "معروف أن أنا KING OF SINS",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بطل الأكشن والـ SUSPENSE",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بإشارة واحدة أنا بيبقى TREND",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "Hit my shoot in your head",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "على أمثالك هعمل {X}",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فارق عنك أصلي PRINCE",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "هنكسر فيكو واحد واحد",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "منخفش عشان قلبنا جامد",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مجموعكم مش صفر دا سالب",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طلقنا يجي عليك متعامد",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "متبرطمش كثير وتعاند",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "خفوا هزار دا هزاركم بارد",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "زميلي متسقش علينا العوج",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "إحنا نقش أما أنتم همج",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "إحنا طموحنا ملوش مستوى",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نصطاد فيكم زي السمك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كل كلامكم مفيهوش أمل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنتو أساساً برج الحمل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "معروف أننا برج الأسد",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "إحنا دكاترة في علم الفلك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "Hey Hey I am on fire",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فنان راكب على البساط طاير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "راكن الأعداء in side",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ممشيش Wrong أنا بمشي right",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دنيا سوداء but I am fine",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دايماً بكسب أنا أي fight",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "بدوس بنزين ومش فرامل ...خمسة وتسعين ومش يفاصل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بمشي تملي على الرابع ...ببني في كيان نجم ساطع",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هحط عليك وعلى اللي جابك ... لو هتكتر هقطع لسانك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لو هتحور هسحب لجامك ... لو هتأفور هكسر دماغك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا كابوسك اللي جالك ... أنا سيبك تسرح بخيالك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مش شايف منك غير كلامك ... هحط عليك أنت وعيالك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مهما هتغلط مش هنرد",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "BLOCK لو كترت هنرمي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بس مترجعش تاني تحُك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عشان هنيجي عليك ونحط",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " كلبنا HUSKY شرس بيعض",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أكبركم بالنسبه له قط",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يعني بلاش تعمل فيها خُض",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هنشوت فيك ومش هتصد",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " مش بنشفكم غير بالZOOM",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ياما تعبنا وشلنا هموم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لو علي الاموال عندنا كوم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " شغلنا DIRECT مفيش نوم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "NO EFFECT ON ANY TONE",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "موطني عربي أنا الفرعون",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يعني أجدع واحد في الكون",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حارتي مُؤمنه فيها حصون",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "جوا اللعبه لازم أجيب جون",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وقتي دا ملكي ومش مرهون",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " سبقاني سرتي كأنها ZONE",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مهيبر اه بس مش مجنون",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مسيطر لكن عمري ما أخون",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "title": "حُبك مش ذنبي",
+    "type": "روك",
+    "lyrics": [
+      {
+        "text": "أنا طول ليلي كلامي عليكي",
+        "red": false
+      },
+      {
+        "text": "وبسأل نفسي... أمتى يا روحي أنتي تكوني",
+        "red": false
+      },
+      {
+        "text": "مِلك لقلبي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نفسي أبقى معاكي.. دايب في هواكي",
+        "red": false
+      },
+      {
+        "text": "بس مخبي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "خايف أقولهالك تسبيني أو تجرحي قلبي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأنا نفسي تكوني بتحبيني وبتسهري زيي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومفيش حد إلا نجوم ليلي بشكلهم همي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حبك مش ذنبي والله ما ذنبي",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنا يكفيني تشوفك عيني",
+        "red": false
+      },
+      {
+        "text": "وأنتي لوحدك ...ودا على عيني أني أشوف غيري",
+        "red": false
+      },
+      {
+        "text": "قاعد جنبك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "إن كان عيبي .. في قلة جيبي",
+        "red": false
+      },
+      {
+        "text": "أنا أكيد عذرك",
+        "red": false
+      },
+      {
+        "text": "نفسي تجيني .. فرصة تخليني... أقرب منك",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "title": "دور بطولي",
+    "type": "روك",
+    "lyrics": [
+      {
+        "text": "مش عارف أعمل أي؟... في قلبي اللي هاويكي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مش قادر يعرف غيرك؟... ولسه مش ناسيكي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنتي الوحيدة اللي فاهماني... ومفاتيحي في أيديكي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ببقى طبيعي معاكي... مبشوفش الفرحة إلا في عيناكي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وبرغم أننا لسه متفارقين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "سبب فراقنا أيه؟ مش عارفين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وكان في دماغي هتغيب يوم أو يومين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وهنرجع تاني زي ما متعودين",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "بس اليوم بقى شهر والشهر جاب سنين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طال الغياب علينا وأحنا مش مرتاحين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأنا بكابر.. ولسه برضه بقول",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فراقه عادي.. وهلاقيله حلول",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأهو عارف أني.. طول بُعده عني ... قلبي دا مقفول",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "راح فين بقى الكلام... اللي أنتي قلتيهولي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أن مهما تعدي الأيام... عيونك دول مش هيسبوني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولو قلبي بقى مليان آلام... أنتي اللي هتداويهولي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أتاريه كان مشهد في الأفلام ... ودورك فيه كان دور بطولي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مبقاش فارق لي الاهتمام... أنا لسه أهو عايش بطولي",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "title": "لو بايدي",
+    "type": "روك",
+    "lyrics": [
+      {
+        "text": "سحر عيونك جابني الأرض",
+        "red": false
+      },
+      {
+        "text": "لما قابلتك أتوترت",
+        "red": false
+      },
+      {
+        "text": "أتغير حالي وأتلخبط",
+        "red": false
+      },
+      {
+        "text": "وأتبسطت فاستغربت",
+        "red": false
+      },
+      {
+        "text": "بس رجعت تاني أفتكرت",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أن مفيش بينا مجال ...وأن أنا قلبي دا رحّال",
+        "red": false
+      },
+      {
+        "text": "ومهما يكون ما بينا أميال ...ومهما أختلفت الأحوال",
+        "red": false
+      },
+      {
+        "text": "هتفضلي برضه جوا البال ...وهيفضل قلبي ليكي ميال",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ولو بأيدي هخلي كل شيء يكون تمام",
+        "red": false
+      },
+      {
+        "text": "ولو تجيني هحاول أنسيكي كل الألم",
+        "red": false
+      },
+      {
+        "text": "وشيء طبيعي أفضل في بحر حبك عوام",
+        "red": false
+      },
+      {
+        "text": "أحلامي كتير بس أنتي أجمل الأحلام",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ومكنتش أعرف أنك لو بعدتي هضعف",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مبقتش بقدر أن أبطل فيكي أفكر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أيوه مستغرب أن أنا حالي بيكي أتغير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومش بهزر ولو مرجعتيش أنا هدمر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولسه بسهر والحنين بيبقى أكثر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وكل ما ليل وليل يعدي",
+        "red": true
+      },
+      {
+        "text": "بتفضلي برضه جوا عقلي",
+        "red": true
+      },
+      {
+        "text": "مقدرش أنساكي ومش ذنبي",
+        "red": true
+      },
+      {
+        "text": "أن أنا حبيتك من قلبي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وليه بس ناوية تغيبي عني",
+        "red": true
+      },
+      {
+        "text": "وليه تسيبي روحك توحشني",
+        "red": true
+      },
+      {
+        "text": "وليه تسيبي قلبك يشتاق لي",
+        "red": true
+      },
+      {
+        "text": "وأنا معرفش أعيش وحدي",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وليه تسيبيني وكل يوم يجيب أخوه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دمع عينك عيوني دول بيكرهوه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وجوا عيني شايفك أجمل النجوم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حبك ليكي شيء مريح ومحتوم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ومش متعود علي الفراق ...ومش مرتاح أنا في البُعد",
+        "red": false
+      },
+      {
+        "text": "واللي مصبرني الاشواق... بس أنا محتاج القُرب",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومش فاهم ليه بس غويه... تشيلي كل الهم وحدك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "المفروض تكوني مَليكه... وتخليني أخد بيدك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طول م رموش عنيكي عاشقة... هفضل سامع نبض قلبك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ومكنتش أعرف أنك لو بعدتي هضعف",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مبقتش بقدر أن أبطل فيكي أفكر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أيوه مستغرب أن أنا حالي بيكي أتغير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومش بهزر ولو مرجعتيش أنا هدمر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولسه بسهر والحنين بيبقى أكثر",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "title": "صفحة جديده",
+    "type": "سلو",
+    "lyrics": [
+      {
+        "text": "متسألنيش عن الماضي .. يا حبيبي بلاش",
+        "red": false
+      },
+      {
+        "text": "وخلينا نفرح برجوعنا .. متفكرناش",
+        "red": false
+      },
+      {
+        "text": "بأيام شفنا فيها وجع .. ومرتحناش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "تعالى نفتح صفحة جديدة .. وننسى اللي فات",
+        "red": false
+      },
+      {
+        "text": "كفاية عتاب كفاية حيرة .. وفراق ساعات",
+        "red": false
+      },
+      {
+        "text": " ياما عاتبنا و ياما لُمنا .. وآخرتها مين استفاد؟",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "والله وبقيت معاك ... من تاني ياحبيبي .. صدقني يا حبيبي ... أنا ياما أشتقت ليك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لا مستحيل أنساك ... أنت تملي علي بالي .. طول ليلي و نهاري ... عمال بفكر فيك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لو ألف حاجه ناقصاك ... أئمرني أجيبهالك ..قولي اللي في خيالك ... و أنا تحت أمر عنيك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كل العيون حاسدَاك ... و أنا بدعي ربنا يحميك .. و ليّه أنا يخليك ... ويكمل عُمري بيك",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ميفرقليش حاجة غير.. أن أنا أرضيك",
+        "red": false
+      },
+      {
+        "text": "مينفعنيش حبيب غيرك.. وعيني عليك",
+        "red": false
+      },
+      {
+        "text": "حياتي الجاية وكل ما فيا .. ملك أيديك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حظوظي في الدنيا دي قليلة .. إلا معاك",
+        "red": false
+      },
+      {
+        "text": "مجرد ما بتيجي السيرة .. روحي بتهواك",
+        "red": false
+      },
+      {
+        "text": "وأنت قدامي بحس بطعم أيامي .. وأنا وياك",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "title": "القلب داعي",
+    "type": "طرب",
+    "lyrics": [
+      {
+        "text": "اسأل قلبك يقولك .. مين فينا مش تمام!",
+        "red": false
+      },
+      {
+        "text": "ليه فاكر إن بعدك  .. أنا عايشة في الألم؟",
+        "red": false
+      },
+      {
+        "text": "منكرش إن ما بينا  .. كان في حُب وغرام",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بس حبك ده كذبة ..  كان مجرد كلام",
+        "red": false
+      },
+      {
+        "text": "ومصنتش أي عشرة .. ولا بينت اهتمام",
+        "red": false
+      },
+      {
+        "text": "دا أنا سبت قلبي ليك .. قولي بعته بكام؟",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "بعد ما اتكشفت حقيقتك ... جاي عاوز تفارقني فجأة",
+        "red": true
+      },
+      {
+        "text": "الحكاية دي فيها إنّ ... أيه اللي جرى مبقتش عارفة",
+        "red": true
+      },
+      {
+        "text": "مش عشان ياما عديت لك ...  يبقى معناه إني خايفة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلت لك إني بحبك ... وأنت معرفتش تراعي",
+        "red": true
+      },
+      {
+        "text": "يا حبيبي وفر كلامك ... دا الكلام مبقاش له داعي",
+        "red": true
+      },
+      {
+        "text": "من حياتي اتفضل امشي  ... بالسلامة والقلب داعي",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كنت بتحس بيه .. وكنت برضه أناني",
+        "red": false
+      },
+      {
+        "text": "مش بقدر أنسى قلبك .. لكن قلبك نساني",
+        "red": false
+      },
+      {
+        "text": "كنت بتضحك عليّا . وتقول إن أنت شاري",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بكّاش وعاملي طيب .. فاكر حبك عماني",
+        "red": false
+      },
+      {
+        "text": "وأنا قلت الصبر طيب .. أتاريك مع حد تاني",
+        "red": false
+      },
+      {
+        "text": "كنت برتاح في قربك .. مبقتش أطيقك ثواني",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "title": "أعذارك قدمت",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "مش عاوز ترجع لي براحتك ... لكن متقلش إني جرحتك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "متجبش المشكلة دي عندي ... عشان أنت اللي واجع قلبي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومفكرتش تتأسف لي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "بطل بقى تتبلى عليّا ... شكلك ناسي عمايلك فيا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا ياما اديتك حنية  ... وأنت اديتني عذاب وأسية",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وتملي كنت بتتعبني",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا لو حطيت نفسك مكاني ... هتعرف إن أنا مش أناني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "تفهم ليه .. مش عاوز أكمل معاك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مش مرتاح ومش عارف  ... أعدي الوقت وأنا شايف",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دموع عيني .. اللي كانت عشقاك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا اتحملت كتير وجايز  ... كنت مفكر هبقى فايز",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وهنسى همومي .. بمجرد لقاك",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "خلاص كدا صفحتك اتقفلت ... حكايتنا دي ماتت واتدفنت",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أعذارك قدمت واتحرقت  ... دا غلاوتي عندك لو فرقت",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كنت هتحاول تكسبني",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مش ناقصة بقى عند وحيرة ... دا عمايله مكنتش قليلة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا كان لازم أفضها سيرة ... كان بينا كام ذكرى جميلة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بس أنت اللي اخترت تسيبني",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "title": "أخر فرصة",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "خلاص يعني راحت عليّا؟ ... وبقى في غيري في حياتك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نسيت كل ذكرى ليّه؟ ... دا أنا عايش على ذكرياتك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا إحنا اللي بينا مش شوية! ... طب قولي أيه آخرة عنادك؟",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أثرت فيا بشكل كبير .. ومكنتش أتصور",
+        "red": true
+      },
+      {
+        "text": "بين يوم وليلة وفجأة هلاقي .. كل دا اتبخر",
+        "red": true
+      },
+      {
+        "text": "وسألت هو دا كله ليه  .. وإزاي عليه هقدر",
+        "red": true
+      },
+      {
+        "text": "ملقتش أي إجابة أنا .. ومن يومها متحير",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مرت سنين وسنين علينا... وكنت تملي على بالي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ونصيبنا خلانا إلتقينا ... وأنا نفسي ترجع لو ثواني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يظهر دي آخر فرصة لينا... فبلاش بقى نضيعها تاني",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أثرت فيا بشكل كبير .. ومكنتش أتصور",
+        "red": true
+      },
+      {
+        "text": "بين يوم وليلة وفجأة هلاقي .. كل دا اتبخر",
+        "red": true
+      },
+      {
+        "text": "وسألت هو دا كله ليه  .. وإزاي عليه هقدر",
+        "red": true
+      },
+      {
+        "text": "ملقتش أي إجابة أنا .. ومن يومها متحير",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "title": "أصح قرار",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "من غير ما أبالغ ولا أكتر ... أنا بالنسبة لي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "من يوم بُعدك مش متأثر ... وعايش عادي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مش زعلان ولا فرحان .. مش مرتاح ولا تعبان",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وصحيح بقى قلبي متحجر ... بس أنا لا أبالي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مش أول ولا آخر واحد  .. اتصدم بيه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ياما قلبي دا مر بتجارب  .. ومعلمة فيه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "في تجارب أنا نفسي أنساها  ...وفي اللي بعيش على ذكراها",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "من الآخر يعني غيابك أنا .. اتعودت عليه",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنا أيه اللي هيجبرني أفضل ... مع حد أذيني؟",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بعد اللي عملته عشانه ... استكبر يرضيني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ده فراقه أصح قرار  .. مليت أنا من الأعذار",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "زي ما أنا لقيته هلاقي ... اللي يهنيني",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مبقاش لازم أسأل عنُه .. ولا أعرف عامل أيه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مش هتجنن وأرجع تاني .. أصالح فيه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دلوقتي بقت أحلى وأهدى ... مبقتش خلاص حمل مناداة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا حتى طالع كسبان .. هتضايق ليه؟",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "title": "أكتر حد فاهمني",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "حبك موجود في قلبي .. صدقني مخلصش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لسه حكايتنا باقية .. يا حبيبي منتهتش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "رغم خلافنا وفراقنا .. أنا فاكرك منستش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حتى غلاوتك عندي .. زادت أوي مقلتش",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا أنا غيرك يا حبيبي مليش ... ما أنت أكتر حد فاهمني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أعرف ناس ياما بس مفيش ... غيرك اللي بجد شاغلني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قربك بيخليني أعيش ... وبيفرحني وبيطمني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " بتمنى الوقت ميمشيش  ...كل ما أحس إنك هتسبني",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "من يوم ما زعلت مني  .. وأنا بالي مرتاحش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طبعاً زعلك فارقلي  .. وعليه مقدرش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وحاولت ألاقي حاجة .. تشفعلي ملقتش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "والله بعدك تاعبني  .. وأتمنى ميزيدش",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "title": "تجربه عديتها",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "قالت لي لو كل الظروف ضدك ... صدقني هبقى جنبك",
+        "red": false
+      },
+      {
+        "text": "مع أول ظرف ليّه .. ليه ملقتهاش معايا؟",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قالت لي اطمن أنا عمري مرة ... ما هقدر أجرح قلبك",
+        "red": false
+      },
+      {
+        "text": "قالت كلام كتير .. وباعت في النهاية!",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كانت درس اتعلمت أنا منه ... مش كل اللي أعرفه آمن له",
+        "red": true
+      },
+      {
+        "text": "ولا كل اللي ارتاح له وأحبه ... هو كمان هيحبني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وعموماً ربنا يجازيها  ... كانت غلطة وأنا ندمت عليها",
+        "red": true
+      },
+      {
+        "text": "كنت أكيد متعلق بيها... لكن مبقتش تهمني",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أن أنا أنسى حد حاجة صعبة... بس أنا برضه نسيتها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عشان عملت كتير.. لكن مطمرش فيها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وإن كان عليّا اعتبرتها فترة ... وتجربة مملة عدتها",
+        "red": false
+      },
+      {
+        "text": "عادي زي أي فترة.. بمر بيها",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "title": "حالة نادرة",
+    "type": "طرب",
+    "lyrics": [
+      {
+        "text": "كملي في كذبك وكلامك ... روحي قولي في كل مكان",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ألفي قصة في خيالك ... وطلعيني فيها غلطان",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مش هبرر شيء ولا أدافع ... حتى مش هرد كمان",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأما يسألوا أيه الدافع قولي ... أن أنا كنت شيطان",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وأنتي كنتي ملاك وبريئة ... مش بتجرح ولا بتبيع",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كذبتي كذبة وصدقتيها ... قلتي من غيرك هضيع",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وأديني مضعتش ولا حتى ... عيوني نزلت دمعة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بجد بعدك مش أزمة ... وحياتي كمان بقت أهدى",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنتي اللي زيك حالة نادرة ... بالنسبة لي ماضي وعدى",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لساكي موهومة وفاكرة... موضوعنا دا فيه رجعة",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "في جرح عادي أنه يتداوى ... بالكثير ياخد يومين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وجرح من كتر الغلاوة ... ميتدواش لو بعد سنين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا اللي قلبه في قساوة ... هيفضل عايش حزين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عمره يوم ما هيتساوى ... بالقلوب الطيبين",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "title": "زي ضلي",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "وبقابل ناس كتير بعده  ... وبقول مش عاوزة أنا غيره",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مش قادر قلبي على بُعده  ...وعيوني والله ما ناسينه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأديني بفتكره بالخير ... لو جيه في بالي ذكرى معاه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "سايب في حياتي تأثير ... على وعدنا هفضل أستناه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وأنا هعمل أيه يعني؟ ... بشتاق له وقدري مانعني",
+        "red": true
+      },
+      {
+        "text": "أشوفه لو صدفة .. وأعرف أخباره",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "البُعد حاجة مش سهلة ... بالذات لو جالنا كدا فجأة",
+        "red": true
+      },
+      {
+        "text": "بياخد منا أحلامنا .. وبيسيب ناره",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كام ليل فات ويوم عدى  ... وأنا لسه بستنى",
+        "red": true
+      },
+      {
+        "text": "مفيش حل قدامي .. قدرنا ومش بنختاره",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أكتر حد بيفهمني ... حبيبي وغيره واله مليش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "في أي محنة بيكون جنبي ... زيّ ضلي مبيسبنيش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "غيابه كسرني و تاعبني  ... كأن الوقت مبيمشيش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شعور الوِحده ملازمني ... خلاص مبقتش قادر أعيش",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "title": "فاكرني لعبة",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "أنا مش هعاتبك ...ولا حتى هرمي اللوم عليك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا هتجاهلك ...مش هسمعك ولا هسأل فيك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هتفضل وحدك ...والأيام كفيلة أوي إنها تربيك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وقسوة قلبك ...هتعيشها لمّا الحزن يملى عينيك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دوق شوية من اللي دًقته ...هي دي الحياة وكما تُدين تُدان",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كل جرح فيها سبته ...هتنجرح زي وبالأضعاف كمان",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بُعدي هتحس بقيمته ...بعد ما يبقى خلاص فات الأوان",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كلامك اللي عليّا قلته ...كان دليل إن أنت من جواك جبان",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "فاكرني لعبة ...هتعيش حياتها زي ما أنت تقولها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كذبت كذبة ...من كتر ما أنت كذبتها صدقتها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أرجع أيه انسى ...أنا أي حاجة ربطاني بيك قطعتها",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولا أي كلمة ...أحسن لك أبعد إحنا موضوعنا انتهى",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "title": "طلعنا كدابيين",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "فرصة رجوعنا أنا أملي فيها كبير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ضاعت وعودنا بعد حب جميل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مش هنكر إن البعد عنه ساب تأثير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نفس المعاني، الفرق في التفاصيل",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وأدينا يا قلبي عايشين .. بين البينين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وتعدي علينا أيامنا ..في بُعده سنين",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "حاولنا كتير نبين .. إننا مرتاحين",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وقلنا هننسى لكن  ..طلعنا كدابين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وليه ظلمتنا الدنيا ..والأيام!",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": true
+      },
+      {
+        "text": "ورفضوا يسيبوا قلوبنا تبقى.. سلام",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طب ده اللي بينا كان حقيقي .. مش أوهام",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "سنين ضاعوا ومش عارفين .. الباقي كام؟",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "الحب حلو لكن حالاته مختلفين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أول حالتنا حب و آخرها متفارقين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ودّعنا بعض والدمع مالي العين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "علشان مكنش في بالنا وكنا مضطرين",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "title": "الدنيا بتعلم",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "زعلت بجد على نفسي عشان أديتها",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "لحد أزاها وتعبها وطلّع عينها",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وبعد دا كله سابها و راح لحد غيرها",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "طلع كداب في كل حاجة كان قايلها",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وملعون الحُب اللي يخليني",
+        "red": true
+      },
+      {
+        "text": "أعيش موجوعة طول سنيني",
+        "red": true
+      },
+      {
+        "text": "بغمض عين و أفتح عين",
+        "red": true
+      },
+      {
+        "text": "ونار الفراق تكويني",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "هنكون كأننا أغراب كل م أشوفه",
+        "red": true
+      },
+      {
+        "text": "مفيش بيننا أي كلام عشان أقوله",
+        "red": true
+      },
+      {
+        "text": "بقيت نسياه ومش عاوزاه",
+        "red": true
+      },
+      {
+        "text": "ومش هضعف ولا لحظه قدام دموعه",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "صحيح الدنيا بتعلّم وأهي علمتني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أخبي مشاعري جوايا وأقلل طيبتي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومهما تعبت أستحمل وأقف على رجلي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "و أخلّي الصبر دا دوايا و أعيش بطريقتي",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "title": "والله هويته",
+    "type": "صعيدي",
+    "lyrics": [
+      {
+        "text": "حبيبي يا ناس زين الرجال",
+        "red": false
+      },
+      {
+        "text": "تملي يضربوا بيه الأمثال",
+        "red": false
+      },
+      {
+        "text": "لا يهاب مطاريد ولا نشال",
+        "red": false
+      },
+      {
+        "text": "أصله صعيدي و ولد حلال",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حبيبي يا ناس كامل العلام",
+        "red": false
+      },
+      {
+        "text": "فصيح اللسان جميل الكلام",
+        "red": false
+      },
+      {
+        "text": "سيطه واصل عالي المقام",
+        "red": false
+      },
+      {
+        "text": "له كثير معارف وناس أعلام",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "والله هويته لمّا رأيته قصاد عيني",
+        "red": true
+      },
+      {
+        "text": "صالب طوله كيف الفرسان",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "آه يا زماني لو ويهواني دا مخليني",
+        "red": true
+      },
+      {
+        "text": "شايفه خياله في كل مكان",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "آه يا نهاري بتزيد ناري لو يواسيني",
+        "red": true
+      },
+      {
+        "text": "بنظرة عين مليانة أمان",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أحبابي قالوا لي أتقل عليه",
+        "red": false
+      },
+      {
+        "text": "وأنا قدامه بضعف طب أعمل أيه؟",
+        "red": false
+      },
+      {
+        "text": "غرامه بحر وغرقت فيه",
+        "red": false
+      },
+      {
+        "text": "لو هو قدري ف أنا راضية بيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نقشت صورته على كرداني",
+        "red": false
+      },
+      {
+        "text": "و أسمه صار حلق في وداني",
+        "red": false
+      },
+      {
+        "text": "في عتمة الليل لو طيفه جاني",
+        "red": false
+      },
+      {
+        "text": "بيرد النور في دنيتي تاني",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "title": "وأما قابلتك",
+    "type": "كلاسيك",
+    "lyrics": [
+      {
+        "text": "ياما عدّى عليّا أيام وليالي",
+        "red": false
+      },
+      {
+        "text": "لا كان حوليه عزيز ولا غالي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لا حد يسأل عني ولا حد عارف مالي",
+        "red": false
+      },
+      {
+        "text": "ولا حد يكتم جرحي ولا يملئ قلبي الخالي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وأمّا قابلتك يا حبيبي  معرفش جرى لي أيه؟",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نسيتني الماضي بحاله مبقتش أفكر فيه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ودخلت في حياتي مليتها... عرفتني طعم حلاوتها",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "صحيت جوايا حاجات ...سنين و سنين داريتها",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "خلتني حابة أني أعيش ...وبقول لبكرة دا ميجيش",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عشان أقضي معاك أوقات... أوقات حلوة مبتنتهيش",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أوقات مفيش فيها خوف ولا فراق ولا زعل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مفيش بس إلا شوق وسعادة وكمان أمل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أمل بيملئ فؤادي ويرُد لي روحي تاني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بيخليني مفكرش ولا حاجة تشغل بالي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "يا فرح دُق على بابنا  خليك ويانا ليه تسيبنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ويا حزن أمشي وفارقنا بلاش تزورنا ولا تيجي لنا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "يا هاوي حد وروحك فيه قول  بحبك خايف ليه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بين شوقك ليه تداريه يمكن تنول رضا معاليه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وتقول له يا حبيبي دا أنت  ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دخلت في حياتي مليتها... عرفتني طعم حلاوتها",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "صحيت جوايا حاجات ...سنين و سنين داريتها",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "خلتني حابة أني أعيش ...وبقول لبكرة دا ميجيش",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عشان أقضي معاك أوقات... أوقات حلوة مبتنتهيش",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "title": "قلبي عندك",
+    "type": "مقسوم",
+    "lyrics": [
+      {
+        "text": "يا حبيبي أنا قلبي عندك أرجوك حافظ عليه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "علشان قبل ما أقابلك أنا كنت بداوي فيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كان فيه كام صدمة جامدة من ناس قريبين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ناس باعوا العِشرة فجأة مخدتش ثانيتين",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي دلعني على آخرك",
+        "red": true
+      },
+      {
+        "text": "أنا جاي ومسلم لقلبك",
+        "red": true
+      },
+      {
+        "text": "نسيني الأحزان في حضنك",
+        "red": true
+      },
+      {
+        "text": "خليني أفرح شوية",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "صحي لي مشاعري اللي نايمة",
+        "red": true
+      },
+      {
+        "text": "اللي كانت في الهم عايمة",
+        "red": true
+      },
+      {
+        "text": "أنا عارف أن مفيش حاجة دائمة",
+        "red": true
+      },
+      {
+        "text": "بس متقطعش بيه",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "في كتير من عمري عدّى من غير ما أحس بيه",
+        "red": false
+      },
+      {
+        "text": "خلينا نعيش حياتنا نستني تاني أيه",
+        "red": false
+      },
+      {
+        "text": "أيامنا الحلوة جاية نتعب نفسنا ليه",
+        "red": false
+      },
+      {
+        "text": "لو طولت شوية ف أنا شوقي مش هداريه",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "title": "من قلبي حبيته",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "هموت و أقول له على اللي في قلبي ",
+        "red": false
+      },
+      {
+        "text": " وخايفة أبان ضعيفة في عينه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وعارفة أنه أكيد محتاج لي ",
+        "red": false
+      },
+      {
+        "text": " و خوفي عامل حواجز بينه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لأمتى هداري وأفضل أخبي ",
+        "red": false
+      },
+      {
+        "text": " و أنا عارفة أني مليش غيره",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وليه تعبني ضميري يا قلبي ",
+        "red": false
+      },
+      {
+        "text": " و بيقول بطلي تحني له",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ما ياما غلط وسامحني ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ليه بقا مش عارفة أنا أسامحه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كأن في شيء بيمنعني ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " لمّا بحاول أسمع له",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ونفس الشيء دا مش عاوزني ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " أقرب له وأكون جنبه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "جايز علشان أنا غلطي ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " مكنش بنفس تفاصيل غلطه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لا مرة خدعني ولا يوم خانني ",
+        "red": false
+      },
+      {
+        "text": " ف لازم يعني أخد بإيده",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "في عز وجعي كان جنبي ",
+        "red": false
+      },
+      {
+        "text": " مينفعش أن أنا أسيبه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا حتى عمره ما كسرني ",
+        "red": false
+      },
+      {
+        "text": " ليه أكسر قلبه وأبقا أذيته",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قالوا اللي يحب بيسامح ",
+        "red": false
+      },
+      {
+        "text": " وأنا من قلبي حبيته",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "title": "موضوع وخلص",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "أنا حذّرتُك مئة مرّة ... ولا مرّة رضيت تسمعني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ونفسيتي بقي حُرّة ... وإهيّ مت عاوزاك ترجع لي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وعُيُوني دي مش مُضطرّة ... تشوف اللي بدمعني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حُبنا بقا قصّة مُملّة ... دوري فيها مبقاش ينفعني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلبك أسي مالُوش ملّة ... عايش عشان بخدعني",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " قلبي دا من سجاجة ..والمسألة مت مُحتاجة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "موضُوع وخلّص .. والغالي رخّص ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " وشبعت أنا خيانة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ياما كثير نبّهتُك .. وكثير أوي وجّهتُك",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "على حل أمان ..وأهُو قلبك خان ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ما كفاية بقا إهانهُ",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "متلُمنيش على حاجة هعملها... عشان أنت اللّي اخترت",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللّي يختار حاجة بيكملها... بيُواجه مبيهربش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وخلاص كدا خلّصت حكايتنا... وعلى قراري مبندمش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كان لازم نبعد فبعدنا... وعلى بُعدنا مبزعلش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وبسببك دي بقت نهايتها... مكتُوب لنا ما نكملش",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وبتسأل ليه بسيبك.. مع أنّك عارف عيبك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طمّاع غدّار.. خلّتني أحتار... واحتار قلبي معايا",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا مُرتاح من غيرك.. ويا قلبي كتّر خيرك",
+        "red": true
+      },
+      {
+        "text": "عدّيت لُه كتير.. مطلعش أصيل... ممشيش على هوانا",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "title": "حظي الحلو",
+    "type": "سلو",
+    "lyrics": [
+      {
+        "text": "يا أجمل حاجة حصلت لي ",
+        "red": false
+      },
+      {
+        "text": " معاك الدُّنيا ضحكت لي",
+        "red": false
+      },
+      {
+        "text": "وكُنت فاكرها نسيتني ",
+        "red": false
+      },
+      {
+        "text": " أتريها هتجمّعني بيك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "من أوّل م أنا قابلتك ",
+        "red": false
+      },
+      {
+        "text": " دخلت القلبُ وعشقتك",
+        "red": false
+      },
+      {
+        "text": "وكُنتُ بقُولُ مفيش منك ",
+        "red": false
+      },
+      {
+        "text": " وقدّري خلّني ألقيك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنا مهما أقُولُ يا حبيبي ",
+        "red": true
+      },
+      {
+        "text": " وأحكي اللي في قلبي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لا كلّمي هيخلص ",
+        "red": true
+      },
+      {
+        "text": " ولا حتّى هتكفي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا اللي جمالك مالُوش زيّ ",
+        "red": true
+      },
+      {
+        "text": " وقلبي بيه مُستكفي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نفسي أفضل جُوا حياتك ",
+        "red": true
+      },
+      {
+        "text": " لو تسمح لي",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا حظي الحلو من الأيّامُ ",
+        "red": false
+      },
+      {
+        "text": " معاك برتاح وببقى تمام",
+        "red": false
+      },
+      {
+        "text": "حبيبي صدقُني دا مت كلامُ ",
+        "red": false
+      },
+      {
+        "text": " دأ إحساس حلو حسيت",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "title": "وش الخير",
+    "type": "سلو",
+    "lyrics": [
+      {
+        "text": "أنت سر قُوّتي... أنت عيدي وفرحتي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أيوه مصدر ضحكتي... أحلى حاجة ف دُنيتي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنت ساكن جُوا قلبي... أنت أغلى حاجة عندي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طُب دا أنا ببقل همّي... لمّا بس بتبقى جنبي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنت اللي روحي دابت فيه.. بدُون تفكير",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنت اللي زيك ف الزّمن دا.. مش كثير",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نسيتني كُل الماضي.. آه يا وُش الخير",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حلّيت حياتي.. وسيّبت فيها تأثير",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنت أحسن فُرصة جات لي... مين غيرك مصدر سعادتي؟",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ياما قبلك عشت وحدي... بس دلُوقتي أنت سندي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " مهما أقُول يا حبيبي... وأحكي برضه كلامي مش هيكفي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " مهما أداري ومهما أخبي... برضه ليك مكان في قلبي",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "title": "أتفضل",
+    "type": "رومانسي & مقسوم",
+    "lyrics": [
+      {
+        "text": "م تُهدّي اللعب شوية ",
+        "red": false
+      },
+      {
+        "text": " حبيبي بلاش بقى تُقلّ عليّا",
+        "red": false
+      },
+      {
+        "text": "يا شاغلني في الرايحة وفي الجاية ",
+        "red": false
+      },
+      {
+        "text": " مش شايف غيرك بعينيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أهدي متمشيش وتسيبني ",
+        "red": false
+      },
+      {
+        "text": " أعمل معروف ده وهواك غلبني",
+        "red": false
+      },
+      {
+        "text": "من الجمال ده بلاش تحرمني ",
+        "red": false
+      },
+      {
+        "text": " أنا قلبي شاريك يا حبيبي افهمني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "آه يا نُسخة ولن تتكرّر",
+        "red": true
+      },
+      {
+        "text": "أنا عيني مبهورة من المنظر",
+        "red": true
+      },
+      {
+        "text": "أنا كده هضعف مش هقدر ",
+        "red": true
+      },
+      {
+        "text": "تعالى اُدخُل قلبي اتفضّل ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "آه يا واصل للعالمية",
+        "red": true
+      },
+      {
+        "text": "رقة وأخلاق مثاليّة",
+        "red": true
+      },
+      {
+        "text": "وكاريزما غير طبيعيّة",
+        "red": true
+      },
+      {
+        "text": "مش هسيبك مهما يحصل",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عنده قبول لا مش عادي..",
+        "red": false
+      },
+      {
+        "text": "ده هو في وادي والباقي في وادي",
+        "red": false
+      },
+      {
+        "text": "والله لو يطلب عيني أنا راضي ",
+        "red": false
+      },
+      {
+        "text": " أهم حاجة أشُوفُه قُصادي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا جماعة حد يشوف صرفُه ",
+        "red": false
+      },
+      {
+        "text": " من يوم ما قابلته أنا بالصُّدفة",
+        "red": false
+      },
+      {
+        "text": "بصراحة خطفني كده خطفة ",
+        "red": false
+      },
+      {
+        "text": " علشان مفيهوش ولا غلطة",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "title": "مهما أستجدع",
+    "type": "مقسوم",
+    "lyrics": [
+      {
+        "text": "بعد اللّي كان مابينا .. فجأة وبسُهُولة هونا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وجاء غيرُنا خد مكانا .. وعلى الرّف اتركنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بعد ما إتهدّ حيلنا .. مبقاش يُتردّ خيرنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قدّمنا كثير عشاتُه .. وفي عزّ نومه سهرنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بعد ما راح وسابنا.. وخلي الكل عابنا",
+        "red": false
+      },
+      {
+        "text": "وغيابه دا تعبنا.. راجع يدق بابنا",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "م خلاص حكايتك فضيناها ... وارتحنا منها ومن أزاها",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "في ناس مهما استجدع معاها ... بيقُولُوا عليّا مت أصيل",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بعد ما كُنت نُور عيننا ... عاوز تجيب اللُّوم علينا",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قال يعني إحنا اللّي ابتدينا ... بالقسوة ونُكران الجميل",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لو عاوزين الصراحة.. البعد عنه راحة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "خدت منه استراحة.. مبقاش فيه له مساحة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كان بيقول مش ناسينا.. وإنه باقي علينا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " يعني إحنا كدا اشترينا.. والله دا كلامه كله زينة",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "title": "سمّعني",
+    "type": "رومانسي & مقسوم",
+    "lyrics": [
+      {
+        "text": "تسمح من فضلك.. إني أتهوَّر وأتجرَّأ؟",
+        "red": false
+      },
+      {
+        "text": "وآخد من وقتك حبة.. وأسأل فيهم سؤالين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "إزاي متصور.. إن أنا مهما هلف وأدور",
+        "red": false
+      },
+      {
+        "text": "هلاقي قمر زيك ومنور؟.. وأنت مفيش منك اتنين!",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اعقلها وفكر.. هتلاقي إن أنا عمري ما هقدر",
+        "red": false
+      },
+      {
+        "text": "وإني أصلاً مش هعرف.. أبعد عنك لو ساعتين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مالك متحير؟!.. يظهر إن سؤالي يوتر",
+        "red": false
+      },
+      {
+        "text": "لو مش عاجبك عادي يتغير.. أو مُمكن أسأل بعدين",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "أنا لو مش هسأل عنك.. أمال هسأل على مين يعني؟",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قولي إزاي أزعل منك.. وأنت اللي مدلّعني؟",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا أنا حفظتك صم وفهمك.. أصل مفيش غيرك ينفعني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ليه بس مخبي في قلبك؟.. قولها بصوت عالي سمّعني!",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "لأ لأ فعلاً متمكن.. دا الجرح في إيدك يتسكن",
+        "red": false
+      },
+      {
+        "text": "مش معقول خالص مش ممكن.. للدرجة دي عيونك حلوين!",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اضحك بقى يلا وهزر.. كل ما تضحك هفرح أكتر",
+        "red": false
+      },
+      {
+        "text": "دا جمالك على قلبي مأثِّر.. وبالذات الغمازتين!",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شوف مهما هيحصل.. أنا منك عمري ما هفصل",
+        "red": false
+      },
+      {
+        "text": "قدامك مقدرش أتقل.. أكتر من ثانيتين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أحلف وأبصم بالعشرة.. والله أعلم وأدراه",
+        "red": false
+      },
+      {
+        "text": "إنك من فترة لفترة.. حلاوتك بتزيد ضعفين!",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "title": "براحته يتشرط",
+    "type": "مقسوم",
+    "lyrics": [
+      {
+        "text": "دا كدا عظمة على عظمة ",
+        "red": false
+      },
+      {
+        "text": " مفيش بعد دا جمال",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "آه يا سلام على البسمة ",
+        "red": false
+      },
+      {
+        "text": " دا حلو وعالي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ودا غيابه في أزمة ",
+        "red": false
+      },
+      {
+        "text": " عمله في قلبي زلزال",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "معاه الدنيا لها لازمة ",
+        "red": false
+      },
+      {
+        "text": " أنا بقيت ليه ميال",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "دا والله محتاج يتقدر دا لازم يتشال على الرأس",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " حقيقة أنا مش بتمنظر بجد دا ملك الإحساس",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قبله كان قلبي مسيطر بس معاه احتاس",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "عادي براحته براحته يشترط ",
+        "red": false
+      },
+      {
+        "text": " ما هو خطير مالهوش حل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلبي قفل عليه وقرط ",
+        "red": false
+      },
+      {
+        "text": " زي الورد على الفل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "خطف روحي واتورط ",
+        "red": false
+      },
+      {
+        "text": " بعد ما غطى على الكل",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "حبيبي تفكيري ليه اتسلم.. بعد ما خلي العقل احتار",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حتى أما بيمشي وبيسلم.. بيشدني من غير إنذار",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلبي بيعترف إنه استسلم.. مش هيفيد تاني إنكار",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "title": "ما يُقع إلا الشاطر",
+    "type": "رومانسي & مقسوم",
+    "lyrics": [
+      {
+        "text": "يا اللي موقع قلبي في حبك..",
+        "red": false
+      },
+      {
+        "text": "بيقولوا ما يوقع إلا الشاطر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأكيد يعني أنا أشطر منك..",
+        "red": false
+      },
+      {
+        "text": "ولكن برضه عليك مش قادر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يظهر كده فيه سر في قلبك..",
+        "red": false
+      },
+      {
+        "text": "باين السر ده كله مخاطر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عرفني يا حبيبي أحسن لك..",
+        "red": false
+      },
+      {
+        "text": "لو كان لي عندك خاطر",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "تعرف أن محدش قبلك..",
+        "red": true
+      },
+      {
+        "text": "كان بيخليني أشتاق ليه؟",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طب تعرف بقى أن بُعدك..",
+        "red": true
+      },
+      {
+        "text": "أكتر وقت أنا بتعب فيه!",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "تعرف أن أما أكون جنبك..",
+        "red": true
+      },
+      {
+        "text": "تعرف أنا محسود على إيه؟",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طب تعرف بقى أن قُربك..",
+        "red": true
+      },
+      {
+        "text": "هو الشيء اللي بعيش بيه!",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "دايماً لما بيسألوا عنك..",
+        "red": false
+      },
+      {
+        "text": "أنا مش بعرف أقول لهم إيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طول الوقت أنا بشغل عقلك..",
+        "red": false
+      },
+      {
+        "text": "والشوق ليك أنا فرحان بيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "صدقني أنا والله بحبك..",
+        "red": false
+      },
+      {
+        "text": "ومفيش غيرك عايش ليه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "آه يا حلو أنت يا سابق سنك..",
+        "red": false
+      },
+      {
+        "text": "لو قلبي ده عندك خليه!",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "عيش واتدلع ودا من حقك..",
+        "red": true
+      },
+      {
+        "text": "قلبي بيشتاق لك بزيادة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ليل ونهار عمال أنده لك..",
+        "red": true
+      },
+      {
+        "text": "مغرم بيك يا حبيبي كالعادة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا أنت سكنت في روحي بقول لك..",
+        "red": true
+      },
+      {
+        "text": "يا اللي عيونك فيها بحر سعادة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي دا أنا حبيتك كلك..",
+        "red": true
+      },
+      {
+        "text": "مغرم أنا وعمال أتمادى!",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "title": "قلبي إتورّط",
+    "type": "بوب",
+    "lyrics": [
+      {
+        "text": "الله على عيناك الحلوة ",
+        "red": false
+      },
+      {
+        "text": " ويا سلام على الضحكة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "متعلقنيش وتسيبني ",
+        "red": false
+      },
+      {
+        "text": " يا حبيبي ما تهدي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا أنا جوايا لسه كلام ",
+        "red": false
+      },
+      {
+        "text": " وكلام عاوز أقوله لك",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "أنا قلبي إليك أتسلم ",
+        "red": false
+      },
+      {
+        "text": " آمر وأتشطر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أول ما قابلني وسلم ",
+        "red": false
+      },
+      {
+        "text": " أنا قلبي اتورط",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فيك عمري ما أفرط ",
+        "red": false
+      },
+      {
+        "text": " ومع الأيام مسيري هنولك",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "كام منك؟ كام زيك؟ ",
+        "red": true
+      },
+      {
+        "text": " والله مفيش",
+        "red": true
+      },
+      {
+        "text": " وأنا مهما حكيت عنك دا ما بيكفيش ",
+        "red": true
+      },
+      {
+        "text": "يا حبيبي في وصفك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فارق طبعاً ومعدي ",
+        "red": true
+      },
+      {
+        "text": " ودا بالتأكيد ",
+        "red": true
+      },
+      {
+        "text": " على عيني كل أما يعدي الشوق بيزيد",
+        "red": true
+      },
+      {
+        "text": " مش عارف ليه ؟ بتثبت منّك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قالوا الحلوين في الدنيا",
+        "red": true
+      },
+      {
+        "text": "أشكال وألوان",
+        "red": true
+      },
+      {
+        "text": "بس أنت بجد مميز.. والفرق أهو بان",
+        "red": true
+      },
+      {
+        "text": "من يوم ما قابلتك",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "اتقل عادي وعلى كيفك",
+        "red": false
+      },
+      {
+        "text": "يا معذب قلبي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وليوم ما تميل يا تعبني.. هفضل مستني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ما تقرب مني ياللي.. منايا قربك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "من كتر التفكير فيك",
+        "red": false
+      },
+      {
+        "text": "حبك خلاني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شايفك في عيون الناس.. مش شايف تاني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "العشق غواني.. أنا دبت بقولك!",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "title": "يا سيدي",
+    "type": "مقسوم",
+    "lyrics": [
+      {
+        "text": "يا رب منك متحرمش ",
+        "red": false
+      },
+      {
+        "text": " يا أبو العيون متتوصفش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وغمزات متتقارنش ",
+        "red": false
+      },
+      {
+        "text": " حن بقا ومنترسمش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شغلت عيني رمش رمش ",
+        "red": false
+      },
+      {
+        "text": " وضحكتك مبتتخاصمش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وفي الزعل مبتتفاهمش ",
+        "red": false
+      },
+      {
+        "text": " صدقني غيرك مستاهلش",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "تديني وردة أديك بوكيه ",
+        "red": false
+      },
+      {
+        "text": " وكل شيء مقدور عليه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "متسألنيش إزاي وليه ",
+        "red": false
+      },
+      {
+        "text": " وقعت قلبك يا اسمك إيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلبي تعبني من اللي فيه ",
+        "red": false
+      },
+      {
+        "text": " ومن الناس اللي بترازيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مفيش غيرك مهتم بيه ",
+        "red": false
+      },
+      {
+        "text": " أنا قلبي خدامك يا بيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "قلبي دا خدامك ",
+        "red": true
+      },
+      {
+        "text": " وأديني بخبط على بابك",
+        "red": true
+      },
+      {
+        "text": "لا بتفتح ولا حتى ترد ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "  بستني جنابك",
+        "red": true
+      },
+      {
+        "text": "عمالة بتعب نفسي عشانك ",
+        "red": true
+      },
+      {
+        "text": " شكلي هقف على الباب للصبح",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "طب وحدة وحدة وبهدوء ",
+        "red": false
+      },
+      {
+        "text": " يا مكس فيه احترام و ذوق",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "تديني خوخ أديك برقوق ",
+        "red": false
+      },
+      {
+        "text": " زي العسل من غير ما أدوق",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "متركز حبة معايا فوق ",
+        "red": false
+      },
+      {
+        "text": " دا الكل تحت وأنت فوق",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فرفش شوية حاول تروق ",
+        "red": false
+      },
+      {
+        "text": " متعملش خريج حقوق",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "قرب وهات إيدك في إيدي ",
+        "red": false
+      },
+      {
+        "text": " عشان حبك يدخل وريدي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا أشجار المحبة زيدي ",
+        "red": false
+      },
+      {
+        "text": " يا شمعة الحنية قيدي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ترقص لي شعبي أرقص صعيدي ",
+        "red": false
+      },
+      {
+        "text": " حتى لو عارف جديدي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وكل ما تبعت لي في بريدي ",
+        "red": false
+      },
+      {
+        "text": " أنا هستلم الجواب يا سيدي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "نور عيني يا سيدي... اه ياللي ملغبط مواعيدي",
+        "red": true
+      },
+      {
+        "text": "مبقاش عندي معاد مظبوط",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "من الشوق أسقيني... دلعني حبه وخلّي لي",
+        "red": true
+      },
+      {
+        "text": "قلبي علي طول كدا مبسوط",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "title": "رقصوا كل الناس",
+    "type": "شعبي",
+    "lyrics": [
+      {
+        "text": "ليلتنا ليلة ولا ألف ليلة",
+        "red": false
+      },
+      {
+        "text": "عريسنا زين وعروسته جميلة",
+        "red": false
+      },
+      {
+        "text": "دا سيد الرجالة ودي قمر العيلة",
+        "red": false
+      },
+      {
+        "text": "نسب يشرف وناس ثقيلة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عريسنا هو الخير والبركة",
+        "red": false
+      },
+      {
+        "text": "وعروستنا حلوة ومفيهاش غلطة",
+        "red": false
+      },
+      {
+        "text": "لايقين على بعض ما شاء الله",
+        "red": false
+      },
+      {
+        "text": "وعقبال الذرية الصالحة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "علوا الزغروطة بقا والسقفة ",
+        "red": true
+      },
+      {
+        "text": " رقصوا كل الناس الواقفة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واعملوا صفين شمال ويمين ",
+        "red": true
+      },
+      {
+        "text": " خلوا العرسان يفرحوا حبة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "العروسة ترقص مع أهلها ",
+        "red": true
+      },
+      {
+        "text": " والعريس يهيص مع أهله",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كل الناس تفرح من قلبها ",
+        "red": true
+      },
+      {
+        "text": " مش عاوزين حد قاعد لوحده",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "يارب تم لهم على خير ",
+        "red": false
+      },
+      {
+        "text": " عروسة حلوة وعريس أصيل",
+        "red": false
+      },
+      {
+        "text": "هيمونها ويدلعها كتير ",
+        "red": false
+      },
+      {
+        "text": " دا جدع وفاهم في التقدير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يارب ديم الفرحة علينا ",
+        "red": false
+      },
+      {
+        "text": " وعلى كل اللي بارك لينا",
+        "red": false
+      },
+      {
+        "text": "دا إحنا ياما والله استنينا ",
+        "red": false
+      },
+      {
+        "text": " وفرحنا خلاص واتهنينا",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "title": "حصل خير",
+    "type": "رومانسي",
+    "lyrics": [
+      {
+        "text": "بشتاق له وأبص في عيونه ",
+        "red": false
+      },
+      {
+        "text": "بيداري لهفته ليّه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وفاكرني لسه مش عارف ",
+        "red": false
+      },
+      {
+        "text": " أنه بيثقل عليّا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا أنا فاهمه أكثر من نفسه ",
+        "red": false
+      },
+      {
+        "text": " ويمكن زيادة شوية",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وبسيبه يثقل براحته ",
+        "red": false
+      },
+      {
+        "text": " ويداري أي أهمية",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ورغم أنه مغلبني ",
+        "red": false
+      },
+      {
+        "text": " بالذات لمّا بيغير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ورغم عمايله دي عاجبيني ",
+        "red": false
+      },
+      {
+        "text": " ما أنا شفت منها كتير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لمّا أتعب فيه ويتعبني ",
+        "red": false
+      },
+      {
+        "text": " كأن ناقر ونقير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وعشان شاريني وحاببني ",
+        "red": false
+      },
+      {
+        "text": " بيقول لي عادي حصل خير",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا اللي معاه ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " أعيش عمري اللي جاي معاه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لو أنسى الدنيا مش بنساه ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " حبيب قلبي يحميه الله",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "الله على جماله الله ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " الله على جماله الله",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا جوا العين ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " دا جوا العين أكيد متشال",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ودائماً قلبي ليه مايل ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " دا حقيقة يا ناس لأ مش خيال",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "الله على جماله الله ",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " الله على جماله الله",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "بيبص بنظرة عفوية ",
+        "red": false
+      },
+      {
+        "text": " يضعف قدامها وأعمل إيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ضحكته فيها طاقة إيجابية ",
+        "red": false
+      },
+      {
+        "text": " تستاهل العالم باللي فيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فعلاً مش حاجة طبيعية ",
+        "red": false
+      },
+      {
+        "text": " لا فيه زيه ولا هيكون فيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يحبه مليون في الـ 100 ",
+        "red": false
+      },
+      {
+        "text": " وبدعي ربنا يحميه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لما بيغلط يزعق له ",
+        "red": false
+      },
+      {
+        "text": " وبيبقى من ورا قلبي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لما بيغلط بزعق له..",
+        "red": false
+      },
+      {
+        "text": "وبيبقى من ورا قلبي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أصلي مبقدرش على زعله..",
+        "red": false
+      },
+      {
+        "text": "عشان يعني غالي عندي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مبحبش أشوف دمعه..",
+        "red": false
+      },
+      {
+        "text": "ولا برتاح لو مش جنبي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عشان كده لما بيسيبني..",
+        "red": false
+      },
+      {
+        "text": "بفضل قاعد ومستني",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "title": "إتجوزت رسمي",
+    "type": "مقسوم",
+    "lyrics": [
+      {
+        "text": "أنا ودعت العزوبية ",
+        "red": false
+      },
+      {
+        "text": " ودخلت في عش الزوجية ",
+        "red": false
+      },
+      {
+        "text": " وبقيت أقول حاضر وعينية",
+        "red": false
+      },
+      {
+        "text": "يعني إتجوزت رسمي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "سبت الخروجات والسهر ",
+        "red": false
+      },
+      {
+        "text": " عشان أفضل جنب القمر ",
+        "red": false
+      },
+      {
+        "text": " اللي بقى شاغل بالي ",
+        "red": false
+      },
+      {
+        "text": " وساكن جوا قلبي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنا كنت عايشها أمير ",
+        "red": false
+      },
+      {
+        "text": " ليلي نهار ونهاري ليل ",
+        "red": false
+      },
+      {
+        "text": " معروف عني التأخير وقليل لما أجي بدري",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أيوه أنا كنت مقضيها ",
+        "red": false
+      },
+      {
+        "text": " ومفيش حاجة باقي عليها ",
+        "red": false
+      },
+      {
+        "text": " ببسط روحي وأخليها عايشة الدنيا بحلاوتها",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا حلاوة الدنيا بتكمل... لمّا بكون ويا الغاليين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "زيك يا حبيبي تملي... دائماً أملي بيك العين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لو عنك حد سألني ...بمليه جمالك دا في دواوين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وبدعي وأقول ربي يخلي ...ويحميك من عين الحاسدين",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنا مش سهل أتي أجي سكة ",
+        "red": false
+      },
+      {
+        "text": " بس أنت عملت لي ربكة ",
+        "red": false
+      },
+      {
+        "text": " فكرتني باللي عدّى خليت عقلي كدا يون",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كان قلبي في سابع نومة ",
+        "red": false
+      },
+      {
+        "text": " ومكنش باين ليه قومة ",
+        "red": false
+      },
+      {
+        "text": " وكانت روحي  مهمومة وتعبانة من كثر الزن",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بس معاك كل أتظبط ",
+        "red": false
+      },
+      {
+        "text": " والفرح على بابي جه وخبط ",
+        "red": false
+      },
+      {
+        "text": " وبقيت مبسوط مش متلغبط ",
+        "red": false
+      },
+      {
+        "text": "ولأجل عيناك أقلب جن ",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "title": "يعمل ما بداله",
+    "type": "رومانسي & مقسوم",
+    "lyrics": [
+      {
+        "text": "حبيبي دا مدلع لوحده ",
+        "red": false
+      },
+      {
+        "text": " ومش محتاج حد يدلعه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يزعق ويتنرفز براحته ",
+        "red": false
+      },
+      {
+        "text": " أنا عمري ما هقدر أمنعه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ودائماً يكسفني بصراحته ",
+        "red": false
+      },
+      {
+        "text": " أبو عيون حلوة وبتلمعه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وفي القلب خلاص أخد مساحته ",
+        "red": false
+      },
+      {
+        "text": " دا اللي عيوني بيه اتمتعه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "منور ومسيطر عليه ",
+        "red": false
+      },
+      {
+        "text": " ومذوب قلبي بجماله",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مفيش غيره بيشغل عينيه ",
+        "red": false
+      },
+      {
+        "text": " ولا في غيري شاغل باله",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا وقعني بطلعته البهية ",
+        "red": false
+      },
+      {
+        "text": " وبنظرات عينه وبكلامه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولو بس يسيب نفسه ليه ",
+        "red": false
+      },
+      {
+        "text": " محقق له أنا كل أحلامه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "حبيبي دا يعمل ما بداله ",
+        "red": true
+      },
+      {
+        "text": " ومفيش حد يزعله",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "حبيبي مش هتلاقيه بداله ",
+        "red": true
+      },
+      {
+        "text": " لا هتعرفه ولا تقدره",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا اللي نجوم السما داعية له ",
+        "red": true
+      },
+      {
+        "text": " لما بيظهر بينوره",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا حتى القمر غنى له ",
+        "red": true
+      },
+      {
+        "text": " عليه كام كلمة يسخره",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ودا اللي مفيش منه ولا زيه..",
+        "red": false
+      },
+      {
+        "text": "أول مرة أذوب بالشكل دا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلبي بيرتاح أول ما أقابله ",
+        "red": false
+      },
+      {
+        "text": " ياما نفسي أنول منه الرضا",
+        "red": false
+      },
+      {
+        "text": "ومقدرش أستغني يوم عنه ",
+        "red": false
+      },
+      {
+        "text": " دا روحي عليه بقت متعودة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "جماله مفيش بعده ولا قبله ",
+        "red": false
+      },
+      {
+        "text": " أنا عمري ما شفت جمال كدة",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "حبيبي دا له وضعه وسلطته ",
+        "red": true
+      },
+      {
+        "text": " بين الحلوين واخد مركزه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دائماً بضعف قدام ضحكته ",
+        "red": true
+      },
+      {
+        "text": " بتخلي عيوني معاه يركزه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا اللي الروح بتعشق رقته..",
+        "red": true
+      },
+      {
+        "text": "أصله عليه رقة بتميزه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "آه منه دا فتنّي بنظرته..",
+        "red": true
+      },
+      {
+        "text": "عيونه فيها كام نظرة يحفزوا",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "title": "من غير تفكير",
+    "type": "رومانسي & مقسوم",
+    "lyrics": [
+      {
+        "text": "اسمح لي أقول ",
+        "red": false
+      },
+      {
+        "text": " أنا قلبي في بعدك مقفول",
+        "red": false
+      },
+      {
+        "text": "وتملي بالي دا مشغول ",
+        "red": false
+      },
+      {
+        "text": " نفسي أطمئن عليك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ورغم المسافات ",
+        "red": false
+      },
+      {
+        "text": " أنا فاكرك طول الأوقات",
+        "red": false
+      },
+      {
+        "text": "وأحلى وأسعد اللحظات ",
+        "red": false
+      },
+      {
+        "text": " اللي بتجمعني بيك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وعن نفسي خلاص ",
+        "red": false
+      },
+      {
+        "text": " استغنيت عن باقي الناس",
+        "red": false
+      },
+      {
+        "text": "مش هتعب تاني ولا أحتاس ",
+        "red": false
+      },
+      {
+        "text": " طول ما أنا قدام معاليك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "تعرف يا حبيبي قلبي ",
+        "red": true
+      },
+      {
+        "text": " إنك حليت أيامي",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شفت إن الدنيا وأنا وياك ",
+        "red": true
+      },
+      {
+        "text": " ليها إحساس تاني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "الفرحة اللي بشوقها في عينك ",
+        "red": true
+      },
+      {
+        "text": " بتخليني مش شايف غيرك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "الله على جمال تفاصيلك ",
+        "red": true
+      },
+      {
+        "text": " دي مجنناني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "من غير تفكير",
+        "red": false
+      },
+      {
+        "text": "أنا ياما استنيت كتير",
+        "red": false
+      },
+      {
+        "text": "قولها وخد قرار أخير",
+        "red": false
+      },
+      {
+        "text": "قول إن أنت بتهواني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قلقان من إيه؟",
+        "red": false
+      },
+      {
+        "text": "قلبك عمري ما هقسى عليه",
+        "red": false
+      },
+      {
+        "text": "لو شفت الهنا اللي أنا فيه",
+        "red": false
+      },
+      {
+        "text": "والله هتصدق كلامي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "إنت عليك شخصية",
+        "red": false
+      },
+      {
+        "text": "محترمة وكمان طبيعية",
+        "red": false
+      },
+      {
+        "text": "والضحكة كلها عفوية",
+        "red": false
+      },
+      {
+        "text": "على طول لفتت انتباهي",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "title": "جماله عربي",
+    "type": "مقسوم",
+    "lyrics": [
+      {
+        "text": "جمالُه عربي أساسي ومتأصل",
+        "red": false
+      },
+      {
+        "text": "كأنه علي مقاسي دا متفصل",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "صاحب اسم وهيبة ومتقدر",
+        "red": false
+      },
+      {
+        "text": "راجل ملو هدومه أوي مسيطر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وجوده جوا حياتي دا هيأثر",
+        "red": false
+      },
+      {
+        "text": "دخل قلبي خلاص",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ملوش حل بيرقص علي الوحدة",
+        "red": false
+      },
+      {
+        "text": "عيناه مبتروحش خالص علي واحدة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومش سهل يسيب قلبه لوحده",
+        "red": false
+      },
+      {
+        "text": "وأنا معاه هنسي أكيد الوِحدة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بدأت أتشد له وحدة بوحدة",
+        "red": false
+      },
+      {
+        "text": "دا أغلي من الماس",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أغلى من الماس غالي عندي... وأُقرّ يا ناس أنا بنفسي",
+        "red": true
+      },
+      {
+        "text": "أني بقيت حرمه وفي قُربه.. أنا ببقى سعيدة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا حبيبي الخير والبركة... القلب أبيض والنية دي سالكة",
+        "red": true
+      },
+      {
+        "text": "ودنياتي من يوم ما عرفته.. بقت دنيا جديدة",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "يا ويلي من سُلاطاته وعلاقاته",
+        "red": false
+      },
+      {
+        "text": "ومن منظر جسمه وعضلاته",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولا شياكته بقا وستايلاته",
+        "red": false
+      },
+      {
+        "text": "فتني بنظراته وغمزاته",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بيقولي أن أنا حلّيت له حياته",
+        "red": false
+      },
+      {
+        "text": "دا يتشال علي الرأس",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مسموح له يكنسل لما أنا أرن",
+        "red": false
+      },
+      {
+        "text": "عادي براحته يا ناس أصلُه مهم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عليه ضحكة تشيل كل الهم",
+        "red": false
+      },
+      {
+        "text": "دا هو عسل والباقي دول سِم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا في وجوده الروقان بيعُم",
+        "red": false
+      },
+      {
+        "text": "دا king الإحساس",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا صياد وشبك قلبي في طُعمه",
+        "red": false
+      },
+      {
+        "text": "دا زي السكر في لونه وطَعمه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وخفة دمه وأدبه دا طبعه",
+        "red": false
+      },
+      {
+        "text": "ودائماً كدا ثابت علي وضعه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بسمع لكلامه مبحبش أقاطعه",
+        "red": false
+      },
+      {
+        "text": "دا من غيره أحتاس",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "title": "ست الكل",
+    "type": "إجتماعي & عائلي",
+    "lyrics": [
+      {
+        "text": " من حق أمي عليّا",
+        "red": false
+      },
+      {
+        "text": "وقت تعبها إني أبقا معاها",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ولما تسبني ثانية",
+        "red": false
+      },
+      {
+        "text": "أسأل عنها وأستناها",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بطيبتها ورقتها",
+        "red": false
+      },
+      {
+        "text": "خلت كل الناس حباها",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "دي بضحكتها بتحلي الدنيا",
+        "red": false
+      },
+      {
+        "text": "ضحكتها يا محلها",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أمي يا أمي يا أم الدنيا",
+        "red": true
+      },
+      {
+        "text": "أنتي يا وتر العالم",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أمي يا قلبي وعيني الثانية",
+        "red": true
+      },
+      {
+        "text": "أنتي لوحدك عالم",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنتي الدفا وأنتي الإحساس",
+        "red": true
+      },
+      {
+        "text": "من حقك تتشالي علي الرأس",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أمي يا أمي يا أغلي الناس",
+        "red": true
+      },
+      {
+        "text": "يا أغلي من حياتي",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "بتعب ما بتغفل لك عين",
+        "red": false
+      },
+      {
+        "text": "غير لما تحسي أني تمام",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "حقك تسكُني نن العين",
+        "red": false
+      },
+      {
+        "text": "أنتي مُسكن أي آلام",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "من غير أمي هروح أنا فين",
+        "red": false
+      },
+      {
+        "text": "دا حنانها مفيش بعده حنان",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "عشت معاها شهور وسنين",
+        "red": false
+      },
+      {
+        "text": "نفسي أعشها كمان وكمان",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كل فلوس الدنيا بحالها",
+        "red": false
+      },
+      {
+        "text": "مش هتعوضني عن الأم",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "لما أزعل من حاجة وأشكي لها",
+        "red": false
+      },
+      {
+        "text": "بتصبرني يا ناس علي الهم",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مهما أتكلم عنها وأقول",
+        "red": false
+      },
+      {
+        "text": "برضه كلامي هيزيد ويطول",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بصراحة كدا مش معقول",
+        "red": false
+      },
+      {
+        "text": "أنسي جمايل ست الكل",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أمي يا أمي يا أم الدنيا",
+        "red": true
+      },
+      {
+        "text": "أنتي يا وتر العالم",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أمي يا قلبي وعيني الثانية",
+        "red": true
+      },
+      {
+        "text": "أنتي لوحدك عالم",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "title": "عمّ الجنيني",
+    "type": "مقسوم",
+    "lyrics": [
+      {
+        "text": "عم الجنيني عم الجنيني بيسقي الزرعة",
+        "red": false
+      },
+      {
+        "text": "وخايفة أقول له يجيب لي وردة",
+        "red": false
+      },
+      {
+        "text": "ليفكر أني بحن له",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أصله يا عيني مجنون بيه",
+        "red": false
+      },
+      {
+        "text": "ومبيشلش عينه من عليه",
+        "red": false
+      },
+      {
+        "text": "كل لما ببُص له",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "طب أعمل إيه في المشكلة ديه",
+        "red": false
+      },
+      {
+        "text": "أقوله ولا أستني شوية",
+        "red": false
+      },
+      {
+        "text": "بيني وبينكم أنا أشتقت له",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أشتقت له ومش عارفة أداري",
+        "red": true
+      },
+      {
+        "text": "ولا عارفة حتي أشيله من بالي",
+        "red": true
+      },
+      {
+        "text": "أصله مُهم بالنسبة لي",
+        "red": true
+      },
+      {
+        "text": "مُهم أوي كله أهمية",
+        "red": true
+      },
+      {
+        "text": "قلبه دا فيه نهر الحنية",
+        "red": true
+      },
+      {
+        "text": "بس أنا بقا علشان عِنادية",
+        "red": true
+      },
+      {
+        "text": "مش هبُص له لو ندالي",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "هو عشان عارف أني بحبه",
+        "red": true
+      },
+      {
+        "text": "ومبقدرش أبعد عنه",
+        "red": true
+      },
+      {
+        "text": "وأني تملي بقرّب منه",
+        "red": true
+      },
+      {
+        "text": "يقوم يقلقني عليه ليالي",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أيوه هسيبه يعمل ما بداله",
+        "red": true
+      },
+      {
+        "text": "بس أنا برضه مش راجعة له",
+        "red": true
+      },
+      {
+        "text": "غير لمّا يغير أحواله",
+        "red": true
+      },
+      {
+        "text": "ويعرف أنه عليه غالي",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ليه بقا مُصمم يوجع قلبي",
+        "red": false
+      },
+      {
+        "text": "مع أنه عارف أنه حبيب قلبي",
+        "red": false
+      },
+      {
+        "text": "وأن أنا عنه مش بستغني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "لما أسأله كان فين بيخبي",
+        "red": false
+      },
+      {
+        "text": "دائماً مش بيقدّر حُبي",
+        "red": false
+      },
+      {
+        "text": "دا أنا عشانه عرفت المَغني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "حتي معدش بيقعد جنبي",
+        "red": false
+      },
+      {
+        "text": "مع أن دا ذنبه ومش ذنبي",
+        "red": false
+      },
+      {
+        "text": "دائماً يا قلبي شاغل دماغني",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "title": "عجبي عليك يا زمن",
+    "type": "شعبي",
+    "lyrics": [
+      {
+        "text": "يا دنيا شفت فيكي البشر علي كل شكل ولون",
+        "red": false
+      },
+      {
+        "text": "في اللي بامانه يصون واللي في ثواني يخون",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي عليك باقي وعُمرك عليه م تهون",
+        "red": false
+      },
+      {
+        "text": "وابن الاصول والعاقل بيطلعوه مجنون",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي للقرش ساعي في زمانا دا مطحون",
+        "red": false
+      },
+      {
+        "text": "واللي معاه المال بيعيش في دور فرعون",
+        "red": false
+      },
+      {
+        "text": "حتى ولو مشبوه ومصدره مش مضمون",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مبقاش في خير في الدنيا خلاص",
+        "red": true
+      },
+      {
+        "text": "ولا عارفيني سكته",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا اللي يشوف بلاوي الناس",
+        "red": true
+      },
+      {
+        "text": " تهون عليه بلوته",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بشر حقودة وعيونها رصاص",
+        "red": true
+      },
+      {
+        "text": "وليل نهار يحسده",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وابن الحلال مأذي ومنداس",
+        "red": true
+      },
+      {
+        "text": "والفقر هيموته",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "عجبي عليك يا زمن فيك اللي ربه معاه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عشان بيطيع ربه واللي شيطانه غواه غضب عليه ربه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي معاه القرش ومستخصره في نفسه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي معهوش جنيه وبيجري على اهله",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "title": "قولو ا اميين",
+    "type": "شعبي",
+    "lyrics": [
+      {
+        "text": "الليلة ليلتي هرقص براحتي",
+        "red": false
+      },
+      {
+        "text": "انا وعريسي وصاحبي واهلي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نرقص صعيدي ونرقص بلدي",
+        "red": false
+      },
+      {
+        "text": "ايوة محدش له حاجة عندي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طول ما عريسي موجود معايا",
+        "red": false
+      },
+      {
+        "text": "هرمي هموم الدنيا ورايا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هيكون ضهري وسندي وحمايا",
+        "red": false
+      },
+      {
+        "text": "دا قمر ومنور في سمايا",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ارقصوا زغرطوا سقفو يلا",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " كنا في جرة طلعنا لبرة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "الليلة ليلتي ومش مضطرة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " اني اوصيكو بقى عليّا",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ربنا يحرسنا من العين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ونفضل مع بعض قولوا آمين",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا اللي انا استنيته سنين",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " هيشيلني في عينه وهشيله في عينايا",
+        "red": false
+      },
+      {
+        "text": "بكرة هجيب له انا بنت جميلة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وتكون هي قمر العيلة",
+        "red": false
+      },
+      {
+        "text": "في سبوعها هنعمل هوليلة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وتملى كدا الشقة علينا",
+        "red": false
+      },
+      {
+        "text": "او اجيب له ولد ويشيل اسمه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ويعيش يتدلع على حسّه",
+        "red": false
+      },
+      {
+        "text": "وكل البنات عليه يترسموا",
+        "red": false
+      },
+      {
+        "text": "يتشاقى ويطلع عينينi",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "title": "كله هيتحاسب",
+    "type": "شعبي",
+    "lyrics": [
+      {
+        "text": "اللي راح اهو راح وسابنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " احنا مش هنحنّ ليه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي حب في يوم تعبنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " بكرة يجي ونتعب فيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي غاوي انه يعذبنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " احنا مش هنسمي عليه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي مقبلناش على عيبنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " احب اقوله العيب عليه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "واللي عامل فيها حبيبنا",
+        "red": false
+      },
+      {
+        "text": " احنا عارفين اخره ايه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اخره غيرة وحبه دا كذبة",
+        "red": false
+      },
+      {
+        "text": " بس ادينا بنجاريه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي عاش بثمن دمعتنا",
+        "red": false
+      },
+      {
+        "text": " على اللي عمله دا هنبكّيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي كان همه أذيتنا",
+        "red": false
+      },
+      {
+        "text": "احنا برضه لازم نأذيه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كله دلوقتي هيتحاسب",
+        "red": true
+      },
+      {
+        "text": " والحساب هيكون عسير",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "السماح مع المسالم",
+        "red": true
+      },
+      {
+        "text": " مش مع عديم الضمير",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كل اول جاي له آخر",
+        "red": true
+      },
+      {
+        "text": " آخره دا هيكون كبير",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا اللي دُسته عليا جامد",
+        "red": true
+      },
+      {
+        "text": " مني مش هتشوفوا خير",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "إحنا حبّينا وإتّئزينا... هُنّا على اللّي مهنّش علينا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عُمرنا مبيعنا اللي شارينا... وهوّ باعنا وضحّى بينا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "راح لغيرنا عمل ناسينا... بس عادي ولا إتهزّينا",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "اللي راح اهو راح وسابنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " احنا مش هنحنّ ليه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي حب في يوم تعبنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " بكرة يجي ونتعب فيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي غاوي انه يعذبنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " احنا مش هنسمي عليه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي مقبلناش على عيبنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " احب اقوله العيب عليه",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "title": "محدش له جِميله علينا",
+    "type": "شعبي",
+    "lyrics": [
+      {
+        "text": "لا كدا كفاية وخلاص خلصنا",
+        "red": false
+      },
+      {
+        "text": " واللي راح يجي بكرة غيره",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "احنا بطلنا اللي يعطلنا",
+        "red": false
+      },
+      {
+        "text": " واللي يشد علينا حيله",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي ميصوناش ويقدرنا",
+        "red": false
+      },
+      {
+        "text": " بلاها منه ومش عاوزينه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اللي دايماً غاوي يعصبنا",
+        "red": false
+      },
+      {
+        "text": " الله الغني عنه وعن خيره",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ليل نهار يضايقنا ويتعبنا",
+        "red": false
+      },
+      {
+        "text": " لاء نفضها سيرة بنا وبينه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "امشي مع الف سلامة روح",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " سبنا لك الباب مفتوح",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "والرجوع تاني مش مسموح",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " دا احنا بنطلع في الروح",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي يجي على كرامتنا",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " يبقى يا روح ما بعدك روح",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا احنا مدينا ايدينا ليك",
+        "red": false
+      },
+      {
+        "text": " قلنا نساعدك ونعليلك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واخرتها مطمرش فيك",
+        "red": false
+      },
+      {
+        "text": " بعتها وقبضت الشيك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بس عادي ولا يشغلنا",
+        "red": false
+      },
+      {
+        "text": " عُمرها ما هتقف عليك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "احنا محدش له جميلة علينا",
+        "red": false
+      },
+      {
+        "text": " دا احنا لينا جمايل ياما",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وطول ما واقفين على رجلينا",
+        "red": false
+      },
+      {
+        "text": " عيونا دي هتفضل مليانة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شفنا كتير من الدنيا وعدينا",
+        "red": false
+      },
+      {
+        "text": " دايمان راضين بكل حاجة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عايشينها بالحلال وبأيدينا",
+        "red": false
+      },
+      {
+        "text": " والايد الشقيانة كسبانة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا ربنا لوحده اللي عالم بينا",
+        "red": false
+      },
+      {
+        "text": " لحد ما تقوم القيامة",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "title": "أضحك يا عمّ",
+    "type": "شعبي",
+    "lyrics": [
+      {
+        "text": "انا بس جاي امسي على الناس الجميلة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " اللي دخلت في قلبي ومن اول دقيقة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اللي تملي جنبي ومعايا في اي ضيقة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " اللي بتقف في ظهري .. اللي قلوبها جريئة",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "انا الذي استوى والدنيا جائت عليه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " وخدت منه الدواء وسابت جرح فيه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وحس بعكننة وبهم بيناديه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " قرر ينسى الزهق .. قرر يفرح يومين",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "إضحك يا عمّ فرفش وهتتعدل اكيد",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا الجرح لو ملمش مسيره يوم يطيب",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "متكشرش وتقفش ومتعملش حويط",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دنيا وبنعيشها مرة.. فنعيشها مبسوطين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وبلاش تشغل دماغك.. وتفكّر في اللّي جاي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اهدي ورُوق مزاجك.. وقُول للحُزن باي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ربُّك عالم بحالك.. ارتاح وريح بالك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دلّع نفسك بمالك.. وإتمتع بالسّنين",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "واللّي مترتاحلهوش سيبُوه ومتكلّمُوش",
+        "red": false
+      },
+      {
+        "text": "ولو كلامُه دايقك إمشي ومتسمعُوش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مهما يقُولك بحبّك كذّاب متصدّقُوش",
+        "red": false
+      },
+      {
+        "text": "دا النّقص حاجة وحشة بتبان على الوشُوش",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اللّي يحبّني أحبُّه وأشيلُه فوق دماغي",
+        "red": false
+      },
+      {
+        "text": "ومهما بقى خاصمتُه برجع أصالحُه تاني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ماهو لو زعله فرقلي وفضّل شاغلي وقتي",
+        "red": false
+      },
+      {
+        "text": "يبقى دا عندي غالي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "سألت أثنين صُحاب.. أزاي أختار لي صاحب",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قالُو لي إختار الصّاحب.. اللّي معاك يبقى راجل",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لو عُزّت منهُ حاجة.. ميقُلش لأه خالص",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يكُون صاحب بجدّ.. ميكُنش خسيس وناقص",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "title": "المركب مشيت",
+    "type": "شعبي",
+    "lyrics": [
+      {
+        "text": "بخرج من جرح لجرح ... مش بلحق حتى اتهني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا الموضوع محتاج شرح ...وانا هشرح فيه وأتأني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا انا كل ما احب في حد... بتعب جداً وأتأذي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ليه حبيت خلق رخاص ...غزو القلب مائتين غزّة",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دنيا بقت عكس عكاس... الطيب جاية عليه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "واللي بيظلم في الناس ...يتقال له سعادة البيه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كل اللي عايش بدراعه... في سابع سماء بتعليه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اما اللي بيمشي يمين ...بتفضي همومها فيه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وانا عندي هم ما يتلم... ومفيش حاجة غير راحتي اهم",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "اديت ناس حب ادوني غم... سبناهم المركب اهي مشيت",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "قدمت الخير ومن ثمّ ...اترد لي من تعابين سامة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "والله دول اسم على مسمّى ...العيبها بانت واتهرشت",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "خلق صاحبتها على عيبها ...والعيب كانت انانية",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لما فلوسي خلصت مني... فجأة بقت تشمت فيا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "آه من الدنيا وألاعبها... عمالة بتلعب بيا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ليل ونهار بتغلبني ...مبتهداش غير شوية",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "title": "تلميذ بليد",
+    "type": "شعبي",
+    "lyrics": [
+      {
+        "text": "شفتوا اللي عامل جدع كنا نلاقيه وقت الدلع",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "سابنا في الازمة وخلع باعنا كاش بدون مرتجع",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ومسابش غير هم ووجع",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " كان عامل فيها بيحبنا و بيتعب لو غاب عنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " واهو بعد ما قرب منا خد خيرنا وسابنا لوحدنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "طلع قليل الاصل غدار وملوش امان",
+        "red": false
+      },
+      {
+        "text": "تلميذ بليد في الفصل وسقط في الامتحان",
+        "red": false
+      },
+      {
+        "text": "طلع معندوش دم ولا عنده ذمة كمان",
+        "red": false
+      },
+      {
+        "text": "عاوز يعمل مهم وقصادنا مش بيبان",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مفيش عتاب على الناقص علشان ملوش عازة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مبقاش يشغلنا خالص وخدنا منه اجازة",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "متضايق من نجاحنا حاطّين عليّه وحارقينُه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لسّه أحنا زيّ ما أحنا وهُوّا مش شايفينُه",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا كان عامل جدع وعامل بيحبّنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كان يجّي وقت الدّلع و يقرّب منّا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "في الضّيقه لقيناه خلع وسابنا لوحدنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "باعنا بدون مرتجع لكن ولا هزّنا",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "title": "نيّتي خير",
+    "type": "طرب",
+    "lyrics": [
+      {
+        "text": "هوا أنت لسه فاكرني ... وفاكر أسمي أيه  !",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مبقالك عُمر هاجرني  ... راجع دلوقتي ليه ؟",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مين قال أنك واحشني  ...  دا كلام راحت عليه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "هوا اللي يحيب حد  ...  بيضيعه من أيديه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كان لازم يومها أمشي و أسيبك  ... و أحاول أنساك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بقا عاوز تيجي على كرامتي ...  و أفضل وياك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كنت فاكر نفسك ضامني  ... و همشي على هواك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "متوقعتش أبداً مني ...  اللي عملته معاك",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كان كل همّي سعادتك  ... و كانت نيتي خير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومنبنيش من سعادتك  ... غير جرح أثره كبير",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا أنا لما كنت بعاتبك  ... كان من خوفي عليك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "مطلعتش غالي عندك  ... و لا حتى فارق ليك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "كان لازم يومها أمشي و أسيبك  ... و أحاول أنساك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بقا عاوز تيجي على كرامتي ...  و أفضل وياك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "كنت فاكر نفسك ضامني  ... و همشي على هواك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "متوقعتش أبداً مني ...  اللي عملته معاك",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "title": "سحرتني و الله",
+    "type": "طرب",
+    "lyrics": [
+      {
+        "text": "صعبان عليه بُعدك شويه",
+        "red": false
+      },
+      {
+        "text": " مليان أسيه ومفيش حنان",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "نظرة عيناك حاجه مش عاديه",
+        "red": false
+      },
+      {
+        "text": " مشتاقه ليه ودا من زمان",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أنا دبت فيك ما تحس بيه",
+        "red": false
+      },
+      {
+        "text": " دا أنت اللي ليه اه يا عود ريحان",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "من كتر تقلك غفلت عنيا",
+        "red": false
+      },
+      {
+        "text": " وأنت اللي قربك ليه أمان",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "سهرني ويا روحك شويه",
+        "red": true
+      },
+      {
+        "text": " وبلاش بقا تتقل عليه بالشكل دا",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا أبو غمزه حلوه وبسمه بهيه",
+        "red": true
+      },
+      {
+        "text": " أمتي كدا ها تحن ليه وتميل بقا",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا عيونه سمره أبو ضحكه قمره",
+        "red": true
+      },
+      {
+        "text": " عليه أحلي طله سحرتني والله",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا جماله خلي العشق وله",
+        "red": true
+      },
+      {
+        "text": " و وجوده حلي الكون في عينانه",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "يا جميل يا سكر يا قمر منور",
+        "red": false
+      },
+      {
+        "text": " سنين بدور أنا عليك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "دا أنا عُمري ما أقدر ولا يوم أفكر",
+        "red": false
+      },
+      {
+        "text": " أن أزور فحبي ليك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "إئمرني أمرك أنا مش بجاملك",
+        "red": false
+      },
+      {
+        "text": " واللي طلبته يجي بين أدياك",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "طمعان في كرمك طمعان في قلبك",
+        "red": false
+      },
+      {
+        "text": " دا أنا روحي فيك",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "title": "دنيا مظاهر",
+    "type": "شعبي",
+    "lyrics": [
+      {
+        "text": "الدنيا دي فيها ياما ناس ماضيها خسيس",
+        "red": false
+      },
+      {
+        "text": " من برا هالله هالله ومن جوا في إبليس",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وفي اللي يبينو لك أنك في نن عينهم",
+        "red": false
+      },
+      {
+        "text": " في الوش يطبلو لك من أجل مصلحتهم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأما تخلص فلوسك بيغيرو معاملتهم",
+        "red": false
+      },
+      {
+        "text": " أندال وبدرجه أوله لازم تحرص منهم",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "يا طبيب العيون فصلي ...نظاره تبين الخينين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أشوف مين عاوز مصلحتي ...ومين اللي عاوز القرشين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ومين بجد عاوز راحتي ...ومين عاوز يشوفني حزين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فوضت فيهم أمري لربي ...قوينا يا رب يا مُعين",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "علي اللي بيكره لينا الخير ...علي اللي معندوش أي ضمير",
+        "red": true
+      },
+      {
+        "text": "علي اللي ملهش في التقدير ...ولا يعرف حاجه عن الاصول",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "علي اللي ميعرفش الجدعنه ...علي ملوش غير في النفسنه",
+        "red": true
+      },
+      {
+        "text": "علي اللي عايش دنياته عكننه... وبياكل الحق زي الغول",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دنيا وكل ما فيها مظاهر... فيها المتداري فيها الظاهر",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بحر ملوش أول من أخر ...وكلنا علي الدنيا ضيوف",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ناس بتحب تقف في المِحنه ... ناس نفسها لو يوم تفضحنا",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ناس لما بنغلط تسامحنا ...ناس مطمرش فيها المعروف",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "خيراً تعمل شراً تلقي ...ناس غداره ولا عندها ذمه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وقت المصلحه بتلاقي لمه ...وقت الشده الكل بيمشي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فيه اللي يصون العيش والملح ...فيه اللي يخلي في قلبك جرح",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "فيه اللي بيكره ليك الفرح...في اللي بيتمنا أنك تمشي",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "title": "نفسي أسمع كلامك",
+    "type": "طرب",
+    "lyrics": [
+      {
+        "text": "أنت اللي ليه أنا بقيت بعيش يا غالي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " شدتني ليك وأهو كل الجمال غواني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شاغلني بيك وكمان مسهرني ليالي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " بسئل هوايا هوا أنا أي اللي جرالي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أحترت فيك وحتي الشوق عليك رماني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " يا نجوم سمايا أنت ويا قمر زماني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا ملغبط لي حياتي كلها وقالب كياني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " بقيت ساكن ياحبيبي في قلبي وفي خيالي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أشتقت لك والشوق بيزود الغلاوه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يا معلمني الهدوء ومنسيني الكئابه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وبجد أنا بدوب ما أنت حلو حلاوه",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شغلت كثير قلوب وأخترت قلبي أنا",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لو غبت عني يوم واحد أكيد هعاني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " أنت اللي معاه فرحت ونسيت عذابي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأنت اللي شلت همي أنا وداويت ألامي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " أنت سبب سعادتي و أنت وجواب سؤالي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "سحرتني عيناك يدوب في أقل من ثواني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ياللي خدودك الحلوه دي دائماً ملوعني",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بعشق جنونك دا يا أبو كعب عالي",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " أنا حبيتك خلاص و مش هحب تاني",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنت الهواء وأنت الدواء قلبي إرتوي بحنانك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "تعظيم سلام  ل عالي المقام جنابك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "عليك كلام كدا في الغرام خلاك سابق أوانك",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بتقوله قول يأخذ شُهُور نفسي أسمع كلام",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "title": "حُبّ ومودة",
+    "type": "كلاسيك",
+    "lyrics": [
+      {
+        "text": "أنا وحبيبي ما لينا غير بعض",
+        "red": false
+      },
+      {
+        "text": " دايما جمّعنا الهوا مع بعض",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لا يوم قدّرنا نغيب عن بعض",
+        "red": false
+      },
+      {
+        "text": " ولا كان في بيننا عتاب ولا بُعد",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "ولا كان في بيننا غير المحبّه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لوّ أحنّ لُيّه الشّوق بيزيد",
+        "red": false
+      },
+      {
+        "text": " ألقى هواهُ لهوايا نسيم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "شغّلني بيه من غير مواعيد",
+        "red": false
+      },
+      {
+        "text": " جميل ومُتقسّم تقسيم",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "تملي أروحلُه وفي إيدي ورده",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ما يغبش عليّ القلب ولا العين",
+        "red": false
+      },
+      {
+        "text": " وإن غاب عليهم هيرُوح فين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأكيد هيجي لو بعد سنين",
+        "red": false
+      },
+      {
+        "text": " أبُو نظره بتدُوب ملايين",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أبُو نظره فيها حُبّ وموادّه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "يتقرّب.. ويقرُب... كُلّ الأحبّاب إلُيّه تاني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بستغرب .. وأستغرب... من النّاس اللي علُيّه حسداني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "آه بهرّب.. وأتهرّب... لو قالُوا حاجه مش عاجباني",
+        "red": true
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "بتجرّب.. وتجرّب... ناس ياما تبعُد بنا ثواني",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وأكيد برتاح وأنا ويّاه",
+        "red": false
+      },
+      {
+        "text": " لا بينساني ولا بنساه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "وداه الغالي وداه حُبّه حياه",
+        "red": false
+      },
+      {
+        "text": " بعيش فيها وبعشّها معاه",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "معاه الصّعب أهو عدّي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "حبيبي وحُبّه غير موصُوف",
+        "red": false
+      },
+      {
+        "text": " وملُوش زيّ مش مألُوف",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "داه قمر اللّيل في وقت خُسُوف",
+        "red": false
+      },
+      {
+        "text": " وسندي في كُلّ لحظة خوف",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "داه كُوكتيل الجمال واللّهفه",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "حنانُه ما تلاقي بعدُه حنان",
+        "red": false
+      },
+      {
+        "text": " وضحكتُه تمُوت الأحزان",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "لا يوم زعل منّي ولا هان",
+        "red": false
+      },
+      {
+        "text": " علُيّه مهما جري أو كان",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": " ",
+        "red": false
+      },
+      {
+        "text": "أو كان في بيننا لحظة قسوه",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "title": "علي نور",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "خلينا نكون واضحين .. إحنا معدناش قادرين"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "نستحمل بعض .. و نوفي بوعد ... حافظنا عليه لسنين"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "خلينا نكون على نور .. وضعنا مبقاش مقبول"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "فرقنا الهم .. كأنه سم ... بيجري في الشرايين"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "بقينا عايشين .. و روحنا في دوامه كبيره",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "عنينا سهرانين بيناموا في الأسبوع ليله",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دا حتى الحنين .. مبقاش يقرب لينا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "كأن الحياه .. معدتش باقيه علينا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مشاعرنا خلاص بتموت والشوق مبقاش موجود"
+      },
+      {
+        "text": "ومعدش في ود .. ولا فينا حد ... دموعه مش ماليه العين"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "صممنا على النسيان .. وفشلنا فيه هوا كمان"
+      },
+      {
+        "text": "عمرنا م نسينا .. و أهو بان علينا ... و إحنا لسه مكابرين"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "مين فينا هيحاسب مين؟.. غلطتنا إحنا الاتنين"
+      },
+      {
+        "text": "سيبنا نفسنا تهرب منا ..وبقينا إتنين تانين"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "title": "حظي مخاصمني",
+    "type": "شعبي",
+    "lyrics": [
+      {
+        "text": "نفسي بس أفرح شويه... واللي هي جت عليّا",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "الهموم ليه ماسكه فيّه...والزعل مش بيفارقني",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "كل ورطه وراها ورطه...وإمبارح زي النهارده",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ضحكتي بتيجي كل فتره...حتى حظي بقا مخاصمني",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "إيه يا دنيا شوفينا حبّه...نفسي ألقى الكفة طبّه",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "قلبي ياما شال كتير و عبّه ... لسه من الحزن بستخبي",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "عاوز أنول من الحب جانب... جبت آخري من التجارب",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "والله أنا من المر شارب ...الواحد على التعب اتربي",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "خبطتين في الراس بتوجع ...حتى نجمي مش بيلمع؟",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "شغفي راح وأنا عاوزه يرجع... لو يومين ويبقى يمشي",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "إمتى أشوف أخبار سعيدة ...كله ليه بيشوفني صيدة؟",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "إنتي ليه يا دنيا عنيدة ...أعمل إيه عشان ترضى عني؟",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "title": "إفترقنا",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "أفترقنا وقلنا يومها كل شيء قسمه ونصيب",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "كل لمّا تيجي سيرته بقول دا كان أغلى حبيب",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "مش عشان إحنا بعدنا يبقى هغلط فيه وأعيب",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "الحياة دي علمتنا في جراح ممكن تطيب",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "يوم ودعنا كان في جملة قلتها بصوت حزين",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "قلت هفضل جوا قلبك مهما عدت السنين",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ألف معنى كان في بالنا والدموع في كل عين",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "طب وعمرنا اللي عدى هنجيبه تاني منين",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مجبرين نبقى عايشين بين نارين",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "محتارين ومن اللي حوالينا قلقانين",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "مستنين في حبال أمل متعلقين",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "عشمانين في فرصة تيجي نبقى فيها قريبين",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مش باقيلنا من اللي بينا حاجة غير ماضي أليم",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "إحنا حالنا زي صورة حلوة لكن جوا برواز قديم",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "حتى حظنا زي واحد طبعه مش سهل ولئيم",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "آه صبرنا زي صبر مريض عشان يرجع سليم",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "title": "أبويا الغالي ",
+    "type": "إجتماعي & عائلي",
+    "lyrics": [
+      {
+        "text": "أول ما وعيت على الدنيا فتحت عنيه عليك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "كبّرت في ودني وأنت شايلني بين أيديك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "بوستني من خدي وكانت الفرحه ماليه عينيك",
+        "red": false
+      },
+      {
+        "text": "قلت أن أنا أول رزقك وأني عوض ربنا ليك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وأن أنا رديت لك روحك من تاني",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وياما استنتني سنين وشهور وليالي",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ربيتني ولا لحظه نسيتني لو حتى ثواني",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أنا متسيط على حسك اسمي بيجي بعده اسمك",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "يا أعز ما ليه يا صاحبي وأبويا الغالي",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لو مره وقعت في أزمه بتبقا معايا متسبنيش",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "والدنيا دي ملهاش لازمه لو مبتكلمنيش",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دا اللي يضايقك يضايقني طبعاً وميبسطنيش",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "يا شايلني في تعبي وفرحي غيرك يا أبويا مليش",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أنا متسيط على حسك اسمي بيجي بعده اسمك",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "لو يوم بعدت عنك أكيد بقلق عليك",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "من صغري وأنت ساندني وموقفني على رجلي",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "عمرك ما أتخليت عني دا أنا أبوس رأسك وأيديك",
+        "red": true
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "title": "هتتبسطي معايا",
+    "type": "بوب",
+    "lyrics": [
+      {
+        "text": "أول ما لمحت عينيكي",
+        "red": false
+      },
+      {
+        "text": "أنا قلبي اتشد أوام ونسيت أي كلام",
+        "red": false
+      },
+      {
+        "text": "كنت هقوله ليكي",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "بصراحة جمال معاليكي",
+        "red": false
+      },
+      {
+        "text": "خلاني أضعف وأحتاس دا ملوش حل دا إعجاز",
+        "red": false
+      },
+      {
+        "text": "ربنا يحميكي",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "اعتبريني ملك إيديكي",
+        "red": false
+      },
+      {
+        "text": "والله أنا نيتي خير وبفهم قوي في التقدير",
+        "red": false
+      },
+      {
+        "text": "ومن قلبي شاريكي",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أنا عمري ما أفرط فيكي",
+        "red": false
+      },
+      {
+        "text": "فعلاً أنا بجد قتيل دي حقيقة ومش تمثيل",
+        "red": false
+      },
+      {
+        "text": "هتجن عليكي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ويا ناس في قمر كدا لا مفيش",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أنا كل ما أدور ملاقيش",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "يا حبيبي استنى  متمشيش",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أديني فرصة متظلمنيش",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دي فرصة  هيخسر يعني إيه؟",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "لو يسيبني أتعرّف عليه",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "نتكلم وأفتح قلبي ليه",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وأنسى همومي بنظرة عينيه",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "تعالي نسهر سهراية",
+        "red": false
+      },
+      {
+        "text": "نسمع كدا فيلم جميل أو نتمشى على النيل",
+        "red": false
+      },
+      {
+        "text": "هتتبسطي معايا",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "تعالي أقولك إيه جوايا",
+        "red": false
+      },
+      {
+        "text": "وهتعرفي بالتفصيل إيه خلاني ليكي أميل",
+        "red": false
+      },
+      {
+        "text": "وأحب على عماية",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أولها جمالك آية",
+        "red": false
+      },
+      {
+        "text": "وتانيها أنك طبيعية والضحكة فيها عفوية",
+        "red": false
+      },
+      {
+        "text": "يا نسمة في هوايا",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "شايفك نجمة في سمايا",
+        "red": false
+      },
+      {
+        "text": "بسرح أنا فيها كتير وعليها بجد بغير",
+        "red": false
+      },
+      {
+        "text": "حكايتها حكاية",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "title": "مش ناقصاك",
+    "type": "مقسوم",
+    "lyrics": [
+      {
+        "text": "كل الحلو عملناه معاك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ومخدناش حاجة إلا أذاك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أبعد ورينا عرض أفاك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أنت مريض محتاج لعلاج",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ماشية حياتي ومش ناقصاك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "والله ماشية ومش ناقصاك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وفر كدبك ودموع عينك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "إحنا خلاص بقينا فاهمينك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "مين قال هنضيع من غيرك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دا إحنا أساساً مش طايقينك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "اخترنا أننا نتقي شرك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "اخترنا نستغني عن خيرك",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "قررنا نهدي النفسية",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ونبعد عن الناس المؤذية",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "حياتها دي عبارة عن نفاق",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وقلب أسود وصفار نية",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ياما دقة على رأسنا طبول",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وعيشنا حياتنا عرض وطول",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "عاشرنا ناس قربها كان داء",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وناس عاملتنا بالأصول",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "قررنا نصون اللي يصون",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ونعامل بس المضمون",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "واللي لسه في العند سايق",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "على الرف هيفضل مركون",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "واللي هنا عليه هيهون",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "واللي أمناه ورضي يخون",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "فكرناه ملاك وطلع فرعون",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "هنعرفه معنى الجنون",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "title": "مجوهرات",
+    "type": "رومانسي",
+    "lyrics": [
+      {
+        "text": "دي حلوة في كل الأماكن",
+        "red": false
+      },
+      {
+        "text": "دي حلوة في الحالات",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دي حركت الساكن",
+        "red": false
+      },
+      {
+        "text": "خلته ينسى اللي فات",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دا بيقولوا الناس معادن",
+        "red": false
+      },
+      {
+        "text": "وأنا بقول دي مجوهرات",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أيوه أنا شفت كتير لكن",
+        "red": false
+      },
+      {
+        "text": "مشفتش زيها بالذات",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دي قمر قمر هلّ علينا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "و أوام أوام شغل عنينا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "من نظرة وسلام جابت رجلينا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "جابت رجلينا ودبنا خلاص",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "لا مفيش خلاف عليها أساساً",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "عندها قبول حقيقي مش مجازاً",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ملكة روحي زودتها حماساً",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "بعيش معاها أجمل إحساس",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا حبها شيء لا إرادي",
+        "red": false
+      },
+      {
+        "text": "دي نجمة في كل العيون",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "في جمال بنشوفه عادي",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "جمال بيجيب جنون",
+        "red": false
+      },
+      {
+        "text": "أنا مبسوط بيها وراضي",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "حاسس أني ملكت الكون",
+        "red": false
+      },
+      {
+        "text": "لو كل الناس في وادي",
+        "red": false
+      },
+      {
+        "text": "في الوادي بتاعها هكون",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "title": "وينك",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "هذه الكلمات باللهجة السعوديه",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "يا دوا روحي يا جفن عيني",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وربي زاد شوقي متى راح تجيني؟",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ترى ما بردت جروحي والفرح ناسيني",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "صار منطفئ طموحي من يوم ما فارقتيني",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "وبينك، وينك يا غايب ...وينك يا أغلى الحبايب",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "تدري؟ أن بدونك مرة دنيايا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ومتي متي أشوفك ...متي أمسك كفوفك",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وايلي من كسوفك وأنت معايا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وطال  طال الفراق ...و راح قلبي معاك",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وأخاف، تخلف عهودك وتنسى الوصايا",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "في نار موقودة جوايا ومكتومة",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أحس حالي بضيقة وما في لي قائمة",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وحتى الضحكة مفقودة والله البعد أنا ألومه",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أيامنا بقلبي موجودة كأنها بالحبر مكتوبة",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "title": "ضحكة بالتقسيط",
+    "type": "مقسوم",
+    "lyrics": [
+      {
+        "text": "آخرتها إيه يعني يا دنيا",
+        "red": false
+      },
+      {
+        "text": "علشان بس نكون عارفين",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "بقول هتتعدل بكره",
+        "red": false
+      },
+      {
+        "text": "وبكره مجاش بقاله سنين",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "في كل طريق واخد خطوة",
+        "red": false
+      },
+      {
+        "text": "لكن خطواتي مش ثابتين",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دا قلبي لو فرح مرة",
+        "red": false
+      },
+      {
+        "text": "بيفضل ألف مرة حزين",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "تعبانا معاكي وخدانا يمين وشمال",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "لا رسيتي على بر ولا غيرتي الأحوال",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ياما صبرنا عليكي مهما رميتينا في النار",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "نفسنا نرتاح فيكي أو نعرف إيه آخر المشوار",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "قلنا هنمشي جنب الحيط",
+        "red": false
+      },
+      {
+        "text": "قالوا علينا غلطانين",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وسبنا البحر قلنا غويط",
+        "red": false
+      },
+      {
+        "text": "لقينا البر فيه تعابين",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "طلبنا الضحكة بالتقسيط",
+        "red": false
+      },
+      {
+        "text": "لقينا فوايدها بالملايين",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "برغم أن طموحنا بسيط",
+        "red": false
+      },
+      {
+        "text": "ونفسنا نعيش مرتاحين",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "title": "بيت مهجور",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "من بعد اللي حصلي أنا روحي بقت بور",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وإن كان على قلبي بقى بيت مهجور",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "بابه دا متخلع وإزاز شباكه مكسور",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "مبقاش تاني ينفع بقى مقطوع فيه النور",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لا حبيب يسأل عليه ولا حد يقرب له",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "كله خلاص ناسيه بقت مقطوعة سيرته",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "والكام ذكرى القدام دلوقتي بقوا حطام",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وحالي بوجه عام أسوأ من اللي قبله",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "بسأل نفسي كتير هل كان سوء اختيار",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "يتعبني التفكير لما بتوه وأحتار",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "للماضي كل ما برجع ألقى عيوني تدمع",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "لكن بعدها بفهم أنه كان أفضل قرار",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "title": "فيك الخير",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "مكدبش عليك",
+        "red": false
+      },
+      {
+        "text": "من بعد فراقنا أنا ياما كتير حنيت",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "متقولش نسيت",
+        "red": false
+      },
+      {
+        "text": "متجبهاش فيا واعترف أن أنت اللي قسيت",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "فضاحة عينيك",
+        "red": false
+      },
+      {
+        "text": "كان باين فيها غرورك لما سبتني ومشيت",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أيوه استغنيت",
+        "red": false
+      },
+      {
+        "text": "وأكرم لي أموت ولا إني أكون ليك انذليت",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "الله يجازيه بقا قلبي علقني بحد وجعني",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "سلمت له روحي وباعني من غير تفكير",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "قلت دي فترة وهتعدي ومن بعدها هتريحني",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "متصورتش تجرحني لا فيك الخير",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أرجعلك إيه؟",
+        "red": false
+      },
+      {
+        "text": "روح شوف لك حد يكون شبهك حد يليق بيك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "مبقتش شاريك",
+        "red": false
+      },
+      {
+        "text": "واللي بتعمله دا ملوش لازمة ومش هيفيد",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "مستغرب ليه؟",
+        "red": false
+      },
+      {
+        "text": "كنت مفكر بعد عمايلك لما أشوفك هجري عليك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ربنا يشفيك",
+        "red": false
+      },
+      {
+        "text": "الوهم دا جالك من كتر العيشة وحيد",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "title": "بلاش تتقل",
+    "type": "رومانسي & مقسوم",
+    "lyrics": [
+      {
+        "text": "جرى إيه يا حبيبي ...ليه مطنشنى وليه ناسيني",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "بعدك عني مخليني ...مش بتلم على أعصابي",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "جرى إيه يا نور عيني ...إيه الموضوع ما ترسيني",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "فهمني بقى أو احكي لي ...الحال دا بجد أذاني",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أرجوك رُدعلى سؤالي... يا جميل ما تريح بالي",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "نار الشوق دي قتلاني ...وسكوتك مش حل إيجابي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لا بلاش تتقل ونبي علشان على تقلك... أنا مش هقدر",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أنا فاض بيّه وكل شوية بشتاق لك ...أكتر وأكتر",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وتعدي عليّا ليالي ...والوحدة دي مش سايباني",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "واقفة الأيام مش بتعدي ...وفي غيرك مش بفكر",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "هل في شيء مانعك؟ ...ولا أنا قلت كلام ضايقك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "والله ما أقدر على زعلك ...لا دقيقة ولا حتى ثواني",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أرجوك طمني عليك... يا حبيبي الله يخليك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دا أنا عايش دنيتي ليك ...نظرة عينك واحشاني",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أرجوك على سؤالي... يا جميل ما تريح بالي",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "نار الشوق دي قتلاني ...وسكوتك مش حل إيجابي",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "title": "هُدنه",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "هو إحنا ليه قل الكلام بينا",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وبقت ردودنا يادوب على قد السؤال",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وكأننا بنداري مشاعرنا",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وكمان بنختار الكلام اللي هيتقال",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "يمكن عشان الدنيا سرقتنا",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وبقينا عايشين كل يوم بنفس الحال",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "طب ناخد هدنة، نقعد مدة... ونعيد تاني تفكيرنا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "يمكن نرتاح، ويزيد شوقنا...والمسافات تقربنا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ولو في غلطة، غلطناها مرة... هنحاول يعني نصلحها",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ونرجع تاني، نكمل عادي... وكل حاجة ترجع مطرحها",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "هو إحنا ليه بقينا نتهرب",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وكل واحد فينا بيداري اللي فيه",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دا بدل ما نبعد لازم بقا نقرب",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وهو يعني فراقنا دا هيفيد بإيه؟",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "طب قولي امتى ترجع يا متغرب",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "عن قلبي دا اللي أنت مش هاين عليه",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "title": "دخلت قلبي",
+    "type": "بوب",
+    "lyrics": [
+      {
+        "text": "آه منها اللي مفيش منها",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دا يادوب من نظرة عينها",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "بتوقعني وتثبتني وبتكسبني بكام كلمة",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "آه منها اللي مفيش منها",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "عارفة أني خلاص بدمنها",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "بضعف قدام حلاوتها لا مقدرش أزعل منها",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أول ما تقرب مني الحزن بيبعد عني ...والهم بيتجنبني وبيهربوا من سكتها",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "معاليها دخلت قلبي بيمينها ... حلت أيامي",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "الفرحة لقيتها أنا في عينها ... ومشفتش تاني",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دا أنا أهد الدنيا دي عشانها ... مادام عشقاني",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ربنا يسعدها و يحميها ... ويخليها لي",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "ياما أنا عرفت كتير غيرها",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "لكن مكنوش في جمالها",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دا جمال شرقي وقّع قلبي في ساعتها",
+        "red": false
+      },
+      {
+        "text": "حاجة غريبة كدا حسيتها",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أول ما عيوني شافتها",
+        "red": false
+      },
+      {
+        "text": "حسيت بأمان وبراحة كمان عمري ما حسيتها",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أول ما تقرب مني الحزن بيبعد عني والهم بيتجنبني وبيهربوا من سكتها",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "title": "إشاعات",
+    "type": "مقسوم",
+    "lyrics": [
+      {
+        "text": "بما أنك مش باقي عليّا ...وموفتش وعودك ليّه",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ف أنت كدا حكايتك منتهية ...وأسمح لي أقولك سلامات",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "اتفضل بقا من غير مطرود ...في حبيب غيرك بقى موجود",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "حبني من غير أي شروط ...ومعايا في كل الأوقات",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "لو على الطبطبة طبطبنا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دلوقتي إحنا خلاص شطبنا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "جبنا أخرنا بجد تعبنا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "كفاية خنقة وحرقة دم",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ياما عدينا وياما فوتنا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "حذرنا كتير ياما نبهنا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "عشان كدا استغنينا وبعدنا",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "خلاص وجودك مش مهم",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "روح يلا الله الغني عنّك ...مبقتش أنا حمل سواد قلبك",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "لو معتقد أن مفيش منك ...ف المعلومة دي إشاعات",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "في ناس حلوة وصافية النية... مش زيك وحشة ومؤذية",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ناس حباني وباقية عليّا ...ناس ملهاش في الحوارات",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "title": "عيونك فضحاكي",
+    "type": "رومانسي",
+    "lyrics": [
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "متحوليش تكرهيني فيكي"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "عشان أنا من قلبي دا شاريكي"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ومن زمان وأنا مغرم بيكي"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " بس إنتي مش حاسه"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "متحوليش توضحي لي حاجه"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "أنا مش هبعد عنك إستحاله"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "كل سؤال أنا عندي ليه إجابه"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " بس إنتي أديني فرصه"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "متقفليش كل البيبان قدامي",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "مترفضيش روحي اللي عاوزاكي",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " و متخليش الفرح ينساكي",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "مهما تداري عيونك برضه فضحاكي",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "محتاره ليه أطمني أنا معاكي"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " يا أحلي نجمة عيوني شايفاكي"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وعد مني هيبقا كل همي رضاكي"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " لا هزعلك ولا هقسي  مرَّه عليكي"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دا اللي ما بينا عباره عن أجمل حكايه"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ومش ناقصها حاجه غير فصل النهايه"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دورك فيها  أنك تحْلي دُنيايا"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " و دوري فيها أخليكي مرتاحه  معايا"
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "title": "مش ملاحظة",
+    "type": "بوب",
+    "lyrics": [
+      {
+        "text": "عيني عليكي برده أيه الجمال دا"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "حلوه مفيش غلطة أه يا فلته"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "شايفين الطلة يا ماشاء الله"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "قلبي سبني وله إليها والله"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "في البستان أنتي أحلي وردة"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " حالة بتفاصيلها منفريدة"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "عقلي كان قتيل النهارده"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "بس لما شفتك راق وهدي"
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "أنتي نجمة مش بنلقي منها كتير",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "نجمة واحده بس سايبه 100 تأثير",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "الكلام ده كله جد مش تحوير",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "اللي يزعل القمر ده يبقا مش أصيل",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "نظرة واحده منها بدمنها"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "نفسي أكون نصيبها وأعجبها"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "كل لحظة بتزيد حلاوتها"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": " لسه مش ملاحظة أني حاببها"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "مش هسيبها واقف علي بابها"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "عمري يوم م هقدر أتعبها"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "لو ف أيه تفكر هيجلها"
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "هل باجي في بالها بسألها ؟"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "title": " مين  ساب مين ؟",
+    "type": "دراما",
+    "lyrics": [
+      {
+        "text": "وأديني بقالي ليالي .... بحاول أن أنا أداري",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "لا عارف أشيله من بالي .... ولا أرجع تاني",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "بصبر نفسي وبقول .... مسيره في مرة هيفوق",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وهيجرب نار الشوق .... ولو لثواني",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "ويمكن قلبه دا يدوب .... ويجي لوحده بهدوء ونكمل عادي",
+        "red": false
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "مين فينا ساب مين ؟ .... دا سؤال مش فارقة معايا إجابته",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "وادينا عايشين .... كل واحد بيداري في وجعه",
+        "red": true
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "دا أنا قلت يومين .... والأمر هيرجع تاني لوضعه",
+        "red": true
+      },
+      {
+        "text": "وأهو عدى سنين .... ومشفتوش ولا بسمع عنه",
+        "red": true
+      },
+      {
+        "text": " ...............",
+        "red": false
+      },
+      {
+        "text": "دا لو كان عندي مش فارق .... مكنتش هفضل أنا فاكر",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "غرامنا اللي ملوش آخر .... وكنت نسيته",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "لكن على العشرة أنا باقي .... سألت عليه ومش لاقي",
+        "red": false
+      },
+      {
+        "text": ""
+      },
+      {
+        "text": "حاجة تخليني أقوله .... إني محبتش غيره",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "title": "يا فاتنه ",
+    "type": "صعيدي",
+    "lyrics": [
+      {
+        "text": "ويلي يا ويلي من شهاب.. هّل علينا من السحاب",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ظهر القمر و الجوّ طاب  .. جلبي الحديد قدامه داب",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أنا شوجي كان مقفول بباب .. خلاه  يلين كيف التُراب",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "نفسي أوصفك  وصف  جميل .. فسألت أنا  أهل الغرام",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "قالو كلام ماله مثيل  ..فعلاً يليق بالمقام",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "قالوا",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "دي ست كل المحبوبين .. دي عشق كل المغرمين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "هيا دواء القلب الحزين .. حلاوتها بتزيد كل حين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "دي رسمه  حلوه في كل عين .. الكلمة منها تشفي الانين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ودي في جمالها بس مين   .. لسه أحنا فيها  حيرانين",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "و يا حلوه  يا فاتنه .. اه يا غريبه عن نسلنا",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "يا هدية جت من ربنا .. وجه معاها  الخير و الهنا",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "يا ورده زينه متلونه .. عطرك مغطي جَوّنا",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "من يوم ما  خطت  أرضنا ..  صارت  في قلبي متسكّنه",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "أنا والله رايدك بالحلال .. و أتمني ما تخيب الأمال",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "رميت أنا حبل الوصال .. قولي موافقه و أجي ف الحال",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و أوفيكي من  دهب ومال .. قولي موافقه أنا صبري طال",
+        "red": false
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "title": "أشربه الاحمر",
+    "type": "صعيدي",
+    "lyrics": [
+      {
+        "text": "عيون اللي شاغل عيوني .. راحو وسابو قلبي و نسوني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "طب و ازاي بقا يا عيوني .. علي اللي أنتي حبّاه تهوني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و لو يرجعو لي  و يجو لي .. هجيب له جواهر و لولي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "هجيب له و صادق في قولي .. و هقول لهم وحشتوني",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "خدود اللي طالب يسامحني .. بيهربو مني ما سمحين لي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "اروح له عشان أقول له سامحني .. سامح قلبي سامحه و ريحني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "قولي يا قلبي ليه بيهربو مني .. قول لي يا قلبي ليه بيتعبوني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": true
+      },
+      {
+        "text": "قلب حبيبي عليه دقات",
+        "red": true
+      },
+      {
+        "text": "صوتها جميل زي النغمات",
+        "red": true
+      },
+      {
+        "text": "بتنسيني أهات و أهات",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أهات الجراح و الوجع",
+        "red": true
+      },
+      {
+        "text": "أهات البُكاء و الندم",
+        "red": true
+      },
+      {
+        "text": "أهات الفرح و الدلع",
+        "red": true
+      },
+      {
+        "text": "أهات الحنين و الشجن",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و اه و اه من قلب حبيبي",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": true
+      },
+      {
+        "text": "رائحة حبيبي  مسك  من  عنبر .. لسه في يميني أشربه الاحمر",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "لو أحن ليه بمسكه و اتذكر .. جمال حبيبي اللي فيه متحير",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "واللي  ولايوم  بيتغير .. و اللي بشتاق له أكثر وأكثر",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "مالك روحي يا أجمل ملك .. تسلم أيديه اللي كحلك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ياللي  قلبي ليك إتملك .. بصراحه أنا نفسي أسألك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "هل باجي لو مرّه في بالك..  ياريت سؤالي ما يكون  زعلك",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "حبيبي حُبه أد فيا نار .. دا اللي بوجوده بنسي المرار",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و دا القُرب منه إنتصار  .. و دا البُعد عنه إنتحار",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أعلنت علي قلبه الحصار .. و أهو شغلني و صار اللي صار",
+        "red": false
+      }
+    ]
+  },
+  {
     "id": 111,
     "title": "نوعيّه",
     "type": "مقسوم",
     "lyrics": [
-            { "text": "مين قال  أن  اللي أختشو ماتو .. بالعكس دا لسه عايشين", "red": false },
-            { "text": "", "red": false },
-            { "text": "لو كله راجع حساباته .. هيكون عارف منهم أثنين", "red": false },
-            { "text": "", "red": false },
-            { "text": "هيتمني سنينُه يتعادو ..وميكلمهمش دقيقتين", "red": false },
-            { "text": "...............", "red": true },
-            { "text": "دي نوعيّه .. ملهاش ديّه .. مش عشريّه", "red": true },
-            { "text": "بيبيعوا ف أول الطريق", "red": true },
-            { "text": "", "red": false },
-            { "text": "وبيتعاملو بسوء النيّه .. ناس مُئزيّه .. مصلحجيّه", "red": true },
-            { "text": "", "red": false },
-            { "text": "حاشره دماغها في كل شيء", "red": true },
-            { "text": "", "red": false },
-            { "text": "كرامتهم صفر الميّه .. ناس ضلاليه .. مش طبيعيه", "red": true },
-            { "text": "", "red": false },
-            { "text": "تموتك عادي  بالبطيئ", "red": true },
-            { "text": "...............", "red": true },
-            { "text": "ناس بقت فارضه وجودها معانا .. هوا أحنا خلفنا و ناسيين", "red": false },
-            { "text": "", "red": false },
-            { "text": "لازقهلنا أوي  ومش سايبانا ..  من يومهم كدا ناس بجحين", "red": false },
-            { "text": "", "red": false },
-            { "text": "بيجيبو سيرتنا من ورانا .. و في  و شنا يعملو مساكين", "red": false }
-      ]
+      {
+        "text": "مين قال  أن  اللي أختشو ماتو .. بالعكس دا لسه عايشين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "لو كله راجع حساباته .. هيكون عارف منهم أثنين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "هيتمني سنينُه يتعادو ..وميكلمهمش دقيقتين",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "دي نوعيّه .. ملهاش ديّه .. مش عِشريّه",
+        "red": true
+      },
+      {
+        "text": "بيبيعوا ف أول الطريق",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وبيتعاملو بسوء النيّه .. ناس مُئزيّه .. مصلحجيّه",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "حاشره دماغها في كل شيء",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "كرامتهم صفر المِيّه .. ناس ضلاليه .. مش طبيعيه",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "تموتك عادي  بالبطيئ",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "ناس بقت فارضه وجودها معانا .. هوا أحنا خلفنا و ناسيين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "لازقهلنا أوي  ومش سايبانا ..  من يومهم كدا ناس بجحين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بيجيبو سيرتنا من ورانا .. و في  و شنا يعملو مساكين",
+        "red": false
+      }
+    ]
   },
   {
     "id": 112,
     "title": "مرايتَك",
     "type": "بوب",
     "lyrics": [
-            { "text": "أجمل ليالي", "red": false },
-            { "text": "اللي كان فيها لقاك", "red": false },
-            { "text": "ياحبيبي", "red": false },
-            { "text": "", "red": false },
-            { "text": "وهعوز إيه تاني", "red": false },
-            { "text": "طول م أنا  وياك", "red": false },
-            { "text": "يا حبيبي", "red": false },
-            { "text": "...............", "red": false },
-            { "text": "اه يا شاغل بالي", "red": false },
-            { "text": "هل عيني شاغلك", "red": false },
-            { "text": "يا حبيبي", "red": false },
-            { "text": "", "red": false },
-            { "text": "بقا شيء إجباري", "red": false },
-            { "text": "تفضل روحي حارساك", "red": false },
-            { "text": "يا حبيبي", "red": false },
-            { "text": "...............", "red": true },
-            { "text": "و أنا ولا ليّه غيرك", "red": true },
-            { "text": "أنا سحرتني عينك", "red": true },
-            { "text": "أنا مش عاوز غيرك يا حبيبي", "red": true },
-            { "text": "", "red": false },
-            { "text": "بقيت عايش عشانك", "red": true },
-            { "text": "قلبي بقا مكانك", "red": true },
-            { "text": "مفيش حدّ في جمالك يا حبيبي", "red": true },
-            { "text": "...............", "red": true },
-            { "text": "الحُب مرايته", "red": false },
-            { "text": "عاميه  إلا مرايتك", "red": false },
-            { "text": "يا حبيبي", "red": false },
-            { "text": "", "red": false },
-            { "text": "والالماظ قيمته", "red": false },
-            { "text": "غاليه  زي غلاوتك", "red": false },
-            { "text": "يا حبيبي", "red": false },
-            { "text": "...............", "red": false },
-            { "text": "والسماء نجومها", "red": false },
-            { "text": "عاليه بس أنا طايلك", "red": false },
-            { "text": "يا حبيبي", "red": false },
-            { "text": "", "red": false },
-            { "text": "والورده عطورها", "red": false },
-            { "text": "هايله ويلي من عطرك", "red": false },
-            { "text": "يا حبيبي", "red": false },
-            { "text": "...............", "red": true }, 
-            { "text": "اه يا غالي عليّا", "red": false },
-            { "text": "يا أحسن هديه", "red": false },
-            { "text": "أكيد مالي عنيّه  يا حبيبي", "red": false },
-            { "text": "", "red": false },
-            { "text": "طول م أنت قدامي", "red": false },
-            { "text": "بنسى همومي و ألامي", "red": false },
-            { "text": "أتحققت أحلامي معاك يا حبيبي", "red": false },
-            { "text": "", "red": false }
+      {
+        "text": "أجمل ليالي",
+        "red": false
+      },
+      {
+        "text": "اللي كان فيها لقاك",
+        "red": false
+      },
+      {
+        "text": "ياحبيبي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وهعوز إيه تاني",
+        "red": false
+      },
+      {
+        "text": "طول م أنا  وياك",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "اه يا شاغل بالي",
+        "red": false
+      },
+      {
+        "text": "هل عيني شاغلك",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بقا شيء إجباري",
+        "red": false
+      },
+      {
+        "text": "تفضل روحي حارساك",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "و أنا ولا ليّه غيرك",
+        "red": true
+      },
+      {
+        "text": "أنا سحرتني عينك",
+        "red": true
+      },
+      {
+        "text": "أنا مش عاوز غيرك يا حبيبي",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بقيت عايش عشانك",
+        "red": true
+      },
+      {
+        "text": "قلبي بقا مكانك",
+        "red": true
+      },
+      {
+        "text": "مفيش حدّ في جمالك يا حبيبي",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "الحُب مرايته",
+        "red": false
+      },
+      {
+        "text": "عاميه  إلا مرايتك",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "والالماظ قيمته",
+        "red": false
+      },
+      {
+        "text": "غاليه  زي غلاوتك",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "والسماء نجومها",
+        "red": false
+      },
+      {
+        "text": "عاليه بس أنا طايلك",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "والورده عطورها",
+        "red": false
+      },
+      {
+        "text": "هايله ويلي من عطرك",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "اه يا غالي عليّا",
+        "red": false
+      },
+      {
+        "text": "يا أحسن هديه",
+        "red": false
+      },
+      {
+        "text": "أكيد مالي عنيّه  يا حبيبي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "طول م أنت قدامي",
+        "red": false
+      },
+      {
+        "text": "بنسى همومي و ألامي",
+        "red": false
+      },
+      {
+        "text": "أتحققت أحلامي معاك يا حبيبي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      }
     ]
-},
-{
+  },
+  {
     "id": 113,
     "title": "رضينا بالوضع",
     "type": "دراما",
     "lyrics": [
-            { "text": "بما  إن  مشوارنا  دا  أخره فراق", "red": false },
-            { "text": "", "red": false },
-            { "text": "فبلاش يكون بنا  زعل وخناق", "red": false },
-            { "text": "", "red": false },
-            { "text": "مش شرط يتقال أننا  أعداء", "red": false },
-            { "text": "", "red": false },
-            { "text": "فيها أيه لو تبقا  النهايات أخلاق", "red": false },
-            { "text": "...............", "red": true },
-            { "text": "بما إن الموضوع  أتفض..وبقا في طي النسيان", "red": true },
-            { "text": "", "red": false },
-            { "text": "مش لازم نقطّع  بعض..ونخلي المستور يبان", "red": true },
-            { "text": "", "red": false },
-            { "text": "مش فارق عيب مين بالظبط..ولا مين فينا غلطان", "red": true },
-            { "text": "", "red": false },
-            { "text": "وطالما رضينا بالوضع..نحترم الماضي اللي كان", "red": true },
-            { "text": "...............", "red": true },
-            { "text": "الجرح صعب لو من الغاليين", "red": false },
-            { "text": "", "red": false },
-            { "text": "بالذات بقا لو عشره ليها سنيين", "red": false },
-            { "text": "", "red": false },
-            { "text": "أدّينا عيننا  مشينا معميين", "red": false },
-            { "text": "", "red": false },
-            { "text": "أخرتها باعو  الناس الشاريين", "red": false }
+      {
+        "text": "بما  إن  مشوارنا  دا  أخره فراق",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "فبلاش يكون بنا  زعل وخناق",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "مش شرط يتقال أننا  أعداء",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "فيها أيه لو تبقا  النهايات أخلاق",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "بما إن الموضوع  أتفض..وبقا في طي النسيان",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "مش لازم نقطّع  بعض..ونخلي المستور يبان",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "مش فارق عيب مين بالظبط..ولا مين فينا غلطان",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وطالما رضينا بالوضع..نحترم الماضي اللي كان",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "الجرح صعب لو من الغاليين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بالذات بقا لو عشره ليها سنيين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أدّينا عينْنَا  مشينا معميين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أخرتها باعو  الناس الشاريين",
+        "red": false
+      }
     ]
-},
+  },
   {
     "id": 114,
     "title": "من غير داعي",
     "type": "دراما",
-        "lyrics": [
-            { "text": "تعرفي أن يوم فراقنا .. هوا أكتر يوم ألمنى", "red": false },
-            { "text": "", "red": false },
-            { "text": "عقلى مستوعبش فكرة .. أني هرجع تاني وحدى", "red": false },
-            { "text": "", "red": false },
-            { "text": "قلبي كان رافض يصدق .. أنك خلاص هتغيبي عنى", "red": false },
-            { "text": "", "red": false },
-            { "text": "كنت حاسس يومها  فعلا .. أن روحي  بتروح منى", "red": false },
-            { "text": "...............", "red": true },
-            { "text": "أنا يومها مكنتش واعي", "red": true },
-            { "text": "", "red": false },
-            { "text": "وزعّلتك  من غير داعي", "red": true },
-            { "text": "", "red": false },
-            { "text": "كان لازم برضه أراعي", "red": true },
-            { "text": "", "red": false },
-            { "text": "أن أنتي باقيه عليّا", "red": true },
-            { "text": "", "red": false },
-            { "text": "", "red": false },
-            { "text": "كان غضبي  ساعتها سايقني", "red": true },
-            { "text": "", "red": false },
-            { "text": "وإحساس العجز خانقني", "red": true },
-            { "text": "", "red": false },
-            { "text": "وأكتر شئ كان مضايقني", "red": true },
-            { "text": "", "red": false },
-            { "text": "حيرتي ودموع عنيّه", "red": true },
-            { "text": "...............", "red": true },
-            { "text": "مهما قولتي عليّا حقك .. المهم أقبلي أسفي", "red": false },
-            { "text": "", "red": false },
-            { "text": "أنتي عارفه أكيد غلاوتك  .. عُمرها ما قلّت في قلبي", "red": false },
-            { "text": "", "red": false },
-            { "text": "مش هخيّب تاني ظنّك .. بوعدك و أنا قدّ وعدي", "red": false },
-            { "text": "", "red": false },
-            { "text": "إحساس أني في يوم جرحتك ..  جوايا و مش سايبني", "red": false }
+    "lyrics": [
+      {
+        "text": "تعرفي أن يوم فراقنا .. هوا أكتر يوم ألَمنى",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "عقلى مستوعبش فكرة .. أني هرجع تاني وحدى",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "قلبي كان رافض يصدق .. أنك خلاص هتغيبي عنى",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "كنت حاسس يومها  فعلاً .. أن روحي  بتروح منى",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "أنا يومها مكنتش واعي",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وزعّلتك  من غير داعي",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "كان لازم برضه أراعي",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أن أنتي باقيه عليّا",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "كان غضبي  ساعتها سايقني",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وإحساس العجز خانقني",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأكتر شئ كان مضايقني",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "حيرتي ودموع عنيّه",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "مهما قولتي عليّا حقك .. المهم أقبلي أسفي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أنتي عارفه أكيد غلاوتك  .. عُمرها ما قلّت في قلبي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "مش هخيّب تاني ظنّك .. بوعدك و أنا قدّ وعدي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "إحساس أني في يوم جرحتك ..  جوايا و مش سايبني",
+        "red": false
+      }
     ]
-},
+  },
   {
     "id": 115,
     "title": "صاحبك علي عيبه",
     "type": "اجتماعي وعائلي",
     "lyrics": [
-            { "text": "يا بخته اللي يلاقي صاحب .. يخلص له و يدي له عينيه", "red": false },
-            { "text": "", "red": false },
-            { "text": "و يا خيبته بقا اللي يفرط .. في اللي شاريه  و باقي عليه", "red": false },
-            { "text": "", "red": false },
-            { "text": "صاحب صاحبك علي عيبه  .. و أوعي تسيبه  لو عمل أيه", "red": false },
-            { "text": "", "red": false },
-            { "text": "وكفايه أوي أنك ضامنه  .. و  و قت ما تحتاجه هتلاقيه", "red": false },
-            { "text": "...............", "red": true },
-            { "text": "و يا صاحبي أنا و أنت غير الباقيين", "red": true },
-            { "text": "أنا و أنت  مبنبعش الشاريين", "red": true },
-            { "text": "كلمتنا دي سيف فيها مش راجعين", "red": true },
-            { "text": "ربنا يحمينا من العين", "red": true },
-            { "text": "", "red": false },
-            { "text": "و يا صاحبي أنا عنّك مستغناش", "red": true },
-            { "text": "مهما الحظ علي بابنا مجاش", "red": true },
-            { "text": "بنعيش وبندّي الدنيا طناش", "red": true },
-            { "text": "أصل الدنيا متسواش", "red": true },
-            { "text": "...............", "red": true },
-            { "text": "أيد وحدها متسقفش .. دي حقيقيه و كلنا عارفين", "red": false },
-            { "text": "", "red": false },
-            { "text": "و أنا أيدي ف أيدك مبخفش .. لو وسط النار ماشيين", "red": false },
-            { "text": "", "red": false },
-            { "text": "واللي مبيجيش بالقفش .. معانا بيجي بكلمتين", "red": false },
-            { "text": "", "red": false },
-            { "text": "فعلاّ ملناش غير بعض.. دا أحنا عشره من سنيين", "red": false }
+      {
+        "text": "يا بخته اللي يلاقي صاحب .. يخلص له و يدي له عينيه",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و يا خيبته بقا اللي يفرط .. في اللي شاريه  و باقي عليه",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "صاحب صاحبك علي عيبه  .. و أوعي تسيبه  لو عمل أيه",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وكفايه أوي أنك ضامنه  .. و  و قت ما تحتاجه هتلاقيه",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "و يا صاحبي أنا و أنت غير الباقيين",
+        "red": true
+      },
+      {
+        "text": "أنا و أنت  مبنبعش الشاريين",
+        "red": true
+      },
+      {
+        "text": "كلمتنا دي سيف فيها مش راجعين",
+        "red": true
+      },
+      {
+        "text": "ربنا يحمينا من العين",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و يا صاحبي أنا عنّك مستغناش",
+        "red": true
+      },
+      {
+        "text": "مهما الحظ علي بابنا مجاش",
+        "red": true
+      },
+      {
+        "text": "بنعيش وبندّي الدنيا طناش",
+        "red": true
+      },
+      {
+        "text": "أصل الدنيا متسواش",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "أيد وحدها متسقفش .. دي حقيقيه و كلنا عارفين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و أنا أيدي ف أيدك مبخفش .. لو وسط النار ماشيين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "واللي مبيجيش بالقفش .. معانا بيجي بكلمتين",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "فعلاّ ملناش غير بعض.. دا أحنا عِشره من سنيين",
+        "red": false
+      }
     ]
-},
+  },
   {
     "id": 116,
     "title": "في عين الناس",
     "type": "دراما",
     "lyrics": [
-            { "text": "انا حد بسيط .. بيحلم بحياه", "red": false },
-            { "text": "لا بيملك سيط .. ولابيملك جاه", "red": false },
-            { "text": "", "red": false },
-            { "text": "لو همه يزيد.. بيقول هنساه", "red": false },
-            { "text": "رغم أنه حويط .. دنياتُه ظلماه", "red": false },
-            { "text": "", "red": false },
-            { "text": "مش حظه سعيد..  مش لعبه معاه", "red": false },
-            { "text": "وملوش حبيب .. علشان يهواه", "red": false },
-            { "text": "...............", "red": true },
-            { "text": "ولكنه صابر علي حاله و بيستنى", "red": true },
-            { "text": "يمكن يجي لحظه في حياته و يتهنى", "red": true },
-            { "text": "ويعيشها  مرّه زي ما كان بيتمنى", "red": true },
-            { "text": "ويعرف أن وجوده في الدنيا ليه معنى", "red": true },
-            { "text": "...............", "red": true },
-            { "text": "بيشوف بعنيه .. كل الالوان", "red": false },
-            { "text": "وفي عين الناس .. بيكون بهتان", "red": false },
-            { "text": "", "red": false },
-            { "text": "ميبنش عليه .. لو كان زعلان", "red": false },
-            { "text": "ومفيش ف أيديه غير الكتمان", "red": false },
-            { "text": "", "red": false },
-            { "text": "ولا في حواليه.. غير بس حيطان", "red": false },
-            { "text": "أملُه بيحيه .. وطموحه يبان", "red": false },
-            { "text": "...............", "red": true },
-            { "text": "وأهو برضه  صابر علي حاله و بيستنى", "red": true },
-            { "text": "يمكن يجي لحظه في حياته و يتهنى", "red": true },
-            { "text": "ويعيشها  مرّه زي ما كان بيتمنى", "red": true },
-            { "text": "ويعرف أن وجوده في الدنيا ليه معنى", "red": true }
+      {
+        "text": "انا حد بسيط .. بيحلم بحياه",
+        "red": false
+      },
+      {
+        "text": "لا بيملك سيط .. ولابيملك جاه",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "لو همه يزيد.. بيقول هنساه",
+        "red": false
+      },
+      {
+        "text": "رغم أنه حويط .. دنيِاتُه ظلماه",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "مش حظه سعيد..  مش لَعبَه معاه",
+        "red": false
+      },
+      {
+        "text": "وملوش حبيب .. علشان يهواه",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "ولكنه صابر علي حاله و بيستنى",
+        "red": true
+      },
+      {
+        "text": "يمكن يجي لحظه في حياته و يتهنى",
+        "red": true
+      },
+      {
+        "text": "ويعيشها  مرّه زي ما كان بيتمنى",
+        "red": true
+      },
+      {
+        "text": "ويعرف أن وجوده في الدنيا ليه معنى",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "بيشوف بعنيه .. كل الالوان",
+        "red": false
+      },
+      {
+        "text": "وفي عين الناس .. بيكون بَهتان",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ميبنش عليه .. لو كان زعلان",
+        "red": false
+      },
+      {
+        "text": "ومفيش ف أيديه غير الكتمان",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ولا في حواليه.. غير بس حيطان",
+        "red": false
+      },
+      {
+        "text": "أملُه بيحيه .. وطموحه يبان",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "وأهو برضه  صابر علي حاله و بيستنى",
+        "red": true
+      },
+      {
+        "text": "يمكن يجي لحظه في حياته و يتهنى",
+        "red": true
+      },
+      {
+        "text": "ويعيشها  مرّه زي ما كان بيتمنى",
+        "red": true
+      },
+      {
+        "text": "ويعرف أن وجوده في الدنيا ليه معنى",
+        "red": true
+      }
     ]
-},
+  },
   {
     "id": 117,
     "title": "قلبي عليه رماني",
     "type": "رومانسي & مقسوم",
     "lyrics": [
-            { "text": "اااه ياني من حُبّه اه ياني", "red": false },
-            { "text": "بعيونه  جبني و ودّاني", "red": false },
-            { "text": "", "red": false },
-            { "text": "نسّاني الماضي ف ثواني", "red": false },
-            { "text": "ورماني قلبي عليه رماني", "red": false },
-            { "text": "", "red": false },
-            { "text": "خلاني أعشق من تاني", "red": false },
-            { "text": "بقا شاغل فكري و وجداني", "red": false },
-            { "text": "...............", "red": true },
-            { "text": "دا حبيبي دا .. هعيش معاه في هنا", "red": true },
-            { "text": "ملوش بديل لا .. ولا هيكون ليه", "red": true },
-            { "text": "", "red": false },
-            { "text": "دا ليل و نهار .. و بسهر و بحتار", "red": true },
-            { "text": "هل قلبُه  دا إختار .. يقع ف حُبي", "red": true },
-            { "text": "", "red": false },
-            { "text": "يا فرّحه هلّي .. علينا طُلّي", "red": true },
-            { "text": "الغالي جنبي .. مش هيسيبني", "red": true },
-            { "text": "...............", "red": true },
-            { "text": "بيقولوا للشوق علامات", "red": false },
-            { "text": "أولها من العين نظرات", "red": false },
-            { "text": "", "red": false },
-            { "text": "وثانيا سرحان لساعات", "red": false },
-            { "text": "وأخرها مقابله وخروجات", "red": false },
-            { "text": "", "red": false },
-            { "text": "و دا كله أحنا عملنا", "red": false },
-            { "text": "وأكيد عُمري ما هنساه", "red": false },
-            { "text": "", "red": false },
-            { "text": "حققت أحلامي معاه", "red": false },
-            { "text": "وبقيت بستنى لُقاه", "red": false },
-            { "text": "...............", "red": false },
-            { "text": "يا ليالي حبيبي قالها لي", "red": false },
-            { "text": "اه قال أنه بيهواني", "red": false },
-            { "text": "", "red": false },
-            { "text": "ومازال مفتون بجمالي", "red": false },
-            { "text": "مبقاش قادر ينساني", "red": false },
-            { "text": "", "red": false },
-            { "text": "والبال في وجودي بقا هادي", "red": false },
-            { "text": "وخلاص هيعيش علشاني", "red": false }
+      {
+        "text": "اااه ياني من حُبّه اه ياني",
+        "red": false
+      },
+      {
+        "text": "بعيونه  جبني و ودّاني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "نسّاني الماضي ف ثواني",
+        "red": false
+      },
+      {
+        "text": "ورماني قلبي عليه رماني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "خلاني أعشق من تاني",
+        "red": false
+      },
+      {
+        "text": "بقا شاغل فكري و وجداني",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "دا حبيبي دا .. هعيش معاه في هَنا",
+        "red": true
+      },
+      {
+        "text": "ملوش بديل لا .. ولا هيكون لِيِه",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "دا ليل و نهار .. و بسهر و بحتار",
+        "red": true
+      },
+      {
+        "text": "هل قلبُه  دا إختار .. يقع ف حُبي",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "يا فرّحه هِلّي .. علينا طُلّي",
+        "red": true
+      },
+      {
+        "text": "الغالي جنبي .. مش هيسيبني",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "بيقولوا للشوق علامات",
+        "red": false
+      },
+      {
+        "text": "أولها من العين نظرات",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وثانيا سرحان لساعات",
+        "red": false
+      },
+      {
+        "text": "وأخرها مقابله وخروجات",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و دا كله أحنا عملنا",
+        "red": false
+      },
+      {
+        "text": "وأكيد عُمري ما هنساه",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "حققت أحلامي معاه",
+        "red": false
+      },
+      {
+        "text": "وبقيت بستنى لُقاه",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "يا ليالي حبيبي قالها لي",
+        "red": false
+      },
+      {
+        "text": "اه قال أنه بيهواني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ومازال مفتون بجمالي",
+        "red": false
+      },
+      {
+        "text": "مبقاش قادر ينساني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "والبال في وجودي بقا هادي",
+        "red": false
+      },
+      {
+        "text": "وخلاص هيعيش علشاني",
+        "red": false
+      }
     ]
-},
+  },
   {
     "id": 118,
     "title": "لحظة سزاجه",
     "type": "دراما",
     "lyrics": [
-     
-        { "text": " المطربة 👩‍🎤", "red": false },
-        { "text": "بلاش تلومني علي الفراق ..عشان دا كان بإختيارنا", "red": false },
-        { "text": "", "red": false },
-        { "text": "و قلنا يومها كل شيء .. قسمه ونصيب و دا  قدرنا", "red": false },
-        { "text": "", "red": false },
-        { "text": "و أظن برضه أنت عارف .. لحالنا  دا مين  وصّلنا", "red": false },
-        { "text": "...............", "red": false },
-        { "text": "المطرب 👨‍💼", "red": false },
-        { "text": "أنا مش بلومها أنا بس بسأل.. هل في فرصه للرجوع", "red": false },
-        { "text": "", "red": false },
-        { "text": "راح فين كلامها مش قالت أن..البُعد شيء ممنوع", "red": false },
-        { "text": "", "red": false },
-        { "text": "مش ناسي يومها لمّا عيونها.. نزّلت كتير دموع", "red": false },
-        { "text": "...............", "red": true },
-        { "text": "وأهو مطلعناش بحاجه", "red": true },
-        { "text": "وقلنا البُعد فيه راحتنا ومرتحناش", "red": true },
-        { "text": "", "red": false },
-        { "text": "كانت لحظة سزاجه", "red": true },
-        { "text": "محدش فينا حب جديد مقدرناش", "red": true },
-        { "text": "", "red": false },
-        { "text": "قالو في العجله الندامه", "red": true },
-        { "text": "وأحنا ندمنا وجبنا أخرنا ومبننساش", "red": true },
-        { "text": "", "red": false },
-        { "text": "في بنا عشره ياما", "red": true },
-        { "text": "يادوب تيجي ذكرى نلاقي الشوق مبيسبناش", "red": true },
-        { "text": "...............", "red": true },
-        { "text": "المطربة 👩‍🎤", "red": false },
-        { "text": "غلطنا لمّا سبنا روحنا.. للسنيين تفوت علينا", "red": false },
-        { "text": "", "red": false },
-        { "text": "كدبنا فعلا لمّا قولنا .. أن الحياه هتنسينا", "red": false },
-        { "text": "", "red": false },
-        { "text": "حاولنا نخفي  ضعفنا ..  لكنه برضه بان في عينينا", "red": false },
-        { "text": "...............", "red": false },
-        { "text": "المطرب 👨‍💼", "red": false },
-        { "text": "كان في مابينا أيام جميله.. بقت خلاص ماض فات", "red": false },
-        { "text": "", "red": false },
-        { "text": "قلنا هنبني بيت وعائله.. وهيبقا فيه زكريات", "red": false },
-        { "text": "", "red": false },
-        { "text": "كان بينا برضه حاجات كتيره..مش سهل أنها تتعاد", "red": false },
-        { "text": "", "red": false }
+      {
+        "text": " المطربة 👩‍🎤",
+        "red": false
+      },
+      {
+        "text": "بلاش تلومني علي الفراق ..عشان دا كان بإختيارنا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و قلنا يومها كل شيء .. قسمه ونصيب و دا  قدرنا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و أظن برضه أنت عارف .. لحالنا  دا مين  وصّلنا",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "المطرب 👨‍💼",
+        "red": false
+      },
+      {
+        "text": "أنا مش بلومها أنا بس بسأل.. هل في فرصه للرجوع",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "راح فين كلامها مش قالت أن..البُعد شيء ممنوع",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "مش ناسي يومها لمّا عيونها.. نَزّلت كتير دموع",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "وأهو مطلعناش بحاجه",
+        "red": true
+      },
+      {
+        "text": "وقلنا البُعد فيه راحتنا ومرتحناش",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "كانت لحظة سزاجه",
+        "red": true
+      },
+      {
+        "text": "محدش فينا حب جديد مقدرناش",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "قالو في العجله الندامه",
+        "red": true
+      },
+      {
+        "text": "وأحنا ندمنا وجبنا أخرنا ومبننساش",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "في بنا عِشره ياما",
+        "red": true
+      },
+      {
+        "text": "يادوب تيجي ذكرى نلاقي الشوق مبيسبناش",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "المطربة 👩‍🎤",
+        "red": false
+      },
+      {
+        "text": "غلطنا لمّا سبنا روحنا.. للسنيين تفوت علينا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "كدبنا فعلاً لمّا قولنا .. أن الحياه هتنسينا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "حاولنا نخفي  ضعفنا ..  لكنه برضه بان في عينينا",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": false
+      },
+      {
+        "text": "المطرب 👨‍💼",
+        "red": false
+      },
+      {
+        "text": "كان في مابينا أيام جميله.. بقت خلاص ماض فات",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "قلنا هنبني بيت وعائله.. وهيبقا فيه زكريات",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "كان بينا برضه حاجات كتيره..مش سهل أنها تتعاد",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      }
     ]
-},
+  },
   {
     "id": 119,
     "title": "حلقة وصل",
     "type": "دراما",
     "lyrics": [
-          { "text": "هوا أنتي فاكره إني هقبل .. أبقا حلقت وصل بينكم", "red": false },
-          { "text": "", "red": false },
-          { "text": "وهعيش كمان دور المغفّل .. كل لمّا تجيبي سيرته", "red": false },
-          { "text": "", "red": false },
-          { "text": "أنا مش هققل لو ثواني .. من كرامتي  عشان خاطركم", "red": false },
-          { "text": "", "red": false },
-          { "text": "ويكون ف علمك لا هوا  شبهك .. ولا أنتي حتى  هتبقى  شبهه", "red": false },
-          { "text": "...............", "red": true },
-          { "text": "و أظن أنا حر ، و مش مضطر  ، أقبل باللي أنا فيه", "red": true },
-          { "text": "", "red": false },
-          { "text": "أنا قلبي إتضر ،  وشاف المُر  ، من اللي أنتي عملتيه", "red": true },
-          { "text": "", "red": false },
-          { "text": "هتعب روحي ليه؟  .. أنا هكسب أيه؟", "red": true },
-          { "text": "", "red": false },
-          { "text": "أنا مش إنسان  من خيط علشان بأديكي تحركيه", "red": true },
-          { "text": "...............", "red": true },
-          { "text": "من غير مبالغه  اللي أنا حاسه .. مستحيل تحسي بيه", "red": false },
-          { "text": "", "red": false },
-          { "text": "كان قلبي حابك وأنتي برضه .. اللي  أصريتي  تكسريه", "red": false },
-          { "text": "", "red": false },
-          { "text": "مبقتش فارقه معايا تشتري خاطري .. أو حتى  تبيعيه", "red": false },
-          { "text": "", "red": false },
-          { "text": "ضاعت  غلاوتك من عمايلك .. وحتى أسمك بقيت ناسيه", "red": false }
+      {
+        "text": "هوا أنتي فاكره إني هقبل .. أبقا حلقت وصل بينكم",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وهعيش كمان دور المغفّل .. كل لمّا تجيبي سيرته",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أنا مش هققل لو ثواني .. من كرامتي  عشان خاطركم",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ويكون ف علمك لا هوا  شبهك .. ولا أنتي حتى  هتبقى  شبهه",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "و أظن أنا حر ، و مش مضطر  ، أقبل باللي أنا فيه",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أنا قلبي إتضر ،  وشاف المُر  ، من اللي أنتي عملتيه",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "هتعب روحي ليه؟  .. أنا هكسب أيه؟",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أنا مش إنسان  من خيط علشان بأديكي تحركيه",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "من غير مبالغه  اللي أنا حاسه .. مستحيل تحسي بيه",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "كان قلبي حابك وأنتي برضه .. اللي  أصريتي  تكسريه",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "مبقتش فارقه معايا تشتري خاطري .. أو حتى  تبيعيه",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ضاعت  غلاوتك من عمايلك .. وحتى أسمك بقيت ناسيه",
+        "red": false
+      }
     ]
-},
+  },
   {
     "id": 120,
     "title": "يستاهل سقفه",
     "type": "دراما",
     "lyrics": [
-          { "text": "هيجيله يوم ويفتكرني... وساعتها أنا هكون نسيته", "red": false },
-          { "text": "", "red": false },
-          { "text": "ولمّا هيحس بقيمتي... هيقاسي نفس اللي قاسيته", "red": false },
-          { "text": "", "red": false },
-          { "text": "وهيعرف أنه خلاص خسرني..و أن اللي بنا أنا لغيته", "red": false },
-          { "text": "", "red": false },
-          { "text": "من بعد م تعبني وكسرني.. من حياتي أنا رميته", "red": false },
-          { "text": "...............", "red": true },
-          { "text": "و بكفايه", "red": true },
-          { "text": "عملت الخير لناس.. و دلوقتي بشوف قسوتها", "red": true },
-          { "text": "", "red": false },
-          { "text": "دي حكاية", "red": true },
-          { "text": "ممله أوي وأنا خلاص... عارف نهايتها", "red": true },
-          { "text": "", "red": false },
-          { "text": "وكالعاده", "red": true },
-          { "text": "يطلّع عينّه و كمان... يقوله غلطتنا", "red": true },
-          { "text": "", "red": false },
-          { "text": "يا خسارة", "red": true },
-          { "text": "سمعنا وعود كتير... ولا حاجة وفيتها", "red": true },
-          { "text": "...............", "red": true },
-          { "text": "أن كان على قلبي اللي حابه .. مسيره بكره يحب غيره", "red": false },
-          { "text": "", "red": false },
-          { "text": "مش هوا اول حد أفارقه..دا بجد كتر ألف خيره", "red": false },
-          { "text": "", "red": false },
-          { "text": "يستاهل سقفه ع اللي عمله .. خليه بقا يقابل مصيره", "red": false },
-          { "text": "", "red": false },
-          { "text": "واخد مقلب كبير في نفسه .. فاكرني لعبه تحت إيدُه", "red": false }
+      {
+        "text": "هيجيله يوم ويفتكرني... وساعتها أنا هكون نسيته",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ولمّا هيحس بقيمتي... هيقاسي نفس اللي قاسيته",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وهيعرف أنه خلاص خسرني..و أن اللي بنا أنا لغيته",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "من بعد م تعبني وكسرني.. من حياتي أنا رميته",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "و بكفايه",
+        "red": true
+      },
+      {
+        "text": "عملت الخير لناس.. و دلوقتي بشوف قسوتها",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "دي حكاية",
+        "red": true
+      },
+      {
+        "text": "ممله أوي وأنا خلاص... عارف نهايتها",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وكالعاده",
+        "red": true
+      },
+      {
+        "text": "يطلّع عينّه و كمان... يقوله غلطتنا",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "يا خسارة",
+        "red": true
+      },
+      {
+        "text": "سمعنا وعود كتير... ولا حاجة وفيتها",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "أن كان على قلبي اللي حابه .. مسيره بكره يحب غيره",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "مش هوا اول حد أفارقه..دا بجد كتر ألف خيره",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "يستاهل سقفه ع اللي عمله .. خليه بقا يقابل مصيره",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "واخد مقلب كبير في نفسه .. فاكرني لعبه تحت إيدُه",
+        "red": false
+      }
     ]
-},
+  },
   {
     "id": 121,
     "title": "شايل أسمي",
     "type": "اجتماعي وعائلي",
     "lyrics": [
-        { "text": "أبني  و حبيبي الغالي عندي و حتّه منّي", "red": false },
-        { "text": "", "red": false },
-        { "text": "قلبي اللي أتحرك من جسمي وبقا ع الارض بيمشي", "red": false },
-        { "text": "", "red": false },
-        { "text": "حُبي ليك يا نور عيني ملوش حل ميتوصفشي", "red": false },
-        { "text": "", "red": false },
-        { "text": "ربي ليّه يخليك  من العين يحميك منك متحرمشي", "red": false },
-        { "text": "...............", "red": true },
-        { "text": "أنت طالع لي بالملّي  يا أجمل حد شايل أسمي", "red": true },
-        { "text": "", "red": false },
-        { "text": "كل الخير بتمنّي لك  بكره تكون أحسن منّي", "red": true },
-        { "text": "", "red": false },
-        { "text": "", "red": false },
-        { "text": "أنت اللي عليه هتعكّز لمّا أكبر و أعجّز", "red": true },
-        { "text": "", "red": false },
-        { "text": "وأتصور مع أولادك و في قلبي الصوره تتبروز", "red": true },
-        { "text": "...............", "red": true },
-        { "text": "شايفك كل يوم قدامي وأنت بتكبر", "red": false },
-        { "text": "", "red": false },
-        { "text": "جنبك مش هسيبك و أي صعب عليه هتقدر", "red": false },
-        { "text": "", "red": false },
-        { "text": "عارفك مش بتستسلم لحاجه في بطل جواك بيظهر", "red": false },
-        { "text": "", "red": false },
-        { "text": "قلبك عشان أبيض الهموم ف عينيك هتصغر", "red": false }
+      {
+        "text": "أبني  و حبيبي الغالي عندي و حتّه منّي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "قلبي اللي أتحرك من جسمي وبقا ع الارض بيمشي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "حُبي ليك يا نور عيني ملوش حل ميتوصفشي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ربي ليّه يخليك  من العين يحميك منك متحرمشي",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "أنت طالع لي بالملّي  يا أجمل حد شايل أسمي",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "كل الخير بتمنّي لك  بكره تكون أحسن منّي",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أنت اللي عليه هتعكّز لمّا أكبر و أعجّز",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأتصور مع أولادك و في قلبي الصوره تتبروز",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "شايفك كل يوم قدامي وأنت بتكبر",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "جنبك مش هسيبك و أي صعب عليه هتقدر",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "عارفك مش بتستسلم لحاجه في بطل جواك بيظهر",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "قلبك عشان أبيض الهموم ف عينيك هتصغر",
+        "red": false
+      }
     ]
-},
+  },
   {
     "id": 122,
     "title": "معاكي مبسوط",
     "type": "رومانسي & مقسوم",
     "lyrics": [
-        { "text": "كتير حبيت .. وياما هويت .. لكن ما لقيت", "red": false },
-        { "text": "", "red": false },
-        { "text": "ولا قابلت ف حلاوتك حد", "red": false },
-        { "text": "", "red": false },
-        { "text": "بجد جميل..  وفيك تفاصيل..  خلتني أميل", "red": false },
-        { "text": "", "red": false },
-        { "text": "وأدوب في عيناك و ليك أتشد", "red": false },
-        { "text": "", "red": false },
-        { "text": "", "red": false },
-        { "text": "حبيبي أنا ليك .. و قلبي شريك .. متبت فيك", "red": false },
-        { "text": "", "red": false },
-        { "text": "وعنك عُمري م أستغني", "red": false },
-        { "text": "", "red": false },
-        { "text": "أمانه عليك.. يا ليل خليك .. دا أنا مستنيك", "red": false },
-        { "text": "", "red": false },
-        { "text": "وطوّل حبّه و علشانا", "red": false },
-        { "text": "...............", "red": true },
-        { "text": "دا أنا جوايا كام كلمه ..وعاوز أقولهم", "red": true },
-        { "text": "", "red": false },
-        { "text": "عيوني من يوم ما شافوه .. ايه اللي جراي لهم", "red": true },
-        { "text": "", "red": false },
-        { "text": "باينه سحرهم .. و خلاني أدوب في غرامه", "red": true },
-        { "text": "", "red": false },
-        { "text": "بقيت ساكن في قلبه خلاص.. ومش هتعتع", "red": true },
-        { "text": "", "red": false },
-        { "text": "دا أنا مصدقت ألاقي فرصة.. عشان أتمتع", "red": true },
-        { "text": "", "red": false },
-        { "text": "وأي بقا يمنع.. طالما خلاص فتح  بابه", "red": true },
-        { "text": "...............", "red": true },
-        { "text": "هداري أنا ليه .. و هخاف من أيه .. مين هيلومني", "red": false },
-        { "text": "", "red": false },
-        { "text": "عشان سلمت لك  نفسي", "red": false },
-        { "text": "", "red": false },
-        { "text": "الهم راميه .. و الحزن ناسيه ..  مش فارق لي", "red": false },
-        { "text": "", "red": false },
-        { "text": "يا حبيبي غير أنك جنبي", "red": false },
-        { "text": "", "red": false },
-        { "text": "أنا بيكي موعود .. وشوقي موجود .. وماله حدود", "red": false },
-        { "text": "", "red": false },
-        { "text": "و مقامك غالي أوي عندي", "red": false },
-        { "text": "", "red": false },
-        { "text": "بعلو الصوت .. بحبك موت.. معاكي مبسوط", "red": false },
-        { "text": "", "red": false },
-        { "text": "و أيامي بتضحك لي", "red": false }
+      {
+        "text": "كتير حبيت .. وياما هويت .. لكن ما لقيت",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ولا قابلت ف حلاوتك حد",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بجد جميل..  وفيك تفاصيل..  خلتني أميل",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأدوب في عيناك و ليك أتشد",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "حبيبي أنا ليك .. و قلبي شريك .. متبت فيك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وعنك عُمري م أستغني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أمانه عليك.. يا ليل خليك .. دا أنا مستنيك",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وطوّل حبّه و علشانا",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "دا أنا جوايا كام كلمه ..وعاوز أقولهم",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "عيوني من يوم ما شافوه .. ايه اللي جراي لهم",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "باينه سحرهم .. و خلاني أدوب في غرامه",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بقيت ساكن في قلبه خلاص.. ومش هتعتع",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "دا أنا مصدقت ألاقي فرصة.. عشان أتمتع",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأي بقا يمنع.. طالما خلاص فتح  بابه",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "هداري أنا ليه .. و هخاف من أيه .. مين هيلومني",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "عشان سلمت لك  نفسي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "الهم راميه .. و الحزن ناسيه ..  مش فارق لي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "يا حبيبي غير أنك جنبي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "أنا بيكي موعود .. وشوقي موجود .. وماله حدود",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و مقامك غالي أوي عندي",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بعلو الصوت .. بحبك موت.. معاكي مبسوط",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و أيامي بتضحك لي",
+        "red": false
+      }
     ]
-},
+  },
   {
     "id": 123,
     "title": "عن حالي",
     "type": "روك",
     "lyrics": [
-        { "text": "أنا ونفسي أعزّ صحاب وثالثنا نجوم الليل", "red": false },
-        { "text": "", "red": false },
-        { "text": "مفيش بنا زعل و عتاب ولو في هيبقا قليل", "red": false },
-        { "text": "", "red": false },
-        { "text": "مبنخبيش  أي أسرار ولا في حاجه نداريها", "red": false },
-        { "text": "", "red": false },
-        { "text": "بتجمعنا ليالي كُتار بنحكي فيها حكاوينا", "red": false },
-        { "text": "...............", "red": true },
-        { "text": "أنا بحكي عن حالي مابيني وبين حبيبي الغالي", "red": true },
-        { "text": "", "red": false },
-        { "text": "يوم عن يوم يزيد شوقي ليه لكنه لسه مش داري", "red": true },
-        { "text": "", "red": false },
-        { "text": "وانا معرفش فين أراضيه و لا إمتي هيجي تاني", "red": true },
-        { "text": "", "red": false },
-        { "text": "و مين هيدلني عليه أو حتى يوصّله سلامي", "red": true },
-        { "text": "...............", "red": true },
-        { "text": "وعن نفسي جواها كلام بتستني تقولهوله", "red": false },
-        { "text": "", "red": false },
-        { "text": "كلام يعني عن الايام اللي علينا عدو من دونه", "red": false },
-        { "text": "", "red": false },
-        { "text": "ونجوم الليل بتسألني هوا أساسا سابك ليه", "red": false },
-        { "text": "", "red": false },
-        { "text": "سؤالها و جعني وكان ردي بأنه شيء مش بأديه", "red": false }
+      {
+        "text": "أنا ونَفسي أعزّ صحاب وثالثنا نجوم الليل",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "مفيش بنا زعل و عتاب ولو في هيبقا قليل",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "مبنخبيش  أي أسرار ولا في حاجه نداريها",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بتجمعنا ليالي كُتار بنحكي فيها حكاوينا",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "أنا بحكي عن حالي مابيني وبين حبيبي الغالي",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "يوم عن يوم يزيد شوقي ليه لكنه لسه مش داري",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وانا معرفش فين أراضيه و لا إمتي هيجي تاني",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "و مين هيدلني عليه أو حتى يوصّله سلامي",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "وعن نفسي جواها كلام بتستني تقولهوله",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "كلام يعني عن الايام اللي علينا عدو من دونه",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "ونجوم الليل بتسألني هوا أساساً سابك ليه",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "سؤالها و جعني وكان ردي بأنه شيء مش بأديه",
+        "red": false
+      }
     ]
-},
+  },
   {
     "id": 124,
     "title": "مين في جمالنا",
     "type": "سلو ",
     "lyrics": [
-        { "text": "يا حبيبي الليله ليلة العُمر.. بالنسبه لنا", "red": false },
-        { "text": "", "red": false },
-        { "text": "خلينا ننبسط يلا .. ليه نشغل بالنا", "red": false },
-        { "text": "", "red": false },
-        { "text": "وأخيراً عملنا كل اللي ..ف خيالنا", "red": false },
-        { "text": "", "red": false },
-        { "text": "بقينا لبعض أنا و أنت ومين ..ف جمالنا", "red": false },
-        { "text": "...............", "red": true },
-        { "text": "أنا ليك .. و ملك إيديك .. و عيني عليك  .. وقلبي دا بيتك", "red": true },
-        { "text": "", "red": false },
-        { "text": "دا ليلي  بيطول .. معاك على طول .. وبفضل أقول .. أنا حبيتك", "red": true },
-        { "text": "", "red": false },
-        { "text": "لو عُمري يفوت .. جنبك موجود .. و شئ مرفوض .. أعيش من غيرك", "red": true },
-        { "text": "...............", "red": true },
-        { "text": "صبرنا كتير عشان يبقا في بيت يجمعنا", "red": false },
-        { "text": "", "red": false },
-        { "text": "وهنقول أيه بجد الفرحه مش هتسعّنا", "red": false },
-        { "text": "", "red": false },
-        { "text": "بحبك أيوه أنا بقولها وإيه هيمنعنا", "red": false },
-        { "text": "", "red": false },
-        { "text": "من يوم ما دخلت في حياتي بقى ليها معنى", "red": false }
+      {
+        "text": "يا حبيبي الليله ليلة العُمر.. بالنسبه لنا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "خلينا ننبسط يلا .. ليه نشغل بالنا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وأخيراً عملنا كل اللي ..ف خيالنا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بقينا لبعض أنا و أنت ومين ..ف جمالنا",
+        "red": false
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "أنا ليك .. و ملك إيديك .. و عيني عليك  .. وقلبي دا بيتك",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "دا ليلي  بيطول .. معاك على طول .. وبفضل أقول .. أنا حبيتك",
+        "red": true
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "لو عُمري يفوت .. جنبك موجود .. و شئ مرفوض .. أعيش من غيرك",
+        "red": true
+      },
+      {
+        "text": "...............",
+        "red": true
+      },
+      {
+        "text": "صبرنا كتير عشان يبقا في بيت يجمعنا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "وهنقول أيه بجد الفرحه مش هتسعّنا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "بحبك أيوه أنا بقولها وإيه هيمنعنا",
+        "red": false
+      },
+      {
+        "text": "",
+        "red": false
+      },
+      {
+        "text": "من يوم ما دخلت في حياتي بقى ليها معنى",
+        "red": false
+      }
     ]
-},
-  {
-    "id": 125,
-    "title": "بابنا  مخلّع",
-    "type": "مقسوم",
-    "lyrics": [
-        { "text": "يا زمن حملك علينا .. أحنا بجد أستوينا", "red": false },
-        { "text": "", "red": false },
-        { "text": "في طوب الأرض أشترينا.. وأخرتها باعو فينا", "red": false },
-        { "text": "", "red": false },
-        { "text": "ليه يا دنيا بتلاعبينا .. ويا حيطه أمتي تدارينا", "red": false },
-        { "text": "", "red": false },
-        { "text": "أدينالهم عينيناه  .. فاجئونا و عضّو إيدينا", "red": false },
-        { "text": "...............", "red": true },
-        { "text": "يا زمن هوا مفيش دم", "red": true },
-        { "text": "لييه واخدنا فحت وردم", "red": true },
-        { "text": "وطموحنا جائله قرار هدم", "red": true },
-        { "text": "دا أحنا ولله الحمد", "red": true },
-        { "text": "خشابه وبابنا  مخلع", "red": true },
-        { "text": "", "red": false },
-        { "text": "", "red": false },
-        { "text": "خبّط علي بابنا ياحظ", "red": true },
-        { "text": "ورينا شويت عّز", "red": true },
-        { "text": "و ياريت تفارقنا يا نحس", "red": true },
-        { "text": "جبت أنا أخري من الياس", "red": true },
-        { "text": "أنا نفسي شويه أتدلع", "red": true },
-        { "text": "...............", "red": true },
-        { "text": "اللي كان عامل حبيبنا .. فجأه قرر يسيبنا", "red": false },
-        { "text": "", "red": false },
-        { "text": "بعد م فضا جبنا .. بيقول الفقر عيبنا", "red": false },
-        { "text": "", "red": false },
-        { "text": "اللي ياما فيه فرّحنا .. أكتر حد جرحنا", "red": false },
-        { "text": "", "red": false },
-        { "text": "ولا يوم سيبناه في مِحنه .. و أهو في الاخر سوّحنا", "red": false }
-    ]
-}
-  
-    
-
-  
+  }
 ];

@@ -1034,6 +1034,33 @@ const LyricsPage = () => {
           )}
         </div>
       </div>
+
+      {/* Fullscreen Lyrics Modal */}
+      {fullscreenSong && (
+        <div
+          className="lyrics-modal-overlay"
+          onClick={() => setFullscreenSong(null)}
+        >
+          <div className="lyrics-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="lyrics-modal-header">
+              <button
+                type="button"
+                className="lyrics-modal-close"
+                onClick={() => setFullscreenSong(null)}
+                title={t('Close', 'إغلاق')}
+                aria-label={t('Close', 'إغلاق')}
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <h2 className="lyrics-modal-title">{translateTitle(fullscreenSong.title, lang)}</h2>
+              <span className="label-gold-center">{t('Song Lyrics', 'كلمات الأغنية')}</span>
+            </div>
+            <div className="lyrics-modal-body">
+              {fullscreenSong.lyrics.map((l: any, i: number) => renderLyricLine(l, i))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

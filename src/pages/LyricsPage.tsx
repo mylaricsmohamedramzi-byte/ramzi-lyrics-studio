@@ -4,7 +4,7 @@ import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import { PenLine, Edit, Trash2, Eye } from 'lucide-react';
+import { PenLine, Edit, Trash2, Eye, Maximize2, X } from 'lucide-react';
 import { allSongs } from '@/data/lyricsSongs';
 import nameArabic from '@/assets/name-arabic.png';
 import nameEnglish from '@/assets/name-english.png';
@@ -100,6 +100,17 @@ const LyricsPage = () => {
   }, [location.search]);
   const [search, setSearch] = useState('');
   const [activeCat, setActiveCat] = useState('all');
+
+  // Fullscreen lyrics modal
+  const [fullscreenSong, setFullscreenSong] = useState<any | null>(null);
+  useEffect(() => {
+    if (!fullscreenSong) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setFullscreenSong(null);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [fullscreenSong]);
 
   // Comments and Ratings State
   const [comments, setComments] = useState<Record<number, Comment[]>>(() => {

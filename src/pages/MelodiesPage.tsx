@@ -1241,32 +1241,32 @@ const MelodiesPage = () => {
           </div>
         </div>
       ))}
-    </div>
 
-    {fullscreenSong && (
-      <div className="lyrics-modal-overlay" onClick={() => setFullscreenSong(null)}>
-        <div className="lyrics-modal" onClick={(e) => e.stopPropagation()}>
-          <div className="lyrics-modal-header">
-            <button
-              type="button"
-              className="lyrics-modal-close"
-              onClick={() => setFullscreenSong(null)}
-              title={lang === 'ar' ? 'إغلاق' : 'Close'}
-              aria-label={lang === 'ar' ? 'إغلاق' : 'Close'}
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <h2 className="lyrics-modal-title">{translateTitle(fullscreenSong.title, lang)}</h2>
-            <span className="label-gold">{lang === 'ar' ? 'كلمات الأغنية' : 'Song Lyrics'}</span>
-          </div>
-          <div className="lyrics-modal-body">
-            {fullscreenSong.lyrics.map((l: any, i: number) => (
-              <div key={i} className={`line ${l.red ? 'red' : ''}`}>{l.text}</div>
-            ))}
+      {fullscreenSong && (
+        <div className="lyrics-modal-overlay" onClick={() => setFullscreenSong(null)}>
+          <div className="lyrics-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="lyrics-modal-header">
+              <button
+                type="button"
+                className="lyrics-modal-close"
+                onClick={() => setFullscreenSong(null)}
+                title={lang === 'ar' ? 'إغلاق' : 'Close'}
+                aria-label={lang === 'ar' ? 'إغلاق' : 'Close'}
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <h2 className="lyrics-modal-title">{translateTitle(fullscreenSong.title, lang)}</h2>
+              <span className="label-gold">{lang === 'ar' ? 'كلمات الأغنية' : 'Song Lyrics'}</span>
+            </div>
+            <div className="lyrics-modal-body">
+              {fullscreenSong.lyrics.map((l: any, i: number) => (
+                <div key={i} className={`line ${l.red ? 'red' : ''}`}>{l.text}</div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    )}
+      )}
+    </div>
   );
 };
 

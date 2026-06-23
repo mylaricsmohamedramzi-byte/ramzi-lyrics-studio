@@ -837,6 +837,15 @@ const LyricsPage = () => {
                 <div className="card-inner">
                   {/* TOP HALF — Lyrics Area */}
                   <div className="lyrics-top-half">
+                    <button
+                      type="button"
+                      className="expand-lyrics-btn"
+                      onClick={() => setFullscreenSong(song)}
+                      title={t('Open full lyrics', 'عرض الكلمات كاملة')}
+                      aria-label={t('Open full lyrics', 'عرض الكلمات كاملة')}
+                    >
+                      <Maximize2 className="w-5 h-5" />
+                    </button>
                     <div className="header-row">
                       <span className="category-badge">{getCategoryLabel(song.type)}</span>
                       <h2 className="song-title-red">{translateTitle(song.title, lang)}</h2>

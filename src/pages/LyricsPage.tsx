@@ -4,7 +4,7 @@ import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import { PenLine, Edit, Trash2, Eye } from 'lucide-react';
+import { PenLine, Edit, Trash2, Eye, Maximize2, X } from 'lucide-react';
 import { allSongs } from '@/data/lyricsSongs';
 import nameArabic from '@/assets/name-arabic.png';
 import nameEnglish from '@/assets/name-english.png';
@@ -100,6 +100,17 @@ const LyricsPage = () => {
   }, [location.search]);
   const [search, setSearch] = useState('');
   const [activeCat, setActiveCat] = useState('all');
+
+  // Fullscreen lyrics modal
+  const [fullscreenSong, setFullscreenSong] = useState<any | null>(null);
+  useEffect(() => {
+    if (!fullscreenSong) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setFullscreenSong(null);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [fullscreenSong]);
 
   // Comments and Ratings State
   const [comments, setComments] = useState<Record<number, Comment[]>>(() => {
@@ -363,10 +374,107 @@ const LyricsPage = () => {
 
         /* ─── النصف العلوي ─── */
         .lyrics-top-half {
+          position: relative;
           padding: 30px 40px;
           background: rgba(20, 5, 8, 0.82);
           border-bottom: 1px solid rgba(201, 168, 76, 0.2);
         }
+
+        .expand-lyrics-btn {
+          position: absolute;
+          top: 18px;
+          right: 22px;
+          width: 38px;
+          height: 38px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(201, 168, 76, 0.12);
+          border: 1px solid rgba(201, 168, 76, 0.35);
+          color: #c9a84c;
+          border-radius: 10px;
+          cursor: pointer;
+          z-index: 6;
+          transition: all 0.2s;
+        }
+        .expand-lyrics-btn:hover {
+          background: rgba(201, 168, 76, 0.28);
+          transform: scale(1.06);
+        }
+
+        /* ─── نافذة الكلمات الكاملة ─── */
+        .lyrics-modal-overlay {
+          position: fixed;
+          inset: 0;
+          z-index: 200;
+          background: rgba(0, 0, 0, 0.85);
+          backdrop-filter: blur(6px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+          animation: fadeInOverlay 0.2s ease;
+        }
+        @keyframes fadeInOverlay {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .lyrics-modal {
+          position: relative;
+          width: 100%;
+          max-width: 820px;
+          max-height: 90vh;
+          display: flex;
+          flex-direction: column;
+          border: 1px solid var(--primary);
+          border-radius: 30px;
+          background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, var(--leather-black) 100%);
+          box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85);
+          overflow: hidden;
+        }
+        .lyrics-modal-header {
+          position: relative;
+          padding: 26px 30px 16px;
+          text-align: center;
+          border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+          background: rgba(20, 5, 8, 0.82);
+        }
+        .lyrics-modal-title {
+          color: #ff4d4d;
+          font-family: 'Aref Ruqaa Ink', serif;
+          font-size: 2.2rem;
+          margin: 0;
+        }
+        .lyrics-modal-close {
+          position: absolute;
+          top: 18px;
+          left: 22px;
+          width: 38px;
+          height: 38px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(201, 168, 76, 0.12);
+          border: 1px solid rgba(201, 168, 76, 0.35);
+          color: #c9a84c;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .lyrics-modal-close:hover {
+          background: rgba(255, 77, 77, 0.25);
+          border-color: #ff4d4d;
+          color: #ff4d4d;
+        }
+        .lyrics-modal-body {
+          overflow-y: auto;
+          padding: 28px 34px 40px;
+          text-align: center;
+          scrollbar-width: thin;
+          scrollbar-color: #c9a84c transparent;
+        }
+        .lyrics-modal-body::-webkit-scrollbar { width: 6px; }
+        .lyrics-modal-body::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
 
         .header-row {
           position: relative;
@@ -729,6 +837,15 @@ const LyricsPage = () => {
                 <div className="card-inner">
                   {/* TOP HALF — Lyrics Area */}
                   <div className="lyrics-top-half">
+                    <button
+                      type="button"
+                      className="expand-lyrics-btn"
+                      onClick={() => setFullscreenSong(song)}
+                      title={t('Open full lyrics', 'عرض الكلمات كاملة')}
+                      aria-label={t('Open full lyrics', 'عرض الكلمات كاملة')}
+                    >
+                      <Maximize2 className="w-5 h-5" />
+                    </button>
                     <div className="header-row">
                       <span className="category-badge">{getCategoryLabel(song.type)}</span>
                       <h2 className="song-title-red">{translateTitle(song.title, lang)}</h2>
@@ -917,6 +1034,33 @@ const LyricsPage = () => {
           )}
         </div>
       </div>
+
+      {/* Fullscreen Lyrics Modal */}
+      {fullscreenSong && (
+        <div
+          className="lyrics-modal-overlay"
+          onClick={() => setFullscreenSong(null)}
+        >
+          <div className="lyrics-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="lyrics-modal-header">
+              <button
+                type="button"
+                className="lyrics-modal-close"
+                onClick={() => setFullscreenSong(null)}
+                title={t('Close', 'إغلاق')}
+                aria-label={t('Close', 'إغلاق')}
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <h2 className="lyrics-modal-title">{translateTitle(fullscreenSong.title, lang)}</h2>
+              <span className="label-gold-center">{t('Song Lyrics', 'كلمات الأغنية')}</span>
+            </div>
+            <div className="lyrics-modal-body">
+              {fullscreenSong.lyrics.map((l: any, i: number) => renderLyricLine(l, i))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import SearchBar from '@/components/SearchBar';
 import { normalizeArabic } from '@/lib/arabic';
 import { useLang } from '@/contexts/LangContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import { Eye, Edit, Trash2 } from 'lucide-react';
+import { Eye, Edit, Trash2, Maximize2, X } from 'lucide-react';
 import { translateTitle } from '@/utils/songTranslations';
 import { useItemStats } from '@/hooks/useItemStats';
 import { mergeMockItems } from '@/utils/mockMerge';
@@ -390,6 +390,15 @@ const MelodiesPage = () => {
   const [volume, setVolume] = useState(0.8);
   const [activeCat, setActiveCat] = useState('all');
 
+  // Fullscreen lyrics modal
+  const [fullscreenSong, setFullscreenSong] = useState<any | null>(null);
+  useEffect(() => {
+    if (!fullscreenSong) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setFullscreenSong(null); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [fullscreenSong]);
+
   const presentCategoryKeys = useMemo(() => {
     const keys = new Set<string>();
     allSongs.forEach((s) => {
@@ -716,6 +725,50 @@ const MelodiesPage = () => {
         .lyrics-scroll { height: 250px; overflow-y: auto; margin-bottom: 30px; }
         .lyrics-scroll::-webkit-scrollbar { width: 6px; }
         .lyrics-scroll::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
+
+        .expand-lyrics-btn {
+          position: absolute; top: 18px; left: 18px;
+          width: 38px; height: 38px;
+          display: flex; align-items: center; justify-content: center;
+          background: rgba(201, 168, 76, 0.12);
+          border: 1px solid rgba(201, 168, 76, 0.35);
+          color: #c9a84c; border-radius: 10px; cursor: pointer; z-index: 6;
+          transition: all 0.2s;
+        }
+        .expand-lyrics-btn:hover { background: rgba(201, 168, 76, 0.28); transform: scale(1.06); }
+
+        .lyrics-modal-overlay {
+          position: fixed; inset: 0; z-index: 200;
+          background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(6px);
+          display: flex; align-items: center; justify-content: center;
+          padding: 20px; animation: fadeInOverlay 0.2s ease;
+        }
+        @keyframes fadeInOverlay { from { opacity: 0; } to { opacity: 1; } }
+        .lyrics-modal {
+          position: relative; width: 100%; max-width: 820px; max-height: 90vh;
+          display: flex; flex-direction: column;
+          border: 1px solid var(--primary); border-radius: 30px;
+          background: radial-gradient(circle at center, rgb(103, 6, 6) 0%, #0a0205 100%);
+          box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85); overflow: hidden;
+        }
+        .lyrics-modal-header {
+          position: relative; padding: 26px 30px 16px; text-align: center;
+          border-bottom: 1px solid rgba(201, 168, 76, 0.2); background: rgba(20, 5, 8, 0.82);
+        }
+        .lyrics-modal-title { color: #ff4d4d; font-family: 'Aref Ruqaa Ink', serif; font-size: 2.2rem; margin: 0; }
+        .lyrics-modal-close {
+          position: absolute; top: 18px; left: 22px;
+          width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;
+          background: rgba(201, 168, 76, 0.12); border: 1px solid rgba(201, 168, 76, 0.35);
+          color: #c9a84c; border-radius: 10px; cursor: pointer; transition: all 0.2s;
+        }
+        .lyrics-modal-close:hover { background: rgba(255, 77, 77, 0.25); border-color: #ff4d4d; color: #ff4d4d; }
+        .lyrics-modal-body {
+          overflow-y: auto; padding: 28px 40px 40px; text-align: right;
+          scrollbar-width: thin; scrollbar-color: #c9a84c transparent;
+        }
+        .lyrics-modal-body::-webkit-scrollbar { width: 6px; }
+        .lyrics-modal-body::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
         .line { font-family: 'DG Heaven', 'DG Heaven Bold', 'DG Modal3at', sans-serif !important; font-weight: 400; font-size: 1.45rem; color: #ffffff; line-height: 2.1; margin-bottom: 10px; border-right: 3px solid #c9a84c; padding-right: 15px; }
         .line.red { color: #ff4d4d; border-right-color: #ff4d4d; font-weight: bold; }
 
@@ -1040,6 +1093,15 @@ const MelodiesPage = () => {
           </div>
 
           <div className="lyrics-side">
+            <button
+              type="button"
+              className="expand-lyrics-btn"
+              onClick={() => setFullscreenSong(song)}
+              title={lang === 'ar' ? 'عرض الكلمات كاملة' : 'Open full lyrics'}
+              aria-label={lang === 'ar' ? 'عرض الكلمات كاملة' : 'Open full lyrics'}
+            >
+              <Maximize2 className="w-5 h-5" />
+            </button>
             <span className="label-gold">كلمات الأغنية</span>
             <div className="title-row">
               <h2 className="song-title-red">{translateTitle(song.title, lang)}</h2>
@@ -1179,6 +1241,31 @@ const MelodiesPage = () => {
           </div>
         </div>
       ))}
+
+      {fullscreenSong && (
+        <div className="lyrics-modal-overlay" onClick={() => setFullscreenSong(null)}>
+          <div className="lyrics-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="lyrics-modal-header">
+              <button
+                type="button"
+                className="lyrics-modal-close"
+                onClick={() => setFullscreenSong(null)}
+                title={lang === 'ar' ? 'إغلاق' : 'Close'}
+                aria-label={lang === 'ar' ? 'إغلاق' : 'Close'}
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <h2 className="lyrics-modal-title">{translateTitle(fullscreenSong.title, lang)}</h2>
+              <span className="label-gold">{lang === 'ar' ? 'كلمات الأغنية' : 'Song Lyrics'}</span>
+            </div>
+            <div className="lyrics-modal-body">
+              {fullscreenSong.lyrics.map((l: any, i: number) => (
+                <div key={i} className={`line ${l.red ? 'red' : ''}`}>{l.text}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

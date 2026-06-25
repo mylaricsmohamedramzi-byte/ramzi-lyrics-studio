@@ -4695,7 +4695,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 93,
-    "title": "إفترقنا",
+    "title": "مُجبرين",
     "type": "دراما",
     "lyrics": [
       { "text": "أفترقنا وقلنا يومها كل شيء قسمه ونصيب", "red": false },

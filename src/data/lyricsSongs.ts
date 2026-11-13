@@ -6052,7 +6052,7 @@ export const allSongs: any[] = [
       { text: "و اللّه و بقا فيه .. غيري يعيش لِيه", red: false },
       { text: "و كمان يتشد له و يميل ", red: false },
       { text: "\u00A0", red: false },
-      { text: "الله يرحم أيام زمان ... لمّا كان ", red: true },
+      { text: "الله يرحم أيام زمان .. لمّا كان ", red: true },
       { text: "بيقول محبش حد غيري", red: true },
       { text: "\u00A0", red: false },
       { text: "و  كان عايش دور الغلبان .. لا دا كمان", red: true },

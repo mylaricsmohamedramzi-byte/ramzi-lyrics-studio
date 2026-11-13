@@ -255,7 +255,7 @@ export const allSongs = [
       { text: "وإن كنت أنا اللي زعلتك", red: true },
       { text: "أرجع يا حبيبي وأنا أصالحك", red: true },
       { text: "وإعتب علي قلبي براحتك ", red: true },
-      { text: " لكن متسبنيش بين البنين", red: true },
+      { text: " متسبنيش بين البنين", red: true },
       { text: "\u00A0", red: false },
       { text: "رغم المسافات بفتكرك .. دا أحنا ما بينا أحلي ليالي", red: false },
       { text: "أعمل أيه عشان أثبتلك .. أن أنت دائماً علي بالي", red: false },

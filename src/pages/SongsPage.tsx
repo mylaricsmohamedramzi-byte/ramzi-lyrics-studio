@@ -473,48 +473,6 @@ export const allSongs = [
   },
   {
     id: 8,
-    title: "دور الغلبان",
-    type: "طرب",
-    audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509714/%D9%84%D9%88_%D8%B4%D8%A7%D9%81%D9%86%D9%8A_aygdxm.mp3"],
-    coverImg: "https://res.cloudinary.com/dq3orhpdj/image/upload/v1776517974/%D9%84%D9%88_%D8%B4%D8%A7%D9%81%D9%86%D9%8A_ggebvl.png",
-    views: "0",
-    credits: "كلمات وألحان : محمد رمزي",
-    lyrics: [
-      { text: "واللّه وبقا ليه .. غيري يخليه", red: false },
-      { text: "يسهر علشانه الليل ", red: false },
-      { text: "و اللّه و بقا فيه .. غيري يعيش لِيه", red: false },
-      { text: "و كمان يتشد له و يميل ", red: false },
-      { text: "\u00A0", red: false },
-      { text: "الله يرحم أيام زمان ... لمّا كان ", red: true },
-      { text: "بيقول محبش حد غيري", red: true },
-      { text: "\u00A0", red: false },
-      { text: "و  كان عايش دور الغلبان .. لا دا كمان", red: true },
-      { text: "بيصعب عليّا و أقول يا عيني", red: true },
-      { text: "\u00A0", red: false },
-      { text: "و أهوا في الأخر  كله هان  .. لمّا بان ", red: true },
-      { text: "علي حقيقته و أنكر خيري ", red: true },
-      { text: "\u00A0", red: false },
-      { text: "الله يسهل له  .. إرتحت أنا منُه ", red: true },
-      { text: "بقا برا حياتي .. و بعدت خلاص عنُه", red: true },
-      { text: "\u00A0", red: false },
-      { text: "و بكره يجي له يوم .. ميدوقش النوم  ", red: false },
-      { text: "و كل عمايله هتقعدله ", red: false },
-      { text: "دا مفيش مظلوم .. ظولمه دا بيدوم  ", red: false },
-      { text: "ولا ظالم بيعيش باقي عُمره ", red: false },
-      { text: "\u00A0", red: false },
-      { text: "الله يرحم أيام زمان ... لمّا كان ", red: true },
-      { text: "بيقول محبش حد غيري", red: true },
-      { text: "\u00A0", red: false },
-      { text: "و  كان عايش دور الغلبان .. لا دا كمان", red: true },
-      { text: "بيصعب عليّا و أقول يا عيني", red: true },
-      { text: "\u00A0", red: false },
-      { text: "و أهوا في الأخر  كله هان  .. لمّا بان ", red: true },
-      { text: "علي حقيقته و أنكر خيري ", red: true },
-     
-    ],
-  },
-  {
-    id: 9,
     title: "مش عيب",
     type: "رومانسي & مقسوم",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509726/%D9%85%D8%B4_%D8%B9%D9%8A%D8%A8_vedbxq.mp3"],
@@ -553,7 +511,7 @@ export const allSongs = [
     ],
   },
   {
-    id: 10,
+    id: 9,
     title: "حيّ علي الجهاد",
     type: "وطني",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509733/%D8%AD%D9%8E%D9%8A%D9%91%D9%8E_%D8%B9%D9%8E%D9%84%D9%8E%D9%89_%D8%A7%D9%84%D8%AC%D9%90%D9%87%D9%8E%D8%A7%D8%AF%D9%90_ksmmfm.mp3"],
@@ -602,7 +560,7 @@ export const allSongs = [
     ],
   },
   {
-    id: 11,
+    id: 10,
     title: "مُشتاق للمصريين",
     type: "وطني",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509732/%D9%88%D8%AD%D8%B4%D8%A7%D9%86%D9%8A_%D9%8A%D8%A7_%D9%85%D8%B5%D8%B1_zs1fuw.mp3"],
@@ -670,7 +628,7 @@ export const allSongs = [
     ],
   },
   {
-    id: 12,
+    id: 11,
     title: "يبدأ رمضان",
     type: "مناسبات و أعياد",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509712/%D8%A3%D9%8A%D8%A7%D9%85_%D8%B1%D9%85%D8%B6%D8%A7%D9%86_bfi8na.mp3"],
@@ -709,7 +667,7 @@ export const allSongs = [
     ],
   },
   {
-    id: 13,
+    id: 12,
     title: "عطشان غرام",
     type: "صعيدي",
     audioUrls: ["https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509717/%D8%B9%D8%B7%D8%B4%D8%A7%D9%86_%D8%BA%D8%B1%D8%A7%D9%85_ybv7af.mp3"],
@@ -767,7 +725,7 @@ export const allSongs = [
     ],
   },
   {
-    id: 14,
+    id: 13,
     title: "من العجائب",
     type: "صعيدي",
     views: "0",
@@ -817,7 +775,7 @@ export const allSongs = [
     ],
   },
   {
-    id: 15,
+    id: 14,
     title: "زارع الخير",
     type: "إسلامي",
     views: "0",
@@ -849,7 +807,7 @@ export const allSongs = [
     ],
   },
   {
-    id: 16,
+    id: 15,
     title: "الكون إحتفي",
     type: "إسلامي",
     views: "0",
@@ -904,7 +862,7 @@ export const allSongs = [
     ],
   },
   {
-    id: 17,
+    id: 16,
     title: "ألهتني نفسي",
     type: "إسلامي",
     views: "0",
@@ -947,7 +905,7 @@ export const allSongs = [
     ],
   },
   {
-    id: 18,
+    id: 17,
     title: "مُبتغي الأُمَمِي",
     type: "إسلامي",
     views: "0",
@@ -992,7 +950,7 @@ export const allSongs = [
     ],
   },
   {
-    id: 19,
+    id: 18,
     title: "جمالك ماركة",
     type: "بوب",
     audioUrls: [
@@ -1047,7 +1005,7 @@ export const allSongs = [
     ],
   },
   {
-    id: 20,
+    id: 19,
     title: "نفد صبري",
     type: "بوب",
     audioUrls: [

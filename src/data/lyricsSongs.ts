@@ -1787,7 +1787,7 @@ export const allSongs: any[] = [
     "type": "وطني",
     "lyrics": [
       { "text": "أنا اللي عندي 100 مليون", "red": false },
-      { "text": "بيفرحوا لما تيجي سيرتي", "red": false },
+      { "text": "بيفرحوا لمّا تيجي سيرتي", "red": false },
       { "text": "", "red": false },
       { "text": "وقعت لكن عشانهم أقوم", "red": false },
       { "text": "معايا تملي في مسيرتي", "red": false },

@@ -5584,13 +5584,13 @@ export const allSongs: any[] = [
     "lyrics": [
       { "text": "بما  إن  مشوارنا  دا  أخره فراق", "red": false },
       { "text": "", "red": false },
-      { "text": "فبلاش يكون بنا  زعل وخناق", "red": false },
+      { "text": "فبلاش يكون بنّا  زعل وخناق", "red": false },
       { "text": "", "red": false },
       { "text": "مش شرط يتقال أننا  أعداء", "red": false },
       { "text": "", "red": false },
       { "text": "فيها أيه لو تبقا  النهايات أخلاق", "red": false },
       { "text": "...............", "red": true },
-      { "text": "بما إن الموضوع  أتفض..وبقا في طي النسيان", "red": true },
+      { "text": "بما إن الموضوع  إتفض..وبقا في طي النسيان", "red": true },
       { "text": "", "red": false },
       { "text": "مش لازم نقطّع  بعض..ونخلي المستور يبان", "red": true },
       { "text": "", "red": false },
@@ -5600,11 +5600,11 @@ export const allSongs: any[] = [
       { "text": "...............", "red": true },
       { "text": "الجرح صعب لو من الغاليين", "red": false },
       { "text": "", "red": false },
-      { "text": "بالذات بقا لو عشره ليها سنيين", "red": false },
+      { "text": "بالذات بقا لو عِشره ليها سنيين", "red": false },
       { "text": "", "red": false },
       { "text": "أدّينا عينْنَا  مشينا معميين", "red": false },
       { "text": "", "red": false },
-      { "text": "أخرتها باعو  الناس الشاريين", "red": false }
+      { "text": "أخرتها باعوا  الناس الشاريين", "red": false }
     ]
   },
   {

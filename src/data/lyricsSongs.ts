@@ -1135,7 +1135,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 23,
-    "title": "حاجة تانيه",
+    "title": "نظره حلوه",
     "type": "رومانسي",
     "lyrics": [
       { "text": "مش مصدّق .. قلبي غرّق", "red": false },

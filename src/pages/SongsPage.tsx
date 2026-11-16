@@ -219,7 +219,7 @@ export const allSongs = [
     id: 3,
     title: "سرّ إختلافي",
     duet: true,
-    type: "بوب",
+    type: "Duets",
     audioUrls: [
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509721/Sirr_A5tlAfy-2_nyoxxa.mp3",
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509720/Sirr_A5tlAfy-3_iednte.mp3",
@@ -287,7 +287,7 @@ export const allSongs = [
     id: 4,
     title: "كام دقيقه",
     duet: true,
-    type: "رومانسي & مقسوم",
+    type: "Duets",
     audioUrls: [
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509709/%D9%83%D8%A7%D9%85_%D8%AF%D9%82%D9%8A%D9%82%D9%87_slow_vtuujc.mp3",
       "https://res.cloudinary.com/dq3orhpdj/video/upload/v1776509722/%D9%83%D8%A7%D9%85_%D8%AF%D9%82%D9%8A%D9%82%D9%87_%D9%85%D9%82%D8%B3%D9%88%D9%85_wcqx5a.mp3",

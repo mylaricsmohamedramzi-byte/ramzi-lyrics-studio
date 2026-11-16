@@ -1537,7 +1537,7 @@ export const allSongs: any[] = [
   {
     "id": 33,
     "title": "بيني و بينك",
-    "type": "روك",
+    "type": "Duets",
     "lyrics": [
       { "text": "بيني وبينك طريق , معرفش أخره أيه", "red": false },
       { "text": " ", "red": false },

@@ -14,6 +14,47 @@ export type Database = {
   }
   public: {
     Tables: {
+      comments: {
+        Row: {
+          author_name: string
+          content: string
+          created_at: string
+          id: string
+          item_id: string
+          section: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          author_name: string
+          content: string
+          created_at?: string
+          id?: string
+          item_id: string
+          section: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          author_name?: string
+          content?: string
+          created_at?: string
+          id?: string
+          item_id?: string
+          section?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "comments_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       item_ratings: {
         Row: {
           created_at: string
@@ -41,6 +82,41 @@ export type Database = {
         }
         Relationships: []
       }
+      item_reactions: {
+        Row: {
+          created_at: string
+          id: string
+          item_id: string
+          reaction_type: string
+          section: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          item_id: string
+          reaction_type: string
+          section: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          item_id?: string
+          reaction_type?: string
+          section?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "item_reactions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       item_views: {
         Row: {
           item_id: string
@@ -62,6 +138,27 @@ export type Database = {
         }
         Relationships: []
       }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name: string
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       item_rating_avg: {
@@ -75,9 +172,39 @@ export type Database = {
       }
     }
     Functions: {
+      get_item_reaction_stats: {
+        Args: { p_section: string }
+        Returns: {
+          item_id: string
+          reaction_count: number
+          reaction_type: string
+          user_reacted: boolean
+        }[]
+      }
+      get_item_stats: {
+        Args: { p_section: string }
+        Returns: {
+          avg_rating: number
+          comment_count: number
+          item_id: string
+          rating_count: number
+          views_count: number
+        }[]
+      }
+      get_my_item_ratings: {
+        Args: { p_section: string }
+        Returns: {
+          item_id: string
+          rating: number
+        }[]
+      }
       increment_item_view: {
         Args: { p_item_id: string; p_section: string }
         Returns: number
+      }
+      save_item_rating: {
+        Args: { p_item_id: string; p_rating: number; p_section: string }
+        Returns: undefined
       }
       set_item_rating: {
         Args: {

@@ -5,6 +5,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { Menu, X, Sun, Moon, Globe, LogOut } from 'lucide-react';
 import logoDark from '@/assets/navbar-logo-dark.png';
 import logoLight from '@/assets/navbar-logo-light.png';
+import { supabase } from '@/integrations/supabase/client';
 
 const baseNavItems = [
   { path: '/home', en: 'Home', ar: 'الرئيسية' },
@@ -26,12 +27,14 @@ const Navbar = () => {
 
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) return;
     localStorage.removeItem('isAdmin');
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('isGuest');
     setIsOpen(false);
-    navigate('/');
+    navigate('/', { replace: true });
   };
 
   const navBg = isDark ? 'bg-background/90 border-border/50' : 'bg-black/95 border-white/10';

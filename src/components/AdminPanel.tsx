@@ -5,7 +5,8 @@ import { Settings, Plus, X, Save, Edit, Trash2, Shield, AlertTriangle } from 'lu
 import { useTheme } from '@/contexts/ThemeContext';
 import { useLang } from '@/contexts/LangContext';
 import { toast } from 'sonner';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '@/integrations/supabase/client';
+import { useGuestAuth } from '@/hooks/useGuestAuth';
 
 // Type definitions
 interface LyricLine {
@@ -19,11 +20,12 @@ export default function AdminPanel() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const { user } = useGuestAuth();
 
   const [editItemDetails, setEditItemDetails] = useState<any>(null);
 
   useEffect(() => {
-    setIsAdmin(localStorage.getItem('isAdmin') === 'true');
+    setIsAdmin(localStorage.getItem('isAdmin') === 'true' && user?.is_anonymous !== true);
     
     const handleOpenEdit = (e: any) => {
       if (e.detail) {
@@ -62,7 +64,7 @@ export default function AdminPanel() {
       window.removeEventListener('open-admin-edit', handleOpenEdit);
       window.removeEventListener('admin-delete-item', handleDeleteItem);
     };
-  }, [location.pathname]);
+  }, [location.pathname, user]);
 
   if (!isAdmin) return null;
 
@@ -176,7 +178,11 @@ function AdminForm({ section, lang, t, isDark, initialEditItem }: any) {
     const fetchItems = async () => {
       try {
         const { data, error } = await supabase.from(section).select('*').order('created_at', { ascending: false });
-        if (!error && data && data.length > 0) {
+        if (error) {
+          toast.error(error.message);
+          return;
+        }
+        if (data && data.length > 0) {
           setItems(data);
         } else {
           // Fallback to local storage if DB is empty
@@ -217,19 +223,10 @@ function AdminForm({ section, lang, t, isDark, initialEditItem }: any) {
 
       if (mode === 'add') {
         const { error } = await supabase.from(section).insert({ ...payload, created_at: new Date().toISOString() });
-        if (error) {
-           // Fallback to local storage if supabase table doesn't exist yet
-           const local = JSON.parse(localStorage.getItem(`mock_${section}`) || '[]');
-           local.push({ id: Date.now(), ...payload });
-           localStorage.setItem(`mock_${section}`, JSON.stringify(local));
-        }
+        if (error) throw error;
       } else if (mode === 'edit' && editingId) {
         const { error } = await supabase.from(section).update(payload).eq('id', editingId);
-        if (error) {
-           const local = JSON.parse(localStorage.getItem(`mock_${section}`) || '[]');
-           const updated = local.map((i: any) => i.id === editingId ? { ...i, ...payload } : i);
-           localStorage.setItem(`mock_${section}`, JSON.stringify(updated));
-        }
+        if (error) throw error;
       }
 
       toast.success(t('Content saved successfully!', 'تم حفظ المحتوى بنجاح!'));
@@ -247,18 +244,10 @@ function AdminForm({ section, lang, t, isDark, initialEditItem }: any) {
     
     try {
       const { error } = await supabase.from(section).delete().eq('id', id);
-      if (error) {
-        // API-level error → fallback to localStorage
-        const local = JSON.parse(localStorage.getItem(`mock_${section}`) || '[]');
-        const filtered = local.filter((i: any) => String(i.id) !== String(id));
-        localStorage.setItem(`mock_${section}`, JSON.stringify(filtered));
-      }
+      if (error) throw error;
     } catch (err) {
-      // Network-level failure → still remove from localStorage so deletion persists
-      const local = JSON.parse(localStorage.getItem(`mock_${section}`) || '[]');
-      const filtered = local.filter((i: any) => String(i.id) !== String(id));
-      localStorage.setItem(`mock_${section}`, JSON.stringify(filtered));
-      console.error('Supabase delete error (fallback used):', err);
+      toast.error(err instanceof Error ? err.message : t('Error deleting content', 'حدث خطأ أثناء الحذف'));
+      return;
     }
     
     toast.success(t('Deleted successfully', 'تم الحذف بنجاح'));

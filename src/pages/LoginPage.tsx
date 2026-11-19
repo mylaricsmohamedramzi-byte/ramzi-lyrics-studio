@@ -5,6 +5,8 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { LogIn, UserCircle, Mail, Lock, ArrowLeft, ArrowRight, Sparkles, KeyRound } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'sonner';
+import GuestNameDialog from '@/components/GuestNameDialog';
+import { getCurrentGuestSession, loadGuestProfile } from '@/lib/guestAuth';
 import homeLogoDark from '@/assets/home-logo-dark.png';
 import homeLogoLight from '@/assets/home-logo-light.png';
 
@@ -126,20 +128,22 @@ const LoginPage = () => {
   const [error, setError] = useState('');
   const [hasAttemptedLogin, setHasAttemptedLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isGuestDialogOpen, setIsGuestDialogOpen] = useState(false);
 
-  // Clear any stale session when LoginPage mounts (user arrived here intentionally)
+  // Restore a saved guest profile and its Cloud session without asking for the name again.
   useEffect(() => {
-    localStorage.removeItem('isAdmin');
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('isGuest');
-  }, []);
-
-  const handleGuestAccess = () => {
-    localStorage.removeItem('isAdmin');
-    localStorage.setItem('isLoggedIn', 'true');
-    localStorage.setItem('isGuest', 'true');
-    navigate('/home');
-  };
+    let active = true;
+    void getCurrentGuestSession().then(async (session) => {
+      if (!active || !session?.user.is_anonymous) return;
+      const profile = await loadGuestProfile(session.user.id);
+      if (!active || !profile) return;
+      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('isGuest', 'true');
+      localStorage.removeItem('isAdmin');
+      navigate('/home', { replace: true });
+    }).catch(() => undefined);
+    return () => { active = false; };
+  }, [navigate]);
 
   const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -322,7 +326,7 @@ const LoginPage = () => {
                     </button>
 
                     <button
-                      onClick={handleGuestAccess}
+                      onClick={() => setIsGuestDialogOpen(true)}
                       className="w-full group flex items-center justify-center gap-3 px-6 py-4 rounded-2xl border border-white/10 bg-white/5 text-foreground hover:bg-white/10 transition-all duration-300 font-bold text-base hover:scale-[1.02] active:scale-[0.98]"
                     >
                       <UserCircle className="w-5 h-5 text-foreground/60 group-hover:text-foreground transition-colors" />
@@ -488,6 +492,8 @@ const LoginPage = () => {
           </p>
         )}
       </div>
+
+      <GuestNameDialog open={isGuestDialogOpen} onClose={() => setIsGuestDialogOpen(false)} />
 
       <style>{`
         .animate-spin-slow {

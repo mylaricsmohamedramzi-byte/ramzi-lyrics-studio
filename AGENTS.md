@@ -1,3 +1,4 @@
 # Project implementation rules
 
-- Route all browser database access through the generated Cloud client, and expose private interaction data only through authenticated owner policies or narrowly scoped aggregate RPCs; this keeps identity data protected while public gallery statistics remain available.
+- Route browser database access through the generated Cloud client, and expose private interaction rows only through owner policies or narrowly scoped aggregate RPCs; this protects identities while public stats remain readable.
+- Keep structural architecture decisions documented here; avoid additional client implementations because one configured client prevents credentials and auth sessions from diverging.

@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '@/integrations/supabase/client';
+import { useGuestAuth } from '@/hooks/useGuestAuth';
+import { toast } from 'sonner';
 
 /**
  * useItemStats — global, multi-user views + star ratings engine.
@@ -17,72 +19,46 @@ import { supabase } from '@/lib/supabase';
 
 type NumMap = Record<string, number>;
 
-function getRaterId(): string {
-  try {
-    let id = localStorage.getItem('rater_id');
-    if (!id) {
-      id =
-        typeof crypto !== 'undefined' && 'randomUUID' in crypto
-          ? crypto.randomUUID()
-          : `r_${Date.now()}_${Math.random().toString(36).slice(2)}`;
-      localStorage.setItem('rater_id', id);
-    }
-    return id;
-  } catch {
-    return 'anonymous';
-  }
-}
-
 export function useItemStats(section: string) {
   const [views, setViews] = useState<NumMap>({});
   const [avgRatings, setAvgRatings] = useState<NumMap>({});
-  const [ratings, setRatings] = useState<NumMap>(() => {
-    try {
-      return JSON.parse(localStorage.getItem(`${section}_ratings`) || '{}');
-    } catch {
-      return {};
-    }
-  });
+  const [ratings, setRatings] = useState<NumMap>({});
+  const [ratingCounts, setRatingCounts] = useState<NumMap>({});
+  const [commentCounts, setCommentCounts] = useState<NumMap>({});
+  const { user } = useGuestAuth();
 
   const viewedRef = useRef<Set<string>>(new Set());
 
   const refresh = useCallback(async () => {
     try {
-      const [viewsRes, avgRes] = await Promise.all([
-        supabase.from('item_views').select('item_id, views_count').eq('section', section),
-        supabase.from('item_rating_avg').select('item_id, avg_rating').eq('section', section),
+      const [statsRes, personalRes] = await Promise.all([
+        supabase.rpc('get_item_stats', { p_section: section }),
+        user ? supabase.rpc('get_my_item_ratings', { p_section: section }) : Promise.resolve({ data: [], error: null }),
       ]);
-      if (viewsRes.data) {
-        setViews(
-          Object.fromEntries(viewsRes.data.map((r: any) => [String(r.item_id), Number(r.views_count) || 0])),
-        );
-      }
-      if (avgRes.data) {
-        setAvgRatings(
-          Object.fromEntries(avgRes.data.map((r: any) => [String(r.item_id), Number(r.avg_rating) || 0])),
-        );
-      }
-    } catch {
-      /* Fallback: keep current (LocalStorage / static) values — UI never breaks. */
+      if (statsRes.error) throw statsRes.error;
+      const stats = statsRes.data ?? [];
+      setViews(Object.fromEntries(stats.map((row) => [String(row.item_id), Number(row.views_count) || 0])));
+      setAvgRatings(Object.fromEntries(stats.map((row) => [String(row.item_id), Number(row.avg_rating) || 0])));
+      setRatingCounts(Object.fromEntries(stats.map((row) => [String(row.item_id), Number(row.rating_count) || 0])));
+      setCommentCounts(Object.fromEntries(stats.map((row) => [String(row.item_id), Number(row.comment_count) || 0])));
+      if (personalRes.error) throw personalRes.error;
+      setRatings(Object.fromEntries((personalRes.data ?? []).map((row) => [String(row.item_id), Number(row.rating) || 0])));
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'Unable to load public statistics.');
     }
-  }, [section]);
+  }, [section, user]);
 
   useEffect(() => {
     refresh();
   }, [refresh]);
 
-  // Realtime: keep every visitor's counters in sync live.
+  // Comment changes are public; refresh aggregate statistics when a comment is added or removed.
   useEffect(() => {
     const channel = supabase
-      .channel(`stats-${section}`)
+      .channel(`stats-${section}-${Math.random().toString(36).slice(2)}`)
       .on(
         'postgres_changes',
-        { event: '*', schema: 'public', table: 'item_views', filter: `section=eq.${section}` },
-        () => refresh(),
-      )
-      .on(
-        'postgres_changes',
-        { event: '*', schema: 'public', table: 'item_ratings', filter: `section=eq.${section}` },
+        { event: '*', schema: 'public', table: 'comments', filter: `section=eq.${section}` },
         () => refresh(),
       )
       .subscribe();
@@ -97,6 +73,7 @@ export function useItemStats(section: string) {
       if (!key || viewedRef.current.has(key)) return;
       viewedRef.current.add(key);
       const sessKey = `viewed_${section}_${key}`;
+      if (!user) return;
       try {
         if (sessionStorage.getItem(sessKey)) return;
         sessionStorage.setItem(sessKey, '1');
@@ -111,11 +88,11 @@ export function useItemStats(section: string) {
         if (!error && typeof data === 'number') {
           setViews((prev) => ({ ...prev, [key]: data }));
         }
-      } catch {
-        /* Fallback (offline): leave count as-is. */
+      } catch (error) {
+        toast.error(error instanceof Error ? error.message : 'Unable to record this view.');
       }
     },
-    [section],
+    [section, user],
   );
 
   const registerViews = useCallback(
@@ -128,29 +105,25 @@ export function useItemStats(section: string) {
   const saveRating = useCallback(
     async (itemId: string | number, value: number) => {
       const key = String(itemId);
-      const updated = { ...ratings, [key]: value };
-      setRatings(updated);
-      try {
-        localStorage.setItem(`${section}_ratings`, JSON.stringify(updated));
-      } catch {
-        /* ignore */
+      if (!user) {
+        toast.error('Choose a guest name before rating.');
+        return;
       }
       try {
-        const { data, error } = await supabase.rpc('set_item_rating', {
+        const { error } = await supabase.rpc('save_item_rating', {
           p_section: section,
           p_item_id: key,
-          p_rater: getRaterId(),
           p_rating: value,
         });
-        if (!error && data != null) {
-          setAvgRatings((prev) => ({ ...prev, [key]: Number(data) }));
-        }
-      } catch {
-        /* Fallback: device rating already saved locally. */
+        if (error) throw error;
+        setRatings((prev) => ({ ...prev, [key]: value }));
+        await refresh();
+      } catch (error) {
+        toast.error(error instanceof Error ? error.message : 'Unable to save this rating.');
       }
     },
-    [ratings, section],
+    [refresh, section, user],
   );
 
-  return { views, avgRatings, ratings, saveRating, registerView, registerViews, refresh };
+  return { views, avgRatings, ratingCounts, commentCounts, ratings, saveRating, registerView, registerViews, refresh };
 }

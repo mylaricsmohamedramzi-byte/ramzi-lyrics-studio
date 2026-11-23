@@ -1,7 +1,8 @@
 # Guest interactions
 
-- [ ] Enable and restore anonymous guest sessions with saved display names.
-- [ ] Add private-by-default database storage and safe public RPCs for comments, reactions, and aggregate stats.
-- [ ] Wire all four content pages to persistent comments, reactions, views, and ratings.
-- [ ] Remove database placeholder configuration and correct AdminPanel failure handling.
-- [ ] Verify public access, RLS behavior, build, and the guest flow; document anything not safely testable.
+- [ ] Finish anonymous guest sessions and saved display names.
+- [ ] Persist comments and reactions on Lyrics, Songs, Melodies, and Videos; keep reaction emojis separate from comment text.
+- [ ] Show public comments without exposing account IDs; allow each guest to edit/delete only their own comments.
+- [ ] Refresh aggregate views, ratings, reactions, and comment counts across visitors without exposing private interaction rows.
+- [ ] Remove database placeholder configuration and eliminate false-success/local mock fallbacks in AdminPanel.
+- [ ] Verify comments, reactions, ratings, views, RLS, build, and the signed-in guest flow; document remaining admin/content limits.

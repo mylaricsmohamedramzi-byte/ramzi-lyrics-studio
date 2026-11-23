@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useGuestAuth } from '@/hooks/useGuestAuth';
+import { subscribeToInteractionChanges } from '@/lib/interactionEvents';
 import { toast } from 'sonner';
 
 export type PersistentComment = {
   id: string;
-  user_id: string;
+  item_id: string;
   author_name: string;
   content: string;
   created_at: string;
@@ -15,38 +16,39 @@ type CommentMap = Record<string, PersistentComment[]>;
 
 export function usePersistentComments(section: string) {
   const [comments, setComments] = useState<CommentMap>({});
+  const [ownedCommentIds, setOwnedCommentIds] = useState<Set<string>>(() => new Set());
   const [loading, setLoading] = useState(false);
   const { user, profile } = useGuestAuth();
 
-  const refresh = useCallback(async (itemId?: string | number) => {
+  const refresh = useCallback(async () => {
     setLoading(true);
-    let query = supabase.from('comments').select('id,item_id,user_id,author_name,content,created_at').eq('section', section).order('created_at', { ascending: true });
-    if (itemId !== undefined) query = query.eq('item_id', String(itemId));
-    const { data, error } = await query;
-    setLoading(false);
-    if (error) {
-      toast.error(error.message);
-      return;
-    }
-    setComments((previous) => {
-      if (itemId !== undefined) return { ...previous, [String(itemId)]: data ?? [] };
+    try {
+      const [commentsResult, ownedResult] = await Promise.all([
+        supabase.from('comments_public').select('id,section,item_id,author_name,content,created_at').eq('section', section).order('created_at', { ascending: true }),
+        user ? supabase.rpc('get_my_comment_ids', { p_section: section }) : Promise.resolve({ data: [], error: null }),
+      ]);
+      if (commentsResult.error) throw commentsResult.error;
+      if (ownedResult.error) throw ownedResult.error;
+      const rows: PersistentComment[] = (commentsResult.data ?? []).flatMap((row) => {
+        if (!row.id || !row.item_id || !row.author_name || !row.content || !row.created_at) return [];
+        return [{ id: row.id, item_id: row.item_id, author_name: row.author_name, content: row.content, created_at: row.created_at }];
+      });
       const grouped: CommentMap = {};
-      (data ?? []).forEach((comment) => {
+      rows.forEach((comment) => {
         (grouped[comment.item_id] ??= []).push(comment);
       });
-      return grouped;
-    });
-  }, [section]);
+      setComments(grouped);
+      setOwnedCommentIds(new Set((ownedResult.data ?? []).map((row) => row.comment_id)));
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'Unable to load comments.');
+    } finally {
+      setLoading(false);
+    }
+  }, [section, user]);
 
   useEffect(() => {
     void refresh();
-    const channel = supabase.channel(`comments-${section}`)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'comments', filter: `section=eq.${section}` }, (payload) => {
-        const row = (payload.new ?? payload.old) as { item_id?: string } | undefined;
-        if (row?.item_id) void refresh(row.item_id);
-      })
-      .subscribe();
-    return () => { void supabase.removeChannel(channel); };
+    return subscribeToInteractionChanges(section, () => void refresh());
   }, [refresh, section]);
 
   const addComment = useCallback(async (itemId: string | number, content: string) => {
@@ -64,7 +66,7 @@ export function usePersistentComments(section: string) {
       toast.error(error.message);
       return false;
     }
-    await refresh(itemId);
+    await refresh();
     return true;
   }, [profile, refresh, section, user]);
 
@@ -85,5 +87,5 @@ export function usePersistentComments(section: string) {
     return true;
   }, [refresh, user]);
 
-  return { comments, loading, refresh, addComment, editComment, deleteComment, userId: user?.id ?? null };
+  return { comments, ownedCommentIds, loading, refresh, addComment, editComment, deleteComment, userId: user?.id ?? null };
 }

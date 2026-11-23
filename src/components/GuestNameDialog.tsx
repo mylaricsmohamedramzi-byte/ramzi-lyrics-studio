@@ -24,14 +24,15 @@ export default function GuestNameDialog({ open, onClose }: { open: boolean; onCl
     setLoading(true);
     setError('');
     try {
-      let { data, error: sessionError } = await supabase.auth.getSession();
+      const { data, error: sessionError } = await supabase.auth.getSession();
       if (sessionError) throw sessionError;
-      if (!data.session) {
+      let session = data.session;
+      if (!session) {
         const signedIn = await supabase.auth.signInAnonymously();
         if (signedIn.error) throw signedIn.error;
-        data = { session: signedIn.data.session, user: signedIn.data.user } as typeof data;
+        session = signedIn.data.session;
       }
-      const userId = data.session?.user.id;
+      const userId = session?.user.id;
       if (!userId) throw new Error('Guest session was not created.');
       await saveGuestProfile(userId, trimmed);
       localStorage.setItem('isLoggedIn', 'true');

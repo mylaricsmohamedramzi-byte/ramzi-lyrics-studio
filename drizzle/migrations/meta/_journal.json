@@ -8,6 +8,13 @@
       "when": 1794821124193,
       "tag": "0000_guest_interactions_security",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1795449507341,
+      "tag": "0001_safe_public_comments_live_updates",
+      "breakpoints": true
     }
   ]
 }

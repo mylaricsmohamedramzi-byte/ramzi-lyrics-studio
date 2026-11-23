@@ -161,6 +161,33 @@ export type Database = {
       }
     }
     Views: {
+      comments_public: {
+        Row: {
+          author_name: string | null
+          content: string | null
+          created_at: string | null
+          id: string | null
+          item_id: string | null
+          section: string | null
+        }
+        Insert: {
+          author_name?: string | null
+          content?: string | null
+          created_at?: string | null
+          id?: string | null
+          item_id?: string | null
+          section?: string | null
+        }
+        Update: {
+          author_name?: string | null
+          content?: string | null
+          created_at?: string | null
+          id?: string | null
+          item_id?: string | null
+          section?: string | null
+        }
+        Relationships: []
+      }
       item_rating_avg: {
         Row: {
           avg_rating: number | null
@@ -189,6 +216,13 @@ export type Database = {
           item_id: string
           rating_count: number
           views_count: number
+        }[]
+      }
+      get_my_comment_ids: {
+        Args: { p_section: string }
+        Returns: {
+          comment_id: string
+          item_id: string
         }[]
       }
       get_my_item_ratings: {

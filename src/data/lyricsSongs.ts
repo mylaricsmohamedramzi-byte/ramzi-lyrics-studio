@@ -5872,7 +5872,7 @@ export const allSongs: any[] = [
   },
   {
     "id": 122,
-    "title": "معاكي مبسوط",
+    "title": "معاك مبسوط",
     "type": "رومانسي & مقسوم",
     "lyrics": [
       { "text": "كتير حبيت .. وياما هويت .. لكن ما لقيت", "red": false },
@@ -5890,7 +5890,7 @@ export const allSongs: any[] = [
       { "text": "", "red": false },
       { "text": "أمانه عليك.. يا ليل خليك .. دا أنا مستنيك", "red": false },
       { "text": "", "red": false },
-      { "text": "وطوّل حبّه و علشانا", "red": false },
+      { "text": "و طوّل حبّه  علشانا", "red": false },
       { "text": "...............", "red": true },
       { "text": "دا أنا جوايا كام كلمه ..وعاوز أقولهم", "red": true },
       { "text": "", "red": false },
@@ -5916,7 +5916,7 @@ export const allSongs: any[] = [
       { "text": "", "red": false },
       { "text": "و مقامك غالي أوي عندي", "red": false },
       { "text": "", "red": false },
-      { "text": "بعلو الصوت .. بحبك موت.. معاكي مبسوط", "red": false },
+      { "text": "بعلو الصوت .. بحبك موت.. معاك مبسوط", "red": false },
       { "text": "", "red": false },
       { "text": "و أيامي بتضحك لي", "red": false }
     ]
